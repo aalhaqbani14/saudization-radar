@@ -28,6 +28,32 @@ class TestMonitorHealth(unittest.TestCase):
             p.start()
             self.addCleanup(p.stop)
 
+    def test_extract_includes_official_pdf_links_only(self):
+        extractor = monitor.Extract("https://www.hrsd.gov.sa/media-center/news")
+        extractor.feed("""<html><body><main><h1>أخبار الوزارة</h1>
+            <a href="/sites/default/files/2026-11/new.pdf">الدليل الإجرائي لقرار توطين المهن</a>
+            <a href="https://evil.example/document.pdf">قرار توطين مخادع</a>
+            </main></body></html>""")
+        content = extractor.extracted_text()
+        self.assertIn("وثيقة رسمية مرتبطة:", content)
+        self.assertIn("https://www.hrsd.gov.sa/sites/default/files/2026-11/new.pdf", content)
+        self.assertNotIn("وثيقة رسمية مرتبطة: قرار توطين مخادع", content)
+
+    @patch.object(monitor, "send_email")
+    @patch.object(monitor, "get_text", return_value=BASE * 3)
+    def test_extraction_upgrade_does_not_send_false_alerts(self, fetch, mail):
+        legacy = {url["url"]: {"hash": "legacy", "text": "قرار توطين وظائف 60%"}
+                  for url in SOURCES}
+        self.state.write_text(json.dumps(legacy, ensure_ascii=False), encoding="utf-8")
+        monitor.main()
+        state=json.loads(self.state.read_text(encoding="utf-8"))
+        self.assertTrue(all(x["extraction_version"]==monitor.EXTRACTION_VERSION
+                            for x in state.values()))
+        health=json.loads(self.health.read_text(encoding="utf-8"))
+        self.assertTrue(all(x["first_baseline"] for x in health["sources"]))
+        self.assertFalse(json.loads(self.data.read_text(encoding="utf-8"))["alerts"])
+        mail.assert_not_called()
+
     @patch.object(monitor, "send_email")
     @patch.object(monitor, "get_text", return_value=BASE * 3)
     def test_first_monitor_creates_baseline_without_email(self, fetch, mail):
