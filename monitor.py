@@ -12,10 +12,24 @@ from html.parser import HTMLParser
 ROOT=pathlib.Path(__file__).resolve().parent
 DATA=ROOT/'data'/'alerts.json'
 STATE=ROOT/'data'/'state.json'
-SOURCES=[
- {'name':'أخبار الوزارة','url':'https://www.hrsd.gov.sa/media-center/news'},
- {'name':'الأدلة الإجرائية','url':'https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/evidence'},
+BASE_SOURCES=[
+ {'name':'أخبار الوزارة','url':'https://www.hrsd.gov.sa/media-center/news','kind':'index'},
+ {'name':'الأدلة الإجرائية','url':'https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/evidence','kind':'index'},
 ]
+def monitored_sources():
+ """Monitor the official registry plus landing pages; never accept off-domain URLs."""
+ registry=ROOT/'data'/'source-registry.json'
+ extra=json.loads(registry.read_text(encoding='utf-8')).get('sources',[]) if registry.exists() else []
+ sources=list(BASE_SOURCES)
+ existing={x['url'] for x in sources}
+ for record in extra:
+  url=record.get('url','')
+  if not email_templates.safe_link(url):
+   raise ValueError('Non-HRSD monitoring source in registry')
+  if url not in existing:
+   sources.append({'name':'قرار: '+record.get('title','بدون عنوان'),'url':url,'kind':'decision_page'})
+   existing.add(url)
+ return sources
 class Extract(HTMLParser):
  def __init__(self):super().__init__();self.parts=[];self.skip=0
  def handle_starttag(self,tag,attrs):
@@ -85,7 +99,8 @@ def main():
  state=json.loads(STATE.read_text(encoding='utf-8')) if STATE.exists() else {}
  db=json.loads(DATA.read_text(encoding='utf-8')) if DATA.exists() else {'alerts':[]}
  now=datetime.datetime.now(datetime.timezone.utc).isoformat();new=[];success=0
- for src in SOURCES:
+ sources=monitored_sources()
+ for src in sources:
   url=src['url'];name=src['name']
   try:
    content=get_text(url)
@@ -109,7 +124,7 @@ def main():
    print('Checked:',name, 'changed:',bool(previous and previous['hash']!=digest))
   except Exception as exc:print('ERROR:',name,repr(exc))
  if success:
-  db['last_checked']=now;db['sources']=SOURCES;db['alerts']=db.get('alerts',[])[:200]
+  db['last_checked']=now;db['sources']=sources;db['alerts']=db.get('alerts',[])[:200]
   DATA.write_text(json.dumps(db,ensure_ascii=False,indent=2),encoding='utf-8')
   STATE.write_text(json.dumps(state,ensure_ascii=False,indent=2),encoding='utf-8')
  if new and not send_email(new):
