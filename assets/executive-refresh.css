@@ -57,3 +57,14 @@ html{scroll-behavior:smooth}body{background:#f1f6f8;font-family:"Segoe UI",Tahom
 @media(max-width:550px){.quality-banner{align-items:start;flex-direction:column}.gallery-card{min-height:146px}}
 @media(prefers-reduced-motion:reduce){.animated-person,.animated-hand,.float-doc,.signal-dot{animation:none!important}}
 @media print{.gallery,.hero-scene,.app-panel,.quality-banner{display:none!important}}
+
+
+.intel-card{position:relative;overflow:hidden;padding-top:104px!important}
+.intel-card-scene{position:absolute;inset:0 0 auto;display:flex;align-items:center;justify-content:flex-end;height:93px;padding:2px 15px 2px 12px;background:linear-gradient(115deg,#f1f9f7,#eaf5f5)}
+.intel-card-scene img{height:96px;max-width:42%;object-fit:contain;object-position:center center}
+.intel-card-scene:after{content:"REGULATORY INSIGHT";position:absolute;left:17px;top:21px;color:#4c8f83;letter-spacing:1.4px;font-size:10px;font-weight:800;direction:ltr}
+.quality-chip{display:inline-flex;align-self:flex-start;font-size:10px;border-radius:8px;margin:-3px 0 5px;padding:5px 9px;background:#fff5e4;border:1px solid #efdcb6;color:#8b6726;font-weight:700}
+.quality-chip.done{background:#eaf7f2;border-color:#d1e7de;color:#0d7266}
+.hero-scene{height:180px;width:220px;min-width:140px;max-width:29%;flex-shrink:1}
+.kpi strong,.metric strong,.intel-kpi strong{font-variant-numeric:tabular-nums}
+@media(max-width:750px){.intel-card{padding-top:98px!important}.intel-card-scene{height:87px}.intel-card-scene img{height:85px}.hero-scene{display:none!important}}
