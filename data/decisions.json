@@ -1,5 +1,5 @@
 {
-  "version": "2026.11.03.2",
+  "version": "2026.11.03.3",
   "reviewed": "2026-11-03",
   "authority": "وزارة الموارد البشرية والتنمية الاجتماعية",
   "editorialNotice": "ملخصات تعليمية موثقة من المصادر العامة. ليست حكماً بالامتثال ولا حصراً نهائياً لكل القرارات؛ قد تتداخل القرارات وتتغير شروطها، ويجب الرجوع للدليل الساري.",
@@ -10,7 +10,7 @@
       "category": "إدارية وموارد بشرية",
       "rate": "100%",
       "pct": 100,
-      "effective": "2026-10-04",
+      "effective": "2026-04-05",
       "number": "132249",
       "min": "عامل واحد فأكثر في المهن المستهدفة",
       "jobs": [
@@ -21,16 +21,34 @@
         "مدير عمليات موارد بشرية",
         "كاتب حركة مخزون"
       ],
-      "explain": "قصر العمل في 69 مهنة إدارية مساندة مستهدفة على السعوديين. قد تتداخل بعض المسميات مع قرارات قطاعية أخرى.",
+      "explain": "قصر العمل في 69 مهنة إدارية مساندة على السعوديين بنسبة 100% على مستوى الكيان. ليست كل المهن بنفس تاريخ التطبيق؛ انظر جدولَي (2) و(3) في الدليل الصادر في 5 أبريل 2026.",
       "scope": "المنشآت التي يوجد بها عامل واحد فأكثر في المهن المدرجة، وفق دليل القرار وعلى مستوى الكيان.",
       "focus": [
-        "مراجعة قائمة المهن الـ69 ورموزها",
-        "التحقق من المسمى المسجل والعمل الفعلي",
-        "تصحيح أي إشغال غير مطابق بالطريقة النظامية"
+        "مطابقة رموز المهن الـ69 وجدول التطبيق (فوري/بعد مهلة)",
+        "مراجعة كل من المسمى المسجل والعمل الفعلي",
+        "فحص تداخل القرار مع القرارات الأخرى وتطبيق النسبة الأعلى حيث ينص الدليل"
       ],
-      "example": "منشأة فيها موظف واحد بمهنة مساعد إداري مشمولة: يشترط أن يكون سعودياً وفق شروط القرار.",
-      "source": "https://www.hrsd.gov.sa/media-center/news/دخول-قرار-توطين-المهن-الإدارية-المساندة-حيز-التنفيذ",
-      "source2": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-المهن-الإدارية-المساندة"
+      "example": "مثال: المهنة 412001 (مساعد إداري) ضمن مجموعة مهلة الستة أشهر حتى 4 أكتوبر 2026، بينما 334301 (سكرتير تنفيذي) من مجموعة التطبيق الفوري في 5 أبريل 2026.",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "source2": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-المهن-الإدارية-المساندة",
+      "phases": [
+        {
+          "date": "2026-04-05",
+          "rate": "100%",
+          "label": "مهن الجدول (2) — التطبيق من تاريخ القرار"
+        },
+        {
+          "date": "2026-10-04",
+          "rate": "100%",
+          "label": "مهن الجدول (3) — بعد مهلة الستة أشهر"
+        }
+      ],
+      "audit": {
+        "status": "reviewed",
+        "checked": "2026-11-03",
+        "basis": "الدليل الإجرائي 2026، جداول 1–3",
+        "limits": "تفاوت تواريخ التطبيق حسب الرمز المهني"
+      }
     },
     {
       "id": "procurement",
@@ -58,7 +76,13 @@
         "مراجعة أي تداخل مع قرارات مهنية أخرى"
       ],
       "example": "مثال تعليمي: من بين 10 عاملين في المهن المستهدفة، 70% تساوي 7 سعوديين قبل أي ضوابط احتساب خاصة.",
-      "source": "https://www.hrsd.gov.sa/media-center/news/رفع-نسبة-التوطين-في-مهن-المشتريات"
+      "source": "https://www.hrsd.gov.sa/media-center/news/رفع-نسبة-التوطين-في-مهن-المشتريات",
+      "audit": {
+        "status": "needs_review",
+        "checked": null,
+        "basis": "مدخل تحليلي من قرارات منشورة",
+        "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
+      }
     },
     {
       "id": "project",
@@ -82,7 +106,14 @@
         "بناء خطة استقطاب قبل 14 فبراير 2027"
       ],
       "example": "مثال حسابي فقط: 10 وظائف مستهدفة × 70% = 7 وظائف سعودية مبدئياً؛ تحقق من حدود التطبيق الفعلية.",
-      "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لتوطين-مهن-إدارة-المشاريع"
+      "source": "https://www.hrsd.gov.sa/media-center/news/رفع-نسب-توطين-مهن-إدارة-المشاريع-0",
+      "source2": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لتوطين-مهن-إدارة-المشاريع",
+      "audit": {
+        "status": "reviewed",
+        "checked": "2026-11-03",
+        "basis": "إعلان الوزارة 16 أغسطس 2026 عن 70% من فبراير 2027",
+        "limits": "رموز المهن موثقة من دليل 2023؛ تحقق من الجدول المعتمد في التحديث الأحدث"
+      }
     },
     {
       "id": "marketing",
@@ -111,7 +142,13 @@
       ],
       "example": "مثال: 5 عاملين مستهدفين × 60% = 3 سعوديين، شريطة استيفاء شروط الاحتساب.",
       "source": "https://www.hrsd.gov.sa/media-center/news/التوطين-في-مهن-التسويق-والمبيعات",
-      "source2": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الاجرائي-لتوطين-مهن-التسويق"
+      "source2": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الاجرائي-لتوطين-مهن-التسويق",
+      "audit": {
+        "status": "needs_review",
+        "checked": null,
+        "basis": "مدخل تحليلي من قرارات منشورة",
+        "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
+      }
     },
     {
       "id": "sales",
@@ -139,7 +176,13 @@
       ],
       "example": "مثال: 10 موظفين في المهن المشمولة، 60% تعني 6 سعوديين مبدئياً.",
       "source": "https://www.hrsd.gov.sa/media-center/news/التوطين-في-مهن-التسويق-والمبيعات",
-      "source2": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لتوطين-مهن-المبيعات"
+      "source2": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لتوطين-مهن-المبيعات",
+      "audit": {
+        "status": "needs_review",
+        "checked": null,
+        "basis": "مدخل تحليلي من قرارات منشورة",
+        "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
+      }
     },
     {
       "id": "engineers",
@@ -166,7 +209,13 @@
         "التأكد من أجر السعودي المسجل"
       ],
       "example": "مثال: 10 مهندسين مستهدفين × 30% = 3 سعوديين مستوفين لشروط الاعتماد والأجر.",
-      "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-المهن-الهندسية"
+      "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-المهن-الهندسية",
+      "audit": {
+        "status": "needs_review",
+        "checked": null,
+        "basis": "مدخل تحليلي من قرارات منشورة",
+        "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
+      }
     },
     {
       "id": "techeng",
@@ -189,7 +238,13 @@
         "مطابقة قائمة المهن في دليل 2025"
       ],
       "example": "مثال: 10 فنيين مستهدفين × 30% = 3 سعوديين مستوفين للضوابط.",
-      "source": "https://www.hrsd.gov.sa/media-center/news/بدء-تطبيق-قرار-رفع-نسب-التوطين"
+      "source": "https://www.hrsd.gov.sa/media-center/news/بدء-تطبيق-قرار-رفع-نسب-التوطين",
+      "audit": {
+        "status": "needs_review",
+        "checked": null,
+        "basis": "مدخل تحليلي من قرارات منشورة",
+        "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
+      }
     },
     {
       "id": "accounting",
@@ -241,8 +296,15 @@
         }
       ],
       "example": "منشأة فيها 10 محاسبين مستهدفين بتاريخ نوفمبر 2026: 50% تعادل 5 سعوديين مبدئياً؛ لا تستخدم 40% القديمة أو 70% المستقبلية.",
-      "source": "https://www.hrsd.gov.sa/media-center/news/توطين-44-مهنة-محاسبية-جديدة-في-القطاع-الخاص",
-      "wage": "6,000 ريال للبكالوريوس / 4,500 ريال للدبلوم"
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajryy-lqrar-twtyn-mhn-almhasbyt.pdf",
+      "wage": "6,000 ريال للبكالوريوس / 4,500 ريال للدبلوم",
+      "source2": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-المهن-المحاسبية",
+      "audit": {
+        "status": "reviewed",
+        "checked": "2026-11-03",
+        "basis": "دليل المحاسبة المنشور بموقع الوزارة وجدول المراحل 2025–2029",
+        "limits": "تمييز شرط 3–4 محاسبين عن 5 فأكثر"
+      }
     },
     {
       "id": "dentistry",
@@ -277,7 +339,13 @@
         }
       ],
       "example": "مثال: 20 طبيب أسنان مستهدفين × 55% = 11 سعودياً مستوفياً للاشتراطات.",
-      "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-مهنة-طب-الأسنان"
+      "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-مهنة-طب-الأسنان",
+      "audit": {
+        "status": "needs_review",
+        "checked": null,
+        "basis": "مدخل تحليلي من قرارات منشورة",
+        "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
+      }
     },
     {
       "id": "pharmacy",
@@ -317,7 +385,13 @@
         }
       ],
       "example": "مثال: 20 صيدلياً في مستشفى × 65% = 13 سعودياً؛ في صيدلية مجتمع يختلف المعدل إلى 35%.",
-      "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-مهنة-الصيدلة"
+      "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-مهنة-الصيدلة",
+      "audit": {
+        "status": "needs_review",
+        "checked": null,
+        "basis": "مدخل تحليلي من قرارات منشورة",
+        "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
+      }
     },
     {
       "id": "labs",
@@ -351,7 +425,13 @@
           "rate": "70%",
           "label": "جميع المنشآت المشمولة في جميع المناطق"
         }
-      ]
+      ],
+      "audit": {
+        "status": "needs_review",
+        "checked": null,
+        "basis": "مدخل تحليلي من قرارات منشورة",
+        "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
+      }
     },
     {
       "id": "radiology",
@@ -385,7 +465,13 @@
           "rate": "65%",
           "label": "جميع المنشآت المشمولة في جميع المناطق"
         }
-      ]
+      ],
+      "audit": {
+        "status": "needs_review",
+        "checked": null,
+        "basis": "مدخل تحليلي من قرارات منشورة",
+        "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
+      }
     },
     {
       "id": "physio",
@@ -419,7 +505,13 @@
           "rate": "80%",
           "label": "جميع المنشآت المشمولة في جميع المناطق"
         }
-      ]
+      ],
+      "audit": {
+        "status": "needs_review",
+        "checked": null,
+        "basis": "مدخل تحليلي من قرارات منشورة",
+        "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
+      }
     },
     {
       "id": "nutrition",
@@ -453,7 +545,13 @@
           "rate": "80%",
           "label": "جميع المنشآت المشمولة في جميع المناطق"
         }
-      ]
+      ],
+      "audit": {
+        "status": "needs_review",
+        "checked": null,
+        "basis": "مدخل تحليلي من قرارات منشورة",
+        "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
+      }
     },
     {
       "id": "sports",
@@ -478,7 +576,13 @@
         "التحقق من تراخيص النشاط والمهنة"
       ],
       "example": "مثال: 20 عاملاً مستهدفاً × 15% = 3 سعوديين مبدئياً.",
-      "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لتوطين-المهن-في-المراكز-والصالات"
+      "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لتوطين-المهن-في-المراكز-والصالات",
+      "audit": {
+        "status": "needs_review",
+        "checked": null,
+        "basis": "مدخل تحليلي من قرارات منشورة",
+        "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
+      }
     },
     {
       "id": "tourism",
@@ -519,7 +623,13 @@
         }
       ],
       "example": "مو صحيح نحسب 70% على جميع موظفي فندق؛ يجب أولاً تحديد مجموعة المهنة في الجداول.",
-      "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الاجرائي-لقرار-توطين-القطاع-السياحي"
+      "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الاجرائي-لقرار-توطين-القطاع-السياحي",
+      "audit": {
+        "status": "needs_review",
+        "checked": null,
+        "basis": "مدخل تحليلي من قرارات منشورة",
+        "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
+      }
     },
     {
       "id": "housing",
@@ -542,7 +652,13 @@
         "مراجعة أجر مشرف المسكن"
       ],
       "example": "إذا كانت المنشأة تدير سكناً جماعياً مشمولاً ومهنة مشرف مسكن قائمة، فالمهنة مستهدفة 100%.",
-      "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-مهنة-مشرف-مسكن"
+      "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-مهنة-مشرف-مسكن",
+      "audit": {
+        "status": "needs_review",
+        "checked": null,
+        "basis": "مدخل تحليلي من قرارات منشورة",
+        "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
+      }
     },
     {
       "id": "beauty",
@@ -568,7 +684,13 @@
         "تجنب ازدواج أو إغفال قرار الإدارة المساندة العام"
       ],
       "example": "إذا كان موظف استقبال يعمل في مركز مشمول، فيجب مراجعة انطباق قرار هذا النشاط والقرارات الأخرى.",
-      "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لتوطين-المهن-الإدارية-والمساندة"
+      "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لتوطين-المهن-الإدارية-والمساندة",
+      "audit": {
+        "status": "needs_review",
+        "checked": null,
+        "basis": "مدخل تحليلي من قرارات منشورة",
+        "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
+      }
     },
     {
       "id": "ict",
@@ -593,7 +715,13 @@
         "عدم جمع المجموعات في نسبة واحدة دون دليل"
       ],
       "example": "مثال: مجموعة برمجة مشمولة فيها 20 شخصاً × 25% = 5 سعوديين، قبل الشروط الخاصة.",
-      "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-مهن-الاتصالات-وتقنية"
+      "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-مهن-الاتصالات-وتقنية",
+      "audit": {
+        "status": "needs_review",
+        "checked": null,
+        "basis": "مدخل تحليلي من قرارات منشورة",
+        "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
+      }
     },
     {
       "id": "legal",
@@ -631,7 +759,13 @@
       ],
       "example": "مثال: 10 مختصين في المهن القانونية المشمولة × 70% = 7 سعوديين وفق المثال الحسابي.",
       "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الاجرائي-لقرار-توطين-المهن-القانونية",
-      "source2": "https://www.hrsd.gov.sa/en/node/1171692"
+      "source2": "https://www.hrsd.gov.sa/en/node/1171692",
+      "audit": {
+        "status": "needs_review",
+        "checked": null,
+        "basis": "مدخل تحليلي من قرارات منشورة",
+        "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
+      }
     },
     {
       "id": "consulting",
@@ -668,7 +802,13 @@
         }
       ],
       "example": "مثال: 10 استشاريين مشمولين × 40% = 4 سعوديين، إلا إذا انطبق قرار أحدث بنسبة أعلى.",
-      "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/ministerial-decisions/1170122"
+      "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/ministerial-decisions/1170122",
+      "audit": {
+        "status": "needs_review",
+        "checked": null,
+        "basis": "مدخل تحليلي من قرارات منشورة",
+        "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
+      }
     },
     {
       "id": "service",
@@ -692,7 +832,13 @@
         "التأكد من استثناءات اللغة المحددة بالدليل"
       ],
       "example": "مركز تواصل عربي/إنجليزي ضمن النطاق: جميع المهن المشمولة يجب أن تكون سعودية.",
-      "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-مهن-خدمة-العملاء"
+      "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-مهن-خدمة-العملاء",
+      "audit": {
+        "status": "needs_review",
+        "checked": null,
+        "basis": "مدخل تحليلي من قرارات منشورة",
+        "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
+      }
     },
     {
       "id": "realestate",
@@ -717,7 +863,13 @@
         "تطبيق الجداول المهنية حسب النشاط"
       ],
       "example": "وسيط عقاري ومساعد إداري في مكتب عقاري لا يلزم أن يخضعا لآلية احتساب واحدة؛ راجع جدول كل مهنة.",
-      "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لتوطين-الأنشطة-والمهن-العقارية"
+      "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لتوطين-الأنشطة-والمهن-العقارية",
+      "audit": {
+        "status": "needs_review",
+        "checked": null,
+        "basis": "مدخل تحليلي من قرارات منشورة",
+        "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
+      }
     },
     {
       "id": "education",
@@ -739,7 +891,13 @@
         "مطابقة المدرسين بحسب التخصص والمسمى"
       ],
       "example": "يُحدَّد التطبيق في المدرسة عبر جداول الدليل بحسب الوظيفة والتخصص قبل حساب النسبة.",
-      "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-قطاع-التعليم-العام"
+      "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-قطاع-التعليم-العام",
+      "audit": {
+        "status": "needs_review",
+        "checked": null,
+        "basis": "مدخل تحليلي من قرارات منشورة",
+        "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
+      }
     },
     {
       "id": "aviation",
@@ -778,7 +936,13 @@
       ],
       "example": "لا يمكن تطبيق 70% على جميع الطاقم؛ النسبة تختلف بين المراقبين والطيارين والمضيفين.",
       "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-توطين-مهن-الطيران-المرخصة",
-      "source2": "https://www.hrsd.gov.sa/media-center/news/030320248"
+      "source2": "https://www.hrsd.gov.sa/media-center/news/030320248",
+      "audit": {
+        "status": "needs_review",
+        "checked": null,
+        "basis": "مدخل تحليلي من قرارات منشورة",
+        "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
+      }
     },
     {
       "id": "optics",
@@ -802,7 +966,13 @@
         "مراجعة أجر الاحتساب"
       ],
       "example": "مثال: 4 فنيين مستهدفين × 50% = 2 سعوديين معتمدين ومؤهلين.",
-      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajrayy-lqrar-twtyn-mhn-albsryat.pdf"
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajrayy-lqrar-twtyn-mhn-albsryat.pdf",
+      "audit": {
+        "status": "needs_review",
+        "checked": null,
+        "basis": "مدخل تحليلي من قرارات منشورة",
+        "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
+      }
     },
     {
       "id": "postal",
@@ -845,7 +1015,13 @@
       ],
       "example": "المدير التنفيذي ووظائف مستويات الإدارة ليست مجموعة واحدة؛ لكل مستوى نسبة محددة في الدليل.",
       "source": "https://www.hrsd.gov.sa/media-center/news/1129031",
-      "source2": "https://www.hrsd.gov.sa/sites/default/files/2022-06/20112022.pdf"
+      "source2": "https://www.hrsd.gov.sa/sites/default/files/2022-06/20112022.pdf",
+      "audit": {
+        "status": "needs_review",
+        "checked": null,
+        "basis": "مدخل تحليلي من قرارات منشورة",
+        "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
+      }
     },
     {
       "id": "retail7",
@@ -871,7 +1047,13 @@
         "فحص الاستثناءات وآلية الاحتساب في الدليل"
       ],
       "example": "مثال: منفذ بيع مشمول فيه 10 عاملين خاضعين للقرار، 70% تساوي 7 سعوديين قبل الاستثناءات.",
-      "source": "https://www.hrsd.gov.sa/media-center/news/1129031"
+      "source": "https://www.hrsd.gov.sa/media-center/news/1129031",
+      "audit": {
+        "status": "needs_review",
+        "checked": null,
+        "basis": "مدخل تحليلي من قرارات منشورة",
+        "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
+      }
     },
     {
       "id": "inspection",
@@ -897,7 +1079,13 @@
         "التأكد من المتطلبات الفنية والمهارية"
       ],
       "example": "لا تعتمد نسبة 100% قبل التحقق من المرحلة وتاريخ نفاذها على المهنة والمنفذ.",
-      "source": "https://www.hrsd.gov.sa/media-center/news/1129031"
+      "source": "https://www.hrsd.gov.sa/media-center/news/1129031",
+      "audit": {
+        "status": "needs_review",
+        "checked": null,
+        "basis": "مدخل تحليلي من قرارات منشورة",
+        "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
+      }
     },
     {
       "id": "madinah",
@@ -921,7 +1109,14 @@
         "مراجعة الاستثناءات قبل احتساب أي نسبة"
       ],
       "example": "لا تطبق نسبة عامة على كل مطعم في المملكة؛ القرار مرتبط بالمدينة المنورة ويختلف بحسب النشاط.",
-      "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-التوطين-في-منطقة-المدينة"
+      "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-التوطين-في-منطقة-المدينة",
+      "audit": {
+        "status": "needs_review",
+        "checked": null,
+        "basis": "مدخل تحليلي من قرارات منشورة",
+        "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
+      }
     }
-  ]
+  ],
+  "updated": "2026-11-03"
 }
