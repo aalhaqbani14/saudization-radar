@@ -1,0 +1,34 @@
+
+/* Rate chronology: issued vs active vs raised vs expanded vs separate scope */
+.rate-timeline{background:#f9fcfd;border:1px solid #d6e9e6;border-radius:16px;padding:16px 17px;line-height:1.65;margin:12px 0}
+.rate-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-bottom:12px;border-bottom:1px solid #dfeae9}
+.rate-head strong{display:block;color:#174352;font-size:13px}.rate-head small{display:block;font-size:10px;color:#788f9b;margin-top:4px}
+.rate-head>span{color:#65838a;font-size:10px;background:#e9f5f2;padding:7px 10px;border-radius:9px}
+.rate-stages{padding-right:4px;margin-top:12px}.rate-stage{display:grid;grid-template-columns:17px minmax(0,1fr);gap:9px;position:relative;padding:0 0 18px}
+.rate-stage:before{content:"";position:absolute;width:2px;background:#d3e6e4;top:13px;bottom:0;right:7px}
+.rate-stage:last-child{padding-bottom:0}.rate-stage:last-child:before{display:none}
+.rate-stage-dot{z-index:1;margin-top:8px;width:15px;height:15px;border:3px solid #eef8f4;background:#0d8a78;box-shadow:0 0 0 1px #80c9b8;border-radius:50%}
+.rate-stage.future .rate-stage-dot{background:#cda257;box-shadow:0 0 0 1px #e2c181}
+.rate-stage.pending .rate-stage-dot{background:#b5c1c6;box-shadow:0 0 0 1px #cbd6d8}
+.rate-stage.special .rate-stage-dot,.rate-stage.expanded .rate-stage-dot{background:#5a8cac;box-shadow:0 0 0 1px #a1c8dc}
+.rate-stage-content{min-width:0;padding:0 0 3px}.rate-stage-top{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.rate-stage-date{font-size:11px;color:#355d6b;font-weight:800}.rate-stage-rate{font-weight:900;background:#e3f5ed;color:#0b776b;border-radius:8px;padding:5px 9px;font-size:15px;font-variant-numeric:tabular-nums}
+.rate-stage.future .rate-stage-rate{background:#fff4de;color:#956819}.rate-stage.pending .rate-stage-rate{background:#edf1f3;color:#617680}
+.rate-stage-kind{font-size:9px;border:1px solid #dce8e9;border-radius:8px;padding:5px 8px;background:#fff;color:#6c8392}
+.rate-stage-label{font-size:12px;font-weight:800;color:#193e50;margin-top:5px}
+.rate-stage-scope,.rate-stage-note{font-size:10px;line-height:1.9;margin-top:3px;color:#657e89}
+.rate-stage-note{color:#9a712e}.rate-stage-source{display:inline-block;font-size:10px;color:#0c7a70;font-weight:800;margin-top:4px}
+.rate-disclaimer{font-size:10px;color:#82939f;line-height:1.8;margin:12px 0 0}
+.rate-compact{border:1px solid #dfebea;border-radius:12px;background:linear-gradient(135deg,#f8fcfb,#f3f9f8);padding:11px 12px;margin:9px 0}
+.rate-compact-title{font-size:10px;color:#476d75;font-weight:bold;margin-bottom:9px;display:flex;justify-content:space-between;gap:9px}
+.rate-compact-title span{font-size:9px;color:#789ba0;font-weight:normal}
+.rate-compact-track{display:flex;gap:6px;align-items:stretch;flex-wrap:wrap}
+.rate-compact-stop{display:flex;flex-direction:column;align-items:flex-start;gap:3px;min-width:85px;flex:1;position:relative;padding:8px;background:#fff;border:1px solid #e0eae8;border-radius:9px}
+.rate-compact-stop b{font-size:13px;color:#0d766b;line-height:1.5}.rate-compact-stop.future b{color:#9b6a24}
+.rate-compact-stop small{font-size:9px;color:#607984;line-height:1.5}.rate-compact-stop em{font-size:9px;color:#88a1a8;font-style:normal}
+.rate-compact-stop.special{border-color:#c6dce9}.rate-compact-stop.pending{border-style:dashed}
+.rate-intro{margin:7px 0 12px;font-size:11px;line-height:1.9;color:#637d88}
+.rate-caution{font-size:10px;color:#9c6b2f;line-height:1.8;margin-top:6px}
+.timeline-phase-label{display:inline-block;background:#ebf4f0;padding:5px 9px;border-radius:8px;color:#0c7c71;font-size:11px;font-weight:bold}
+@media(max-width:650px){.rate-stage-top{gap:5px}.rate-compact-stop{min-width:100px}.rate-head{align-items:flex-start}}
+@media print{.rate-timeline{break-inside:avoid}}
