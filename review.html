@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0c2030">
+<meta name="description" content="غرفة مراجعة إشارات توطين المهن وحالة رصد المصادر الرسمية">
+<title>غرفة مراجعة الإشارات | Saudization Radar</title>
+<style>
+:root{font-family:Tahoma,Arial,sans-serif;color-scheme:dark;--bg:#071a27;--panel:#102e3c;--line:#345365;--mint:#7ce5cb;--text:#f1fcfd;--muted:#a4c1ca}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 80% -20%,#20596a 0,transparent 54%),var(--bg);color:var(--text);line-height:1.9}a{color:var(--mint)}.wrap{max-width:1160px;margin:auto;padding:0 22px}
+header{padding:18px 0;border-bottom:1px solid var(--line);background:#0a2330e8}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.brand{color:white;text-decoration:none;font-weight:bold;font-size:16px}.nav{display:flex;gap:9px;flex-wrap:wrap}.nav a{font-size:12px;border:1px solid var(--line);padding:6px 12px;border-radius:8px;text-decoration:none}
+.hero{padding:48px 0 22px}.eyebrow{color:var(--mint);letter-spacing:1.5px;font-size:11px;font-weight:bold}h1{font-size:clamp(26px,4vw,42px);line-height:1.4;margin:12px 0}h2{font-size:19px;margin:0 0 8px}p{color:var(--muted);margin:8px 0}
+.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.metric{background:#123344cc;border:1px solid var(--line);border-radius:14px;padding:16px}.metric strong{display:block;font-size:26px;line-height:1.4;font-variant-numeric:tabular-nums}.metric span{font-size:11px;color:var(--muted)}
+.notice{margin:20px 0 25px;padding:15px 18px;border:1px solid #92713f;border-radius:10px;background:#42332280;color:#f7dba8;font-size:13px}
+.panel{background:#0e2938ba;border:1px solid var(--line);border-radius:18px;padding:23px;margin:20px 0}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}.toolbar input,.toolbar select{font:inherit;border:1px solid #436476;background:#112f3e;color:#fff;border-radius:10px;padding:10px;min-height:42px}.toolbar input{flex:1;min-width:220px}
+.cards{display:grid;gap:12px}.event{background:#112e3e;border:1px solid #345467;padding:18px;border-radius:14px}.event-head{display:flex;align-items:center;justify-content:space-between;gap:9px;flex-wrap:wrap}.chip{font-size:11px;background:#244c55;padding:4px 11px;border-radius:999px;color:#bffbe4}.chip.high{background:#5b4430;color:#ffdda6}.chip.medium{background:#30496b;color:#d1e7ff}.event h3{font-size:16px;margin:9px 0 5px}.event p{font-size:13px;overflow-wrap:anywhere}.fine{font-size:11px;color:var(--muted)}.btn{display:inline-block;margin-top:6px;border:1px solid #62bca9;padding:7px 12px;border-radius:9px;text-decoration:none;font-size:12px}
+.sources{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.source{border:1px solid #335468;padding:12px;border-radius:11px;background:#123242}.source strong{display:block;font-size:13px}.source small{color:var(--muted)}.dot{display:inline-block;width:8px;height:8px;background:#6be5bc;border-radius:50%;margin-left:7px}.dot.error{background:#ffa567}footer{margin-top:44px;padding:22px;text-align:center;border-top:1px solid var(--line);font-size:11px;color:#99b9c2}
+@media(max-width:720px){.metrics{grid-template-columns:repeat(2,1fr)}.sources{grid-template-columns:1fr}.panel{padding:15px}}
+</style>
+</head>
+<body>
+<header><div class="wrap top"><a class="brand" href="index.html">◈ SAUDIZATION RADAR</a><nav class="nav"><a href="index.html">الرئيسية</a><a href="intelligence.html">غرفة التحليل</a><a href="sources.html">سجل المصادر</a><a href="review.html" aria-current="page">غرفة المراجعة</a></nav></div></header>
+<main class="wrap">
+<section class="hero"><div class="eyebrow">MONITORING OPERATIONS · EVIDENCE TRIAGE</div><h1>غرفة مراجعة إشارات التوطين</h1><p>نافذة تشغيلية لعرض إشارات التغيّر في الصفحات الرسمية، وفصل قوة الإشارة عن مستوى توثيق القرار. لا تعطي هذه الغرفة موافقة قانونية تلقائية على أي قرار.</p></section>
+<section class="metrics" aria-label="مؤشرات الرصد">
+<div class="metric"><strong id="m-source">—</strong><span>مصادر ضمن جدول الرصد</span></div>
+<div class="metric"><strong id="m-ok">—</strong><span>مصادر فُحصت بنجاح آخر مرة</span></div>
+<div class="metric"><strong id="m-error">—</strong><span>مصادر تعذّر فحصها</span></div>
+<div class="metric"><strong id="m-signal">—</strong><span>إشارات تحتاج مراجعة</span></div>
+</section>
+<div class="notice">درجة أولوية الإشارة ليست دليلاً على صدور قرار. جميع العناصر أدناه «غير مؤكدة» حتى تُراجع صفحة القرار والدليل الإجرائي الساري. عدم وجود إشارات لا يعني عدم صدور قرارات جديدة.</div>
+<section class="panel"><h2>إشارات التغيّر المكتشفة</h2><p>تظهر الإشارات المستخرجة من النصوص المضافة في الصفحات المراقبة، مع رابط المصدر وتاريخ الرصد.</p>
+<div class="toolbar"><input id="search" type="search" aria-label="البحث في الإشارات" placeholder="ابحث في مصدر أو مصطلح…"><select id="priority" aria-label="تصفية الأولوية"><option value="all">كل الأولويات</option><option value="high">عالية</option><option value="medium">متوسطة</option><option value="low">منخفضة</option></select></div>
+<div id="items" class="cards" aria-live="polite"><p>جاري تحميل سجل الإشارات…</p></div></section>
+<section class="panel"><h2>صحة فحص المصادر</h2><p id="checked-at">آخر فحص: جارٍ التحميل…</p><div id="health-note" class="fine">بعض بيانات حالة الفحص لا تتوفر إلا بعد تشغيل النظام التلقائي.</div><div id="sources" class="sources" aria-live="polite"></div></section>
+</main><footer>Saudization Radar · مبادرة مستقلة · إعداد عبدالعزيز عبدالله الحقباني</footer>
+<script>
+(()=>{'use strict';
+const $=id=>document.getElementById(id),esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','"':'&quot;',"'":'&#39;'}[c])),norm=x=>String(x??'').toLowerCase();
+const safe=x=>{try{let u=new URL(x);return u.protocol==='https:'&&/(^|\.)hrsd\.gov\.sa$/.test(u.hostname)?u.href:null}catch{return null}};
+const time=v=>{try{return v?new Intl.DateTimeFormat('ar-SA-u-ca-gregory-nu-latn',{timeZone:'Asia/Riyadh',dateStyle:'medium',timeStyle:'short'}).format(new Date(v)):'غير متوفر'}catch{return 'غير متوفر'}};
+let alerts=[];
+function draw(){let q=norm($('search').value.trim()),type=$('priority').value;let rows=alerts.filter(a=>(type==='all'||(type==='high'&&a.review_score>=4)||(type==='medium'&&a.review_score===3)||(type==='low'&&a.review_score<3))&&norm([a.source,a.summary,a.title].join(' ')).includes(q));$('items').innerHTML=rows.length?rows.map(a=>{
+const u=safe(a.url),score=Number(a.review_score||0),prio=score>=4?'عالية':score===3?'متوسطة':'منخفضة';return '<article class="event"><div class="event-head"><span class="chip '+(score>=4?'high':score===3?'medium':'')+'">أولوية '+prio+' للمراجعة</span><span class="fine">'+esc(time(a.detected_at))+'</span></div><h3>'+esc(a.title||'تغيير محتمل')+'</h3><div class="fine">المصدر: '+esc(a.source||'صفحة عامة')+' · حالة التحقق: غير مؤكد</div><p>'+esc(a.summary||'لم يتوفر مقتطف')+'</p><div class="fine">مؤشرات: '+esc((a.signal_reasons||[]).join(' · ')||'فحص آلي')+'</div>'+(u?'<a class="btn" href="'+esc(u)+'" target="_blank" rel="noopener noreferrer">فتح المصدر الرسمي ↗</a>':'')+'</article>'}).join(''):'<p>ما فيه إشارات مطابقة حالياً. هذا لا يثبت عدم صدور قرارات جديدة.</p>'}
+Promise.allSettled([fetch('data/alerts.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('alerts');return r.json()}),fetch('data/health.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('health');return r.json()})]).then(([a,h])=>{
+if(a.status==='fulfilled'){alerts=Array.isArray(a.value.alerts)?a.value.alerts:[];$('m-signal').textContent=alerts.length;draw()}else{$('items').textContent='تعذّر تحميل الإشارات؛ أعد تحديث الصفحة.'}
+if(h.status==='fulfilled'){
+const v=h.value;$('m-source').textContent=v.total_sources??'—';$('m-ok').textContent=v.successful_sources??'—';$('m-error').textContent=v.failed_sources??'—';$('checked-at').textContent='آخر فحص بتوقيت الرياض: '+time(v.checked_at);$('health-note').textContent=v.coverage_notice||'مؤشرات تشغيلية فقط';$('sources').innerHTML=(v.sources||[]).map(s=>'<div class="source"><strong><i class="dot '+(s.status==='error'?'error':'')+'"></i>'+esc(s.name)+'</strong><small>'+(s.status==='error'?'تعذّر الفحص ('+esc(s.error_type||'خطأ')+')':s.first_baseline?'إنشاء خط أساس دون تنبيه':s.changed?'رُصد تغيّر في نص الصفحة':'لم يُرصد تغيّر')+'</small></div>').join('')
+}else{$('checked-at').textContent='لا توجد بيانات منشورة عن آخر تشغيل حتى الآن.';$('sources').textContent='ستظهر نتائج المصادر بعد الفحص الآلي القادم.'}
+});$('search').addEventListener('input',draw);$('priority').addEventListener('change',draw);
+})();
+</script></body></html>
