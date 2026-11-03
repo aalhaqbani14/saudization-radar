@@ -1,5 +1,5 @@
 {
-  "version": "2026.11.03.business-focus",
+  "version": "2026.11.03.timeline-v2",
   "reviewed": "2026-11-03",
   "authority": "وزارة الموارد البشرية والتنمية الاجتماعية",
   "editorialNotice": "مرجع مختار للمهن الإدارية والتشغيلية والتجارية والمهنية. أزيلت القطاعات الطبية والرياضية والسياحية بطلب صاحب المبادرة. ليس حصراً نظامياً لجميع قرارات التوطين، وتبقى الأدلة الرسمية مصدر الحسم.",
@@ -48,7 +48,41 @@
         "checked": "2026-11-03",
         "basis": "الدليل الإجرائي 2026، جداول 1–3",
         "limits": "تفاوت تواريخ التطبيق حسب الرمز المهني"
-      }
+      },
+      "history": [
+        {
+          "date": "2022-05-08",
+          "rate": "100%",
+          "label": "بدء توطين مجموعات مهن إدارية مساندة محددة",
+          "kind": "original",
+          "source": "https://prod.hrsd.gov.sa/ur/node/1104642",
+          "scope": "السكرتارية والترجمة وإدخال البيانات وأمناء المخزون",
+          "note": "قرار سابق أضيق نطاقاً",
+          "verified": true
+        },
+        {
+          "date": "2026-04-05",
+          "rate": "100%",
+          "label": "تحديث وتوسيع المهن المستهدفة — جدول (2)",
+          "kind": "expanded",
+          "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+          "scope": "المهن في جدول (2)",
+          "note": "توسيع نطاق المهن وليس زيادة النسبة",
+          "verified": true
+        },
+        {
+          "date": "2026-10-04",
+          "rate": "100%",
+          "label": "بدء تطبيق المهن المؤجلة بعد مهلة الستة أشهر — جدول (3)",
+          "kind": "expanded",
+          "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+          "scope": "المهن في جدول (3)",
+          "note": "لكل رمز مهني تاريخ تطبيق محدد",
+          "verified": true
+        }
+      ],
+      "issueDate": "2026-04-05",
+      "historyStatus": "verified_core"
     },
     {
       "id": "procurement",
@@ -82,7 +116,31 @@
         "checked": "2026-11-03",
         "basis": "خبر الوزارة عن بدء تنفيذ القرار 31 مايو 2026 · 70% على 12 مهنة",
         "limits": "يحتاج تحقق من الاحتساب والاستثناءات والرموز في الدليل الجاري"
-      }
+      },
+      "history": [
+        {
+          "date": "2023-12-24",
+          "rate": "50%",
+          "label": "بدء تطبيق التوطين السابق لمهن المشتريات",
+          "kind": "original",
+          "source": "https://www.hrsd.gov.sa/media-center/news/241220231",
+          "scope": "المهن المشمولة بالقرار السابق",
+          "note": "القرار الأحدث قد يختلف في قائمة المهن والنطاق",
+          "verified": true
+        },
+        {
+          "date": "2026-05-31",
+          "rate": "70%",
+          "label": "رفع النسبة وتحديث قائمة المهن إلى 12 مهنة",
+          "kind": "raised",
+          "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لتوطين-مهن-المشتريات",
+          "scope": "المنشآت المشمولة التي لديها 3 عاملين فأكثر",
+          "note": "قرار لاحق لا مجرد زيادة ضمن خطة تلقائية",
+          "verified": true
+        }
+      ],
+      "issueDate": "2025-11-30",
+      "historyStatus": "verified_core"
     },
     {
       "id": "project",
@@ -113,7 +171,42 @@
         "checked": "2026-11-03",
         "basis": "إعلان الوزارة 16 أغسطس 2026 عن 70% من فبراير 2027",
         "limits": "رموز المهن موثقة من دليل 2023؛ تحقق من الجدول المعتمد في التحديث الأحدث"
-      }
+      },
+      "history": [
+        {
+          "date": "2023-12-24",
+          "rate": "35%",
+          "label": "تطبيق المرحلة الأولى من القرار السابق",
+          "kind": "original",
+          "source": "https://www.hrsd.gov.sa/media-center/news/241220231",
+          "scope": "مهن إدارة المشاريع في دليل 2023",
+          "note": "",
+          "verified": true
+        },
+        {
+          "date": null,
+          "dateLabel": "11/06/1446هـ",
+          "rate": "40%",
+          "label": "المرحلة الثانية من القرار السابق (موعد هجري في الدليل)",
+          "kind": "raised",
+          "source": "https://www.hrsd.gov.sa/sites/default/files/2023-04/الدليل الإجرائي لتوطين مهن إدارة المشاريع.pdf",
+          "scope": "مهن دليل 2023",
+          "note": "لم نعتمد مقابلاً ميلادياً في الفهرس قبل التحقق؛ راجع الدليل القديم",
+          "verified": false
+        },
+        {
+          "date": "2027-02-14",
+          "rate": "70%",
+          "label": "قرار جديد بنسبة أعلى وبقائمة مهن محددة",
+          "kind": "upcoming",
+          "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لتوطين-مهن-إدارة-المشاريع",
+          "scope": "المهن الثلاث في دليل 2026",
+          "note": "تاريخ التطبيق المستقبلي؛ لا تعامل 70% كنسبة سارية اليوم",
+          "verified": true
+        }
+      ],
+      "issueDate": "2026-08-13",
+      "historyStatus": "verified_core"
     },
     {
       "id": "marketing",
@@ -148,7 +241,31 @@
         "checked": null,
         "basis": "مدخل تحليلي من قرارات منشورة",
         "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
-      }
+      },
+      "history": [
+        {
+          "date": "2022-05-08",
+          "rate": "30%",
+          "label": "بدء سريان توطين المهن التسويقية بالقرار السابق",
+          "kind": "original",
+          "source": "https://prod.hrsd.gov.sa/ur/node/1104642",
+          "scope": "5 عاملين فأكثر وفق القرار القديم",
+          "note": "",
+          "verified": true
+        },
+        {
+          "date": "2026-04-19",
+          "rate": "60%",
+          "label": "رفع التوطين بموجب تحديث 2026",
+          "kind": "raised",
+          "source": "https://www.hrsd.gov.sa/media-center/news/التوطين-في-مهن-التسويق-والمبيعات",
+          "scope": "وفق دليل التسويق الجديد",
+          "note": "تختلف قائمة المهن وشرط العدد عن القرار القديم",
+          "verified": true
+        }
+      ],
+      "issueDate": "2026-01-19",
+      "historyStatus": "verified_core"
     },
     {
       "id": "sales",
@@ -182,7 +299,31 @@
         "checked": null,
         "basis": "مدخل تحليلي من قرارات منشورة",
         "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
-      }
+      },
+      "history": [
+        {
+          "date": "2023-12-24",
+          "rate": "15%",
+          "label": "بدء تطبيق التوطين في القرار السابق",
+          "kind": "original",
+          "source": "https://www.hrsd.gov.sa/media-center/news/241220231",
+          "scope": "5 عاملين فأكثر وفق القرار القديم",
+          "note": "",
+          "verified": true
+        },
+        {
+          "date": "2026-04-19",
+          "rate": "60%",
+          "label": "رفع نسبة التوطين بموجب قرار 2026",
+          "kind": "raised",
+          "source": "https://www.hrsd.gov.sa/media-center/news/التوطين-في-مهن-التسويق-والمبيعات",
+          "scope": "وفق دليل المبيعات الجديد",
+          "note": "تأكد من تغير قائمة المهن وحد العدد",
+          "verified": true
+        }
+      ],
+      "issueDate": "2026-01-19",
+      "historyStatus": "verified_core"
     },
     {
       "id": "engineers",
@@ -215,7 +356,31 @@
         "checked": null,
         "basis": "مدخل تحليلي من قرارات منشورة",
         "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
-      }
+      },
+      "history": [
+        {
+          "date": "2024-07-21",
+          "rate": "25%",
+          "label": "تطبيق رفع التوطين في المهن الهندسية",
+          "kind": "original",
+          "source": "https://www.hrsd.gov.sa/media-center/news/200720242",
+          "scope": "5 مهندسين فأكثر",
+          "note": "",
+          "verified": true
+        },
+        {
+          "date": "2026-06-30",
+          "rate": "30%",
+          "label": "تطبيق قرار رفع نسبة التوطين",
+          "kind": "raised",
+          "source": "https://www.hrsd.gov.sa/media-center/news/تطبيق-رفع-نسبة-التوطين-في-المهن-الهندسية",
+          "scope": "46 مهنة هندسية مستهدفة؛ 5 عاملين فأكثر",
+          "note": "يشترط الأجر والاعتماد المهني",
+          "verified": true
+        }
+      ],
+      "issueDate": "2025-12-31",
+      "historyStatus": "verified_core"
     },
     {
       "id": "techeng",
@@ -244,7 +409,31 @@
         "checked": null,
         "basis": "مدخل تحليلي من قرارات منشورة",
         "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
-      }
+      },
+      "history": [
+        {
+          "date": "2021-12-30",
+          "rate": "25%",
+          "label": "بدء تطبيق القرار الفني الهندسي السابق",
+          "kind": "original",
+          "source": "https://prod.hrsd.gov.sa/en/node/972498",
+          "scope": "مهن فنية هندسية وفق الجدول السابق",
+          "note": "",
+          "verified": true
+        },
+        {
+          "date": "2025-07-27",
+          "rate": "30%",
+          "label": "تطبيق رفع نسبة المهن الفنية الهندسية",
+          "kind": "raised",
+          "source": "https://www.hrsd.gov.sa/media-center/news/بدء-تطبيق-قرار-رفع-نسب-التوطين",
+          "scope": "5 عاملين فأكثر في المهن المستهدفة",
+          "note": "قرار منفصل عن المهندسين التخصصيين",
+          "verified": true
+        }
+      ],
+      "issueDate": "2025-01-26",
+      "historyStatus": "verified_core"
     },
     {
       "id": "accounting",
@@ -304,7 +493,61 @@
         "checked": "2026-11-03",
         "basis": "دليل المحاسبة المنشور بموقع الوزارة وجدول المراحل 2025–2029",
         "limits": "تمييز شرط 3–4 محاسبين عن 5 فأكثر"
-      }
+      },
+      "history": [
+        {
+          "date": "2025-10-27",
+          "rate": "40%",
+          "label": "المرحلة الأولى",
+          "kind": "original",
+          "source": "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajryy-lqrar-twtyn-mhn-almhasbyt.pdf",
+          "scope": "5 محاسبين فأكثر",
+          "note": "",
+          "verified": true
+        },
+        {
+          "date": "2026-10-27",
+          "rate": "50%",
+          "label": "المرحلة الثانية — النسبة السارية في نوفمبر 2026",
+          "kind": "raised",
+          "source": "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajryy-lqrar-twtyn-mhn-almhasbyt.pdf",
+          "scope": "5 محاسبين فأكثر",
+          "note": "",
+          "verified": true
+        },
+        {
+          "date": "2027-10-27",
+          "rate": "60%",
+          "label": "المرحلة الثالثة",
+          "kind": "upcoming",
+          "source": "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajryy-lqrar-twtyn-mhn-almhasbyt.pdf",
+          "scope": "5 محاسبين فأكثر",
+          "note": "",
+          "verified": true
+        },
+        {
+          "date": "2028-10-27",
+          "rate": "70%",
+          "label": "المرحلة الرابعة — المستهدف النهائي لهذا المسار",
+          "kind": "upcoming",
+          "source": "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajryy-lqrar-twtyn-mhn-almhasbyt.pdf",
+          "scope": "5 محاسبين فأكثر",
+          "note": "يستمر تطبيق هذه النسبة لهذه المجموعة في 2029",
+          "verified": true
+        },
+        {
+          "date": "2029-10-27",
+          "rate": "30%",
+          "label": "المرحلة الخامسة — بدء شمول مجموعة مختلفة",
+          "kind": "special",
+          "source": "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajryy-lqrar-twtyn-mhn-almhasbyt.pdf",
+          "scope": "3 أو 4 محاسبين فقط",
+          "note": "ليس تخفيضاً من 70% للفئة ذات 5 محاسبين فأكثر",
+          "verified": true
+        }
+      ],
+      "issueDate": "2025-01-26",
+      "historyStatus": "verified_core"
     },
     {
       "id": "housing",
@@ -333,7 +576,21 @@
         "checked": null,
         "basis": "مدخل تحليلي من قرارات منشورة",
         "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
-      }
+      },
+      "history": [
+        {
+          "date": "2026-02-01",
+          "rate": "100%",
+          "label": "بدء التطبيق المسجل في ملخص القرار",
+          "kind": "single",
+          "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-مهنة-مشرف-مسكن",
+          "scope": "بحسب دليل المهنة / النشاط",
+          "note": "لم يكتمل التحقق من جميع شروط الانطباق",
+          "verified": true
+        }
+      ],
+      "issueDate": null,
+      "historyStatus": "summary_needs_review"
     },
     {
       "id": "beauty",
@@ -365,7 +622,21 @@
         "checked": null,
         "basis": "مدخل تحليلي من قرارات منشورة",
         "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
-      }
+      },
+      "history": [
+        {
+          "date": "2026-05-11",
+          "rate": "100%",
+          "label": "بدء التطبيق المسجل في ملخص القرار",
+          "kind": "single",
+          "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لتوطين-المهن-الإدارية-والمساندة",
+          "scope": "بحسب دليل المهنة / النشاط",
+          "note": "لم يكتمل التحقق من جميع شروط الانطباق",
+          "verified": true
+        }
+      ],
+      "issueDate": null,
+      "historyStatus": "summary_needs_review"
     },
     {
       "id": "ict",
@@ -396,7 +667,21 @@
         "checked": null,
         "basis": "مدخل تحليلي من قرارات منشورة",
         "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
-      }
+      },
+      "history": [
+        {
+          "date": "2021-06-27",
+          "rate": "25% لكل مجموعة",
+          "label": "بدء التطبيق المسجل في ملخص القرار",
+          "kind": "single",
+          "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-مهن-الاتصالات-وتقنية",
+          "scope": "بحسب دليل المهنة / النشاط",
+          "note": "لم يكتمل التحقق من جميع شروط الانطباق",
+          "verified": true
+        }
+      ],
+      "issueDate": null,
+      "historyStatus": "summary_needs_review"
     },
     {
       "id": "legal",
@@ -440,7 +725,31 @@
         "checked": null,
         "basis": "مدخل تحليلي من قرارات منشورة",
         "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
-      }
+      },
+      "history": [
+        {
+          "date": "2021-12-30",
+          "rate": "50%",
+          "label": "بدء تطبيق المرحلة الأولى",
+          "kind": "original",
+          "source": "https://prod.hrsd.gov.sa/en/node/972498",
+          "scope": "مهن الاستشارات القانونية المستهدفة",
+          "note": "",
+          "verified": true
+        },
+        {
+          "date": "2022-12-17",
+          "rate": "70%",
+          "label": "المرحلة الثانية",
+          "kind": "raised",
+          "source": "https://www.hrsd.gov.sa/en/node/1171692",
+          "scope": "المهن القانونية المستهدفة",
+          "note": "إعلان الوزارة المنشور لاحقاً يؤكد دخول المرحلة الثانية",
+          "verified": true
+        }
+      ],
+      "issueDate": null,
+      "historyStatus": "verified_core"
     },
     {
       "id": "consulting",
@@ -483,7 +792,31 @@
         "checked": null,
         "basis": "مدخل تحليلي من قرارات منشورة",
         "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
-      }
+      },
+      "history": [
+        {
+          "date": "2023-04-06",
+          "rate": "35%",
+          "label": "المرحلة الأولى للاستشارات والأعمال",
+          "kind": "original",
+          "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/ministerial-decisions/1170122",
+          "scope": "المهن الاستشارية المستهدفة",
+          "note": "",
+          "verified": true
+        },
+        {
+          "date": "2024-03-24",
+          "rate": "40%",
+          "label": "المرحلة الثانية بحسب تاريخ القرار",
+          "kind": "raised",
+          "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/ministerial-decisions/1170122",
+          "scope": "المهن الاستشارية المستهدفة",
+          "note": "خبر بدء التطبيق نشر تاريخ 25 مارس 2024؛ هذا هو التاريخ الوارد في نص القرار",
+          "verified": true
+        }
+      ],
+      "issueDate": null,
+      "historyStatus": "verified_core"
     },
     {
       "id": "service",
@@ -513,7 +846,21 @@
         "checked": null,
         "basis": "مدخل تحليلي من قرارات منشورة",
         "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
-      }
+      },
+      "history": [
+        {
+          "date": "2022-12-17",
+          "rate": "100%",
+          "label": "بدء التطبيق المسجل في ملخص القرار",
+          "kind": "single",
+          "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-مهن-خدمة-العملاء",
+          "scope": "بحسب دليل المهنة / النشاط",
+          "note": "لم يكتمل التحقق من جميع شروط الانطباق",
+          "verified": true
+        }
+      ],
+      "issueDate": null,
+      "historyStatus": "summary_needs_review"
     },
     {
       "id": "realestate",
@@ -544,7 +891,21 @@
         "checked": null,
         "basis": "مدخل تحليلي من قرارات منشورة",
         "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
-      }
+      },
+      "history": [
+        {
+          "date": "2021-10-01",
+          "rate": "وفق المهنة والنشاط",
+          "label": "بدء التطبيق المسجل في ملخص القرار",
+          "kind": "single",
+          "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لتوطين-الأنشطة-والمهن-العقارية",
+          "scope": "بحسب دليل المهنة / النشاط",
+          "note": "لم يكتمل التحقق من جميع شروط الانطباق",
+          "verified": true
+        }
+      ],
+      "issueDate": null,
+      "historyStatus": "summary_needs_review"
     },
     {
       "id": "education",
@@ -572,7 +933,21 @@
         "checked": null,
         "basis": "مدخل تحليلي من قرارات منشورة",
         "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
-      }
+      },
+      "history": [
+        {
+          "date": "2023-08-13",
+          "rate": "نسب بحسب المهنة",
+          "label": "بدء التطبيق المسجل في ملخص القرار",
+          "kind": "single",
+          "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-قطاع-التعليم-العام",
+          "scope": "بحسب دليل المهنة / النشاط",
+          "note": "لم يكتمل التحقق من جميع شروط الانطباق",
+          "verified": true
+        }
+      ],
+      "issueDate": null,
+      "historyStatus": "summary_needs_review"
     },
     {
       "id": "aviation",
@@ -617,7 +992,31 @@
         "checked": null,
         "basis": "مدخل تحليلي من قرارات منشورة",
         "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
-      }
+      },
+      "history": [
+        {
+          "date": "2023-03-15",
+          "rate": "100% / 60% / 50%",
+          "label": "المرحلة الأولى بنسب مختلفة لكل مهنة",
+          "kind": "original",
+          "source": "https://www.hrsd.gov.sa/media-center/news/1129031",
+          "scope": "المراقب الجوي ومساعد الطيار 100%؛ طيار النقل الجوي 60%؛ المضيف 50%",
+          "note": "ليست نسبة واحدة على جميع المهن",
+          "verified": true
+        },
+        {
+          "date": "2024-03-04",
+          "rate": "100% / 70% / 60%",
+          "label": "المرحلة الثانية بحسب نوع المهنة",
+          "kind": "raised",
+          "source": "https://www.hrsd.gov.sa/media-center/news/1129031",
+          "scope": "تُرفع نسبة طيار النقل الجوي إلى 70% والمضيف إلى 60%",
+          "note": "مهن 100% تستمر حسب دليل الطيران",
+          "verified": true
+        }
+      ],
+      "issueDate": null,
+      "historyStatus": "verified_core"
     },
     {
       "id": "postal",
@@ -666,7 +1065,41 @@
         "checked": null,
         "basis": "مدخل تحليلي من قرارات منشورة",
         "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
-      }
+      },
+      "history": [
+        {
+          "date": "2022-12-17",
+          "rate": "توطين منافذ الخدمة",
+          "label": "original",
+          "kind": "https://www.hrsd.gov.sa/media-center/news/1129031",
+          "source": "أنشطة منافذ البريد ونقل الطرود",
+          "scope": "شروط ومتطلبات منفصلة عن نسب الإدارة",
+          "note": "",
+          "verified": true
+        },
+        {
+          "date": "2023-04-01",
+          "rate": "100% / 60%",
+          "label": "بدء شمول الرئيس التنفيذي والمستوى الأول من الإدارة",
+          "kind": "expanded",
+          "source": "https://www.hrsd.gov.sa/media-center/news/241220231",
+          "scope": "الرؤساء التنفيذيون 100%؛ الإدارة العليا مستوى أول 60%",
+          "note": "لا تُعامل كنسبة متدرجة لمجموعة واحدة",
+          "verified": true
+        },
+        {
+          "date": "2023-10-01",
+          "rate": "70%",
+          "label": "المستوى الثاني من الإدارة العليا — وفق الدليل",
+          "kind": "expanded",
+          "source": "https://www.hrsd.gov.sa/media-center/news/1129031",
+          "scope": "وظائف الإدارة العليا مستوى ثانٍ",
+          "note": "تاريخ المرحلة يحتاج تأكيداً إضافياً من نص الدليل",
+          "verified": true
+        }
+      ],
+      "issueDate": null,
+      "historyStatus": "verified_core"
     },
     {
       "id": "retail7",
@@ -698,7 +1131,21 @@
         "checked": null,
         "basis": "مدخل تحليلي من قرارات منشورة",
         "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
-      }
+      },
+      "history": [
+        {
+          "date": "2023-06-12",
+          "rate": "70%",
+          "label": "بدء تطبيق قرار منافذ البيع في سبعة أنشطة",
+          "kind": "original",
+          "source": "https://www.spa.gov.sa/w1919107",
+          "scope": "منافذ الأنشطة السبعة المحددة",
+          "note": "النسبة على العاملين المشمولين في المنافذ",
+          "verified": true
+        }
+      ],
+      "issueDate": null,
+      "historyStatus": "verified_core"
     },
     {
       "id": "inspection",
@@ -730,7 +1177,32 @@
         "checked": null,
         "basis": "مدخل تحليلي من قرارات منشورة",
         "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
-      }
+      },
+      "history": [
+        {
+          "date": "2023-06-12",
+          "rate": "50%",
+          "label": "بدء سريان المرحلة الأولى للفحص الفني الدوري",
+          "kind": "original",
+          "source": "https://www.spa.gov.sa/w1919107",
+          "scope": "منافذ الفحص الدوري للمركبات",
+          "note": "",
+          "verified": true
+        },
+        {
+          "date": null,
+          "dateLabel": "موعد المرحلة الثانية غير مثبت في المرجع المتاح",
+          "rate": "100%",
+          "label": "المرحلة الثانية المخطط لها",
+          "kind": "pending",
+          "scope": "منافذ الفحص الدوري",
+          "source": "https://www.hrsd.gov.sa/media-center/news/1129031",
+          "verified": false,
+          "note": "لا يُعرض تاريخ تنفيذ محدد حتى التحقق من دليل التطبيق"
+        }
+      ],
+      "issueDate": null,
+      "historyStatus": "verified_core"
     },
     {
       "id": "madinah",
@@ -760,9 +1232,24 @@
         "checked": null,
         "basis": "مدخل تحليلي من قرارات منشورة",
         "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
-      }
+      },
+      "history": [
+        {
+          "date": "2023-07-08",
+          "rate": "40% إلى 100% حسب النشاط",
+          "label": "بدء التطبيق المسجل في ملخص القرار",
+          "kind": "single",
+          "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-التوطين-في-منطقة-المدينة",
+          "scope": "بحسب دليل المهنة / النشاط",
+          "note": "لم يكتمل التحقق من جميع شروط الانطباق",
+          "verified": true
+        }
+      ],
+      "issueDate": null,
+      "historyStatus": "summary_needs_review"
     }
   ],
   "updated": "2026-11-03",
-  "reviewedCount": 4
+  "reviewedCount": 4,
+  "historyMethodology": "يظهر تاريخ إصدار القرار مستقلاً عن أول تاريخ تنفيذ. التاريخ يُعرض لكل مرحلة أو مسار مهني عند ثبوته من المصدر الرسمي، ولا يخلط بين الزيادة في النسبة وبين زيادة المهن المستهدفة. المراحل المختلفة حسب حجم المنشأة لا تجمع في نسبة واحدة."
 }
