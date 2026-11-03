@@ -68,3 +68,13 @@ html{scroll-behavior:smooth}body{background:#f1f6f8;font-family:"Segoe UI",Tahom
 .hero-scene{height:180px;width:220px;min-width:140px;max-width:29%;flex-shrink:1}
 .kpi strong,.metric strong,.intel-kpi strong{font-variant-numeric:tabular-nums}
 @media(max-width:750px){.intel-card{padding-top:98px!important}.intel-card-scene{height:87px}.intel-card-scene img{height:85px}.hero-scene{display:none!important}}
+
+.presentation-toggle{background:linear-gradient(120deg,#0d736e,#129588);border:1px solid #0c736d;border-radius:10px;padding:10px 15px;color:white;font-size:11px;font-weight:800;cursor:pointer;white-space:nowrap}
+.presentation-toggle:hover{filter:brightness(1.08)}
+.presentation-mode .sidebar,.presentation-mode .rail{display:none!important}
+.presentation-mode .layout,.presentation-mode .shell{display:block!important}
+.presentation-mode .main,.presentation-mode .workspace{width:100%;max-width:none}
+.presentation-mode .content{max-width:1660px}
+.presentation-mode .hero{padding-top:40px;padding-bottom:40px}
+.presentation-mode .presentation-toggle{background:#fff;color:#0a6c62;border-color:#a7d7d0}
+@media print{.presentation-toggle{display:none!important}}
