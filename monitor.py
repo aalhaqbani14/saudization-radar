@@ -7,12 +7,14 @@ from email.utils import formataddr
 import email_templates
 import detection
 from urllib.request import Request, urlopen
+from urllib.parse import urljoin, urlsplit, urlunsplit
 from html.parser import HTMLParser
 
 ROOT=pathlib.Path(__file__).resolve().parent
 DATA=ROOT/'data'/'alerts.json'
 STATE=ROOT/'data'/'state.json'
 HEALTH=ROOT/'data'/'health.json'
+EXTRACTION_VERSION=2  # Changing extraction output must reset baseline without emailing
 BASE_SOURCES=[
  {'name':'أخبار الوزارة','url':'https://www.hrsd.gov.sa/media-center/news','kind':'index'},
  {'name':'الأدلة الإجرائية','url':'https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/evidence','kind':'index'},
@@ -32,19 +34,47 @@ def monitored_sources():
    existing.add(url)
  return sources
 class Extract(HTMLParser):
- def __init__(self):super().__init__();self.parts=[];self.skip=0
+ """Plain content with stable official document references; excludes scripts and third-party links."""
+ def __init__(self,base_url):
+  super().__init__();self.base_url=base_url;self.parts=[];self.skip=0
+  self.anchor=None;self.links=set()
  def handle_starttag(self,tag,attrs):
   if tag in ('script','style','noscript','svg'):self.skip+=1
+  if tag=='a' and not self.skip:
+   href=dict(attrs).get('href','')
+   try:
+    url=urljoin(self.base_url,href)
+    parsed=urlsplit(url)
+    host=(parsed.hostname or '').lower()
+    normalized=urlunsplit((parsed.scheme,parsed.netloc,parsed.path,'',''))
+    is_official=parsed.scheme=='https' and (host=='hrsd.gov.sa' or host.endswith('.hrsd.gov.sa'))
+    is_document=parsed.path.lower().endswith('.pdf')
+    is_policy='/knowledge-centre/decisions-and-regulations/' in parsed.path
+    self.anchor={'url':normalized,'label':[]} if is_official and (is_document or is_policy) else None
+   except (TypeError,ValueError):
+    self.anchor=None
  def handle_endtag(self,tag):
+  if tag=='a' and self.anchor:
+   title=' '.join(' '.join(self.anchor['label']).split())[:180]
+   if title:
+    self.links.add('وثيقة رسمية مرتبطة: '+title+' '+self.anchor['url'])
+   self.anchor=None
   if tag in ('script','style','noscript','svg') and self.skip:self.skip-=1
  def handle_data(self,data):
-  if not self.skip and data.strip():self.parts.append(data.strip())
+  if not self.skip and data.strip():
+   self.parts.append(data.strip())
+   if self.anchor:self.anchor['label'].append(data.strip())
+ def extracted_text(self):
+  body=re.sub(r'\s+',' ',' '.join(self.parts)).strip()
+  # Sorted link inventory ensures that page-link ordering changes do not fire alerts.
+  return body+'\n'+'\n'.join(sorted(self.links)) if self.links else body
+
 def get_text(url):
  req=Request(url,headers={'User-Agent':'SaudizationRadar/1.0 (+personal public-site monitoring)','Accept-Language':'ar,en;q=0.8'})
  with urlopen(req,timeout=35) as r:
   raw=r.read(2000000).decode('utf-8','replace')
- p=Extract();p.feed(raw)
- return re.sub(r'\s+',' ',' '.join(p.parts)).strip()
+ p=Extract(url);p.feed(raw)
+ return p.extracted_text()
 
 def send_message(subject, body, test=False, html_body=None):
  """Use GitHub encrypted Actions secrets, never credentials in public files."""
@@ -109,7 +139,8 @@ def main():
    if len(content)<100:raise ValueError('Page extraction too short')
    digest=hashlib.sha256(content.encode()).hexdigest()
    previous=state.get(url)
-   if previous and previous['hash']!=digest:
+   comparable=bool(previous and previous.get('extraction_version')==EXTRACTION_VERSION)
+   if comparable and previous['hash']!=digest:
     item=detection.analyze_change(previous.get('text',''),content,src,now)
     if item:
      seen={a.get('id') for a in db.get('alerts',[])}
@@ -122,9 +153,9 @@ def main():
     else:
      print('No relevant decision signal:',name)
    # First run sets baseline, no false alert
-   state[url]={'hash':digest,'text':content[:150000]};success+=1
-   results.append({'name':name,'url':url,'kind':src.get('kind'),'status':'ok','changed':bool(previous and previous['hash']!=digest),'first_baseline':not bool(previous)})
-   print('Checked:',name, 'changed:',bool(previous and previous['hash']!=digest))
+   state[url]={'hash':digest,'text':content[:150000],'extraction_version':EXTRACTION_VERSION};success+=1
+   results.append({'name':name,'url':url,'kind':src.get('kind'),'status':'ok','changed':bool(comparable and previous['hash']!=digest),'first_baseline':not comparable})
+   print('Checked:',name, 'changed:',bool(comparable and previous['hash']!=digest))
   except Exception as exc:
    results.append({'name':name,'url':url,'kind':src.get('kind'),'status':'error','error_type':type(exc).__name__})
    print('ERROR:',name,repr(exc))
