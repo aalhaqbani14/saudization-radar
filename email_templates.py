@@ -41,7 +41,20 @@ def key_details(change):
 def date_now():
     return datetime.datetime.now(ZoneInfo("Asia/Riyadh")).strftime("%Y-%m-%d %H:%M")
 
-def plain(alerts=None, test=False):
+def plain(alerts=None, test=False, demo=False):
+    if demo:
+        return "\n".join([
+            "SAUDIZATION RADAR — محاكاة تنبيه قرار توطين",
+            "",
+            "مثال افتراضي بالكامل لغرض عرض شكل التنبيهات فقط؛ لا يمثل خبراً أو قراراً رسمياً.",
+            "المجال الافتراضي: وظائف الخدمات الإدارية",
+            "نسبة التوطين السابقة (افتراضية): 40%",
+            "نسبة التوطين الجديدة (افتراضية): 60%",
+            "تاريخ التطبيق الافتراضي: 2027-01-01",
+            "الملاحظة: البيانات جميعها لغرض تجربة التصميم وليست مستمدة من قرار رسمي.",
+            "وقت الاختبار بتوقيت الرياض: " + date_now(),
+            "لوحة المتابعة: " + SITE,
+        ])
     if test:
         return "\n".join([
             "SAUDIZATION RADAR — اختبار التنبيهات",
@@ -73,18 +86,36 @@ def plain(alerts=None, test=False):
     parts.extend(["تأكد من نص القرار والدليل الإجرائي الساري قبل اتخاذ إجراء.", SITE])
     return "\n".join(parts)
 
-def render(alerts=None, test=False):
+def render(alerts=None, test=False, demo=False):
     alerts = alerts or []
-    banner = "رسالة اختبار — إعداد الإشعارات" if test else "تنبيه رصد تغيّر محتمل"
-    heading = "بريد Saudization Radar يعمل" if test else "تغيّر محتمل في مصادر التوطين"
+    banner = "محاكاة فقط · ليست خبراً رسمياً" if demo else ("رسالة اختبار — إعداد الإشعارات" if test else "تنبيه رصد تغيّر محتمل")
+    heading = "محاكاة تنبيه تغيير نسبة التوطين" if demo else ("بريد Saudization Radar يعمل" if test else "تغيّر محتمل في مصادر التوطين")
     explanation = (
+        "هذا المثال افتراضي بالكامل لتجربة شكل رسالة التوطين؛ جميع المهن والنسب والتواريخ أدناه غير مستمدة من أي قرار رسمي."
+        if demo else
         "هذه رسالة تجريبية وليست إشعاراً بصدور قرار جديد. إعدادات الإرسال تعمل عند وصول البريد."
         if test else
         "تم رصد نص مضاف إلى صفحة عامة من وزارة الموارد البشرية. يظهر أدناه ما رُصد فقط، "
         "ولا تُثبت المنصة تلقائياً أن القرار صدر أو أن النسبة تغيرت."
     )
     cards = []
-    if test:
+    if demo:
+        cards.append("""<tr><td style="padding:12px 24px 20px">
+          <div style="border:2px dashed #e7ad52;border-radius:12px;padding:13px;background:#fff8e9;color:#915a12;font-size:13px;font-weight:bold;text-align:center">
+          مثال افتراضي — ليس قراراً رسمياً ولا إشعاراً حقيقياً
+          </div>
+          <div style="border:1px solid #dfe9ec;border-radius:14px;margin-top:12px;padding:20px;background:#ffffff">
+          <div style="color:#128477;font-size:12px;font-weight:bold">نموذج قرار افتراضي · وظائف الخدمات الإدارية</div>
+          <h2 style="font-size:19px;color:#163d4b;margin:12px 0">تغيير افتراضي في نسبة التوطين</h2>
+          <p style="color:#526e78;font-size:13px;line-height:2">مثال لتوضيح شكل الإشعار التنفيذي عند توثيق قرار مستقبلي. لا تستخدم هذه البيانات لأي إجراء.</p>
+          <table role="presentation" width="100%" style="border-collapse:separate;border-spacing:5px"><tr>
+           <td style="border-radius:9px;padding:12px;background:#eef3f6;text-align:center"><div style="font-size:11px;color:#647e88">النسبة السابقة (افتراضية)</div><div dir="ltr" style="font-size:25px;color:#456170;font-weight:bold">40%</div></td>
+           <td style="border-radius:9px;padding:12px;background:#e6f8f2;text-align:center"><div style="font-size:11px;color:#427b6b">النسبة الجديدة (افتراضية)</div><div dir="ltr" style="font-size:25px;color:#087967;font-weight:bold">60%</div></td>
+          </tr></table>
+          <div style="padding:11px;background:#f0f5f7;border-radius:8px;color:#4d6b78;font-size:12px;margin-top:11px">تاريخ التطبيق الافتراضي: <span dir="ltr">2027-01-01</span></div>
+          <p style="color:#945d18;font-size:11px;line-height:1.8">المصدر: بيانات عرض تجريبية فقط. لا يوجد رابط لقرار حقيقي لأن هذا المثال مختلق لغرض التجربة.</p>
+          </div></td></tr>""")
+    if test and not demo:
         cards.append("""<tr><td style="padding:20px 24px">
           <div style="border:1px solid #c9e5df;border-radius:14px;background:#effaf6;padding:18px">
           <div style="font-size:12px;color:#328578">TEST EMAIL · تنبيه تجريبي</div>
@@ -115,7 +146,7 @@ def render(alerts=None, test=False):
             +action+'</div></td></tr>'
         )
     count = len(alerts)
-    meta = "اختبار النظام" if test else str(count) + " إشعار رصد"
+    meta = "عرض تجريبي افتراضي" if demo else ("اختبار النظام" if test else str(count) + " إشعار رصد")
     return f"""<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"></head>
 <body style="margin:0;background:#eef4f6;font-family:Tahoma,Arial,sans-serif;color:#183744">
 <table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="background:#eef4f6"><tr><td align="center" style="padding:26px 12px">
