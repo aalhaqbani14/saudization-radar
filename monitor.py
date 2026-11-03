@@ -12,6 +12,7 @@ from html.parser import HTMLParser
 ROOT=pathlib.Path(__file__).resolve().parent
 DATA=ROOT/'data'/'alerts.json'
 STATE=ROOT/'data'/'state.json'
+HEALTH=ROOT/'data'/'health.json'
 BASE_SOURCES=[
  {'name':'أخبار الوزارة','url':'https://www.hrsd.gov.sa/media-center/news','kind':'index'},
  {'name':'الأدلة الإجرائية','url':'https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/evidence','kind':'index'},
@@ -99,6 +100,7 @@ def main():
  state=json.loads(STATE.read_text(encoding='utf-8')) if STATE.exists() else {}
  db=json.loads(DATA.read_text(encoding='utf-8')) if DATA.exists() else {'alerts':[]}
  now=datetime.datetime.now(datetime.timezone.utc).isoformat();new=[];success=0
+ results=[]
  sources=monitored_sources()
  for src in sources:
   url=src['url'];name=src['name']
@@ -121,12 +123,22 @@ def main():
      print('No relevant decision signal:',name)
    # First run sets baseline, no false alert
    state[url]={'hash':digest,'text':content[:150000]};success+=1
+   results.append({'name':name,'url':url,'kind':src.get('kind'),'status':'ok','changed':bool(previous and previous['hash']!=digest),'first_baseline':not bool(previous)})
    print('Checked:',name, 'changed:',bool(previous and previous['hash']!=digest))
-  except Exception as exc:print('ERROR:',name,repr(exc))
+  except Exception as exc:
+   results.append({'name':name,'url':url,'kind':src.get('kind'),'status':'error','error_type':type(exc).__name__})
+   print('ERROR:',name,repr(exc))
  if success:
   db['last_checked']=now;db['sources']=sources;db['alerts']=db.get('alerts',[])[:200]
   DATA.write_text(json.dumps(db,ensure_ascii=False,indent=2),encoding='utf-8')
   STATE.write_text(json.dumps(state,ensure_ascii=False,indent=2),encoding='utf-8')
+ # Public health telemetry only. No page text, credentials, or private data.
+ # Monitoring failures do not imply that regulatory requirements are unchanged.
+ health={'checked_at':now,'total_sources':len(sources),'successful_sources':success,
+         'failed_sources':len(sources)-success,'signal_count':len(new),
+         'sources':results,
+         'coverage_notice':'هذه حالة تشغيل الرصد فقط ولا تثبت حداثة القرارات أو اكتمال تغطية الوزارة.'}
+ HEALTH.write_text(json.dumps(health,ensure_ascii=False,indent=2),encoding='utf-8')
  if new and not send_email(new):
   # Prevent lost notifications: workflow fails before state is committed to Git.
   raise RuntimeError('New changes detected, but email credentials are missing; state not committed so notifications can retry.')
