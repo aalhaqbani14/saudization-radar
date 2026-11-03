@@ -1,13 +1,45 @@
 {
-  "last_checked": "2026-11-03T05:58:45.956175+00:00",
+  "last_checked": "2026-11-03T14:59:05.186814+00:00",
   "sources": [
     {
       "name": "أخبار الوزارة",
-      "url": "https://www.hrsd.gov.sa/media-center/news"
+      "url": "https://www.hrsd.gov.sa/media-center/news",
+      "kind": "index"
     },
     {
       "name": "الأدلة الإجرائية",
-      "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/evidence"
+      "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/evidence",
+      "kind": "index"
+    },
+    {
+      "name": "قرار: المهن الإدارية المساندة",
+      "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-المهن-الإدارية-المساندة",
+      "kind": "decision_page"
+    },
+    {
+      "name": "قرار: المهن المحاسبية",
+      "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-المهن-المحاسبية",
+      "kind": "decision_page"
+    },
+    {
+      "name": "قرار: مهن إدارة المشاريع",
+      "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لتوطين-مهن-إدارة-المشاريع",
+      "kind": "decision_page"
+    },
+    {
+      "name": "قرار: مهن المشتريات",
+      "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لتوطين-مهن-المشتريات",
+      "kind": "decision_page"
+    },
+    {
+      "name": "قرار: مهن المبيعات",
+      "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لتوطين-مهن-المبيعات",
+      "kind": "decision_page"
+    },
+    {
+      "name": "قرار: مهنة مشرف مسكن",
+      "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-مهنة-مشرف-مسكن",
+      "kind": "decision_page"
     }
   ],
   "alerts": []

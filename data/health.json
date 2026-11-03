@@ -1,0 +1,68 @@
+{
+  "checked_at": "2026-11-03T14:59:05.186814+00:00",
+  "total_sources": 8,
+  "successful_sources": 2,
+  "failed_sources": 6,
+  "signal_count": 0,
+  "sources": [
+    {
+      "name": "أخبار الوزارة",
+      "url": "https://www.hrsd.gov.sa/media-center/news",
+      "kind": "index",
+      "status": "ok",
+      "changed": false,
+      "first_baseline": true
+    },
+    {
+      "name": "الأدلة الإجرائية",
+      "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/evidence",
+      "kind": "index",
+      "status": "ok",
+      "changed": false,
+      "first_baseline": true
+    },
+    {
+      "name": "قرار: المهن الإدارية المساندة",
+      "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-المهن-الإدارية-المساندة",
+      "kind": "decision_page",
+      "status": "error",
+      "error_type": "UnicodeEncodeError"
+    },
+    {
+      "name": "قرار: المهن المحاسبية",
+      "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-المهن-المحاسبية",
+      "kind": "decision_page",
+      "status": "error",
+      "error_type": "UnicodeEncodeError"
+    },
+    {
+      "name": "قرار: مهن إدارة المشاريع",
+      "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لتوطين-مهن-إدارة-المشاريع",
+      "kind": "decision_page",
+      "status": "error",
+      "error_type": "UnicodeEncodeError"
+    },
+    {
+      "name": "قرار: مهن المشتريات",
+      "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لتوطين-مهن-المشتريات",
+      "kind": "decision_page",
+      "status": "error",
+      "error_type": "UnicodeEncodeError"
+    },
+    {
+      "name": "قرار: مهن المبيعات",
+      "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لتوطين-مهن-المبيعات",
+      "kind": "decision_page",
+      "status": "error",
+      "error_type": "UnicodeEncodeError"
+    },
+    {
+      "name": "قرار: مهنة مشرف مسكن",
+      "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-مهنة-مشرف-مسكن",
+      "kind": "decision_page",
+      "status": "error",
+      "error_type": "UnicodeEncodeError"
+    }
+  ],
+  "coverage_notice": "هذه حالة تشغيل الرصد فقط ولا تثبت حداثة القرارات أو اكتمال تغطية الوزارة."
+}
