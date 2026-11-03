@@ -6,6 +6,7 @@
 @media print{@page{size:A4;margin:13mm}body.printing>.shell,body.printing>.modal{display:none!important}body.printing .print-host{display:block!important;position:static!important;overflow:visible!important;background:white!important}body.printing .print-toolbar{display:none!important}body.printing .report-sheet{margin:0!important;padding:0!important;max-width:none!important;box-shadow:none!important}body.printing .report-sheet tr{break-inside:avoid}body.printing .report-sheet th{print-color-adjust:exact}body:not(.printing) .print-host{display:none!important}}
 
 /* Executive report v2: controlled scope, evidence periods and full indexed profession coverage */
+.report-field[hidden],.report-select-panel[hidden]{display:none!important}
 .report-builder{border:1px solid #dbe8e8;border-radius:14px;background:#f8fbfb;margin:16px 0;padding:19px}
 .report-controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
 .report-field{display:grid;gap:7px;align-content:start;margin:9px 0 13px}
