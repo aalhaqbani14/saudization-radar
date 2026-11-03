@@ -1,1 +1,41 @@
 
+name: Saudization Radar monitor
+
+'on':
+  schedule:
+    - cron: '15 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Monitor HRSD
+        env:
+          RADAR_EMAIL_TO: ${{ secrets.RADAR_EMAIL_TO }}
+          RADAR_EMAIL_FROM: ${{ secrets.RADAR_EMAIL_FROM }}
+          RADAR_SMTP_HOST: ${{ secrets.RADAR_SMTP_HOST }}
+          RADAR_SMTP_PORT: ${{ secrets.RADAR_SMTP_PORT }}
+          RADAR_SMTP_USER: ${{ secrets.RADAR_SMTP_USER }}
+          RADAR_SMTP_PASSWORD: ${{ secrets.RADAR_SMTP_PASSWORD }}
+        run: python monitor.py
+
+      - name: Save updated radar data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if ! git diff --cached --quiet; then
+            git commit -m "Update Saudization Radar data"
+            git push
+          fi
+
