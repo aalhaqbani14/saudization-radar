@@ -7,6 +7,7 @@
 <meta name="description" content="غرفة التحليل في Saudization Radar: بحث المهن بالرمز، تتبع قرارات التوطين، المواعيد التنفيذية، تدقيق المراجع وإعداد تقارير للإدارة.">
 <title>غرفة التحليل | Saudization Radar</title>
 <link rel="stylesheet" href="assets/intelligence.css">
+<link rel="stylesheet" href="assets/executive-refresh.css">
 </head>
 <body>
 <div class="shell">
@@ -22,7 +23,7 @@
         <button type="button" data-tab="report">▣ &nbsp; التقرير التنفيذي</button>
       </nav>
     </div>
-    <div class="rail-bottom"><small>BUILT & CURATED BY</small><strong>عبدالعزيز عبدالله الحقباني</strong><p>مبادرة شخصية مستقلة للتحليل والمتابعة، وليست منصة حكومية أو نظام امتثال معتمداً.</p></div>
+    <div class="rail-bottom"><small>INDEPENDENT RESEARCH INITIATIVE</small><strong>من قراءة القرار إلى إجراء واضح</strong><p>مبادرة مستقلة لتنظيم المعرفة المنشورة من الوزارة. لا تمثل جهة حكومية أو نظام امتثال معتمداً.</p></div>
   </aside>
   <div class="workspace">
     <header class="top"><div class="breadcrumbs">Saudization Radar / <b>غرفة التحليل</b></div><div class="top-pill">بيانات من مصادر حكومية منشورة</div></header>
@@ -32,6 +33,7 @@
           <h1 id="main-title">افهم المهنة. اربط القرار. اتخذ الإجراء.</h1>
           <p>ابحث بالرمز المهني أو المسمى، اكتشف القرارات ذات الصلة والتداخلات المحتملة، راجع توقيت التطبيق ومصدر الإثبات، ثم جهّز موجزاً تنفيذياً للإدارة.</p>
         </div>
+        <img class="hero-scene" src="assets/scene-meeting.svg" alt="رسم متحرك هادئ لفريق عمل يناقش القرارات" loading="eager">
         <div class="hero-stat" aria-label="إحصائيات غرفة التحليل"><div><b id="hero-decisions">—</b><small>مجموعة قرار</small></div><div><b id="hero-codes">—</b><small>رمز في الفهرس</small></div></div>
       </section>
       <section class="kpis" aria-label="المؤشرات">
@@ -40,8 +42,28 @@
         <div class="kpi"><span>مراجعات أساسية للقرارات</span><strong id="k-audited">—</strong><small>ليست تدقيقاً قانونياً نهائياً</small></div>
         <div class="kpi"><span>رموز مرتبطة بعدة قرارات</span><strong id="k-overlaps">—</strong><small>تستدعي التحقق من النطاق</small></div>
       </section>
+
+      <section class="gallery" aria-label="مزايا غرفة التحليل">
+        <article class="gallery-card"><div><small>01 · ROLE INTELLIGENCE</small><strong>ابحث بالمهنة والرمز</strong><p>طابق الرمز مع جداول المهن والقرارات المرتبطة به، وتعرّف على التداخلات.</p></div><img class="gallery-svg" src="assets/scene-analysis.svg" alt="محلل يراجع البيانات برسوم متحركة خفيفة" loading="lazy"></article>
+        <article class="gallery-card"><div><small>02 · DECISION TRACKER</small><strong>خطط قبل تاريخ النفاذ</strong><p>راجع مراحل التطبيق والتغيرات التي تستدعي متابعة أو إجراء.</p></div><img class="gallery-svg" src="assets/scene-planning.svg" alt="فريق يخطط أمام لوحة عمل" loading="lazy"></article>
+        <article class="gallery-card"><div><small>03 · EXECUTIVE BRIEF</small><strong>قدّم ملخصاً واضحاً للإدارة</strong><p>موجز يستعرض النسب والمواعيد وحالة توثيق كل قرار، بدون بيانات داخلية.</p></div><img class="gallery-svg" src="assets/scene-meeting.svg" alt="فريق عمل حول طاولة اجتماع" loading="lazy"></article>
+      </section>
+      <section id="applicability" class="app-panel" aria-labelledby="app-title">
+        <div class="panel-head"><div><h2 id="app-title">محرك تقييم الانطباق الأولي</h2><p>اختبر سيناريو افتراضياً برمز مهنة وأعداد عاملين؛ النتيجة تشرح الأسباب والاشتراطات، ولا تصدر حكم امتثال.</p></div><span class="badge">SCENARIO ENGINE · PRIVACY FIRST</span></div>
+        <p class="app-desc">اختر رمزا مهنيا من الفهرس، وأدخل عدد العاملين في المجموعة المهنية المستهدفة وعدد السعوديين. تُعالج الأرقام داخل المتصفح فقط؛ لا تربط أي بيانات فعلية من الشركة بهذه الصفحة العامة.</p>
+        <div class="app-fields">
+          <label for="app-code">الرمز المهني<input id="app-code" type="text" lang="en" dir="ltr" inputmode="numeric" maxlength="6" placeholder="412001"></label>
+          <label for="app-total">عدد العاملين المستهدفين<input id="app-total" type="number" lang="en" dir="ltr" min="0" max="100000" value="10"></label>
+          <label for="app-saudi">السعوديون منهم<input id="app-saudi" type="number" lang="en" dir="ltr" min="0" max="100000" value="4"></label>
+          <label for="app-activity">تصنيف النشاط التقريبي<select id="app-activity"><option value="">غير محدد / عام</option></select></label>
+          <button id="app-evaluate" type="button">حلّل السيناريو ←</button>
+        </div>
+        <div class="app-example"><button type="button" data-app-example="412001,10,4">مثال: مساعد إداري</button><button type="button" data-app-example="121314,10,4">مثال: مدير مشاريع</button><button type="button" data-app-example="332302,10,3">مثال: مندوب مشتريات</button></div>
+        <p id="app-availability" class="last-reviewed"></p>
+        <div id="app-result" aria-live="polite"><div class="app-empty">أدخل الرمز ثم اضغط «حلّل السيناريو».</div></div>
+      </section>
       <section class="panel">
-        <div class="panel-head"><div><h2>مركز التحليل</h2><p>اختر مسار العمل. كل النتائج تفتح مع دليل المهنة ودرجة توثيقها.</p></div><span class="badge">Personal initiative · V3</span></div>
+        <div class="panel-head"><div><h2>مركز التحليل</h2><p>اختر مسار العمل. كل النتائج تفتح مع دليل المهنة ودرجة توثيقها.</p></div><span class="badge">EXECUTIVE EDITION · 2026</span></div>
         <div class="tabs" role="tablist" aria-label="أقسام غرفة التحليل">
           <button type="button" data-tab="codes" class="active" role="tab" aria-selected="true">⌕ &nbsp; بحث المهن والرموز</button>
           <button type="button" data-tab="timeline" role="tab" aria-selected="false">◷ &nbsp; التقويم التنفيذي</button>
@@ -70,11 +92,11 @@
           <div id="audit-list" class="audit-list" style="margin-top:14px"></div>
         </div>
         <div id="view-report" class="view" role="tabpanel" hidden>
-          <div class="panel-head"><div><h2>الموجز التنفيذي للإدارة</h2><p>اختر قراراتك من محرك البحث ثم حوّلها إلى تقرير جاهز للطباعة أو الحفظ PDF.</p></div><span class="badge">PREPARED BY A. ALHAQBANI</span></div>
+          <div class="panel-head"><div><h2>الموجز التنفيذي للإدارة</h2><p>اختر قراراتك من محرك البحث ثم حوّلها إلى تقرير جاهز للطباعة أو الحفظ PDF.</p></div><span class="badge">EXECUTIVE BRIEF · NO PERSONAL DATA</span></div>
           <div class="report-options"><div class="report-option"><h3>المواضيع المختارة <span id="report-count">0</span></h3><p>تأتي من قائمة «مراجعتي» المحفوظة على هذا المتصفح؛ لا تحتوي على أي بيانات شركة أو موظفين.</p></div><div class="report-option"><h3>إذا ما اخترت قرارات</h3><p>ننشئ تقريراً استرشادياً يضم عينة من القرارات الشائعة، مع تمييز المراجع التي تحتاج تدقيقاً.</p></div></div>
           <span id="k-selected" hidden>0</span><div id="report-selected" class="report-preview">لم تحدد قرارات بعد.</div>
           <div class="report-buttons"><button id="make-report" class="primary">إنشاء التقرير التنفيذي ↗</button><button id="clear-selected" class="secondary">إفراغ قائمة المراجعة</button><a href="index.html#intel" class="link-btn ghost">فتح المكتبة الكاملة</a></div>
-          <div class="hint">يظهر توقيع «إعداد وتطوير: عبدالعزيز عبدالله الحقباني» في التقرير. جميع الأحكام والقيم التعليمية تحتاج مراجعة مقابل القرار الساري قبل مشاركتها على أنها امتثال نظامي.</div>
+          <div class="hint">التقرير التنفيذي بلا توقيع شخصي أو اسم مُعد، وفق تصميم العرض الإداري. يلزم الرجوع للدليل الرسمي الساري قبل استخدامه في تقييم امتثال.</div>
         </div>
       </section>
       <footer class="footer"><div class="footer-author">إعداد وتطوير | PREPARED & DEVELOPED BY<strong>عبدالعزيز عبدالله الحقباني</strong></div><div><p>منصة شخصية مستقلة لتلخيص قرارات التوطين المنشورة. لا تمثل جهة حكومية، ولا تتصل بنظم الموارد البشرية أو بيانات الموظفين. المحتوى قابل للتحديث وإعادة التحقق.</p><p id="source-version" class="last-reviewed">—</p></div></footer>
@@ -84,5 +106,6 @@
 <div id="detail-modal" class="modal" hidden><div class="dialog" role="dialog" aria-modal="true" aria-label="تفاصيل القرار"><button class="modal-close" type="button" id="detail-close" aria-label="إغلاق">×</button><div id="detail-content"></div></div></div>
 <div id="print-host" class="print-host"><div class="print-toolbar"><button id="print-now" type="button">طباعة أو حفظ PDF</button><button id="close-print" type="button">إغلاق التقرير</button></div><div id="print-content"></div></div>
 <script src="assets/intelligence.js" defer></script>
+<script src="assets/applicability.js" defer></script>
 </body>
 </html>
