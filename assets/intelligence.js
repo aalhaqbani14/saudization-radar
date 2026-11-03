@@ -99,6 +99,7 @@
      const [occDb,decDb]=await Promise.all([occResponse.json(),decResponse.json()]);
      occupations=Array.isArray(occDb.occupations)?occDb.occupations:[];decisions=Array.isArray(decDb.decisions)?decDb.decisions:[];
      decisionMap=new Map(decisions.map(d=>[d.id,d]));
+     selected=new Set([...selected].filter(id=>decisionMap.has(id)));persist();
      const overlaps=occupations.filter(o=>o.decisionIds.length>1).length;
      $('k-decisions').textContent=digits(decisions.length);$('k-codes').textContent=digits(occupations.length);
      $('k-audited').textContent=digits(decisions.filter(d=>d.audit?.status==='reviewed').length);
