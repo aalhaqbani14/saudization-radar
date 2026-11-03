@@ -120,10 +120,13 @@
               <textarea id="report-extra-occupations" rows="3" placeholder="ألصق مسميات المهن أو رموزها، مهنة في كل سطر. بلا أسماء موظفين أو بيانات داخلية."></textarea>
               <small>تقارن هذه المهن محلياً بالفهرس الجزئي؛ أي مهنة غير موجودة تصنّف «غير محددة»، وليس «غير مستهدفة» بشكل قاطع. النص لا يُرسل إلى الخادم.</small>
             </div>
-            <div class="report-feature-grid">
-              <div><strong>فترات السماح</strong><small>المدة وبداية المهلة ونهايتها حسب نطاق المهن والدليل المتاح</small></div>
-              <div><strong>جميع المهن المفهرسة</strong><small>مستهدفة بالاختيار / خارج القرارات المختارة / غير محددة</small></div>
-              <div><strong>مراحل التنفيذ</strong><small>التطبيق الفوري والتدرج وتواريخ المراحل المستقبلية</small></div>
+            <div class="report-field"><label>اختر أقسام التقرير المطلوبة</label><small>الأقسام جميعها محددة افتراضياً، وتقدر تلغي أي جزء ما تبي تعرضه للإدارة.</small></div>
+            <div class="report-feature-grid" role="group" aria-label="أقسام التقرير المطلوبة">
+              <label class="report-feature-toggle"><input type="checkbox" id="report-part-grace" checked><span><strong>فترات السماح</strong><small>بداية ونهاية المهلة ونطاق المهن المشمولة</small></span></label>
+              <label class="report-feature-toggle"><input type="checkbox" id="report-part-phases" checked><span><strong>مراحل التنفيذ</strong><small>تدرج النسب وتواريخ المراحل</small></span></label>
+              <label class="report-feature-toggle"><input type="checkbox" id="report-part-targeted" checked><span><strong>المهن المستهدفة</strong><small>جميع الرموز المسجلة ضمن قرارات التقرير</small></span></label>
+              <label class="report-feature-toggle"><input type="checkbox" id="report-part-mentions" checked><span><strong>مسميات إضافية</strong><small>المهن المذكورة في ملخص القرارات دون رمز مفهرس</small></span></label>
+              <label class="report-feature-toggle"><input type="checkbox" id="report-part-outside" checked><span><strong>المهن خارج النطاق</strong><small>المهن المرتبطة بقرارات أخرى غير مختارة</small></span></label>
             </div>
           </div>
           <span id="k-selected" hidden>0</span><div class="report-count-banner">مجموعات القرارات المشمولة بالتقرير: <strong id="report-count">0</strong></div>
