@@ -45,6 +45,7 @@ class DataQuality(unittest.TestCase):
         cls.d = read('decisions.json')['decisions']
         cls.o = read('occupations.json')['occupations']
         cls.reg = read('source-registry.json')['sources']
+        cls.grace = read('grace-periods.json')['records']
 
     def test_unique_decision_and_code_ids(self):
         self.assertEqual(len({x['id'] for x in self.d}), len(self.d))
@@ -83,6 +84,27 @@ class DataQuality(unittest.TestCase):
                         if not official(stage['source']):
                             self.assertFalse(stage.get('verified'),
                                 'News-agency citations alone must not claim ministerial verification')
+
+    def test_documented_grace_periods_are_scoped_and_source_backed(self):
+        decisions={x['id']:x for x in self.d}
+        seen=set()
+        for grace in self.grace:
+            with self.subTest(group=grace['decisionId'],scope=grace['scope']):
+                decision=decisions[grace['decisionId']]
+                self.assertTrue(grace['scope'])
+                self.assertTrue(grace['duration'])
+                self.assertIn(grace['status'], ('official','reported'))
+                self.assertTrue(official(grace['source']))
+                self.assertTrue(is_date(grace['start']))
+                self.assertTrue(is_date(grace['end']))
+                self.assertLessEqual(grace['start'],grace['end'])
+                self.assertEqual(grace['start'],decision['issueDate'])
+                valid_end={decision.get('effective')}
+                valid_end.update(x.get('date') for x in decision.get('phases',[]))
+                self.assertIn(grace['end'],valid_end)
+                unique=(grace['decisionId'],grace['scope'])
+                self.assertNotIn(unique,seen)
+                seen.add(unique)
 
     def test_registry_has_official_sources_and_matches_decisions(self):
         ids = {x['id']:x for x in self.d}
