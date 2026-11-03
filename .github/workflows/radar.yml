@@ -1,35 +1,49 @@
-
 name: Saudization Radar monitor
 
 'on':
   schedule:
-    - cron: '15 6 * * *'
+    # 08:15 and 17:15 Riyadh time (UTC+3). GitHub schedules can be delayed.
+    - cron: '15 5,14 * * *'
   workflow_dispatch:
+    inputs:
+      send_test_email:
+        description: 'Send a test email only (do not scan ministry)'
+        required: false
+        type: boolean
+        default: false
 
 permissions:
   contents: write
 
+concurrency:
+  group: saudization-radar-monitor
+  cancel-in-progress: false
+
 jobs:
   check:
     runs-on: ubuntu-latest
+    env:
+      SMTP_HOST: smtp.gmail.com
+      SMTP_PORT: '465'
+      SMTP_USER: ${{ secrets.RADAR_SMTP_USER || secrets.SMTP_USER }}
+      SMTP_PASSWORD: ${{ secrets.RADAR_SMTP_PASSWORD || secrets.SMTP_PASSWORD }}
+      ALERT_EMAIL: ${{ secrets.RADAR_EMAIL_TO || secrets.ALERT_EMAIL }}
+      SMTP_FROM: ${{ secrets.RADAR_EMAIL_FROM || secrets.SMTP_FROM }}
     steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-python@v5
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-
-      - name: Monitor HRSD
-        env:
-          RADAR_EMAIL_TO: ${{ secrets.RADAR_EMAIL_TO }}
-          RADAR_EMAIL_FROM: ${{ secrets.RADAR_EMAIL_FROM }}
-          RADAR_SMTP_HOST: ${{ secrets.RADAR_SMTP_HOST }}
-          RADAR_SMTP_PORT: ${{ secrets.RADAR_SMTP_PORT }}
-          RADAR_SMTP_USER: ${{ secrets.RADAR_SMTP_USER }}
-          RADAR_SMTP_PASSWORD: ${{ secrets.RADAR_SMTP_PASSWORD }}
+      - name: Send explicit test email
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.send_test_email }}
+        run: python monitor.py --test-email
+      - name: Monitor HRSD pages for changes
+        if: ${{ github.event_name != 'workflow_dispatch' || !inputs.send_test_email }}
         run: python monitor.py
-
       - name: Save updated radar data
+        if: ${{ github.event_name != 'workflow_dispatch' || !inputs.send_test_email }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -38,4 +52,3 @@ jobs:
             git commit -m "Update Saudization Radar data"
             git push
           fi
-
