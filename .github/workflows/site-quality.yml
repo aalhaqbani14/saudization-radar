@@ -7,6 +7,7 @@ name: Saudization Radar site integrity
       - 'index.html'
       - 'intelligence.html'
       - 'sources.html'
+      - 'review.html'
       - 'assets/**'
       - 'test_site_integrity.py'
       - '.github/workflows/site-quality.yml'
