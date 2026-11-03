@@ -1,0 +1,1010 @@
+{
+  "updated": "2026-11-03",
+  "methodology": "رموز مستخرجة من جداول مهن منشورة عبر وزارة الموارد البشرية والتنمية الاجتماعية. الرموز لا تمثل جميع المهن في المملكة ولا تكفي وحدها لحسم الانطباق. بعض المراجع تاريخية لترميز المهنة وقد صدرت قرارات أحدث؛ المراجعة النهائية للأدلة السارية مطلوبة.",
+  "occupations": [
+    {
+      "code": "541403",
+      "title": "حارس شخصي",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-04-05",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 2 · نافذ من 2026-04-05",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "541402",
+      "title": "حارس أمن",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-04-05",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 2 · نافذ من 2026-04-05",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "541401",
+      "title": "مراقب كاميرات أمنية",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-10-04",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "441601",
+      "title": "كاتب موارد بشرية",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-04-05",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 2 · نافذ من 2026-04-05",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "441401",
+      "title": "ناسخ",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-04-05",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 2 · نافذ من 2026-04-05",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "432103",
+      "title": "كاتب حركة مخزون",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-10-04",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "432102",
+      "title": "كاتب شحن",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-10-04",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "432101",
+      "title": "أمين مخزن",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-04-05",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 2 · نافذ من 2026-04-05",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "422602",
+      "title": "كاتب استقبال مرضى",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-04-05",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 2 · نافذ من 2026-04-05",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "422601",
+      "title": "موظف استقبال",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-10-04",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "422502",
+      "title": "كاتب شكاوى",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-04-05",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 2 · نافذ من 2026-04-05",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "422501",
+      "title": "كاتب استعلامات",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-10-04",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "422401",
+      "title": "موظف استقبال فندق",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-04-05",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 2 · نافذ من 2026-04-05",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "413201",
+      "title": "مدخل بيانات",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-04-05",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 2 · نافذ من 2026-04-05",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "413102",
+      "title": "طابع",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-10-04",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "413101",
+      "title": "كاتب اختزال",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-04-05",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 2 · نافذ من 2026-04-05",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "412002",
+      "title": "سكرتير",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-04-05",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 2 · نافذ من 2026-04-05",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "412001",
+      "title": "مساعد إداري",
+      "decisionIds": [
+        "admin",
+        "beauty"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-10-04",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "411002",
+      "title": "كاتب سجل",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-10-04",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "411001",
+      "title": "كاتب علاقات حكومية",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-10-04",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "334301",
+      "title": "سكرتير تنفيذي",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-04-05",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 2 · نافذ من 2026-04-05",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "333103",
+      "title": "مخلص جمركي",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-04-05",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 2 · نافذ من 2026-04-05",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "333102",
+      "title": "وكيل جمركي",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-10-04",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "333101",
+      "title": "وكيل شحن",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-10-04",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "264305",
+      "title": "أخصائي لغوي",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-04-05",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 2 · نافذ من 2026-04-05",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "264304",
+      "title": "مترجم لغة إشارة",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-10-04",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "264303",
+      "title": "مصحح لغوي",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-10-04",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "264302",
+      "title": "مترجم فوري",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-04-05",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 2 · نافذ من 2026-04-05",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "264301",
+      "title": "مترجم",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-04-05",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 2 · نافذ من 2026-04-05",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "243209",
+      "title": "خبير علاقات عامة",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-10-04",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "243208",
+      "title": "مستشار علاقات عامة",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-10-04",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "243207",
+      "title": "أخصائي مراسم",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-10-04",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "243206",
+      "title": "أخصائي تنظيم مؤتمرات وفعاليات",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-10-04",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "243205",
+      "title": "أخصائي توعية جمهور",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-10-04",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "243204",
+      "title": "أخصائي تواصل داخلي",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-10-04",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "243202",
+      "title": "أخصائي علاقات عامة",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-10-04",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "242313",
+      "title": "خبير موارد بشرية",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-10-04",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "242312",
+      "title": "مستشار موارد بشرية",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-10-04",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "242311",
+      "title": "أخصائي استخدام",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-10-04",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "242310",
+      "title": "أخصائي مراقبة موارد بشرية",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-10-04",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "242309",
+      "title": "أخصائي تخطيط قوى عاملة",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-10-04",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "242308",
+      "title": "عضو هيئة عمالية",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-10-04",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "242307",
+      "title": "محقق عمالي",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-10-04",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "242306",
+      "title": "أخصائي توجيه مهني",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-10-04",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "242305",
+      "title": "أخصائي تعويضات",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-10-04",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "242304",
+      "title": "أخصائي توظيف",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-10-04",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "242303",
+      "title": "أخصائي تصنيف وظيفي ومهني",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-10-04",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "242302",
+      "title": "أخصائي عمليات موارد بشرية",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-10-04",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "242301",
+      "title": "أخصائي ارتباط وظيفي",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-10-04",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "241104",
+      "title": "أمين صندوق",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-04-05",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 2 · نافذ من 2026-04-05",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "122206",
+      "title": "مدير مراسم",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-10-04",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "122205",
+      "title": "مدير جمع التبرعات",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-10-04",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "122203",
+      "title": "مدير علاقات عامة",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-10-04",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "121216",
+      "title": "مدير موارد بشرية أمن سيبراني",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-10-04",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "121215",
+      "title": "مدير تحقيق إداري",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-10-04",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "121214",
+      "title": "مدير تنظيم إداري",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-10-04",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "121213",
+      "title": "مدير تطوير مؤسسي",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-10-04",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "121212",
+      "title": "مدير مكتب خدمة مدنية",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-10-04",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "121211",
+      "title": "مدير شؤون عمل",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-04-05",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 2 · نافذ من 2026-04-05",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "121210",
+      "title": "مدير مكتب عمل",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-10-04",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "121209",
+      "title": "مدير مكتب استقدام",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-10-04",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "121208",
+      "title": "مدير علاقات الأفراد",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-04-05",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 2 · نافذ من 2026-04-05",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "121207",
+      "title": "مدير تطوير موارد بشرية",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-10-04",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "121206",
+      "title": "مدير مواهب",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-10-04",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "121205",
+      "title": "مدير تعويضات",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-10-04",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "121204",
+      "title": "مدير توظيف",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-10-04",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "121203",
+      "title": "مدير تصنيف مهن",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-10-04",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "121202",
+      "title": "مدير تخطيط قوى عاملة",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-10-04",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "121201",
+      "title": "مدير عمليات موارد بشرية",
+      "decisionIds": [
+        "admin"
+      ],
+      "verified": "دليل رسمي · جدول (1) · 2026",
+      "primaryEffective": "2026-10-04",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+    },
+    {
+      "code": "121314",
+      "title": "مدير إدارة مشاريع",
+      "decisionIds": [
+        "project",
+        "consulting",
+        "tourism"
+      ],
+      "verified": "2023 دليل إدارة المشاريع (لترميز المهنة)",
+      "primaryEffective": null,
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2023-04/الدليل الإجرائي لتوطين مهن إدارة المشاريع.pdf",
+      "sourceTable": "2023 دليل إدارة المشاريع (لترميز المهنة)",
+      "notes": "الرمز موثق في دليل مهني أو قطاعي؛ انطباق القرار يعتمد على نطاقه وتحديثاته."
+    },
+    {
+      "code": "242108",
+      "title": "أخصائي إدارة مشاريع",
+      "decisionIds": [
+        "project",
+        "consulting"
+      ],
+      "verified": "2023 دليل إدارة المشاريع (لترميز المهنة)",
+      "primaryEffective": null,
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2023-04/الدليل الإجرائي لتوطين مهن إدارة المشاريع.pdf",
+      "sourceTable": "2023 دليل إدارة المشاريع (لترميز المهنة)",
+      "notes": "الرمز موثق في دليل مهني أو قطاعي؛ انطباق القرار يعتمد على نطاقه وتحديثاته."
+    },
+    {
+      "code": "214909",
+      "title": "مهندس إدارة مشاريع",
+      "decisionIds": [
+        "project",
+        "consulting"
+      ],
+      "verified": "2023 دليل إدارة المشاريع (لترميز المهنة)",
+      "primaryEffective": null,
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajrayy-ltwtyn-mhn-adrt-almshary-.pdf",
+      "sourceTable": "2023 دليل إدارة المشاريع (لترميز المهنة)",
+      "notes": "الرمز موثق في دليل مهني أو قطاعي؛ انطباق القرار يعتمد على نطاقه وتحديثاته."
+    },
+    {
+      "code": "241201",
+      "title": "أخصائي استشارات مالية",
+      "decisionIds": [
+        "consulting"
+      ],
+      "verified": "دليل المهن الاستشارية · جدول المهن",
+      "primaryEffective": null,
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2023-03/11102022.pdf",
+      "sourceTable": "دليل المهن الاستشارية · جدول المهن",
+      "notes": "الرمز موثق في دليل مهني أو قطاعي؛ انطباق القرار يعتمد على نطاقه وتحديثاته."
+    },
+    {
+      "code": "242106",
+      "title": "أخصائي استشارات أعمال",
+      "decisionIds": [
+        "consulting"
+      ],
+      "verified": "دليل المهن الاستشارية · جدول المهن",
+      "primaryEffective": null,
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2023-03/11102022.pdf",
+      "sourceTable": "دليل المهن الاستشارية · جدول المهن",
+      "notes": "الرمز موثق في دليل مهني أو قطاعي؛ انطباق القرار يعتمد على نطاقه وتحديثاته."
+    },
+    {
+      "code": "242126",
+      "title": "أخصائي استشارات أمن سيبراني",
+      "decisionIds": [
+        "consulting"
+      ],
+      "verified": "دليل المهن الاستشارية · جدول المهن",
+      "primaryEffective": null,
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2023-03/11102022.pdf",
+      "sourceTable": "دليل المهن الاستشارية · جدول المهن",
+      "notes": "الرمز موثق في دليل مهني أو قطاعي؛ انطباق القرار يعتمد على نطاقه وتحديثاته."
+    },
+    {
+      "code": "512001",
+      "title": "طاهٍ",
+      "decisionIds": [
+        "tourism"
+      ],
+      "verified": "دليل السياحة · الجدول 4",
+      "primaryEffective": null,
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2025-04/الدليل الاجرائي لقرار توطين القطاع السياحي_1.pdf",
+      "sourceTable": "دليل السياحة · الجدول 4",
+      "notes": "الرمز موثق في دليل مهني أو قطاعي؛ انطباق القرار يعتمد على نطاقه وتحديثاته."
+    },
+    {
+      "code": "141102",
+      "title": "مدير عمليات فندقة",
+      "decisionIds": [
+        "tourism"
+      ],
+      "verified": "دليل السياحة · الجدول 5",
+      "primaryEffective": null,
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2025-04/الدليل الاجرائي لقرار توطين القطاع السياحي_1.pdf",
+      "sourceTable": "دليل السياحة · الجدول 5",
+      "notes": "الرمز موثق في دليل مهني أو قطاعي؛ انطباق القرار يعتمد على نطاقه وتحديثاته."
+    },
+    {
+      "code": "132417",
+      "title": "مدير مشتريات",
+      "decisionIds": [
+        "beauty",
+        "procurement"
+      ],
+      "verified": "دليل مراكز الاسترخاء · جدول المهن (القرار القطاعي)",
+      "primaryEffective": null,
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2025-11/mswdt-aldlyl-alajray-y-lqrar-twtyn-nshat-mrakz-alastrkha-wal-nayt-alshkhsyt_v11.pdf",
+      "sourceTable": "دليل مراكز الاسترخاء · جدول المهن (القرار القطاعي)",
+      "notes": "الرمز موثق في دليل مهني أو قطاعي؛ انطباق القرار يعتمد على نطاقه وتحديثاته."
+    },
+    {
+      "code": "332302",
+      "title": "مندوب مشتريات",
+      "decisionIds": [
+        "beauty"
+      ],
+      "verified": "دليل مراكز الاسترخاء · جدول المهن (القرار القطاعي)",
+      "primaryEffective": null,
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2025-11/mswdt-aldlyl-alajray-y-lqrar-twtyn-nshat-mrakz-alastrkha-wal-nayt-alshkhsyt_v11.pdf",
+      "sourceTable": "دليل مراكز الاسترخاء · جدول المهن (القرار القطاعي)",
+      "notes": "الرمز موثق في دليل مهني أو قطاعي؛ انطباق القرار يعتمد على نطاقه وتحديثاته."
+    },
+    {
+      "code": "325401",
+      "title": "فني بصريات طبية",
+      "decisionIds": [
+        "optics"
+      ],
+      "verified": "الدليل الإجرائي للبصريات",
+      "primaryEffective": null,
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajrayy-lqrar-twtyn-mhn-albsryat.pdf",
+      "sourceTable": "الدليل الإجرائي للبصريات",
+      "notes": "الرمز موثق في دليل مهني أو قطاعي؛ انطباق القرار يعتمد على نطاقه وتحديثاته."
+    },
+    {
+      "code": "325403",
+      "title": "فني نظارات",
+      "decisionIds": [
+        "optics"
+      ],
+      "verified": "الدليل الإجرائي للبصريات",
+      "primaryEffective": null,
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajrayy-lqrar-twtyn-mhn-albsryat.pdf",
+      "sourceTable": "الدليل الإجرائي للبصريات",
+      "notes": "الرمز موثق في دليل مهني أو قطاعي؛ انطباق القرار يعتمد على نطاقه وتحديثاته."
+    },
+    {
+      "code": "515102",
+      "title": "مشرف مسكن",
+      "decisionIds": [
+        "housing"
+      ],
+      "verified": "الدليل الإجرائي لمشرف مسكن",
+      "primaryEffective": null,
+      "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-مهنة-مشرف-مسكن",
+      "sourceTable": "الدليل الإجرائي لمشرف مسكن",
+      "notes": "الرمز موثق في دليل مهني أو قطاعي؛ انطباق القرار يعتمد على نطاقه وتحديثاته."
+    },
+    {
+      "code": "122104",
+      "title": "مدير مبيعات",
+      "decisionIds": [
+        "tourism",
+        "beauty",
+        "sales"
+      ],
+      "verified": "جداول مهن السياحة ومراكز الاسترخاء",
+      "primaryEffective": null,
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2025-04/الدليل الاجرائي لقرار توطين القطاع السياحي_1.pdf",
+      "sourceTable": "الجدول 5",
+      "notes": "قد يخضع لأكثر من قرار، حسب النشاط والكيان والمهنة."
+    }
+  ]
+}
