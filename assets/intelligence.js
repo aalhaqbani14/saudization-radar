@@ -12,7 +12,7 @@
  const dateNow=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Riyadh',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
  const codeQuality=v=>v==='current'?['جدول حديث','current']:v==='historical'?['دليل أقدم','old']:['مسودة منشورة','draft'];
  const url=v=>{try{let u=new URL(v);return u.protocol==='https:'&&/(^|\.)hrsd\.gov\.sa$/.test(u.hostname)?u.href:'#'}catch{return '#'}};
- let occupations=[],decisions=[],decisionMap=new Map(),selected=new Set(),view='codes',fullList=false,events=[];
+ let occupations=[],decisions=[],decisionMap=new Map(),selected=new Set(),view='codes',fullList=false,events=[],graceRecords=[];
  try{selected=new Set(JSON.parse(localStorage.getItem('saudization-radar-saved')||'[]'))}catch{}
  function persist(){try{localStorage.setItem('saudization-radar-saved',JSON.stringify([...selected]))}catch{} $('k-selected').textContent=selected.size;}
  function score(o,q){const n=norm(q),title=norm(o.title),code=digits(o.code);if(!n)return 1;if(code===n)return 1000;if(/^\d+$/.test(n)&&code.startsWith(n))return 550;if(title===n)return 450;if(title.startsWith(n))return 400;if(title.includes(n))return 350;const words=n.split(' ').filter(Boolean);if(words.every(t=>title.includes(t)))return 275;if(code.includes(n))return 220;const related=o.decisionIds.map(id=>norm(decisionMap.get(id)?.title||'')).join(' ');if(related.includes(n))return 85;return 0;}
@@ -68,18 +68,105 @@
    $('detail-close').focus();
  }
  function closeDetail(){$('detail-modal').hidden=true;document.body.style.overflow=''}
- function drawReport(){
-   const chosen=decisions.filter(d=>selected.has(d.id));
-   $('report-count').textContent=digits(chosen.length);
-   $('report-selected').innerHTML=chosen.length?chosen.map(d=>'<span class="badge">'+esc(d.title)+'</span>').join(' '):'<p>لم تختر قرارات بعد. يمكنك إنشاء تقرير استرشادي لأهم القرارات، أو إضافة قرارات محددة من نتائج البحث.</p>';
+ function reportPicks(){
+   const mode=$('report-mode').value;
+   if(mode==='selected')return decisions.filter(d=>selected.has(d.id));
+   if(mode==='category')return decisions.filter(d=>d.category===$('report-category').value);
+   return decisions;
  }
+ function syncReportChoices(){
+   const mode=$('report-mode').value;
+   $('report-category-wrap').hidden=mode!=='category';
+   $('report-custom-wrap').hidden=mode!=='selected';
+   const options=$('report-decision-options');
+   options.innerHTML=decisions.map(d=>'<label class="report-check-item"><input type="checkbox" data-report-id="'+esc(d.id)+'" '+(selected.has(d.id)?'checked':'')+'><span>'+esc(d.title)+'</span></label>').join('');
+   options.querySelectorAll('[data-report-id]').forEach(input=>input.addEventListener('change',()=>{
+     input.checked?selected.add(input.dataset.reportId):selected.delete(input.dataset.reportId);
+     persist();drawReport();
+   }));
+   drawReport();
+ }
+ function drawReport(){
+   const picks=reportPicks();
+   const mode=$('report-mode').value;
+   $('report-count').textContent=digits(picks.length);
+   $('make-report').disabled=!picks.length;
+   $('clear-selected').hidden=mode!=='selected';
+   const description=mode==='all'?'جميع مجموعات القرارات المتاحة في الفهرس':mode==='category'?'مجموعة قرارات قطاع '+($('report-category').value||'غير محدد'):'القرارات التي حددتها من القائمة';
+   const chunks=picks.slice(0,9).map(d=>'<span class="badge">'+esc(d.title)+'</span>').join(' ');
+   $('report-selected').innerHTML='<strong>نطاق التقرير:</strong> '+esc(description)+' · '+digits(picks.length)+' مجموعة قرار.<div style="margin-top:9px">'+(picks.length?chunks+(picks.length>9?' <span class="badge">و'+digits(picks.length-9)+' قرارات إضافية</span>':''):'<span class="badge amber">اختر قراراً واحداً على الأقل قبل الإنشاء</span>')+'</div><div class="secondary" style="margin-top:9px">سيُعرض كل ما هو مسجل في الفهرس من مهن مستهدفة، ومهن خارج الاختيار، والمراحل والمهل موثقة المصدر.</div>';
+ }
+ function printTable(headers,rows,empty){
+   if(!rows.length)return '<p class="report-meta-note">'+esc(empty||'لا توجد بيانات مصنفة في النطاق المحدد.')+'</p>';
+   return '<table><thead><tr>'+headers.map(x=>'<th>'+esc(x)+'</th>').join('')+'</tr></thead><tbody>'+rows.map(row=>'<tr>'+row.map(x=>'<td>'+x+'</td>').join('')+'</tr>').join('')+'</tbody></table>';
+ }
+ function reportLink(link,label){
+   const href=url(link);
+   return href==='#'?'<span class="report-meta-note">رابط يحتاج تحققاً</span>':'<a href="'+esc(href)+'" target="_blank" rel="noopener noreferrer">'+esc(label||'المصدر الرسمي')+'</a>';
+ }
+ function reportDate(date){return date?esc(dayFormat(date)):'غير مثبت';}
  function buildReport(){
-   const chosen=decisions.filter(d=>selected.has(d.id));
-   const picks=chosen.length?chosen:decisions.filter(d=>['admin','procurement','project','marketing','sales','accounting','engineers','consulting'].includes(d.id));
-   const today=dayFormat(dateNow),intro=chosen.length?'القرارات المختارة يدوياً':'عينة استرشادية من قرارات متعددة';
-   const rows=picks.map((d,i)=>'<tr><td>'+digits(i+1)+'</td><td>'+esc(d.title)+'</td><td>'+escRates(d.rate)+'</td><td>'+esc(window.SaudizationHistory.summarize(d))+'</td><td>'+(d.audit?.status==='reviewed'?'مراجعة أساسية':'تدقيق تفصيلي مطلوب')+'</td></tr>').join('');
-   const steps=picks.slice(0,10).map((d,i)=>'<li><b>'+esc(d.title)+':</b> '+esc(d.focus?.[0]||'راجع الدليل الساري ونطاق التطبيق')+'</li>').join('');
-   $('print-content').innerHTML='<article class="report-sheet" dir="rtl"><div class="stamp">SAUDIZATION RADAR · EXECUTIVE BRIEF</div><h1>موجز متابعة قرارات التوطين</h1><p>تاريخ الإعداد: <b>'+esc(today)+'</b> · أساس الاختيار: '+esc(intro)+' · عدد القرارات: '+digits(picks.length)+'</p><p><b>الغرض:</b> ملخص إداري استرشادي يربط القرار بنسبة التوطين وموعد التطبيق وخطوات التحقق دون الاعتماد على أي بيانات شخصية أو داخلية.</p><h2>ملخص القرارات</h2><table><thead><tr><th>#</th><th>القرار</th><th>النسبة</th><th>المراحل والتواريخ حسب النطاق</th><th>التوثيق</th></tr></thead><tbody>'+rows+'</tbody></table><h2>إجراءات تنفيذ مقترحة</h2><ol>'+steps+'</ol><h2>حوكمة المعلومات</h2><p>تُراجع رموز المهن والأنشطة الفعلية وشروط العدد والراتب والاعتماد المهني وفترات السماح وفق الدليل الرسمي الساري قبل تطبيق أي نسبة. لا يُعد هذا التقرير تقييماً تلقائياً لامتثال شركة أو منشأة. المراجع الرسمية وروابطها موجودة في المنصة.</p><p class="report-foot">Saudization Radar | Independent Regulatory Intelligence Initiative · مصادر عامة ومراجعة بشرية لازمة</p></article>';
+   const picks=reportPicks();
+   if(!picks.length){alert('حدد قراراً واحداً على الأقل لإنشاء التقرير.');return}
+   if(!window.SaudizationReportModel){alert('تعذّر تحميل محرك التقرير. حدّث الصفحة وأعد المحاولة.');return}
+   const model=window.SaudizationReportModel.build(decisions,occupations,graceRecords,picks.map(d=>d.id),$('report-extra-occupations').value);
+   const m=model.coverage,today=dayFormat(dateNow);
+   const mode=$('report-mode').value,selection=mode==='all'?'جميع مجموعات القرارات في الفهرس':mode==='category'?'قطاع '+$('report-category').value:'قرارات محددة يدوياً';
+   const decisionRows=model.picked.map((d,i)=>[
+     esc(digits(i+1)), '<b>'+esc(d.title)+'</b>'+(d.number?'<br><small>رقم '+esc(d.number)+'</small>':''),
+     escRates(d.rate||'غير محدد'),reportDate(d.issueDate),reportDate(d.effective),
+     esc(d.min||d.scope||'يراجع الدليل'),
+     '<span class="report-badge '+(d.audit?.status==='reviewed'?'':'pending')+'">'+(d.audit?.status==='reviewed'?'مراجعة أساسية':'يحتاج تدقيقاً')+'</span><br>'+reportLink(d.source,'فتح المصدر')
+   ]);
+   const graceRows=model.grace.map(g=>[
+     '<b>'+esc(g.decisionTitle)+'</b>',esc(g.scope||'يراجع الدليل'),
+     reportDate(g.start),reportDate(g.end),'<b>'+esc(g.duration)+'</b>',
+     '<span class="report-badge '+(g.status==='unverified'?'pending':'')+'">'+(g.status==='official'?'وردت المهلة صراحة':g.status==='reported'?'المهلة مذكورة في خبر الوزارة':'لم توثق مدة المهلة')+'</span><br><small>'+esc(g.basis||'')+'</small><br>'+reportLink(g.source,'السند')
+   ]);
+   const stageRows=model.stages.map(p=>[
+     esc(p.decisionTitle),reportDate(p.date),escRates(p.rate),esc(p.label),
+     esc(p.scope||'بحسب نطاق القرار')+(p.note?'<br><small>'+esc(p.note)+'</small>':''),
+     reportLink(p.source,'المرجع')
+   ]);
+   const targetRows=model.targeted.map(o=>[
+     '<b dir="ltr">'+esc(o.code)+'</b>',esc(o.title),
+     esc(o.matched.map(id=>decisions.find(d=>d.id===id)?.title||id).join('؛ ')),
+     o.primaryEffective?reportDate(o.primaryEffective):'<span class="report-meta-note">حسب القرار والجداول</span>',
+     esc(o.sourceTable||o.verified||'مرجع الفهرس')+'<br>'+reportLink(o.source,'دليل الرمز')
+   ]);
+   const outsideRows=model.outside.map(o=>[
+     '<b dir="ltr">'+esc(o.code)+'</b>',esc(o.title),
+     esc(o.decisionIds.map(id=>decisions.find(d=>d.id===id)?.title||id).join('؛ ')),
+     '<span class="report-badge pending">خارج القرارات المختارة فقط</span><br>'+reportLink(o.source,'المصدر')
+   ]);
+   const namesRows=model.mentioned.map(o=>[
+     esc(o.title),esc(o.decisionTitle),
+     '<span class="report-badge pending">ورد في الملخص؛ رمز مهني غير مطابق هنا</span>'
+   ]);
+   const manualRows=model.manual.map(o=>[
+     esc(o.input),esc(o.code),
+     '<span class="report-badge '+(o.status==='targeted'?'':'pending')+'">'+(o.status==='targeted'?'مستهدفة ضمن الاختيار':o.status==='out-of-scope'?'خارج الاختيار فقط':'حالة غير محددة')+'</span>',
+     esc(o.notice)+(o.matched.length?'<br>'+esc(o.matched.join('، ')):'')+(o.otherDecisions.length?'<br>قرارات أخرى: '+esc(o.otherDecisions.join('، ')):'')
+   ]);
+   const summaryCards=[
+     [digits(m.selectedGroups),'مجموعات القرار المختارة'],
+     [digits(m.targetedCount),'رموز مهن ضمن نطاق الاختيار'],
+     [digits(m.outsideCount),'رموز خارج القرارات المختارة'],
+     [digits(model.grace.filter(g=>g.status!=='unverified').length),'سجلات مهلة موثقة/مذكورة']
+   ].map(x=>'<div><strong>'+x[0]+'</strong><span>'+x[1]+'</span></div>').join('');
+   const targetNotice='هذه جميع رموز المهن المستهدفة ضمن الاختيار والموجودة في فهرس المنصة الجزئي، وليست حصر الوزارة الكامل. قد يتداخل الرمز في أكثر من قرار، ويلزم الرجوع إلى جداول الدليل الساري.';
+   const outsideNotice='هذه مهن موثقة في فهرسنا لكنها مرتبطة بمجموعات قرار لم تُختَر لهذا التقرير. وصف «خارج نطاق الاختيار» لا يعني أنها غير مستهدفة بالتوطين عموماً.';
+   const sections=[
+     '<section><h2>1. ملخص القرارات المختارة</h2>'+printTable(['#','مجموعة القرار','النسبة المسجلة','تاريخ الإصدار','بدء التطبيق العام','شروط العدد والنطاق','حالة التدقيق والمصدر'],decisionRows)+'</section>',
+     '<section><h2>2. فترات السماح والاستثناءات الزمنية</h2><p class="report-meta-note">تفاصيل المهل تختلف حسب رمز المهنة والجدول. إن لم توثق مدة المهلة فلا نعتبر الفارق بين تاريخ الإصدار والتطبيق تصريحاً بمهلة رسمية.</p>'+printTable(['القرار','النطاق المهني','بداية الفترة','نهاية الفترة / النفاذ','مدة السماح','درجة التوثيق والسند'],graceRows)+'</section>',
+     '<section><h2>3. جدول المراحل وتواريخ التنفيذ</h2>'+printTable(['القرار','تاريخ المرحلة','النسبة','وصف المرحلة','النطاق والملاحظات','المصدر'],stageRows)+'</section>',
+     '<section><h2>4. المهن المستهدفة ضمن النطاق المختار — رموز مفهرسة ('+digits(model.targeted.length)+')</h2><p class="report-meta-note">'+esc(targetNotice)+'</p>'+printTable(['الرمز المهني','المسمى','القرارات المختارة المرتبطة','تاريخ بدء خاص بالمهنة إن وجد','الجدول أو دليل الإثبات'],targetRows,'لا توجد رموز مفهرسة ضمن المجموعات المختارة؛ ارجع إلى الأدلة الرسمية للتحقق من قائمة المهن.')+'</section>',
+     '<section><h2>5. مسميات إضافية مذكورة بملخصات القرارات ('+digits(model.mentioned.length)+')</h2><p class="report-meta-note">هذه المسميات واردة في ملخصات مختارة وليست قائمة رسمية مكتملة أو مطابقة للرموز.</p>'+printTable(['المسمى الوارد في الملخص','المجموعة المرتبطة','حدود التوثيق'],namesRows,'لا توجد مسميات إضافية خارج قائمة الرموز الحالية.')+'</section>',
+     '<section><h2>6. المهن خارج القرارات المختارة — ضمن الفهرس ('+digits(model.outside.length)+')</h2><p class="report-caution">'+esc(outsideNotice)+'</p>'+printTable(['الرمز المهني','المسمى','قرارات أخرى قد تستهدفه','الحالة والمصدر'],outsideRows,'عند اختيار جميع القرارات لا تظهر عادة مهن خارج الاختيار من داخل الفهرس؛ ولا يمكن إثبات أن بقية مهن المملكة «غير مستهدفة» دون فهرس أشمل.')+'</section>'
+   ];
+   if(model.manual.length)sections.push('<section><h2>7. تقييم قائمة المهن التي أدخلتها ('+digits(model.manual.length)+')</h2><p class="report-meta-note">مقارنة محلية بالفهرس الجزئي فقط، دون رفع البيانات إلى أي خدمة. المهنة غير الموجودة نتيجتها غير محددة، وليست غير مستهدفة.</p>'+printTable(['المهنة المُدخلة','الرمز المفهرس إن وجد','نتيجة المقارنة','التفسير'],manualRows)+'</section>');
+   const footer='<section><h2>حدود الاعتماد وخطوات التحقق</h2><p>لا يمثّل هذا التقرير تقييماً نظامياً لامتثال منشأة. اختيار القرار لا يثبت انطباقه على كل نشاط أو منشأة أو موظف. يجب مطابقة رموز المهن والمسميات الفعلية وشروط العدد والأجور والاعتماد المهني وفترات السماح والاستثناءات في الدليل الرسمي الساري، ومراجعة التعارضات بين القرارات. عدد رموز الفهرس الحالي '+digits(m.indexCount)+'؛ لذلك لا يمكن الجزم بأن مهنة غير مدرجة لا تخضع للتوطين.</p><p>يمكن متابعة آخر مراجعات المصادر من غرفة التحليل وسجل المصادر الرسمي في Saudization Radar.</p></section>';
+   $('print-content').innerHTML='<article class="report-sheet" dir="rtl"><div class="report-cover"><div class="stamp">SAUDIZATION RADAR · EXECUTIVE DECISION REPORT</div><h1>التقرير التنفيذي لقرارات التوطين والمهن</h1><p>تاريخ إعداد التقرير (الرياض): <b>'+esc(today)+'</b> · نطاق التقرير: <b>'+esc(selection)+'</b></p><div class="summary-metrics">'+summaryCards+'</div><div class="report-caution">هذا التقرير استرشادي ومبني على فهرس جزئي، ولا يتضمن جميع المهن في التصنيف السعودي أو شهادات امتثال. التحقق من المستندات الرسمية شرط قبل أي استخدام نظامي.</div></div>'+sections.join('')+footer+'<p class="report-foot">Saudization Radar · Independent Regulatory Intelligence Initiative · مراجع حكومية منشورة، دون بيانات موظفين أو توقيع شخصي</p></article>';
    document.body.classList.add('printing');$('print-host').classList.add('active');
  }
  function closeReport(){document.body.classList.remove('printing');$('print-host').classList.remove('active');}
@@ -96,6 +183,8 @@
      const [occResponse,decResponse]=await Promise.all([fetch('data/occupations.json?v='+Date.now()),fetch('data/decisions.json?v='+Date.now())]);
      if(!occResponse.ok||!decResponse.ok)throw new Error('Data unavailable');
      const [occDb,decDb]=await Promise.all([occResponse.json(),decResponse.json()]);
+     try{const response=await fetch('data/grace-periods.json?v='+Date.now());if(!response.ok)throw Error('Grace registry unavailable');graceRecords=(await response.json()).records||[]}catch(err){graceRecords=[];console.warn('Grace records unavailable',err)}
+
      occupations=Array.isArray(occDb.occupations)?occDb.occupations:[];decisions=Array.isArray(decDb.decisions)?decDb.decisions:[];
      decisionMap=new Map(decisions.map(d=>[d.id,d]));
      selected=new Set([...selected].filter(id=>decisionMap.has(id)));persist();
@@ -107,7 +196,9 @@
      $('source-version').textContent='آخر تحديث بيانات الفهرس: '+esc(dayFormat(occDb.updated));
      const cats=[...new Set(decisions.map(d=>d.category))].sort((a,b)=>a.localeCompare(b,'ar'));
      $('timeline-sector').innerHTML='<option value="">جميع القطاعات</option>'+cats.map(c=>'<option value="'+esc(c)+'">'+esc(c)+'</option>').join('');
-     buildTimeline();drawCodes();drawTimeline();drawAudit();drawReport();
+     $('report-category').innerHTML=cats.map(c=>'<option value="'+esc(c)+'">'+esc(c)+'</option>').join('');
+
+     buildTimeline();drawCodes();drawTimeline();drawAudit();syncReportChoices();
      let hashed=window.location.hash.slice(1);if(['codes','timeline','audit','report'].includes(hashed))setView(hashed);
    }catch(e){
      $('occupations').innerHTML='<div class="empty">تعذّر تحميل بيانات الفهرس. تحقق من وجود data/occupations.json وdata/decisions.json ومن اكتمال نشر GitHub Pages.</div>';
@@ -123,9 +214,13 @@
  $('timeline-filter').addEventListener('change',drawTimeline);$('timeline-sector').addEventListener('change',drawTimeline);
  $('detail-close').addEventListener('click',closeDetail);$('detail-modal').addEventListener('click',e=>{if(e.target===$('detail-modal'))closeDetail()});
  document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeDetail();closeReport()}});
+ $('report-mode').addEventListener('change',syncReportChoices);
+ $('report-category').addEventListener('change',drawReport);
+ $('report-select-all').addEventListener('click',()=>{decisions.forEach(d=>selected.add(d.id));persist();syncReportChoices()});
+ $('report-select-none').addEventListener('click',()=>{selected.clear();persist();syncReportChoices()});
  $('make-report').addEventListener('click',buildReport);
  $('print-now').addEventListener('click',()=>window.print());$('close-print').addEventListener('click',closeReport);
- $('clear-selected').addEventListener('click',()=>{if(confirm('هل تريد إفراغ قائمة قرارات التقرير المحفوظة على هذا المتصفح فقط؟')){selected.clear();persist();drawReport()}});
+ $('clear-selected').addEventListener('click',()=>{if(confirm('هل تريد إفراغ قائمة قرارات التقرير المحفوظة على هذا المتصفح فقط؟')){selected.clear();persist();syncReportChoices()}});
  $('download-codes').addEventListener('click',()=>{
    const rows=[['رمز المهنة','المسمى','القرارات المرتبطة','تاريخ بدء المهنة','نوع المصدر','رابط المصدر'],...occupations.map(o=>[o.code,o.title,linkedDecisions(o).map(d=>d.title).join(' | '),o.primaryEffective||'',codeQuality(o.evidenceQuality)[0],o.source])];
    const csv='\ufeff'+rows.map(row=>row.map(x=>'"'+String(x??'').replace(/"/g,'""')+'"').join(',')).join('\r\n');
