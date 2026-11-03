@@ -27,6 +27,18 @@ def official(value):
     except (TypeError, AttributeError, ValueError):
         return False
 
+def government_historical_source(value):
+    """Historical citations can be HRSD or Saudi Press Agency;
+    SPA-only evidence is not confirmation of the original decree."""
+    if official(value):
+        return True
+    try:
+        u = urlsplit(value)
+        return (u.scheme == "https" and u.hostname in {"spa.gov.sa", "www.spa.gov.sa"}
+                and not u.username and not u.password)
+    except (TypeError, AttributeError, ValueError):
+        return False
+
 class DataQuality(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -64,8 +76,13 @@ class DataQuality(unittest.TestCase):
                 for stage in decision.get('history', []):
                     if stage.get('date'):
                         self.assertTrue(is_date(stage['date']))
+                    self.assertIn(stage.get('kind'), {'original','expanded','raised','upcoming','special','single','pending'})
+                    self.assertFalse(str(stage.get('label','')).startswith('https://'))
                     if stage.get('source'):
-                        self.assertTrue(official(stage['source']))
+                        self.assertTrue(government_historical_source(stage['source']))
+                        if not official(stage['source']):
+                            self.assertFalse(stage.get('verified'),
+                                'News-agency citations alone must not claim ministerial verification')
 
     def test_registry_has_official_sources_and_matches_decisions(self):
         ids = {x['id']:x for x in self.d}
