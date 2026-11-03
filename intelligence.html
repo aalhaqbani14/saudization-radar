@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b2233">
+<meta name="description" content="غرفة التحليل في Saudization Radar: بحث المهن بالرمز، تتبع قرارات التوطين، المواعيد التنفيذية، تدقيق المراجع وإعداد تقارير للإدارة.">
+<title>غرفة التحليل | Saudization Radar</title>
+<link rel="stylesheet" href="assets/intelligence.css">
+</head>
+<body>
+<div class="shell">
+  <aside class="rail">
+    <div class="rail-brand"><div class="monogram">SR</div><div><strong>Saudization Radar</strong><small>مركز التحليل التنظيمي</small></div></div>
+    <div>
+      <div class="nav-caption">INTELLIGENCE WORKSPACE</div>
+      <nav class="rail-links" aria-label="القائمة الرئيسية">
+        <a href="index.html">▦ &nbsp; لوحة المتابعة</a>
+        <a class="active" href="#codes">⌕ &nbsp; محرك بحث المهن</a>
+        <button type="button" data-tab="timeline">◷ &nbsp; تقويم القرارات</button>
+        <button type="button" data-tab="audit">▤ &nbsp; تدقيق المراجع</button>
+        <button type="button" data-tab="report">▣ &nbsp; التقرير التنفيذي</button>
+      </nav>
+    </div>
+    <div class="rail-bottom"><small>BUILT & CURATED BY</small><strong>عبدالعزيز عبدالله الحقباني</strong><p>مبادرة شخصية مستقلة للتحليل والمتابعة، وليست منصة حكومية أو نظام امتثال معتمداً.</p></div>
+  </aside>
+  <div class="workspace">
+    <header class="top"><div class="breadcrumbs">Saudization Radar / <b>غرفة التحليل</b></div><div class="top-pill">بيانات من مصادر حكومية منشورة</div></header>
+    <main class="main">
+      <section class="hero" aria-labelledby="main-title">
+        <div><div class="eyebrow">OCCUPATION INTELLIGENCE · REGULATORY MONITORING</div>
+          <h1 id="main-title">افهم المهنة. اربط القرار. اتخذ الإجراء.</h1>
+          <p>ابحث بالرمز المهني أو المسمى، اكتشف القرارات ذات الصلة والتداخلات المحتملة، راجع توقيت التطبيق ومصدر الإثبات، ثم جهّز موجزاً تنفيذياً للإدارة.</p>
+        </div>
+        <div class="hero-stat" aria-label="إحصائيات غرفة التحليل"><div><b id="hero-decisions">—</b><small>مجموعة قرار</small></div><div><b id="hero-codes">—</b><small>رمز في الفهرس</small></div></div>
+      </section>
+      <section class="kpis" aria-label="المؤشرات">
+        <div class="kpi"><span>مجموعات القرارات</span><strong id="k-decisions">—</strong><small>ملخصات قابلة للتوسع</small></div>
+        <div class="kpi"><span>الرموز المهنية المفهرسة</span><strong id="k-codes">—</strong><small>فهرس جزئي وليس جميع المهن</small></div>
+        <div class="kpi"><span>مراجعات أساسية للقرارات</span><strong id="k-audited">—</strong><small>ليست تدقيقاً قانونياً نهائياً</small></div>
+        <div class="kpi"><span>رموز مرتبطة بعدة قرارات</span><strong id="k-overlaps">—</strong><small>تستدعي التحقق من النطاق</small></div>
+      </section>
+      <section class="panel">
+        <div class="panel-head"><div><h2>مركز التحليل</h2><p>اختر مسار العمل. كل النتائج تفتح مع دليل المهنة ودرجة توثيقها.</p></div><span class="badge">Personal initiative · V3</span></div>
+        <div class="tabs" role="tablist" aria-label="أقسام غرفة التحليل">
+          <button type="button" data-tab="codes" class="active" role="tab" aria-selected="true">⌕ &nbsp; بحث المهن والرموز</button>
+          <button type="button" data-tab="timeline" role="tab" aria-selected="false">◷ &nbsp; التقويم التنفيذي</button>
+          <button type="button" data-tab="audit" role="tab" aria-selected="false">▤ &nbsp; سلامة المصادر</button>
+          <button type="button" data-tab="report" role="tab" aria-selected="false">▣ &nbsp; تقرير الإدارة</button>
+        </div>
+        <div id="view-codes" class="view" role="tabpanel">
+          <div class="panel-head"><div><h2>اكتشف قرار المهنة</h2><p>يقدّم الرمز الدقيق أولوية في المطابقة، ثم الاسم والأسماء المرتبطة.</p></div><button type="button" id="download-codes" class="link-btn ghost">تحميل فهرس الرموز CSV</button></div>
+          <div class="searchbox"><span class="search-icon" aria-hidden="true">⌕</span><input id="profession-query" type="search" autocomplete="off" placeholder="مثلاً: 412001 أو مساعد إداري أو مدير إدارة مشاريع" aria-label="البحث برمز المهنة أو المسمى"><button type="button" id="profession-search">بحث</button></div>
+          <div class="chips"><button type="button" data-example="412001">412001 · مساعد إداري</button><button type="button" data-example="411001">411001 · علاقات حكومية</button><button type="button" data-example="121314">121314 · إدارة مشاريع</button><button type="button" data-example="332302">332302 · مشتريات</button><button type="button" data-example="مدير موارد بشرية">مدير موارد بشرية</button></div>
+          <div class="panel-head" style="margin:19px 0 13px"><p id="occupation-results" class="summaryline">جارٍ تحميل فهرس الرموز…</p><button type="button" class="link-btn ghost" id="load-all">عرض جميع الرموز</button></div>
+          <div id="occupations" class="occupation-grid" aria-live="polite"><div class="loading">جارٍ قراءة فهرس المهن…</div></div>
+          <div class="hint warning"><strong>تنبيه الدقة:</strong> التطابق مع الرمز يعني وجوده في جداول منشورة، لكنه لا يكفي لإثبات انطباق القرار على منشأة بعينها. وقد يكون الرمز في دليل سابق أو مسودة؛ يُذكر ذلك صراحة على نتيجة البحث. المهن غير الموجودة في الفهرس قد تكون مستهدفة بقرارات أخرى.</div>
+        </div>
+        <div id="view-timeline" class="view" role="tabpanel" hidden>
+          <div class="panel-head"><div><h2>خريطة التنفيذ الزمنية</h2><p>مواعيد المراحل كما وردت في قاعدة القرارات، بما فيها النسب التي ترتفع مع الوقت.</p></div><span class="badge amber">أجندة بحثية قابلة للمراجعة</span></div>
+          <div class="filters"><select id="timeline-filter" aria-label="حالة التاريخ"><option value="future">المراحل القادمة</option><option value="all">جميع المواعيد المسجلة</option><option value="past">المراحل السابقة</option></select><select id="timeline-sector" aria-label="القطاع"><option value="">جميع القطاعات</option></select></div>
+          <p id="timeline-caption" class="summaryline">جارٍ توليد التقويم…</p>
+          <div id="timeline-list" class="timeline"></div>
+          <div class="hint">المواعيد من ملخصات القرارات المسجلة؛ بعض الفئات لها شروط تتعلق بحجم المنشأة أو النشاط أو المهنة. لا تستخدم خط الزمن وحده كإشعار نظامي ملزم.</div>
+        </div>
+        <div id="view-audit" class="view" role="tabpanel" hidden>
+          <div class="panel-head"><div><h2>سلامة المصادر والتوثيق</h2><p>ما راجعناه أساسياً وما يحتاج مراجعة تفصيلية، بوضوح أمام الإدارة.</p></div><span class="badge">TRANSPARENCY FIRST</span></div>
+          <div id="audit-metrics" class="audit-grid"></div>
+          <div class="hint"><b>طريقة التوثيق:</b> «مراجعة أساسية» تعني التحقق من نسبة وموعد ونطاق أساسي بمصدر رسمي، ولا تعني توثيق كافة المهن والاستثناءات. «تدقيق تفصيلي مطلوب» تعني أن المرجع لا يزال بحاجة لفحص آخر دليل، والجدول المهني، والنسخ المتعاقبة. كما جرى الفصل بين جداول 2026 والأدلة الأقدم والمسودات عند فهرسة رموز المهن.</div>
+          <div id="audit-list" class="audit-list" style="margin-top:14px"></div>
+        </div>
+        <div id="view-report" class="view" role="tabpanel" hidden>
+          <div class="panel-head"><div><h2>الموجز التنفيذي للإدارة</h2><p>اختر قراراتك من محرك البحث ثم حوّلها إلى تقرير جاهز للطباعة أو الحفظ PDF.</p></div><span class="badge">PREPARED BY A. ALHAQBANI</span></div>
+          <div class="report-options"><div class="report-option"><h3>المواضيع المختارة <span id="report-count">0</span></h3><p>تأتي من قائمة «مراجعتي» المحفوظة على هذا المتصفح؛ لا تحتوي على أي بيانات شركة أو موظفين.</p></div><div class="report-option"><h3>إذا ما اخترت قرارات</h3><p>ننشئ تقريراً استرشادياً يضم عينة من القرارات الشائعة، مع تمييز المراجع التي تحتاج تدقيقاً.</p></div></div>
+          <div id="report-selected" class="report-preview">لم تحدد قرارات بعد.</div>
+          <div class="report-buttons"><button id="make-report" class="primary">إنشاء التقرير التنفيذي ↗</button><button id="clear-selected" class="secondary">إفراغ قائمة المراجعة</button><a href="index.html#intel" class="link-btn ghost">فتح المكتبة الكاملة</a></div>
+          <div class="hint">يظهر توقيع «إعداد وتطوير: عبدالعزيز عبدالله الحقباني» في التقرير. جميع الأحكام والقيم التعليمية تحتاج مراجعة مقابل القرار الساري قبل مشاركتها على أنها امتثال نظامي.</div>
+        </div>
+      </section>
+      <footer class="footer"><div class="footer-author">إعداد وتطوير | PREPARED & DEVELOPED BY<strong>عبدالعزيز عبدالله الحقباني</strong></div><div><p>منصة شخصية مستقلة لتلخيص قرارات التوطين المنشورة. لا تمثل جهة حكومية، ولا تتصل بنظم الموارد البشرية أو بيانات الموظفين. المحتوى قابل للتحديث وإعادة التحقق.</p><p id="source-version" class="last-reviewed">—</p></div></footer>
+    </main>
+  </div>
+</div>
+<div id="detail-modal" class="modal" hidden><div class="dialog" role="dialog" aria-modal="true" aria-label="تفاصيل القرار"><button class="modal-close" type="button" id="detail-close" aria-label="إغلاق">×</button><div id="detail-content"></div></div></div>
+<div id="print-host" class="print-host"><div class="print-toolbar"><button id="print-now" type="button">طباعة أو حفظ PDF</button><button id="close-print" type="button">إغلاق التقرير</button></div><div id="print-content"></div></div>
+<script src="assets/intelligence.js" defer></script>
+</body>
+</html>
