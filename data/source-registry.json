@@ -1,0 +1,73 @@
+{
+  "updated": "2026-11-03",
+  "scope": "سجل مراجع رسمية مختارة للتحقق من البيانات الأساسية المنشورة. لا يعني التحقق من بيانات صفحة القرار اكتمال تدقيق كل جدول مهنة أو استثناء في ملفات PDF.",
+  "methodology": "التحقق الحالي من صفحات وزارة الموارد البشرية الرسمية: رقم القرار، عنوانه، وتاريخ التنفيذ، وأحياناً النسبة الواردة في وصف الصفحة. تبقى تفاصيل النطاق والمهنة والحد الأدنى والأجر خاضعة لتدقيق الدليل المرفق.",
+  "sources": [
+    {
+      "id": "admin",
+      "title": "المهن الإدارية المساندة",
+      "number": "132249",
+      "issued": "2026-04-05",
+      "effective": "2026-04-05",
+      "note": "تشمل مراحل التطبيق بحسب الجداول، ومنها 4 أكتوبر 2026؛ تاريخ القرار لا ينطبق وحده على كل رمز مهني.",
+      "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-المهن-الإدارية-المساندة",
+      "verification": "official_page_metadata",
+      "review": "الأكواد والجداول تحتاج مطابقة فردية"
+    },
+    {
+      "id": "accounting",
+      "title": "المهن المحاسبية",
+      "number": "103108",
+      "issued": "2025-01-26",
+      "effective": "2025-10-27",
+      "note": "الصفحة الرسمية تنص على مراحل تصل إلى 70% خلال خمس سنوات؛ تطبق الشروط والنسب وفق العدد والدليل.",
+      "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-المهن-المحاسبية",
+      "verification": "official_page_metadata",
+      "review": "جدول المراحل حسب عدد المحاسبين يحتاج تدقيقاً منفصلاً"
+    },
+    {
+      "id": "project",
+      "title": "مهن إدارة المشاريع",
+      "number": "41454",
+      "issued": "2026-08-13",
+      "effective": "2027-02-14",
+      "note": "الصفحة الرسمية تذكر نسبة 70% وثلاث مهن مستهدفة.",
+      "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لتوطين-مهن-إدارة-المشاريع",
+      "verification": "official_page_metadata",
+      "review": "شروط عدد العاملين والأجور في الدليل"
+    },
+    {
+      "id": "procurement",
+      "title": "مهن المشتريات",
+      "number": "77050",
+      "issued": "2025-11-30",
+      "effective": "2026-05-31",
+      "note": "النص الرسمي يذكر قرار 77050؛ تاريخ النشر المعروض في موقع الوزارة مختلف عن الإصدار. هذا السجل يعتمد تاريخ الإصدار.",
+      "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لتوطين-مهن-المشتريات",
+      "verification": "official_page_metadata",
+      "review": "إعادة مطابقة القائمة المهنية ونسبة الاحتساب مع PDF"
+    },
+    {
+      "id": "sales",
+      "title": "مهن المبيعات",
+      "number": "101278",
+      "issued": "2026-01-19",
+      "effective": "2026-04-19",
+      "note": "تواريخ الإصدار والتطبيق ورقم القرار كما وردت في صفحة الدليل الرسمية.",
+      "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لتوطين-مهن-المبيعات",
+      "verification": "official_page_metadata",
+      "review": "شروط النشاط وعدد العاملين والنسب في PDF"
+    },
+    {
+      "id": "housing",
+      "title": "مهنة مشرف مسكن",
+      "number": "62298",
+      "issued": "2025-10-31",
+      "effective": "2026-02-01",
+      "note": "الصفحة الرسمية تذكر اشتراط الحد الأدنى للأجر.",
+      "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-مهنة-مشرف-مسكن",
+      "verification": "official_page_metadata",
+      "review": "نسبة التوطين واشتراط الأجر في PDF"
+    }
+  ]
+}
