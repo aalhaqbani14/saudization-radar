@@ -1,0 +1,76 @@
+{
+  "updated": "2026-11-03",
+  "methodology": "مهل السماح تسجّل فقط عندما يرد نص صريح في دليل أو خبر الوزارة. يفرّق التقرير بين التطبيق الفوري والتطبيق المؤجل، ولا يحسب الفارق بين التاريخين بوصفه فترة سماح قانونية بشكل آلي. السجلات المفقودة تعني أن المدة لم توثق في هذا الفهرس، لا عدم وجود مهلة.",
+  "records": [
+    {
+      "decisionId": "admin",
+      "scope": "المهن الواردة في الجدول (2) فقط",
+      "start": "2026-04-05",
+      "end": "2026-04-05",
+      "duration": "تطبيق فوري",
+      "basis": "الدليل الإجرائي — الجدول (2) يبدأ من إصدار القرار",
+      "status": "official",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf"
+    },
+    {
+      "decisionId": "admin",
+      "scope": "المهن الواردة في الجدول (3) فقط",
+      "start": "2026-04-05",
+      "end": "2026-10-04",
+      "duration": "6 أشهر",
+      "basis": "الدليل الإجرائي — المهن بالجدول (3) تمنح 6 أشهر من إصدار القرار",
+      "status": "official",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf"
+    },
+    {
+      "decisionId": "accounting",
+      "scope": "المرحلة الأولى لمهن المحاسبة؛ المراحل اللاحقة بحسب جدول التنفيذ",
+      "start": "2025-01-26",
+      "end": "2025-10-27",
+      "duration": "9 أشهر",
+      "basis": "الدليل الإجرائي — مدة السماح 9 أشهر، ثم مراحل التدرج حتى 2029",
+      "status": "official",
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajryy-lqrar-twtyn-mhn-almhasbyt.pdf"
+    },
+    {
+      "decisionId": "procurement",
+      "scope": "المهن الاثنتا عشرة المستهدفة بقرار المشتريات الجديد",
+      "start": "2025-11-30",
+      "end": "2026-05-31",
+      "duration": "6 أشهر",
+      "basis": "وزارة الموارد البشرية: نفاذ القرار بعد ستة أشهر من صدوره",
+      "status": "official",
+      "source": "https://www.hrsd.gov.sa/media-center/news/رفع-نسب-التوطين-في-المهن-الهندسية-ومهن-المشتريات"
+    },
+    {
+      "decisionId": "engineers",
+      "scope": "46 مهنة هندسية بالقرار المعدل مع شروط العدد والأجر والاعتماد",
+      "start": "2025-12-31",
+      "end": "2026-06-30",
+      "duration": "6 أشهر",
+      "basis": "وزارة الموارد البشرية: يبدأ التنفيذ بعد ستة أشهر من صدور القرار",
+      "status": "official",
+      "source": "https://www.hrsd.gov.sa/media-center/news/رفع-نسب-التوطين-في-المهن-الهندسية-ومهن-المشتريات"
+    },
+    {
+      "decisionId": "marketing",
+      "scope": "مهن التسويق وفق قرار 2026",
+      "start": "2026-01-19",
+      "end": "2026-04-19",
+      "duration": "فترة انتقالية حتى التطبيق",
+      "basis": "خبر بدء تطبيق التسويق والمبيعات يؤكد انتهاء فترة السماح؛ لم نثبت مدة الأشهر نصاً",
+      "status": "reported",
+      "source": "https://www.hrsd.gov.sa/media-center/news/التوطين-في-مهن-التسويق-والمبيعات"
+    },
+    {
+      "decisionId": "sales",
+      "scope": "مهن المبيعات وفق قرار 2026",
+      "start": "2026-01-19",
+      "end": "2026-04-19",
+      "duration": "فترة انتقالية حتى التطبيق",
+      "basis": "خبر بدء تطبيق التسويق والمبيعات يؤكد انتهاء فترة السماح؛ لم نثبت مدة الأشهر نصاً",
+      "status": "reported",
+      "source": "https://www.hrsd.gov.sa/media-center/news/التوطين-في-مهن-التسويق-والمبيعات"
+    }
+  ]
+}
