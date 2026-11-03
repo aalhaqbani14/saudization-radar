@@ -1,1 +1,14 @@
-{"last_checked":null,"sources":[{"name":"أخبار الوزارة","url":"https://www.hrsd.gov.sa/media-center/news"},{"name":"الأدلة الإجرائية","url":"https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/evidence"}],"alerts":[]}
+{
+  "last_checked": "2026-11-03T02:45:27.098335+00:00",
+  "sources": [
+    {
+      "name": "أخبار الوزارة",
+      "url": "https://www.hrsd.gov.sa/media-center/news"
+    },
+    {
+      "name": "الأدلة الإجرائية",
+      "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/evidence"
+    }
+  ],
+  "alerts": []
+}
