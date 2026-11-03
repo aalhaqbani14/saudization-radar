@@ -16,7 +16,7 @@
       <div class="nav-caption">INTELLIGENCE WORKSPACE</div>
       <nav class="rail-links" aria-label="القائمة الرئيسية">
         <a href="index.html">▦ &nbsp; لوحة المتابعة</a>
-        <a class="active" href="#codes">⌕ &nbsp; محرك بحث المهن</a>
+        <a class="active" href="#codes" data-tab="codes">⌕ &nbsp; محرك بحث المهن</a>
         <button type="button" data-tab="timeline">◷ &nbsp; تقويم القرارات</button>
         <button type="button" data-tab="audit">▤ &nbsp; تدقيق المراجع</button>
         <button type="button" data-tab="report">▣ &nbsp; التقرير التنفيذي</button>
@@ -72,7 +72,7 @@
         <div id="view-report" class="view" role="tabpanel" hidden>
           <div class="panel-head"><div><h2>الموجز التنفيذي للإدارة</h2><p>اختر قراراتك من محرك البحث ثم حوّلها إلى تقرير جاهز للطباعة أو الحفظ PDF.</p></div><span class="badge">PREPARED BY A. ALHAQBANI</span></div>
           <div class="report-options"><div class="report-option"><h3>المواضيع المختارة <span id="report-count">0</span></h3><p>تأتي من قائمة «مراجعتي» المحفوظة على هذا المتصفح؛ لا تحتوي على أي بيانات شركة أو موظفين.</p></div><div class="report-option"><h3>إذا ما اخترت قرارات</h3><p>ننشئ تقريراً استرشادياً يضم عينة من القرارات الشائعة، مع تمييز المراجع التي تحتاج تدقيقاً.</p></div></div>
-          <div id="report-selected" class="report-preview">لم تحدد قرارات بعد.</div>
+          <span id="k-selected" hidden>0</span><div id="report-selected" class="report-preview">لم تحدد قرارات بعد.</div>
           <div class="report-buttons"><button id="make-report" class="primary">إنشاء التقرير التنفيذي ↗</button><button id="clear-selected" class="secondary">إفراغ قائمة المراجعة</button><a href="index.html#intel" class="link-btn ghost">فتح المكتبة الكاملة</a></div>
           <div class="hint">يظهر توقيع «إعداد وتطوير: عبدالعزيز عبدالله الحقباني» في التقرير. جميع الأحكام والقيم التعليمية تحتاج مراجعة مقابل القرار الساري قبل مشاركتها على أنها امتثال نظامي.</div>
         </div>
