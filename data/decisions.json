@@ -1071,11 +1071,11 @@
         {
           "date": "2022-12-17",
           "rate": "توطين منافذ الخدمة",
-          "label": "original",
-          "kind": "https://www.hrsd.gov.sa/media-center/news/1129031",
-          "source": "أنشطة منافذ البريد ونقل الطرود",
-          "scope": "شروط ومتطلبات منفصلة عن نسب الإدارة",
-          "note": "",
+          "label": "بدء توطين منافذ خدمات البريد ونقل الطرود",
+          "kind": "original",
+          "source": "https://www.hrsd.gov.sa/media-center/news/1129031",
+          "scope": "أنشطة منافذ البريد ونقل الطرود",
+          "note": "يُراجع نطاق المهن والتطبيق حسب الدليل المختص",
           "verified": true
         },
         {
@@ -1141,12 +1141,12 @@
           "kind": "original",
           "source": "https://www.spa.gov.sa/w1919107",
           "scope": "منافذ الأنشطة السبعة المحددة",
-          "note": "النسبة على العاملين المشمولين في المنافذ",
-          "verified": true
+          "note": "النسبة على العاملين المشمولين في المنافذ؛ مرجع من وكالة الأنباء السعودية، يحتاج مطابقة مع القرار الوزاري الأصلي",
+          "verified": false
         }
       ],
       "issueDate": null,
-      "historyStatus": "reviewed_source_dates"
+      "historyStatus": "needs_official_document_verification"
     },
     {
       "id": "inspection",
@@ -1187,8 +1187,8 @@
           "kind": "original",
           "source": "https://www.spa.gov.sa/w1919107",
           "scope": "منافذ الفحص الدوري للمركبات",
-          "note": "",
-          "verified": true
+          "note": "مرجع من وكالة الأنباء السعودية، يحتاج مطابقة مع القرار الوزاري الأصلي",
+          "verified": false
         },
         {
           "date": null,
@@ -1203,7 +1203,7 @@
         }
       ],
       "issueDate": null,
-      "historyStatus": "reviewed_source_dates"
+      "historyStatus": "needs_official_document_verification"
     },
     {
       "id": "madinah",
