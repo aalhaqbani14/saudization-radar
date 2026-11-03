@@ -82,7 +82,7 @@
         }
       ],
       "issueDate": "2026-04-05",
-      "historyStatus": "verified_core"
+      "historyStatus": "reviewed_source_dates"
     },
     {
       "id": "procurement",
@@ -140,7 +140,7 @@
         }
       ],
       "issueDate": "2025-11-30",
-      "historyStatus": "verified_core"
+      "historyStatus": "reviewed_source_dates"
     },
     {
       "id": "project",
@@ -206,7 +206,7 @@
         }
       ],
       "issueDate": "2026-08-13",
-      "historyStatus": "verified_core"
+      "historyStatus": "reviewed_source_dates"
     },
     {
       "id": "marketing",
@@ -265,7 +265,7 @@
         }
       ],
       "issueDate": "2026-01-19",
-      "historyStatus": "verified_core"
+      "historyStatus": "reviewed_source_dates"
     },
     {
       "id": "sales",
@@ -323,7 +323,7 @@
         }
       ],
       "issueDate": "2026-01-19",
-      "historyStatus": "verified_core"
+      "historyStatus": "reviewed_source_dates"
     },
     {
       "id": "engineers",
@@ -380,7 +380,7 @@
         }
       ],
       "issueDate": "2025-12-31",
-      "historyStatus": "verified_core"
+      "historyStatus": "reviewed_source_dates"
     },
     {
       "id": "techeng",
@@ -433,7 +433,7 @@
         }
       ],
       "issueDate": "2025-01-26",
-      "historyStatus": "verified_core"
+      "historyStatus": "reviewed_source_dates"
     },
     {
       "id": "accounting",
@@ -547,7 +547,7 @@
         }
       ],
       "issueDate": "2025-01-26",
-      "historyStatus": "verified_core"
+      "historyStatus": "reviewed_source_dates"
     },
     {
       "id": "housing",
@@ -586,7 +586,7 @@
           "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-مهنة-مشرف-مسكن",
           "scope": "بحسب دليل المهنة / النشاط",
           "note": "لم يكتمل التحقق من جميع شروط الانطباق",
-          "verified": true
+          "verified": false
         }
       ],
       "issueDate": null,
@@ -632,7 +632,7 @@
           "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لتوطين-المهن-الإدارية-والمساندة",
           "scope": "بحسب دليل المهنة / النشاط",
           "note": "لم يكتمل التحقق من جميع شروط الانطباق",
-          "verified": true
+          "verified": false
         }
       ],
       "issueDate": null,
@@ -677,7 +677,7 @@
           "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-مهن-الاتصالات-وتقنية",
           "scope": "بحسب دليل المهنة / النشاط",
           "note": "لم يكتمل التحقق من جميع شروط الانطباق",
-          "verified": true
+          "verified": false
         }
       ],
       "issueDate": null,
@@ -749,7 +749,7 @@
         }
       ],
       "issueDate": null,
-      "historyStatus": "verified_core"
+      "historyStatus": "reviewed_source_dates"
     },
     {
       "id": "consulting",
@@ -816,7 +816,7 @@
         }
       ],
       "issueDate": null,
-      "historyStatus": "verified_core"
+      "historyStatus": "reviewed_source_dates"
     },
     {
       "id": "service",
@@ -856,7 +856,7 @@
           "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-مهن-خدمة-العملاء",
           "scope": "بحسب دليل المهنة / النشاط",
           "note": "لم يكتمل التحقق من جميع شروط الانطباق",
-          "verified": true
+          "verified": false
         }
       ],
       "issueDate": null,
@@ -901,7 +901,7 @@
           "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لتوطين-الأنشطة-والمهن-العقارية",
           "scope": "بحسب دليل المهنة / النشاط",
           "note": "لم يكتمل التحقق من جميع شروط الانطباق",
-          "verified": true
+          "verified": false
         }
       ],
       "issueDate": null,
@@ -943,7 +943,7 @@
           "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-قطاع-التعليم-العام",
           "scope": "بحسب دليل المهنة / النشاط",
           "note": "لم يكتمل التحقق من جميع شروط الانطباق",
-          "verified": true
+          "verified": false
         }
       ],
       "issueDate": null,
@@ -1016,7 +1016,7 @@
         }
       ],
       "issueDate": null,
-      "historyStatus": "verified_core"
+      "historyStatus": "reviewed_source_dates"
     },
     {
       "id": "postal",
@@ -1095,11 +1095,11 @@
           "source": "https://www.hrsd.gov.sa/media-center/news/1129031",
           "scope": "وظائف الإدارة العليا مستوى ثانٍ",
           "note": "تاريخ المرحلة يحتاج تأكيداً إضافياً من نص الدليل",
-          "verified": true
+          "verified": false
         }
       ],
       "issueDate": null,
-      "historyStatus": "verified_core"
+      "historyStatus": "reviewed_source_dates"
     },
     {
       "id": "retail7",
@@ -1145,7 +1145,7 @@
         }
       ],
       "issueDate": null,
-      "historyStatus": "verified_core"
+      "historyStatus": "reviewed_source_dates"
     },
     {
       "id": "inspection",
@@ -1202,7 +1202,7 @@
         }
       ],
       "issueDate": null,
-      "historyStatus": "verified_core"
+      "historyStatus": "reviewed_source_dates"
     },
     {
       "id": "madinah",
@@ -1242,7 +1242,7 @@
           "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-التوطين-في-منطقة-المدينة",
           "scope": "بحسب دليل المهنة / النشاط",
           "note": "لم يكتمل التحقق من جميع شروط الانطباق",
-          "verified": true
+          "verified": false
         }
       ],
       "issueDate": null,
@@ -1251,5 +1251,5 @@
   ],
   "updated": "2026-11-03",
   "reviewedCount": 4,
-  "historyMethodology": "يظهر تاريخ إصدار القرار مستقلاً عن أول تاريخ تنفيذ. التاريخ يُعرض لكل مرحلة أو مسار مهني عند ثبوته من المصدر الرسمي، ولا يخلط بين الزيادة في النسبة وبين زيادة المهن المستهدفة. المراحل المختلفة حسب حجم المنشأة لا تجمع في نسبة واحدة."
+  "historyMethodology": "يظهر تاريخ إصدار القرار مستقلاً عن أول تاريخ تنفيذ. التاريخ يُعرض لكل مرحلة أو مسار مهني عند ثبوته من المصدر الرسمي، ولا يخلط بين الزيادة في النسبة وبين زيادة المهن المستهدفة. المراحل المختلفة حسب حجم المنشأة لا تجمع في نسبة واحدة. التواريخ غير الحاصلة على تدقيق تفصيلي تظل ضمن ملخصات مرجعية وتحتاج مراجعة المصدر الساري."
 }
