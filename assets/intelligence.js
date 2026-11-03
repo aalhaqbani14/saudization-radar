@@ -26,7 +26,7 @@
  }
  function drawCodes(){
    const {q,rows}=getMatch();$('occupations').innerHTML=rows.length?rows.map(({o,score})=>occupationCard(o,score)).join(''):'<div class="empty"><strong>ما حصلنا رمزاً مطابقاً في الفهرس الحالي.</strong><p>هذا لا يعني أن المهنة غير مستهدفة بالتوطين؛ الفهرس محدود ويُوسّع تدريجياً.</p></div>';
-   $('occupation-results').textContent=q?'نتائج البحث: '+digits(rows.length)+' مهنة · المطابقة بالرمز أولوية ثم بمسمى المهنة':'استعراض '+digits(rows.length)+' من أصل '+digits(occupations.length)+' رمزاً مدخلاً في الفهرس';
+   $('occupation-results').textContent=q?'نتائج البحث: '+digits(rows.length)+' مهنة · المطابقة بالرمز أولوية ثم بمسمى المهنة':'استعراض '+digits(rows.length)+' من أصل '+digits(occupations.length)+' رمزاً مطابقاً لمهن ملف سالك';
    $('load-all').textContent=fullList?'عرض المختصر':'عرض جميع الرموز';
    $('occupations').querySelectorAll('[data-decision]').forEach(b=>b.addEventListener('click',()=>openDecision(b.dataset.decision)));
  }
@@ -181,12 +181,15 @@
  }
  async function setup(){
    try{
-     const [occResponse,decResponse]=await Promise.all([fetch('data/occupations.json?v='+Date.now()),fetch('data/decisions.json?v='+Date.now())]);
-     if(!occResponse.ok||!decResponse.ok)throw new Error('Data unavailable');
-     const [occDb,decDb]=await Promise.all([occResponse.json(),decResponse.json()]);
+     const [occResponse,decResponse,workforceResponse]=await Promise.all([fetch('data/occupations.json?v='+Date.now()),fetch('data/decisions.json?v='+Date.now()),fetch('data/salic-workforce.json?v='+Date.now())]);
+     if(!occResponse.ok||!decResponse.ok||!workforceResponse.ok)throw new Error('Data unavailable');
+     const [occDb,decDb,workDb]=await Promise.all([occResponse.json(),decResponse.json(),workforceResponse.json()]);
      try{const response=await fetch('data/grace-periods.json?v='+Date.now());if(!response.ok)throw Error('Grace registry unavailable');graceRecords=(await response.json()).records||[]}catch(err){graceRecords=[];console.warn('Grace records unavailable',err)}
 
-     occupations=Array.isArray(occDb.occupations)?occDb.occupations:[];decisions=Array.isArray(decDb.decisions)?decDb.decisions:[];
+     const relevantIds=new Set(["admin","procurement","project","marketing","accounting","ict","legal","consulting","engineers","sales"]);
+     const salicTitles=new Set((workDb.rows||[]).map(row=>norm(row[0])));
+     occupations=(Array.isArray(occDb.occupations)?occDb.occupations:[]).filter(o=>salicTitles.has(norm(o.title))&&o.decisionIds.some(id=>relevantIds.has(id))).map(o=>({...o,decisionIds:o.decisionIds.filter(id=>relevantIds.has(id))}));
+     decisions=(Array.isArray(decDb.decisions)?decDb.decisions:[]).filter(d=>relevantIds.has(d.id));
      decisionMap=new Map(decisions.map(d=>[d.id,d]));
      selected=new Set([...selected].filter(id=>decisionMap.has(id)));persist();
      const overlaps=occupations.filter(o=>o.decisionIds.length>1).length;
