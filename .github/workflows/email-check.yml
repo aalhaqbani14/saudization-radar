@@ -30,4 +30,4 @@ jobs:
       - name: Check Python syntax
         run: python -m py_compile monitor.py email_templates.py detection.py test_email_templates.py test_detection.py test_data_quality.py
       - name: Run safe offline email tests
-        run: python -m unittest -v test_email_templates.py test_detection.py
+        run: python -m unittest -v test_email_templates.py test_detection.py test_data_quality.py
