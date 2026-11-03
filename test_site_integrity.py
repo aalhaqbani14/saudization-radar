@@ -5,7 +5,7 @@ from html.parser import HTMLParser
 from urllib.parse import urlsplit, unquote
 
 ROOT=pathlib.Path(__file__).resolve().parent
-PAGES=['index.html','intelligence.html','sources.html']
+PAGES=['index.html','intelligence.html','sources.html','review.html']
 
 class Refs(HTMLParser):
     def __init__(self):
@@ -39,8 +39,9 @@ class SiteIntegrity(unittest.TestCase):
                     self.assertTrue(path.is_relative_to(ROOT),ref)
                     self.assertTrue(path.is_file(),f'{name} -> {ref}')
     def test_has_navigation_to_source_register(self):
-        for name in ('index.html','intelligence.html'):
+        for name in ('index.html','intelligence.html','review.html'):
             self.assertIn('sources.html',(ROOT/name).read_text(encoding='utf-8'))
+            self.assertIn('review.html',(ROOT/name).read_text(encoding='utf-8'))
 
 if __name__ == '__main__':
     unittest.main()
