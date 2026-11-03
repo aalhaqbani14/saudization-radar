@@ -3,6 +3,8 @@ Uses only public data. Detection is heuristic and requires human verification.
 """
 import os, sys, json, re, hashlib, smtplib, ssl, datetime, pathlib, difflib
 from email.message import EmailMessage
+from email.utils import formataddr
+import email_templates
 from urllib.request import Request, urlopen
 from html.parser import HTMLParser
 
@@ -29,7 +31,7 @@ def get_text(url):
  p=Extract();p.feed(raw)
  return re.sub(r'\s+',' ',' '.join(p.parts)).strip()
 
-def send_message(subject, body, test=False):
+def send_message(subject, body, test=False, html_body=None):
  """Use GitHub encrypted Actions secrets, never credentials in public files."""
  host=os.environ.get('SMTP_HOST') or 'smtp.gmail.com'
  port=int(os.environ.get('SMTP_PORT') or '465')
@@ -48,9 +50,11 @@ def send_message(subject, body, test=False):
   raise ValueError('Invalid ALERT_EMAIL recipient list')
  msg=EmailMessage()
  msg['Subject']=subject
- msg['From']=sender
+ msg['From']=formataddr(('Saudization Radar', sender))
  msg['To']=', '.join(recipients)
  msg.set_content(body)
+ if html_body:
+  msg.add_alternative(html_body, subtype='html')
  if port==465:
   with smtplib.SMTP_SSL(host,port,context=ssl.create_default_context(),timeout=30) as smtp:
    smtp.login(user,password)
@@ -68,25 +72,14 @@ def send_message(subject, body, test=False):
 
 def send_email(alerts):
  if not alerts:return False
- body=['مرحباً،','', 'رصد Saudization Radar تغييرات محتملة في صفحات وزارة الموارد البشرية.', 'هذه تنبيهات أولية لا تمثل قرارات نظامية مثبتة؛ تحقق من المصدر الرسمي.', '']
- for a in alerts:body.extend([a['source'],a['title'],a['summary'],a['url'],''])
- body.extend(['', 'Saudization Radar: https://aalhaqbani14.github.io/saudization-radar/'])
- return send_message(f'Saudization Radar | {len(alerts)} تحديث محتمل للتوطين', '\n'.join(body))
+ subject=f'Saudization Radar | {len(alerts)} تغيير محتمل يحتاج مراجعة'
+ return send_message(subject,email_templates.plain(alerts),html_body=email_templates.render(alerts))
 
 def send_test_email():
- """Send a genuinely labeled test without claiming an HRSD update."""
- stamp=datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%d %H:%M UTC')
- body='''مرحباً،
-
-هذه رسالة اختبار من Saudization Radar للتأكد من إعداد تنبيهات البريد الإلكتروني.
-
-النوع: رسالة تجريبية فقط — لا يوجد خبر أو قرار توطين جديد في هذه الرسالة.
-وقت الاختبار: {stamp}
-رابط المنصة: https://aalhaqbani14.github.io/saudization-radar/
-
-عند اكتشاف تغيير محتمل في المصادر الرسمية، سيتم إرسال تنبيه منفصل مع رابط المصدر للتحقق.
-'''.format(stamp=stamp)
- return send_message('Saudization Radar | اختبار إشعارات البريد',body,test=True)
+ """Test uses new email template but does not claim any government update."""
+ return send_message('Saudization Radar | اختبار التصميم الجديد للتنبيهات',
+                     email_templates.plain(test=True),
+                     test=True,html_body=email_templates.render(test=True))
 
 def main():
  state=json.loads(STATE.read_text(encoding='utf-8')) if STATE.exists() else {}
