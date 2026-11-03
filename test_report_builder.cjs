@@ -42,8 +42,9 @@ test('manual occupation inputs never assume lack of targeting',()=>{
   const unknown=r.manual.find(x=>x.input==='مهنة جديدة غير موجودة');
   assert(unknown);
   assert.equal(unknown.status,'unknown');
-  assert.equal(r.manual.filter(x=>x.status==='unknown').length,2); // Includes unindexed job title
+  assert.equal(r.manual.filter(x=>x.status==='unknown').length,1); // Unrecognized titles stay unknown
   assert.equal(r.manual.filter(x=>x.input==='مهنة جديدة غير موجودة').length,1);
+  assert.equal(r.manual.find(x=>x.input==='مدير مشتريات').status,'out-of-scope');
 });
 test('selected report does not mutate original indexed profession or decision data',()=>{
   const before=JSON.stringify(occupations[0]);
