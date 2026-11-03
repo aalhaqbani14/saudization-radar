@@ -95,11 +95,41 @@
           <div id="audit-list" class="audit-list" style="margin-top:14px"></div>
         </div>
         <div id="view-report" class="view" role="tabpanel" hidden>
-          <div class="panel-head"><div><h2>الموجز التنفيذي للإدارة</h2><p>اختر قراراتك من محرك البحث ثم حوّلها إلى تقرير جاهز للطباعة أو الحفظ PDF.</p></div><span class="badge">EXECUTIVE BRIEF · NO PERSONAL DATA</span></div>
-          <div class="report-options"><div class="report-option"><h3>المواضيع المختارة <span id="report-count">0</span></h3><p>تأتي من قائمة «مراجعتي» المحفوظة على هذا المتصفح؛ لا تحتوي على أي بيانات شركة أو موظفين.</p></div><div class="report-option"><h3>إذا ما اخترت قرارات</h3><p>ننشئ تقريراً استرشادياً يضم عينة من القرارات الشائعة، مع تمييز المراجع التي تحتاج تدقيقاً.</p></div></div>
-          <span id="k-selected" hidden>0</span><div id="report-selected" class="report-preview">لم تحدد قرارات بعد.</div>
-          <div class="report-buttons"><button id="make-report" class="primary">إنشاء التقرير التنفيذي ↗</button><button id="clear-selected" class="secondary">إفراغ قائمة المراجعة</button><a href="index.html#intel" class="link-btn ghost">فتح المكتبة الكاملة</a></div>
-          <div class="hint">التقرير التنفيذي بلا توقيع شخصي أو اسم مُعد، وفق تصميم العرض الإداري. يلزم الرجوع للدليل الرسمي الساري قبل استخدامه في تقييم امتثال.</div>
+          <div class="panel-head"><div><h2>منشئ التقرير التنفيذي الشامل</h2><p>حدد نطاق التقرير أولاً، ثم اطبع القرارات وفترات السماح والمراحل والمهن المستهدفة والمهن خارج نطاق اختيارك.</p></div><span class="badge">EXECUTIVE REPORT BUILDER · NO PERSONAL DATA</span></div>
+          <div class="report-builder">
+            <div class="report-controls">
+              <div class="report-field">
+                <label for="report-mode">وش تبي يشمل التقرير؟</label>
+                <select id="report-mode">
+                  <option value="all">جميع مجموعات القرارات المفهرسة (21 مجموعة)</option>
+                  <option value="selected">قرارات أختارها بنفسي</option>
+                  <option value="category">مجموعة قرارات حسب القطاع</option>
+                </select>
+              </div>
+              <div class="report-field" id="report-category-wrap" hidden>
+                <label for="report-category">اختر القطاع</label>
+                <select id="report-category"><option value="">اختر قطاعاً</option></select>
+              </div>
+            </div>
+            <div id="report-custom-wrap" class="report-select-panel" hidden>
+              <div class="report-select-title"><strong>حدد القرارات المطلوبة</strong><div><button type="button" id="report-select-all" class="secondary">تحديد الكل</button><button type="button" id="report-select-none" class="secondary">إلغاء التحديد</button></div></div>
+              <div id="report-decision-options" class="report-check-grid" role="group" aria-label="قرارات التقرير"></div>
+            </div>
+            <div class="report-field">
+              <label for="report-extra-occupations">مهن إضافية للمقارنة (اختياري)</label>
+              <textarea id="report-extra-occupations" rows="3" placeholder="ألصق مسميات المهن أو رموزها، مهنة في كل سطر. بلا أسماء موظفين أو بيانات داخلية."></textarea>
+              <small>تقارن هذه المهن محلياً بالفهرس الجزئي؛ أي مهنة غير موجودة تصنّف «غير محددة»، وليس «غير مستهدفة» بشكل قاطع. النص لا يُرسل إلى الخادم.</small>
+            </div>
+            <div class="report-feature-grid">
+              <div><strong>فترات السماح</strong><small>المدة وبداية المهلة ونهايتها حسب نطاق المهن والدليل المتاح</small></div>
+              <div><strong>جميع المهن المفهرسة</strong><small>مستهدفة بالاختيار / خارج القرارات المختارة / غير محددة</small></div>
+              <div><strong>مراحل التنفيذ</strong><small>التطبيق الفوري والتدرج وتواريخ المراحل المستقبلية</small></div>
+            </div>
+          </div>
+          <span id="k-selected" hidden>0</span>
+          <div id="report-selected" class="report-preview" aria-live="polite">جاري تجهيز خيارات التقرير…</div>
+          <div class="report-buttons"><button id="make-report" class="primary">إنشاء التقرير التنفيذي الشامل ↗</button><button id="clear-selected" class="secondary">مسح القرارات المختارة</button><a href="sources.html" class="link-btn ghost">سجل مصادر القرارات</a></div>
+          <div class="hint warning">تنبيه: فهرسنا الحالي جزئي (79 رمزاً مهنياً)، وليس التصنيف السعودي الكامل. «غير مستهدف ضمن الاختيار» لا تعني أن المهنة غير خاضعة لأي قرار توطين آخر. جميع بيانات الانطباق والأجور والاستثناءات تحتاج مراجعة المصدر الرسمي.</div>
         </div>
       </section>
       <footer class="footer"><div class="footer-author">إعداد وتطوير | PREPARED & DEVELOPED BY<strong>عبدالعزيز عبدالله الحقباني</strong></div><div><p>منصة شخصية مستقلة لتلخيص قرارات التوطين المنشورة. لا تمثل جهة حكومية، ولا تتصل بنظم الموارد البشرية أو بيانات الموظفين. المحتوى قابل للتحديث وإعادة التحقق.</p><p id="source-version" class="last-reviewed">—</p></div></footer>
@@ -109,6 +139,7 @@
 <div id="detail-modal" class="modal" hidden><div class="dialog" role="dialog" aria-modal="true" aria-label="تفاصيل القرار"><button class="modal-close" type="button" id="detail-close" aria-label="إغلاق">×</button><div id="detail-content"></div></div></div>
 <div id="print-host" class="print-host"><div class="print-toolbar"><button id="print-now" type="button">طباعة أو حفظ PDF</button><button id="close-print" type="button">إغلاق التقرير</button></div><div id="print-content"></div></div>
 <script src="assets/phases.js" defer></script>
+<script src="assets/report-data.js" defer></script>
 <script src="assets/intelligence.js" defer></script>
 <script src="assets/applicability.js" defer></script>
 <script src="assets/presentation-mode.js" defer></script>
