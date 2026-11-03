@@ -44,7 +44,7 @@ def send_message(subject, body, test=False):
   print('WARNING:',notice)
   return False
  recipients=[x.strip() for x in re.split(r'[;,]',recipient) if x.strip()]
- if not recipients or any('@' not in x or '\\n' in x or '\\r' in x for x in recipients):
+ if not recipients or any('@' not in x or '\n' in x or '\r' in x for x in recipients):
   raise ValueError('Invalid ALERT_EMAIL recipient list')
  msg=EmailMessage()
  msg['Subject']=subject
@@ -71,7 +71,7 @@ def send_email(alerts):
  body=['مرحباً،','', 'رصد Saudization Radar تغييرات محتملة في صفحات وزارة الموارد البشرية.', 'هذه تنبيهات أولية لا تمثل قرارات نظامية مثبتة؛ تحقق من المصدر الرسمي.', '']
  for a in alerts:body.extend([a['source'],a['title'],a['summary'],a['url'],''])
  body.extend(['', 'Saudization Radar: https://aalhaqbani14.github.io/saudization-radar/'])
- return send_message(f'Saudization Radar | {len(alerts)} تحديث محتمل للتوطين', '\\n'.join(body))
+ return send_message(f'Saudization Radar | {len(alerts)} تحديث محتمل للتوطين', '\n'.join(body))
 
 def send_test_email():
  """Send a genuinely labeled test without claiming an HRSD update."""
