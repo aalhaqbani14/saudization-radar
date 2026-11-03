@@ -114,7 +114,9 @@ def main():
   db['last_checked']=now;db['sources']=SOURCES;db['alerts']=db.get('alerts',[])[:200]
   DATA.write_text(json.dumps(db,ensure_ascii=False,indent=2),encoding='utf-8')
   STATE.write_text(json.dumps(state,ensure_ascii=False,indent=2),encoding='utf-8')
- if new:send_email(new)
+ if new and not send_email(new):
+  # Prevent lost notifications: workflow fails before state is committed to Git.
+  raise RuntimeError('New changes detected, but email credentials are missing; state not committed so notifications can retry.')
  if not success:raise RuntimeError('No sources could be checked')
 if __name__=='__main__':
  if '--test-email' in sys.argv:send_test_email()
