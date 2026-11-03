@@ -12,6 +12,7 @@ name: Saudization Radar email checks
       - 'data/decisions.json'
       - 'data/occupations.json'
       - 'data/source-registry.json'
+      - 'data/grace-periods.json'
       - 'email_templates.py'
       - 'test_email_templates.py'
       - '.github/workflows/email-check.yml'
