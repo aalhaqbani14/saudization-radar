@@ -75,6 +75,8 @@ def plain(alerts=None, test=False, demo=False):
             a.get("title", "تغيير محتمل"),
             "المصدر: " + a.get("source", "وزارة الموارد البشرية"),
             "النص الذي تغير: " + snippet,
+            "أولوية المراجعة: " + str(a.get("review_priority") or "تحتاج مراجعة"),
+            "حالة التحقق: " + str(a.get("review_status") or "لم يُتحقق منه"),
         ])
         if rates:
             parts.append("نسب ظهرت بالنص المضاف (تحتاج تحققاً): " + "، ".join(rates))
@@ -128,6 +130,8 @@ def render(alerts=None, test=False, demo=False):
         source = html.escape(ellipsis(a.get("source") or "مصدر رسمي", 100))
         summary_text = ellipsis(a.get("summary"), 650)
         summary = html.escape(summary_text)
+        priority = html.escape(str(a.get("review_priority") or "تحتاج مراجعة"))
+        review_status = html.escape(str(a.get("review_status") or "غير مؤكد"))
         rates, dates = key_details(summary_text)
         extras = []
         if rates:
@@ -140,6 +144,7 @@ def render(alerts=None, test=False, demo=False):
             '<tr><td style="padding:9px 24px"><div style="border:1px solid #e0ebed;background:#ffffff;border-radius:14px;padding:18px">'
             '<div style="color:#0f897f;font-size:11px;font-weight:700">الرصد '+str(index)+' · '+source+'</div>'
             '<h2 style="color:#143b4c;font-size:18px;margin:11px 0 8px">'+title+'</h2>'
+            '<div style="font-size:11px;color:#8a631e;background:#fff7e9;border-radius:7px;padding:8px 10px;margin:0 0 9px">أولوية: '+priority+' · '+review_status+'</div>'
             '<p style="color:#546f7a;font-size:13px;line-height:2;margin:0">'+summary+'</p>'
             +("".join(extras) and '<div style="margin-top:10px">'+''.join(extras)+'</div>' or "")
             +'<div style="font-size:11px;color:#a16a23;line-height:1.8;margin-top:10px">المعلومات أعلاه مقتطفات تحتاج مطابقة مع الدليل الرسمي، وليست إعلاناً آلياً عن نسبة جديدة.</div>'
