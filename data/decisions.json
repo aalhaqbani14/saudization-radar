@@ -91,7 +91,7 @@
       "rate": "70%",
       "pct": 70,
       "effective": "2026-05-31",
-      "number": "",
+      "number": "77050",
       "min": "3 عاملين فأكثر في 12 مهنة مستهدفة",
       "jobs": [
         "مدير مشتريات",
@@ -114,7 +114,7 @@
       "audit": {
         "status": "reviewed",
         "checked": "2026-11-03",
-        "basis": "خبر الوزارة عن بدء تنفيذ القرار 31 مايو 2026 · 70% على 12 مهنة",
+        "basis": "خبر الوزارة عن بدء تنفيذ القرار 31 مايو 2026 · 70% على 12 مهنة؛ رقم القرار 77050 وتاريخ إصداره موثقان من صفحة الدليل الرسمية",
         "limits": "يحتاج تحقق من الاحتساب والاستثناءات والرموز في الدليل الجاري"
       },
       "history": [
@@ -140,7 +140,8 @@
         }
       ],
       "issueDate": "2025-11-30",
-      "historyStatus": "reviewed_source_dates"
+      "historyStatus": "reviewed_source_dates",
+      "source2": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لتوطين-مهن-المشتريات"
     },
     {
       "id": "project",
@@ -574,8 +575,8 @@
       "audit": {
         "status": "needs_review",
         "checked": null,
-        "basis": "مدخل تحليلي من قرارات منشورة",
-        "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
+        "basis": "تم التحقق من رقم 62298 وتاريخ الإصدار 2025-10-31 وبدء التنفيذ 2026-02-01 من صفحة الوزارة",
+        "limits": "لم يكتمل تدقيق النص التفصيلي لنسبة التوطين وشروط الأجور؛ لا تعتبر البيانات موثقة بالكامل"
       },
       "history": [
         {
@@ -589,7 +590,7 @@
           "verified": false
         }
       ],
-      "issueDate": null,
+      "issueDate": "2025-10-31",
       "historyStatus": "summary_needs_review"
     },
     {
