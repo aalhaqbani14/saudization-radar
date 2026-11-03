@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b2233">
+<meta name="description" content="سجل التحقق من مصادر قرارات التوطين في Saudization Radar">
+<title>سجل المصادر والتحقق | Saudization Radar</title>
+<style>
+:root{color-scheme:dark;--bg:#081725;--navy:#0d2b3c;--line:#294859;--ink:#f2fbfc;--muted:#a9c2cb;--teal:#5fe0c8}
+*{box-sizing:border-box}body{margin:0;font-family:Tahoma,Arial,sans-serif;background:radial-gradient(ellipse at 20% 0%,#143e50 0,transparent 36%),var(--bg);color:var(--ink);line-height:1.85}
+a{color:var(--teal)}.wrap{width:min(1120px,calc(100% - 36px));margin:auto}
+header{border-bottom:1px solid var(--line);background:#081e2de5}.top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;padding:17px 0}
+.brand{font-weight:bold;letter-spacing:.5px;color:white;text-decoration:none}.nav{display:flex;gap:12px;flex-wrap:wrap}.nav a{text-decoration:none;font-size:13px;padding:7px 11px;border:1px solid var(--line);border-radius:8px}
+.hero{padding:54px 0 28px}.eyebrow{color:var(--teal);font-size:11px;font-weight:bold;letter-spacing:2px}h1{font-size:clamp(28px,4vw,43px);line-height:1.3;margin:12px 0 14px}h2{font-size:20px}p{color:var(--muted);max-width:850px}
+.kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:22px 0 25px}
+.kpi,.panel{border:1px solid var(--line);border-radius:17px;background:#0e2939cc;padding:23px}.kpi strong{display:block;font-size:30px;line-height:1.3}.kpi span{font-size:12px;color:var(--muted)}
+.notice{border-right:3px solid #d4a35d;background:#312b26aa;padding:17px;border-radius:9px;color:#f6dcb1;font-size:13px;margin-bottom:25px}
+.toolbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:20px}.toolbar input,.toolbar select{background:#102c3a;border:1px solid #38576a;border-radius:10px;color:#f6fbfd;padding:12px 13px;font:inherit;min-height:44px}.toolbar input{min-width:240px;flex:1}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.source{border:1px solid var(--line);border-radius:15px;background:linear-gradient(145deg,#123347,#0c2433);padding:22px}
+.source h3{margin:0 0 8px;font-size:18px}.tag{color:#89f0d2;font-size:11px;font-weight:bold}.meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:17px 0}.meta div{background:#0b2030;padding:10px;border-radius:9px}.meta span{display:block;font-size:11px;color:var(--muted)}.meta b{font-size:14px;direction:ltr;unicode-bidi:isolate;display:inline-block}
+.source p{margin:10px 0;font-size:12px;color:#c3d5dc}.source .limit{color:#f1ca87}.action{display:inline-block;margin-top:8px;border:1px solid #3eac9d;padding:9px 15px;border-radius:9px;text-decoration:none;font-size:13px;font-weight:bold}.source a:focus-visible,.nav a:focus-visible{outline:3px solid #fff}
+footer{border-top:1px solid var(--line);text-align:center;color:#a7bdc6;padding:25px;margin-top:40px;font-size:12px}
+@media(max-width:670px){.cards{grid-template-columns:1fr}.kpis{gap:8px}.kpi{padding:12px}.kpi strong{font-size:24px}.toolbar input{min-width:100%}}
+</style>
+</head>
+<body>
+<header><div class="wrap top"><a class="brand" href="index.html">◈ &nbsp; SAUDIZATION RADAR</a><nav class="nav"><a href="index.html">لوحة المتابعة</a><a href="intelligence.html">غرفة التحليل</a><a href="sources.html" aria-current="page">سجل المصادر</a></nav></div></header>
+<main class="wrap">
+<section class="hero"><div class="eyebrow">OFFICIAL EVIDENCE REGISTER / SOURCE GOVERNANCE</div><h1>سجل المصادر والتحقق من القرارات</h1><p>ما هي المعلومات التي وجدنا لها سنداً في صفحة رسمية؟ وأي معلومات ما زالت بحاجة لتدقيق جداول المهن وشروط التطبيق؟ تعرض هذه الصفحة حدود التوثيق بوضوح حتى لا يُخلط بين وجود مصدر رسمي واكتمال التحقق القانوني.</p></section>
+<div class="kpis" aria-label="مؤشرات المصدر"><div class="kpi"><strong id="all">—</strong><span>مجموعات قرارات مفهرسة</span></div><div class="kpi"><strong id="docs">—</strong><span>ملفات توثيق المصدر الأساسي</span></div><div class="kpi"><strong id="pending">—</strong><span>مجموعات تحتاج تدقيقاً إضافياً</span></div></div>
+<div class="notice">تنبيه مهني: «تمت مراجعة بيانات الصفحة الرسمية» لا تعني أن جميع نسب القرار ومراحله ورموزه والاستثناءات دُققت بالكامل. النص المعتمد هو القرار والدليل الإجرائي الساري على موقع الوزارة.</div>
+<div class="toolbar"><input id="filter" aria-label="البحث عن قرار" placeholder="ابحث عن مهنة أو رقم قرار..." type="search"><select id="status" aria-label="تصفية حالة المراجعة"><option value="all">كل السجلات</option><option value="reviewed">مراجعة أساسية</option><option value="pending">تحتاج تدقيقاً إضافياً</option></select></div>
+<div id="cards" class="cards" aria-live="polite"><p>جاري تحميل المصادر الرسمية…</p></div>
+<section class="panel" style="margin-top:25px"><h2>كيف نعتمد المعلومة؟</h2><p>1. نجمع رابط المصدر الرسمي ورقم القرار وتاريخ الإصدار والنفاذ. 2. نتحقق من الدليل الإجرائي والجداول المهنية وشروط العدد والأجور والاستثناءات. 3. نميّز ما تم التحقق منه وما يحتاج مراجعة. 4. نبقي أي تنبيه رصد آلي ضمن مرحلة المراجعة حتى يتم فحص القرار الأصلي.</p><p>هذه مبادرة معلوماتية مستقلة، وليست خدمة حكومية أو ضماناً للامتثال النظامي.</p></section>
+</main>
+<footer>مبادرة مستقلة · إعداد عبدالعزيز عبدالله الحقباني · Saudization Radar © 2026</footer>
+<script>
+(async()=>{const $=id=>document.getElementById(id);const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const secure=x=>{try{const u=new URL(x);return u.protocol==='https:'&&/(^|\.)hrsd\.gov\.sa$/.test(u.hostname)?u.href:null}catch{return null}};try{
+const [r,d]=await Promise.all([fetch('data/source-registry.json',{cache:'no-store'}),fetch('data/decisions.json',{cache:'no-store'})]);if(!r.ok||!d.ok)throw Error('تعذّر تحميل أحد الملفات');
+const sources=(await r.json()).sources,decisions=(await d.json()).decisions,byId=new Map(decisions.map(x=>[x.id,x]));$('all').textContent=decisions.length;$('docs').textContent=sources.length;$('pending').textContent=decisions.filter(x=>x.audit?.status!=='reviewed').length;
+function draw(){const q=$('filter').value.trim().toLowerCase(),status=$('status').value;const chosen=sources.filter(s=>{const d=byId.get(s.id)||{};return (s.title+' '+s.number+' '+(d.jobs||[]).join(' ')).toLowerCase().includes(q)&&(status==='all'||(status==='reviewed'&&d.audit?.status==='reviewed')||(status==='pending'&&d.audit?.status!=='reviewed'))});$('cards').innerHTML=chosen.map(s=>{const d=byId.get(s.id)||{},url=secure(s.url),reviewed=d.audit?.status==='reviewed';return '<article class="source"><div class="tag">'+(reviewed?'مراجعة أساسية – لا تعني اعتماد كل التفاصيل':'مراجعة البيانات الجزئية فقط')+'</div><h3>'+esc(s.title)+'</h3><div class="meta"><div><span>رقم القرار</span><b>'+esc(s.number)+'</b></div><div><span>تاريخ النفاذ المدرج</span><b>'+esc(s.effective)+'</b></div><div><span>تاريخ الإصدار</span><b>'+esc(s.issued)+'</b></div><div><span>حالة قاعدة القرار</span><b>'+esc(reviewed?'مراجعة أساسية':'يحتاج تدقيق')+'</b></div></div><p>'+esc(s.note)+'</p><p class="limit">يلزم التحقق من: '+esc(s.review)+'</p>'+(url?'<a class="action" href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">عرض صفحة الوزارة الرسمية ↗</a>':'')+'</article>'}).join('')||'<p>ما فيه سجلات مطابقة لهذا البحث.</p>'}draw();$('filter').addEventListener('input',draw);$('status').addEventListener('change',draw)
+}catch(e){$('cards').textContent='تعذّر تحميل البيانات. حدّث الصفحة وأعد المحاولة.';console.error(e)}})();
+</script></body></html>
