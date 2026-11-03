@@ -13,6 +13,17 @@ class TestEmailTemplates(unittest.TestCase):
         self.assertIn("لا تتضمن أي بيانات", body)
         self.assertIn("Saudization Radar", body)
 
+    def test_fictional_percentage_demo_is_clearly_labeled(self):
+        body = email_templates.render(demo=True)
+        plain = email_templates.plain(demo=True)
+        self.assertIn("محاكاة", body)
+        self.assertIn("ليس قراراً رسمياً", body)
+        self.assertIn("40%", body)
+        self.assertIn("60%", body)
+        self.assertIn("2027-01-01", body)
+        self.assertIn("افتراضي", plain)
+        self.assertIn("ليست مستمدة", plain)
+
     def test_html_escapes_web_excerpts(self):
         items = [{
             "title": "<script>alert('x')</script>",
