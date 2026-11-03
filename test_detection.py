@@ -1,6 +1,7 @@
 """Offline classifier regression tests. No government requests or email sends."""
 import unittest
 import detection
+import monitor
 
 
 SOURCE = {'name':'أخبار الوزارة','url':'https://www.hrsd.gov.sa/media-center/news'}
@@ -49,6 +50,14 @@ class TestDecisionSignals(unittest.TestCase):
         item = detection.analyze_change(old,new,SOURCE,'2026-11-03')
         self.assertIsNotNone(item)
         self.assertIn('412001',item['occupation_codes_mentioned'])
+
+    def test_monitor_includes_official_dossiers(self):
+        sources = monitor.monitored_sources()
+        self.assertEqual(len(sources), 8)
+        self.assertEqual(len({x['url'] for x in sources}), len(sources))
+        self.assertEqual(sum(x['kind']=='decision_page' for x in sources), 6)
+        for source in sources:
+            self.assertTrue(source['url'].startswith('https://www.hrsd.gov.sa/'))
 
     def test_change_id_is_deterministic(self):
         old = 'أخبار الوزارة'
