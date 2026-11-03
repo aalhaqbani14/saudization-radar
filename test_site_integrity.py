@@ -1,5 +1,6 @@
 """Static HTML navigation integrity tests; no network requests."""
 import pathlib
+import re
 import unittest
 from html.parser import HTMLParser
 from urllib.parse import urlsplit, unquote
@@ -38,6 +39,14 @@ class SiteIntegrity(unittest.TestCase):
                     path=(page.parent/relative).resolve()
                     self.assertTrue(path.is_relative_to(ROOT),ref)
                     self.assertTrue(path.is_file(),f'{name} -> {ref}')
+    def test_intelligence_javascript_dom_ids_exist(self):
+        """Avoid shipping a report UI whose script dereferences missing elements."""
+        html=(ROOT/'intelligence.html').read_text(encoding='utf-8')
+        script=(ROOT/'assets'/'intelligence.js').read_text(encoding='utf-8')
+        ids=set(re.findall(r'\\bid="([^"]+)"',html))
+        requested=set(re.findall(r"\\$\\('([^']+)'\\)",script))
+        self.assertFalse(requested-ids, f'Missing element IDs: {sorted(requested-ids)}')
+
     def test_has_navigation_to_source_register(self):
         for name in ('index.html','intelligence.html','review.html'):
             self.assertIn('sources.html',(ROOT/name).read_text(encoding='utf-8'))
