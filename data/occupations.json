@@ -1,6 +1,6 @@
 {
   "updated": "2026-11-03",
-  "methodology": "رموز مستخرجة من جداول مهن منشورة عبر وزارة الموارد البشرية والتنمية الاجتماعية. الرموز لا تمثل جميع المهن في المملكة ولا تكفي وحدها لحسم الانطباق. بعض المراجع تاريخية لترميز المهنة وقد صدرت قرارات أحدث؛ المراجعة النهائية للأدلة السارية مطلوبة.",
+  "methodology": "69 رمزاً من جدول 1 للدليل الإداري المساند (2026) مع تاريخ مرحلي من الجداول 2 و3. رموز إضافية مستخرجة من أدلة تاريخية أو مسودات منشورة على نطاق الوزارة، موضّحة بإشارة توثيق أقل، وليست حصرًا شاملاً.",
   "occupations": [
     {
       "code": "541403",
@@ -12,7 +12,8 @@
       "primaryEffective": "2026-04-05",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 2 · نافذ من 2026-04-05",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "541402",
@@ -24,7 +25,8 @@
       "primaryEffective": "2026-04-05",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 2 · نافذ من 2026-04-05",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "541401",
@@ -36,7 +38,8 @@
       "primaryEffective": "2026-10-04",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "441601",
@@ -48,7 +51,8 @@
       "primaryEffective": "2026-04-05",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 2 · نافذ من 2026-04-05",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "441401",
@@ -60,7 +64,8 @@
       "primaryEffective": "2026-04-05",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 2 · نافذ من 2026-04-05",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "432103",
@@ -72,7 +77,8 @@
       "primaryEffective": "2026-10-04",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "432102",
@@ -84,7 +90,8 @@
       "primaryEffective": "2026-10-04",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "432101",
@@ -96,7 +103,8 @@
       "primaryEffective": "2026-04-05",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 2 · نافذ من 2026-04-05",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "422602",
@@ -108,7 +116,8 @@
       "primaryEffective": "2026-04-05",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 2 · نافذ من 2026-04-05",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "422601",
@@ -120,7 +129,8 @@
       "primaryEffective": "2026-10-04",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "422502",
@@ -132,7 +142,8 @@
       "primaryEffective": "2026-04-05",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 2 · نافذ من 2026-04-05",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "422501",
@@ -144,7 +155,8 @@
       "primaryEffective": "2026-10-04",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "422401",
@@ -156,7 +168,8 @@
       "primaryEffective": "2026-04-05",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 2 · نافذ من 2026-04-05",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "413201",
@@ -168,7 +181,8 @@
       "primaryEffective": "2026-04-05",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 2 · نافذ من 2026-04-05",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "413102",
@@ -180,7 +194,8 @@
       "primaryEffective": "2026-10-04",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "413101",
@@ -192,7 +207,8 @@
       "primaryEffective": "2026-04-05",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 2 · نافذ من 2026-04-05",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "412002",
@@ -204,7 +220,8 @@
       "primaryEffective": "2026-04-05",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 2 · نافذ من 2026-04-05",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "412001",
@@ -217,7 +234,8 @@
       "primaryEffective": "2026-10-04",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية. المراجع الإضافية تحتاج مراجعة قطاعية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "411002",
@@ -229,7 +247,8 @@
       "primaryEffective": "2026-10-04",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "411001",
@@ -241,7 +260,8 @@
       "primaryEffective": "2026-10-04",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "334301",
@@ -253,7 +273,8 @@
       "primaryEffective": "2026-04-05",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 2 · نافذ من 2026-04-05",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "333103",
@@ -265,7 +286,8 @@
       "primaryEffective": "2026-04-05",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 2 · نافذ من 2026-04-05",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "333102",
@@ -277,7 +299,8 @@
       "primaryEffective": "2026-10-04",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "333101",
@@ -289,7 +312,8 @@
       "primaryEffective": "2026-10-04",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "264305",
@@ -301,7 +325,8 @@
       "primaryEffective": "2026-04-05",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 2 · نافذ من 2026-04-05",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "264304",
@@ -313,7 +338,8 @@
       "primaryEffective": "2026-10-04",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "264303",
@@ -325,7 +351,8 @@
       "primaryEffective": "2026-10-04",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "264302",
@@ -337,7 +364,8 @@
       "primaryEffective": "2026-04-05",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 2 · نافذ من 2026-04-05",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "264301",
@@ -349,7 +377,8 @@
       "primaryEffective": "2026-04-05",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 2 · نافذ من 2026-04-05",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "243209",
@@ -361,7 +390,8 @@
       "primaryEffective": "2026-10-04",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "243208",
@@ -373,7 +403,8 @@
       "primaryEffective": "2026-10-04",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "243207",
@@ -385,7 +416,8 @@
       "primaryEffective": "2026-10-04",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "243206",
@@ -397,7 +429,8 @@
       "primaryEffective": "2026-10-04",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "243205",
@@ -409,7 +442,8 @@
       "primaryEffective": "2026-10-04",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "243204",
@@ -421,7 +455,8 @@
       "primaryEffective": "2026-10-04",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "243202",
@@ -433,7 +468,8 @@
       "primaryEffective": "2026-10-04",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "242313",
@@ -445,7 +481,8 @@
       "primaryEffective": "2026-10-04",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "242312",
@@ -457,7 +494,8 @@
       "primaryEffective": "2026-10-04",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "242311",
@@ -469,7 +507,8 @@
       "primaryEffective": "2026-10-04",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "242310",
@@ -481,7 +520,8 @@
       "primaryEffective": "2026-10-04",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "242309",
@@ -493,7 +533,8 @@
       "primaryEffective": "2026-10-04",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "242308",
@@ -505,7 +546,8 @@
       "primaryEffective": "2026-10-04",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "242307",
@@ -517,7 +559,8 @@
       "primaryEffective": "2026-10-04",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "242306",
@@ -529,7 +572,8 @@
       "primaryEffective": "2026-10-04",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "242305",
@@ -541,7 +585,8 @@
       "primaryEffective": "2026-10-04",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "242304",
@@ -553,7 +598,8 @@
       "primaryEffective": "2026-10-04",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "242303",
@@ -565,7 +611,8 @@
       "primaryEffective": "2026-10-04",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "242302",
@@ -577,7 +624,8 @@
       "primaryEffective": "2026-10-04",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "242301",
@@ -589,7 +637,8 @@
       "primaryEffective": "2026-10-04",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "241104",
@@ -601,7 +650,8 @@
       "primaryEffective": "2026-04-05",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 2 · نافذ من 2026-04-05",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "122206",
@@ -613,7 +663,8 @@
       "primaryEffective": "2026-10-04",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "122205",
@@ -625,7 +676,8 @@
       "primaryEffective": "2026-10-04",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "122203",
@@ -637,7 +689,8 @@
       "primaryEffective": "2026-10-04",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "121216",
@@ -649,7 +702,8 @@
       "primaryEffective": "2026-10-04",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "121215",
@@ -661,7 +715,8 @@
       "primaryEffective": "2026-10-04",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "121214",
@@ -673,7 +728,8 @@
       "primaryEffective": "2026-10-04",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "121213",
@@ -685,7 +741,8 @@
       "primaryEffective": "2026-10-04",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "121212",
@@ -697,7 +754,8 @@
       "primaryEffective": "2026-10-04",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "121211",
@@ -709,7 +767,8 @@
       "primaryEffective": "2026-04-05",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 2 · نافذ من 2026-04-05",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "121210",
@@ -721,7 +780,8 @@
       "primaryEffective": "2026-10-04",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "121209",
@@ -733,7 +793,8 @@
       "primaryEffective": "2026-10-04",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "121208",
@@ -745,7 +806,8 @@
       "primaryEffective": "2026-04-05",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 2 · نافذ من 2026-04-05",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "121207",
@@ -757,7 +819,8 @@
       "primaryEffective": "2026-10-04",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "121206",
@@ -769,7 +832,8 @@
       "primaryEffective": "2026-10-04",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "121205",
@@ -781,7 +845,8 @@
       "primaryEffective": "2026-10-04",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "121204",
@@ -793,7 +858,8 @@
       "primaryEffective": "2026-10-04",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "121203",
@@ -805,7 +871,8 @@
       "primaryEffective": "2026-10-04",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "121202",
@@ -817,7 +884,8 @@
       "primaryEffective": "2026-10-04",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "121201",
@@ -829,7 +897,8 @@
       "primaryEffective": "2026-10-04",
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
       "sourceTable": "الجدول 3 · بعد فترة السماح حتى 2026-10-04",
-      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية."
+      "notes": "تنطبق شروط القرار على مسمى المهنة والعمل الفعلي. تحقق من البيانات النظامية.",
+      "evidenceQuality": "current"
     },
     {
       "code": "121314",
@@ -843,7 +912,8 @@
       "primaryEffective": null,
       "source": "https://www.hrsd.gov.sa/sites/default/files/2023-04/الدليل الإجرائي لتوطين مهن إدارة المشاريع.pdf",
       "sourceTable": "2023 دليل إدارة المشاريع (لترميز المهنة)",
-      "notes": "الرمز موثق في دليل مهني أو قطاعي؛ انطباق القرار يعتمد على نطاقه وتحديثاته."
+      "notes": "الرمز موثق في دليل مهني أو قطاعي؛ انطباق القرار يعتمد على نطاقه وتحديثاته.",
+      "evidenceQuality": "historical"
     },
     {
       "code": "242108",
@@ -856,7 +926,8 @@
       "primaryEffective": null,
       "source": "https://www.hrsd.gov.sa/sites/default/files/2023-04/الدليل الإجرائي لتوطين مهن إدارة المشاريع.pdf",
       "sourceTable": "2023 دليل إدارة المشاريع (لترميز المهنة)",
-      "notes": "الرمز موثق في دليل مهني أو قطاعي؛ انطباق القرار يعتمد على نطاقه وتحديثاته."
+      "notes": "الرمز موثق في دليل مهني أو قطاعي؛ انطباق القرار يعتمد على نطاقه وتحديثاته.",
+      "evidenceQuality": "historical"
     },
     {
       "code": "214909",
@@ -869,7 +940,8 @@
       "primaryEffective": null,
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajrayy-ltwtyn-mhn-adrt-almshary-.pdf",
       "sourceTable": "2023 دليل إدارة المشاريع (لترميز المهنة)",
-      "notes": "الرمز موثق في دليل مهني أو قطاعي؛ انطباق القرار يعتمد على نطاقه وتحديثاته."
+      "notes": "الرمز موثق في دليل مهني أو قطاعي؛ انطباق القرار يعتمد على نطاقه وتحديثاته.",
+      "evidenceQuality": "historical"
     },
     {
       "code": "241201",
@@ -881,7 +953,8 @@
       "primaryEffective": null,
       "source": "https://www.hrsd.gov.sa/sites/default/files/2023-03/11102022.pdf",
       "sourceTable": "دليل المهن الاستشارية · جدول المهن",
-      "notes": "الرمز موثق في دليل مهني أو قطاعي؛ انطباق القرار يعتمد على نطاقه وتحديثاته."
+      "notes": "الرمز موثق في دليل مهني أو قطاعي؛ انطباق القرار يعتمد على نطاقه وتحديثاته.",
+      "evidenceQuality": "historical"
     },
     {
       "code": "242106",
@@ -893,7 +966,8 @@
       "primaryEffective": null,
       "source": "https://www.hrsd.gov.sa/sites/default/files/2023-03/11102022.pdf",
       "sourceTable": "دليل المهن الاستشارية · جدول المهن",
-      "notes": "الرمز موثق في دليل مهني أو قطاعي؛ انطباق القرار يعتمد على نطاقه وتحديثاته."
+      "notes": "الرمز موثق في دليل مهني أو قطاعي؛ انطباق القرار يعتمد على نطاقه وتحديثاته.",
+      "evidenceQuality": "historical"
     },
     {
       "code": "242126",
@@ -905,7 +979,8 @@
       "primaryEffective": null,
       "source": "https://www.hrsd.gov.sa/sites/default/files/2023-03/11102022.pdf",
       "sourceTable": "دليل المهن الاستشارية · جدول المهن",
-      "notes": "الرمز موثق في دليل مهني أو قطاعي؛ انطباق القرار يعتمد على نطاقه وتحديثاته."
+      "notes": "الرمز موثق في دليل مهني أو قطاعي؛ انطباق القرار يعتمد على نطاقه وتحديثاته.",
+      "evidenceQuality": "historical"
     },
     {
       "code": "512001",
@@ -917,7 +992,8 @@
       "primaryEffective": null,
       "source": "https://www.hrsd.gov.sa/sites/default/files/2025-04/الدليل الاجرائي لقرار توطين القطاع السياحي_1.pdf",
       "sourceTable": "دليل السياحة · الجدول 4",
-      "notes": "الرمز موثق في دليل مهني أو قطاعي؛ انطباق القرار يعتمد على نطاقه وتحديثاته."
+      "notes": "الرمز موثق في دليل مهني أو قطاعي؛ انطباق القرار يعتمد على نطاقه وتحديثاته.",
+      "evidenceQuality": "historical"
     },
     {
       "code": "141102",
@@ -929,7 +1005,8 @@
       "primaryEffective": null,
       "source": "https://www.hrsd.gov.sa/sites/default/files/2025-04/الدليل الاجرائي لقرار توطين القطاع السياحي_1.pdf",
       "sourceTable": "دليل السياحة · الجدول 5",
-      "notes": "الرمز موثق في دليل مهني أو قطاعي؛ انطباق القرار يعتمد على نطاقه وتحديثاته."
+      "notes": "الرمز موثق في دليل مهني أو قطاعي؛ انطباق القرار يعتمد على نطاقه وتحديثاته.",
+      "evidenceQuality": "historical"
     },
     {
       "code": "132417",
@@ -942,7 +1019,8 @@
       "primaryEffective": null,
       "source": "https://www.hrsd.gov.sa/sites/default/files/2025-11/mswdt-aldlyl-alajray-y-lqrar-twtyn-nshat-mrakz-alastrkha-wal-nayt-alshkhsyt_v11.pdf",
       "sourceTable": "دليل مراكز الاسترخاء · جدول المهن (القرار القطاعي)",
-      "notes": "الرمز موثق في دليل مهني أو قطاعي؛ انطباق القرار يعتمد على نطاقه وتحديثاته."
+      "notes": "الرمز موثق في دليل مهني أو قطاعي؛ انطباق القرار يعتمد على نطاقه وتحديثاته.",
+      "evidenceQuality": "draft"
     },
     {
       "code": "332302",
@@ -954,7 +1032,8 @@
       "primaryEffective": null,
       "source": "https://www.hrsd.gov.sa/sites/default/files/2025-11/mswdt-aldlyl-alajray-y-lqrar-twtyn-nshat-mrakz-alastrkha-wal-nayt-alshkhsyt_v11.pdf",
       "sourceTable": "دليل مراكز الاسترخاء · جدول المهن (القرار القطاعي)",
-      "notes": "الرمز موثق في دليل مهني أو قطاعي؛ انطباق القرار يعتمد على نطاقه وتحديثاته."
+      "notes": "الرمز موثق في دليل مهني أو قطاعي؛ انطباق القرار يعتمد على نطاقه وتحديثاته.",
+      "evidenceQuality": "draft"
     },
     {
       "code": "325401",
@@ -966,7 +1045,8 @@
       "primaryEffective": null,
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajrayy-lqrar-twtyn-mhn-albsryat.pdf",
       "sourceTable": "الدليل الإجرائي للبصريات",
-      "notes": "الرمز موثق في دليل مهني أو قطاعي؛ انطباق القرار يعتمد على نطاقه وتحديثاته."
+      "notes": "الرمز موثق في دليل مهني أو قطاعي؛ انطباق القرار يعتمد على نطاقه وتحديثاته.",
+      "evidenceQuality": "historical"
     },
     {
       "code": "325403",
@@ -978,7 +1058,8 @@
       "primaryEffective": null,
       "source": "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajrayy-lqrar-twtyn-mhn-albsryat.pdf",
       "sourceTable": "الدليل الإجرائي للبصريات",
-      "notes": "الرمز موثق في دليل مهني أو قطاعي؛ انطباق القرار يعتمد على نطاقه وتحديثاته."
+      "notes": "الرمز موثق في دليل مهني أو قطاعي؛ انطباق القرار يعتمد على نطاقه وتحديثاته.",
+      "evidenceQuality": "historical"
     },
     {
       "code": "515102",
@@ -990,7 +1071,8 @@
       "primaryEffective": null,
       "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-مهنة-مشرف-مسكن",
       "sourceTable": "الدليل الإجرائي لمشرف مسكن",
-      "notes": "الرمز موثق في دليل مهني أو قطاعي؛ انطباق القرار يعتمد على نطاقه وتحديثاته."
+      "notes": "الرمز موثق في دليل مهني أو قطاعي؛ انطباق القرار يعتمد على نطاقه وتحديثاته.",
+      "evidenceQuality": "historical"
     },
     {
       "code": "122104",
@@ -1004,7 +1086,8 @@
       "primaryEffective": null,
       "source": "https://www.hrsd.gov.sa/sites/default/files/2025-04/الدليل الاجرائي لقرار توطين القطاع السياحي_1.pdf",
       "sourceTable": "الجدول 5",
-      "notes": "قد يخضع لأكثر من قرار، حسب النشاط والكيان والمهنة."
+      "notes": "قد يخضع لأكثر من قرار، حسب النشاط والكيان والمهنة.",
+      "evidenceQuality": "historical"
     }
   ]
 }
