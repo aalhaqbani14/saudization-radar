@@ -43,8 +43,8 @@ class SiteIntegrity(unittest.TestCase):
         """Avoid shipping a report UI whose script dereferences missing elements."""
         html=(ROOT/'intelligence.html').read_text(encoding='utf-8')
         script=(ROOT/'assets'/'intelligence.js').read_text(encoding='utf-8')
-        ids=set(re.findall(r'\\bid="([^"]+)"',html))
-        requested=set(re.findall(r"\\$\\('([^']+)'\\)",script))
+        ids=set(re.findall(r'\bid="([^"]+)"',html))
+        requested=set(re.findall(r"\$\('([^']+)'\)",script))
         self.assertFalse(requested-ids, f'Missing element IDs: {sorted(requested-ids)}')
 
     def test_has_navigation_to_source_register(self):
