@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="assets/intelligence.css">
 <link rel="stylesheet" href="assets/executive-refresh.css">
 <link rel="stylesheet" href="assets/phases.css">
+<link rel="stylesheet" href="assets/workforce-widgets.css">
 </head>
 <body>
 <div class="shell">
@@ -19,6 +20,7 @@
       <nav class="rail-links" aria-label="القائمة الرئيسية">
         <a href="index.html">▦ &nbsp; لوحة المتابعة</a>
         <a href="salic.html">▤ &nbsp; موظفو سالك (الأعداد والمهن)</a>
+        <a href="calculator.html">◫ &nbsp; حاسبة التوطين</a>
         <a href="sources.html">◈ &nbsp; سجل المصادر والتحقق</a>
         <a href="review.html">◉ &nbsp; غرفة مراجعة التنبيهات</a>
         <a class="active" href="#codes" data-tab="codes">⌕ &nbsp; محرك بحث المهن</a>
@@ -77,7 +79,7 @@
         <div id="view-codes" class="view" role="tabpanel">
           <div class="panel-head"><div><h2>اكتشف قرار المهنة</h2><p>يقدّم الرمز الدقيق أولوية في المطابقة، ثم الاسم والأسماء المرتبطة.</p></div><button type="button" id="download-codes" class="link-btn ghost">تحميل فهرس الرموز CSV</button></div>
           <div class="searchbox"><span class="search-icon" aria-hidden="true">⌕</span><input id="profession-query" type="search" autocomplete="off" placeholder="مثلاً: 412001 أو مساعد إداري أو مدير إدارة مشاريع" aria-label="البحث برمز المهنة أو المسمى"><button type="button" id="profession-search">بحث</button></div>
-          <div class="chips"><button type="button" data-example="412001">412001 · مساعد إداري</button><button type="button" data-example="411001">411001 · علاقات حكومية</button><button type="button" data-example="121314">121314 · إدارة مشاريع</button><button type="button" data-example="332302">332302 · مشتريات</button><button type="button" data-example="مدير موارد بشرية">مدير موارد بشرية</button></div>
+          <div class="chips"><button type="button" data-example="412001">412001 · مساعد إداري</button><button type="button" data-example="121201">121201 · مدير عمليات موارد بشرية</button><button type="button" data-example="121314">121314 · إدارة مشاريع</button><button type="button" data-example="242302">242302 · أخصائي عمليات الموارد البشرية</button><button type="button" data-example="مساعد إداري">مساعد إداري</button></div>
           <div class="panel-head" style="margin:19px 0 13px"><p id="occupation-results" class="summaryline">جارٍ تحميل فهرس الرموز…</p><button type="button" class="link-btn ghost" id="load-all">عرض جميع الرموز</button></div>
           <div id="occupations" class="occupation-grid" aria-live="polite"><div class="loading">جارٍ قراءة فهرس المهن…</div></div>
           <div class="hint warning"><strong>تنبيه الدقة:</strong> التطابق مع الرمز يعني وجوده في جداول منشورة، لكنه لا يكفي لإثبات انطباق القرار على منشأة بعينها. وقد يكون الرمز في دليل سابق أو مسودة؛ يُذكر ذلك صراحة على نتيجة البحث. المهن غير الموجودة في الفهرس قد تكون مستهدفة بقرارات أخرى.</div>
@@ -144,6 +146,7 @@
 <div id="print-host" class="print-host"><div class="print-toolbar"><button id="print-now" type="button">طباعة أو حفظ PDF</button><button id="close-print" type="button">إغلاق التقرير</button></div><div id="print-content"></div></div>
 <script src="assets/phases.js" defer></script>
 <script src="assets/report-data.js" defer></script>
+<script src="assets/workforce-model.js" defer></script>
 <script src="assets/intelligence.js" defer></script>
 <script src="assets/applicability.js" defer></script>
 <script src="assets/presentation-mode.js" defer></script>
