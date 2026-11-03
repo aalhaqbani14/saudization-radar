@@ -51,7 +51,7 @@
     <div class="side-bottom"><span class="kicker">INDEPENDENT INITIATIVE</span><strong>متابعة أدق للقرارات المهنية</strong><small>منصة شخصية لرصد التحديثات المنشورة، ولا تمثل جهة حكومية أو نظام امتثال معتمداً.</small></div>
   </aside>
   <div class="main">
-    <header class="topbar"><div class="crumb">الرئيسية <span aria-hidden="true">/</span> <b>لوحة المتابعة</b></div><div class="pill"><span class="pill-dot"></span> متابعة المصادر الرسمية المنشورة</div></header>
+    <header class="topbar"><div class="crumb">الرئيسية <span aria-hidden="true">/</span> <b>لوحة المتابعة</b></div><div style="display:flex;gap:9px;align-items:center;flex-wrap:wrap"><button class="presentation-toggle" id="presentation-toggle" type="button" aria-pressed="false">وضع العرض</button><div class="pill"><span class="pill-dot"></span> متابعة المصادر الرسمية المنشورة</div></div></header>
     <main class="content" id="overview">
       <section class="hero" aria-labelledby="hero-title">
         <div><div class="eyebrow">REGULATORY MONITORING DASHBOARD</div><h1 id="hero-title">قرارات التوطين، في لوحة واحدة.</h1><p>مساحة متابعة مستقلة ترصد التغييرات في الأخبار والأدلة الإجرائية لوزارة الموارد البشرية والتنمية الاجتماعية، وتتيح استعراضها والرجوع إلى مصادرها الأصلية.</p><div class="hero-updated" id="updated" aria-live="polite">جارٍ قراءة آخر بيانات الرصد...</div></div>
@@ -180,5 +180,6 @@
 
   load();
 </script>
+<script src="assets/presentation-mode.js" defer></script>
 </body>
 </html>
