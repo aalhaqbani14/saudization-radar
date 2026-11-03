@@ -1,6 +1,6 @@
 {
   "updated": "2026-11-03",
-  "methodology": "69 رمزاً من جدول 1 للدليل الإداري المساند (2026) مع تاريخ مرحلي من الجداول 2 و3. رموز إضافية مستخرجة من أدلة تاريخية أو مسودات منشورة على نطاق الوزارة، موضّحة بإشارة توثيق أقل، وليست حصرًا شاملاً.",
+  "methodology": "نسخة أعمال مختارة تضم الرموز المرتبطة بالمهن الإدارية والتشغيلية والتجارية والقانونية والهندسية وغيرها، باستثناء قرارات الصحة والرياضة والسياحة. الرموز غير الموجودة بالفهرس قد تخضع لقرارات أخرى. تبقى مصادر الجداول الرسمية واجبة التحقق.",
   "occupations": [
     {
       "code": "541403",
@@ -905,8 +905,7 @@
       "title": "مدير إدارة مشاريع",
       "decisionIds": [
         "project",
-        "consulting",
-        "tourism"
+        "consulting"
       ],
       "verified": "2023 دليل إدارة المشاريع (لترميز المهنة)",
       "primaryEffective": null,
@@ -983,32 +982,6 @@
       "evidenceQuality": "historical"
     },
     {
-      "code": "512001",
-      "title": "طاهٍ",
-      "decisionIds": [
-        "tourism"
-      ],
-      "verified": "دليل السياحة · الجدول 4",
-      "primaryEffective": null,
-      "source": "https://www.hrsd.gov.sa/sites/default/files/2025-04/الدليل الاجرائي لقرار توطين القطاع السياحي_1.pdf",
-      "sourceTable": "دليل السياحة · الجدول 4",
-      "notes": "الرمز موثق في دليل مهني أو قطاعي؛ انطباق القرار يعتمد على نطاقه وتحديثاته.",
-      "evidenceQuality": "historical"
-    },
-    {
-      "code": "141102",
-      "title": "مدير عمليات فندقة",
-      "decisionIds": [
-        "tourism"
-      ],
-      "verified": "دليل السياحة · الجدول 5",
-      "primaryEffective": null,
-      "source": "https://www.hrsd.gov.sa/sites/default/files/2025-04/الدليل الاجرائي لقرار توطين القطاع السياحي_1.pdf",
-      "sourceTable": "دليل السياحة · الجدول 5",
-      "notes": "الرمز موثق في دليل مهني أو قطاعي؛ انطباق القرار يعتمد على نطاقه وتحديثاته.",
-      "evidenceQuality": "historical"
-    },
-    {
       "code": "132417",
       "title": "مدير مشتريات",
       "decisionIds": [
@@ -1036,32 +1009,6 @@
       "evidenceQuality": "draft"
     },
     {
-      "code": "325401",
-      "title": "فني بصريات طبية",
-      "decisionIds": [
-        "optics"
-      ],
-      "verified": "الدليل الإجرائي للبصريات",
-      "primaryEffective": null,
-      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajrayy-lqrar-twtyn-mhn-albsryat.pdf",
-      "sourceTable": "الدليل الإجرائي للبصريات",
-      "notes": "الرمز موثق في دليل مهني أو قطاعي؛ انطباق القرار يعتمد على نطاقه وتحديثاته.",
-      "evidenceQuality": "historical"
-    },
-    {
-      "code": "325403",
-      "title": "فني نظارات",
-      "decisionIds": [
-        "optics"
-      ],
-      "verified": "الدليل الإجرائي للبصريات",
-      "primaryEffective": null,
-      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajrayy-lqrar-twtyn-mhn-albsryat.pdf",
-      "sourceTable": "الدليل الإجرائي للبصريات",
-      "notes": "الرمز موثق في دليل مهني أو قطاعي؛ انطباق القرار يعتمد على نطاقه وتحديثاته.",
-      "evidenceQuality": "historical"
-    },
-    {
       "code": "515102",
       "title": "مشرف مسكن",
       "decisionIds": [
@@ -1078,7 +1025,6 @@
       "code": "122104",
       "title": "مدير مبيعات",
       "decisionIds": [
-        "tourism",
         "beauty",
         "sales"
       ],
