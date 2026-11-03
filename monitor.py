@@ -76,10 +76,10 @@ def send_email(alerts):
  return send_message(subject,email_templates.plain(alerts),html_body=email_templates.render(alerts))
 
 def send_test_email():
- """Test uses new email template but does not claim any government update."""
- return send_message('Saudization Radar | اختبار التصميم الجديد للتنبيهات',
-                     email_templates.plain(test=True),
-                     test=True,html_body=email_templates.render(test=True))
+ """Display a clearly fictional percentage change; never imply an HRSD decision."""
+ return send_message('Saudization Radar | محاكاة تجريبية لتغيير نسبة التوطين — ليست قراراً رسمياً',
+                     email_templates.plain(demo=True),
+                     test=True,html_body=email_templates.render(demo=True))
 
 def main():
  state=json.loads(STATE.read_text(encoding='utf-8')) if STATE.exists() else {}
