@@ -10,6 +10,10 @@ name: Saudization Radar site integrity
       - 'review.html'
       - 'assets/**'
       - 'test_site_integrity.py'
+      - 'test_report_builder.cjs'
+      - 'data/grace-periods.json'
+      - 'data/decisions.json'
+      - 'data/occupations.json'
       - '.github/workflows/site-quality.yml'
   workflow_dispatch:
 
@@ -31,3 +35,5 @@ jobs:
           for file in assets/*.js; do
             node --check "$file"
           done
+      - name: Test executive report classification and grace periods
+        run: node --test test_report_builder.cjs
