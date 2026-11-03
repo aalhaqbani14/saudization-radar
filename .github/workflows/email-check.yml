@@ -1,0 +1,27 @@
+name: Saudization Radar email checks
+
+'on':
+  push:
+    branches: [main]
+    paths:
+      - 'monitor.py'
+      - 'email_templates.py'
+      - 'test_email_templates.py'
+      - '.github/workflows/email-check.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  email-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check Python syntax
+        run: python -m py_compile monitor.py email_templates.py test_email_templates.py
+      - name: Run safe offline email tests
+        run: python -m unittest -v test_email_templates.py
