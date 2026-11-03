@@ -1,10 +1,11 @@
 """Monitor public HRSD pages; notify via SMTP when relevant text changes.
 Uses only public data. Detection is heuristic and requires human verification.
 """
-import os, sys, json, re, hashlib, smtplib, ssl, datetime, pathlib, difflib
+import os, sys, json, re, hashlib, smtplib, ssl, datetime, pathlib
 from email.message import EmailMessage
 from email.utils import formataddr
 import email_templates
+import detection
 from urllib.request import Request, urlopen
 from html.parser import HTMLParser
 
@@ -15,7 +16,6 @@ SOURCES=[
  {'name':'أخبار الوزارة','url':'https://www.hrsd.gov.sa/media-center/news'},
  {'name':'الأدلة الإجرائية','url':'https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/evidence'},
 ]
-KEYWORDS=('توطين','سعودة','المهن','المهنة','نسبة التوطين','saudization','localization')
 class Extract(HTMLParser):
  def __init__(self):super().__init__();self.parts=[];self.skip=0
  def handle_starttag(self,tag,attrs):
@@ -93,12 +93,17 @@ def main():
    digest=hashlib.sha256(content.encode()).hexdigest()
    previous=state.get(url)
    if previous and previous['hash']!=digest:
-    old=previous.get('text','');matcher=difflib.SequenceMatcher(None,old,content,autojunk=False)
-    added=' '.join(content[j1:j2] for op,i1,i2,j1,j2 in matcher.get_opcodes() if op in ('insert','replace'))
-    if any(k in added.lower() for k in KEYWORDS):
-     excerpt=added[:450].strip() or 'تم تعديل الصفحة؛ راجع المصدر'
-     item={'id':hashlib.sha256((url+digest).encode()).hexdigest()[:16], 'source':name,'title':'تغيير محتمل في '+name,'summary':excerpt,'url':url,'detected_at':now}
-     db.setdefault('alerts',[]).insert(0,item);new.append(item)
+    item=detection.analyze_change(previous.get('text',''),content,src,now)
+    if item:
+     seen={a.get('id') for a in db.get('alerts',[])}
+     if item['id'] not in seen:
+      db.setdefault('alerts',[]).insert(0,item)
+      if item['email_worthy']:new.append(item)
+      print('Review signal:',name,'priority:',item['review_priority'],'email:',item['email_worthy'])
+     else:
+      print('Duplicate signal skipped:',name)
+    else:
+     print('No relevant decision signal:',name)
    # First run sets baseline, no false alert
    state[url]={'hash':digest,'text':content[:150000]};success+=1
    print('Checked:',name, 'changed:',bool(previous and previous['hash']!=digest))
