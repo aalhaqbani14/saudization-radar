@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-03T14:59:05.186814+00:00",
+  "checked_at": "2026-11-04T14:58:38.483175+00:00",
   "total_sources": 8,
   "successful_sources": 2,
   "failed_sources": 6,
@@ -10,8 +10,8 @@
       "url": "https://www.hrsd.gov.sa/media-center/news",
       "kind": "index",
       "status": "ok",
-      "changed": false,
-      "first_baseline": true
+      "changed": true,
+      "first_baseline": false
     },
     {
       "name": "الأدلة الإجرائية",
@@ -19,7 +19,7 @@
       "kind": "index",
       "status": "ok",
       "changed": false,
-      "first_baseline": true
+      "first_baseline": false
     },
     {
       "name": "قرار: المهن الإدارية المساندة",
