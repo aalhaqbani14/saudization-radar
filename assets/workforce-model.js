@@ -65,6 +65,18 @@ function group(id){
  }
  return {id,list,total,saudi,other,policy,needed,gap,status,reason};
 }
+function header(id){
+ if(!rows)return '<div class="wf-topstrip wf-topstrip-loading" aria-live="polite">جارٍ تحميل أعداد موظفي سالك لهذا القرار…</div>';
+ const g=group(id),companyTotal=rows.reduce((sum,r)=>sum+r.total,0);
+ const gapLabel=g.status==="future"?"فجوة المرحلة القادمة":g.gap===null?"الفجوة غير محسوبة":"الفجوة التقديرية";
+ const nums=[
+  {label:"موظفو المهن المرتبطة",value:g.total},
+  {label:"السعوديون",value:g.saudi},
+  {label:"غير السعوديين",value:g.other},
+  {label:gapLabel,value:g.gap===null?"تحتاج تحقق":g.gap}
+ ];
+ return '<div class="wf-topstrip" aria-label="أعداد موظفي سالك المرتبطين بهذا القرار"><div class="wf-topstrip-title"><b>وضع سالك في هذا القرار</b><small>من إجمالي '+companyTotal+' موظف · مطابقة مبدئية لمسميات المهن</small></div><div class="wf-topstrip-grid">'+nums.map((item,i)=>'<div class="wf-topstrip-stat'+(i===3?' wf-topstrip-gap':'')+'"><small>'+clean(item.label)+'</small><strong>'+clean(item.value)+'</strong></div>').join('')+'</div><div class="wf-topstrip-note">الأعداد مأخوذة من ملف سالك بعد حذف التكرارات. الفجوة مؤشر حسابي غير معتمد حتى يتم التحقق من رموز قوى وشروط الانطباق.</div></div>';
+}
 function compact(id){
  if(!rows)return '<div class="wf-compact">بيانات سالك: جارٍ التحميل…</div>';
  const g=group(id),companyTotal=rows.reduce((sum,r)=>sum+r.total,0);
@@ -81,5 +93,5 @@ function render(id){
  let table=g.list.map(r=>'<tr><td>'+clean(r.title)+'</td><td>'+r.total+'</td><td>'+r.saudi+'</td><td>'+r.other+'</td></tr>').join("");
  return '<section class="wf-section" aria-label="وضع موظفي سالك لهذا القرار"><div class="wf-head"><div><h3>موظفو سالك المرتبطون بهذا القرار</h3><p>عدد هذه المهن جزء من إجمالي '+companyTotal+' موظف في سالك، وليس إجمالي القوى العاملة. مطابقة مبدئية لمسميات ملف 03/11/2026 دون رموز قوى.</p></div><a class="wf-cta" href="calculator.html?decision='+encodeURIComponent(id)+'">افتح الحاسبة المستقلة ↗</a></div><div class="wf-kpis"><div><small>الوظائف المطابقة</small><b>'+g.list.length+'</b></div><div><small>الموظفون بالمهن المطابقة</small><b>'+g.total+'</b></div><div><small>السعوديون</small><b>'+g.saudi+'</b></div><div><small>غير السعوديين</small><b>'+g.other+'</b></div><div class="wf-gap"><small>'+note+'</small><b>'+gapText+'</b></div></div><div class="wf-explanation"><b>النسبة المرجعية:</b> '+clean(rate)+' · <b>حد العدد:</b> '+(p.min||"بحسب النشاط والجدول")+'<p>'+clean(g.reason)+'</p><p>'+clean(detail)+'</p></div><div class="wf-table-scroll"><table class="wf-table"><thead><tr><th>المهنة في ملف سالك</th><th>الإجمالي</th><th>سعودي</th><th>غير سعودي</th></tr></thead><tbody>'+(table||'<tr><td colspan="4">لا توجد مطابقة نصية معروفة للمجموعة</td></tr>')+'</tbody></table></div><p class="wf-caution">قد تتداخل المهن بين القرارات، ولا يجوز جمع الفجوات من عدة قرارات. الفجوة التقديرية لا تثبت وجود مخالفة ولا عدد التعيينات المطلوب نظامياً قبل فحص الرموز والكيان والأنشطة والأجر وشروط احتساب السعوديين.</p></section>';
 }
-window.SalicWorkforce={names,groups,policies,norm,titleIds,setRows,load,getRows,group,compact,render};
+window.SalicWorkforce={names,groups,policies,norm,titleIds,setRows,load,getRows,group,header,compact,render};
 })();
