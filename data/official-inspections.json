@@ -1,0 +1,20 @@
+{
+  "updated": "2026-11-04",
+  "provenance": "Aggregated counters transcribed from a user-provided HRSD inspection record; individual names, IDs, violation and fine identifiers have been excluded.",
+  "records": [
+    {
+      "decisionId": "admin",
+      "decisionNumber": "132249",
+      "asOf": "2026-10-25",
+      "sourceType": "محضر رقابي من وزارة الموارد البشرية والتنمية الاجتماعية (مقدم من الشركة)",
+      "coverage": "المهن الواردة في القرار الوزاري المسجلة لدى الوزارة وقت الزيارة",
+      "total": 34,
+      "saudi": 31,
+      "nonSaudi": 3,
+      "reportedSaudiPercent": 91,
+      "targetPercent": 100,
+      "numericGap": 3,
+      "note": "مرجع رقابي مؤرخ؛ لا يمثل العدد الحالي بعد الزيارة، ولا يكشف قائمة الرموز المهنية الفردية."
+    }
+  ]
+}
