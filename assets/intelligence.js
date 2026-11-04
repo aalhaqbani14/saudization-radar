@@ -25,8 +25,12 @@
    return '<article class="occupation-card"><div class="occupation-head"><span class="code-tag" dir="ltr">'+esc(o.code)+'</span><span class="'+tag+'">'+esc(lab[0])+'</span></div><h3>'+esc(o.title)+'</h3>'+(person?'<div class="wf-compact">موظفو سالك في هذه المهنة: <b>'+person.total+'</b> · سعودي: '+person.saudi+' · غير سعودي: '+person.other+'</div>':'')+'<div class="secondary">'+date+'</div><div class="occupation-decisions">'+decisionLinks.map(d=>'<button type="button" data-decision="'+esc(d.id)+'">'+esc(d.title)+' · '+(d.id==='beauty'?'قطاعي · تحقّق من الدليل':escRates(d.rate))+'</button>').join('')+'</div><div class="occupation-history-summary">'+decisionLinks.slice(0,2).map(d=>d.id==='admin'&&o.primaryEffective?'<div class="occupation-specific-date"><b>موعد تطبيق هذه المهنة وفق جدول القرار:</b> '+esc(dayFormat(o.primaryEffective))+' <small>· '+esc(o.sourceTable||'يراجع الدليل')+'</small></div>':window.SaudizationHistory.compact(d)).join('')+'</div><p class="secondary">'+(o.decisionIds.length>1?'⚠️ مرتبط بأكثر من قرار محتمل؛ لا تعتمد النسبة الأعلى إلا بعد فحص النطاق وشروط التداخل.':esc(o.notes||'التحقق من نطاق القرار ضروري.'))+'</p><div class="occupation-foot"><span class="secondary">'+esc(o.sourceTable||o.verified)+'</span><a href="'+url(o.source)+'" target="_blank" rel="noopener noreferrer">جدول إثبات الرمز ↗</a></div></article>';
  }
  function drawCodes(){
-   const {q,rows}=getMatch();$('occupations').innerHTML=rows.length?rows.map(({o,score})=>occupationCard(o,score)).join(''):'<div class="empty"><strong>ما حصلنا رمزاً مطابقاً في الفهرس الحالي.</strong><p>هذا لا يعني أن المهنة غير مستهدفة بالتوطين؛ الفهرس محدود ويُوسّع تدريجياً.</p></div>';
-   $('occupation-results').textContent=q?'نتائج البحث: '+digits(rows.length)+' مهنة · المطابقة بالرمز أولوية ثم بمسمى المهنة':'استعراض '+digits(rows.length)+' من أصل '+digits(occupations.length)+' رمزاً مطابقاً لمهن ملف سالك';
+   const {q,rows}=getMatch();
+   const indexedTitles=new Set(occupations.map(o=>norm(o.title)));
+   const extra=q?window.SalicWorkforce.getRows().filter(r=>!indexedTitles.has(norm(r.title))&&norm(r.title).includes(norm(q))):[];
+   const cards=rows.map(({o})=>occupationCard(o)).join('')+extra.map(r=>'<article class="occupation-card"><div class="occupation-head"><span class="badge amber">لم يُطابق الرمز في فهرس المشروع</span></div><h3>'+esc(r.title)+'</h3><div class="wf-compact"><strong>عدد موظفي سالك: '+r.total+'</strong> · سعوديون: '+r.saudi+' · غير سعوديين: '+r.other+'</div><p class="secondary">المهنة مشمولة في إجمالي القوى العاملة حتى دون ارتباطها برمز أو قرار في الفهرس الجزئي. يُراجع الرمز الفعلي في قوى قبل الحكم على انطباق أي قرار.</p><a href="salic.html#workforce">افتح جميع مهن سالك ↗</a></article>').join('');
+   $('occupations').innerHTML=cards||'<div class="empty"><strong>لا توجد نتيجة مطابقة.</strong><p>جميع المهن الـ75 موجودة في جدول القوى العاملة أعلاه، سواء ارتبطت بقرار أم لا.</p></div>';
+   $('occupation-results').textContent=q?'نتائج البحث: '+digits(rows.length+extra.length)+' مهنة أو رمز من القائمة و الفهرس':'الرموز المفهرسة المعروضة: '+digits(rows.length)+' · إجمالي مهن سالك: '+digits(window.SalicWorkforce.getRows().length)+' مهنة في الجدول أعلاه';
    $('load-all').textContent=fullList?'عرض المختصر':'عرض جميع الرموز';
    $('occupations').querySelectorAll('[data-decision]').forEach(b=>b.addEventListener('click',()=>openDecision(b.dataset.decision)));
  }
@@ -148,9 +152,14 @@
      '<span class="report-badge '+(o.status==='targeted'?'':'pending')+'">'+(o.status==='targeted'?'مستهدفة ضمن الاختيار':o.status==='out-of-scope'?'خارج الاختيار فقط':'حالة غير محددة')+'</span>',
      esc(o.notice)+(o.matched.length?'<br>'+esc(o.matched.join('، ')):'')+(o.otherDecisions.length?'<br>قرارات أخرى: '+esc(o.otherDecisions.join('، ')):'')
    ]);
+   const allWorkforce=window.SalicWorkforce.getRows(),allTotal=allWorkforce.reduce((n,r)=>n+r.total,0),allSaudis=allWorkforce.reduce((n,r)=>n+r.saudi,0);
    const summaryCards=[
+     [digits(allTotal),'جميع موظفي سالك'],
+     [digits(allSaudis),'السعوديون في الملف'],
+     [digits(allTotal-allSaudis),'غير السعوديين في الملف'],
+     [digits(allWorkforce.length),'جميع مهن سالك'],
      [digits(m.selectedGroups),'مجموعات القرار المختارة'],
-     [digits(m.targetedCount),'رموز مهن ضمن نطاق الاختيار'],
+     [digits(m.targetedCount),'رموز مفهرسة في الاختيار'],
      [digits(m.outsideCount),'رموز خارج القرارات المختارة'],
      [digits(model.grace.filter(g=>g.status!=='unverified').length),'سجلات مهلة موثقة/مذكورة']
    ].map(x=>'<div><strong>'+x[0]+'</strong><span>'+x[1]+'</span></div>').join('');
@@ -165,9 +174,11 @@
      '<section><h2>6. المهن خارج القرارات المختارة — ضمن الفهرس ('+digits(model.outside.length)+')</h2><p class="report-caution">'+esc(outsideNotice)+'</p>'+printTable(['الرمز المهني','المسمى','قرارات أخرى قد تستهدفه','الحالة والمصدر'],outsideRows,'عند اختيار جميع القرارات لا تظهر عادة مهن خارج الاختيار من داخل الفهرس؛ ولا يمكن إثبات أن بقية مهن المملكة «غير مستهدفة» دون فهرس أشمل.')+'</section>'
    ];
    sections=sections.filter((part,i)=>i===0||(i===1&&$('report-part-grace').checked)||(i===2&&$('report-part-phases').checked)||(i===3&&$('report-part-targeted').checked)||(i===4&&$('report-part-mentions').checked)||(i===5&&$('report-part-outside').checked));
-   if(window.SalicWorkforce.getRows().length){
+   if(allWorkforce.length){
      const aggregates=picks.map(d=>{const g=window.SalicWorkforce.group(d.id);return [esc(d.title),esc(digits(g.list.length)),esc(digits(g.total)),esc(digits(g.saudi)),esc(digits(g.other)),esc(g.gap===null?'لم تُحسب':digits(g.gap)),esc(g.reason)];});
      sections.unshift('<section><h2>الوضع الوظيفي لسالك حسب القرارات المختارة</h2><p class="report-caution">الأعداد من مسميات المهن المطابقة في ملف 3 نوفمبر 2026، ولا تمثل حصراً رسمياً لمهن القرار. الفجوات حسابية تقديرية، أو تخطيطية لقرار مستقبلي؛ لا تجمع الفجوات بين القرارات المتداخلة.</p>'+printTable(['القرار','المهن المطابقة','الإجمالي','السعوديون','غير السعوديين','الفجوة التقديرية','حدود التقدير'],aggregates)+'</section>');
+     const wholeRows=allWorkforce.slice().sort((a,b)=>b.total-a.total||a.title.localeCompare(b.title,'ar')).map(r=>[esc(r.title),digits(r.total),digits(r.saudi),digits(r.other),esc(r.decisionIds.length?r.decisionIds.map(id=>window.SalicWorkforce.names[id]||id).join('، '):'لا يوجد ربط في الفهرس الحالي')]);
+     sections.unshift('<section><h2>جميع مهن سالك — '+digits(allWorkforce.length)+' مهنة و'+digits(allTotal)+' موظفاً</h2><p class="report-meta-note">هذا الجدول يشمل جميع موظفي سالك حسب المسمى سواء كانوا مستهدفين بقرار توطين أم لا؛ كل موظف محسوب مرة واحدة في الإجمالي، دون تكرار عبر القرارات. العدد السعودي: '+digits(allSaudis)+'، غير السعودي: '+digits(allTotal-allSaudis)+'. الربط بالمهن المستهدفة مبدئي ويحتاج تحقق الرموز المسجلة في قوى.</p>'+printTable(['المسمى المهني','الإجمالي','سعودي','غير سعودي','قرار محتمل / لم يُربط'],wholeRows)+'</section>');
    }
    if(model.manual.length)sections.push('<section><h2>7. تقييم قائمة المهن التي أدخلتها ('+digits(model.manual.length)+')</h2><p class="report-meta-note">مقارنة محلية بالفهرس الجزئي فقط، دون رفع البيانات إلى أي خدمة. المهنة غير الموجودة نتيجتها غير محددة، وليست غير مستهدفة.</p>'+printTable(['المهنة المُدخلة','الرمز المفهرس إن وجد','نتيجة المقارنة','التفسير'],manualRows)+'</section>');
    const footer='<section><h2>حدود الاعتماد وخطوات التحقق</h2><p>لا يمثّل هذا التقرير تقييماً نظامياً لامتثال منشأة. اختيار القرار لا يثبت انطباقه على كل نشاط أو منشأة أو موظف. يجب مطابقة رموز المهن والمسميات الفعلية وشروط العدد والأجور والاعتماد المهني وفترات السماح والاستثناءات في الدليل الرسمي الساري، ومراجعة التعارضات بين القرارات. عدد رموز الفهرس الحالي '+digits(m.indexCount)+'؛ لذلك لا يمكن الجزم بأن مهنة غير مدرجة لا تخضع للتوطين.</p><p>يمكن متابعة آخر مراجعات المصادر من غرفة التحليل وسجل المصادر الرسمي في Saudization Radar.</p></section>';

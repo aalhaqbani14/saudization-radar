@@ -35,6 +35,7 @@
 <link rel="stylesheet" href="assets/executive-refresh.css">
 <link rel="stylesheet" href="assets/phases.css">
 <link rel="stylesheet" href="assets/workforce-widgets.css">
+<link rel="stylesheet" href="assets/all-professions.css">
 </head>
 <body>
 <div class="layout">
@@ -45,6 +46,7 @@
       <nav class="nav" aria-label="التنقل الرئيسي">
         <a href="#overview" class="selected"><span class="glyph">▦</span> لوحة المتابعة</a>
         <a href="salic.html" style="background:#0b817650;color:white"><span class="glyph">▤</span> موظفو سالك · المهن والأعداد</a>
+        <a href="#all-professions"><span class="glyph">⌕</span> جميع المهن الـ75</a>
         <a href="calculator.html"><span class="glyph">◫</span> الحاسبة المستقلة</a>
         <a href="#intel" class="intel-nav"><span class="glyph">▣</span> مرجع قرارات التوطين</a>
         <a href="intelligence.html"><span class="glyph">⌕</span> غرفة التحليل الذكية <span style="font-size:9px; padding:3px 6px;background:#147f70;color:#fff;border-radius:5px;margin-right:auto">NEW</span></a>
@@ -77,6 +79,7 @@
         <p style="font-size:12px;color:#587684;line-height:2;margin:14px 0 0"><b>نطاق اللوحة:</b> القرارات المهنية العامة المحتمل ارتباطها بوظائف سالك. استبعدنا من العرض القرارات القطاعية البعيدة عن الأنشطة الزراعية والإنتاج الحيواني المرسلة، دون حذفها من الأرشيف المرجعي. الحكم على الانطباق يتطلب الرمز المهني والكيان والنشاط المرخص وشروط القرار.</p>
         <div id="salic-preview" style="margin-top:15px;display:flex;gap:9px;flex-wrap:wrap" aria-live="polite"></div>
       </section>
+      <section id="all-professions" class="srb-browser" data-salic-roles="homepage" aria-label="قائمة جميع مهن سالك"><p>جارٍ تحميل جميع المسميات والأعداد…</p></section>
       <section aria-labelledby="stats-title"><div class="section-head"><div><h2 id="stats-title">نظرة عامة</h2><p>ملخص تحديثات المصادر الحكومية</p></div><span class="minor">الأرقام آلية وليست نتائج تحقق نظامي</span></div>
         <div class="metrics">
           <div class="metric"><div class="metric-label">إجمالي التغييرات <span class="metric-icon">▤</span></div><strong id="total">—</strong><small>تغييرات تم رصدها</small></div>
@@ -202,6 +205,7 @@
 <script>
 (function(){fetch('data/salic-workforce.json?v='+Date.now()).then(r=>{if(!r.ok)throw Error('missing');return r.json()}).then(d=>{let s=d.summary||{},el=id=>document.getElementById(id),fmt=n=>String(n);el('salic-total').textContent=fmt(s.total);el('salic-saudi').textContent=fmt(s.saudi);el('salic-nonsaudi').textContent=fmt(s.nonSaudi);el('salic-professions').textContent=fmt(s.professions);el('salic-saudi-rate').textContent=s.total?(100*s.saudi/s.total).toFixed(1)+'% من إجمالي الملف':'—';let arr=(d.rows||[]).slice().sort((a,b)=>(b[1]-b[2])-(a[1]-a[2]));let preview=arr.slice(0,5).map(x=>{let box=document.createElement('span');box.style.cssText='background:#eff6f7;border:1px solid #dce8ea;border-radius:9px;padding:9px 11px;font-size:11px;color:#214c56';box.textContent=x[0]+' · '+x[1]+' إجمالي · '+(x[1]-x[2])+' غير سعودي';return box});el('salic-preview').replaceChildren(...preview)}).catch(()=>{document.getElementById('salic-preview').textContent='تعذر تحميل الملخص؛ افتح صفحة الموظفين للمراجعة.'})})();
 </script>
+<script src="assets/all-professions.js" defer></script>
 <script src="assets/presentation-mode.js" defer></script>
 </body>
 </html>
