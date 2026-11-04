@@ -175,8 +175,8 @@
    ];
    sections=sections.filter((part,i)=>i===0||(i===1&&$('report-part-grace').checked)||(i===2&&$('report-part-phases').checked)||(i===3&&$('report-part-targeted').checked)||(i===4&&$('report-part-mentions').checked)||(i===5&&$('report-part-outside').checked));
    if(allWorkforce.length){
-     const aggregates=picks.map(d=>{const g=window.SalicWorkforce.group(d.id);return [esc(d.title),esc(digits(g.list.length)),esc(digits(g.total)),esc(digits(g.saudi)),esc(digits(g.other)),esc(g.gap===null?'لم تُحسب':digits(g.gap)),esc(g.reason)];});
-     sections.unshift('<section><h2>الوضع الوظيفي لسالك حسب القرارات المختارة</h2><p class="report-caution">الأعداد من مسميات المهن المطابقة في ملف 3 نوفمبر 2026، ولا تمثل حصراً رسمياً لمهن القرار. الفجوات حسابية تقديرية، أو تخطيطية لقرار مستقبلي؛ لا تجمع الفجوات بين القرارات المتداخلة.</p>'+printTable(['القرار','المهن المطابقة','الإجمالي','السعوديون','غير السعوديين','الفجوة التقديرية','حدود التقدير'],aggregates)+'</section>');
+     const aggregates=picks.map(d=>{const g=window.SalicWorkforce.group(d.id),r=window.SalicWorkforce.official(d.id);return [esc(d.title),esc(r?'محضر الوزارة بتاريخ '+r.asOf:'تجميع الإكسل 2026-11-03'),esc(digits(g.list.length)),esc(digits(r?r.total:g.total)),esc(digits(r?r.saudi:g.saudi)),esc(digits(r?r.nonSaudi:g.other)),esc(r?r.numericGap:g.gap===null?'لم تُحسب':digits(g.gap)),esc(r?'محقق '+r.reportedSaudiPercent+'% مقابل مطلوب '+r.targetPercent+'%. أرقام الإكسل المطابقة: '+g.total+' موظف. المصدران مختلفا التاريخ والمنهج.':g.reason)];});
+     sections.unshift('<section><h2>الوضع الوظيفي لسالك حسب القرارات المختارة</h2><p class="report-caution">للمهن الإدارية المساندة فقط أرقام رقابية مجمعة من محضر الوزارة بتاريخ 25 أكتوبر 2026؛ لبقية القرارات أرقام مطابقة أولية من ملف الإكسل 3 نوفمبر 2026. لا تخلط بين تاريخي المصدرين ولا تجمع الفجوات بين القرارات.</p>'+printTable(['القرار','المصدر وتاريخه','مهن مطابقة من الإكسل','الإجمالي بحسب المصدر','السعوديون','غير السعوديين','الاحتياج / الفجوة','ملاحظات المقارنة'],aggregates)+'</section>');
      const wholeRows=allWorkforce.slice().sort((a,b)=>b.total-a.total||a.title.localeCompare(b.title,'ar')).map(r=>[esc(r.title),digits(r.total),digits(r.saudi),digits(r.other),esc(r.decisionIds.length?r.decisionIds.map(id=>window.SalicWorkforce.names[id]||id).join('، '):'لا يوجد ربط في الفهرس الحالي')]);
      sections.unshift('<section><h2>جميع مهن سالك — '+digits(allWorkforce.length)+' مهنة و'+digits(allTotal)+' موظفاً</h2><p class="report-meta-note">هذا الجدول يشمل جميع موظفي سالك حسب المسمى سواء كانوا مستهدفين بقرار توطين أم لا؛ كل موظف محسوب مرة واحدة في الإجمالي، دون تكرار عبر القرارات. العدد السعودي: '+digits(allSaudis)+'، غير السعودي: '+digits(allTotal-allSaudis)+'. الربط بالمهن المستهدفة مبدئي ويحتاج تحقق الرموز المسجلة في قوى.</p>'+printTable(['المسمى المهني','الإجمالي','سعودي','غير سعودي','قرار محتمل / لم يُربط'],wholeRows)+'</section>');
    }
@@ -202,6 +202,7 @@
      try{const response=await fetch('data/grace-periods.json?v='+Date.now());if(!response.ok)throw Error('Grace registry unavailable');graceRecords=(await response.json()).records||[]}catch(err){graceRecords=[];console.warn('Grace records unavailable',err)}
 
      window.SalicWorkforce.setRows(workDb.rows,workDb.summary);
+     await window.SalicWorkforce.loadOfficial();
      const relevantIds=new Set(["admin","procurement","project","marketing","accounting","ict","legal","consulting","engineers","sales"]);
      const salicTitles=new Set((workDb.rows||[]).map(row=>norm(row[0])));
      occupations=(Array.isArray(occDb.occupations)?occDb.occupations:[]).filter(o=>salicTitles.has(norm(o.title))&&o.decisionIds.some(id=>relevantIds.has(id))).map(o=>({...o,decisionIds:o.decisionIds.filter(id=>relevantIds.has(id))}));

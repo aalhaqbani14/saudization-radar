@@ -7,11 +7,11 @@ const names=window.SalicWorkforce.names,policies=window.SalicWorkforce.policies;
 const currentDecision=()=>$("decision").value;
 function selection(){
  const id=currentDecision(),p=policies[id],d=decisions.find(x=>x.id===id);
- if(!p){$("rate-help").textContent="حساب حر: النسبة التي تدخلها اختيارية ولا تُعد نسبة نظامية لأي قرار.";$("salic-help").textContent="اختر قراراً لتحميل أعداد المهن المطابقة لبيانات سالك.";$("salic-counts").replaceChildren();return}
- const g=window.SalicWorkforce.group(id);
+ if(!p){$("load-official").hidden=true;$("rate-help").textContent="حساب حر: النسبة التي تدخلها اختيارية ولا تُعد نسبة نظامية لأي قرار.";$("salic-help").textContent="اختر قراراً لتحميل أعداد المهن المطابقة لبيانات سالك.";$("salic-counts").replaceChildren();return}
+ const g=window.SalicWorkforce.group(id),official=window.SalicWorkforce.official(id);$("load-official").hidden=!official;
  $("rate-help").textContent=(d?d.title+": ":"")+(p.rate===null?"لا توجد نسبة مجمعة موثوقة؛ أدخل نسبة افتراضية فقط.":p.rate+"% نسبة مرجعية مشروطة.")+(p.kind==="future"?" مرحلة 14 فبراير 2027 القادمة؛ ليست سارية الآن.":"")+" "+p.detail;
  $("salic-help").textContent="هذه الأعداد مأخوذة فقط من مسميات المهن المطابقة نصياً في قائمة سالك؛ وليست كل المهن المستهدفة المثبتة رسمياً.";
- $("salic-counts").innerHTML=["المطابقون: "+g.total,"سعوديون: "+g.saudi,"غير سعوديين: "+g.other,"المهن: "+g.list.length].map(t=>"<span>"+esc(t)+"</span>").join("");
+ $("salic-counts").innerHTML=(official?["الوزارة ("+official.asOf+"): "+official.total+" موظفاً","سعوديون: "+official.saudi,"غير سعوديين: "+official.nonSaudi,"نسبة محققة: "+official.reportedSaudiPercent+"%","الإكسل المطابق: "+g.total+" موظفاً"]:["المطابقون من الإكسل: "+g.total,"سعوديون: "+g.saudi,"غير سعوديين: "+g.other,"المهن: "+g.list.length]).map(t=>"<span>"+esc(t)+"</span>").join("");
 }
 function selectDecision(){
  const p=policies[currentDecision()];
@@ -31,6 +31,12 @@ function calculate(){
  const qualifier=!p?"هذا حساب حر، ولا يمثل نسبة قانونية ملزمة.":p.kind==="future"?"النسبة المختارة من المرحلة القادمة (2027). الفجوة للتخطيط فقط ولا تعتبر مخالفة اليوم.":p.kind==="grouped"||p.kind==="sector"?"لا يمكن احتساب فجوة إلزامية مجمعة لهذه المجموعة؛ هذا سيناريو اختياري فقط.":t<p.min?"العدد المدخل أقل من حد نطاق القرار المسجل؛ النتيجة افتراضية وليست دليلاً على سريان القرار.":"النتيجة حسابية فقط؛ لا تثبت نسبة امتثال الشركة قبل مراجعة الرموز والكيان والأجر والضوابط.";
  $("out-note").textContent=(gap?"قد تحتاج نظرياً إلى "+gap+" سعوديين إضافيين للوصول للنسبة المختارة وفق هذا المثال. ":"لا تظهر فجوة رياضية في المثال المختار. ")+qualifier;
 }
+function loadOfficialCounts(){
+ const record=window.SalicWorkforce.official(currentDecision());if(!record){$("rate-help").textContent="لا يتوفر مرجع رقابي لهذه المجموعة.";return}
+ $("total").value=record.total;$("saudi").value=record.saudi;$("rate").value=record.targetPercent;
+ $("rate-help").textContent="تم تحميل أعداد محضر الوزارة بتاريخ "+record.asOf+" لأغراض المقارنة فقط. المحضر لقطة رقابية مؤرخة وليس بياناً حياً. يمكنك تعديل الأرقام.";
+ calculate();
+}
 function loadSalic(){
  const id=currentDecision();if(id==="custom"){$("rate-help").textContent="اختر قراراً أولاً لتحميل أعداد موظفي سالك المرتبطين به.";return}
  const g=window.SalicWorkforce.group(id);$("total").value=g.total;$("saudi").value=g.saudi;calculate();
@@ -42,13 +48,14 @@ async function init(){
   const db=await r.json();decisions=(db.decisions||[]).filter(d=>policies[d.id]);
   $("decision").innerHTML='<option value="custom">حساب حر — أنا أحدد النسبة</option>'+decisions.map(d=>'<option value="'+esc(d.id)+'">'+esc(d.title)+'</option>').join("");
   const desired=new URLSearchParams(window.location.search).get("decision");
-  if(desired&&policies[desired]){$("decision").value=desired;selectDecision();loadSalic();}
+  if(desired&&policies[desired]){$("decision").value=desired;selectDecision();if(window.SalicWorkforce.official(desired))loadOfficialCounts();else loadSalic();}
   else{selection();calculate();}
  }catch(err){$("rate-help").textContent="تعذر تحميل بيانات سالك، لكن الحاسبة الحرة ما زالت تعمل.";calculate();}
 }
 ["total","saudi","rate"].forEach(id=>$(id).addEventListener("input",calculate));
 $("decision").addEventListener("change",selectDecision);
 $("load-salic").addEventListener("click",loadSalic);
+$("load-official").addEventListener("click",loadOfficialCounts);
 $("reset").addEventListener("click",()=>{$("decision").value="custom";$("rate").value=50;$("total").value=10;$("saudi").value=5;selection();calculate()});
 init();
 })();

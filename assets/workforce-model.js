@@ -31,7 +31,21 @@ const policies={
 function norm(v){return String(v??"").trim().replace(/[إأآٱ]/g,"ا").replace(/ى/g,"ي").replace(/ة/g,"ه").replace(/[\u064B-\u065F\u0670ـ]/g,"").replace(/\s+/g," ").toLowerCase()}
 const clean=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 function titleIds(title){const n=norm(title);return Object.keys(groups).filter(id=>groups[id].some(t=>norm(t)===n))}
-let rows=null,waiting=null;
+let rows=null,waiting=null,officialRecords=Object.create(null),officialWaiting=null;
+function setOfficialRecords(records){
+ if(!Array.isArray(records))throw Error("Invalid official records");
+ const next=Object.create(null);
+ for(const r of records){
+  if(!r||!policies[r.decisionId]||!/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/.test(r.asOf||"")||![r.total,r.saudi,r.nonSaudi,r.reportedSaudiPercent,r.targetPercent,r.numericGap].every(Number.isInteger)||r.saudi+r.nonSaudi!==r.total||r.total<=0||r.numericGap<0)throw Error("Invalid official counter");
+  next[r.decisionId]={...r};
+ }
+ officialRecords=next;return officialRecords;
+}
+function official(id){return officialRecords[id]||null}
+function loadOfficial(){
+ if(!officialWaiting)officialWaiting=fetch("data/official-inspections.json").then(r=>{if(!r.ok)throw Error("Official inspection data not available");return r.json()}).then(d=>setOfficialRecords(d.records)).catch(e=>{console.warn("Inspection counters could not be loaded",e);officialWaiting=null;return null});
+ return officialWaiting;
+}
 function setRows(raw,expected){
  if(!Array.isArray(raw))throw Error("Invalid workforce rows");
  let list=raw.map(x=>{
@@ -44,9 +58,8 @@ function setRows(raw,expected){
  rows=list;return list;
 }
 function load(){
- if(rows)return Promise.resolve(rows);
- if(!waiting)waiting=fetch("data/salic-workforce.json").then(r=>{if(!r.ok)throw Error("Workforce data unavailable");return r.json()}).then(d=>setRows(d.rows,d.summary)).catch(e=>{waiting=null;throw e});
- return waiting;
+ const workforce=rows?Promise.resolve(rows):(waiting||(waiting=fetch("data/salic-workforce.json").then(r=>{if(!r.ok)throw Error("Workforce data unavailable");return r.json()}).then(d=>setRows(d.rows,d.summary)).catch(e=>{waiting=null;throw e})));
+ return Promise.all([workforce,loadOfficial()]).then(([list])=>list);
 }
 function getRows(){return rows||[]}
 function group(id){
@@ -66,33 +79,32 @@ function group(id){
  return {id,list,total,saudi,other,policy,needed,gap,status,reason};
 }
 function header(id){
- if(!rows)return '<div class="wf-topstrip wf-topstrip-loading" aria-live="polite">جارٍ تحميل أعداد موظفي سالك لهذا القرار…</div>';
- const g=group(id),companyTotal=rows.reduce((sum,r)=>sum+r.total,0);
- const adminNameCount=id==="admin"?rows.filter(r=>r.title.includes("إداري")).reduce((a,r)=>a+r.total,0):null;
- const gapLabel=g.status==="future"?"فجوة المرحلة القادمة":g.gap===null?"الفجوة غير محسوبة":"الفجوة التقديرية";
- const nums=[
-  {label:"موظفو المهن المرتبطة",value:g.total},
-  {label:"السعوديون",value:g.saudi},
-  {label:"غير السعوديين",value:g.other},
-  {label:gapLabel,value:g.gap===null?"تحتاج تحقق":g.gap}
- ];
- return '<div class="wf-topstrip" aria-label="أعداد موظفي سالك المرتبطين بهذا القرار"><div class="wf-topstrip-title"><b>وضع سالك في هذا القرار</b><small>من إجمالي '+companyTotal+' موظف · مطابقة مبدئية لمسميات المهن</small></div><div class="wf-topstrip-grid">'+nums.map((item,i)=>'<div class="wf-topstrip-stat'+(i===3?' wf-topstrip-gap':'')+'"><small>'+clean(item.label)+'</small><strong>'+clean(item.value)+'</strong></div>').join('')+'</div><div class="wf-topstrip-note">الأعداد مأخوذة من ملف سالك بعد حذف التكرارات. الفجوة مؤشر حسابي غير معتمد حتى يتم التحقق من رموز قوى وشروط الانطباق.'+(adminNameCount===null?"":" تنبيه: هناك "+adminNameCount+" موظفاً بمسميات تحتوي على كلمة «إداري»، لكن هذا ليس عدد المستهدفين بهذا القرار.")+'</div></div>';
+ if(!rows)return '<div class="wf-topstrip wf-topstrip-loading">جارٍ تحميل أعداد موظفي سالك…</div>';
+ const g=group(id),r=official(id),all=rows.reduce((v,x)=>v+x.total,0);
+ const cards=r?
+  [{label:"الموظفون حسب الوزارة",value:r.total},{label:"السعوديون",value:r.saudi},{label:"غير السعوديين",value:r.nonSaudi},{label:"الاحتياج وفق المحضر",value:r.numericGap}]:
+  [{label:"المطابقون من الإكسل",value:g.total},{label:"السعوديون",value:g.saudi},{label:"غير السعوديين",value:g.other},{label:"الفجوة التقديرية",value:g.gap===null?"تحتاج تحقق":g.gap}];
+ const title=r?"المرجع الرقابي · "+r.asOf.split("-").reverse().join("/"):"بيانات الإكسل · 03/11/2026";
+ const note=r?"المحقق: "+r.reportedSaudiPercent+"%، المطلوب: "+r.targetPercent+"%. الإكسل المؤرخ 03/11/2026 يطابق "+g.total+" موظفاً بالمسميات ("+g.saudi+" سعوديين و"+g.other+" غير سعوديين). فارق العدد "+(r.total-g.total)+" موظفين يتطلب مراجعة رموز قوى.":"العدد جزء من "+all+" موظف بسالك. الربط بالمسمى مبدئي وليس شهادة امتثال.";
+ return '<div class="wf-topstrip"><div class="wf-topstrip-title"><b>'+clean(title)+'</b><small>'+(r?"مرجع الوزارة بتاريخ الزيارة وليس عدداً لحظياً":"مطابقة أولية لمسميات الإكسل")+'</small></div><div class="wf-topstrip-grid">'+cards.map((v,i)=>'<div class="wf-topstrip-stat'+(i===3?' wf-topstrip-gap':'')+'"><small>'+clean(v.label)+'</small><strong>'+clean(v.value)+'</strong></div>').join("")+'</div><div class="wf-topstrip-note">'+clean(note)+'</div></div>';
 }
 function compact(id){
  if(!rows)return '<div class="wf-compact">بيانات سالك: جارٍ التحميل…</div>';
- const g=group(id),companyTotal=rows.reduce((sum,r)=>sum+r.total,0);
- if(!g.total)return '<div class="wf-compact">سالك: لم تثبت مطابقة مهنة من الملف بهذه المجموعة.</div>';
- const label=g.status==="future"?"فجوة المرحلة القادمة":g.status==="estimate"?"الفجوة الحسابية":"الفجوة تحتاج تدقيق";
- return '<div class="wf-compact"><strong>المطابقون للقرار: '+g.total+' من أصل '+companyTotal+' موظف بسالك</strong><span>'+g.saudi+' سعودي · '+g.other+' غير سعودي</span><span>'+label+': <b>'+(g.gap===null?"غير محددة":g.gap)+'</b></span></div>';
+ const g=group(id),r=official(id),total=rows.reduce((v,x)=>v+x.total,0);
+ if(r)return '<div class="wf-compact"><strong>محضر الوزارة: '+r.total+' موظفاً بتاريخ '+clean(r.asOf)+'</strong><span>'+r.saudi+' سعودي · '+r.nonSaudi+' غير سعودي</span><span>المحقق '+r.reportedSaudiPercent+'% · الاحتياج: <b>'+r.numericGap+'</b></span><span>الإكسل: '+g.total+' مطابقون مبدئياً</span></div>';
+ if(!g.total)return '<div class="wf-compact">لا توجد مطابقة بالمسمى في إكسل سالك لهذه المجموعة.</div>';
+ return '<div class="wf-compact"><strong>المطابقون من الإكسل: '+g.total+' من أصل '+total+' موظف بسالك</strong><span>'+g.saudi+' سعودي · '+g.other+' غير سعودي</span><span>الفجوة الحسابية: <b>'+(g.gap===null?"تحتاج تحقق":g.gap)+'</b></span></div>';
 }
 function render(id){
- const g=group(id),p=g.policy,companyTotal=(rows||[]).reduce((sum,r)=>sum+r.total,0);
+ const g=group(id),p=g.policy,record=official(id),companyTotal=(rows||[]).reduce((sum,r)=>sum+r.total,0);
  const rate=Number.isFinite(p.rate)?p.rate+"%":(id==="ict"?"25% لكل مجموعة":"بحسب النطاق");
  const gapText=g.gap===null?"غير محسوبة":String(g.gap);
  const note=(g.status==="future"?"فجوة تخطيطية للمرحلة القادمة":g.status==="estimate"?"فجوة حسابية تقديرية":"مراجعة شروط القرار قبل الحساب");
  const detail=p.detail||"يتطلب التحقق من الدليل والرموز المهنية";
  let table=g.list.map(r=>'<tr><td>'+clean(r.title)+'</td><td>'+r.total+'</td><td>'+r.saudi+'</td><td>'+r.other+'</td></tr>').join("");
- return '<section class="wf-section" aria-label="وضع موظفي سالك لهذا القرار"><div class="wf-head"><div><h3>موظفو سالك المرتبطون بهذا القرار</h3><p>عدد هذه المهن جزء من إجمالي '+companyTotal+' موظف في سالك، وليس إجمالي القوى العاملة. مطابقة مبدئية لمسميات ملف 03/11/2026 دون رموز قوى.</p></div><a class="wf-cta" href="calculator.html?decision='+encodeURIComponent(id)+'">افتح الحاسبة المستقلة ↗</a></div><div class="wf-kpis"><div><small>الوظائف المطابقة</small><b>'+g.list.length+'</b></div><div><small>الموظفون بالمهن المطابقة</small><b>'+g.total+'</b></div><div><small>السعوديون</small><b>'+g.saudi+'</b></div><div><small>غير السعوديين</small><b>'+g.other+'</b></div><div class="wf-gap"><small>'+note+'</small><b>'+gapText+'</b></div></div><div class="wf-explanation"><b>النسبة المرجعية:</b> '+clean(rate)+' · <b>حد العدد:</b> '+(p.min||"بحسب النشاط والجدول")+'<p>'+clean(g.reason)+'</p><p>'+clean(detail)+'</p></div><div class="wf-table-scroll"><table class="wf-table"><thead><tr><th>المهنة في ملف سالك</th><th>الإجمالي</th><th>سعودي</th><th>غير سعودي</th></tr></thead><tbody>'+(table||'<tr><td colspan="4">لا توجد مطابقة نصية معروفة للمجموعة</td></tr>')+'</tbody></table></div><p class="wf-caution">قد تتداخل المهن بين القرارات، ولا يجوز جمع الفجوات من عدة قرارات. الفجوة التقديرية لا تثبت وجود مخالفة ولا عدد التعيينات المطلوب نظامياً قبل فحص الرموز والكيان والأنشطة والأجر وشروط احتساب السعوديين.</p></section>';
+ const comparison=record?'<div class="wf-inspection-comparison"><h4>احتساب الوزارة مقابل مطابقة الإكسل</h4><div class="wf-comparison-grid"><div><small>مرجع الوزارة · '+clean(record.asOf)+'</small><strong>'+record.total+' موظفاً</strong><span>'+record.saudi+' سعودي · '+record.nonSaudi+' غير سعودي · محقق '+record.reportedSaudiPercent+'%</span></div><div><small>الإكسل · 2026-11-03</small><strong>'+g.total+' مطابقون بالمسميات</strong><span>'+g.saudi+' سعودي · '+g.other+' غير سعودي</span></div></div><p>فارق العدد '+(record.total-g.total)+' موظفين. احتساب الوزارة مبني على المهن المسجلة وقت الزيارة، بينما الربط من الإكسل مبني على المسميات المتاحة؛ لا نعرف أي رموز مهنية تفسر الفارق. لا تُعامل أرقام الوزارة كرصيد محدث اليوم.</p></div>':"";
+
+ return '<section class="wf-section" aria-label="وضع موظفي سالك لهذا القرار">'+comparison+'<div class="wf-head"><div><h3>تفصيل المهن التي طابقناها من الإكسل</h3><p>هذه مطابقة بالإكسل فقط وليست إجمالي الوزارة. المهن جزء من إجمالي '+companyTotal+' موظف في سالك، وليس إجمالي القوى العاملة. مطابقة مبدئية لمسميات ملف 03/11/2026 دون رموز قوى.</p></div><a class="wf-cta" href="calculator.html?decision='+encodeURIComponent(id)+'">افتح الحاسبة المستقلة ↗</a></div><div class="wf-kpis"><div><small>الوظائف المطابقة</small><b>'+g.list.length+'</b></div><div><small>المطابقون بالإكسل</small><b>'+g.total+'</b></div><div><small>السعوديون</small><b>'+g.saudi+'</b></div><div><small>غير السعوديين</small><b>'+g.other+'</b></div><div class="wf-gap"><small>'+note+'</small><b>'+gapText+'</b></div></div><div class="wf-explanation"><b>النسبة المرجعية:</b> '+clean(rate)+' · <b>حد العدد:</b> '+(p.min||"بحسب النشاط والجدول")+'<p>'+clean(g.reason)+'</p><p>'+clean(detail)+'</p></div><div class="wf-table-scroll"><table class="wf-table"><thead><tr><th>المهنة في ملف سالك</th><th>الإجمالي</th><th>سعودي</th><th>غير سعودي</th></tr></thead><tbody>'+(table||'<tr><td colspan="4">لا توجد مطابقة نصية معروفة للمجموعة</td></tr>')+'</tbody></table></div><p class="wf-caution">قد تتداخل المهن بين القرارات، ولا يجوز جمع الفجوات من عدة قرارات. المقارنة مع المحضر لا تحل محل بيانات رموز المهن الرسمية، والفجوة التقديرية لا تثبت وجود مخالفة ولا عدد التعيينات المطلوب نظامياً قبل فحص الرموز والكيان والأنشطة والأجر وشروط احتساب السعوديين.</p></section>';
 }
-window.SalicWorkforce={names,groups,policies,norm,titleIds,setRows,load,getRows,group,header,compact,render};
+window.SalicWorkforce={names,groups,policies,norm,titleIds,setRows,setOfficialRecords,loadOfficial,official,load,getRows,group,header,compact,render};
 })();

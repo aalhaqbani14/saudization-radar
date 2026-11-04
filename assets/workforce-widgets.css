@@ -15,3 +15,17 @@
 .wf-topstrip-loading{font-size:12px;line-height:2;color:#fff}
 @media(max-width:650px){.wf-topstrip{padding:12px}.wf-topstrip-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.wf-topstrip-stat{padding:9px}.wf-topstrip-stat strong{font-size:22px}.wf-topstrip-title small{font-size:10px}}
 @media print{.wf-topstrip{background:white!important;color:#111;border:1px solid #ddd}.wf-topstrip-title b,.wf-topstrip-title small,.wf-topstrip-note{color:#111!important}}
+
+/* Dated inspection aggregates (no employee identities or violation identifiers) */
+.wf-inspection-comparison{border:1px solid #cbe7de;background:#f5fbf8;border-radius:13px;padding:15px;margin:10px 0 18px;color:#1b4b50}
+.wf-inspection-comparison h4{font-size:14px;margin:0 0 11px;color:#123e49}
+.wf-comparison-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin:8px 0}
+.wf-comparison-grid>div{border:1px solid #d6e5e8;background:#fff;border-radius:11px;padding:15px;min-width:0}
+.wf-comparison-grid>div:first-child{border-color:#b9dfd4;background:#effaf5}
+.wf-comparison-grid small{display:block;color:#517a80;font-size:11px;font-weight:700;line-height:1.8}
+.wf-comparison-grid strong{display:block;font-size:22px;margin:7px 0;color:#116b5f}
+.wf-comparison-grid span{display:block;color:#456e77;font-size:11px;line-height:1.9}
+.wf-inspection-comparison p{font-size:11px;line-height:2;color:#536f78;margin:10px 0 0}
+.wf-ministry-overview{background:#eff9f5;border:1px solid #bfe2d5;border-radius:12px;padding:15px;margin-top:15px;font-size:12px;line-height:2;color:#20585a}
+.wf-ministry-overview a{color:#08766c;font-weight:bold;text-decoration:underline}
+@media(max-width:660px){.wf-comparison-grid{grid-template-columns:1fr}.wf-comparison-grid strong{font-size:19px}}
