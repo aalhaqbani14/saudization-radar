@@ -67,19 +67,19 @@ function group(id){
 }
 function compact(id){
  if(!rows)return '<div class="wf-compact">بيانات سالك: جارٍ التحميل…</div>';
- const g=group(id);
+ const g=group(id),companyTotal=rows.reduce((sum,r)=>sum+r.total,0);
  if(!g.total)return '<div class="wf-compact">سالك: لم تثبت مطابقة مهنة من الملف بهذه المجموعة.</div>';
  const label=g.status==="future"?"فجوة المرحلة القادمة":g.status==="estimate"?"الفجوة الحسابية":"الفجوة تحتاج تدقيق";
- return '<div class="wf-compact"><strong>سالك · '+g.total+' موظف</strong><span>'+g.saudi+' سعودي · '+g.other+' غير سعودي</span><span>'+label+': <b>'+(g.gap===null?"غير محددة":g.gap)+'</b></span></div>';
+ return '<div class="wf-compact"><strong>المطابقون للقرار: '+g.total+' من أصل '+companyTotal+' موظف بسالك</strong><span>'+g.saudi+' سعودي · '+g.other+' غير سعودي</span><span>'+label+': <b>'+(g.gap===null?"غير محددة":g.gap)+'</b></span></div>';
 }
 function render(id){
- const g=group(id),p=g.policy;
+ const g=group(id),p=g.policy,companyTotal=(rows||[]).reduce((sum,r)=>sum+r.total,0);
  const rate=Number.isFinite(p.rate)?p.rate+"%":(id==="ict"?"25% لكل مجموعة":"بحسب النطاق");
  const gapText=g.gap===null?"غير محسوبة":String(g.gap);
  const note=(g.status==="future"?"فجوة تخطيطية للمرحلة القادمة":g.status==="estimate"?"فجوة حسابية تقديرية":"مراجعة شروط القرار قبل الحساب");
  const detail=p.detail||"يتطلب التحقق من الدليل والرموز المهنية";
  let table=g.list.map(r=>'<tr><td>'+clean(r.title)+'</td><td>'+r.total+'</td><td>'+r.saudi+'</td><td>'+r.other+'</td></tr>').join("");
- return '<section class="wf-section" aria-label="وضع موظفي سالك لهذا القرار"><div class="wf-head"><div><h3>موظفو سالك المرتبطون بهذا القرار</h3><p>مطابقة أولية لمسميات ملف 03/11/2026؛ لم تُطابق الرموز المسجلة في قوى حتى الآن.</p></div><a class="wf-cta" href="calculator.html?decision='+encodeURIComponent(id)+'">افتح الحاسبة المستقلة ↗</a></div><div class="wf-kpis"><div><small>الوظائف المطابقة</small><b>'+g.list.length+'</b></div><div><small>إجمالي الموظفين</small><b>'+g.total+'</b></div><div><small>السعوديون</small><b>'+g.saudi+'</b></div><div><small>غير السعوديين</small><b>'+g.other+'</b></div><div class="wf-gap"><small>'+note+'</small><b>'+gapText+'</b></div></div><div class="wf-explanation"><b>النسبة المرجعية:</b> '+clean(rate)+' · <b>حد العدد:</b> '+(p.min||"بحسب النشاط والجدول")+'<p>'+clean(g.reason)+'</p><p>'+clean(detail)+'</p></div><div class="wf-table-scroll"><table class="wf-table"><thead><tr><th>المهنة في ملف سالك</th><th>الإجمالي</th><th>سعودي</th><th>غير سعودي</th></tr></thead><tbody>'+(table||'<tr><td colspan="4">لا توجد مطابقة نصية معروفة للمجموعة</td></tr>')+'</tbody></table></div><p class="wf-caution">قد تتداخل المهن بين القرارات، ولا يجوز جمع الفجوات من عدة قرارات. الفجوة التقديرية لا تثبت وجود مخالفة ولا عدد التعيينات المطلوب نظامياً قبل فحص الرموز والكيان والأنشطة والأجر وشروط احتساب السعوديين.</p></section>';
+ return '<section class="wf-section" aria-label="وضع موظفي سالك لهذا القرار"><div class="wf-head"><div><h3>موظفو سالك المرتبطون بهذا القرار</h3><p>عدد هذه المهن جزء من إجمالي '+companyTotal+' موظف في سالك، وليس إجمالي القوى العاملة. مطابقة مبدئية لمسميات ملف 03/11/2026 دون رموز قوى.</p></div><a class="wf-cta" href="calculator.html?decision='+encodeURIComponent(id)+'">افتح الحاسبة المستقلة ↗</a></div><div class="wf-kpis"><div><small>الوظائف المطابقة</small><b>'+g.list.length+'</b></div><div><small>الموظفون بالمهن المطابقة</small><b>'+g.total+'</b></div><div><small>السعوديون</small><b>'+g.saudi+'</b></div><div><small>غير السعوديين</small><b>'+g.other+'</b></div><div class="wf-gap"><small>'+note+'</small><b>'+gapText+'</b></div></div><div class="wf-explanation"><b>النسبة المرجعية:</b> '+clean(rate)+' · <b>حد العدد:</b> '+(p.min||"بحسب النشاط والجدول")+'<p>'+clean(g.reason)+'</p><p>'+clean(detail)+'</p></div><div class="wf-table-scroll"><table class="wf-table"><thead><tr><th>المهنة في ملف سالك</th><th>الإجمالي</th><th>سعودي</th><th>غير سعودي</th></tr></thead><tbody>'+(table||'<tr><td colspan="4">لا توجد مطابقة نصية معروفة للمجموعة</td></tr>')+'</tbody></table></div><p class="wf-caution">قد تتداخل المهن بين القرارات، ولا يجوز جمع الفجوات من عدة قرارات. الفجوة التقديرية لا تثبت وجود مخالفة ولا عدد التعيينات المطلوب نظامياً قبل فحص الرموز والكيان والأنشطة والأجر وشروط احتساب السعوديين.</p></section>';
 }
 window.SalicWorkforce={names,groups,policies,norm,titleIds,setRows,load,getRows,group,compact,render};
 })();
