@@ -2,7 +2,7 @@
 (function(){
 "use strict";
 const groups={
- admin:["مساعد إداري","موظف استقبال","كاتب موارد بشرية","سكرتير تنفيذي","أخصائي عمليات موارد بشرية","مدير عمليات موارد بشرية","أخصائي تواصل داخلي","أخصائي توظيف","أخصائي ارتباط وظيفي","أخصائي تخطيط قوى عاملة","مدير مواهب","مدير توظيف","مدير تنظيم إداري"],
+ admin:["مساعد إداري","موظف استقبال","كاتب موارد بشرية","سكرتير تنفيذي","أخصائي عمليات موارد بشرية","مدير عمليات موارد بشرية","أخصائي تواصل داخلي","أخصائي توظيف","أخصائي ارتباط وظيفي","أخصائي تخطيط قوى عاملة","مدير مواهب","مدير توظيف","مدير تنظيم إداري","أخصائي علاقات عامة"],
  procurement:["أخصائي مشتريات","مدير مشتريات"],
  project:["مدير إدارة مشاريع","أخصائي إدارة مشاريع"],
  marketing:["أخصائي تسويق","مصمم جرافيك","أخصائي علاقات عامة","مدير دعاية وإعلان"],
@@ -68,6 +68,7 @@ function group(id){
 function header(id){
  if(!rows)return '<div class="wf-topstrip wf-topstrip-loading" aria-live="polite">جارٍ تحميل أعداد موظفي سالك لهذا القرار…</div>';
  const g=group(id),companyTotal=rows.reduce((sum,r)=>sum+r.total,0);
+ const adminNameCount=id==="admin"?rows.filter(r=>r.title.includes("إداري")).reduce((a,r)=>a+r.total,0):null;
  const gapLabel=g.status==="future"?"فجوة المرحلة القادمة":g.gap===null?"الفجوة غير محسوبة":"الفجوة التقديرية";
  const nums=[
   {label:"موظفو المهن المرتبطة",value:g.total},
@@ -75,7 +76,7 @@ function header(id){
   {label:"غير السعوديين",value:g.other},
   {label:gapLabel,value:g.gap===null?"تحتاج تحقق":g.gap}
  ];
- return '<div class="wf-topstrip" aria-label="أعداد موظفي سالك المرتبطين بهذا القرار"><div class="wf-topstrip-title"><b>وضع سالك في هذا القرار</b><small>من إجمالي '+companyTotal+' موظف · مطابقة مبدئية لمسميات المهن</small></div><div class="wf-topstrip-grid">'+nums.map((item,i)=>'<div class="wf-topstrip-stat'+(i===3?' wf-topstrip-gap':'')+'"><small>'+clean(item.label)+'</small><strong>'+clean(item.value)+'</strong></div>').join('')+'</div><div class="wf-topstrip-note">الأعداد مأخوذة من ملف سالك بعد حذف التكرارات. الفجوة مؤشر حسابي غير معتمد حتى يتم التحقق من رموز قوى وشروط الانطباق.</div></div>';
+ return '<div class="wf-topstrip" aria-label="أعداد موظفي سالك المرتبطين بهذا القرار"><div class="wf-topstrip-title"><b>وضع سالك في هذا القرار</b><small>من إجمالي '+companyTotal+' موظف · مطابقة مبدئية لمسميات المهن</small></div><div class="wf-topstrip-grid">'+nums.map((item,i)=>'<div class="wf-topstrip-stat'+(i===3?' wf-topstrip-gap':'')+'"><small>'+clean(item.label)+'</small><strong>'+clean(item.value)+'</strong></div>').join('')+'</div><div class="wf-topstrip-note">الأعداد مأخوذة من ملف سالك بعد حذف التكرارات. الفجوة مؤشر حسابي غير معتمد حتى يتم التحقق من رموز قوى وشروط الانطباق.'+(adminNameCount===null?"":" تنبيه: هناك "+adminNameCount+" موظفاً بمسميات تحتوي على كلمة «إداري»، لكن هذا ليس عدد المستهدفين بهذا القرار.")+'</div></div>';
 }
 function compact(id){
  if(!rows)return '<div class="wf-compact">بيانات سالك: جارٍ التحميل…</div>';
