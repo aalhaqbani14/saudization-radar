@@ -128,7 +128,7 @@
     </main>
   </div>
 </div>
-<script src="assets/workforce-model.js?v=20261104-report-v2"></script>
+<script src="assets/workforce-model.js?v=20261104-executive-v3"></script>
 <script src="assets/phases.js"></script>
 <script>
   'use strict';
@@ -206,7 +206,7 @@
 <script>
 (function(){fetch('data/salic-workforce.json?v='+Date.now()).then(r=>{if(!r.ok)throw Error('missing');return r.json()}).then(d=>{let s=d.summary||{},el=id=>document.getElementById(id),fmt=n=>String(n);el('salic-total').textContent=fmt(s.total);el('salic-saudi').textContent=fmt(s.saudi);el('salic-nonsaudi').textContent=fmt(s.nonSaudi);el('salic-professions').textContent=fmt(s.professions);el('salic-saudi-rate').textContent=s.total?(100*s.saudi/s.total).toFixed(1)+'% من إجمالي الملف':'—';let arr=(d.rows||[]).slice().sort((a,b)=>(b[1]-b[2])-(a[1]-a[2]));let preview=arr.slice(0,5).map(x=>{let box=document.createElement('span');box.style.cssText='background:#eff6f7;border:1px solid #dce8ea;border-radius:9px;padding:9px 11px;font-size:11px;color:#214c56';box.textContent=x[0]+' · '+x[1]+' إجمالي · '+(x[1]-x[2])+' غير سعودي';return box});el('salic-preview').replaceChildren(...preview)}).catch(()=>{document.getElementById('salic-preview').textContent='تعذر تحميل الملخص؛ افتح صفحة الموظفين للمراجعة.'})})();
 </script>
-<script src="assets/all-professions.js" defer></script>
+<script src="assets/all-professions.js?v=20261104-executive-v3" defer></script>
 <script src="assets/presentation-mode.js" defer></script>
 </body>
 </html>
