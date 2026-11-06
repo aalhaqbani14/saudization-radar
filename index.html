@@ -115,6 +115,11 @@
         <details style="border-top:1px solid #e4eaf0;padding-top:14px"><summary style="cursor:pointer;font-weight:700;color:#146c66">عرض تفاصيل المهن التي تحتاج مطابقة أو تدقيقًا</summary><div id="audit-details" style="font-size:12px;line-height:2;color:#4c6274;padding:12px 0" aria-live="polite">جارٍ فحص البيانات…</div></details>
         <p style="font-size:11px;line-height:1.9;color:#647588;margin:12px 0 0">المطابقة هنا نصية استرشادية فقط. تحديد انطباق القرار والفجوة النظامية يتطلب التحقق من الرمز المهني المسجل، النشاط والكيان، تاريخ النفاذ وشروط القرار من المصدر الرسمي. البيانات لقطة وليست اتصالًا مباشرًا بأنظمة الوزارة.</p>
       </section>
+      <section id="gap-matrix" style="background:#fff;border:1px solid #e1e9ef;border-radius:18px;padding:22px;margin:18px 0 26px" aria-labelledby="gap-matrix-title">
+        <div class="section-head"><div><h2 id="gap-matrix-title">مصفوفة الفجوات حسب قرار التوطين</h2><p>مقارنة المهن الموجودة في ملف سالك مع شروط القرارات؛ تمييز واضح بين بيانات الوزارة والتقديرات التي تحتاج مراجعة.</p></div><a href="calculator.html" style="font-size:12px;color:#087f78;font-weight:700">فتح الحاسبة ↗</a></div>
+        <div style="overflow-x:auto;margin-top:14px"><table style="width:100%;border-collapse:collapse;font-size:12px;text-align:right;min-width:700px"><thead><tr style="background:#f0f6f7"><th style="padding:12px">القرار</th><th>الموظفون المطابقون</th><th>السعوديون</th><th>غير السعوديين</th><th>المستهدف</th><th>الفجوة</th><th>نوع النتيجة</th></tr></thead><tbody id="gap-matrix-body"><tr><td colspan="7" style="padding:16px">جارٍ حساب النتائج…</td></tr></tbody></table></div>
+        <p style="font-size:11px;color:#647588;line-height:1.9;margin-top:12px">النتائج الافتراضية ليست شهادة امتثال ولا تثبت وجود مخالفة. القرارات متعددة المجموعات أو المشروطة بالنشاط والرمز المهني لا تُعرض لها فجوة إلزامية دون تحقق. قد تتداخل المهنة في أكثر من قرار، فلا تجمع الفجوات بين الصفوف.</p>
+      </section>
       <section id="all-professions" class="srb-browser" data-salic-roles="homepage" aria-label="قائمة جميع مهن سالك"><p>جارٍ تحميل جميع المسميات والأعداد…</p></section>
       <section aria-labelledby="stats-title"><div class="section-head"><div><h2 id="stats-title">نظرة عامة</h2><p>ملخص تحديثات المصادر الحكومية</p></div><span class="minor">الأرقام آلية وليست نتائج تحقق نظامي</span></div>
         <div class="metrics">
@@ -263,6 +268,24 @@
  const names=unmatched.map(r=>esc(r[0])+' ('+r[1]+')');
  $('audit-details').innerHTML=(issues.length?'<strong>ملاحظات البيانات:</strong> '+issues.map(esc).join('؛ ')+'<hr>':'')+'<strong>المسميات غير المطابقة نصيًا ('+unmatched.length+'):</strong> '+(names.length?names.join('، '):'لا يوجد')+'<p>عدم التطابق لا يثبت عدم شمول المهنة بالقرار؛ راجع الرمز المهني والدليل الرسمي.</p>';
  }).catch(()=>{$('audit-date').textContent='تعذر الفحص';$('audit-details').textContent='تعذر تحميل ملفات التدقيق. حاول تحديث الصفحة.'});
+})();
+</script>
+<script id="gap-matrix-script">
+(function(){
+const body=document.getElementById('gap-matrix-body'),model=window.SalicWorkforce;if(!body||!model)return;
+const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+model.load().then(()=>{
+const rows=Object.keys(model.names).map(id=>{
+const g=model.group(id),official=model.official(id),p=g.policy;
+let gap='—',status='يتطلب مراجعة',target=Number.isFinite(p.rate)?p.rate+'%':'حسب المجموعة / النشاط';
+if(official){gap=official.numericGap;status='بيانات وزارة مؤرخة '+official.asOf;target=official.targetPercent+'%';}
+else if(g.status==='estimate'){gap=g.gap;status='تقدير حسابي غير معتمد';}
+else if(g.status==='future'){gap=g.gap;status='تقدير لمرحلة مستقبلية';}
+else if(g.status==='threshold'){status='دون حد الفحص النصي؛ تحقق مطلوب';}
+else if(g.status==='no-match'){status='لا توجد مطابقة نصية';}
+return '<tr style="border-bottom:1px solid #e7edf0"><td style="padding:11px 12px"><a href="calculator.html?decision='+encodeURIComponent(id)+'" style="color:#087f78;font-weight:700">'+esc(model.names[id])+'</a></td><td>'+g.total+'</td><td>'+g.saudi+'</td><td>'+g.other+'</td><td>'+esc(target)+'</td><td style="font-weight:800">'+esc(gap)+'</td><td>'+esc(status)+'</td></tr>';
+});body.innerHTML=rows.join('');
+}).catch(()=>{body.innerHTML='<tr><td colspan="7" style="padding:16px">تعذر تحميل بيانات الفجوات؛ يرجى تحديث الصفحة.</td></tr>'});
 })();
 </script>
 <script id="radar-intro-script">
