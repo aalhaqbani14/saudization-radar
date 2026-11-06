@@ -14,6 +14,7 @@ ROOT=pathlib.Path(__file__).resolve().parent
 DATA=ROOT/'data'/'alerts.json'
 STATE=ROOT/'data'/'state.json'
 HEALTH=ROOT/'data'/'health.json'
+DAILY_REPORT=ROOT/'data'/'daily-reports.json'
 EXTRACTION_VERSION=2  # Changing extraction output must reset baseline without emailing
 BASE_SOURCES=[
  {'name':'أخبار الوزارة','url':'https://www.hrsd.gov.sa/media-center/news','kind':'index'},
@@ -170,6 +171,29 @@ def main():
          'sources':results,
          'coverage_notice':'هذه حالة تشغيل الرصد فقط ولا تثبت حداثة القرارات أو اكتمال تغطية الوزارة.'}
  HEALTH.write_text(json.dumps(health,ensure_ascii=False,indent=2),encoding='utf-8')
+ # Daily operational snapshot, aggregated only; never implies that no legal changes occurred.
+ day=now[:10]
+ daily={'date':day,'last_checked_at':now,'total_sources':len(sources),
+        'successful_sources':success,'failed_sources':len(sources)-success,
+        'new_review_signals':len(new),'status':'complete' if success==len(sources) else ('partial' if success else 'failed'),
+        'failed_source_names':[x['name'] for x in results if x['status']=='error'],
+        'notice':'ملخص تقني للرصد؛ لا يثبت اكتمال التغطية أو عدم صدور قرارات. الإشارات تحتاج مراجعة بشرية.'}
+ try:
+  history=json.loads(DAILY_REPORT.read_text(encoding='utf-8')) if DAILY_REPORT.exists() else {'reports':[]}
+  old=next((x for x in history.get('reports',[]) if x.get('date')==day),None)
+  if old:
+   daily['runs']=old.get('runs',1)+1
+   daily['new_review_signals']+=old.get('new_review_signals',0)
+   daily['successful_sources']=max(success,old.get('successful_sources',0))
+   daily['failed_sources']=len(sources)-daily['successful_sources']
+   daily['status']='complete' if daily['failed_sources']==0 else ('partial' if daily['successful_sources'] else 'failed')
+  else:daily['runs']=1
+  history['reports']=([daily]+[x for x in history.get('reports',[]) if x.get('date')!=day])[:90]
+  history['updated_at']=now
+  DAILY_REPORT.write_text(json.dumps(history,ensure_ascii=False,indent=2),encoding='utf-8')
+ except (ValueError,TypeError,KeyError) as exc:
+  raise RuntimeError('Daily monitoring report could not be updated') from exc
+
  if new and not send_email(new):
   # Prevent lost notifications: workflow fails before state is committed to Git.
   raise RuntimeError('New changes detected, but email credentials are missing; state not committed so notifications can retry.')
