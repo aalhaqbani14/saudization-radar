@@ -130,7 +130,7 @@ def send_test_email():
 def main():
  state=json.loads(STATE.read_text(encoding='utf-8')) if STATE.exists() else {}
  db=json.loads(DATA.read_text(encoding='utf-8')) if DATA.exists() else {'alerts':[]}
- now=datetime.datetime.now(datetime.timezone.utc).isoformat();new=[];success=0
+ now=datetime.datetime.now(datetime.timezone.utc).isoformat();new=[];review_signals=0;success=0
  results=[]
  sources=monitored_sources()
  for src in sources:
@@ -147,6 +147,7 @@ def main():
      seen={a.get('id') for a in db.get('alerts',[])}
      if item['id'] not in seen:
       db.setdefault('alerts',[]).insert(0,item)
+      review_signals+=1
       if item['email_worthy']:new.append(item)
       print('Review signal:',name,'priority:',item['review_priority'],'email:',item['email_worthy'])
      else:
@@ -167,7 +168,7 @@ def main():
  # Public health telemetry only. No page text, credentials, or private data.
  # Monitoring failures do not imply that regulatory requirements are unchanged.
  health={'checked_at':now,'total_sources':len(sources),'successful_sources':success,
-         'failed_sources':len(sources)-success,'signal_count':len(new),
+         'failed_sources':len(sources)-success,'signal_count':review_signals,
          'sources':results,
          'coverage_notice':'هذه حالة تشغيل الرصد فقط ولا تثبت حداثة القرارات أو اكتمال تغطية الوزارة.'}
  HEALTH.write_text(json.dumps(health,ensure_ascii=False,indent=2),encoding='utf-8')
@@ -175,7 +176,7 @@ def main():
  day=now[:10]
  daily={'date':day,'last_checked_at':now,'total_sources':len(sources),
         'successful_sources':success,'failed_sources':len(sources)-success,
-        'new_review_signals':len(new),'status':'complete' if success==len(sources) else ('partial' if success else 'failed'),
+        'new_review_signals':review_signals,'status':'complete' if success==len(sources) else ('partial' if success else 'failed'),
         'failed_source_names':[x['name'] for x in results if x['status']=='error'],
         'notice':'ملخص تقني للرصد؛ لا يثبت اكتمال التغطية أو عدم صدور قرارات. الإشارات تحتاج مراجعة بشرية.'}
  try:
