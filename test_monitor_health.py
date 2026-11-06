@@ -20,11 +20,13 @@ class TestMonitorHealth(unittest.TestCase):
         self.state = directory / "state.json"
         self.data = directory / "alerts.json"
         self.health = directory / "health.json"
+        self.daily = directory / "daily-reports.json"
         self.p1 = patch.object(monitor, "STATE", self.state)
         self.p2 = patch.object(monitor, "DATA", self.data)
         self.p3 = patch.object(monitor, "HEALTH", self.health)
         self.p4 = patch.object(monitor, "monitored_sources", return_value=SOURCES)
-        for p in (self.p1,self.p2,self.p3,self.p4):
+        self.p5 = patch.object(monitor, "DAILY_REPORT", self.daily)
+        for p in (self.p1,self.p2,self.p3,self.p4,self.p5):
             p.start()
             self.addCleanup(p.stop)
 
