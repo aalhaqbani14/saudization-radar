@@ -33,6 +33,20 @@ def monitored_sources():
   if url not in existing:
    sources.append({'name':'قرار: '+record.get('title','بدون عنوان'),'url':url,'kind':'decision_page'})
    existing.add(url)
+ # Additional relevant official HTML pages from the maintained decisions catalog.
+ # PDF links are excluded until a dedicated PDF extractor is implemented.
+ catalog=ROOT/'data'/'decisions.json'
+ selected={'procurement','project','marketing','sales','engineers','techeng','ict','legal','consulting','service'}
+ if catalog.exists():
+  decisions=json.loads(catalog.read_text(encoding='utf-8')).get('decisions',[])
+  for decision in decisions:
+   if decision.get('id') not in selected:continue
+   url=decision.get('source','')
+   if not url or urlsplit(url).path.lower().endswith('.pdf'):continue
+   if not email_templates.safe_link(url):continue
+   if url not in existing:
+    sources.append({'name':'مرجع إضافي: '+decision.get('title','بدون عنوان'),'url':url,'kind':'decision_page'})
+    existing.add(url)
  return sources
 class Extract(HTMLParser):
  """Plain content with stable official document references; excludes scripts and third-party links."""
