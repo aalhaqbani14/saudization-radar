@@ -1,0 +1,28 @@
+name: Radar quality checks
+'on':
+  push:
+    branches: [main]
+    paths:
+      - 'monitor.py'
+      - 'detection.py'
+      - 'email_templates.py'
+      - 'test_*.py'
+      - 'data/decisions.json'
+      - 'data/occupations.json'
+      - 'data/source-registry.json'
+      - '.github/workflows/radar-quality.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile Python modules
+        run: python -m py_compile monitor.py detection.py email_templates.py
+      - name: Run offline monitoring and data tests
+        run: python -m unittest -v test_monitor_health.py test_detection.py test_email_templates.py test_data_quality.py
