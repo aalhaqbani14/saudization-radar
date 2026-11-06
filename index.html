@@ -46,7 +46,7 @@
 #radar-cinematic-intro .intro-radar:after{content:"";position:absolute;inset:0;border-radius:50%;background:linear-gradient(90deg,transparent 49.8%,#67f4b355 50%,transparent 50.2%),linear-gradient(transparent 49.8%,#67f4b355 50%,transparent 50.2%)}
 #radar-cinematic-intro .intro-title{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;font-size:clamp(30px,6vw,64px);font-weight:700;color:#fff;text-shadow:0 3px 35px #001e16;opacity:0;animation:introTitle 3s .65s ease both}
 #radar-cinematic-intro .intro-skip{position:absolute;bottom:24px;left:24px;border:1px solid #ffffff66;background:#06291fc9;color:white;border-radius:30px;padding:11px 19px;font-size:13px;z-index:3}
-#radar-cinematic-intro .intro-credit{position:absolute;bottom:14px;right:16px;color:#ffffffa6;font-size:9px;z-index:2}
+#radar-intro-replay{position:fixed;bottom:18px;left:18px;z-index:9998;border:1px solid #b3e8d5;background:#0b574b;color:#fff;border-radius:30px;padding:11px 15px;font-size:12px;box-shadow:0 6px 20px #00251c44;cursor:pointer}#radar-cinematic-intro .intro-credit{position:absolute;bottom:14px;right:16px;color:#ffffffa6;font-size:9px;z-index:2}
 @keyframes introKafdZoom{to{transform:scale(1.24)}}
 @keyframes introDarken{to{background:radial-gradient(circle at center,rgba(0,30,19,.28),rgba(0,13,10,.85) 90%)}}
 @keyframes introRadarReveal{0%{opacity:0;transform:translate(-50%,-50%) scale(.55)}25%,75%{opacity:1;transform:translate(-50%,-50%) scale(1)}100%{opacity:0;transform:translate(-50%,-50%) scale(3.3)}}
@@ -56,6 +56,7 @@
 </style>
 </head>
 <body>
+<button id="radar-intro-replay" type="button" aria-label="إعادة عرض المقدمة السينمائية">◉ إعادة عرض المقدمة</button>
 <div id="radar-cinematic-intro" role="region" aria-label="مقدمة رادار التوطين">
 <div class="intro-photo" aria-hidden="true"></div><div class="intro-overlay" aria-hidden="true"></div><div class="intro-radar" aria-hidden="true"></div><div class="intro-title">رادار التوطين</div>
 <button class="intro-skip" type="button" id="radar-intro-skip">تخطي المقدمة</button>
@@ -233,13 +234,15 @@
 <script src="assets/presentation-mode.js" defer></script>
 <script id="radar-intro-script">
 (function(){
-var intro=document.getElementById('radar-cinematic-intro'),skip=document.getElementById('radar-intro-skip');
+var intro=document.getElementById('radar-cinematic-intro'),skip=document.getElementById('radar-intro-skip'),replay=document.getElementById('radar-intro-replay');
 if(!intro)return;
 var timer;
-function finish(){clearTimeout(timer);intro.classList.add('radar-intro-hidden');setTimeout(function(){if(intro&&intro.parentNode)intro.parentNode.removeChild(intro)},750)}
-if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){finish();return}
+function finish(){clearTimeout(timer);intro.classList.add('radar-intro-hidden');intro.setAttribute('aria-hidden','true')}
+function play(){clearTimeout(timer);intro.classList.remove('radar-intro-hidden');intro.removeAttribute('aria-hidden');intro.querySelectorAll('.intro-photo,.intro-overlay,.intro-radar,.intro-title').forEach(function(node){node.style.animation='none';void node.offsetWidth;node.style.animation=''});timer=setTimeout(finish,4000)}
 skip.addEventListener('click',finish);
-timer=setTimeout(finish,4000);
+if(replay)replay.addEventListener('click',play);
+if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){finish();return}
+play();
 })();
 </script>
 </body>
