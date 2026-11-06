@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-06T06:03:59.481173+00:00",
+  "checked_at": "2026-11-06T14:56:39.433507+00:00",
   "total_sources": 8,
   "successful_sources": 2,
   "failed_sources": 6,
@@ -10,7 +10,7 @@
       "url": "https://www.hrsd.gov.sa/media-center/news",
       "kind": "index",
       "status": "ok",
-      "changed": false,
+      "changed": true,
       "first_baseline": false
     },
     {
