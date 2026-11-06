@@ -104,6 +104,17 @@
         <div id="salic-preview" style="margin-top:15px;display:flex;gap:9px;flex-wrap:wrap" aria-live="polite"></div>
         <div id="salic-ministry-overview" class="wf-ministry-overview" aria-live="polite">جارٍ قراءة بيانات وزارة الموارد البشرية للمهن الإدارية المساندة…</div>
       </section>
+      <section id="workforce-audit" style="background:#fff;border:1px solid #e1e9ef;border-radius:18px;padding:22px;margin:18px 0 26px" aria-labelledby="workforce-audit-title">
+        <div class="section-head"><div><h2 id="workforce-audit-title">تدقيق بيانات الموظفين وربط القرارات</h2><p>فحص آلي للبيانات المجمعة والمطابقة الأولية للمسميات، دون كشف معلومات شخصية أو إصدار حكم امتثال.</p></div><span class="minor" id="audit-date">جارٍ الفحص…</span></div>
+        <div class="metrics" style="margin:16px 0">
+          <div class="metric"><div class="metric-label">تطابق المجاميع</div><strong id="audit-balance">—</strong><small>مقارنة الصفوف مع الملخص</small></div>
+          <div class="metric"><div class="metric-label">المسميات المطابقة نصيًا</div><strong id="audit-matched">—</strong><small>مع فهرس المهن المرتبط بالقرارات</small></div>
+          <div class="metric"><div class="metric-label">مسميات تحتاج مراجعة</div><strong id="audit-unmatched">—</strong><small>لا تعني أنها خارج نطاق التوطين</small></div>
+          <div class="metric"><div class="metric-label">ملاحظات جودة البيانات</div><strong id="audit-issues">—</strong><small>تكرار أو قيم غير متسقة</small></div>
+        </div>
+        <details style="border-top:1px solid #e4eaf0;padding-top:14px"><summary style="cursor:pointer;font-weight:700;color:#146c66">عرض تفاصيل المهن التي تحتاج مطابقة أو تدقيقًا</summary><div id="audit-details" style="font-size:12px;line-height:2;color:#4c6274;padding:12px 0" aria-live="polite">جارٍ فحص البيانات…</div></details>
+        <p style="font-size:11px;line-height:1.9;color:#647588;margin:12px 0 0">المطابقة هنا نصية استرشادية فقط. تحديد انطباق القرار والفجوة النظامية يتطلب التحقق من الرمز المهني المسجل، النشاط والكيان، تاريخ النفاذ وشروط القرار من المصدر الرسمي. البيانات لقطة وليست اتصالًا مباشرًا بأنظمة الوزارة.</p>
+      </section>
       <section id="all-professions" class="srb-browser" data-salic-roles="homepage" aria-label="قائمة جميع مهن سالك"><p>جارٍ تحميل جميع المسميات والأعداد…</p></section>
       <section aria-labelledby="stats-title"><div class="section-head"><div><h2 id="stats-title">نظرة عامة</h2><p>ملخص تحديثات المصادر الحكومية</p></div><span class="minor">الأرقام آلية وليست نتائج تحقق نظامي</span></div>
         <div class="metrics">
@@ -232,6 +243,28 @@
 </script>
 <script src="assets/all-professions.js?v=20261104-executive-v3" defer></script>
 <script src="assets/presentation-mode.js" defer></script>
+<script id="workforce-audit-script">
+(function(){
+ const $=id=>document.getElementById(id);
+ const norm=x=>String(x||'').trim().replace(/[إأآ]/g,'ا').replace(/ى/g,'ي').replace(/ة/g,'ه').replace(/\s+/g,' ');
+ const valid=x=>Number.isInteger(x)&&x>=0;
+ const esc=x=>String(x).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ Promise.all(['data/salic-workforce.json','data/occupations.json','data/decisions.json'].map(p=>fetch(p+'?audit='+Date.now()).then(r=>{if(!r.ok)throw Error(p);return r.json()}))).then(([w,o,d])=>{
+ const rows=Array.isArray(w.rows)?w.rows:[],sum=w.summary||{},titles=new Map(),issues=[],total=rows.reduce((a,r)=>a+(Number(r[1])||0),0),saudi=rows.reduce((a,r)=>a+(Number(r[2])||0),0);
+ rows.forEach((r,i)=>{const n=norm(r[0]);if(!n)issues.push('مسمى فارغ في الصف '+(i+1));if(titles.has(n))issues.push('مسمى مكرر: '+r[0]);titles.set(n,true);if(!valid(r[1])||!valid(r[2])||r[2]>r[1])issues.push('أعداد غير متسقة: '+r[0])});
+ if(total!==sum.total||saudi!==sum.saudi||total-saudi!==sum.nonSaudi||rows.length!==sum.professions)issues.push('المجاميع أو عدد المسميات لا يطابق الملخص');
+ const ids=new Set((d.decisions||[]).map(x=>x.id)),matches=new Set((o.occupations||[]).filter(x=>Array.isArray(x.decisionIds)&&x.decisionIds.some(id=>ids.has(id))).map(x=>norm(x.title)));
+ const unmatched=rows.filter(r=>!matches.has(norm(r[0])));
+ $('audit-balance').textContent=total===sum.total&&saudi===sum.saudi&&total-saudi===sum.nonSaudi?'متطابق':'غير متطابق';
+ $('audit-matched').textContent=rows.length-unmatched.length;
+ $('audit-unmatched').textContent=unmatched.length;
+ $('audit-issues').textContent=issues.length;
+ $('audit-date').textContent='لقطة '+(w.asOf||'غير مؤرخة');
+ const names=unmatched.map(r=>esc(r[0])+' ('+r[1]+')');
+ $('audit-details').innerHTML=(issues.length?'<strong>ملاحظات البيانات:</strong> '+issues.map(esc).join('؛ ')+'<hr>':'')+'<strong>المسميات غير المطابقة نصيًا ('+unmatched.length+'):</strong> '+(names.length?names.join('، '):'لا يوجد')+'<p>عدم التطابق لا يثبت عدم شمول المهنة بالقرار؛ راجع الرمز المهني والدليل الرسمي.</p>';
+ }).catch(()=>{$('audit-date').textContent='تعذر الفحص';$('audit-details').textContent='تعذر تحميل ملفات التدقيق. حاول تحديث الصفحة.'});
+})();
+</script>
 <script id="radar-intro-script">
 (function(){
 var intro=document.getElementById('radar-cinematic-intro'),skip=document.getElementById('radar-intro-skip'),replay=document.getElementById('radar-intro-replay');
