@@ -28,6 +28,15 @@ class TestMonitorHealth(unittest.TestCase):
             p.start()
             self.addCleanup(p.stop)
 
+    def test_arabic_official_url_is_http_safe(self):
+        from urllib.request import Request
+        url = "https://www.hrsd.gov.sa/knowledge-centre/الدليل-الإجرائي-لتوطين-مهن-المشتريات"
+        safe = monitor.encode_url(url)
+        self.assertIn("%D8", safe)
+        self.assertNotIn("الدليل", safe)
+        self.assertEqual(Request(safe).full_url, safe)
+        self.assertEqual(monitor.encode_url(safe), safe)
+
     def test_extract_includes_official_pdf_links_only(self):
         extractor = monitor.Extract("https://www.hrsd.gov.sa/media-center/news")
         extractor.feed("""<html><body><main><h1>أخبار الوزارة</h1>
