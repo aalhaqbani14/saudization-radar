@@ -1,6 +1,14 @@
 name: Saudization Radar monitor
 
 'on':
+  push:
+    branches: [main]
+    paths:
+      - 'monitor.py'
+      - 'detection.py'
+      - 'email_templates.py'
+      - 'data/source-registry.json'
+      - '.github/workflows/radar.yml'
   schedule:
     # 08:15 and 17:15 Riyadh time (UTC+3). GitHub schedules can be delayed.
     - cron: '15 5,14 * * *'
