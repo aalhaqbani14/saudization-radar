@@ -2,7 +2,7 @@
   "reports": [
     {
       "date": "2026-11-07",
-      "last_checked_at": "2026-11-07T15:39:00.205974+00:00",
+      "last_checked_at": "2026-11-07T15:42:46.589283+00:00",
       "total_sources": 17,
       "successful_sources": 17,
       "failed_sources": 0,
@@ -10,8 +10,8 @@
       "status": "complete",
       "failed_source_names": [],
       "notice": "ملخص تقني للرصد؛ لا يثبت اكتمال التغطية أو عدم صدور قرارات. الإشارات تحتاج مراجعة بشرية.",
-      "runs": 2
+      "runs": 3
     }
   ],
-  "updated_at": "2026-11-07T15:39:00.205974+00:00"
+  "updated_at": "2026-11-07T15:42:46.589283+00:00"
 }
