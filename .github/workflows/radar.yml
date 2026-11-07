@@ -7,6 +7,10 @@ name: Saudization Radar monitor
       - 'monitor.py'
       - 'detection.py'
       - 'email_templates.py'
+      - 'validate_data.py'
+      - 'data/salic-workforce.json'
+      - 'data/official-inspections.json'
+      - 'data/decisions.json'
       - 'data/source-registry.json'
       - '.github/workflows/radar.yml'
   schedule:
@@ -49,7 +53,8 @@ jobs:
         run: python monitor.py --test-email
       - name: Validate monitor source and imports
         run: |
-          python -m py_compile monitor.py email_templates.py detection.py
+          python -m py_compile monitor.py email_templates.py detection.py validate_data.py
+          python validate_data.py
           python - <<'PY'
           import json
           from pathlib import Path
