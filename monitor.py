@@ -7,6 +7,8 @@ from email.utils import formataddr
 import email_templates
 import detection
 from urllib.request import Request, urlopen
+from urllib.error import HTTPError, URLError
+import socket
 from urllib.parse import urljoin, urlsplit, urlunsplit, quote
 from html.parser import HTMLParser
 
@@ -151,6 +153,24 @@ def send_test_email():
                      email_templates.plain(demo=True),
                      test=True,html_body=email_templates.render(demo=True))
 
+def explain_failure(exc):
+ """Return a public, non-sensitive diagnostic category for source status."""
+ if isinstance(exc, HTTPError):
+  return 'http_error', 'رفض المصدر الطلب أو أعاد خطأ HTTP ('+str(exc.code)+')'
+ if isinstance(exc, (TimeoutError, socket.timeout)):
+  return 'timeout', 'انتهت مهلة الاتصال بالمصدر'
+ if isinstance(exc, URLError):
+  reason=str(getattr(exc,'reason','')).lower()
+  if 'timed out' in reason:return 'timeout','انتهت مهلة الاتصال بالمصدر'
+  return 'connection_error','تعذر الاتصال بالمصدر'
+ if isinstance(exc, UnicodeEncodeError):
+  return 'url_encoding','تعذر تجهيز رابط المصدر للاتصال'
+ if isinstance(exc, ValueError) and str(exc)=='Page extraction too short':
+  return 'insufficient_content','المحتوى المستخرج من الصفحة غير كافٍ للتحقق'
+ if isinstance(exc, (UnicodeError, UnicodeDecodeError)):
+  return 'encoding_error','تعذر قراءة ترميز المحتوى'
+ return 'unexpected_error','خطأ تقني أثناء معالجة المصدر'
+
 def main():
  state=json.loads(STATE.read_text(encoding='utf-8')) if STATE.exists() else {}
  db=json.loads(DATA.read_text(encoding='utf-8')) if DATA.exists() else {'alerts':[]}
@@ -179,11 +199,12 @@ def main():
     else:
      print('No relevant decision signal:',name)
    # First run sets baseline, no false alert
-   state[url]={'hash':digest,'text':content[:150000],'extraction_version':EXTRACTION_VERSION};success+=1
-   results.append({'name':name,'url':url,'kind':src.get('kind'),'status':'ok','changed':bool(comparable and previous['hash']!=digest),'first_baseline':not comparable})
+   state[url]={'hash':digest,'text':content[:150000],'extraction_version':EXTRACTION_VERSION,'last_success_at':now};success+=1
+   results.append({'name':name,'url':url,'kind':src.get('kind'),'status':'ok','changed':bool(comparable and previous['hash']!=digest),'first_baseline':not comparable,'last_success_at':now})
    print('Checked:',name, 'changed:',bool(comparable and previous['hash']!=digest))
   except Exception as exc:
-   results.append({'name':name,'url':url,'kind':src.get('kind'),'status':'error','error_type':type(exc).__name__})
+   code,message=explain_failure(exc)
+   results.append({'name':name,'url':url,'kind':src.get('kind'),'status':'error','error_type':type(exc).__name__,'error_code':code,'error_message':message,'last_success_at':state.get(url,{}).get('last_success_at')})
    print('ERROR:',name,repr(exc))
  if success:
   db['last_checked']=now;db['sources']=sources;db['alerts']=db.get('alerts',[])[:200]
