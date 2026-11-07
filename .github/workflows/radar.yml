@@ -39,6 +39,16 @@ jobs:
       - name: Send explicit test email
         if: ${{ github.event_name == 'workflow_dispatch' && inputs.send_test_email }}
         run: python monitor.py --test-email
+      - name: Validate monitor source and imports
+        run: |
+          python -m py_compile monitor.py email_templates.py detection.py
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          for path in ('data/decisions.json', 'data/source-registry.json'):
+              json.loads(Path(path).read_text(encoding='utf-8'))
+              print('Validated:', path)
+          PY
       - name: Monitor HRSD pages for changes
         if: ${{ github.event_name != 'workflow_dispatch' || !inputs.send_test_email }}
         run: python monitor.py
@@ -50,5 +60,13 @@ jobs:
           git add data/
           if ! git diff --cached --quiet; then
             git commit -m "Update Saudization Radar data"
-            git push
+            for attempt in 1 2 3; do
+              if git pull --rebase origin main && git push origin HEAD:main; then
+                exit 0
+              fi
+              echo "Push attempt $attempt failed; retrying"
+              sleep 5
+            done
+            echo "::error::Could not publish monitor results after 3 attempts"
+            exit 1
           fi
