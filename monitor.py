@@ -87,8 +87,15 @@ class Extract(HTMLParser):
 def encode_url(url):
  """Percent-encode Unicode URL path/query for urllib's ASCII HTTP request target."""
  parsed=urlsplit(url)
- return urlunsplit((parsed.scheme,parsed.netloc,quote(parsed.path,safe="/%:@!def get_text(url):
- req=Request(url,headers='()*+,;=-._~"),quote(parsed.query,safe="=&%:@!{'User-Agent':'SaudizationRadar/1.0 (+personal public-site monitoring)','Accept-Language':'ar,en;q=0.8'})
+ path=quote(parsed.path,safe="/%:@!$&'()*+,;=-._~")
+ query=quote(parsed.query,safe="=&%:@!$'()*+,;/?-._~")
+ return urlunsplit((parsed.scheme,parsed.netloc,path,query,parsed.fragment))
+
+def get_text(url):
+ req=Request(encode_url(url),headers={
+  'User-Agent':'SaudizationRadar/1.0 (+personal public-site monitoring)',
+  'Accept-Language':'ar,en;q=0.8'
+ })
  with urlopen(req,timeout=35) as r:
   raw=r.read(2000000).decode('utf-8','replace')
  p=Extract(url);p.feed(raw)
