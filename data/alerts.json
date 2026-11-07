@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-11-06T14:56:39.433507+00:00",
+  "last_checked": "2026-11-07T15:29:14.449336+00:00",
   "sources": [
     {
       "name": "أخبار الوزارة",
@@ -39,6 +39,51 @@
     {
       "name": "قرار: مهنة مشرف مسكن",
       "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-مهنة-مشرف-مسكن",
+      "kind": "decision_page"
+    },
+    {
+      "name": "مرجع إضافي: المشتريات والعقود والمستودعات",
+      "url": "https://www.hrsd.gov.sa/media-center/news/رفع-نسبة-التوطين-في-مهن-المشتريات",
+      "kind": "decision_page"
+    },
+    {
+      "name": "مرجع إضافي: مهن إدارة المشاريع",
+      "url": "https://www.hrsd.gov.sa/media-center/news/رفع-نسب-توطين-مهن-إدارة-المشاريع-0",
+      "kind": "decision_page"
+    },
+    {
+      "name": "مرجع إضافي: مهن التسويق",
+      "url": "https://www.hrsd.gov.sa/media-center/news/التوطين-في-مهن-التسويق-والمبيعات",
+      "kind": "decision_page"
+    },
+    {
+      "name": "مرجع إضافي: المهن الهندسية",
+      "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-المهن-الهندسية",
+      "kind": "decision_page"
+    },
+    {
+      "name": "مرجع إضافي: المهن الفنية الهندسية",
+      "url": "https://www.hrsd.gov.sa/media-center/news/بدء-تطبيق-قرار-رفع-نسب-التوطين",
+      "kind": "decision_page"
+    },
+    {
+      "name": "مرجع إضافي: الاتصالات وتقنية المعلومات",
+      "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-مهن-الاتصالات-وتقنية",
+      "kind": "decision_page"
+    },
+    {
+      "name": "مرجع إضافي: المهن القانونية",
+      "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الاجرائي-لقرار-توطين-المهن-القانونية",
+      "kind": "decision_page"
+    },
+    {
+      "name": "مرجع إضافي: مهن الاستشارات والأعمال",
+      "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/ministerial-decisions/1170122",
+      "kind": "decision_page"
+    },
+    {
+      "name": "مرجع إضافي: مهن خدمة العملاء",
+      "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-مهن-خدمة-العملاء",
       "kind": "decision_page"
     }
   ],
