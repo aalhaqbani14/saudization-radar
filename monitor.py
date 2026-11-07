@@ -230,9 +230,8 @@ def main():
   if old:
    daily['runs']=old.get('runs',1)+1
    daily['new_review_signals']+=old.get('new_review_signals',0)
-   daily['successful_sources']=max(success,old.get('successful_sources',0))
-   daily['failed_sources']=len(sources)-daily['successful_sources']
-   daily['status']='complete' if daily['failed_sources']==0 else ('partial' if daily['successful_sources'] else 'failed')
+   # Latest run's source coverage must never be replaced with a previous run's success.
+   # Keep per-run values in daily; preserve daily signal accumulation separately.
   else:daily['runs']=1
   history['reports']=([daily]+[x for x in history.get('reports',[]) if x.get('date')!=day])[:90]
   history['updated_at']=now
