@@ -34,7 +34,7 @@ const wageCsv=[
  'محاسب,Saudi,241101,STAFF-3,5500,approved,bachelor',
  'محاسب,مصري,241101,STAFF-4,,,',
  'محاسب,هندي,241101,STAFF-5,,,'
-].join('\\n');
+].join('\n');
 const income=imp.summarize(wageCsv,asOf);
 const incomeCheck=imp.auditCodes(income,guide).find(x=>x.decisionId==='accounting');
 assert.equal(incomeCheck.saudi,3);
