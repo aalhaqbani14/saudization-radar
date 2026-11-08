@@ -1,0 +1,301 @@
+{
+  "version": 1,
+  "asOf": "2026-11-08",
+  "method": "مطابقة أولية دقيقة لاسم المسمى كما ورد في الدليل؛ الرمز الوارد هنا مرجعي، ولا يعني التحقق من رمز الموظف المسجل في قوى أو GOSI.",
+  "privacy": "بيانات مسميات وعدد إجمالي فقط؛ لا يحتوي أسماء موظفين أو أجورهم أو أرقام إقاماتهم.",
+  "roundingNotice": "في الأدلة المراجعة يتم تقريب أجزاء الرقم للعدد الصحيح الأقرب عند نص الدليل على ذلك. الحساب تقريبي ولا يمثل تقرير التزام نظامي.",
+  "sourceSecurity": "لم تُرفع ملفات PDF الأصلية أو أي وثائق موسومة بأنها مقيدة إلى المستودع العام.",
+  "decisions": [
+    {
+      "id": "admin",
+      "title": "المهن الإدارية المساندة",
+      "percent": 100,
+      "min": 1,
+      "rounding": "none",
+      "effective": "2026-04-05",
+      "rule": "يطبق 100% على المهن المدرجة، مع تاريخ نفاذ فوري أو 4 أكتوبر 2026 بحسب رمز المهنة.",
+      "sourcePage": "4–5",
+      "sourceUrl": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+      "matchedRoles": [
+        {
+          "title": "مساعد إداري",
+          "code": "412001"
+        },
+        {
+          "title": "موظف استقبال",
+          "code": "422601"
+        },
+        {
+          "title": "كاتب موارد بشرية",
+          "code": "441601"
+        },
+        {
+          "title": "سكرتير تنفيذي",
+          "code": "334301"
+        },
+        {
+          "title": "أخصائي عمليات موارد بشرية",
+          "code": "242302"
+        },
+        {
+          "title": "مدير عمليات موارد بشرية",
+          "code": "121201"
+        },
+        {
+          "title": "أخصائي تواصل داخلي",
+          "code": "243204"
+        },
+        {
+          "title": "أخصائي توظيف",
+          "code": "242304"
+        },
+        {
+          "title": "أخصائي ارتباط وظيفي",
+          "code": "242301"
+        },
+        {
+          "title": "أخصائي تخطيط قوى عاملة",
+          "code": "242309"
+        },
+        {
+          "title": "مدير مواهب",
+          "code": "121206"
+        },
+        {
+          "title": "مدير توظيف",
+          "code": "121204"
+        },
+        {
+          "title": "مدير تنظيم إداري",
+          "code": "121214"
+        },
+        {
+          "title": "أخصائي علاقات عامة",
+          "code": "243202"
+        }
+      ]
+    },
+    {
+      "id": "procurement",
+      "title": "مهن المشتريات",
+      "percent": 70,
+      "min": 3,
+      "rounding": "nearest",
+      "effective": "2026-05-31",
+      "rule": "12 مهنة، مستوى الكيان، يبدأ عند 3 عاملين فأكثر في المهن المشمولة؛ تقريب الكسور لأقرب عدد صحيح.",
+      "sourcePage": "4–5",
+      "sourceUrl": "https://www.hrsd.gov.sa/media-center/news/رفع-نسبة-التوطين-في-مهن-المشتريات",
+      "matchedRoles": [
+        {
+          "title": "أخصائي مشتريات",
+          "code": "243102"
+        },
+        {
+          "title": "مدير مشتريات",
+          "code": "132417"
+        },
+        {
+          "title": "أخصائي أبحاث أسواق",
+          "code": "243108"
+        }
+      ]
+    },
+    {
+      "id": "marketing",
+      "title": "مهن التسويق",
+      "percent": 60,
+      "min": 3,
+      "rounding": "nearest",
+      "effective": "2026-04-19",
+      "minimumEligibleSaudiWage": 5500,
+      "rule": "مهن التسويق المشمولة عند 3 فأكثر على مستوى الكيان، ولا يُحتسب السعودي في النسبة بأجر خاضع للاشتراك أقل من 5,500 ريال.",
+      "sourcePage": "4–6",
+      "sourceUrl": "https://www.hrsd.gov.sa/media-center/news/التوطين-في-مهن-التسويق-والمبيعات",
+      "matchedRoles": [
+        {
+          "title": "أخصائي تسويق",
+          "code": "243110"
+        },
+        {
+          "title": "أخصائي علاقات عامة",
+          "code": "243202"
+        },
+        {
+          "title": "مدير دعاية وإعلان",
+          "code": "122201"
+        },
+        {
+          "title": "مصمم جرافيك",
+          "code": "216601"
+        }
+      ]
+    },
+    {
+      "id": "sales",
+      "title": "مهن المبيعات",
+      "percent": 60,
+      "min": 3,
+      "rounding": "nearest",
+      "effective": "2026-04-19",
+      "rule": "تشمل مهنة وسيط سلع مستقبلية برمز 332401، وتبدأ عند 3 عاملين فأكثر في مهن المبيعات المحددة.",
+      "sourcePage": "4–5",
+      "sourceUrl": "https://www.hrsd.gov.sa/media-center/news/التوطين-في-مهن-التسويق-والمبيعات",
+      "matchedRoles": [
+        {
+          "title": "وسيط سلع مستقبلية",
+          "code": "332401"
+        }
+      ]
+    },
+    {
+      "id": "accounting",
+      "title": "المهن المحاسبية",
+      "percent": 50,
+      "min": 5,
+      "rounding": "nearest",
+      "effective": "2026-10-27",
+      "minimumEligibleSaudiWage": {
+        "bachelor": 6000,
+        "diploma": 4500
+      },
+      "requiresAccreditation": true,
+      "phases": [
+        [
+          "2025-10-27",
+          40,
+          5
+        ],
+        [
+          "2026-10-27",
+          50,
+          5
+        ],
+        [
+          "2027-10-27",
+          60,
+          5
+        ],
+        [
+          "2028-10-27",
+          70,
+          5
+        ],
+        [
+          "2029-10-27",
+          30,
+          3
+        ]
+      ],
+      "rule": "النسبة الحالية 50% عند 5 عاملين فأكثر. فئة 3–4 محاسبين تدخل بنسبة 30% في أكتوبر 2029؛ يشترط اعتماد الهيئة وأجر مستوفٍ.",
+      "sourcePage": "4–7",
+      "sourceUrl": "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajryy-lqrar-twtyn-mhn-almhasbyt.pdf",
+      "matchedRoles": [
+        {
+          "title": "محاسب",
+          "code": "241101"
+        },
+        {
+          "title": "مدير مالي",
+          "code": "121101"
+        },
+        {
+          "title": "مدير خزينة",
+          "code": "121104"
+        },
+        {
+          "title": "مدير ميزانية",
+          "code": "121105"
+        },
+        {
+          "title": "مدير مراجعة داخلية",
+          "code": "121107"
+        },
+        {
+          "title": "مراجع داخلي",
+          "code": "241103"
+        },
+        {
+          "title": "أخصائي حسابات ضرائب",
+          "code": "241108"
+        }
+      ]
+    },
+    {
+      "id": "ict",
+      "title": "الاتصالات وتقنية المعلومات",
+      "percent": 25,
+      "min": 5,
+      "rounding": "nearest",
+      "effective": "2021-06-27",
+      "grouped": true,
+      "minimumEligibleSaudiWage": {
+        "engineering": 7000,
+        "development": 7000,
+        "support": 5000
+      },
+      "rule": "25% لكل واحدة من ثلاث مجموعات بشكل مستقل عند 5 عاملين فأكثر في المجموعة؛ يمنع دمج إجمالي موظفي التقنية في حساب واحد.",
+      "sourcePage": "4–6",
+      "sourceUrl": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-مهن-الاتصالات-وتقنية",
+      "matchedRoles": [
+        {
+          "title": "مهندس حاسب آلي",
+          "code": "215204",
+          "subgroup": "engineering"
+        },
+        {
+          "title": "محلل نظم المعلومات",
+          "code": "251102",
+          "subgroup": "development"
+        },
+        {
+          "title": "مطور تطبيقات",
+          "code": "251205",
+          "subgroup": "development"
+        },
+        {
+          "title": "محلل بيانات",
+          "code": "212004",
+          "subgroup": "development"
+        },
+        {
+          "title": "محلل قاعدة بيانات",
+          "code": "252103",
+          "subgroup": "development"
+        },
+        {
+          "title": "أخصائي علوم حاسب آلي",
+          "code": "251101",
+          "subgroup": "support"
+        },
+        {
+          "title": "فني دعم تقنية معلومات",
+          "code": "351201",
+          "subgroup": "support"
+        },
+        {
+          "title": "أخصائي دعم فني",
+          "code": "252912",
+          "subgroup": "support"
+        }
+      ]
+    },
+    {
+      "id": "legal",
+      "title": "المهن القانونية",
+      "percent": 70,
+      "min": 1,
+      "rounding": "nearest",
+      "effective": "2022-12-17",
+      "minimumEligibleSaudiWage": 5500,
+      "rule": "يسري على منشآت القطاع الخاص العاملة في السوق السعودي في المهن الأربع المستهدفة؛ النص لا يحصره في مكاتب المحاماة.",
+      "sourcePage": "4–5",
+      "sourceUrl": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الاجرائي-لقرار-توطين-المهن-القانونية",
+      "matchedRoles": [
+        {
+          "title": "أخصائي قانوني",
+          "code": "261106"
+        }
+      ]
+    }
+  ]
+}
