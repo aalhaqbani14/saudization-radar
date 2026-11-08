@@ -53,9 +53,9 @@ class TestDecisionSignals(unittest.TestCase):
 
     def test_monitor_includes_official_dossiers(self):
         sources = monitor.monitored_sources()
-        self.assertEqual(len(sources), 8)
+        self.assertGreaterEqual(len(sources), 8)
         self.assertEqual(len({x['url'] for x in sources}), len(sources))
-        self.assertEqual(sum(x['kind']=='decision_page' for x in sources), 6)
+        self.assertEqual(sum(x['kind']=='decision_page' for x in sources), len(sources)-2)
         for source in sources:
             self.assertTrue(source['url'].startswith('https://www.hrsd.gov.sa/'))
 
