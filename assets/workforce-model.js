@@ -107,7 +107,7 @@ function render(id){
  const others=related(id);
  const primary=g.list.slice().sort((a,b)=>b.total-a.total||a.title.localeCompare(b.title,"ar"));
  const combined=primary.map(r=>({ ...r,classification:"ضمن قائمة التحليل" })).concat(others.map(r=>({...r,classification:"ضمن المساندة · غير مشمولة بقرار التوطين"})));
- const table=combined.map(r=>'<tr'+(r.classification==="ضمن المساندة · غير مشمولة بقرار التوطين"?' style="background:#f4f8fb"':'')+'><td>'+clean(r.title)+'</td><td>'+r.total+'</td><td>'+r.saudi+'</td><td>'+r.other+'</td><td><small'+(r.classification==="مهنة إدارية أخرى"?' style="color:#466b8a"':' style="color:#126d63"')+'>'+clean(r.classification)+'</small></td></tr>').join("");
+ const table=combined.map(r=>'<tr'+(r.classification==="ضمن المساندة · غير مشمولة بقرار التوطين"?' style="background:#f4f8fb"':'')+'><td>'+clean(r.title)+'</td><td>'+r.total+'</td><td>'+r.saudi+'</td><td>'+r.other+'</td><td><small'+(r.classification==="ضمن المساندة · غير مشمولة بقرار التوطين"?' style="color:#466b8a"':' style="color:#126d63"')+'>'+clean(r.classification)+'</small></td></tr>').join("");
  const body=table||'<tr><td colspan="5">لا توجد بيانات وظيفية متاحة لهذا القرار.</td></tr>';
  const items=combined.length;
  const total=combined.reduce((a,r)=>a+r.total,0);
