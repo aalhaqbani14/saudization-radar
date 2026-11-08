@@ -114,7 +114,7 @@ function auditCodes(summary,guide){
    let min=decision.min,pct=decision.percent,reason="";
    if(asOf<decision.effective)reason="القرار/المرحلة لم يبدأ تطبيقها وقت اللقطة.";
    if(decision.id==="accounting"){
-     const phases=(decision.phases||[]).filter(p=>p[0]<=asOf&&p[2]<=total).sort((a,b)=>b[0].localeCompare(a[0]));
+     const phases=(decision.phases||[]).filter(p=>p[0]<=asOf&&p[2]<=total&&(total>=5?p[2]>=5:p[2]===3)).sort((a,b)=>b[0].localeCompare(a[0]));
      if(phases.length){pct=phases[0][1];min=phases[0][2];reason="";}
      else reason="لا توجد مرحلة محاسبية سارية لهذا العدد بتاريخ اللقطة.";
    }
