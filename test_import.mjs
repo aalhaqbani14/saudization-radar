@@ -26,6 +26,24 @@ assert.equal(acc.rate,50);
 assert.equal(acc.required,3);
 assert.equal(acc.numericGap,0);
 assert.equal(acc.titleMismatchCount,0);
+assert.equal(acc.eligibleSaudisIfEvidenceComplete,null,'Missing GOSI wages must not certify countability');
+const wageCsv=[
+ 'المسمى الوظيفي,الجنسية,رمز المهنة,رقم الموظف,الأجر الخاضع للاشتراك,الاعتماد المهني,المؤهل العلمي',
+ 'محاسب,سعودي,241101,STAFF-1,7000,نعم,بكالوريوس',
+ 'محاسب,سعودية,241101,STAFF-2,5000,معتمد,دبلوم',
+ 'محاسب,Saudi,241101,STAFF-3,5500,approved,bachelor',
+ 'محاسب,مصري,241101,STAFF-4,,,',
+ 'محاسب,هندي,241101,STAFF-5,,,'
+].join('\\n');
+const income=imp.summarize(wageCsv,asOf);
+const incomeCheck=imp.auditCodes(income,guide).find(x=>x.decisionId==='accounting');
+assert.equal(incomeCheck.saudi,3);
+assert.equal(incomeCheck.eligibleCountCoverage,3);
+assert.equal(incomeCheck.eligibleSaudisIfEvidenceComplete,2);
+assert.equal(incomeCheck.required,3);
+assert.equal(incomeCheck.eligibleGapHypothesis,1);
+assert.equal(JSON.stringify(income.exportData).includes('7000'),false,'GOSI wage must never appear in exported workforce JSON');
+assert.equal(JSON.stringify(income.exportData).includes('STAFF-1'),false,'Employee IDs must never appear in exported JSON');
 const early=imp.summarize(personal,'2025-11-08'),later=imp.summarize(personal,'2029-11-08');
 assert.equal(imp.auditCodes(early,guide).find(x=>x.decisionId==='accounting').rate,40);
 assert.equal(imp.auditCodes(later,guide).find(x=>x.decisionId==='accounting').rate,70);
