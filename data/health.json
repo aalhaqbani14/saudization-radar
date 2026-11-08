@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-08T07:37:22.159029+00:00",
+  "checked_at": "2026-11-08T07:50:29.919427+00:00",
   "total_sources": 17,
   "successful_sources": 17,
   "failed_sources": 0,
@@ -12,7 +12,7 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-08T07:37:22.159029+00:00"
+      "last_success_at": "2026-11-08T07:50:29.919427+00:00"
     },
     {
       "name": "الأدلة الإجرائية",
@@ -21,7 +21,7 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-08T07:37:22.159029+00:00"
+      "last_success_at": "2026-11-08T07:50:29.919427+00:00"
     },
     {
       "name": "قرار: المهن الإدارية المساندة",
@@ -30,7 +30,7 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-08T07:37:22.159029+00:00"
+      "last_success_at": "2026-11-08T07:50:29.919427+00:00"
     },
     {
       "name": "قرار: المهن المحاسبية",
@@ -39,7 +39,7 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-08T07:37:22.159029+00:00"
+      "last_success_at": "2026-11-08T07:50:29.919427+00:00"
     },
     {
       "name": "قرار: مهن إدارة المشاريع",
@@ -48,7 +48,7 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-08T07:37:22.159029+00:00"
+      "last_success_at": "2026-11-08T07:50:29.919427+00:00"
     },
     {
       "name": "قرار: مهن المشتريات",
@@ -57,7 +57,7 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-08T07:37:22.159029+00:00"
+      "last_success_at": "2026-11-08T07:50:29.919427+00:00"
     },
     {
       "name": "قرار: مهن المبيعات",
@@ -66,7 +66,7 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-08T07:37:22.159029+00:00"
+      "last_success_at": "2026-11-08T07:50:29.919427+00:00"
     },
     {
       "name": "قرار: مهنة مشرف مسكن",
@@ -75,7 +75,7 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-08T07:37:22.159029+00:00"
+      "last_success_at": "2026-11-08T07:50:29.919427+00:00"
     },
     {
       "name": "مرجع إضافي: المشتريات والعقود والمستودعات",
@@ -84,7 +84,7 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-08T07:37:22.159029+00:00"
+      "last_success_at": "2026-11-08T07:50:29.919427+00:00"
     },
     {
       "name": "مرجع إضافي: مهن إدارة المشاريع",
@@ -93,7 +93,7 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-08T07:37:22.159029+00:00"
+      "last_success_at": "2026-11-08T07:50:29.919427+00:00"
     },
     {
       "name": "مرجع إضافي: مهن التسويق",
@@ -102,7 +102,7 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-08T07:37:22.159029+00:00"
+      "last_success_at": "2026-11-08T07:50:29.919427+00:00"
     },
     {
       "name": "مرجع إضافي: المهن الهندسية",
@@ -111,16 +111,16 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-08T07:37:22.159029+00:00"
+      "last_success_at": "2026-11-08T07:50:29.919427+00:00"
     },
     {
       "name": "مرجع إضافي: المهن الفنية الهندسية",
-      "url": "https://www.hrsd.gov.sa/media-center/news/بدء-تطبيق-قرار-رفع-نسب-التوطين",
+      "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-المهن-الفنية-الهندسية",
       "kind": "decision_page",
       "status": "ok",
       "changed": false,
-      "first_baseline": false,
-      "last_success_at": "2026-11-08T07:37:22.159029+00:00"
+      "first_baseline": true,
+      "last_success_at": "2026-11-08T07:50:29.919427+00:00"
     },
     {
       "name": "مرجع إضافي: الاتصالات وتقنية المعلومات",
@@ -129,7 +129,7 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-08T07:37:22.159029+00:00"
+      "last_success_at": "2026-11-08T07:50:29.919427+00:00"
     },
     {
       "name": "مرجع إضافي: المهن القانونية",
@@ -138,16 +138,16 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-08T07:37:22.159029+00:00"
+      "last_success_at": "2026-11-08T07:50:29.919427+00:00"
     },
     {
       "name": "مرجع إضافي: مهن الاستشارات والأعمال",
-      "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/ministerial-decisions/1170122",
+      "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/1170120",
       "kind": "decision_page",
       "status": "ok",
       "changed": false,
-      "first_baseline": false,
-      "last_success_at": "2026-11-08T07:37:22.159029+00:00"
+      "first_baseline": true,
+      "last_success_at": "2026-11-08T07:50:29.919427+00:00"
     },
     {
       "name": "مرجع إضافي: مهن خدمة العملاء",
@@ -156,7 +156,7 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-08T07:37:22.159029+00:00"
+      "last_success_at": "2026-11-08T07:50:29.919427+00:00"
     }
   ],
   "coverage_notice": "هذه حالة تشغيل الرصد فقط ولا تثبت حداثة القرارات أو اكتمال تغطية الوزارة."
