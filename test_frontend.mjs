@@ -28,16 +28,31 @@ for(const [id,total,saudi,gap,status] of expected){
  assert.equal(g.gap,gap,id+' estimated gap');
  assert.equal(g.status,status,id+' status');
 }
+// Organizational category does not mean this profession is targeted by decision 132249.
+const otherSupport=wf.related('admin');
+assert.equal(wf.organizationalCategory('أخصائي إداري'),'admin');
+assert.equal(wf.titleIds('أخصائي إداري').includes('admin'),false);
+assert.equal(otherSupport.length,1);
+assert.equal(otherSupport[0].total,17);
+assert.equal(otherSupport[0].saudi,15);
+assert.equal(wf.group('admin').total,27,'Decision denominator must exclude 17 administrative specialists');
+assert.equal(wf.group('admin').gap,3,'Decision gap must not change when non-target specialists are displayed');
+const html=wf.render('admin');
+assert.ok(html.includes('أخصائي إداري'),'Administrative specialists must appear in support group table');
+assert.ok(html.includes('غير مشمولة بقرار التوطين'),'Explicit exclusion label required');
 const mapping=JSON.parse(fs.readFileSync('data/guide-matching.json','utf8'));
 const known=Object.fromEntries(mapping.decisions.map(x=>[x.id,x]));
 assert.equal(known.sales.matchedRoles.find(x=>x.title==='وسيط سلع مستقبلية').code,'332401');
 assert.equal(known.marketing.minimumEligibleSaudiWage,5500);
 assert.equal(known.legal.percent,70);
 assert.equal(known.ict.grouped,true);
+assert.equal(known.admin.relatedNonTargetRoles[0].title,'أخصائي إداري');
+assert.equal(known.admin.relatedNonTargetRoles[0].decisionApplicable,false);
+assert.equal(known.admin.matchedRoles.some(r=>r.title==='أخصائي إداري'),false);
 const before=wf.getRows();
 wf.setRows([['أخصائي مشتريات',3,0]],null);
 assert.equal(wf.group('procurement').needed,2,'3 workers at 70% rounds to 2, not 3');
 wf.setRows([['أخصائي قانوني',3,0]],null);
 assert.equal(wf.group('legal').needed,2);
 wf.setRows(before.map(x=>[x.title,x.total,x.saudi]),null);
-console.log('PASS: all seven guide-matched groups and legal rounding were verified offline.');
+console.log('PASS: seven guide-matched groups, support-only administrative specialist, and rounding verified offline.');
