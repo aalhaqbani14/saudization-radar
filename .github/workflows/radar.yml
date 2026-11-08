@@ -10,6 +10,9 @@ name: Saudization Radar monitor
       - 'validate_data.py'
       - 'test_monitor.py'
       - 'test_frontend.mjs'
+      - 'test_import.mjs'
+      - 'assets/workforce-import.js'
+      - 'workforce-import.html'
       - 'data/salic-workforce.json'
       - 'data/official-inspections.json'
       - 'data/decisions.json'
@@ -66,6 +69,8 @@ jobs:
           node --check assets/calculator.js
           node --check test_frontend.mjs
           node test_frontend.mjs
+          node --check assets/workforce-import.js
+          node test_import.mjs
           python - <<'PY'
           import json
           from pathlib import Path
