@@ -202,7 +202,7 @@ async function init(){
   }catch(e){msg(e.message||"تعذر التحقق من الملف.","error");$("code-analysis").textContent=""}
  });
  save.addEventListener("click",()=>{if(state.summary)download(state.summary.exportData,"salic-workforce-reviewed.json")});
- saveCode.addEventListener("click",()=>{if(state.summary)download({asOf:state.summary.exportData.asOf,source:"code groups from privately reviewed local file",groups:state.summary.codeTotals},"occupation-code-aggregates.json")});
+ saveCode.addEventListener("click",()=>{if(state.summary)download({asOf:state.summary.exportData.asOf,source:"code groups from privately reviewed local file",groups:state.summary.codeTotals.map(x=>({code:x.code,title:x.title,total:x.total,saudi:x.saudi}))},"occupation-code-aggregates.json")});
 }
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",init,{once:true});else init();
 })(typeof window!=="undefined"?window:null);
