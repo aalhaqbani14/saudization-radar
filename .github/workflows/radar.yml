@@ -12,6 +12,10 @@ name: Saudization Radar monitor
       - 'data/salic-workforce.json'
       - 'data/official-inspections.json'
       - 'data/decisions.json'
+      - 'data/guide-matching.json'
+      - 'assets/workforce-model.js'
+      - 'assets/calculator.js'
+      - 'guide-audit.html'
       - 'data/source-registry.json'
       - '.github/workflows/radar.yml'
   schedule:
@@ -57,6 +61,8 @@ jobs:
           python -m py_compile monitor.py email_templates.py detection.py validate_data.py test_monitor.py
           python validate_data.py
           python -m unittest -v test_monitor
+          node --check assets/workforce-model.js
+          node --check assets/calculator.js
           python - <<'PY'
           import json
           from pathlib import Path
