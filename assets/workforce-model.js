@@ -13,6 +13,9 @@ const groups={
  engineers:["مهندس حاسب آلي"],
  sales:["وسيط سلع مستقبلية"]
 };
+// Organizational category only: these roles are displayed with administrative support,
+// but are excluded from decision 132249 calculations unless official codes later prove otherwise.
+const relatedNonTarget={admin:["أخصائي إداري"]};
 const names={admin:"المهن الإدارية المساندة",procurement:"المشتريات",project:"إدارة المشاريع",marketing:"التسويق",accounting:"المحاسبة",consulting:"الاستشارات",legal:"المهن القانونية",ict:"تقنية المعلومات",engineers:"الهندسة",sales:"المبيعات"};
 // Rates are indicative as of 2026-11-03, NOT a determination of legal scope.
 // 'conditional' groups cannot safely use a combined workforce count to calculate a mandatory gap.
@@ -62,6 +65,8 @@ function load(){
  return Promise.all([workforce,loadOfficial()]).then(([list])=>list);
 }
 function getRows(){return rows||[]}
+function related(id){return (rows||[]).filter(r=>(relatedNonTarget[id]||[]).some(title=>norm(r.title)===norm(title)))}
+function organizationalCategory(title){const n=norm(title);return Object.keys(relatedNonTarget).find(id=>relatedNonTarget[id].some(t=>norm(t)===n))||null}
 function group(id){
  const list=(rows||[]).filter(r=>r.decisionIds.includes(id));
  const total=list.reduce((s,r)=>s+r.total,0),saudi=list.reduce((s,r)=>s+r.saudi,0),other=total-saudi;
@@ -99,17 +104,17 @@ function compact(id){
 function render(id){
  const g=group(id),p=g.policy,record=official(id);
  const rate=Number.isFinite(p.rate)?p.rate+"%":(id==="ict"?"25% لكل مجموعة":"وفق نطاق القرار");
- const others=id==="admin"?(rows||[]).filter(r=>norm(r.title)===norm("أخصائي إداري")):[];
+ const others=related(id);
  const primary=g.list.slice().sort((a,b)=>b.total-a.total||a.title.localeCompare(b.title,"ar"));
- const combined=primary.map(r=>({ ...r,classification:"ضمن قائمة التحليل" })).concat(others.map(r=>({...r,classification:"مهنة إدارية أخرى"})));
- const table=combined.map(r=>'<tr'+(r.classification==="مهنة إدارية أخرى"?' style="background:#f4f8fb"':'')+'><td>'+clean(r.title)+'</td><td>'+r.total+'</td><td>'+r.saudi+'</td><td>'+r.other+'</td><td><small'+(r.classification==="مهنة إدارية أخرى"?' style="color:#466b8a"':' style="color:#126d63"')+'>'+clean(r.classification)+'</small></td></tr>').join("");
+ const combined=primary.map(r=>({ ...r,classification:"ضمن قائمة التحليل" })).concat(others.map(r=>({...r,classification:"ضمن المساندة · غير مشمولة بقرار التوطين"})));
+ const table=combined.map(r=>'<tr'+(r.classification==="ضمن المساندة · غير مشمولة بقرار التوطين"?' style="background:#f4f8fb"':'')+'><td>'+clean(r.title)+'</td><td>'+r.total+'</td><td>'+r.saudi+'</td><td>'+r.other+'</td><td><small'+(r.classification==="مهنة إدارية أخرى"?' style="color:#466b8a"':' style="color:#126d63"')+'>'+clean(r.classification)+'</small></td></tr>').join("");
  const body=table||'<tr><td colspan="5">لا توجد بيانات وظيفية متاحة لهذا القرار.</td></tr>';
  const items=combined.length;
  const total=combined.reduce((a,r)=>a+r.total,0);
  const saudi=combined.reduce((a,r)=>a+r.saudi,0);
  const nonSaudi=total-saudi;
- const subtitle=id==="admin"?"المسميات الوظيفية الإدارية المسجلة لدى سالك · 03/11/2026":"توزيع المسميات الوظيفية ذات الصلة · 03/11/2026";
- const attention=others.length?'<p class="wf-caution">يشمل الجدول «أخصائي إداري» ضمن المهن الإدارية الأخرى، دون احتسابه تلقائيًا ضمن المهن المستهدفة بالقرار. المرجع النظامي هو الرمز المهني المسجل.</p>':
+ const subtitle=id==="admin"?"المهن الإدارية المساندة (المشمولة وغير المشمولة بقرار التوطين) · 03/11/2026":"توزيع المسميات الوظيفية ذات الصلة · 03/11/2026";
+ const attention=others.length?'<p class="wf-caution">مهنة «أخصائي إداري» ضمن مجموعة المهن الإدارية المساندة في التصنيف التنظيمي (' +others.reduce((n,r)=>n+r.total,0)+' موظفًا في لقطة 03/11/2026)، لكن قرار توطين المهن الإدارية المساندة رقم 132249 لم يُطبّق عليها ضمن المهن المستهدفة في الدليل؛ لا تدخل ضمن مقام أو بسط احتساب النسبة أو الفجوة لهذا القرار. إجمالي المشمولين اسميًا بالقرار: '+g.total+' موظفًا، منهم '+g.saudi+' سعوديًا و'+g.other+' غير سعودي. يشترط التحقق من الرمز الفعلي في قوى قبل أي حكم نظامي.</p>':
  '<p class="wf-caution">يعتمد نطاق التوطين النهائي على الرموز المهنية المسجلة وشروط القرار.</p>';
  return '<section class="wf-section" aria-label="التوزيع الوظيفي">'+
  '<div class="wf-head"><div><h3>التوزيع الوظيفي</h3><p>'+clean(subtitle)+'</p></div><a class="wf-cta" href="calculator.html?decision='+encodeURIComponent(id)+'">حاسبة التوطين ↗</a></div>'+
@@ -117,5 +122,5 @@ function render(id){
  '<div class="wf-table-scroll"><table class="wf-table"><thead><tr><th>المسمى الوظيفي</th><th>الإجمالي</th><th>السعوديون</th><th>غير السعوديين</th><th>التصنيف</th></tr></thead><tbody>'+body+'</tbody></table></div>'+
  attention+'</section>';
 }
-window.SalicWorkforce={names,groups,policies,norm,titleIds,setRows,setOfficialRecords,loadOfficial,official,load,getRows,group,header,compact,render};
+window.SalicWorkforce={names,groups,relatedNonTarget,organizationalCategory,related,policies,norm,titleIds,setRows,setOfficialRecords,loadOfficial,official,load,getRows,group,header,compact,render};
 })();
