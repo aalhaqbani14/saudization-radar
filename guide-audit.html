@@ -23,6 +23,12 @@ function wageLabel(d){
  if(d.id==="ict")return "أجر السعودي للاحتساب: "+w.engineering.toLocaleString("ar-SA")+" ريال للهندسة، "+w.development.toLocaleString("ar-SA")+" ريال للتطوير، "+w.support.toLocaleString("ar-SA")+" ريال للدعم الفني.";
  return "";
 }
+function extraSupportRoles(d,filter){
+ const other=(d.relatedNonTargetRoles||[]).filter(x=>!filter||x.title.includes(filter));
+ if(!other.length)return "";
+ const v=stats(other);
+ return '<section style="background:#f5f8fa;border:1px solid #dbe5eb;border-radius:12px;padding:14px;margin-top:16px"><h3>ضمن المهن الإدارية المساندة · غير مشمولة بالقرار</h3><p class="muted">هذه المهن ضمن مجموعة المساندة للعرض وتصنيف القوى العاملة، لكنها <strong>غير خاضعة لحساب قرار 132249</strong>، ولا تدخل في أعداد أو نسبة أو فجوة المهن المستهدفة المذكورة أعلاه.</p><div class="row"><span class="fact">الإجمالي غير المشمول: <b>'+v.total+'</b></span><span class="fact">السعوديون: <b>'+v.saudi+'</b></span><span class="fact">غير السعوديين: <b>'+(v.total-v.saudi)+'</b></span></div><div class="scroll"><table><thead><tr><th>المسمى</th><th>الإجمالي</th><th>السعوديون</th><th>غير السعوديين</th><th>الحالة</th></tr></thead><tbody>'+other.map(x=>{const r=rows[x.title]||[x.title,0,0];return '<tr><td>'+esc(x.title)+'</td><td>'+r[1]+'</td><td>'+r[2]+'</td><td>'+(r[1]-r[2])+'</td><td>لا يُطبق عليه قرار المساندة</td></tr>'}).join("")+'</tbody></table></div><p class="muted">عند ظهور رمز مهني فعلي مختلف في قوى، تُراجع النتيجة قبل اعتمادها.</p></section>';
+}
 function rowsHtml(d,filter){
  let arr=d.matchedRoles.filter(x=>!filter||(x.title+" "+x.code).includes(filter));
  if(!arr.length)return '<p class="muted">لا توجد نتائج مطابقة لهذا البحث.</p>';
@@ -30,7 +36,7 @@ function rowsHtml(d,filter){
 }
 function render(){
  const filter=$('search').value.trim(),which=$('which').value;
- const selected=rules.filter(d=>which==="all"||d.id===which).filter(d=>!filter||d.title.includes(filter)||d.matchedRoles.some(x=>(x.title+" "+x.code).includes(filter)));
+ const selected=rules.filter(d=>which==="all"||d.id===which).filter(d=>!filter||d.title.includes(filter)||d.matchedRoles.some(x=>(x.title+" "+x.code).includes(filter))||(d.relatedNonTargetRoles||[]).some(x=>x.title.includes(filter)));
  $('intro').textContent=selected.length+' قرار/مجموعة ضمن نتيجة العرض. المسميات المطابقة تُقارن نصيًا فقط، وليست أكواد الموظفين المثبتة.';
  $('results').innerHTML=selected.map(d=>{
  let info='<article><h2>'+esc(d.title)+' <span class="key">'+d.percent+'%</span><span class="status">مشروط</span></h2><p class="muted">'+esc(d.rule)+'</p>';
@@ -39,6 +45,7 @@ function render(){
  if(d.grouped){for(const name of ["engineering","development","support"]){const a=d.matchedRoles.filter(x=>x.subgroup===name);info+='<h3>'+esc(subnames[name])+'</h3>'+labelStats(d,a)}}
  else info+=labelStats(d,d.matchedRoles);
  info+=rowsHtml(d,filter);
+ if(d.id==="admin")info+=extraSupportRoles(d,filter);
  info+='<p class="muted">جميع الأرقام أولية، والحد الأدنى لأجر السعوديين والاعتماد المهني وبيانات الكيان والرموز الفعلية لا تزال بحاجة توثيق. '+(d.sourceUrl?'<a target="_blank" rel="noopener noreferrer" href="'+esc(d.sourceUrl)+'">المصدر الحكومي المرتبط</a>':'')+'</p></article>';
  return info;
  }).join('')||'<p class="muted">لا توجد نتائج.</p>';
