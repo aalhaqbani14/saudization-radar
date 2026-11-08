@@ -54,7 +54,7 @@ function isSaudi(value,label,row){
  if(["سعودي","سعودية","السعودية","المملكة العربية السعودية","saudi","saudi arabia","ksa","sa"].includes(v))return true;
  if(["غير سعودي","غير سعودية","non saudi","non saudi arabian","expat","expatriate"].includes(v))return false;
  if(v.length<3||/^[0-9]+$/.test(v))throw Error("الجنسية غير صالحة في صف "+row);
- return true===false; // Any named non-Saudi nationality is non-Saudi.
+ return false; // Any explicitly named, valid non-Saudi nationality is non-Saudi.
 }
 function summarize(text,asOf){
  const csv=parseCSV(text),h=csv[0],raw=csv.slice(1);
@@ -68,7 +68,9 @@ function summarize(text,asOf){
  if(title<0)throw Error("لم أجد عمود المسمى الوظيفي");
  const grouped=count>=0&&saudi>=0;
  if(!grouped&&national<0&&flag<0)throw Error("يلزم عمود الجنسية أو سعودي؟ لكل موظف، أو عمودا الإجمالي والسعوديين");
- if(!/^20\d{2}-\d{2}-\d{2}$/.test(asOf)||!Number.isFinite(Date.parse(asOf+"T00:00:00Z")))throw Error("اختر تاريخ لقطة صحيحًا بصيغة YYYY-MM-DD");
+ if(!/^20\d{2}-\d{2}-\d{2}$/.test(asOf))throw Error("اختر تاريخ لقطة صحيحًا بصيغة YYYY-MM-DD");
+ const checkDate=new Date(asOf+"T00:00:00Z");
+ if(!Number.isFinite(checkDate.getTime())||checkDate.toISOString().slice(0,10)!==asOf)throw Error("تاريخ لقطة غير موجود في التقويم");
  const titles=new Map(),codes=new Map(),seenIDs=new Set();let unknownCodes=0;
  for(let j=0;j<raw.length;j++){
   const r=raw[j],line=j+2,t=String(r[title]||"").trim().replace(/\s+/g," ");
@@ -102,20 +104,28 @@ function summarize(text,asOf){
  return {mode:grouped?"aggregate":"employees",exportData,codeTotals:[...codes.values()],unverifiedCodes:unknownCodes};
 }
 function auditCodes(summary,guide){
- const rows=summary.codeTotals||[],checks=[];
+ const rows=summary.codeTotals||[],checks=[],asOf=summary.exportData?.asOf||"";
  for(const decision of guide.decisions||[]){
   const match=new Map(decision.matchedRoles.map(r=>[r.code,r]));
   const subGroups=decision.grouped?["engineering","development","support"]:[null];
   for(const sg of subGroups){
    const found=rows.filter(x=>match.has(x.code)&&(!sg||match.get(x.code).subgroup===sg));
    const total=found.reduce((n,x)=>n+x.total,0),saudi=found.reduce((n,x)=>n+x.saudi,0);
-   const min=decision.min,pct=decision.percent,active=total>=min;
-   const desired=active?(decision.rounding==="nearest"?Math.round(total*pct/100):Math.ceil(total*pct/100)):null;
-   checks.push({decisionId:decision.id,title:decision.title+(sg?" · "+sg:""),total,saudi,nonSaudi:total-saudi,required:desired,numericGap:desired===null?null:Math.max(0,desired-saudi),warning:"استرشادي فقط: لا يثبت الأجر أو الاعتماد أو النشاط أو استيفاء المراحل، وقد توجد أكواد غير مدخلة في الملف."});
+   let min=decision.min,pct=decision.percent,reason="";
+   if(asOf<decision.effective)reason="القرار/المرحلة لم يبدأ تطبيقها وقت اللقطة.";
+   if(decision.id==="accounting"){
+     const phases=(decision.phases||[]).filter(p=>p[0]<=asOf&&p[2]<=total).sort((a,b)=>b[0].localeCompare(a[0]));
+     if(phases.length){pct=phases[0][1];min=phases[0][2];reason="";}
+     else reason="لا توجد مرحلة محاسبية سارية لهذا العدد بتاريخ اللقطة.";
+   }
+   const active=total>=min&&!reason,desired=active?(decision.rounding==="nearest"?Math.round(total*pct/100):Math.ceil(total*pct/100)):null;
+   const mismatches=found.filter(x=>canon(x.title)!==canon(match.get(x.code).title));
+   checks.push({decisionId:decision.id,title:decision.title+(sg?" · "+sg:""),total,saudi,nonSaudi:total-saudi,rate:pct,required:desired,numericGap:desired===null?null:Math.max(0,desired-saudi),titleMismatchCount:mismatches.length,provisional:summary.unverifiedCodes>0||mismatches.length>0,reason:reason||"تحتاج مطابقة الأجر والاعتماد والنشاط وشروط الدليل والرمز الفعلي في قوى.",warning:"استرشادي فقط: لا يثبت الأجر أو الاعتماد أو النشاط أو استيفاء المراحل، وقد توجد أكواد غير مدخلة في الملف."});
   }
  }
  return checks;
 }
+
 function download(data,filename){
  const blob=new Blob(["\ufeff"+JSON.stringify(data,null,2)+"\n"],{type:"application/json;charset=utf-8"});
  const url=URL.createObjectURL(blob),a=document.createElement("a");
@@ -143,7 +153,9 @@ async function init(){
     try{
       if(!state.guide){const r=await fetch("data/guide-matching.json",{cache:"no-store"});if(!r.ok)throw Error("No guide");state.guide=await r.json()}
       const checks=auditCodes(res,state.guide).filter(x=>x.total>0);
-      $("code-analysis").textContent=checks.length?checks.map(x=>x.title+": "+x.total+" موظف، "+x.saudi+" سعودي، فجوة حسابية "+(x.numericGap??"دون حد العدد")).join("\n"):"لا توجد رموز من الأدلة المراجعة في الملف، أو لم تُدخل أكواد المهن.";
+      const mismatchCount=checks.reduce((a,x)=>a+x.titleMismatchCount,0);
+      if(mismatchCount)msg("تنبيه: توجد "+mismatchCount+" اختلافات بين رمز المهنة والمسمى في الدليل؛ راجعها قبل الاعتماد.","warn");
+      $("code-analysis").textContent=checks.length?checks.map(x=>x.title+": "+x.total+" موظف، "+x.saudi+" سعودي، فجوة تخطيطية "+(x.numericGap??"غير قابلة للحساب الآن")+"، النسبة المرجعية: "+x.rate+"%"+(x.provisional?" · مراجعة الرموز مطلوبة":"")).join("\n"):"لا توجد رموز من الأدلة المراجعة في الملف، أو لم تُدخل أكواد المهن.";
     }catch(e){$("code-analysis").textContent="تعذر تحميل دليل الأكواد؛ يبقى ملخص الموظفين صالحًا للتنزيل بعد المراجعة."}
     msg("اكتمل التحقق الحسابي المحلي. راجع النتائج قبل تنزيل أي ملف مجمع.","ok");
     save.disabled=false;saveCode.disabled=res.codeTotals.length===0;
