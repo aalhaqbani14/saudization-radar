@@ -9,6 +9,7 @@ name: Saudization Radar monitor
       - 'email_templates.py'
       - 'validate_data.py'
       - 'test_monitor.py'
+      - 'test_frontend.mjs'
       - 'data/salic-workforce.json'
       - 'data/official-inspections.json'
       - 'data/decisions.json'
@@ -63,6 +64,8 @@ jobs:
           python -m unittest -v test_monitor
           node --check assets/workforce-model.js
           node --check assets/calculator.js
+          node --check test_frontend.mjs
+          node test_frontend.mjs
           python - <<'PY'
           import json
           from pathlib import Path
