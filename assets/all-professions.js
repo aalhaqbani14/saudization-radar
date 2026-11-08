@@ -8,7 +8,7 @@ const clean=v=>window.SalicWorkforce.norm(v);
 const labels=window.SalicWorkforce.names;
 function csv(v){let s=String(v??"");if(/^[=+@-]/.test(s))s="'"+s;return '"'+s.replace(/"/g,'""')+'"';}
 function makeDownload(rows){
- const data=[["المسمى المهني","الإجمالي","السعوديون","غير السعوديين","نسبة السعوديين","القرارات المحتملة في الفهرس","حالة الربط"],...rows.map(r=>[r.title,r.total,r.saudi,r.other,pct(r.saudi,r.total),r.decisionIds.map(id=>labels[id]).join("؛ "),r.decisionIds.length?"ارتباط محتمل بالقرار":"غير مرتبط بقرار في الفهرس الحالي"])];
+ const data=[["المسمى المهني","الإجمالي","السعوديون","غير السعوديين","نسبة السعوديين","القرارات المحتملة في الفهرس","حالة الربط"],...rows.map(r=>[r.title,r.total,r.saudi,r.other,pct(r.saudi,r.total),r.decisionIds.map(id=>labels[id]).join("؛ ")||(window.SalicWorkforce.organizationalCategory(r.title)==="admin"?"المهن الإدارية المساندة (تصنيف فقط)":"") ,r.decisionIds.length?"ارتباط محتمل بالقرار":window.SalicWorkforce.organizationalCategory(r.title)==="admin"?"ضمن المساندة، لا يُطبّق عليها قرار التوطين":"غير مرتبط بقرار في الفهرس الحالي"])];
  const blob=new Blob(["\ufeff"+data.map(row=>row.map(csv).join(",")).join("\r\n")],{type:"text/csv;charset=utf-8"});
  const href=URL.createObjectURL(blob),a=document.createElement("a");a.href=href;a.download="salic-all-75-professions-2026-11-03.csv";document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(href),1200);
 }
@@ -30,7 +30,7 @@ function create(root,rows){
   shown.sort((a,b)=>sort==="alpha"?a.title.localeCompare(b.title,"ar"):sort==="other"?b.other-a.other||b.total-a.total:b.total-a.total||a.title.localeCompare(b.title,"ar"));
   const subtotal=shown.reduce((s,r)=>s+r.total,0);
   el("caption").textContent="النتائج: "+number(shown.length)+" من "+number(sorted.length)+" مهنة، تضم "+number(subtotal)+" موظفاً. الإجمالي العام ثابت: "+number(totals.total)+" موظفاً.";
-  el("rows").innerHTML=shown.length?shown.map(r=>'<tr><td><strong>'+esc(r.title)+'</strong></td><td class="srb-num">'+number(r.total)+'</td><td class="srb-num">'+number(r.saudi)+'</td><td class="srb-num">'+number(r.other)+'</td><td class="srb-num">'+pct(r.saudi,r.total)+'</td><td>'+(r.decisionIds.length?'<span class="srb-tag">ربط مبدئي: '+esc(r.decisionIds.map(id=>labels[id]||id).join("، "))+'</span>':'<span class="srb-tag srb-muted">غير مربوط بقرار في الفهرس الحالي</span>')+'</td></tr>').join(""):'<tr><td colspan="6" class="srb-empty">لا توجد مهن ضمن النتائج.</td></tr>';
+  el("rows").innerHTML=shown.length?shown.map(r=>'<tr><td><strong>'+esc(r.title)+'</strong></td><td class="srb-num">'+number(r.total)+'</td><td class="srb-num">'+number(r.saudi)+'</td><td class="srb-num">'+number(r.other)+'</td><td class="srb-num">'+pct(r.saudi,r.total)+'</td><td>'+(r.decisionIds.length?'<span class="srb-tag">ربط مبدئي: '+esc(r.decisionIds.map(id=>labels[id]||id).join("، "))+'</span>':(window.SalicWorkforce.organizationalCategory(r.title)==="admin"?'<span class="srb-tag srb-muted">الإدارية المساندة · غير خاضعة لقرار المساندة</span>':'<span class="srb-tag srb-muted">غير مربوط بقرار في الفهرس الحالي</span>'))+'</td></tr>').join(""):'<tr><td colspan="6" class="srb-empty">لا توجد مهن ضمن النتائج.</td></tr>';
  }
  for(const control of ["query","filter","sort"])el(control).addEventListener(control==="query"?"input":"change",draw);
  el("export").addEventListener("click",()=>makeDownload(shown));
