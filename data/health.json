@@ -1,162 +1,162 @@
 {
-  "checked_at": "2026-11-08T08:00:51.759718+00:00",
+  "checked_at": "2026-11-08T14:46:20.896388+00:00",
   "total_sources": 17,
   "successful_sources": 17,
   "failed_sources": 0,
-  "signal_count": 0,
+  "signal_count": 4,
   "sources": [
     {
       "name": "أخبار الوزارة",
       "url": "https://www.hrsd.gov.sa/media-center/news",
       "kind": "index",
       "status": "ok",
-      "changed": false,
+      "changed": true,
       "first_baseline": false,
-      "last_success_at": "2026-11-08T08:00:51.759718+00:00"
+      "last_success_at": "2026-11-08T14:46:20.896388+00:00"
     },
     {
       "name": "الأدلة الإجرائية",
       "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/evidence",
       "kind": "index",
       "status": "ok",
-      "changed": false,
+      "changed": true,
       "first_baseline": false,
-      "last_success_at": "2026-11-08T08:00:51.759718+00:00"
+      "last_success_at": "2026-11-08T14:46:20.896388+00:00"
     },
     {
       "name": "قرار: المهن الإدارية المساندة",
       "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-المهن-الإدارية-المساندة",
       "kind": "decision_page",
       "status": "ok",
-      "changed": false,
+      "changed": true,
       "first_baseline": false,
-      "last_success_at": "2026-11-08T08:00:51.759718+00:00"
+      "last_success_at": "2026-11-08T14:46:20.896388+00:00"
     },
     {
       "name": "قرار: المهن المحاسبية",
       "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-المهن-المحاسبية",
       "kind": "decision_page",
       "status": "ok",
-      "changed": false,
+      "changed": true,
       "first_baseline": false,
-      "last_success_at": "2026-11-08T08:00:51.759718+00:00"
+      "last_success_at": "2026-11-08T14:46:20.896388+00:00"
     },
     {
       "name": "قرار: مهن إدارة المشاريع",
       "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لتوطين-مهن-إدارة-المشاريع",
       "kind": "decision_page",
       "status": "ok",
-      "changed": false,
+      "changed": true,
       "first_baseline": false,
-      "last_success_at": "2026-11-08T08:00:51.759718+00:00"
+      "last_success_at": "2026-11-08T14:46:20.896388+00:00"
     },
     {
       "name": "قرار: مهن المشتريات",
       "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لتوطين-مهن-المشتريات",
       "kind": "decision_page",
       "status": "ok",
-      "changed": false,
+      "changed": true,
       "first_baseline": false,
-      "last_success_at": "2026-11-08T08:00:51.759718+00:00"
+      "last_success_at": "2026-11-08T14:46:20.896388+00:00"
     },
     {
       "name": "قرار: مهن المبيعات",
       "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لتوطين-مهن-المبيعات",
       "kind": "decision_page",
       "status": "ok",
-      "changed": false,
+      "changed": true,
       "first_baseline": false,
-      "last_success_at": "2026-11-08T08:00:51.759718+00:00"
+      "last_success_at": "2026-11-08T14:46:20.896388+00:00"
     },
     {
       "name": "قرار: مهنة مشرف مسكن",
       "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-مهنة-مشرف-مسكن",
       "kind": "decision_page",
       "status": "ok",
-      "changed": false,
+      "changed": true,
       "first_baseline": false,
-      "last_success_at": "2026-11-08T08:00:51.759718+00:00"
+      "last_success_at": "2026-11-08T14:46:20.896388+00:00"
     },
     {
       "name": "مرجع إضافي: المشتريات والعقود والمستودعات",
       "url": "https://www.hrsd.gov.sa/media-center/news/رفع-نسبة-التوطين-في-مهن-المشتريات",
       "kind": "decision_page",
       "status": "ok",
-      "changed": false,
+      "changed": true,
       "first_baseline": false,
-      "last_success_at": "2026-11-08T08:00:51.759718+00:00"
+      "last_success_at": "2026-11-08T14:46:20.896388+00:00"
     },
     {
       "name": "مرجع إضافي: مهن إدارة المشاريع",
       "url": "https://www.hrsd.gov.sa/media-center/news/رفع-نسب-توطين-مهن-إدارة-المشاريع-0",
       "kind": "decision_page",
       "status": "ok",
-      "changed": false,
+      "changed": true,
       "first_baseline": false,
-      "last_success_at": "2026-11-08T08:00:51.759718+00:00"
+      "last_success_at": "2026-11-08T14:46:20.896388+00:00"
     },
     {
       "name": "مرجع إضافي: مهن التسويق",
       "url": "https://www.hrsd.gov.sa/media-center/news/التوطين-في-مهن-التسويق-والمبيعات",
       "kind": "decision_page",
       "status": "ok",
-      "changed": false,
+      "changed": true,
       "first_baseline": false,
-      "last_success_at": "2026-11-08T08:00:51.759718+00:00"
+      "last_success_at": "2026-11-08T14:46:20.896388+00:00"
     },
     {
       "name": "مرجع إضافي: المهن الهندسية",
       "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-المهن-الهندسية",
       "kind": "decision_page",
       "status": "ok",
-      "changed": false,
+      "changed": true,
       "first_baseline": false,
-      "last_success_at": "2026-11-08T08:00:51.759718+00:00"
+      "last_success_at": "2026-11-08T14:46:20.896388+00:00"
     },
     {
       "name": "مرجع إضافي: المهن الفنية الهندسية",
       "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-المهن-الفنية-الهندسية",
       "kind": "decision_page",
       "status": "ok",
-      "changed": false,
+      "changed": true,
       "first_baseline": false,
-      "last_success_at": "2026-11-08T08:00:51.759718+00:00"
+      "last_success_at": "2026-11-08T14:46:20.896388+00:00"
     },
     {
       "name": "مرجع إضافي: الاتصالات وتقنية المعلومات",
       "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-مهن-الاتصالات-وتقنية",
       "kind": "decision_page",
       "status": "ok",
-      "changed": false,
+      "changed": true,
       "first_baseline": false,
-      "last_success_at": "2026-11-08T08:00:51.759718+00:00"
+      "last_success_at": "2026-11-08T14:46:20.896388+00:00"
     },
     {
       "name": "مرجع إضافي: المهن القانونية",
       "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الاجرائي-لقرار-توطين-المهن-القانونية",
       "kind": "decision_page",
       "status": "ok",
-      "changed": false,
+      "changed": true,
       "first_baseline": false,
-      "last_success_at": "2026-11-08T08:00:51.759718+00:00"
+      "last_success_at": "2026-11-08T14:46:20.896388+00:00"
     },
     {
       "name": "مرجع إضافي: مهن الاستشارات والأعمال",
       "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/1170120",
       "kind": "decision_page",
       "status": "ok",
-      "changed": false,
+      "changed": true,
       "first_baseline": false,
-      "last_success_at": "2026-11-08T08:00:51.759718+00:00"
+      "last_success_at": "2026-11-08T14:46:20.896388+00:00"
     },
     {
       "name": "مرجع إضافي: مهن خدمة العملاء",
       "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-مهن-خدمة-العملاء",
       "kind": "decision_page",
       "status": "ok",
-      "changed": false,
+      "changed": true,
       "first_baseline": false,
-      "last_success_at": "2026-11-08T08:00:51.759718+00:00"
+      "last_success_at": "2026-11-08T14:46:20.896388+00:00"
     }
   ],
   "coverage_notice": "هذه حالة تشغيل الرصد فقط ولا تثبت حداثة القرارات أو اكتمال تغطية الوزارة."
