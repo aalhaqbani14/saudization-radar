@@ -47,20 +47,20 @@ function isSaudi(value,label,row){
  const v=canon(value);
  if(!v||["غير محدد","unknown","n a","na","-","null"].includes(v))throw Error("الجنسية غير واضحة في صف "+row);
  if(label==="flag"){
-  if(["1","yes","true","y","نعم","سعودي","سعودية"].includes(v))return true;
-  if(["0","no","false","n","لا","غير سعودي","غير سعودية"].includes(v))return false;
+  if(["1","yes","true","y","نعم","سعودي","سعودية"].map(canon).includes(v))return true;
+  if(["0","no","false","n","لا","غير سعودي","غير سعودية"].map(canon).includes(v))return false;
   throw Error("قيمة عمود سعودي؟ غير واضحة في صف "+row);
  }
- if(["سعودي","سعودية","السعودية","المملكة العربية السعودية","saudi","saudi arabia","ksa","sa"].includes(v))return true;
- if(["غير سعودي","غير سعودية","non saudi","non saudi arabian","expat","expatriate"].includes(v))return false;
+ if(["سعودي","سعودية","السعودية","المملكة العربية السعودية","saudi","saudi arabia","ksa","sa"].map(canon).includes(v))return true;
+ if(["غير سعودي","غير سعودية","non saudi","non saudi arabian","expat","expatriate"].map(canon).includes(v))return false;
  if(v.length<3||/^[0-9]+$/.test(v))throw Error("الجنسية غير صالحة في صف "+row);
  return false; // Any explicitly named, valid non-Saudi nationality is non-Saudi.
 }
 function accreditation(value){
  const v=canon(value);
  if(!v)return null;
- if(["نعم","ساري","معتمد","معتمدة","yes","true","approved","certified","1"].includes(v))return true;
- if(["لا","غير معتمد","غير معتمدة","غير ساري","no","false","not accredited","0"].includes(v))return false;
+ if(["نعم","ساري","معتمد","معتمدة","yes","true","approved","certified","1"].map(canon).includes(v))return true;
+ if(["لا","غير معتمد","غير معتمدة","غير ساري","no","false","not accredited","0"].map(canon).includes(v))return false;
  return null;
 }
 function degreeLevel(value){
