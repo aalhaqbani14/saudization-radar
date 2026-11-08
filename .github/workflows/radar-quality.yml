@@ -10,6 +10,16 @@ name: Radar quality checks
       - 'data/decisions.json'
       - 'data/occupations.json'
       - 'data/source-registry.json'
+      - 'assets/workforce-import.js'
+      - 'assets/workforce-model.js'
+      - 'test_import.mjs'
+      - 'test_frontend.mjs'
+      - 'validate_data.py'
+      - 'email_probe.py'
+      - 'data/guide-matching.json'
+      - 'workforce-import.html'
+      - 'decision-audit.html'
+      - 'index.html'
       - '.github/workflows/radar-quality.yml'
   workflow_dispatch:
 permissions:
@@ -22,7 +32,22 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
       - name: Compile Python modules
-        run: python -m py_compile monitor.py detection.py email_templates.py
+        run: python -m py_compile monitor.py detection.py email_templates.py validate_data.py email_probe.py
+      - name: Verify aggregate and legal reference data
+        run: python validate_data.py
       - name: Run offline monitoring and data tests
-        run: python -m unittest -v test_monitor_health.py test_detection.py test_email_templates.py test_data_quality.py
+        run: python -m unittest -v test_monitor.py test_monitor_health.py test_detection.py test_email_templates.py test_data_quality.py
+      - name: Frontend syntax and local secure-import regression tests
+        run: |
+          node --check assets/workforce-model.js
+          node --check assets/workforce-import.js
+          node --check assets/calculator.js
+          node --check test_frontend.mjs
+          node --check test_import.mjs
+          node test_frontend.mjs
+          node test_import.mjs
