@@ -15,6 +15,14 @@ function labelStats(d,roles){
  let gap=active?Math.max(0,required(v.total,d.percent,d.rounding)-v.saudi):null;
  return '<div class="row"><span class="fact">المطابقون بالاسم <b>'+v.total+'</b></span><span class="fact">سعوديون <b>'+v.saudi+'</b></span><span class="fact">غير سعوديين <b>'+(v.total-v.saudi)+'</b></span><span class="fact">'+esc(calc)+'</span><span class="fact">'+(gap===null?"فجوة: غير قابلة للاحتساب بسبب الحد العددي":"الفجوة الحسابية المشروطة: <b>"+gap+"</b>")+'</span></div>'
 }
+function wageLabel(d){
+ const w=d.minimumEligibleSaudiWage;
+ if(!w)return "";
+ if(typeof w==="number")return "الحد الأدنى لأجر السعودي المحتسب: "+w.toLocaleString("ar-SA")+" ريال.";
+ if(d.id==="accounting")return "أجر السعودي للاحتساب: "+w.bachelor.toLocaleString("ar-SA")+" ريال للبكالوريوس أو "+w.diploma.toLocaleString("ar-SA")+" ريال للدبلوم، مع الاعتماد المهني.";
+ if(d.id==="ict")return "أجر السعودي للاحتساب: "+w.engineering.toLocaleString("ar-SA")+" ريال للهندسة، "+w.development.toLocaleString("ar-SA")+" ريال للتطوير، "+w.support.toLocaleString("ar-SA")+" ريال للدعم الفني.";
+ return "";
+}
 function rowsHtml(d,filter){
  let arr=d.matchedRoles.filter(x=>!filter||(x.title+" "+x.code).includes(filter));
  if(!arr.length)return '<p class="muted">لا توجد نتائج مطابقة لهذا البحث.</p>';
@@ -27,6 +35,7 @@ function render(){
  $('results').innerHTML=selected.map(d=>{
  let info='<article><h2>'+esc(d.title)+' <span class="key">'+d.percent+'%</span><span class="status">مشروط</span></h2><p class="muted">'+esc(d.rule)+'</p>';
  info+='<p class="muted">بدء التطبيق المرجعي: '+esc(d.effective)+' · حد العدد: '+d.min+' · صفحات الدليل: '+esc(d.sourcePage)+' · التقريب: '+(d.rounding==="nearest"?"لأقرب عدد صحيح":"وفق طبيعة القرار")+'</p>';
+ if(wageLabel(d))info+='<p class="muted"><strong>'+esc(wageLabel(d))+'</strong></p>';
  if(d.grouped){for(const name of ["engineering","development","support"]){const a=d.matchedRoles.filter(x=>x.subgroup===name);info+='<h3>'+esc(subnames[name])+'</h3>'+labelStats(d,a)}}
  else info+=labelStats(d,d.matchedRoles);
  info+=rowsHtml(d,filter);
