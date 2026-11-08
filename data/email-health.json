@@ -1,0 +1,7 @@
+{
+  "tested_at": "2026-11-08T07:46:55.630141+00:00",
+  "status": "smtp_accepted",
+  "smtp_accepted": true,
+  "recipient_delivery_confirmed": false,
+  "public_notice": "قبل خادم SMTP رسالة المحاكاة. يلزم تأكيد وصولها إلى صندوق الوارد يدويًا."
+}
