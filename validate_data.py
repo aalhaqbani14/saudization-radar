@@ -48,6 +48,13 @@ def main():
   assert len({r['code'] for r in roles})==len(roles),'Duplicate official code inside decision'
   assert len({r['title'] for r in roles})==len(roles),'Duplicate job title inside decision'
   assert all(r['title'] in names and len(r['code'])==6 and r['code'].isdigit() for r in roles),'Code mapping not tied to published title'
+  excluded=decision.get('relatedNonTargetRoles',[])
+  assert all(x['decisionApplicable'] is False and x['title'] in names for x in excluded)
+  assert not ({x['title'] for x in excluded} & {x['title'] for x in roles}), 'Non-target organizational roles must not enter decision counts'
+  if decision['id']=='admin':
+   assert {x['title'] for x in excluded}=={'أخصائي إداري'}
+   specialist=next(row for row in rows if row[0]=='أخصائي إداري')
+   assert specialist[1:]==[17,15]
   if decision.get('grouped'):
    assert all(r.get('subgroup') in ('engineering','development','support') for r in roles)
   if decision.get('phases'):
