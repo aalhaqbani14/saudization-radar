@@ -25,11 +25,14 @@ function calculate(){
  $("error").hidden=valid;
  $("result").hidden=!valid;
  if(!valid){$("error").textContent="أدخل إجمالي وسعوديين بأعداد صحيحة غير سالبة، بشرط ألا يزيد السعوديون عن الإجمالي، ونسبة بين 0 و100.";return}
- const required=Math.ceil(t*r/100),gap=Math.max(0,required-s);
- $("out-saudi").textContent=s;$("out-other").textContent=t-s;$("out-required").textContent=required;$("out-gap").textContent=gap;
  const id=currentDecision(),p=policies[id];
+ // Several uploaded procedural guides explicitly round to the nearest integer (0.5 upwards).
+ // A custom, unverified or future decision remains conservative and uses ceil.
+ const required=p&&p.rounding==="nearest"?Math.round(t*r/100):Math.ceil(t*r/100);
+ const gap=Math.max(0,required-s);
+ $("out-saudi").textContent=s;$("out-other").textContent=t-s;$("out-required").textContent=required;$("out-gap").textContent=gap;
  const qualifier=!p?"هذا حساب حر، ولا يمثل نسبة قانونية ملزمة.":p.kind==="future"?"النسبة المختارة من المرحلة القادمة (2027). الفجوة للتخطيط فقط ولا تعتبر مخالفة اليوم.":p.kind==="grouped"||p.kind==="sector"?"لا يمكن احتساب فجوة إلزامية مجمعة لهذه المجموعة؛ هذا سيناريو اختياري فقط.":t<p.min?"العدد المدخل أقل من حد نطاق القرار المسجل؛ النتيجة افتراضية وليست دليلاً على سريان القرار.":"النتيجة حسابية فقط؛ لا تثبت نسبة امتثال الشركة قبل مراجعة الرموز والكيان والأجر والضوابط.";
- $("out-note").textContent=(gap?"قد تحتاج نظرياً إلى "+gap+" سعوديين إضافيين للوصول للنسبة المختارة وفق هذا المثال. ":"لا تظهر فجوة رياضية في المثال المختار. ")+qualifier;
+ $("out-note").textContent=(gap?"قد تحتاج نظرياً إلى "+gap+" سعوديين إضافيين للوصول للنسبة المختارة وفق هذا المثال. ":"لا تظهر فجوة رياضية في المثال المختار. ")+(p&&p.rounding==="nearest"?"التقريب لأقرب عدد صحيح حسب الدليل؛ من 0.5 فأعلى إلى الأعلى. ":"الاحتساب بالتقريب للأعلى كافتراض تحفظي وليس قاعدة رسمية مؤكدة لهذا الخيار. ")+qualifier;
 }
 function loadOfficialCounts(){
  const record=window.SalicWorkforce.official(currentDecision());if(!record){$("rate-help").textContent="لا يتوفر مرجع رقابي لهذه المجموعة.";return}
