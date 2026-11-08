@@ -1,0 +1,60 @@
+name: Saudization Radar email channel test
+
+'on':
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/radar-email-check.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: saudization-radar-email-probe
+  cancel-in-progress: false
+
+jobs:
+  test-smtp:
+    runs-on: ubuntu-latest
+    env:
+      SMTP_HOST: smtp.gmail.com
+      SMTP_PORT: '465'
+      SMTP_USER: ${{ secrets.RADAR_SMTP_USER || secrets.SMTP_USER }}
+      SMTP_PASSWORD: ${{ secrets.RADAR_SMTP_PASSWORD || secrets.SMTP_PASSWORD }}
+      ALERT_EMAIL: ${{ secrets.RADAR_EMAIL_TO || secrets.ALERT_EMAIL }}
+      SMTP_FROM: ${{ secrets.RADAR_EMAIL_FROM || secrets.SMTP_FROM }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test email route with fictitious example only
+        id: mail
+        continue-on-error: true
+        run: |
+          python -m py_compile monitor.py email_templates.py email_probe.py
+          python email_probe.py
+      - name: Save safe SMTP status (no addresses or passwords)
+        if: always()
+        run: |
+          if [ -f data/email-health.json ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data/email-health.json
+            if ! git diff --cached --quiet; then
+              git commit -m "Record sanitized email channel test status"
+              for attempt in 1 2 3; do
+                if git pull --rebase origin main && git push origin HEAD:main; then
+                  exit 0
+                fi
+                sleep 4
+              done
+              exit 1
+            fi
+          fi
+      - name: Report failed SMTP connection
+        if: steps.mail.outcome == 'failure'
+        run: |
+          echo "::error::SMTP test failed. See GitHub Secrets configuration. The public status shows only the outcome."
+          exit 1
