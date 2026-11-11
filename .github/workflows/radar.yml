@@ -19,6 +19,9 @@ name: Saudization Radar monitor
       - 'test_executive.mjs'
       - 'test_operations.mjs'
       - 'test_operations_auto.mjs'
+      - 'test_salic_scope.mjs'
+      - 'assets/intelligence.js'
+      - 'assets/salic.js'
       - 'assets/operations-auto.js'
       - 'test_operations_team.mjs'
       - 'assets/operations-team.js'
@@ -98,6 +101,8 @@ jobs:
           node --check assets/operations-auto.js
           node --check test_operations_auto.mjs
           node test_operations_auto.mjs
+          node --check test_salic_scope.mjs
+          node test_salic_scope.mjs
           node --check assets/operations-team.js
           node --check test_operations_team.mjs
           node test_operations_team.mjs
