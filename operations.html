@@ -92,7 +92,7 @@ function render(board){
    '<span class="metric">مطابقون نصيًا: <strong>'+num(x.total)+'</strong></span><span class="metric">سعوديون: <strong>'+num(x.saudi)+'</strong></span><span class="metric">غير سعوديين: <strong>'+num(x.other)+'</strong></span>';
   const gap=x.gap!==null&&x.groupStatus!=="future"?'<span class="metric">فجوة حسابية: <strong>'+num(x.gap)+'</strong> (غير معتمدة)</span>':"";
   const d=x.nextDate&&x.nextDate>board.today?'<span class="metric">مرحلة قادمة: '+esc(x.nextDate)+'</span>':"";
-  const more=x.id==="techeng"?'decision-watch.html':'calculator.html?decision='+encodeURIComponent(x.id);
+  const more="calculator.html?decision="+encodeURIComponent(x.id);
   return '<article class="action"><div class="action-head"><div><h3>'+esc(x.title)+'</h3><span class="source-status">قرار '+esc(x.number||"غير مدون")+' · '+esc(x.rate)+'</span></div>'+chip(r.heading,r.level)+'</div>'+
    '<div class="metrics-line">'+group+gap+d+'</div><p><b>الملاحظة:</b> '+esc(r.detail)+'</p><p><b>المقترح:</b> '+esc(r.suggestion)+'</p>'+
    '<div class="sources">'+source(x.source)+'<a href="'+esc(more)+'">عرض التحليل ↗</a></div></article>';
