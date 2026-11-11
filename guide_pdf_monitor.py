@@ -136,6 +136,7 @@ def diff_lines(previous, current):
     changes = []
     matcher = difflib.SequenceMatcher(a=a, b=b, autojunk=True)
     counts = {'added': 0, 'removed': 0, 'replaced': 0}
+    category_counts = {}
     for kind, i1, i2, j1, j2 in matcher.get_opcodes():
         if kind == 'equal':
             continue
@@ -143,6 +144,7 @@ def diff_lines(previous, current):
         before = ' '.join(a[i1:i2])[:650]
         after = ' '.join(b[j1:j2])[:650]
         category = change_category(before, after)
+        category_counts[category] = category_counts.get(category, 0) + 1
         if len(changes) < MAX_HUNKS:
             changes.append({
                 'type': {'insert':'إضافة','delete':'حذف','replace':'تعديل'}[kind],
@@ -152,7 +154,8 @@ def diff_lines(previous, current):
                 'before': before,
                 'after': after,
             })
-    return {'hunks': changes, 'counts': counts, 'truncated': sum(counts.values()) > len(changes)}
+    return {'hunks': changes, 'counts': counts, 'category_counts': category_counts,
+            'truncated': sum(counts.values()) > len(changes)}
 
 
 def compare_snapshot(previous, latest):
@@ -209,7 +212,7 @@ def scan_sources(sources, old_snapshots, old_changes, fetch=download_pdf, extrac
                     }
                     changes.insert(0, entry)
                     existing.add(signal_id)
-                    if any(x['category'] != 'نص آخر' for x in diff['hunks']):
+                    if any(k != 'نص آخر' and n > 0 for k, n in diff['category_counts'].items()):
                         alert = {
                             'id': signal_id, 'source': 'الأدلة الإجرائية PDF',
                             'title': 'تغيّر نص دليل رسمي يتطلب مراجعة: ' + source['title'],
