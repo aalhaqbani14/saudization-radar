@@ -15,6 +15,11 @@ name: Radar quality checks
       - 'test_import.mjs'
       - 'test_executive.mjs'
       - 'test_operations.mjs'
+      - 'test_operations_team.mjs'
+      - 'assets/operations-team.js'
+      - 'operations-team.html'
+      - 'supabase/migrations/**'
+      - 'data/team-ops-config.json'
       - 'assets/operations-model.js'
       - 'operations.html'
       - 'assets/executive-report.js'
@@ -63,3 +68,6 @@ jobs:
           node --check assets/operations-model.js
           node --check test_operations.mjs
           node test_operations.mjs
+          node --check assets/operations-team.js
+          node --check test_operations_team.mjs
+          node test_operations_team.mjs
