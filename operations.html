@@ -60,6 +60,7 @@ label{font-weight:700;font-size:11px;color:#486675}
 <div class="layout">
 <aside class="sidebar">
 <section class="panel"><h2>خطط القرارات</h2><p class="muted">خطط البداية المقترحة لم تُعتمد ولم يُسند تنفيذها لأحد. يتم إنشاء قوالب متابعة عامة لا تمس أنظمة سالك.</p><div class="decision-pick"><label for="add-decision">إضافة قرار للمتابعة</label><select id="add-decision"></select><button class="btn" type="button" id="add-plan">إضافة خطة متابعة</button></div><div id="plan-list" class="plan-list"></div></section>
+<section class="panel no-print"><h2>الغرفة المشتركة للمستخدمين المصرّح لهم</h2><p class="muted">مساحة عمل مؤسسية بصلاحيات ومراجعات محفوظة على خادم آمن. <strong>غير مُفعّلة حتى اعتماد مشروع Supabase وربط حسابات المستخدمين.</strong> لا تدخل معلومات سرية في النسخة المحلية.</p><a class="btn secondary" href="operations-team.html">فتح وضع الفريق المؤسسي</a></section>
 <section class="panel no-print"><h2>نسخة احتياطية محلية</h2><p class="muted">النسخة تحتوي فقط على معرفات القرارات، الأقسام، الحالات والمواعيد. لا ترفع أي ملف إلى موقع أو خادم.</p><div class="actions"><button class="btn secondary" type="button" id="export">تصدير JSON</button><button class="btn ghost" type="button" id="import-btn">استعادة JSON</button><input type="file" id="import-file" accept=".json,application/json" hidden><button class="btn danger" type="button" id="reset">إعادة ضبط محلية</button></div><p id="save-info" class="muted">الحفظ محلي.</p></section>
 <section class="panel"><h2>سجل التغييرات المحلي</h2><div id="log" class="muted">لا توجد تغييرات مسجلة.</div></section>
 </aside>
