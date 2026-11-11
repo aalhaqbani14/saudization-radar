@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-11T12:01:40.045266+00:00",
+  "checked_at": "2026-11-11T12:02:07.420026+00:00",
   "total_sources": 17,
   "successful_sources": 17,
   "failed_sources": 0,
@@ -12,7 +12,7 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-11T12:01:40.045266+00:00"
+      "last_success_at": "2026-11-11T12:02:07.420026+00:00"
     },
     {
       "name": "الأدلة الإجرائية",
@@ -21,7 +21,7 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-11T12:01:40.045266+00:00"
+      "last_success_at": "2026-11-11T12:02:07.420026+00:00"
     },
     {
       "name": "قرار: المهن الإدارية المساندة",
@@ -30,7 +30,7 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-11T12:01:40.045266+00:00"
+      "last_success_at": "2026-11-11T12:02:07.420026+00:00"
     },
     {
       "name": "قرار: المهن المحاسبية",
@@ -39,7 +39,7 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-11T12:01:40.045266+00:00"
+      "last_success_at": "2026-11-11T12:02:07.420026+00:00"
     },
     {
       "name": "قرار: مهن إدارة المشاريع",
@@ -48,7 +48,7 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-11T12:01:40.045266+00:00"
+      "last_success_at": "2026-11-11T12:02:07.420026+00:00"
     },
     {
       "name": "قرار: مهن المشتريات",
@@ -57,7 +57,7 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-11T12:01:40.045266+00:00"
+      "last_success_at": "2026-11-11T12:02:07.420026+00:00"
     },
     {
       "name": "قرار: مهن المبيعات",
@@ -66,7 +66,7 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-11T12:01:40.045266+00:00"
+      "last_success_at": "2026-11-11T12:02:07.420026+00:00"
     },
     {
       "name": "قرار: مهنة مشرف مسكن",
@@ -75,7 +75,7 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-11T12:01:40.045266+00:00"
+      "last_success_at": "2026-11-11T12:02:07.420026+00:00"
     },
     {
       "name": "مرجع إضافي: المشتريات والعقود والمستودعات",
@@ -84,7 +84,7 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-11T12:01:40.045266+00:00"
+      "last_success_at": "2026-11-11T12:02:07.420026+00:00"
     },
     {
       "name": "مرجع إضافي: مهن إدارة المشاريع",
@@ -93,7 +93,7 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-11T12:01:40.045266+00:00"
+      "last_success_at": "2026-11-11T12:02:07.420026+00:00"
     },
     {
       "name": "مرجع إضافي: مهن التسويق",
@@ -102,7 +102,7 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-11T12:01:40.045266+00:00"
+      "last_success_at": "2026-11-11T12:02:07.420026+00:00"
     },
     {
       "name": "مرجع إضافي: المهن الهندسية",
@@ -111,7 +111,7 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-11T12:01:40.045266+00:00"
+      "last_success_at": "2026-11-11T12:02:07.420026+00:00"
     },
     {
       "name": "مرجع إضافي: المهن الفنية الهندسية",
@@ -120,7 +120,7 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-11T12:01:40.045266+00:00"
+      "last_success_at": "2026-11-11T12:02:07.420026+00:00"
     },
     {
       "name": "مرجع إضافي: الاتصالات وتقنية المعلومات",
@@ -129,7 +129,7 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-11T12:01:40.045266+00:00"
+      "last_success_at": "2026-11-11T12:02:07.420026+00:00"
     },
     {
       "name": "مرجع إضافي: المهن القانونية",
@@ -138,7 +138,7 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-11T12:01:40.045266+00:00"
+      "last_success_at": "2026-11-11T12:02:07.420026+00:00"
     },
     {
       "name": "مرجع إضافي: مهن الاستشارات والأعمال",
@@ -147,7 +147,7 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-11T12:01:40.045266+00:00"
+      "last_success_at": "2026-11-11T12:02:07.420026+00:00"
     },
     {
       "name": "مرجع إضافي: مهن خدمة العملاء",
@@ -156,7 +156,7 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-11T12:01:40.045266+00:00"
+      "last_success_at": "2026-11-11T12:02:07.420026+00:00"
     }
   ],
   "coverage_notice": "هذه حالة تشغيل الرصد فقط ولا تثبت حداثة القرارات أو اكتمال تغطية الوزارة."
