@@ -4,6 +4,11 @@ name: Radar quality checks
     branches: [main]
     paths:
       - 'monitor.py'
+      - 'guide_pdf_monitor.py'
+      - 'test_guide_pdf_monitor.py'
+      - 'guide-changes.html'
+      - 'data/guide-pdf-sources.json'
+      - 'data/guide-pdf-changes.json'
       - 'detection.py'
       - 'email_templates.py'
       - 'test_*.py'
@@ -50,11 +55,11 @@ jobs:
         with:
           node-version: '22'
       - name: Compile Python modules
-        run: python -m py_compile monitor.py detection.py email_templates.py validate_data.py email_probe.py
+        run: python -m py_compile monitor.py guide_pdf_monitor.py detection.py email_templates.py validate_data.py email_probe.py
       - name: Verify aggregate and legal reference data
         run: python validate_data.py
       - name: Run offline monitoring and data tests
-        run: python -m unittest -v test_monitor.py test_monitor_health.py test_detection.py test_email_templates.py test_data_quality.py
+        run: python -m unittest -v test_monitor.py test_monitor_health.py test_detection.py test_email_templates.py test_data_quality.py test_guide_pdf_monitor.py
       - name: Frontend syntax and local secure-import regression tests
         run: |
           node --check assets/workforce-model.js
