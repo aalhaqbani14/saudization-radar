@@ -4,8 +4,8 @@ const $=id=>document.getElementById(id);
 const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const norm=v=>String(v??"").trim().replace(/[إأآ]/g,"ا").replace(/ى/g,"ي").replace(/\s+/g," ").toLowerCase();
 const rate=(a,b)=>b?(100*a/b).toFixed(1)+"%":"—";
-const groupNames={admin:"الإدارة المساندة",procurement:"المشتريات",project:"إدارة المشاريع",marketing:"التسويق",accounting:"المحاسبة",ict:"الاتصالات والتقنية",legal:"المهن القانونية",consulting:"الاستشارات",engineers:"الهندسة",sales:"المبيعات"};
-const normative=new Set(["admin","procurement","project","marketing","accounting","ict","legal","consulting","engineers","sales"]);
+const groupNames={admin:"الإدارة المساندة",procurement:"المشتريات",project:"إدارة المشاريع",marketing:"التسويق",accounting:"المحاسبة",ict:"الاتصالات والتقنية",legal:"المهن القانونية",consulting:"الاستشارات",sales:"المبيعات"};
+const normative=new Set(["admin","procurement","project","marketing","accounting","ict","legal","consulting","sales"]);
 const activities=[["011101","الحبوب"],["011102","المحاصيل البقولية"],["011103","البذور الزيتية"],["011200","الأرز"],["011302","البصل"],["011303","الطماطم"],["011901","الأعلاف"],["012300","الحمضيات"],["012601","الزيتون"],["014101","الأبقار"],["014401","الضأن"],["014402","الماعز"],["015000","الزراعة المختلطة"],["016103","مشروعات الري"],["016104","البيوت الزراعية"],["016200","دعم الإنتاج الحيواني"],["016300","محاصيل بعد الحصاد"]];
 let all=[],current=[],decisions={};
 function linkGroups(title){return window.SalicWorkforce.titleIds(title).filter(id=>normative.has(id));}
