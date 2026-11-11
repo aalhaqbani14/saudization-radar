@@ -37,10 +37,11 @@ assert.ok(!JSON.stringify(api.sanitize(poisoned,ids)).includes('private@example.
 assert.ok(!JSON.stringify(api.sanitize(poisoned,ids)).includes('حساس'));
 const script=fs.readFileSync('operations.html','utf8');
 assert.ok(script.includes('href="index.html"'));
-assert.ok(script.includes('assets/operations-model.js'));
-assert.ok(script.includes('لا تدخل أسماء موظفين'));
+assert.ok(script.includes('assets/operations-auto.js'),'Dashboard should load the read-only automatic engine, not the manual model');
+assert.ok(!script.includes('assets/operations-model.js'),'Manual task controls must not be loaded');
+assert.ok(script.includes('مطابقة المسميات'),'Dashboard should disclose estimate-based workforce classification');
 const js=[...script.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)].filter(x=>x[1].trim());
 for(const part of js)new vm.Script(part[1],{filename:'operations.html inline'});
 const home=fs.readFileSync('index.html','utf8');
 assert.ok(home.includes('href="operations.html"'));
-console.log('PASS: operations plan lifecycle, date rules, manual closure evidence, local audit sanitization, no names and page scripts.');
+console.log('PASS: legacy operations model still validates old local backups; public operations page uses automatic read-only intelligence.');
