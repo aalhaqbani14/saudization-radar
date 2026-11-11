@@ -25,6 +25,14 @@ const hasOwn=(x,k)=>Object.prototype.hasOwnProperty.call(x,k);
 function taskFrom(step){return {id:step.id,status:"todo",team:step.team,due:"",evidence:"pending"}}
 function planFor(id){return {id,startedAt:time(),tasks:STEPS.map(taskFrom)}}
 function blank(){return {version:VERSION,plans:SEEDS.map(planFor),events:[],lastSaved:null,source:"local"}}
+function safeHistoryValue(value){
+ const x=plain(value).slice(0,80);
+ if(["","قالب مقترح","إزالة المتابعة المحلية"].includes(x))return x;
+ const i=x.indexOf(":");if(i<0)return "";
+ const field=x.slice(0,i),val=x.slice(i+1);
+ if(field==="status"&&statIds.includes(val)||field==="team"&&TEAMS.includes(val)||field==="evidence"&&evIds.includes(val)||field==="due"&&validDate(val))return field+":"+val;
+ return "";
+}
 function sanitize(raw,validDecisionIds){
  if(!raw||typeof raw!=="object"||Array.isArray(raw)||raw.version!==VERSION||!Array.isArray(raw.plans)||raw.plans.length>50||!Array.isArray(raw.events)||raw.events.length>1000)throw Error("unsupported_snapshot");
  const valid=new Set(validDecisionIds),found=new Set();
@@ -40,7 +48,7 @@ function sanitize(raw,validDecisionIds){
  });
  const events=raw.events.map(e=>{
   if(!e||typeof e!=="object"||!valid.has(e.decision)||!STEPS.some(s=>s.id===e.step)&&e.step!=="plan"||!["created","deleted","task_changed","restored"].includes(e.action)||typeof e.at!=="string")throw Error("invalid_history");
-  return {at:e.at.slice(0,35),decision:e.decision,step:e.step,action:e.action,old:plain(e.old).slice(0,80),value:plain(e.value).slice(0,80)};
+  return {at:e.at.slice(0,35),decision:e.decision,step:e.step,action:e.action,old:safeHistoryValue(e.old),value:safeHistoryValue(e.value)};
  });
  return {version:VERSION,plans,events,lastSaved:null,source:"local"};
 }
