@@ -154,15 +154,21 @@ $$;
 
 create or replace function public.sradar_task_audit()
 returns trigger language plpgsql security definer set search_path = ''
-as $$
+as $
 begin
- insert into public.sradar_audit_events(org_id,entity_kind,entity_id,event_kind,actor_id,before_state,after_state)
- values(new.org_id,'task',new.id,case when tg_op='INSERT' then 'created' else 'changed' end,auth.uid(),
-  case when tg_op='INSERT' then null else jsonb_build_object('status',old.status,'team',old.team,'due_on',old.due_on,'evidence_checked',old.evidence_checked,'version',old.version) end,
-  jsonb_build_object('status',new.status,'team',new.team,'due_on',new.due_on,'evidence_checked',new.evidence_checked,'version',new.version));
+ if tg_op='INSERT' then
+  insert into public.sradar_audit_events(org_id,entity_kind,entity_id,event_kind,actor_id,after_state)
+  values(new.org_id,'task',new.id,'created',auth.uid(),
+   jsonb_build_object('status',new.status,'team',new.team,'due_on',new.due_on,'evidence_checked',new.evidence_checked,'version',new.version));
+ else
+  insert into public.sradar_audit_events(org_id,entity_kind,entity_id,event_kind,actor_id,before_state,after_state)
+  values(new.org_id,'task',new.id,'changed',auth.uid(),
+   jsonb_build_object('status',old.status,'team',old.team,'due_on',old.due_on,'evidence_checked',old.evidence_checked,'version',old.version),
+   jsonb_build_object('status',new.status,'team',new.team,'due_on',new.due_on,'evidence_checked',new.evidence_checked,'version',new.version));
+ end if;
  return new;
 end;
-$$;
+$;
 
 drop trigger if exists sradar_task_before_save on public.sradar_tasks;
 create trigger sradar_task_before_save before insert or update on public.sradar_tasks
