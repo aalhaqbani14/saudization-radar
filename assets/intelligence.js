@@ -203,7 +203,7 @@
 
      window.SalicWorkforce.setRows(workDb.rows,workDb.summary);
      await window.SalicWorkforce.loadOfficial();
-     const relevantIds=new Set(["admin","procurement","project","marketing","accounting","ict","legal","consulting","engineers","sales"]);
+     const relevantIds=new Set(["admin","procurement","project","marketing","accounting","ict","legal","consulting","sales"].filter(id=>decDb.decisions.some(d=>d.id===id&&d.salicScope?.status!=="excluded_from_current_workforce_dashboard")));
      const salicTitles=new Set((workDb.rows||[]).map(row=>norm(row[0])));
      occupations=(Array.isArray(occDb.occupations)?occDb.occupations:[]).filter(o=>salicTitles.has(norm(o.title))&&o.decisionIds.some(id=>relevantIds.has(id))).map(o=>({...o,decisionIds:o.decisionIds.filter(id=>relevantIds.has(id))}));
      decisions=(Array.isArray(decDb.decisions)?decDb.decisions:[]).filter(d=>relevantIds.has(d.id));
