@@ -394,7 +394,14 @@
         }
       ],
       "issueDate": "2025-12-31",
-      "historyStatus": "reviewed_source_dates"
+      "historyStatus": "reviewed_source_dates",
+      "salicScope": {
+        "status": "excluded_from_current_workforce_dashboard",
+        "asOf": "2026-11-03",
+        "reason": "المسمى الهندسي الوحيد في لقطة سالك هو مهندس حاسب آلي، ومدرج ضمن مهن الاتصالات وتقنية المعلومات برمز 215204 في دليل المطابقة المرجعي، وليس لدينا مطابقة مثبتة لمهن القرار الهندسي العام.",
+        "reviewTrigger": "تغير مسميات موظفي سالك أو أنشطتها أو رموزهم الرسمية في قوى؛ يلزم التحقق من الرمز قبل تغيير حالة الانطباق.",
+        "purpose": "أرشفة ومراقبة تنظيمية عامة فقط؛ لا تظهر في فجوات أو مواعيد سالك التنفيذية."
+      }
     },
     {
       "id": "techeng",
@@ -475,6 +482,13 @@
         "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-المهن-الفنية-الهندسية",
         "verifiedSourceType": "official_hrsd_news_and_procedural_guide",
         "status": "published_future_not_yet_effective"
+      },
+      "salicScope": {
+        "status": "excluded_from_current_workforce_dashboard",
+        "asOf": "2026-11-03",
+        "reason": "لا توجد في لقطة سالك مهن فنية هندسية مطابقة للأكواد المستهدفة؛ مهندس حاسب آلي ضمن تقنية المعلومات وليس فنيًا هندسيًا.",
+        "reviewTrigger": "تغير مسميات موظفي سالك أو أنشطتها أو رموزهم الرسمية في قوى؛ يلزم التحقق من الرمز قبل تغيير حالة الانطباق.",
+        "purpose": "أرشفة ومراقبة تنظيمية عامة فقط؛ لا تظهر في فجوات أو مواعيد سالك التنفيذية."
       }
     },
     {
