@@ -633,9 +633,10 @@
       "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-مهنة-مشرف-مسكن",
       "audit": {
         "status": "needs_review",
-        "checked": null,
-        "basis": "تم التحقق من رقم 62298 وتاريخ الإصدار 2025-10-31 وبدء التنفيذ 2026-02-01 من صفحة الوزارة",
-        "limits": "لم يكتمل تدقيق النص التفصيلي لنسبة التوطين وشروط الأجور؛ لا تعتبر البيانات موثقة بالكامل"
+        "checked": "2026-11-11",
+        "basis": "تحقق من رقم القرار 62298 وتاريخ الإصدار 2025-10-31 وبدء التطبيق 2026-02-01 من صفحة وزارة الموارد البشرية.",
+        "limits": "ما زال يلزم الرجوع للدليل لإثبات نسبة احتساب مشرف السكن وحد الأجر وتعريف المستفيدين وحد النشاط.",
+        "metadataVerified": true
       },
       "history": [
         {
@@ -679,9 +680,10 @@
       "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لتوطين-المهن-الإدارية-والمساندة",
       "audit": {
         "status": "needs_review",
-        "checked": null,
-        "basis": "مدخل تحليلي من قرارات منشورة",
-        "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
+        "checked": "2026-11-11",
+        "basis": "تحقق من رقم 68098 الصادر 2025-11-11، وتاريخ بدء التطبيق 2026-05-11، وأن نطاقه مراكز الاسترخاء والعناية الشخصية المرخصة.",
+        "limits": "القرار خاص بنشاط مرخص محدد ولا يجوز تطبيقه على سالك بمجرد تشابه مسميات الإدارة؛ جدول المهن والأنشطة والاشتراطات التفصيلية تحتاج مراجعة.",
+        "metadataVerified": true
       },
       "history": [
         {
@@ -695,7 +697,7 @@
           "verified": false
         }
       ],
-      "issueDate": null,
+      "issueDate": "2025-11-11",
       "historyStatus": "summary_needs_review"
     },
     {
@@ -954,9 +956,10 @@
       "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لتوطين-الأنشطة-والمهن-العقارية",
       "audit": {
         "status": "needs_review",
-        "checked": null,
-        "basis": "مدخل تحليلي من قرارات منشورة",
-        "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
+        "checked": "2026-11-11",
+        "basis": "تحقق من رقم 212535 وتاريخ الإصدار 2021-07-04 والنفاذ 2021-10-01 وأن نطاقه مهن وأنشطة عقارية محددة.",
+        "limits": "بقيت النسب التفصيلية لكل نشاط ومهنة، وتحديد انطباق الترخيص الفعلي على أي كيان من سالك دون إثبات.",
+        "metadataVerified": true
       },
       "history": [
         {
@@ -967,10 +970,10 @@
           "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لتوطين-الأنشطة-والمهن-العقارية",
           "scope": "بحسب دليل المهنة / النشاط",
           "note": "لم يكتمل التحقق من جميع شروط الانطباق",
-          "verified": false
+          "verified": true
         }
       ],
-      "issueDate": null,
+      "issueDate": "2021-07-04",
       "historyStatus": "summary_needs_review"
     },
     {
@@ -996,9 +999,10 @@
       "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-قطاع-التعليم-العام",
       "audit": {
         "status": "needs_review",
-        "checked": null,
-        "basis": "مدخل تحليلي من قرارات منشورة",
-        "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
+        "checked": "2026-11-11",
+        "basis": "تحقق من رقم 312028 وتاريخ الإصدار 2023-06-27 وتاريخ التطبيق 2023-08-13 لمدارس التعليم العام الأهلي.",
+        "limits": "نسب المعلمين حسب المادة والتخصص ورخص المدارس لا يمكن استخلاصها من عنوان القرار؛ يلزم الدليل التفصيلي قبل أي نسبة.",
+        "metadataVerified": true
       },
       "history": [
         {
@@ -1012,7 +1016,7 @@
           "verified": false
         }
       ],
-      "issueDate": null,
+      "issueDate": "2023-06-27",
       "historyStatus": "summary_needs_review"
     },
     {
@@ -1055,9 +1059,10 @@
       "source2": "https://www.hrsd.gov.sa/media-center/news/030320248",
       "audit": {
         "status": "needs_review",
-        "checked": null,
-        "basis": "مدخل تحليلي من قرارات منشورة",
-        "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
+        "checked": "2026-11-11",
+        "basis": "تأكد من القرار 208818 ومراحل 2023-03-15 و2024-03-04 بنسب تختلف حسب المهنة من خبر الوزارة؛ صفحة الدليل تعرض تاريخ تنفيذ عام 2023-03-20.",
+        "limits": "توجد فروق بين تاريخ تنفيذ صفحة الدليل وتواريخ مراحل الإعلان الصحفي؛ يجب الرجوع لنص الدليل الأصلي قبل اعتماد التواريخ الدقيقة أو الرموز والاعتماد.",
+        "metadataVerified": true
       },
       "history": [
         {
@@ -1081,7 +1086,7 @@
           "verified": true
         }
       ],
-      "issueDate": null,
+      "issueDate": "2022-06-22",
       "historyStatus": "reviewed_source_dates"
     },
     {
@@ -1128,9 +1133,10 @@
       "source2": "https://www.hrsd.gov.sa/sites/default/files/2022-06/20112022.pdf",
       "audit": {
         "status": "needs_review",
-        "checked": null,
-        "basis": "مدخل تحليلي من قرارات منشورة",
-        "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
+        "checked": "2026-11-11",
+        "basis": "أكد خبر الوزارة بدء المنافذ 2022-12-17، ووظائف الإدارة العليا 100% للرؤساء التنفيذيين و60% للمستوى الأول بدءًا من 2023-04-01 و70% للمستوى الثاني في 2023-10-01.",
+        "limits": "نسب الإدارة تخص المنشآت المرخصة لنشاط البريد ونقل الطرود، وليس كل مدير عام؛ يلزم جدول الـ14 نشاطًا والرخصة الفعلية.",
+        "metadataVerified": true
       },
       "history": [
         {
@@ -1160,11 +1166,11 @@
           "kind": "expanded",
           "source": "https://www.hrsd.gov.sa/media-center/news/1129031",
           "scope": "وظائف الإدارة العليا مستوى ثانٍ",
-          "note": "تاريخ المرحلة يحتاج تأكيداً إضافياً من نص الدليل",
-          "verified": false
+          "note": "تاريخ 1 أكتوبر 2023 وارد في خبر بدء سريان أنشطة البريد ونقل الطرود على موقع الوزارة.",
+          "verified": true
         }
       ],
-      "issueDate": null,
+      "issueDate": "2022-06-22",
       "historyStatus": "reviewed_source_dates"
     },
     {
@@ -1194,9 +1200,10 @@
       "source": "https://www.hrsd.gov.sa/media-center/news/1129031",
       "audit": {
         "status": "needs_review",
-        "checked": null,
-        "basis": "مدخل تحليلي من قرارات منشورة",
-        "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
+        "checked": "2026-11-11",
+        "basis": "أكد خبر الوزارة الصادر 2022-06-22 نسبة 70% على منافذ البيع في سبعة أنشطة محددة، مع بدء بعد 12 شهرًا من الإصدار.",
+        "limits": "التاريخ 2023-06-12 الوارد في مرجع صحفي تاريخ يحتاج سندًا رسميًا مستقلًا؛ لا نعتمده كتاريخ مؤكد أو فترة سماح رسمية.",
+        "metadataVerified": true
       },
       "history": [
         {
@@ -1210,7 +1217,7 @@
           "verified": false
         }
       ],
-      "issueDate": null,
+      "issueDate": "2022-06-22",
       "historyStatus": "needs_official_document_verification"
     },
     {
@@ -1240,9 +1247,10 @@
       "source": "https://www.hrsd.gov.sa/media-center/news/1129031",
       "audit": {
         "status": "needs_review",
-        "checked": null,
-        "basis": "مدخل تحليلي من قرارات منشورة",
-        "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
+        "checked": "2026-11-11",
+        "basis": "أعلن خبر الوزارة مرحلتين 50% ثم 100% لمنشآت الفحص الفني الدوري، وبداية تنفيذ بعد 12 شهرًا من صدور القرار.",
+        "limits": "لم يثبت تاريخ المرحلة الثانية أو تاريخ 2023-06-12 من الدليل الرسمي؛ لا يُعرض كموعد قطعي معتمد.",
+        "metadataVerified": true
       },
       "history": [
         {
@@ -1267,7 +1275,7 @@
           "note": "لا يُعرض تاريخ تنفيذ محدد حتى التحقق من دليل التطبيق"
         }
       ],
-      "issueDate": null,
+      "issueDate": "2022-06-22",
       "historyStatus": "needs_official_document_verification"
     },
     {
@@ -1295,9 +1303,10 @@
       "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-التوطين-في-منطقة-المدينة",
       "audit": {
         "status": "needs_review",
-        "checked": null,
-        "basis": "مدخل تحليلي من قرارات منشورة",
-        "limits": "لم يكتمل توثيق جميع الجداول والروابط والأكواد التفصيلية"
+        "checked": "2026-11-11",
+        "basis": "تحقق من رقم 92412 وتاريخ الإصدار 2022-12-29 وبدء التطبيق 2023-07-08 ونسب 40% إلى 100% للأنشطة والمهن المحددة بمنطقة المدينة.",
+        "limits": "النسب تختلف حسب النشاط والمهنة ومكان ممارسة النشاط، ويجب مطابقة جميع الاستثناءات والرموز قبل احتساب أي أثر على سالك.",
+        "metadataVerified": true
       },
       "history": [
         {
@@ -1308,10 +1317,10 @@
           "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-التوطين-في-منطقة-المدينة",
           "scope": "بحسب دليل المهنة / النشاط",
           "note": "لم يكتمل التحقق من جميع شروط الانطباق",
-          "verified": false
+          "verified": true
         }
       ],
-      "issueDate": null,
+      "issueDate": "2022-12-29",
       "historyStatus": "summary_needs_review"
     }
   ],
