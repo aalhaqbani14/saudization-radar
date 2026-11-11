@@ -1,194 +1,121 @@
 <!doctype html><html lang="ar" dir="rtl"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="no-referrer"><meta name="theme-color" content="#0b2939">
+<meta name="description" content="غرفة العمليات الذكية لرادار التوطين — متابعة آلية لمستجدات القرارات والمواعيد والفجوات التقديرية في سالك.">
 <title>غرفة عمليات الامتثال | رادار التوطين</title>
 <style>
-:root{font-family:Tahoma,"Segoe UI",Arial,sans-serif;font-variant-numeric:tabular-nums;color:#173345;background:#f3f7f8}
-*{box-sizing:border-box}body{margin:0}a{color:#05796f}button,input,select{font:inherit}button{cursor:pointer}button:disabled{opacity:.45;cursor:not-allowed}
-button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #49b9a9;outline-offset:3px}
-header{background:linear-gradient(120deg,#0b2637,#10595d);color:white;padding:25px max(18px,calc((100vw - 1220px)/2)) 33px}
-header a{color:#d3fff3;display:inline-block;margin-bottom:15px;font-size:12px}header h1{font-size:clamp(24px,3vw,34px);margin:7px 0 9px}
-header p{font-size:13px;line-height:2;max-width:820px;color:#cfe6e9;margin:0}.eyebrow{font-size:10px;color:#9ce2cf;letter-spacing:1.7px}
-main{max-width:1220px;margin:20px auto;padding:0 18px 42px}
-.notice{background:#fffdf6;border:1px solid #e7d7ac;border-radius:13px;padding:15px 18px;color:#664f24;line-height:1.95;font-size:12px}
-.notice b{color:#76501a}
-.kpis{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin:18px 0}
-.kpi{background:white;border:1px solid #e0e9ec;border-radius:15px;padding:18px}.kpi small{display:block;color:#647f89;font-size:11px}.kpi strong{display:block;margin-top:8px;font-size:28px;color:#0d6d66}
-.layout{display:grid;grid-template-columns:320px minmax(0,1fr);gap:17px;align-items:start}
-.panel{background:white;border:1px solid #dbe7e9;border-radius:16px;padding:20px;margin-bottom:17px;box-shadow:0 2px 14px #17425107}
-h2{font-size:17px;margin:0 0 12px}h3{font-size:14px;margin:4px 0 7px}
-.muted{font-size:12px;color:#607985;line-height:1.95}
-.sidebar-actions{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
-.btn{border:0;background:#097d72;color:white;border-radius:9px;padding:11px 15px;font-weight:700;font-size:12px;line-height:1.5}
-.btn.secondary{background:#ecf6f3;color:#0b726a}.btn.ghost{background:#f3f6f8;color:#365d69}.btn.danger{background:#fdf1ed;color:#a13d2b}
-select,input{width:100%;border:1px solid #cadbde;background:#fbfdfd;border-radius:9px;padding:10px;font-size:12px;min-width:0}
-label{font-weight:700;font-size:11px;color:#486675}
-.decision-pick{border:1px solid #dae9e6;background:#f6fbf9;border-radius:12px;padding:12px;margin-top:12px}
-.decision-pick label{display:block;margin:0 0 6px}.decision-pick .btn{width:100%;margin-top:8px}
-.plan-list{display:grid;gap:8px;margin-top:16px}
-.plan-btn{width:100%;text-align:right;border:1px solid #e0e9eb;background:white;border-radius:11px;padding:12px 13px}
-.plan-btn.current{border-color:#0d8b7e;background:#effaf6}.plan-btn strong{display:block;font-size:12px;color:#1b4050;margin-bottom:6px}
-.plan-btn small{font-size:10px;color:#6f8790;line-height:1.5}
-.progress{height:5px;background:#e2eded;border-radius:15px;overflow:hidden;margin:9px 0 5px}.progress i{display:block;height:100%;background:#1eaa93}
-.topline{display:flex;justify-content:space-between;align-items:start;gap:15px;flex-wrap:wrap}
-.badge{display:inline-block;background:#e4f5ef;color:#10745e;border-radius:50px;padding:6px 10px;font-size:10px;font-weight:700}
-.badge.warn{background:#fff3dc;color:#875d14}.badge.neutral{background:#edf2f5;color:#5e737e}
-.details{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:16px 0}
-.detail{background:#f5f9fa;padding:12px;border-radius:10px;min-width:0}
-.detail small{display:block;color:#718893;font-size:10px;margin-bottom:7px}.detail b{font-size:13px;line-height:1.5}
-.section-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:17px 0 12px}
-.step{padding:15px;border:1px solid #e1e9ea;border-radius:12px;margin-bottom:10px}
-.step-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}.step p{font-size:11px;line-height:1.9;color:#667e88;margin:6px 0}
-.form-grid{display:grid;grid-template-columns:1fr 1.2fr 1fr 1.1fr auto;gap:9px;align-items:end;margin-top:12px}
-.form-grid label{display:block}.form-grid label select,.form-grid label input{display:block;margin-top:6px}
-.small-btn{height:40px;white-space:nowrap}.pill{font-size:10px;padding:5px 9px;border-radius:30px;background:#eef2f5;color:#546975;display:inline-block}
-.pill.doing{color:#166c94;background:#e9f6fd}.pill.review{color:#9a6c13;background:#fff5df}.pill.blocked{color:#a64027;background:#fff0ea}.pill.done{color:#0e7955;background:#e6f8ee}
-.actions{display:flex;flex-wrap:wrap;gap:8px}
-.audit-row{padding:10px 0;border-bottom:1px solid #edf1f3;font-size:11px;line-height:1.8}.audit-row:last-child{border:0}
-.audit-row small{color:#71858e;display:block;font-size:10px;margin-top:3px}
-.bad-msg{color:#a23925;background:#fff4f0;padding:11px;border-radius:9px;font-size:12px}
-.ok-msg{color:#0c735c;background:#edf8f1;padding:11px;border-radius:9px;font-size:12px}
-#feedback:empty{display:none}#feedback{margin:12px 0}
-.empty{padding:25px;text-align:center;color:#65808a;background:#f8fbfa;border:1px dashed #c7d9dd;border-radius:12px;font-size:12px;line-height:2}
-@media(max-width:1050px){.kpis{grid-template-columns:repeat(3,1fr)}.layout{grid-template-columns:1fr}.form-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:590px){.kpis{grid-template-columns:repeat(2,1fr)}.form-grid{grid-template-columns:1fr}.step-top{display:block}.details{grid-template-columns:repeat(2,1fr)}.panel{padding:15px}header{padding:20px 18px}}
-@media print{header{background:white;color:#102f40}header p{color:#4a6671}header a,.sidebar,.no-print,.form-grid{display:none!important}main{max-width:none;margin:0}.layout{display:block}.panel{break-inside:avoid}.step{break-inside:avoid}}
+:root{font-family:Tahoma,"Segoe UI",Arial,sans-serif;font-variant-numeric:tabular-nums;background:#f3f7f9;color:#163346}
+*{box-sizing:border-box}body{margin:0}a{color:#08796e;text-decoration:none}a:hover{text-decoration:underline}a:focus-visible{outline:3px solid #70c9b3;outline-offset:3px}
+header{padding:25px max(18px,calc((100vw - 1210px)/2)) 35px;background:linear-gradient(116deg,#0c2435,#0f5c5c);color:#fff}
+header>a{display:inline-block;font-size:12px;color:#c9f5e6;margin-bottom:14px}
+.hero-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.eyebrow{font-size:10px;letter-spacing:1.4px;color:#a0e3d7}
+.live{border-radius:20px;background:#e9f8ef;color:#0e7454;padding:5px 10px;font-size:10px;font-weight:700}
+header h1{margin:9px 0 10px;font-size:clamp(25px,3.5vw,37px)}header p{margin:0;color:#cfe4e6;line-height:2;max-width:900px;font-size:13px}
+main{max-width:1210px;margin:21px auto;padding:0 18px 50px}
+.notice{padding:14px 18px;border-radius:12px;border:1px solid #e4ddc7;background:#fffdf5;color:#765f36;font-size:12px;line-height:2}
+.notice strong{color:#725020}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:17px 0 21px}
+.kpi{background:white;border:1px solid #e0e8ed;border-radius:15px;padding:19px;min-height:107px;box-shadow:0 2px 12px #11334908}
+.kpi small{display:block;color:#6f8590;font-size:11px;line-height:1.5}.kpi strong{display:block;color:#0b6b63;font-size:30px;margin:12px 0 6px}.kpi span{color:#7e909a;font-size:10px}
+.grid{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:17px;align-items:start}
+.panel{background:white;border:1px solid #dce6ea;border-radius:16px;padding:23px;margin:0 0 17px;box-shadow:0 3px 15px #153a4a07}
+.heading{display:flex;gap:10px;justify-content:space-between;align-items:center;flex-wrap:wrap;margin-bottom:14px}.heading h2{font-size:18px;margin:0}
+.muted{color:#718794;font-size:12px;line-height:1.95}.panel>p{margin:0 0 15px}
+.chip{display:inline-flex;padding:5px 9px;border-radius:7px;background:#edf3f5;color:#59727c;font-size:10px;font-weight:700}
+.chip.attention{background:#ffefdc;color:#9a5627}.chip.future{background:#e8eefb;color:#315e9b}.chip.review{background:#fff6e6;color:#866118}.chip.unknown{background:#f0f3f5;color:#637580}.chip.normal{background:#eaf7ef;color:#237855}
+.action{padding:16px 0;border-bottom:1px solid #e7eef1}.action:last-child{border:0;padding-bottom:0}
+.action-head{display:flex;justify-content:space-between;gap:12px;align-items:start}.action h3{font-size:15px;line-height:1.7;margin:0 0 3px}
+.action p{margin:7px 0;font-size:12px;line-height:1.9;color:#576f7c}.action p b{color:#224b56}
+.metrics-line{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}.metric{display:inline-flex;align-items:baseline;gap:5px;font-size:11px;color:#587582;background:#f4f8f9;padding:7px 10px;border-radius:9px}
+.metric strong{color:#164c58;font-size:15px}.sources{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:10px;font-size:11px;font-weight:700}
+.source-status{font-size:10px;font-weight:700;color:#7a9099}
+.deadline{padding:13px 0;border-bottom:1px solid #e6eef0}.deadline:last-child{border:0}.deadline b{font-size:13px;line-height:1.6}
+.deadline-sub{display:flex;gap:8px;justify-content:space-between;align-items:center;margin:7px 0;flex-wrap:wrap}
+.days{border-radius:9px;padding:6px 8px;background:#f0f7f5;color:#136c5f;font-size:11px;font-weight:800}
+.signal{border:1px solid #e5eced;border-radius:12px;padding:13px;margin-top:12px}
+.signal p{font-size:12px;line-height:1.9;color:#526d78;margin:9px 0}.signal h3{font-size:13px;line-height:1.7;margin:0}
+.scan{font-size:12px;line-height:2;background:#f4faf8;border-radius:10px;padding:12px;color:#356d62;margin-top:13px}
+.scan.warn{background:#fff7e8;color:#8f6024}.scan.error{background:#fff0ec;color:#a33d29}
+.buttons{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}
+.button{display:inline-flex;align-items:center;gap:8px;border-radius:9px;font-weight:700;font-size:12px;padding:11px 14px;background:#0c766d;color:white}.button:hover{background:#0e605b;color:white;text-decoration:none}
+.button.light{color:#0a675e;background:#e8f5ef}.button.light:hover{background:#d7eee5}
+.empty{border:1px dashed #d7e4e5;border-radius:12px;text-align:center;padding:27px;color:#617884;font-size:12px;line-height:1.9}
+footer{padding:8px 0;color:#788e95;font-size:11px;line-height:2}
+footer a{color:#537c86}
+@media(max-width:980px){.grid{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:570px){.kpis{gap:9px}.kpi{padding:15px;min-height:92px}.kpi strong{font-size:25px}.panel{padding:16px}.action-head{display:block}.action-head .chip{margin-top:7px}.heading h2{font-size:16px}}
+@media print{header{background:#fff;color:#153a47;border-bottom:2px solid #18736d}header p{color:#385b65}.buttons,footer{display:none!important}main{max-width:none;margin:0}.panel{box-shadow:none;break-inside:avoid}.action{break-inside:avoid}}
 </style></head><body>
-<header><a href="index.html">← الرادار الرئيسي</a><div class="eyebrow">REGULATORY COMPLIANCE · ACTION OPERATIONS</div><h1>غرفة عمليات الامتثال</h1><p>حوّل كل قرار توطين إلى خطوات متابعة قابلة للتحديث: رموز مهنية، نطاق الانطباق، تدقيق الفجوة، معالجة، ومراجعة بشرية. راقب التأخير ومستوى الإنجاز دون إظهار أسماء الموظفين.</p></header>
-<main><div class="notice"><strong>مهم قبل الاستخدام:</strong> هذه نسخة تشغيل أولية <b>في موقع عام دون تسجيل دخول</b>. لا تدخل أسماء موظفين أو أرقام هويات أو ملفات أو معلومات حساسة. التعديلات تُحفظ في <b>المتصفح الحالي فقط</b> (غير مشفرة، وقد تُحذف)، ولا تظهر تلقائيًا لمديرك أو لأي جهاز آخر. السجل أدناه محلي وليس سجل اعتماد أو تدقيق رسمي. استخدم التصدير للاسترجاع في الجهاز نفسه، ولا تستخدمه لمعلومات سرية.</div>
-<div id="feedback" role="status" aria-live="polite"></div>
-<div class="kpis" id="kpis"><div class="kpi">جارٍ التحميل…</div></div>
-<div class="layout">
-<aside class="sidebar">
-<section class="panel"><h2>خطط القرارات</h2><p class="muted">خطط البداية المقترحة لم تُعتمد ولم يُسند تنفيذها لأحد. يتم إنشاء قوالب متابعة عامة لا تمس أنظمة سالك.</p><div class="decision-pick"><label for="add-decision">إضافة قرار للمتابعة</label><select id="add-decision"></select><button class="btn" type="button" id="add-plan">إضافة خطة متابعة</button></div><div id="plan-list" class="plan-list"></div></section>
-<section class="panel no-print"><h2>الغرفة المشتركة للمستخدمين المصرّح لهم</h2><p class="muted">مساحة عمل مؤسسية بصلاحيات ومراجعات محفوظة على خادم آمن. <strong>غير مُفعّلة حتى اعتماد مشروع Supabase وربط حسابات المستخدمين.</strong> لا تدخل معلومات سرية في النسخة المحلية.</p><a class="btn secondary" href="operations-team.html">فتح وضع الفريق المؤسسي</a></section>
-<section class="panel no-print"><h2>نسخة احتياطية محلية</h2><p class="muted">النسخة تحتوي فقط على معرفات القرارات، الأقسام، الحالات والمواعيد. لا ترفع أي ملف إلى موقع أو خادم.</p><div class="actions"><button class="btn secondary" type="button" id="export">تصدير JSON</button><button class="btn ghost" type="button" id="import-btn">استعادة JSON</button><input type="file" id="import-file" accept=".json,application/json" hidden><button class="btn danger" type="button" id="reset">إعادة ضبط محلية</button></div><p id="save-info" class="muted">الحفظ محلي.</p></section>
-<section class="panel"><h2>سجل التغييرات المحلي</h2><div id="log" class="muted">لا توجد تغييرات مسجلة.</div></section>
-</aside>
-<div>
-<section class="panel" id="active-panel"><div class="empty">اختر خطة متابعة من القائمة.</div></section>
-<section class="panel"><h2>منهجية تشغيل الغرفة</h2><p class="muted">تُعرض المهام كاقتراحات وتُحدّث يدويًا فقط. لا تُعد حالة «مكتمل» حكمًا بامتثال سالك؛ يلزم مطابقة رمز قوى وشروط الأجر والاعتماد والنشاط والكيان، ومراجعة المستندات خارج هذا الموقع واعتماد صاحب الصلاحية في النظام الداخلي. جميع الفجوات الرقمية المقتبسة من الرادار <b>تقديرية</b> حتى اكتمال ذلك.</p><div class="actions"><a class="btn secondary" href="executive-brief.html">التقرير التنفيذي</a><a class="btn secondary" href="decision-audit.html">تدقيق القرارات</a><a class="btn secondary" href="workforce-import.html">المطابقة المحلية</a></div></section>
-</div></div></main>
-<script src="assets/workforce-model.js"></script><script src="assets/operations-model.js"></script>
+<header><a href="index.html">← العودة إلى رادار التوطين</a>
+<div class="hero-top"><div class="eyebrow">REGULATORY INTELLIGENCE · AUTOMATED OPERATIONS</div><span class="live">عرض آلي · دون إدخال يدوي</span></div>
+<h1>غرفة عمليات الامتثال</h1>
+<p>القرارات والمواعيد والإشارات والمهن التي تحتاج انتباهك، مجمعة تلقائيًا من بيانات الرادار. لا توجد هنا خانات تعيين أقسام أو حالات مهام أو مواعيد يدوية.</p>
+</header><main>
+<div class="notice"><strong>تنبيه مهني:</strong> هذه لوحة استرشادية للمتابعة الآلية، لا تنفذ إجراءات في قوى أو أنظمة الموظفين، ولا تصدر اعتماد امتثال. الأعداد والفجوات مبنية على مطابقة المسميات الوظيفية المجمعة؛ والتحقق النهائي يحتاج رموز قوى الفعلية وشروط كل قرار.</div>
+<div class="kpis" id="kpis"><div class="kpi">جارٍ تجهيز مؤشرات الرادار…</div></div>
+<div class="grid"><div>
+<section class="panel"><div class="heading"><h2>المهن والقرارات التي تحتاج متابعة</h2><span class="chip">مؤشرات تلقائية</span></div>
+<p class="muted">الترتيب يتبع أولويات المراجعة الحسابية والمراحل القادمة، ولا يمثل ترتيبًا لمخالفات مثبتة.</p>
+<div id="actions"><div class="empty">جارٍ تحليل قرارات سالك ومهنها…</div></div></section>
+<section class="panel"><div class="heading"><h2>تحديثات الوزارة المرصودة</h2><a href="review.html" class="source-status">غرفة مراجعة الإشارات</a></div>
+<p class="muted">كل خبر متطابق يظهر مرة واحدة. الإشارات تحتاج مراجعة المصدر الأصلي.</p><div id="signals"><div class="empty">جارٍ جلب آخر الإشارات…</div></div></section>
+</div><aside>
+<section class="panel"><div class="heading"><h2>المواعيد القادمة</h2><span class="chip future">حسب الأدلة المسجلة</span></div>
+<div id="deadlines"><div class="empty">جارٍ حساب الأيام المتبقية…</div></div><div class="buttons"><a class="button light" href="decision-watch.html">تقويم جميع القرارات</a></div></section>
+<section class="panel"><div class="heading"><h2>صحة الرصد الحكومي</h2></div>
+<div id="scan"><p class="muted">جارٍ قراءة حالة المصادر…</p></div>
+<div class="buttons"><a class="button light" href="daily-reports.html">التقرير اليومي</a><a class="button light" href="sources.html">سجل المصادر</a></div></section>
+<section class="panel"><h2>نتيجة التحليل وليست تنفيذًا</h2><p class="muted">رصد قرار جديد أو ظهور فجوة تقديرية لا يعني أن الإجراء تمت معالجته. لا تتغير حالات الامتثال من تلقاء نفسها؛ يلزم مراجعة بشرية مستقلة قبل أي قرار وظيفي.</p>
+<div class="buttons"><a class="button" href="executive-brief.html">التقرير التنفيذي</a><a class="button light" href="salic.html">بيانات المهن</a></div></section>
+</aside></div>
+<footer>تم إلغاء نموذج تعديل المهام اليدوي من هذه الصفحة. لم تُحذف أي نسخة محلية سابقة كانت محفوظة في متصفحك، لكنها لم تعد مستخدمة في العرض الآلي. <a href="operations-team.html">الوضع المؤسسي المشترك</a> ما زال غير مفعّل حتى اكتمال الربط الآمن.</footer>
+</main>
+<script src="assets/workforce-model.js"></script><script src="assets/operations-auto.js"></script>
 <script>
 (function(){
 "use strict";
-const $=id=>document.getElementById(id),ops=window.RadarOperations;
+const $=id=>document.getElementById(id),engine=window.RadarAutoOperations;
 const esc=x=>String(x??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const safeLink=url=>{try{const u=new URL(String(url||""));return u.protocol==="https:"&&/(^|\.)hrsd\.gov\.sa$/.test(u.hostname)?u.href:null}catch{return null}};
-const option=(value,label,selected)=>'<option value="'+esc(value)+'"'+(value===selected?' selected':'')+'>'+esc(label)+'</option>';
-const today=()=>{const v=Object.fromEntries(new Intl.DateTimeFormat("en-US",{timeZone:"Asia/Riyadh",year:"numeric",month:"2-digit",day:"2-digit"}).formatToParts(new Date()).filter(x=>x.type!=="literal").map(x=>[x.type,x.value]));return v.year+"-"+v.month+"-"+v.day};
-const delta=date=>date?Math.round((Date.parse(date+"T00:00:00Z")-Date.parse(today()+"T00:00:00Z"))/86400000):null;
-const rateNumber=v=>String(v||"").replace(/\s+/g," ");
-let catalog=[],byId=new Map(),state=null,selected="admin",persisted=true;
-const notice=(message,error=false)=>{$('feedback').className=error?"bad-msg":"ok-msg";$('feedback').textContent=message};
-function persist(){
- try{const clean=ops.sanitize(state,catalog.map(x=>x.id));clean.lastSaved=new Date().toISOString();localStorage.setItem(ops.KEY,JSON.stringify(clean));state=clean;persisted=true}
- catch(error){persisted=false;notice("تعذر الحفظ في المتصفح الحالي. التعديلات مؤقتة؛ صدّر نسخة احتياطية الآن.",true)}
- render();
+const num=x=>Number(x).toLocaleString("en-US");
+const dateText=x=>{try{return new Intl.DateTimeFormat("ar-SA-u-ca-gregory-nu-latn",{timeZone:"Asia/Riyadh",day:"numeric",month:"short",year:"numeric"}).format(new Date(x))}catch{return esc(x||"—")}};
+const source=(link,caption="المرجع الرسمي")=>link?'<a href="'+esc(link)+'" target="_blank" rel="noopener noreferrer">'+esc(caption)+'</a>':"";
+const chip=(label,level)=>'<span class="chip '+esc(level)+'">'+esc(label)+'</span>';
+const load=async path=>{const res=await fetch(path+"?v="+Date.now(),{cache:"no-store"});if(!res.ok)throw Error("Unable to load "+path);return res.json()};
+function render(board){
+ $('kpis').innerHTML=[
+  ["قرارات مرتبطة بمهن سالك",board.total,"الربط من فهرس الرادار"],
+  ["مجموعات تحتاج مراجعة",board.attention+board.review,"تقديرات وشروط غير مؤكدة"],
+  ["مواعيد قادمة موثقة",board.upcoming.length,"وفق السجلات الحالية"],
+  ["إشارات رصد",board.signals.length,"تحتاج تحققًا بشريًا"]
+ ].map(x=>'<div class="kpi"><small>'+esc(x[0])+'</small><strong>'+num(x[1])+'</strong><span>'+esc(x[2])+'</span></div>').join('');
+ $('actions').innerHTML=board.monitored.map(x=>{
+  const r=x.risk,group=x.total===null?'<span class="metric">مطابقة موظفين: غير متاحة</span>':
+   '<span class="metric">مطابقون نصيًا: <strong>'+num(x.total)+'</strong></span><span class="metric">سعوديون: <strong>'+num(x.saudi)+'</strong></span><span class="metric">غير سعوديين: <strong>'+num(x.other)+'</strong></span>';
+  const gap=x.gap!==null&&x.groupStatus!=="future"?'<span class="metric">فجوة حسابية: <strong>'+num(x.gap)+'</strong> (غير معتمدة)</span>':"";
+  const d=x.nextDate&&x.nextDate>board.today?'<span class="metric">مرحلة قادمة: '+esc(x.nextDate)+'</span>':"";
+  const more=x.id==="techeng"?'decision-watch.html':'calculator.html?decision='+encodeURIComponent(x.id);
+  return '<article class="action"><div class="action-head"><div><h3>'+esc(x.title)+'</h3><span class="source-status">قرار '+esc(x.number||"غير مدون")+' · '+esc(x.rate)+'</span></div>'+chip(r.heading,r.level)+'</div>'+
+   '<div class="metrics-line">'+group+gap+d+'</div><p><b>الملاحظة:</b> '+esc(r.detail)+'</p><p><b>المقترح:</b> '+esc(r.suggestion)+'</p>'+
+   '<div class="sources">'+source(x.source)+'<a href="'+esc(more)+'">عرض التحليل ↗</a></div></article>';
+ }).join("")||'<div class="empty">لا توجد مجموعات في الفهرس الحالي.</div>';
+ const due=board.upcoming.filter(x=>x.days!==null&&x.days>=0);
+ $('deadlines').innerHTML=due.map(x=>'<div class="deadline"><b>'+esc(x.decision)+'</b><div class="deadline-sub">'+chip(x.rate,"future")+'<span class="days">'+num(x.days)+' يوم</span></div><div class="muted">'+esc(x.label)+' · '+esc(x.date)+'</div><div class="sources">'+source(x.url)+'</div></div>').join("")||'<div class="empty">لا توجد مواعيد مستقبلية مثبتة ضمن المجموعات المرتبطة حاليًا.</div>';
+ $('signals').innerHTML=board.signals.length?board.signals.map(x=>'<article class="signal"><div class="action-head"><h3>'+esc(x.title)+'</h3>'+chip(x.priority,"review")+'</div><p>'+esc(x.summary)+'</p><div class="sources"><span class="source-status">'+esc(x.source)+' · '+esc(x.date.slice(0,10))+'</span>'+source(x.url)+'</div></article>').join(""):'<div class="empty">لا توجد إشارات منشورة في سجل الرصد الحالي. هذا لا يثبت عدم صدور قرارات جديدة.</div>';
+ const status=board.monitoring,tag=status==="healthy"?"تم فحص المصادر بنجاح":status==="stale"?"بيانات الرصد متأخرة":status==="partial"?"بعض المصادر تعذر فحصها":"نتيجة الفحص غير مكتملة";
+ $('scan').innerHTML='<div class="scan '+(status==="healthy"?"":status==="stale"||status==="partial"?"warn":"error")+'"><strong>'+esc(tag)+'</strong><div>'+num(board.scan.ok||0)+' من '+num(board.scan.count||0)+' مصادر ناجحة · '+num(board.scan.failed||0)+' متعثرة</div><div>آخر فحص: '+(board.scan.checkedAt?dateText(board.scan.checkedAt):"غير مسجل")+'</div></div><p class="muted">نجاح الفحص لا يعني اكتمال تغطية جميع القرارات والأدلة الحكومية.</p>';
 }
-function currentPlan(){return state.plans.find(x=>x.id===selected)}
-function stageFor(d){
- let items=(Array.isArray(d.history)?d.history:[]).filter(x=>x.verified===true&&x.date&&x.date>=today()).map(x=>({date:x.date,label:x.label,rate:x.rate}));
- if(d.nextEffective&&d.nextEffective>=today()&&!items.some(x=>x.date===d.nextEffective))items.push({date:d.nextEffective,label:"المرحلة المقبلة",rate:d.nextPct+"%"});
- if(d.effective&&d.effective>=today()&&!items.some(x=>x.date===d.effective))items.push({date:d.effective,label:"نفاذ القرار",rate:d.rate});
- items.sort((a,b)=>a.date.localeCompare(b.date));return items[0]||null;
-}
-function kpi(label,value,extra=""){return '<div class="kpi"><small>'+esc(label)+'</small><strong>'+esc(value)+'</strong><small>'+esc(extra)+'</small></div>'}
-function render(){
- if(!state)return;
- const stats=ops.summary(state,today());
- $('kpis').innerHTML=kpi("القرارات بقوالب متابعة",stats.plans,"خطط أولية وليست معتمدة")+kpi("إجراءات مقترحة",stats.tasks,"لا توجد مهام مسندة تلقائيًا")+kpi("تم تسجيل اكتمالها",stats.done,stats.percent+"% من خطوات المتابعة")+kpi("متوقفة",stats.blocked,"تحديث يدوي")+kpi("متأخرة بحسب مواعيدك",stats.overdue,"لا نضع مواعيد تخمينية");
- const available=catalog.filter(x=>!state.plans.some(p=>p.id===x.id));
- $('add-decision').innerHTML=available.map(d=>option(d.id,d.title,d.id===available[0]?.id)).join("")||option("","جميع القرارات مضافة","");$('add-plan').disabled=available.length===0;
- $('plan-list').innerHTML=state.plans.map(p=>{
-  const d=byId.get(p.id),complete=p.tasks.filter(x=>x.status==="done").length;
-  return '<button type="button" class="plan-btn'+(p.id===selected?' current':'')+'" data-open="'+esc(p.id)+'"><strong>'+esc(d?.title||p.id)+'</strong><small>'+complete+' من '+p.tasks.length+' خطوات اكتملت يدويًا</small><div class="progress"><i style="width:'+(complete/p.tasks.length*100)+'%"></i></div></button>';
- }).join("")||'<div class="empty">ما فيه خطط. اختر قرارًا واضغط «إضافة خطة متابعة».</div>';
- const p=currentPlan(),d=byId.get(selected);
- $('active-panel').innerHTML=p&&d?renderPlan(p,d):'<div class="empty">اختر قرارًا من الخطط أو أضف خطة جديدة للبدء.</div>';
- $('log').innerHTML=(state.events||[]).slice(0,12).map(e=>{
-  const d=byId.get(e.decision),s=ops.STEPS.find(x=>x.id===e.step),what=e.action==="created"?"إضافة خطة أولية":e.action==="deleted"?"حذف خطة":e.action==="restored"?"استعادة سجل":"تعديل إجراء";
-  return '<div class="audit-row"><b>'+esc(what)+'</b> · '+esc(d?.title||e.decision)+(s?' · '+esc(s.title):'')+'<small>'+esc(e.at.replace("T"," ").slice(0,19))+' UTC · سجل محلي قابل للتعديل</small></div>';
- }).join("")||'<div class="muted">لا توجد تغييرات مسجلة. الخطط المقترحة الأساسية لا تُعد إجراءات فعلية.</div>';
- $('save-info').textContent=persisted?"الحالة محفوظة محليًا في هذا المتصفح فقط. آخر حفظ: "+(state.lastSaved?state.lastSaved.replace("T"," ").slice(0,19)+" UTC":"لم تُعدّل بعد"):"التخزين غير متاح؛ صدّر نسخة احتياطية يدويًا";
-}
-function renderPlan(p,d){
- const source=safeLink(d.source),m=window.SalicWorkforce;
- let wf=null;try{if(m?.names?.[d.id])wf=m.group(d.id)}catch(_){}
- const stage=stageFor(d);
- const steps=p.tasks.map(t=>{
-  const meta=ops.STEPS.find(x=>x.id===t.id),tag=ops.STATUS[t.status];
-  return '<div class="step"><div class="step-top"><div><h3>'+esc(meta.title)+'</h3><p>'+esc(meta.help)+'</p></div><span class="pill '+esc(t.status)+'">'+esc(tag)+'</span></div>'+
-  '<div class="form-grid" data-task="'+esc(t.id)+'"><label>القسم المسؤول<select data-field="team">'+ops.TEAMS.map(x=>option(x,x,t.team)).join('')+'</select></label>'+
-  '<label>حالة الإجراء<select data-field="status">'+Object.entries(ops.STATUS).map(([k,v])=>option(k,v,t.status)).join('')+'</select></label>'+
-  '<label>الموعد المحدد يدويًا<input type="date" data-field="due" value="'+esc(t.due)+'"></label>'+
-  '<label>مراجعة الأدلة خارج الموقع<select data-field="evidence">'+Object.entries(ops.EVIDENCE).map(([k,v])=>option(k,v,t.evidence)).join('')+'</select></label>'+
-  '<button class="btn small-btn" type="button" data-save="'+esc(t.id)+'">حفظ</button></div></div>';
- }).join("");
- const wftxt=wf?wf.total+' مطابقًا نصيًا، '+wf.saudi+' سعوديًا و'+wf.other+' غير سعودي':'لم تُطابق مجموعة موظفين ضمن هذا الفهرس';
- const gap=wf&&Number.isFinite(wf.gap)?wf.gap+" (فجوة افتراضية غير معتمدة)":"غير قابلة للجزم";
- const st=stage?'المرحلة القادمة '+stage.date+' ('+stage.rate+') · '+delta(stage.date)+' يومًا':'لا توجد مرحلة مستقبلية مثبتة في الفهرس';
- return '<div class="topline"><div><span class="badge">خطة متابعة أولية · غير معتمدة</span><h2 style="font-size:21px;margin:10px 0 4px">'+esc(d.title)+'</h2><div class="muted">قرار '+esc(d.number||"غير مدون")+' · '+esc(rateNumber(d.rate))+'</div></div><button type="button" class="btn danger no-print" data-remove="'+esc(p.id)+'">إزالة الخطة من المتصفح</button></div>'+
- '<div class="details"><div class="detail"><small>المطابقة الأولية لموظفي سالك</small><b>'+esc(wftxt)+'</b></div><div class="detail"><small>فجوة المسمى</small><b>'+esc(gap)+'</b></div><div class="detail"><small>المرحلة القادمة</small><b>'+esc(st)+'</b></div><div class="detail"><small>حالة مراجعة الدليل</small><b>'+esc(d.audit?.status==="reviewed"?"مراجعة أساسية":"يحتاج تدقيقًا إضافيًا")+'</b></div></div>'+
- '<div class="actions">'+(source?'<a class="btn secondary" href="'+esc(source)+'" target="_blank" rel="noopener noreferrer">المرجع الرسمي للقرار</a>':'')+'<a class="btn secondary" href="calculator.html?decision='+encodeURIComponent(d.id)+'">الحاسبة المرجعية</a></div>'+
- '<div class="section-head"><h2>خطوات المتابعة والإغلاق</h2><span class="badge neutral">'+p.tasks.filter(t=>t.status==="done").length+' / '+p.tasks.length+' خطوات مكتملة</span></div>'+
- '<p class="muted">اضبط القسم والحالة والموعد بعد مراجعة الواقع. لا يُقبل «مكتمل يدويًا» إلا بعد اختيار قسم ومراجعة الأدلة، لكنه لا يثبت اعتماد الجهة المختصة.</p>'+steps;
-}
-function selectDecision(id){if(state.plans.some(p=>p.id===id)){selected=id;render()}}
-$('plan-list').addEventListener("click",e=>{const b=e.target.closest("[data-open]");if(b)selectDecision(b.dataset.open)});
-$('add-plan').addEventListener("click",()=>{
- const id=$('add-decision').value;
- try{state=ops.addPlan(state,id,catalog.map(d=>d.id));selected=id;persist();notice("أُضيف قالب متابعة القرار محليًا. لم يُرسل أي إجراء إلى أنظمة سالك.")}
- catch(e){notice("تعذرت إضافة الخطة؛ تحقق من اختيار القرار.",true)}
-});
-$('active-panel').addEventListener("click",e=>{
- const save=e.target.closest("[data-save]");
- if(save){
-  const wrapper=save.closest("[data-task]");if(!wrapper)return;
-  const id=wrapper.dataset.task,values={};
-  for(const field of ["team","status","due","evidence"]){values[field]=wrapper.querySelector('[data-field="'+field+'"]').value}
-  try{state=ops.update(state,selected,id,values,catalog.map(d=>d.id));persist();notice("حُفظ التحديث محليًا. لا يمثل اعتمادًا أو إجراءً حكوميًا.")}
-  catch(err){notice(err.message==="completion_requires_review_and_team"?"لتسجيل اكتمال الإجراء اختر قسمًا مسؤولًا وأكّد مراجعة الأدلة أولًا.":"تعذر الحفظ: تحقق من المدخلات.",true)}
+async function init(){
+ try{
+  const [_,decisions,workforce,alerts,health]=await Promise.all([window.SalicWorkforce.load(),load("data/decisions.json"),load("data/salic-workforce.json"),load("data/alerts.json"),load("data/health.json")]);
+  const b=engine.build({decisions,workforce,alerts,health,model:window.SalicWorkforce});render(b);
+ }catch(error){
+  $('actions').innerHTML='<div class="empty">تعذر قراءة بعض بيانات الرادار الآن. حدّث الصفحة أو راجع صفحة المصادر.</div>';
+  $('deadlines').innerHTML='<div class="empty">تعذر حساب المواعيد.</div>';
+  $('signals').innerHTML='<div class="empty">تعذر تحميل الإشارات.</div>';
+  $('scan').textContent="تعذر تحميل حالة الرصد.";
+  $('kpis').innerHTML='<div class="kpi">تعذر تجهيز المؤشرات.</div>';
+  console.error(error);
  }
- const remove=e.target.closest("[data-remove]");
- if(remove&&window.confirm("إزالة هذه الخطة ومهامها من المتصفح؟ لا يؤثر على قرارات الرادار أو أنظمة سالك.")){
-  try{state=ops.removePlan(state,remove.dataset.remove,catalog.map(d=>d.id));selected=state.plans[0]?.id||"";persist();notice("حُذفت خطة المتابعة المحلية فقط.")}
-  catch(_){notice("تعذرت إزالة الخطة.",true)}
- }
-});
-$('export').addEventListener("click",()=>{
- try{
-  const payload=ops.serialize(state,catalog.map(d=>d.id)),url=URL.createObjectURL(new Blob([payload],{type:"application/json"})),a=document.createElement("a");
-  a.href=url;a.download="radar-operations-"+today()+".json";document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
-  notice("تم تجهيز نسخة احتياطية بدون أسماء الموظفين أو المستندات. راجع مكان حفظها على جهازك.")
- }catch(_){notice("تعذر تصدير النسخة الاحتياطية.",true)}
-});
-$('import-btn').addEventListener("click",()=>$('import-file').click());
-$('import-file').addEventListener("change",async e=>{
- const file=e.target.files?.[0];e.target.value="";if(!file)return;
- if(file.size>250000){notice("حجم ملف الاستعادة يجب أن يكون أقل من 250KB.",true);return}
- try{
-  const obj=JSON.parse(await file.text()),restored=ops.sanitize(obj,catalog.map(d=>d.id));
-  if(!window.confirm("استبدال خطط المتابعة المحلية بالنسخة المستوردة؟ لا تُرسل البيانات خارج جهازك."))return;
-  state=restored;selected=state.plans[0]?.id||"";persist();notice("تمت استعادة القوالب والحالات المسموح بها فقط. لا نستورد أسماء أو ملاحظات حرة.")
- }catch(_){notice("ملف الاستعادة غير متوافق أو يحتوي على بيانات غير مسموح بها؛ لم يُستخدم.",true)}
-});
-$('reset').addEventListener("click",()=>{
- if(!window.confirm("إعادة ضبط جميع خطط المتابعة وسجل التغييرات على هذا المتصفح؟"))return;
- state=ops.blank();selected="admin";persist();notice("تمت إعادة القوالب المقترحة دون أي حالات إنجاز.")
-});
-async function start(){
- try{
-  const [r]=await Promise.all([fetch("data/decisions.json?ts="+Date.now(),{cache:"no-store"}),window.SalicWorkforce.load()]);
-  if(!r.ok)throw Error("decisions");
-  const data=await r.json();catalog=Array.isArray(data.decisions)?data.decisions.filter(d=>typeof d.id==="string"&&/^[a-z0-9-]{1,40}$/.test(d.id)):[];
-  if(catalog.length===0)throw Error("no-decisions");
-  byId=new Map(catalog.map(d=>[d.id,d]));
-  try{const saved=localStorage.getItem(ops.KEY);state=saved?ops.sanitize(JSON.parse(saved),catalog.map(d=>d.id)):ops.blank()}
-  catch(_){state=ops.blank();persisted=false;notice("تعذر قراءة النسخة المحلية أو أنها غير متوافقة؛ عُرضت القوالب الافتراضية دون حذف الملف السابق.",true)}
-  selected=state.plans[0]?.id||"";render();
- }catch(err){$('active-panel').innerHTML='<div class="bad-msg">تعذر تحميل قاعدة القرارات؛ يرجى تحديث الصفحة أو مراجعة اتصال الموقع.</div>'}
 }
-start();
+init();
 })();
 </script></body></html>
