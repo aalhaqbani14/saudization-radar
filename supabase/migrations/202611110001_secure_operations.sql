@@ -247,6 +247,54 @@ drop policy if exists sradar_audit_read on public.sradar_audit_events;
 create policy sradar_audit_read on public.sradar_audit_events for select to authenticated
 using (public.sradar_has_role(org_id,array['owner','manager','editor','viewer']));
 
+-- Atomic plan bootstrap: editors can create a plan with all five predefined steps
+-- in one database transaction; membership is checked inside this SECURITY DEFINER function.
+create or replace function public.sradar_create_plan(p_org uuid,p_decision text)
+returns uuid language plpgsql security definer set search_path = ''
+as $
+declare plan_uuid uuid;
+begin
+ if not public.sradar_has_role(p_org,array['owner','manager','editor']) then
+  raise exception 'Membership required';
+ end if;
+ if p_decision !~ '^[a-z0-9-]{2,40}
+revoke all on public.sradar_orgs,public.sradar_members,public.sradar_plans,
+ public.sradar_tasks,public.sradar_approvals,public.sradar_audit_events from anon,authenticated;
+grant select on public.sradar_orgs,public.sradar_members,public.sradar_plans,public.sradar_tasks,
+ public.sradar_approvals,public.sradar_audit_events to authenticated;
+grant insert on public.sradar_plans,public.sradar_tasks,public.sradar_approvals to authenticated;
+grant update(archived) on public.sradar_plans to authenticated;
+grant update(status,team,due_on,evidence_checked) on public.sradar_tasks to authenticated;
+
+revoke all on function public.sradar_has_role(uuid,text[]) from public,anon;
+grant execute on function public.sradar_has_role(uuid,text[]) to authenticated;
+revoke all on function public.sradar_create_plan(uuid,text) from public,anon;
+grant execute on function public.sradar_create_plan(uuid,text) to authenticated;
+revoke all on function public.sradar_plan_guard(),public.sradar_plan_audit(),
+ public.sradar_task_guard(),public.sradar_task_audit(),
+ public.sradar_approval_guard(),public.sradar_approval_audit() from public,anon,authenticated;
+commit;
+
+-- Setup: after users have signed up, a privileged administrator must insert
+-- one org and membership rows for the approved auth.users UUIDs.
+-- Do not publish service_role credentials. Never embed private IDs in GitHub.
+-- Approvals remain valid for a task only while its version equals task_version.
+ then raise exception 'Invalid decision id'; end if;
+ insert into public.sradar_plans(org_id,decision_id,created_by)
+ values(p_org,p_decision,auth.uid()) returning id into plan_uuid;
+ insert into public.sradar_tasks(org_id,plan_id,step_id,team,updated_by)
+ select p_org,plan_uuid,x.step_id,x.team,auth.uid()
+ from (values
+   ('codes','الخدمات الحكومية'),
+   ('scope','الالتزام'),
+   ('gap','الموارد البشرية'),
+   ('plan','الموارد البشرية'),
+   ('review','الالتزام')
+ ) as x(step_id,team);
+ return plan_uuid;
+end;
+$;
+
 -- Explicit grants: anonymous visitors cannot read/write operational data.
 revoke all on public.sradar_orgs,public.sradar_members,public.sradar_plans,
  public.sradar_tasks,public.sradar_approvals,public.sradar_audit_events from anon,authenticated;
