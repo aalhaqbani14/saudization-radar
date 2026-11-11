@@ -10,13 +10,12 @@ const groups={
  consulting:["أخصائي استشارات أعمال","أخصائي استشارات مالية"],
  legal:["أخصائي قانوني"],
  ict:["محلل نظم المعلومات","أخصائي علوم حاسب آلي","فني دعم تقنية معلومات","أخصائي دعم فني","مطور تطبيقات","محلل قاعدة بيانات","مهندس حاسب آلي","محلل بيانات"],
- engineers:["مهندس حاسب آلي"],
  sales:["وسيط سلع مستقبلية"]
 };
 // Organizational category only: these roles are displayed with administrative support,
 // but are excluded from decision 132249 calculations unless official codes later prove otherwise.
 const relatedNonTarget={admin:["أخصائي إداري"]};
-const names={admin:"المهن الإدارية المساندة",procurement:"المشتريات",project:"إدارة المشاريع",marketing:"التسويق",accounting:"المحاسبة",consulting:"الاستشارات",legal:"المهن القانونية",ict:"تقنية المعلومات",engineers:"الهندسة",sales:"المبيعات"};
+const names={admin:"المهن الإدارية المساندة",procurement:"المشتريات",project:"إدارة المشاريع",marketing:"التسويق",accounting:"المحاسبة",consulting:"الاستشارات",legal:"المهن القانونية",ict:"تقنية المعلومات",sales:"المبيعات"};
 // Rates are indicative as of 2026-11-03, NOT a determination of legal scope.
 // 'conditional' groups cannot safely use a combined workforce count to calculate a mandatory gap.
 const policies={
@@ -28,7 +27,6 @@ const policies={
  ict:{rate:null,min:5,kind:"grouped",detail:"نسبة 25% تُحتسب لكل مجموعة تخصصية بشكل مستقل، ولا يمكن جمع جميع موظفي التقنية في مقام واحد."},
  legal:{rate:70,min:1,kind:"general",rounding:"nearest",detail:"وفق الدليل المرفق، القرار يشمل جميع منشآت القطاع الخاص للمهن القانونية الأربع، ويشترط أجرًا خاضعًا للاشتراك لا يقل عن 5,500 ريال لاحتساب السعودي. الحكم النهائي يحتاج مطابقة رمز المهنة والأجر."},
  consulting:{rate:null,min:null,kind:"sector",detail:"يلزم التحقق من نطاق المهن الاستشارية وشروط المنشأة؛ المسمى وحده لا يثبت الانطباق."},
- engineers:{rate:30,min:5,kind:"threshold",detail:"تتطلب المهن الهندسية مطابقة الرمز والاعتماد والأجر؛ عدد المهندسين المطابقين للأسماء قد يقل عن العدد النظامي الفعلي."},
  sales:{rate:60,min:3,kind:"threshold",rounding:"nearest",detail:"وسيط سلع مستقبلية مدرج صراحة في جدول مهن المبيعات برمز 332401؛ يلزم إثبات أن الرمز المسجل لدى الجهات المختصة هو نفسه."}
 };
 function norm(v){return String(v??"").trim().replace(/[إأآٱ]/g,"ا").replace(/ى/g,"ي").replace(/ة/g,"ه").replace(/[\u064B-\u065F\u0670ـ]/g,"").replace(/\s+/g," ").toLowerCase()}
