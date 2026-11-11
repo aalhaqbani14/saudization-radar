@@ -20,6 +20,7 @@ const statIds=Object.keys(STATUS),evIds=Object.keys(EVIDENCE);
 const plain=v=>typeof v==="string"?v:"";
 const validDate=v=>v===""||(/^\d{4}-\d{2}-\d{2}$/.test(v)&&!Number.isNaN(Date.parse(v+"T00:00:00Z"))&&new Date(v+"T00:00:00Z").toISOString().slice(0,10)===v);
 const time=()=>new Date().toISOString();
+const safeStamp=v=>typeof v==="string"&&/^20\d{2}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{1,3})?Z$/.test(v)&&Number.isFinite(Date.parse(v))?v:time();
 const normStore=s=>JSON.parse(JSON.stringify(s));
 const hasOwn=(x,k)=>Object.prototype.hasOwnProperty.call(x,k);
 function taskFrom(step){return {id:step.id,status:"todo",team:step.team,due:"",evidence:"pending"}}
@@ -44,11 +45,11 @@ function sanitize(raw,validDecisionIds){
    seen.add(t.id);
    return {id:t.id,status:t.status,team:t.team,due:t.due,evidence:t.evidence};
   });
-  return {id:p.id,startedAt:typeof p.startedAt==="string"&&/^20\d{2}-/.test(p.startedAt)?p.startedAt.slice(0,35):time(),tasks:STEPS.map(s=>tasks.find(x=>x.id===s.id))};
+  return {id:p.id,startedAt:safeStamp(p.startedAt),tasks:STEPS.map(s=>tasks.find(x=>x.id===s.id))};
  });
  const events=raw.events.map(e=>{
   if(!e||typeof e!=="object"||!valid.has(e.decision)||!STEPS.some(s=>s.id===e.step)&&e.step!=="plan"||!["created","deleted","task_changed","restored"].includes(e.action)||typeof e.at!=="string")throw Error("invalid_history");
-  return {at:e.at.slice(0,35),decision:e.decision,step:e.step,action:e.action,old:safeHistoryValue(e.old),value:safeHistoryValue(e.value)};
+  return {at:safeStamp(e.at),decision:e.decision,step:e.step,action:e.action,old:safeHistoryValue(e.old),value:safeHistoryValue(e.value)};
  });
  return {version:VERSION,plans,events,lastSaved:null,source:"local"};
 }
