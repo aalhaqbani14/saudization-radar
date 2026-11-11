@@ -182,7 +182,8 @@ def consolidate_alerts(alerts):
  def links_for(item):
   links=list(item.get('related_sources') or [])
   if item.get('source') and item.get('url'):
-   links.insert(0, {'name':item['source'],'url':item['url']})
+   primary={'name':item['source'],'url':item['url']}
+   if primary not in links:links.append(primary)
   good=[];seen=set()
   for link in links:
    if not isinstance(link,dict):continue
