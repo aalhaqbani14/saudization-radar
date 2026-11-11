@@ -15,6 +15,8 @@ name: Radar quality checks
       - 'test_import.mjs'
       - 'test_executive.mjs'
       - 'test_operations.mjs'
+      - 'test_operations_auto.mjs'
+      - 'assets/operations-auto.js'
       - 'test_operations_team.mjs'
       - 'assets/operations-team.js'
       - 'operations-team.html'
@@ -68,6 +70,9 @@ jobs:
           node --check assets/operations-model.js
           node --check test_operations.mjs
           node test_operations.mjs
+          node --check assets/operations-auto.js
+          node --check test_operations_auto.mjs
+          node test_operations_auto.mjs
           node --check assets/operations-team.js
           node --check test_operations_team.mjs
           node test_operations_team.mjs
