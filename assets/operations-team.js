@@ -142,7 +142,7 @@ try{
  if(!validConfig(config)){show("setup");return}
  if(!window.supabase?.createClient){show("setup");msg("تعذر تحميل أداة المصادقة. تحقق من اتصالك أو سياسة الموارد الخارجية.",true);return}
  const [catalog]=await Promise.all([fetch("data/decisions.json?ts="+Date.now(),{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("catalog");return r.json()})]);
- decisions=(catalog.decisions||[]).filter(d=>typeof d.id==="string"&&/^[a-z0-9-]{2,40}$/.test(d.id));
+ decisions=(catalog.decisions||[]).filter(d=>typeof d.id==="string"&&/^[a-z0-9-]{2,40}$/.test(d.id)&&d.salicScope?.status!=="excluded_from_current_workforce_dashboard");
  dmap=new Map(decisions.map(d=>[d.id,d]));
  db=window.supabase.createClient(config.url,config.anonKey,{auth:{detectSessionInUrl:true,persistSession:true,autoRefreshToken:true}});
  db.auth.onAuthStateChange((event)=>{if(event==="SIGNED_IN"||event==="SIGNED_OUT")setTimeout(authCheck,0)});
