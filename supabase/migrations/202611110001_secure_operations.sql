@@ -87,6 +87,10 @@ create table if not exists public.sradar_audit_events (
 create index if not exists sradar_task_org_idx on public.sradar_tasks(org_id,plan_id);
 create index if not exists sradar_audit_org_idx on public.sradar_audit_events(org_id,occurred_at desc);
 create index if not exists sradar_approval_task_idx on public.sradar_approvals(task_id,task_version,approved_at desc);
+-- Each completed task revision has exactly one explicit review outcome.
+-- A rejected revision must be corrected (version incremented) before re-review.
+create unique index if not exists sradar_one_approval_per_revision
+ on public.sradar_approvals(task_id,task_version);
 
 -- Enforce immutable tenant/decision ownership and server-authored audit metadata.
 create or replace function public.sradar_plan_guard()
@@ -175,6 +179,12 @@ begin
  select count(*) into match_count from public.sradar_tasks t
  where t.id=new.task_id and t.org_id=new.org_id and t.version=new.task_version
    and t.status='done' and t.evidence_checked=true;
+ -- Two-person control: the manager approving cannot be the person
+ -- who last edited/closed this particular task revision.
+ if exists (
+  select 1 from public.sradar_tasks t
+  where t.id=new.task_id and t.updated_by=auth.uid()
+ ) then raise exception 'Independent approver required'; end if;
  if match_count<>1 then raise exception 'Task is not complete or approval version is stale'; end if;
  new.approved_by:=auth.uid();
  new.approved_at:=now();
