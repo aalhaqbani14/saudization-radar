@@ -1,0 +1,12 @@
+{
+  "updated_at": null,
+  "changes": [],
+  "last_scan": {
+    "checked_at": null,
+    "total_sources": 3,
+    "successful_sources": 0,
+    "failed_sources": 0,
+    "sources": [],
+    "coverage_notice": "بانتظار أول فحص لأدلة PDF الرسمية؛ أول فحص ينشئ بصمة مرجعية دون تنبيهات."
+  }
+}
