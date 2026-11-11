@@ -68,6 +68,18 @@ def classify(added, source_name='', source_url=''):
         ] if flag],
     }
 
+
+def content_signature(item):
+    """Identify an identical substantial HRSD update across monitored pages.
+
+    Short/generic notices are deliberately not grouped, since different real
+    decisions can share boilerplate such as 'توطين 100%'.
+    """
+    summary = normalize(item.get('summary', ''))
+    if len(summary) < 100 or not TOPIC.search(summary) or not DECISION.search(summary):
+        return None
+    return hashlib.sha256(summary.encode('utf-8')).hexdigest()[:24]
+
 def analyze_change(previous, current, source, detected_at):
     added = meaningful_new_text(previous, current)
     signal = classify(added, source.get('name', ''), source.get('url', ''))
