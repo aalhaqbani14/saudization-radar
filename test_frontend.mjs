@@ -46,6 +46,10 @@ assert.equal(known.sales.matchedRoles.find(x=>x.title==='وسيط سلع مست�
 assert.equal(known.marketing.minimumEligibleSaudiWage,5500);
 assert.equal(known.legal.percent,70);
 assert.equal(known.ict.grouped,true);
+assert.equal(known.ict.matchedRoles.find(x=>x.title==='مهندس حاسب آلي').code,'215204');
+assert.ok(wf.titleIds('مهندس حاسب آلي').includes('ict'),'Computer engineer remains covered by ICT mapping');
+assert.ok(!wf.titleIds('مهندس حاسب آلي').includes('engineers'),'Computer engineer must not be counted as generic engineering');
+assert.ok(!Object.keys(wf.names).includes('engineers'),'SALIC must not display an unsupported generic engineering workforce group');
 assert.equal(known.admin.relatedNonTargetRoles[0].title,'أخصائي إداري');
 assert.equal(known.admin.relatedNonTargetRoles[0].decisionApplicable,false);
 assert.equal(known.admin.matchedRoles.some(r=>r.title==='أخصائي إداري'),false);
