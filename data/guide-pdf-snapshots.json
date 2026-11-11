@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-11T12:23:32.578445+00:00",
+  "updated_at": "2026-11-11T12:24:28.840801+00:00",
   "documents": {
     "admin": {
       "url": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
@@ -539,7 +539,7 @@
         }
       ],
       "pages": 7,
-      "last_success_at": "2026-11-11T12:23:31.838208+00:00"
+      "last_success_at": "2026-11-11T12:24:28.286718+00:00"
     },
     "accounting": {
       "url": "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajryy-lqrar-twtyn-mhn-almhasbyt.pdf",
@@ -1318,7 +1318,7 @@
         }
       ],
       "pages": 10,
-      "last_success_at": "2026-11-11T12:23:31.838208+00:00"
+      "last_success_at": "2026-11-11T12:24:28.286718+00:00"
     },
     "postal": {
       "url": "https://www.hrsd.gov.sa/sites/default/files/2022-06/20112022.pdf",
@@ -1981,7 +1981,7 @@
         }
       ],
       "pages": 10,
-      "last_success_at": "2026-11-11T12:23:31.838208+00:00"
+      "last_success_at": "2026-11-11T12:24:28.286718+00:00"
     }
   }
 }
