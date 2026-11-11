@@ -171,9 +171,72 @@ def explain_failure(exc):
   return 'encoding_error','تعذر قراءة ترميز المحتوى'
  return 'unexpected_error','خطأ تقني أثناء معالجة المصدر'
 
+def consolidate_alerts(alerts):
+ """Combine only identical, substantial review signals seen on multiple pages.
+
+ Preserve every official source link for audit. Do not combine short boilerplate
+ or separate events more than seven days apart. Prefer the ministry news index
+ as the representative when the same story appears in page-wide news widgets.
+ """
+ out=[]
+ def links_for(item):
+  links=list(item.get('related_sources') or [])
+  if item.get('source') and item.get('url'):
+   links.insert(0, {'name':item['source'],'url':item['url']})
+  good=[];seen=set()
+  for link in links:
+   if not isinstance(link,dict):continue
+   name=str(link.get('name','')).strip();url=str(link.get('url','')).strip()
+   if not name or not email_templates.safe_link(url) or (name,url) in seen:continue
+   seen.add((name,url));good.append({'name':name,'url':url})
+  return good
+ def close_dates(a,b):
+  try:
+   d1=datetime.datetime.fromisoformat(a.get('detected_at',''))
+   d2=datetime.datetime.fromisoformat(b.get('detected_at',''))
+   return abs((d1-d2).total_seconds()) <= 7*24*3600
+  except (ValueError,TypeError):
+   return False
+ for raw in alerts:
+  if not isinstance(raw,dict):continue
+  item=dict(raw);sig=detection.content_signature(item)
+  links=links_for(item)
+  match=None
+  for previous in out:
+   if item.get('id') and item.get('id')==previous.get('id'):
+    match=previous;break
+   if sig and sig==detection.content_signature(previous) and close_dates(item,previous):
+    match=previous;break
+  if match is None:
+   item['related_sources']=links
+   item['source_count']=len(links) or 1
+   out.append(item)
+   continue
+  common=links_for(match)+links
+  unique=[];seen=set()
+  for link in common:
+   key=(link['name'],link['url'])
+   if key not in seen:seen.add(key);unique.append(link)
+  match['related_sources']=unique
+  match['source_count']=len(unique) or 1
+  match['email_worthy']=bool(match.get('email_worthy') or item.get('email_worthy'))
+  # If the story was found on the general news page, don't mislabel it
+  # as a policy change in marketing, procurement or project management.
+  news=next((x for x in unique if x['name']=='أخبار الوزارة'),None)
+  if news:
+   match['source']=news['name'];match['url']=news['url']
+   match['title']='تغيّر يتطلب مراجعة: '+news['name']
+  # Keep the earliest detection timestamp for this same event.
+  try:
+   if item['detected_at'] < match['detected_at']:
+    match['detected_at']=item['detected_at']
+  except (KeyError,TypeError):pass
+ return out
+
 def main():
  state=json.loads(STATE.read_text(encoding='utf-8')) if STATE.exists() else {}
  db=json.loads(DATA.read_text(encoding='utf-8')) if DATA.exists() else {'alerts':[]}
+ db['alerts']=consolidate_alerts(db.get('alerts',[]))
  now=datetime.datetime.now(datetime.timezone.utc).isoformat();new=[];review_signals=0;success=0
  results=[]
  sources=monitored_sources()
@@ -188,14 +251,16 @@ def main():
    if comparable and previous['hash']!=digest:
     item=detection.analyze_change(previous.get('text',''),content,src,now)
     if item:
-     seen={a.get('id') for a in db.get('alerts',[])}
-     if item['id'] not in seen:
-      db.setdefault('alerts',[]).insert(0,item)
+     previous_count=len(db.get('alerts',[]))
+     db['alerts']=consolidate_alerts([item]+db.get('alerts',[]))
+     if len(db['alerts'])>previous_count:
       review_signals+=1
+      # One notification per genuine review signal, even when discovered
+      # in several monitored source pages during the same scan.
       if item['email_worthy']:new.append(item)
       print('Review signal:',name,'priority:',item['review_priority'],'email:',item['email_worthy'])
      else:
-      print('Duplicate signal skipped:',name)
+      print('Duplicate content or previously observed signal skipped:',name)
     else:
      print('No relevant decision signal:',name)
    # First run sets baseline, no false alert
