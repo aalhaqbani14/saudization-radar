@@ -54,7 +54,12 @@ function toRisk(group,decision,upcoming){
 }
 function build({decisions,model,alerts,health,workforce,today=riyadhToday()}){
  if(!safeDate(today)||!Array.isArray(decisions?.decisions)||!model?.names||typeof model.group!=="function")throw Error("Invalid public radar inputs");
- const linkedIds=[...new Set([...Object.keys(model.names),"techeng"])];
+ // SALIC workforce actions must come from actual matched occupation groups, never
+ // force a technical engineering decision into the dashboard without staff.
+ const linkedIds=Object.keys(model.names).filter(id=>{
+  const decision=decisions.decisions.find(d=>d.id===id);
+  return decision&&decision.salicScope?.status!=="excluded_from_current_workforce_dashboard";
+ });
  const subset=linkedIds.map(id=>{
   const decision=decisions.decisions.find(d=>d.id===id);
   if(!decision)return null;
