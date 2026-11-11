@@ -11,6 +11,9 @@ name: Saudization Radar monitor
       - 'test_monitor.py'
       - 'test_frontend.mjs'
       - 'test_import.mjs'
+      - 'test_executive.mjs'
+      - 'assets/executive-report.js'
+      - 'executive-brief.html'
       - 'assets/workforce-import.js'
       - 'workforce-import.html'
       - 'data/salic-workforce.json'
@@ -71,6 +74,9 @@ jobs:
           node test_frontend.mjs
           node --check assets/workforce-import.js
           node test_import.mjs
+          node --check assets/executive-report.js
+          node --check test_executive.mjs
+          node test_executive.mjs
           python - <<'PY'
           import json
           from pathlib import Path
