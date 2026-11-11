@@ -1,0 +1,8 @@
+{
+  "provider": "supabase",
+  "url": "",
+  "anonKey": "",
+  "orgId": "",
+  "enabled": false,
+  "notice": "يُفعّل فقط بعد إنشاء مشروع معتمد داخل الشركة، وتشغيل migration وصلاحيات RLS، وإنشاء المستخدمين والعضويات. المفتاح العام anon ليس سرًا؛ لا تضع service_role هنا أبدًا."
+}
