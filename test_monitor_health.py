@@ -93,5 +93,62 @@ class TestMonitorHealth(unittest.TestCase):
         self.assertNotIn("unreachable",self.health.read_text(encoding="utf-8"))
         mail.assert_not_called()
 
+    def test_identical_news_across_four_source_pages_is_one_review_signal(self):
+        common=('وزارة الموارد البشرية تعلن صدور قرار رفع نسبة توطين المهن الفنية '
+                'الهندسية إلى 35% ويشمل القرار 94 مهنة في القطاع الخاص. '
+                'يجب التحقق من الدليل الإجرائي الرسمي وتاريخ التطبيق.')
+        names=['مرجع إضافي: التسويق','مرجع إضافي: المشتريات',
+               'مرجع إضافي: إدارة المشاريع','أخبار الوزارة']
+        items=[{'id':str(i),'source':name,'title':'تغيّر يتطلب مراجعة: '+name,
+                'url':'https://www.hrsd.gov.sa/media-center/news'+('/'+str(i) if i else ''),
+                'detected_at':'2026-11-08T14:46:20+00:00','summary':common,
+                'review_status':'غير مؤكد — يحتاج مراجعة المصدر',
+                'email_worthy':True} for i,name in enumerate(names)]
+        result=monitor.consolidate_alerts(items)
+        self.assertEqual(len(result),1)
+        self.assertEqual(result[0]['source'],'أخبار الوزارة')
+        self.assertEqual(result[0]['source_count'],4)
+        self.assertEqual(len(result[0]['related_sources']),4)
+        self.assertEqual(monitor.consolidate_alerts(result),result,'consolidation should be idempotent')
+
+    def test_different_or_short_news_not_incorrectly_combined(self):
+        base={'source':'مصدر أ','url':'https://www.hrsd.gov.sa/news/a',
+              'detected_at':'2026-11-08T12:00:00+00:00',
+              'summary':'قرار توطين 35%'}
+        other=dict(base,id='two',source='مصدر ب',url='https://www.hrsd.gov.sa/news/b')
+        self.assertEqual(len(monitor.consolidate_alerts([dict(base,id='one'),other])),2)
+        full=('وزارة الموارد البشرية تعلن رفع نسبة التوطين في المهن الفنية '
+              'الهندسية إلى 35% في منشآت القطاع الخاص بحسب تفاصيل الدليل الرسمي.')
+        earlier=dict(base,id='old',summary=full)
+        later=dict(other,id='new',summary=full,
+                   detected_at='2026-12-03T12:00:00+00:00')
+        self.assertEqual(len(monitor.consolidate_alerts([earlier,later])),2)
+
+    @patch.object(monitor, 'send_email')
+    @patch.object(monitor, 'get_text')
+    def test_monitor_deduplicates_email_across_sources(self, fetch, mail):
+        common=('وزارة الموارد البشرية تعلن قرار رفع نسبة توطين المهن الفنية '
+                'الهندسية إلى 35% ويشمل 94 مهنة في القطاع الخاص، '
+                'ويحتاج إلى مراجعة الدليل الإجرائي الرسمي.')
+        baseline='قائمة أخبار الوزارة والمنشآت والخدمات العامة. '*5
+        for src in SOURCES:
+            source_url=src['url']
+            self.state.parent.mkdir(parents=True,exist_ok=True)
+        import hashlib
+        legacy={src['url']:{'hash':hashlib.sha256(baseline.encode()).hexdigest(),
+                 'text':baseline,'extraction_version':monitor.EXTRACTION_VERSION}
+                 for src in SOURCES}
+        self.state.write_text(json.dumps(legacy),encoding='utf-8')
+        fetch.return_value=baseline+common
+        mail.return_value=True
+        monitor.main()
+        recorded=json.loads(self.data.read_text(encoding='utf-8'))
+        health=json.loads(self.health.read_text(encoding='utf-8'))
+        self.assertEqual(len(recorded['alerts']),1)
+        self.assertEqual(recorded['alerts'][0]['source_count'],2)
+        self.assertEqual(health['signal_count'],1)
+        mail.assert_called_once()
+        self.assertEqual(len(mail.call_args.args[0]),1)
+
 if __name__ == "__main__":
     unittest.main()
