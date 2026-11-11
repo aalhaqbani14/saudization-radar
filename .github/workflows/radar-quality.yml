@@ -14,6 +14,9 @@ name: Radar quality checks
       - 'assets/workforce-model.js'
       - 'test_import.mjs'
       - 'test_executive.mjs'
+      - 'test_operations.mjs'
+      - 'assets/operations-model.js'
+      - 'operations.html'
       - 'assets/executive-report.js'
       - 'executive-brief.html'
       - 'test_frontend.mjs'
@@ -57,3 +60,6 @@ jobs:
           node --check assets/executive-report.js
           node --check test_executive.mjs
           node test_executive.mjs
+          node --check assets/operations-model.js
+          node --check test_operations.mjs
+          node test_operations.mjs
