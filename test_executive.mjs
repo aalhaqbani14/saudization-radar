@@ -24,7 +24,7 @@ assert.equal(rpt.summary.total,171);
 assert.equal(rpt.audited,10);
 assert.equal(rpt.decisionTotal,19);
 assert.equal(rpt.pending,9);
-assert.equal(rpt.grace.length,7);
+assert.equal(rpt.grace.length,6,'Only grace records for SALIC-scoped decisions should be displayed');
 assert.equal(rpt.groups.find(g=>g.id==='admin').gap,3);
 assert.ok(!rpt.deadlines.some(x=>['techeng','engineers'].includes(x.id)),'SALIC report must omit irrelevant engineering deadlines');
 assert.ok(!rpt.groups.some(x=>['techeng','engineers'].includes(x.id)),'SALIC gap groups must omit both engineering categories');
