@@ -1,0 +1,22 @@
+{
+  "updated": "2026-11-11",
+  "scope": "روابط مباشرة للأدلة PDF مثبتة في فهرس الرادار؛ لا يفترض انطباق القرار على سالك",
+  "method": "strict_pdf_only_first_run_baseline_no_alerts",
+  "sources": [
+    {
+      "id": "admin",
+      "title": "المهن الإدارية المساندة",
+      "url": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf"
+    },
+    {
+      "id": "accounting",
+      "title": "المهن المحاسبية",
+      "url": "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajryy-lqrar-twtyn-mhn-almhasbyt.pdf"
+    },
+    {
+      "id": "postal",
+      "title": "منافذ خدمات البريد ونقل الطرود",
+      "url": "https://www.hrsd.gov.sa/sites/default/files/2022-06/20112022.pdf"
+    }
+  ]
+}
