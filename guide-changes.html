@@ -55,7 +55,7 @@ function render(){
  $('metrics').innerHTML=stats.map(x=>'<div class="metric"><small>'+esc(x[0])+'</small><strong>'+Number(x[1]).toLocaleString("en-US")+'</strong></div>').join('');
  $('sources').innerHTML=list.map(x=>{
   const s=statuses.get(x.id),raw=s?.status||"not_checked";
-  const kinds={baseline:["تم حفظ النسخة المرجعية","gray"],unchanged_text:["النص لم يتغير",""],changed:["تغيّر النص — يحتاج مراجعة","warn"],error:["تعذر استخراج الدليل","bad"],not_checked:["بانتظار أول فحص","gray"]};
+  const kinds={baseline:["تم حفظ النسخة المرجعية","gray"],unchanged_text:["النص لم يتغير",""],changed:["تغيّر النص — يحتاج مراجعة","warn"],error:["تعذر استخراج الدليل","bad"],restricted:["وثيقة مقيدة — لا تُحفظ نسختها النصية","bad"],not_checked:["بانتظار أول فحص","gray"]};
   const [label,color]=kinds[raw]||["نتيجة غير محددة","gray"];
   return '<article class="source-card"><b>'+esc(x.title)+'</b>'+tag(label,color)+'<small>آخر فحص: '+esc(s?.checked_at||report.checked_at||"لم يبدأ")+' · الصفحات: '+esc(s?.pages??"—")+'</small>'+link(x.url,"فتح الدليل الرسمي")+'</article>';
  }).join("")||'<div class="empty">لا توجد أدلة PDF مسجلة للفحص.</div>';
