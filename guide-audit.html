@@ -32,12 +32,12 @@ function extraSupportRoles(d,filter){
 function rowsHtml(d,filter){
  let arr=d.matchedRoles.filter(x=>!filter||(x.title+" "+x.code).includes(filter));
  if(!arr.length)return '<p class="muted">لا توجد نتائج مطابقة لهذا البحث.</p>';
- return '<div class="scroll"><table><thead><tr><th>المسمى في الدليل</th><th>الرمز المرجعي</th><th>الإجمالي في لقطة سالك</th><th>السعوديون</th><th>غير السعوديين</th>'+(d.grouped?'<th>مجموعة التقنية</th>':'')+'</tr></thead><tbody>'+arr.map(x=>{const v=rows[x.title]||[x.title,0,0];return '<tr><td>'+esc(x.title)+'</td><td class="num">'+esc(x.code)+'</td><td class="num">'+v[1]+'</td><td class="num">'+v[2]+'</td><td class="num">'+(v[1]-v[2])+'</td>'+(d.grouped?'<td>'+esc(subnames[x.subgroup]||"")+'</td>':'')+'</tr>'}).join('')+'</tbody></table></div>';
+ return '<div class="scroll"><table><thead><tr><th>المسمى في الدليل</th><th>الرمز المرجعي</th><th>حالة رمز الموظف في قوى</th><th>الإجمالي في لقطة سالك</th><th>السعوديون</th><th>غير السعوديين</th>'+(d.grouped?'<th>مجموعة التقنية</th>':'')+'</tr></thead><tbody>'+arr.map(x=>{const v=rows[x.title]||[x.title,0,0];return '<tr><td>'+esc(x.title)+'</td><td class="num">'+esc(x.code)+'</td><td>'+esc(x.employeeQiwaCodeVerified===true?'موثّق':'غير متحقق — يلزم إثبات قوى')+'</td><td class="num">'+v[1]+'</td><td class="num">'+v[2]+'</td><td class="num">'+(v[1]-v[2])+'</td>'+(d.grouped?'<td>'+esc(subnames[x.subgroup]||"")+'</td>':'')+'</tr>'}).join('')+'</tbody></table></div>';
 }
 function render(){
  const filter=$('search').value.trim(),which=$('which').value;
  const selected=rules.filter(d=>which==="all"||d.id===which).filter(d=>!filter||d.title.includes(filter)||d.matchedRoles.some(x=>(x.title+" "+x.code).includes(filter))||(d.relatedNonTargetRoles||[]).some(x=>x.title.includes(filter)));
- $('intro').textContent=selected.length+' قرار/مجموعة ضمن نتيجة العرض. المسميات المطابقة تُقارن نصيًا فقط، وليست أكواد الموظفين المثبتة.';
+ $('intro').textContent=selected.length+' قرار/مجموعة ضمن نتيجة العرض. المسميات المطابقة تُقارن نصيًا فقط. رمز الدليل رسمي مرجعي، أما رمز الموظف الفعلي في قوى فلم يجرِ التحقق منه؛ لا تُعتمد فجوة امتثال قبل المطابقة.';
  $('results').innerHTML=selected.map(d=>{
  let info='<article><h2>'+esc(d.title)+' <span class="key">'+d.percent+'%</span><span class="status">مشروط</span></h2><p class="muted">'+esc(d.rule)+'</p>';
  info+='<p class="muted">بدء التطبيق المرجعي: '+esc(d.effective)+' · حد العدد: '+d.min+' · صفحات الدليل: '+esc(d.sourcePage)+' · التقريب: '+(d.rounding==="nearest"?"لأقرب عدد صحيح":"وفق طبيعة القرار")+'</p>';
