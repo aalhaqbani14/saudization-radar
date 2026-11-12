@@ -53,6 +53,20 @@ assert.ok(!Object.keys(wf.names).includes('engineers'),'SALIC must not display a
 assert.equal(known.admin.relatedNonTargetRoles[0].title,'أخصائي إداري');
 assert.equal(known.admin.relatedNonTargetRoles[0].decisionApplicable,false);
 assert.equal(known.admin.matchedRoles.some(r=>r.title==='أخصائي إداري'),false);
+const verifiedLinks=JSON.parse(fs.readFileSync('data/guide-pdf-sources.json','utf8')).sources;
+const sourceById=new Map(verifiedLinks.map(x=>[x.id,x.url]));
+for(const id of ['procurement','marketing','sales','legal','ict']){
+  assert.equal(known[id].sourceUrl,sourceById.get(id),'Official occupation evidence must point to verified direct PDF: '+id);
+}
+for(const decision of mapping.decisions){
+  assert.ok(decision.qiwaVerification.includes('لم تُستلم'),'Source-code evidence must distinguish official guide from Qiwa');
+  assert.ok(decision.matchedRoles.every(r=>r.referenceCodeSource==='official_procedural_guide'&&r.employeeQiwaCodeVerified===false),'No invented employee Qiwa matches');
+}
+assert.equal(mapping.decisions.reduce((n,d)=>n+d.matchedRoles.length,0),38);
+const auditPage=fs.readFileSync('guide-audit.html','utf8');
+assert.ok(auditPage.includes('حالة رمز الموظف في قوى'));
+assert.ok(auditPage.includes('غير متحقق — يلزم إثبات قوى'));
+
 const before=wf.getRows();
 wf.setRows([['أخصائي مشتريات',3,0]],null);
 assert.equal(wf.group('procurement').needed,2,'3 workers at 70% rounds to 2, not 3');
