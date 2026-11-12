@@ -23,13 +23,13 @@ class GuidePdfMonitorTests(unittest.TestCase):
             guides.validated_sources({'sources': [
                 {'id':'admin','title':'المهن الإدارية المساندة','url':'https://www.hrsd.gov.sa/a.html'}]})
 
-    def test_registered_public_pdf_sources_are_eight_and_unique(self):
+    def test_registered_public_pdf_sources_are_ten_and_unique(self):
         original = guides.read_json(guides.SOURCE_REGISTRY, {'sources': []})
         found = guides.validated_sources(original)
-        self.assertEqual(len(found), 8)
+        self.assertEqual(len(found), 10)
         self.assertEqual({x['id'] for x in found},
                          {'admin', 'accounting', 'postal', 'procurement',
-                          'marketing', 'sales', 'legal', 'ict'})
+                          'marketing', 'sales', 'legal', 'ict', 'consulting', 'service'})
         # Publicly listed project-management PDF carries 'Classification: Strict'
         # and must not be snapshotted into this public repository.
         self.assertNotIn('project', [x['id'] for x in found])
