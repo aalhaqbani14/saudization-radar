@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-12T07:52:58.896805+00:00",
+  "updated_at": "2026-11-12T07:54:27.307038+00:00",
   "documents": {
     "admin": {
       "url": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
@@ -539,7 +539,7 @@
         }
       ],
       "pages": 7,
-      "last_success_at": "2026-11-12T07:52:57.764919+00:00"
+      "last_success_at": "2026-11-12T07:54:24.868320+00:00"
     },
     "accounting": {
       "url": "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajryy-lqrar-twtyn-mhn-almhasbyt.pdf",
@@ -1318,7 +1318,7 @@
         }
       ],
       "pages": 10,
-      "last_success_at": "2026-11-12T07:52:57.764919+00:00"
+      "last_success_at": "2026-11-12T07:54:24.868320+00:00"
     },
     "postal": {
       "url": "https://www.hrsd.gov.sa/sites/default/files/2022-06/20112022.pdf",
@@ -1981,7 +1981,7 @@
         }
       ],
       "pages": 10,
-      "last_success_at": "2026-11-12T07:52:57.764919+00:00"
+      "last_success_at": "2026-11-12T07:54:24.868320+00:00"
     },
     "procurement": {
       "url": "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajrayy-lqrar-twtyn-mhn-almshtryat.pdf",
@@ -2468,7 +2468,7 @@
         }
       ],
       "pages": 7,
-      "last_success_at": "2026-11-12T07:52:57.764919+00:00"
+      "last_success_at": "2026-11-12T07:54:24.868320+00:00"
     },
     "marketing": {
       "url": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-ala-jray-y-lqrar-twtyn-mhn-altswyq-v5.pdf",
@@ -2987,7 +2987,7 @@
         }
       ],
       "pages": 8,
-      "last_success_at": "2026-11-12T07:52:57.764919+00:00"
+      "last_success_at": "2026-11-12T07:54:24.868320+00:00"
     },
     "sales": {
       "url": "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-ala-jray-y-lqrar-twtyn-mhn-almby-at.pdf",
@@ -3426,7 +3426,7 @@
         }
       ],
       "pages": 8,
-      "last_success_at": "2026-11-12T07:52:57.764919+00:00"
+      "last_success_at": "2026-11-12T07:54:24.868320+00:00"
     },
     "legal": {
       "url": "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajrayy-lqrar-mhn-alqanwnyt.pdf",
@@ -3945,7 +3945,7 @@
         }
       ],
       "pages": 7,
-      "last_success_at": "2026-11-12T07:52:57.764919+00:00"
+      "last_success_at": "2026-11-12T07:54:24.868320+00:00"
     },
     "ict": {
       "url": "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajrayy-lqrar-twtyn-mhn-alatsalat-wtqnyt-alm-lwmat.pdf",
@@ -4676,7 +4676,7 @@
         }
       ],
       "pages": 9,
-      "last_success_at": "2026-11-12T07:52:57.764919+00:00"
+      "last_success_at": "2026-11-12T07:54:24.868320+00:00"
     }
   }
 }
