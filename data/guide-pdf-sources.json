@@ -43,5 +43,14 @@
       "title": "الاتصالات وتقنية المعلومات",
       "url": "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajrayy-lqrar-twtyn-mhn-alatsalat-wtqnyt-alm-lwmat.pdf"
     }
+  ],
+  "excludedFromPublicTextSnapshots": [
+    {
+      "id": "project",
+      "title": "مهن إدارة المشاريع",
+      "status": "classified_source_not_snapshotted",
+      "reason": "الملف الرسمي يحتوي وسم Classification: Strict مقيد؛ لا تحفظ نسخة نصية في مستودع GitHub العام. تتم متابعة القرار عبر صفحة الوزارة الرسمية.",
+      "officialPage": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لتوطين-مهن-إدارة-المشاريع"
+    }
   ]
 }
