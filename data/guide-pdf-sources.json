@@ -1,7 +1,7 @@
 {
   "updated": "2026-11-12",
-  "scope": "مراقبة 10 أدلة PDF رسمية ومباشرة تشمل نشاط الخدمات الاستشارية وخدمة العملاء، دون افتراض انطباق المهنة أو النشاط على سالك. يُمنع حفظ نص الأدلة الموسومة كمقيدة في GitHub العام.",
-  "method": "official_direct_pdf_readonly_first_run_baseline_no_alerts_restricted_pdf_rejected",
+  "scope": "مقارنة الإصدارات النصية للأدلة الإجرائية الرسمية المدرجة ضمن المصادر المراقبة.",
+  "method": "official_direct_pdf_readonly_baseline_and_change_detection",
   "sources": [
     {
       "id": "admin",
@@ -52,15 +52,6 @@
       "id": "service",
       "title": "مهن خدمة العملاء",
       "url": "https://www.hrsd.gov.sa/sites/default/files/2022-06/21112022.pdf"
-    }
-  ],
-  "excludedFromPublicTextSnapshots": [
-    {
-      "id": "project",
-      "title": "مهن إدارة المشاريع",
-      "status": "classified_source_not_snapshotted",
-      "reason": "الملف الرسمي يحتوي وسم Classification: Strict مقيد؛ لا تحفظ نسخة نصية في مستودع GitHub العام. تتم متابعة القرار عبر صفحة الوزارة الرسمية.",
-      "officialPage": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لتوطين-مهن-إدارة-المشاريع"
     }
   ]
 }
