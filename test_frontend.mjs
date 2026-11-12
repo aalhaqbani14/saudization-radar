@@ -67,6 +67,15 @@ const auditPage=fs.readFileSync('guide-audit.html','utf8');
 assert.ok(auditPage.includes('حالة رمز الموظف في قوى'));
 assert.ok(auditPage.includes('غير متحقق — يلزم إثبات قوى'));
 
+const pdfPage=fs.readFileSync('guide-changes.html','utf8');
+const pdfRegistry=JSON.parse(fs.readFileSync('data/guide-pdf-sources.json','utf8'));
+assert.equal(pdfRegistry.sources.length,10,'Ten valid official PDF sources must remain monitored');
+assert.ok(!('excludedFromPublicTextSnapshots' in pdfRegistry),'Do not publish internal PDF exception narratives');
+assert.ok(!pdfPage.includes('id="excluded"'),'Do not show a public exception panel');
+assert.ok(!pdfPage.includes('Classification: Strict'),'Do not expose internal document classification on public page');
+assert.ok(!pdfPage.includes('لا تُحفظ نسخة نصية في GitHub'),'Keep implementation details off the public site');
+assert.ok(pdfPage.includes('سجل الفروقات المكتشفة'),'Preserve functional comparison page');
+assert.ok(JSON.parse(fs.readFileSync('data/decisions.json','utf8')).decisions.some(d=>d.id==='project'),'Project-management decision remains available elsewhere in radar');
 const before=wf.getRows();
 wf.setRows([['أخصائي مشتريات',3,0]],null);
 assert.equal(wf.group('procurement').needed,2,'3 workers at 70% rounds to 2, not 3');
