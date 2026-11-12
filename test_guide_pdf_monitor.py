@@ -23,6 +23,36 @@ class GuidePdfMonitorTests(unittest.TestCase):
             guides.validated_sources({'sources': [
                 {'id':'admin','title':'المهن الإدارية المساندة','url':'https://www.hrsd.gov.sa/a.html'}]})
 
+    def test_registered_public_pdf_sources_are_eight_and_unique(self):
+        original = guides.read_json(guides.SOURCE_REGISTRY, {'sources': []})
+        found = guides.validated_sources(original)
+        self.assertEqual(len(found), 8)
+        self.assertEqual({x['id'] for x in found},
+                         {'admin', 'accounting', 'postal', 'procurement',
+                          'marketing', 'sales', 'legal', 'ict'})
+        # Publicly listed project-management PDF carries 'Classification: Strict'
+        # and must not be snapshotted into this public repository.
+        self.assertNotIn('project', [x['id'] for x in found])
+
+    def test_restricted_label_is_rejected_before_public_snapshot(self):
+        source = [{'id': 'project', 'title': 'مهن إدارة المشاريع',
+                   'url': 'https://www.hrsd.gov.sa/sites/default/files/project.pdf'}]
+        text = lines('الدليل الإجرائي لتوطين مهن إدارة المشاريع',
+                     'Classification: Strict مقيد')
+        snapshots, changes, scan, alerts = guides.scan_sources(
+            source, {}, [], fetch=lambda u: PDF_A,
+            extract=lambda b: (text, 2), now='2026-11-12T07:00:00+00:00')
+        self.assertEqual(scan[0]['status'], 'restricted')
+        self.assertEqual(snapshots, {})
+        self.assertEqual(changes, [])
+        self.assertEqual(alerts, [])
+
+    def test_arabic_restricted_classification_rejected(self):
+        with self.assertRaises(PermissionError):
+            guides.reject_restricted_pdf(lines('التصنيف: مقيد'))
+        self.assertEqual(guides.reject_restricted_pdf(lines('مهن قانونية عامة')),
+                         lines('مهن قانونية عامة'))
+
     def test_first_check_baselines_without_alert(self):
         source = [{'id':'admin','title':'المهن الإدارية المساندة','url':'https://www.hrsd.gov.sa/a.pdf'}]
         base = lines('القرار الخاص بتوطين المهن الإدارية المساندة',
