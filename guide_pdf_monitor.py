@@ -112,6 +112,21 @@ def extract_pages(blob):
         doc.close()
 
 
+def reject_restricted_pdf(lines):
+    """Never persist public extraction of a document marked classified or restricted.
+
+    Some official pages link to PDFs whose footer says 'Classification: Strict'.
+    The fact a URL is public does not authorize us to copy its contents to GitHub.
+    """
+    for row in lines:
+        text = row.get('text', '')
+        if re.search(r'Classification\s*[:：]\s*(?:Strict|Restricted|Confidential)', text, re.I):
+            raise PermissionError('Document classification disallows public text snapshot')
+        if re.search(r'(?:تصنيف|التصنيف)\s*[:：]?\s*(?:مقيد|سري)', text):
+            raise PermissionError('Arabic restricted document classification')
+    return lines
+
+
 def content_hash(lines):
     return hashlib.sha256('\n'.join(line['text'] for line in lines).encode('utf-8')).hexdigest()
 
@@ -182,6 +197,7 @@ def scan_sources(sources, old_snapshots, old_changes, fetch=download_pdf, extrac
         try:
             blob = fetch(url)
             lines, pages = extract(blob)
+            reject_restricted_pdf(lines)
             latest = {
                 'url': url, 'title': source['title'], 'extraction_version': EXTRACTION_VERSION,
                 'binary_sha256': hashlib.sha256(blob).hexdigest(),
@@ -228,9 +244,12 @@ def scan_sources(sources, old_snapshots, old_changes, fetch=download_pdf, extrac
                         alerts.append(alert)
             scan.append(result)
         except Exception as exc:
+            blocked = isinstance(exc, PermissionError)
             scan.append({'id': id_, 'title': source['title'], 'url': url,
-                         'status': 'error', 'error': type(exc).__name__,
-                         'message': 'تعذر جلب أو استخراج نص الدليل؛ لا تُحدّث النسخة المرجعية',
+                         'status': 'restricted' if blocked else 'error',
+                         'error': type(exc).__name__,
+                         'message': ('الدليل يحمل تصنيفًا مقيدًا؛ لا يتم حفظ النص في المستودع العام'
+                                     if blocked else 'تعذر جلب أو استخراج نص الدليل؛ لا تُحدّث النسخة المرجعية'),
                          'checked_at': checked})
     return snapshots, changes[:100], scan, alerts
 
@@ -246,8 +265,8 @@ def main():
     when = datetime.datetime.now(datetime.timezone.utc).isoformat()
     report = {'checked_at': when,
               'total_sources': len(sources),
-              'successful_sources': sum(x['status'] != 'error' for x in scan),
-              'failed_sources': sum(x['status'] == 'error' for x in scan),
+              'successful_sources': sum(x['status'] in ('baseline','unchanged_text','changed') for x in scan),
+              'failed_sources': sum(x['status'] in ('error','restricted') for x in scan),
               'sources': scan,
               'coverage_notice': 'المقارنة تخص روابط PDF المباشرة المسجلة فقط؛ لا تغطي جميع أدلة الوزارة، ولا تُثبت الانطباق على سالك.'}
     # Commit only if alerts have been delivered; a missing SMTP configuration must
