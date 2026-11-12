@@ -2,7 +2,7 @@
   "version": 1,
   "asOf": "2026-11-12",
   "method": "مطابقة أسماء مهن مجمعة مع رموز الدليل المرجعي؛ المصدر الرسمي متاح للمراجعة؛ رمز الموظف الفعلي في قوى والأجر والاعتماد لم تُتحقق.",
-  "privacy": "بيانات مسميات وعدد إجمالي فقط؛ لا يحتوي أسماء موظفين أو أجورهم أو أرقام إقاماتهم.",
+  "privacy": "مسميات وأعداد مجمعة فقط دون أسماء وهويات؛ أكواد المهن المعروضة مرجعية وليست بيانات الموظفين الفعلية من قوى.",
   "roundingNotice": "في الأدلة المراجعة يتم تقريب أجزاء الرقم للعدد الصحيح الأقرب عند نص الدليل على ذلك. الحساب تقريبي ولا يمثل تقرير التزام نظامي.",
   "sourceSecurity": "لم تُرفع ملفات PDF الأصلية أو أي وثائق موسومة بأنها مقيدة إلى المستودع العام.",
   "decisions": [
@@ -19,59 +19,87 @@
       "matchedRoles": [
         {
           "title": "مساعد إداري",
-          "code": "412001"
+          "code": "412001",
+          "referenceCodeSource": "official_procedural_guide",
+          "employeeQiwaCodeVerified": false
         },
         {
           "title": "موظف استقبال",
-          "code": "422601"
+          "code": "422601",
+          "referenceCodeSource": "official_procedural_guide",
+          "employeeQiwaCodeVerified": false
         },
         {
           "title": "كاتب موارد بشرية",
-          "code": "441601"
+          "code": "441601",
+          "referenceCodeSource": "official_procedural_guide",
+          "employeeQiwaCodeVerified": false
         },
         {
           "title": "سكرتير تنفيذي",
-          "code": "334301"
+          "code": "334301",
+          "referenceCodeSource": "official_procedural_guide",
+          "employeeQiwaCodeVerified": false
         },
         {
           "title": "أخصائي عمليات موارد بشرية",
-          "code": "242302"
+          "code": "242302",
+          "referenceCodeSource": "official_procedural_guide",
+          "employeeQiwaCodeVerified": false
         },
         {
           "title": "مدير عمليات موارد بشرية",
-          "code": "121201"
+          "code": "121201",
+          "referenceCodeSource": "official_procedural_guide",
+          "employeeQiwaCodeVerified": false
         },
         {
           "title": "أخصائي تواصل داخلي",
-          "code": "243204"
+          "code": "243204",
+          "referenceCodeSource": "official_procedural_guide",
+          "employeeQiwaCodeVerified": false
         },
         {
           "title": "أخصائي توظيف",
-          "code": "242304"
+          "code": "242304",
+          "referenceCodeSource": "official_procedural_guide",
+          "employeeQiwaCodeVerified": false
         },
         {
           "title": "أخصائي ارتباط وظيفي",
-          "code": "242301"
+          "code": "242301",
+          "referenceCodeSource": "official_procedural_guide",
+          "employeeQiwaCodeVerified": false
         },
         {
           "title": "أخصائي تخطيط قوى عاملة",
-          "code": "242309"
+          "code": "242309",
+          "referenceCodeSource": "official_procedural_guide",
+          "employeeQiwaCodeVerified": false
         },
         {
           "title": "مدير مواهب",
-          "code": "121206"
+          "code": "121206",
+          "referenceCodeSource": "official_procedural_guide",
+          "employeeQiwaCodeVerified": false
         },
         {
           "title": "مدير توظيف",
-          "code": "121204"
+          "code": "121204",
+          "referenceCodeSource": "official_procedural_guide",
+          "employeeQiwaCodeVerified": false
         },
         {
           "title": "مدير تنظيم إداري",
-          "code": "121214"
+          "code": "121214",
+          "referenceCodeSource": "official_procedural_guide",
+          "employeeQiwaCodeVerified": false
         },
         {
           "title": "أخصائي علاقات عامة",
-          "code": "243202"
+          "code": "243202",
+          "referenceCodeSource": "official_procedural_guide",
+          "employeeQiwaCodeVerified": false
         }
       ],
       "relatedNonTargetRoles": [
@@ -81,7 +109,9 @@
           "category": "المهن الإدارية المساندة",
           "note": "مسمى إداري مصنف ضمن مجموعة المساندة للعرض فقط. غير مذكور ضمن المهن المستهدفة بقرار 132249 في الدليل المرفق؛ لا تحتسب أعداده في نسبة التوطين أو الفجوة لذلك القرار. يلزم التحقق من الرمز الفعلي في قوى."
         }
-      ]
+      ],
+      "qiwaVerification": "غير متوفر: لم تُستلم أكواد قوى الفعلية لكل موظف أو مستندات الأجر والاعتماد المهني",
+      "matchBasis": "رموز الدليل الإجرائي ومسميات الموظفين المجمعة فقط، دون مطابقة رمز قوى الفردي"
     },
     {
       "id": "procurement",
@@ -96,18 +126,26 @@
       "matchedRoles": [
         {
           "title": "أخصائي مشتريات",
-          "code": "243102"
+          "code": "243102",
+          "referenceCodeSource": "official_procedural_guide",
+          "employeeQiwaCodeVerified": false
         },
         {
           "title": "مدير مشتريات",
-          "code": "132417"
+          "code": "132417",
+          "referenceCodeSource": "official_procedural_guide",
+          "employeeQiwaCodeVerified": false
         },
         {
           "title": "أخصائي أبحاث أسواق",
-          "code": "243108"
+          "code": "243108",
+          "referenceCodeSource": "official_procedural_guide",
+          "employeeQiwaCodeVerified": false
         }
       ],
-      "codeEvidence": "مرجع الدليل الرسمي للمهنة؛ الربط مع الرمز المسجل للموظف في قوى غير متوفر"
+      "codeEvidence": "مرجع الدليل الرسمي للمهنة؛ الربط مع الرمز المسجل للموظف في قوى غير متوفر",
+      "qiwaVerification": "غير متوفر: لم تُستلم أكواد قوى الفعلية لكل موظف أو مستندات الأجر والاعتماد المهني",
+      "matchBasis": "رموز الدليل الإجرائي ومسميات الموظفين المجمعة فقط، دون مطابقة رمز قوى الفردي"
     },
     {
       "id": "marketing",
@@ -123,22 +161,32 @@
       "matchedRoles": [
         {
           "title": "أخصائي تسويق",
-          "code": "243110"
+          "code": "243110",
+          "referenceCodeSource": "official_procedural_guide",
+          "employeeQiwaCodeVerified": false
         },
         {
           "title": "أخصائي علاقات عامة",
-          "code": "243202"
+          "code": "243202",
+          "referenceCodeSource": "official_procedural_guide",
+          "employeeQiwaCodeVerified": false
         },
         {
           "title": "مدير دعاية وإعلان",
-          "code": "122201"
+          "code": "122201",
+          "referenceCodeSource": "official_procedural_guide",
+          "employeeQiwaCodeVerified": false
         },
         {
           "title": "مصمم جرافيك",
-          "code": "216601"
+          "code": "216601",
+          "referenceCodeSource": "official_procedural_guide",
+          "employeeQiwaCodeVerified": false
         }
       ],
-      "codeEvidence": "مرجع الدليل الرسمي للمهنة؛ الربط مع الرمز المسجل للموظف في قوى غير متوفر"
+      "codeEvidence": "مرجع الدليل الرسمي للمهنة؛ الربط مع الرمز المسجل للموظف في قوى غير متوفر",
+      "qiwaVerification": "غير متوفر: لم تُستلم أكواد قوى الفعلية لكل موظف أو مستندات الأجر والاعتماد المهني",
+      "matchBasis": "رموز الدليل الإجرائي ومسميات الموظفين المجمعة فقط، دون مطابقة رمز قوى الفردي"
     },
     {
       "id": "sales",
@@ -153,10 +201,14 @@
       "matchedRoles": [
         {
           "title": "وسيط سلع مستقبلية",
-          "code": "332401"
+          "code": "332401",
+          "referenceCodeSource": "official_procedural_guide",
+          "employeeQiwaCodeVerified": false
         }
       ],
-      "codeEvidence": "مرجع الدليل الرسمي للمهنة؛ الربط مع الرمز المسجل للموظف في قوى غير متوفر"
+      "codeEvidence": "مرجع الدليل الرسمي للمهنة؛ الربط مع الرمز المسجل للموظف في قوى غير متوفر",
+      "qiwaVerification": "غير متوفر: لم تُستلم أكواد قوى الفعلية لكل موظف أو مستندات الأجر والاعتماد المهني",
+      "matchBasis": "رموز الدليل الإجرائي ومسميات الموظفين المجمعة فقط، دون مطابقة رمز قوى الفردي"
     },
     {
       "id": "accounting",
@@ -203,33 +255,49 @@
       "matchedRoles": [
         {
           "title": "محاسب",
-          "code": "241101"
+          "code": "241101",
+          "referenceCodeSource": "official_procedural_guide",
+          "employeeQiwaCodeVerified": false
         },
         {
           "title": "مدير مالي",
-          "code": "121101"
+          "code": "121101",
+          "referenceCodeSource": "official_procedural_guide",
+          "employeeQiwaCodeVerified": false
         },
         {
           "title": "مدير خزينة",
-          "code": "121104"
+          "code": "121104",
+          "referenceCodeSource": "official_procedural_guide",
+          "employeeQiwaCodeVerified": false
         },
         {
           "title": "مدير ميزانية",
-          "code": "121105"
+          "code": "121105",
+          "referenceCodeSource": "official_procedural_guide",
+          "employeeQiwaCodeVerified": false
         },
         {
           "title": "مدير مراجعة داخلية",
-          "code": "121107"
+          "code": "121107",
+          "referenceCodeSource": "official_procedural_guide",
+          "employeeQiwaCodeVerified": false
         },
         {
           "title": "مراجع داخلي",
-          "code": "241103"
+          "code": "241103",
+          "referenceCodeSource": "official_procedural_guide",
+          "employeeQiwaCodeVerified": false
         },
         {
           "title": "أخصائي حسابات ضرائب",
-          "code": "241108"
+          "code": "241108",
+          "referenceCodeSource": "official_procedural_guide",
+          "employeeQiwaCodeVerified": false
         }
-      ]
+      ],
+      "qiwaVerification": "غير متوفر: لم تُستلم أكواد قوى الفعلية لكل موظف أو مستندات الأجر والاعتماد المهني",
+      "matchBasis": "رموز الدليل الإجرائي ومسميات الموظفين المجمعة فقط، دون مطابقة رمز قوى الفردي"
     },
     {
       "id": "ict",
@@ -251,45 +319,63 @@
         {
           "title": "مهندس حاسب آلي",
           "code": "215204",
-          "subgroup": "engineering"
+          "subgroup": "engineering",
+          "referenceCodeSource": "official_procedural_guide",
+          "employeeQiwaCodeVerified": false
         },
         {
           "title": "محلل نظم المعلومات",
           "code": "251102",
-          "subgroup": "development"
+          "subgroup": "development",
+          "referenceCodeSource": "official_procedural_guide",
+          "employeeQiwaCodeVerified": false
         },
         {
           "title": "مطور تطبيقات",
           "code": "251205",
-          "subgroup": "development"
+          "subgroup": "development",
+          "referenceCodeSource": "official_procedural_guide",
+          "employeeQiwaCodeVerified": false
         },
         {
           "title": "محلل بيانات",
           "code": "212004",
-          "subgroup": "development"
+          "subgroup": "development",
+          "referenceCodeSource": "official_procedural_guide",
+          "employeeQiwaCodeVerified": false
         },
         {
           "title": "محلل قاعدة بيانات",
           "code": "252103",
-          "subgroup": "development"
+          "subgroup": "development",
+          "referenceCodeSource": "official_procedural_guide",
+          "employeeQiwaCodeVerified": false
         },
         {
           "title": "أخصائي علوم حاسب آلي",
           "code": "251101",
-          "subgroup": "support"
+          "subgroup": "support",
+          "referenceCodeSource": "official_procedural_guide",
+          "employeeQiwaCodeVerified": false
         },
         {
           "title": "فني دعم تقنية معلومات",
           "code": "351201",
-          "subgroup": "support"
+          "subgroup": "support",
+          "referenceCodeSource": "official_procedural_guide",
+          "employeeQiwaCodeVerified": false
         },
         {
           "title": "أخصائي دعم فني",
           "code": "252912",
-          "subgroup": "support"
+          "subgroup": "support",
+          "referenceCodeSource": "official_procedural_guide",
+          "employeeQiwaCodeVerified": false
         }
       ],
-      "codeEvidence": "مرجع الدليل الرسمي للمهنة؛ الربط مع الرمز المسجل للموظف في قوى غير متوفر"
+      "codeEvidence": "مرجع الدليل الرسمي للمهنة؛ الربط مع الرمز المسجل للموظف في قوى غير متوفر",
+      "qiwaVerification": "غير متوفر: لم تُستلم أكواد قوى الفعلية لكل موظف أو مستندات الأجر والاعتماد المهني",
+      "matchBasis": "رموز الدليل الإجرائي ومسميات الموظفين المجمعة فقط، دون مطابقة رمز قوى الفردي"
     },
     {
       "id": "legal",
@@ -305,10 +391,14 @@
       "matchedRoles": [
         {
           "title": "أخصائي قانوني",
-          "code": "261106"
+          "code": "261106",
+          "referenceCodeSource": "official_procedural_guide",
+          "employeeQiwaCodeVerified": false
         }
       ],
-      "codeEvidence": "مرجع الدليل الرسمي للمهنة؛ الربط مع الرمز المسجل للموظف في قوى غير متوفر"
+      "codeEvidence": "مرجع الدليل الرسمي للمهنة؛ الربط مع الرمز المسجل للموظف في قوى غير متوفر",
+      "qiwaVerification": "غير متوفر: لم تُستلم أكواد قوى الفعلية لكل موظف أو مستندات الأجر والاعتماد المهني",
+      "matchBasis": "رموز الدليل الإجرائي ومسميات الموظفين المجمعة فقط، دون مطابقة رمز قوى الفردي"
     }
   ]
 }
