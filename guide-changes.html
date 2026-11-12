@@ -37,6 +37,7 @@ select{font:inherit;padding:10px;border:1px solid #c4d9da;border-radius:8px;back
 <div class="notice"><strong>حدود الفحص:</strong> مراقبة PDF مقيدة بالأدلة الرسمية ذات الرابط المباشر المسجلة في الموقع. أول فحص يحفظ نسخة مرجعية دون إصدار تنبيه، وأي تغيير لاحق يظل غير مؤكد نظاميًا حتى يُراجع الدليل كاملًا. ملفات PDF المصورة وغير القابلة لاستخراج النص تُعرض كتعذر فحص، ولا يعني عدم وجود تنبيه عدم صدور قرار.</div>
 <div class="metrics" id="metrics"><div class="metric">جارٍ تحميل البيانات…</div></div>
 <section class="panel"><h2>الدلائل المشمولة بالفحص</h2><p>حالة آخر قراءة لكل دليل. «النسخة المرجعية» تعني أن المقارنة بدأت ولم ترصد بعد فروقًا بين نسختين.</p><div id="sources"><div class="empty">جارٍ التحميل…</div></div></section>
+<section class="panel"><h2>أدلة تُراجع من صفحات الوزارة دون نشر نسخها النصية</h2><p>قد يكون الدليل منشورًا على موقع رسمي لكنه يحمل تصنيفًا يمنع نسخه في مستودع عام. هنا نوضح الاستثناءات بدل عرض نتائج مضللة.</p><div id="excluded" class="source-card">جارٍ قراءة حالة المصادر…</div></section>
 <section class="panel"><div class="meta"><h2>سجل الفروقات المكتشفة</h2><div class="controls"><label for="decision">عرض القرار:</label><select id="decision"><option value="all">جميع الأدلة</option></select></div></div>
 <p>نعرض مقتطفات نصية محدودة من المصادر العامة؛ عند وجود تغيير مهم ارجع إلى الملف الأصلي ورقم الصفحة قبل أي قرار أو تعديل نسبة في الرادار.</p>
 <div id="changes"><div class="empty">جارٍ قراءة فروقات الأدلة…</div></div>
@@ -59,6 +60,10 @@ function render(){
   const [label,color]=kinds[raw]||["نتيجة غير محددة","gray"];
   return '<article class="source-card"><b>'+esc(x.title)+'</b>'+tag(label,color)+'<small>آخر فحص: '+esc(s?.checked_at||report.checked_at||"لم يبدأ")+' · الصفحات: '+esc(s?.pages??"—")+'</small>'+link(x.url,"فتح الدليل الرسمي")+'</article>';
  }).join("")||'<div class="empty">لا توجد أدلة PDF مسجلة للفحص.</div>';
+ $('excluded').innerHTML=(registry.excludedFromPublicTextSnapshots||[]).map(x=>
+  '<div><b>'+esc(x.title)+'</b>'+tag('لا تُحفظ نسخة نصية في GitHub','warn')+
+  '<p style="font-size:12px;line-height:1.9">'+esc(x.reason)+'</p>'+link(x.officialPage,'صفحة الوزارة الرسمية')+'</div>'
+ ).join("")||'لا توجد استثناءات معلنة في سجل الأدلة.';
  const chosen=$('decision').value;
  const selected=(feed.changes||[]).filter(x=>chosen==="all"||x.decision_id===chosen);
  $('changes').innerHTML=selected.map(x=>{
