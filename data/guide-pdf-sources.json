@@ -1,6 +1,6 @@
 {
   "updated": "2026-11-12",
-  "scope": "مراقبة 8 أدلة HRSD عامة ومباشرة تم التحقق من روابطها (دون ادعاء الانطباق على سالك). الأدلة المصنفة مقيدة أو غير القابلة للاستخراج مستبعدة من تخزين النص في GitHub.",
+  "scope": "مراقبة 10 أدلة PDF رسمية ومباشرة تشمل نشاط الخدمات الاستشارية وخدمة العملاء، دون افتراض انطباق المهنة أو النشاط على سالك. يُمنع حفظ نص الأدلة الموسومة كمقيدة في GitHub العام.",
   "method": "official_direct_pdf_readonly_first_run_baseline_no_alerts_restricted_pdf_rejected",
   "sources": [
     {
@@ -42,6 +42,16 @@
       "id": "ict",
       "title": "الاتصالات وتقنية المعلومات",
       "url": "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajrayy-lqrar-twtyn-mhn-alatsalat-wtqnyt-alm-lwmat.pdf"
+    },
+    {
+      "id": "consulting",
+      "title": "نشاط الخدمات الاستشارية",
+      "url": "https://www.hrsd.gov.sa/sites/default/files/2023-03/11102022.pdf"
+    },
+    {
+      "id": "service",
+      "title": "مهن خدمة العملاء",
+      "url": "https://www.hrsd.gov.sa/sites/default/files/2022-06/21112022.pdf"
     }
   ],
   "excludedFromPublicTextSnapshots": [
