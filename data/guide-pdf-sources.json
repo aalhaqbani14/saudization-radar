@@ -1,7 +1,7 @@
 {
-  "updated": "2026-11-11",
-  "scope": "روابط مباشرة للأدلة PDF مثبتة في فهرس الرادار؛ لا يفترض انطباق القرار على سالك",
-  "method": "strict_pdf_only_first_run_baseline_no_alerts",
+  "updated": "2026-11-12",
+  "scope": "مراقبة 8 أدلة HRSD عامة ومباشرة تم التحقق من روابطها (دون ادعاء الانطباق على سالك). الأدلة المصنفة مقيدة أو غير القابلة للاستخراج مستبعدة من تخزين النص في GitHub.",
+  "method": "official_direct_pdf_readonly_first_run_baseline_no_alerts_restricted_pdf_rejected",
   "sources": [
     {
       "id": "admin",
@@ -17,6 +17,31 @@
       "id": "postal",
       "title": "منافذ خدمات البريد ونقل الطرود",
       "url": "https://www.hrsd.gov.sa/sites/default/files/2022-06/20112022.pdf"
+    },
+    {
+      "id": "procurement",
+      "title": "مهن المشتريات",
+      "url": "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajrayy-lqrar-twtyn-mhn-almshtryat.pdf"
+    },
+    {
+      "id": "marketing",
+      "title": "مهن التسويق",
+      "url": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-ala-jray-y-lqrar-twtyn-mhn-altswyq-v5.pdf"
+    },
+    {
+      "id": "sales",
+      "title": "مهن المبيعات",
+      "url": "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-ala-jray-y-lqrar-twtyn-mhn-almby-at.pdf"
+    },
+    {
+      "id": "legal",
+      "title": "المهن القانونية",
+      "url": "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajrayy-lqrar-mhn-alqanwnyt.pdf"
+    },
+    {
+      "id": "ict",
+      "title": "الاتصالات وتقنية المعلومات",
+      "url": "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajrayy-lqrar-twtyn-mhn-alatsalat-wtqnyt-alm-lwmat.pdf"
     }
   ]
 }
