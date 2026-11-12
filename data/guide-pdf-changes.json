@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-12T06:09:26.324445+00:00",
+  "updated_at": "2026-11-12T07:50:16.768868+00:00",
   "changes": [],
   "last_scan": {
-    "checked_at": "2026-11-12T06:09:26.324445+00:00",
-    "total_sources": 3,
-    "successful_sources": 3,
+    "checked_at": "2026-11-12T07:50:16.768868+00:00",
+    "total_sources": 8,
+    "successful_sources": 8,
     "failed_sources": 0,
     "sources": [
       {
@@ -13,7 +13,7 @@
         "url": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
         "status": "unchanged_text",
         "pages": 7,
-        "checked_at": "2026-11-12T06:09:24.678662+00:00"
+        "checked_at": "2026-11-12T07:50:15.203351+00:00"
       },
       {
         "id": "accounting",
@@ -21,7 +21,7 @@
         "url": "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajryy-lqrar-twtyn-mhn-almhasbyt.pdf",
         "status": "unchanged_text",
         "pages": 10,
-        "checked_at": "2026-11-12T06:09:24.678662+00:00"
+        "checked_at": "2026-11-12T07:50:15.203351+00:00"
       },
       {
         "id": "postal",
@@ -29,7 +29,47 @@
         "url": "https://www.hrsd.gov.sa/sites/default/files/2022-06/20112022.pdf",
         "status": "unchanged_text",
         "pages": 10,
-        "checked_at": "2026-11-12T06:09:24.678662+00:00"
+        "checked_at": "2026-11-12T07:50:15.203351+00:00"
+      },
+      {
+        "id": "procurement",
+        "title": "مهن المشتريات",
+        "url": "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajrayy-lqrar-twtyn-mhn-almshtryat.pdf",
+        "status": "baseline",
+        "pages": 7,
+        "checked_at": "2026-11-12T07:50:15.203351+00:00"
+      },
+      {
+        "id": "marketing",
+        "title": "مهن التسويق",
+        "url": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-ala-jray-y-lqrar-twtyn-mhn-altswyq-v5.pdf",
+        "status": "baseline",
+        "pages": 8,
+        "checked_at": "2026-11-12T07:50:15.203351+00:00"
+      },
+      {
+        "id": "sales",
+        "title": "مهن المبيعات",
+        "url": "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-ala-jray-y-lqrar-twtyn-mhn-almby-at.pdf",
+        "status": "baseline",
+        "pages": 8,
+        "checked_at": "2026-11-12T07:50:15.203351+00:00"
+      },
+      {
+        "id": "legal",
+        "title": "المهن القانونية",
+        "url": "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajrayy-lqrar-mhn-alqanwnyt.pdf",
+        "status": "baseline",
+        "pages": 7,
+        "checked_at": "2026-11-12T07:50:15.203351+00:00"
+      },
+      {
+        "id": "ict",
+        "title": "الاتصالات وتقنية المعلومات",
+        "url": "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajrayy-lqrar-twtyn-mhn-alatsalat-wtqnyt-alm-lwmat.pdf",
+        "status": "baseline",
+        "pages": 9,
+        "checked_at": "2026-11-12T07:50:15.203351+00:00"
       }
     ],
     "coverage_notice": "المقارنة تخص روابط PDF المباشرة المسجلة فقط؛ لا تغطي جميع أدلة الوزارة، ولا تُثبت الانطباق على سالك."
