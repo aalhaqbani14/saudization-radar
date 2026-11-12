@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "asOf": "2026-11-08",
-  "method": "مطابقة أولية دقيقة لاسم المسمى كما ورد في الدليل؛ الرمز الوارد هنا مرجعي، ولا يعني التحقق من رمز الموظف المسجل في قوى أو GOSI. تبقى «أخصائي إداري» مهنة ضمن المساندة تنظيميًا، لكنها غير مشمولة بهذا القرار وتُعرض منفصلة عن مهنه المستهدفة.",
+  "asOf": "2026-11-12",
+  "method": "مطابقة أسماء مهن مجمعة مع رموز الدليل المرجعي؛ المصدر الرسمي متاح للمراجعة؛ رمز الموظف الفعلي في قوى والأجر والاعتماد لم تُتحقق.",
   "privacy": "بيانات مسميات وعدد إجمالي فقط؛ لا يحتوي أسماء موظفين أو أجورهم أو أرقام إقاماتهم.",
   "roundingNotice": "في الأدلة المراجعة يتم تقريب أجزاء الرقم للعدد الصحيح الأقرب عند نص الدليل على ذلك. الحساب تقريبي ولا يمثل تقرير التزام نظامي.",
   "sourceSecurity": "لم تُرفع ملفات PDF الأصلية أو أي وثائق موسومة بأنها مقيدة إلى المستودع العام.",
@@ -92,7 +92,7 @@
       "effective": "2026-05-31",
       "rule": "12 مهنة، مستوى الكيان، يبدأ عند 3 عاملين فأكثر في المهن المشمولة؛ تقريب الكسور لأقرب عدد صحيح.",
       "sourcePage": "4–5",
-      "sourceUrl": "https://www.hrsd.gov.sa/media-center/news/رفع-نسبة-التوطين-في-مهن-المشتريات",
+      "sourceUrl": "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajrayy-lqrar-twtyn-mhn-almshtryat.pdf",
       "matchedRoles": [
         {
           "title": "أخصائي مشتريات",
@@ -106,7 +106,8 @@
           "title": "أخصائي أبحاث أسواق",
           "code": "243108"
         }
-      ]
+      ],
+      "codeEvidence": "مرجع الدليل الرسمي للمهنة؛ الربط مع الرمز المسجل للموظف في قوى غير متوفر"
     },
     {
       "id": "marketing",
@@ -118,7 +119,7 @@
       "minimumEligibleSaudiWage": 5500,
       "rule": "مهن التسويق المشمولة عند 3 فأكثر على مستوى الكيان، ولا يُحتسب السعودي في النسبة بأجر خاضع للاشتراك أقل من 5,500 ريال.",
       "sourcePage": "4–6",
-      "sourceUrl": "https://www.hrsd.gov.sa/media-center/news/التوطين-في-مهن-التسويق-والمبيعات",
+      "sourceUrl": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-ala-jray-y-lqrar-twtyn-mhn-altswyq-v5.pdf",
       "matchedRoles": [
         {
           "title": "أخصائي تسويق",
@@ -136,7 +137,8 @@
           "title": "مصمم جرافيك",
           "code": "216601"
         }
-      ]
+      ],
+      "codeEvidence": "مرجع الدليل الرسمي للمهنة؛ الربط مع الرمز المسجل للموظف في قوى غير متوفر"
     },
     {
       "id": "sales",
@@ -147,13 +149,14 @@
       "effective": "2026-04-19",
       "rule": "تشمل مهنة وسيط سلع مستقبلية برمز 332401، وتبدأ عند 3 عاملين فأكثر في مهن المبيعات المحددة.",
       "sourcePage": "4–5",
-      "sourceUrl": "https://www.hrsd.gov.sa/media-center/news/التوطين-في-مهن-التسويق-والمبيعات",
+      "sourceUrl": "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-ala-jray-y-lqrar-twtyn-mhn-almby-at.pdf",
       "matchedRoles": [
         {
           "title": "وسيط سلع مستقبلية",
           "code": "332401"
         }
-      ]
+      ],
+      "codeEvidence": "مرجع الدليل الرسمي للمهنة؛ الربط مع الرمز المسجل للموظف في قوى غير متوفر"
     },
     {
       "id": "accounting",
@@ -243,7 +246,7 @@
       },
       "rule": "25% لكل واحدة من ثلاث مجموعات بشكل مستقل عند 5 عاملين فأكثر في المجموعة؛ يمنع دمج إجمالي موظفي التقنية في حساب واحد.",
       "sourcePage": "4–6",
-      "sourceUrl": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-مهن-الاتصالات-وتقنية",
+      "sourceUrl": "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajrayy-lqrar-twtyn-mhn-alatsalat-wtqnyt-alm-lwmat.pdf",
       "matchedRoles": [
         {
           "title": "مهندس حاسب آلي",
@@ -285,7 +288,8 @@
           "code": "252912",
           "subgroup": "support"
         }
-      ]
+      ],
+      "codeEvidence": "مرجع الدليل الرسمي للمهنة؛ الربط مع الرمز المسجل للموظف في قوى غير متوفر"
     },
     {
       "id": "legal",
@@ -297,13 +301,14 @@
       "minimumEligibleSaudiWage": 5500,
       "rule": "يسري على منشآت القطاع الخاص العاملة في السوق السعودي في المهن الأربع المستهدفة؛ النص لا يحصره في مكاتب المحاماة.",
       "sourcePage": "4–5",
-      "sourceUrl": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الاجرائي-لقرار-توطين-المهن-القانونية",
+      "sourceUrl": "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajrayy-lqrar-mhn-alqanwnyt.pdf",
       "matchedRoles": [
         {
           "title": "أخصائي قانوني",
           "code": "261106"
         }
-      ]
+      ],
+      "codeEvidence": "مرجع الدليل الرسمي للمهنة؛ الربط مع الرمز المسجل للموظف في قوى غير متوفر"
     }
   ]
 }
