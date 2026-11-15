@@ -1,0 +1,241 @@
+{
+  "version": 1,
+  "updatedAt": "2026-11-15",
+  "organization": "سالك",
+  "purpose": "تقييم انطباق استرشادي للقرارات على بيانات سالك المجمعة دون إصدار أحكام امتثال",
+  "snapshot": "2026-11-03",
+  "activityEvidence": "provided-by-user-unverified",
+  "workforceEvidence": "aggregated-titles-no-individual-qiwa-codes",
+  "policy": "لا يصدر حكم انطباق أو عدم انطباق قطعي دون نشاط أو ترخيص أو رمز مهني معتمد واستيفاء الشروط. عدم وجود تطابق في القائمة لا يثبت عدم الانطباق.",
+  "decisions": [
+    {
+      "id": "admin",
+      "gate": "occupation",
+      "summary": "يُراجع رمز المهنة الفعلي وتاريخ تطبيق فئة المهنة.",
+      "checks": [
+        "رمز المهنة المسجل في قوى",
+        "جدول المهنة وتاريخ نفاذها",
+        "العدد الفعلي في نطاق القرار"
+      ],
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf"
+    },
+    {
+      "id": "procurement",
+      "gate": "occupation",
+      "summary": "الانطباق مرتبط بالمهن المشمولة وحد العدد والرموز الفعلية.",
+      "checks": [
+        "رموز قوى للعاملين",
+        "المهن المدرجة في الدليل",
+        "حد العاملين والتقريب"
+      ],
+      "source": "https://www.hrsd.gov.sa/media-center/news/رفع-نسبة-التوطين-في-مهن-المشتريات"
+    },
+    {
+      "id": "project",
+      "gate": "occupation",
+      "summary": "تظهر مسميات إدارة المشاريع في لقطة سالك، لكن لا تثبت وحدها الانطباق.",
+      "checks": [
+        "رموز قوى لمهن إدارة المشاريع",
+        "العدد المستهدف على مستوى الكيان",
+        "المرحلة وتاريخ التنفيذ"
+      ],
+      "source": "https://www.hrsd.gov.sa/media-center/news/رفع-نسب-توطين-مهن-إدارة-المشاريع-0"
+    },
+    {
+      "id": "marketing",
+      "gate": "occupation",
+      "summary": "المسميات قد تتداخل مع قرارات أخرى؛ يلزم التحقق من الأجر والرموز.",
+      "checks": [
+        "رموز قوى ومهن التسويق",
+        "أجور السعوديين المحتسبين",
+        "القرار الأعلى للمهن المتداخلة"
+      ],
+      "source": "https://www.hrsd.gov.sa/media-center/news/التوطين-في-مهن-التسويق-والمبيعات"
+    },
+    {
+      "id": "sales",
+      "gate": "occupation",
+      "summary": "توجد مهنة مطابقة نصيًا، لكن الحد العددي ورمز قوى لم يثبتا.",
+      "checks": [
+        "رمز قوى والجدول المهني",
+        "حد عدد العاملين",
+        "آلية التقريب"
+      ],
+      "source": "https://www.hrsd.gov.sa/media-center/news/التوطين-في-مهن-التسويق-والمبيعات"
+    },
+    {
+      "id": "engineers",
+      "gate": "workforce_excluded",
+      "summary": "لا توجد مطابقة مثبتة للمهن الهندسية المستهدفة في لقطة سالك؛ مهندس الحاسب ضمن التقنية.",
+      "checks": [
+        "إعادة الفحص عند تغيير مهن الموظفين",
+        "مراجعة أي رمز هندسي جديد في قوى"
+      ],
+      "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-المهن-الهندسية"
+    },
+    {
+      "id": "techeng",
+      "gate": "workforce_excluded",
+      "summary": "لا تظهر مهن فنية هندسية مستهدفة في لقطة سالك الحالية.",
+      "checks": [
+        "إعادة الفحص عند ظهور فنيين هندسيين",
+        "رمز المهنة والاعتماد والأجر"
+      ],
+      "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-المهن-الفنية-الهندسية"
+    },
+    {
+      "id": "accounting",
+      "gate": "occupation",
+      "summary": "يشترط التحقق من الرمز المهني والأجر والاعتماد قبل اعتماد النسبة.",
+      "checks": [
+        "أكواد قوى للعاملين",
+        "الاعتماد المهني",
+        "الأجور والمرحلة والعدد"
+      ],
+      "source": "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajryy-lqrar-twtyn-mhn-almhasbyt.pdf"
+    },
+    {
+      "id": "housing",
+      "gate": "facility",
+      "summary": "يخص إدارة السكن الجماعي وفق شروط الدليل؛ لم تتوفر بيانات المنشأة السكنية اللازمة.",
+      "checks": [
+        "وجود نشاط أو منشأة سكن جماعي ضمن الكيان",
+        "عدد المستفيدين وفق الدليل",
+        "مسمى ورمز مشرف المسكن والأجر"
+      ],
+      "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-مهنة-مشرف-مسكن"
+    },
+    {
+      "id": "beauty",
+      "gate": "licensed_activity",
+      "summary": "مهن إدارية مشابهة لا تكفي لربط القرار بسالك دون إثبات نشاط مراكز الاسترخاء والعناية الشخصية.",
+      "checks": [
+        "الترخيص الفعلي للنشاط المشمول",
+        "رمز النشاط المسجل",
+        "المهن المشمولة في المنفذ"
+      ],
+      "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لتوطين-المهن-الإدارية-والمساندة"
+    },
+    {
+      "id": "ict",
+      "gate": "occupation",
+      "summary": "التقنية ثلاث مجموعات مستقلة؛ مهندس الحاسب ضمن المجموعة الهندسية التقنية فقط.",
+      "checks": [
+        "رمز قوى لكل موظف",
+        "حد العدد لكل مجموعة تقنية",
+        "الأجر واشتراطات كل مجموعة"
+      ],
+      "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-مهن-الاتصالات-وتقنية"
+    },
+    {
+      "id": "legal",
+      "gate": "occupation",
+      "summary": "انطباق المهن القانونية يحتاج مطابقة الرموز وأجر الاحتساب.",
+      "checks": [
+        "رمز المهنة الفعلي",
+        "الأجر المحتسب",
+        "المهن القانونية المشمولة"
+      ],
+      "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الاجرائي-لقرار-توطين-المهن-القانونية"
+    },
+    {
+      "id": "consulting",
+      "gate": "activity_or_occupation",
+      "summary": "وجود كلمة استشارات في المسمى لا يثبت نطاق النشاط الاستشاري المستهدف.",
+      "checks": [
+        "النشاط الاقتصادي الموثق",
+        "المهن المستهدفة ورموز قوى",
+        "اشتراطات القرار والكيان"
+      ],
+      "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/1170120"
+    },
+    {
+      "id": "service",
+      "gate": "tasks",
+      "summary": "يستلزم إثبات مهام خدمة العملاء الفعلية واللغة والرمز، وليس مجرد وظيفة إدارية.",
+      "checks": [
+        "المهام الفعلية لخدمة العملاء",
+        "الرمز المهني",
+        "نطاق تقديم خدمة العملاء والتعهيد"
+      ],
+      "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-مهن-خدمة-العملاء"
+    },
+    {
+      "id": "realestate",
+      "gate": "licensed_activity",
+      "summary": "تخص الأنشطة والمهن العقارية الواردة في الدليل؛ لا يكفي وجود عقارات مملوكة للشركة.",
+      "checks": [
+        "رمز النشاط العقاري والترخيص",
+        "المهن المستهدفة ورموز قوى",
+        "العدد ونسب النشاط المعني"
+      ],
+      "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لتوطين-الأنشطة-والمهن-العقارية"
+    },
+    {
+      "id": "education",
+      "gate": "licensed_activity",
+      "summary": "يخص مدارس التعليم العام الأهلي والعالمي المستهدفة، وليس كل منشأة لديها تدريب داخلي.",
+      "checks": [
+        "ترخيص المدرسة أو المنشأة التعليمية",
+        "التخصص والمسمى التعليمي المستهدف",
+        "النسبة والمرحلة المعتمدة"
+      ],
+      "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-قطاع-التعليم-العام"
+    },
+    {
+      "id": "aviation",
+      "gate": "licensed_activity",
+      "summary": "يخص منشآت الطيران المرخصة ومهن الطيران المعينة، ولا تكفي وظيفة سفر أو إدارية.",
+      "checks": [
+        "ترخيص مزاولة نشاط الطيران",
+        "المهنة المستهدفة والاعتماد المهني",
+        "عدد العاملين والمرحلة"
+      ],
+      "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-توطين-مهن-الطيران-المرخصة"
+    },
+    {
+      "id": "postal",
+      "gate": "licensed_activity",
+      "summary": "تخص منافذ أنشطة البريد ونقل الطرود؛ نسب الإدارة ليست لكل إدارة عليا في سالك.",
+      "checks": [
+        "ترخيص أو نشاط خدمات البريد ونقل الطرود",
+        "وجود منافذ الخدمة المعنية",
+        "المهن المشمولة والمراحل"
+      ],
+      "source": "https://www.hrsd.gov.sa/media-center/news/1129031"
+    },
+    {
+      "id": "retail7",
+      "gate": "licensed_activity",
+      "summary": "تخص منافذ بيع في أنشطة محددة؛ وجود مسمى إداري أو منافذ بيع أخرى لا يكفي.",
+      "checks": [
+        "النشاط التجاري للمنفذ ضمن الأنشطة السبعة",
+        "الترخيص والموقع",
+        "الوظائف والمرحلة المشمولة"
+      ],
+      "source": "https://www.hrsd.gov.sa/media-center/news/1129031"
+    },
+    {
+      "id": "inspection",
+      "gate": "licensed_activity",
+      "summary": "تخص منافذ الفحص الفني الدوري للمركبات، وليس الصيانة أو إدارة الأسطول العامة.",
+      "checks": [
+        "ترخيص نشاط الفحص الدوري",
+        "وجود منفذ خدمة مستهدف",
+        "المهن والمرحلة المعتمدة"
+      ],
+      "source": "https://www.hrsd.gov.sa/media-center/news/1129031"
+    },
+    {
+      "id": "madinah",
+      "gate": "regional_activity",
+      "summary": "يلزم اجتماع نشاط مستهدف مع موقع العمل في منطقة المدينة المنورة. وجود نشاط أغذية وحده لا يثبت الانطباق.",
+      "checks": [
+        "وجود فرع أو منفذ نشاط في المدينة المنورة",
+        "رمز النشاط الفعلي في الفرع",
+        "المهن والاستثناءات بحسب الدليل"
+      ],
+      "source": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-التوطين-في-منطقة-المدينة"
+    }
+  ]
+}
