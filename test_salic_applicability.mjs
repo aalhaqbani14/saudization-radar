@@ -44,7 +44,15 @@ assert.equal(byId.service.status,"needs_verification","Customer-service function
 assert.equal(byId.consulting.status,"needs_verification","Consulting job title alone does not establish consulting business activity");
 assert.ok(result.records.every(x=>x.finalVerdict===false&&x.checks.length>0&&x.source?.startsWith("https://www.hrsd.gov.sa/")),"Every decision remains read-only and tied to official reference");
 assert.ok(result.records.every(x=>x.matchedTitles.every(y=>!('name' in y)&&!('iqama' in y))),"Only aggregate occupation titles and counts may appear");
-assert.throws(()=>api.make({registry:{...registry,decisions:registry.decisions.slice(1)},decisions,activities,workforce,model}),/Every decision/);
+const missingEditorial=api.make({registry:{...registry,decisions:registry.decisions.slice(1)},decisions,activities,workforce,model});
+assert.equal(missingEditorial.total,21,"A missing editorial rule must not hide any decision");
+assert.equal(missingEditorial.newPending,1);
+assert.equal(missingEditorial.records.find(x=>x.id===registry.decisions[0].id).status,"needs_verification");
+const newDecision={...decisions.decisions[0],id:"new-decision",title:"قرار حكومي جديد",audit:{status:"needs_review"}};
+const extended=api.make({registry,decisions:{...decisions,decisions:[...decisions.decisions,newDecision]},activities,workforce,model});
+assert.equal(extended.total,22,"New regulations should automatically show as awaiting review");
+assert.equal(extended.newPending,1);
+assert.equal(extended.records.find(x=>x.id==="new-decision").finalVerdict,false);
 assert.throws(()=>api.make({registry,decisions,activities:{...activities,verificationStatus:"unknown"},workforce,model}),/Activity evidence/);
 const custom={...activities,verificationStatus:"official-verified-complete"};
 assert.equal(api.make({registry,decisions,activities:custom,workforce,model}).confirmedNotApplicable,0,"Even a verified activity list is not enough for an unqualified exclusion");
