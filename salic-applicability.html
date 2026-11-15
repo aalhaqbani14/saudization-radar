@@ -1,0 +1,79 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="no-referrer"><meta name="theme-color" content="#0b303a">
+<title>تحليل انطباق قرارات التوطين على سالك | رادار التوطين</title>
+<meta name="description" content="نظرة شاملة للقرارات المرتبطة مبدئيًا بسالك والتي تحتاج تحققًا من النشاط أو المهن.">
+<style>
+:root{font-family:Tahoma,"Segoe UI",Arial,sans-serif;font-size:14px;font-variant-numeric:tabular-nums;background:#f4f7f8;color:#183b47}*{box-sizing:border-box}body{margin:0}a{color:#0a7469;text-decoration:none}a:hover{text-decoration:underline}button,input,select{font:inherit}
+header{background:linear-gradient(115deg,#0b2738,#0d655f);color:white;padding:27px max(18px,calc((100vw - 1150px)/2)) 34px}
+header a{font-size:12px;color:#cdf6e6}header h1{font-size:clamp(25px,3.2vw,35px);line-height:1.5;margin:17px 0 7px}header p{font-size:13px;color:#d8ece8;max-width:820px;line-height:2;margin:0}
+main{max-width:1150px;margin:24px auto;padding:0 18px 40px}
+.notice{font-size:12px;line-height:2;background:#fffaf0;border:1px solid #e7dcc7;border-radius:12px;color:#755e3f;padding:15px;margin-bottom:18px}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:20px}
+.kpi{border:1px solid #dfe8e8;background:#fff;border-radius:15px;padding:19px;min-height:99px}
+.kpi small{font-size:11px;color:#758b95}.kpi strong{display:block;font-size:29px;color:#126c66;margin-top:9px}
+.panel{background:white;border:1px solid #dce7e8;border-radius:15px;padding:20px;margin-bottom:16px}
+.row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}.row h2{font-size:18px;margin:0}.muted{color:#6c8490;font-size:12px;line-height:1.9}
+.controls{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+input,select{border:1px solid #ccdddd;background:white;border-radius:9px;padding:11px;min-width:145px;color:#18414c;max-width:100%}
+input{flex:1;min-width:190px}
+.cards{display:grid;gap:12px}.card{border:1px solid #dfe9e8;border-radius:13px;padding:19px;background:#fff}
+.card h3{font-size:16px;line-height:1.65;margin:0}
+.card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.badge{font-size:10px;font-weight:700;padding:7px 9px;border-radius:20px;background:#edf2f3;color:#58737d;white-space:nowrap}
+.badge.potential_match{background:#e6f6ec;color:#0c7052}.badge.needs_verification{background:#fff2df;color:#865d25}.badge.out_of_current_snapshot{background:#ebf0f2;color:#687b80}
+.subtitle{font-size:11px;color:#7c9199;margin:7px 0 12px}
+.card p{font-size:12px;line-height:1.9;color:#526e78;margin:10px 0}
+.card b{color:#284e58}
+.checks{margin-top:11px;background:#f7faf9;border:1px solid #e8eeee;border-radius:11px;padding:12px 16px}
+.checks strong{display:block;font-size:12px;margin-bottom:6px}.checks ul{margin:0;padding-right:18px;color:#506c75;line-height:2;font-size:11px}
+.links{display:flex;gap:13px;flex-wrap:wrap;margin-top:13px;font-size:12px;font-weight:700}
+.empty{padding:30px;border-radius:12px;border:1px dashed #cddede;color:#6c8490;text-align:center;line-height:2}
+.stats{color:#3a6d72;font-size:11px;padding:7px 9px;border-radius:8px;background:#f0f8f7}
+.footer{font-size:11px;color:#748b90;line-height:2;margin-top:15px}
+@media(max-width:700px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.panel,.card{padding:15px}.card h3{font-size:14px}}
+@media print{header{background:white;color:#19424d}header a,header p{color:#526e78}.controls,.links{display:none}.card{break-inside:avoid}}
+</style></head><body>
+<header><a href="index.html">← العودة إلى رادار التوطين</a><h1>تحليل انطباق القرارات على سالك</h1>
+<p>عرض موحّد لجميع قرارات التوطين، يميز بين الصلة المهنية الأولية والحالات التي تحتاج التحقق من النشاط أو الترخيص أو الموقع. لا يفترض أن تشابه المسمى يعني انطباق القرار.</p></header>
+<main><div class="notice"><strong>مهم:</strong> هذا فحص استرشادي اعتمادًا على معلومات المهن والأنشطة المتاحة، وليس إثبات امتثال أو مخالفة. لا نعد القرار منطبقًا أو غير منطبق نهائيًا إلا بعد استكمال الأدلة الرسمية المطلوبة.</div>
+<div id="kpis" class="kpis"><div class="kpi">جارٍ تجهيز النتائج…</div></div>
+<section class="panel"><div class="row"><h2>نتائج مراجعة القرارات</h2><span id="count" class="muted"></span></div>
+<p class="muted">تظهر جميع القرارات في هذا العرض، بما فيها القرارات غير المدرجة ضمن فجوات سالك الحالية. وتستمر مراقبتها تنظيميًا عند صدور تحديثات.</p>
+<div class="controls"><label for="filter">الحالة</label><select id="filter"><option value="all">جميع الحالات</option><option value="potential_match">صلة مهنية أولية</option><option value="needs_verification">تحتاج تحققًا</option><option value="out_of_current_snapshot">خارج المطابقة الحالية</option></select><label for="search">بحث</label><input id="search" type="search" placeholder="ابحث عن القرار أو المهنة"></div></section>
+<div id="cards" class="cards"><div class="empty">جارٍ تحليل قرارات الوزارة…</div></div>
+<div class="footer">مصدر تحليل الموظفين: آخر لقطة مجمعة متاحة داخل الرادار. تقتصر النتائج على دعم المراجعة البشرية ولا تؤدي إلى تعديل نسب التوطين أو إجراءات العاملين.</div>
+</main>
+<script src="assets/workforce-model.js"></script><script src="assets/salic-scope.js"></script>
+<script>
+(function(){"use strict";
+const $=id=>document.getElementById(id),esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;',"'" :"&#39;"}[c]));
+const number=n=>Number(n||0).toLocaleString("en-US");
+let board=null;
+function render(){
+ if(!board)return;
+ const q=$("search").value.trim().toLowerCase(),state=$("filter").value;
+ const found=board.records.filter(x=>(state==="all"||x.status===state)&&(!q||(x.title+" "+x.number+" "+x.scope+" "+x.checks.join(" ")).toLowerCase().includes(q)));
+ $("count").textContent="المعروض "+number(found.length)+" من "+number(board.total);
+ $("cards").innerHTML=found.map(x=>{
+  const audit=x.auditStatus==="reviewed"?"بيانات القرار مراجعة مبدئيًا":"تفاصيل القرار قيد المراجعة";
+  const match=x.matchedTitleEmployees>0&&x.status==="potential_match"?'<span class="stats">موظفون مطابقون للمسميات فقط: '+number(x.matchedTitleEmployees)+'</span>':"";
+  const evidence=x.status==="potential_match"?'تحتاج مطابقة رموز قوى والشروط.':x.status==="out_of_current_snapshot"?'قد تتغير النتيجة عند تحديث بيانات المهن.':'لا يصح احتساب فجوة من تشابه المسميات أو النشاط غير المثبت.';
+  return '<article class="card"><div class="card-head"><div><h3>'+esc(x.title)+'</h3><div class="subtitle">القرار '+esc(x.number||"—")+' · '+esc(audit)+'</div></div><span class="badge '+esc(x.status)+'">'+esc(x.heading)+'</span></div>'+
+   '<p>'+esc(x.explanation)+'</p>'+match+
+   '<div class="checks"><strong>متطلبات إكمال المراجعة</strong><ul>'+x.checks.map(t=>'<li>'+esc(t)+'</li>').join("")+'</ul></div>'+
+   '<p class="muted">'+esc(evidence)+'</p><div class="links">'+(x.source?'<a target="_blank" rel="noopener noreferrer" href="'+esc(x.source)+'">المرجع الرسمي للقرار</a>':"")+'<a href="decision-audit.html">سجل تدقيق القرارات</a></div></article>';
+ }).join("")||'<div class="empty">لا توجد قرارات مطابقة لخيارات البحث.</div>';
+}
+async function init(){
+ try{
+  const files=["data/salic-applicability.json","data/decisions.json","data/salic-activities.json","data/salic-workforce.json"];
+  const [registry,decisions,activities,workforce]=await Promise.all(files.map(p=>fetch(p+"?v="+Date.now(),{cache:"no-store"}).then(r=>{if(!r.ok)throw Error(p);return r.json()})));
+  window.SalicWorkforce.setRows(workforce.rows,workforce.summary);
+  board=window.SalicScopeScreen.make({registry,decisions,activities,workforce,model:window.SalicWorkforce});
+  const stats=[["إجمالي القرارات",board.total],["صلة مهنية أولية",board.potential],["تحتاج تحققًا",board.needsReview],["خارج المطابقة الحالية",board.outOfCurrent]];
+  $("kpis").innerHTML=stats.map(([label,v])=>'<div class="kpi"><small>'+esc(label)+'</small><strong>'+number(v)+'</strong></div>').join("");
+  $("search").addEventListener("input",render);$("filter").addEventListener("change",render);render();
+ }catch(e){console.error(e);$("cards").innerHTML='<div class="empty">تعذر تحميل التحليل الآن. يرجى تحديث الصفحة أو مراجعة حالة الرادار.</div>'; $("kpis").innerHTML='<div class="kpi">تعذر تجهيز المؤشرات.</div>';}
+}
+init();
+})();
+</script></body></html>
