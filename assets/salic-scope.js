@@ -15,7 +15,7 @@ function officialUrl(value){
 }
 function validate(registry,decisions,activities,workforce){
  if(!registry||!Array.isArray(registry.decisions)||!decisions||!Array.isArray(decisions.decisions))throw Error("Missing decision and screening registry");
- if(registry.decisions.length!==decisions.decisions.length)throw Error("Every decision must have a scope entry");
+ // New ministry decisions must appear for review immediately, even before an editorial rule is added.
  if(!activities||!Array.isArray(activities.activities)||!Array.isArray(workforce?.rows))throw Error("Missing activity or workforce snapshot");
  const ids=new Set(decisions.decisions.map(d=>d.id)),seen=new Set();
  for(const r of registry.decisions){
@@ -31,8 +31,13 @@ function make({registry,decisions,activities,workforce,model}){
  // The activities list is user-provided and does not certify the completeness
  // of the commercial registration or the existence of licensed branches.
  const activitiesVerified=activities.verificationStatus==="official-verified-complete";
- const records=registry.decisions.map(rule=>{
-  const d=decisions.decisions.find(x=>x.id===rule.id);
+ const ruleIndex=new Map(registry.decisions.map(x=>[x.id,x]));
+ const records=decisions.decisions.map(d=>{
+  const rule=ruleIndex.get(d.id)||{
+   id:d.id,gate:"unknown",
+   summary:"قرار جديد يحتاج مراجعة المهن والأنشطة والشروط قبل ربطه بتحليلات سالك.",
+   checks:["تحديد المهن أو الأنشطة المستهدفة في المصدر الرسمي","التحقق من نشاط سالك ورمز قوى وحد الانطباق"]
+  };
   const g=model.names[rule.id]?model.group(rule.id):null;
   const linked=g&&g.total>0?g.total:0;
   let status,heading,explanation;
@@ -64,6 +69,7 @@ function make({registry,decisions,activities,workforce,model}){
  const countBy=key=>records.filter(x=>x.status===key).length;
  return {records,total:records.length,potential:countBy("potential_match"),needsReview:countBy("needs_verification"),outOfCurrent:countBy("out_of_current_snapshot"),confirmedApplicable:0,confirmedNotApplicable:0,
   audited:records.filter(x=>x.auditStatus==="reviewed").length,pendingAudit:records.filter(x=>x.auditStatus!=="reviewed").length,
+  newPending:records.filter(x=>!ruleIndex.has(x.id)).length,
   snapshot:workforce.asOf,activityEvidence:activities.verificationStatus,
   legalNotice:"نتائج فحص أولي ولا تثبت انطباق قرار أو عدم انطباقه نظاميًا. لا تُحدث بيانات التوطين أو تعدلها تلقائيًا."};
 }
