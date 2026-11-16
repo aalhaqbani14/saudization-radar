@@ -141,8 +141,8 @@ def build_catalog(seed, fetch=request_page, sleep=time.sleep):
             print(f"Complete official group {group['id']}: {len(scanned)}", flush=True)
     except (ValueError, RuntimeError) as exc:
         print(f"::warning::HRSD interactive pagination is unavailable: {exc}. Keeping honest partial coverage.", flush=True)
-        if seed.get("status") == "official_group_pages_verified":
-            print("Retaining the last fully verified snapshot.", flush=True)
+        if seed.get("status") in ("official_group_pages_verified", "historical_augmented"):
+            print("Retaining archived/verified catalog until full current source pagination is available.", flush=True)
             return seed
         partial = {}
         for legal in links:
