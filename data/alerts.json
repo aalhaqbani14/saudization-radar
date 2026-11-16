@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-11-16T06:23:48.424841+00:00",
+  "last_checked": "2026-11-16T12:08:58.638310+00:00",
   "sources": [
     {
       "name": "أخبار الوزارة",
@@ -67,6 +67,11 @@
       "kind": "decision_page"
     },
     {
+      "name": "مرجع إضافي: إداريات مراكز الاسترخاء والعناية الشخصية",
+      "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لتوطين-المهن-الإدارية-والمساندة",
+      "kind": "decision_page"
+    },
+    {
       "name": "مرجع إضافي: الاتصالات وتقنية المعلومات",
       "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-مهن-الاتصالات-وتقنية",
       "kind": "decision_page"
@@ -85,9 +90,124 @@
       "name": "مرجع إضافي: مهن خدمة العملاء",
       "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-مهن-خدمة-العملاء",
       "kind": "decision_page"
+    },
+    {
+      "name": "مرجع إضافي: الأنشطة والمهن العقارية",
+      "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لتوطين-الأنشطة-والمهن-العقارية",
+      "kind": "decision_page"
+    },
+    {
+      "name": "مرجع إضافي: التعليم العام الأهلي والعالمي",
+      "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-قطاع-التعليم-العام",
+      "kind": "decision_page"
+    },
+    {
+      "name": "مرجع إضافي: مهن الطيران المرخصة",
+      "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-توطين-مهن-الطيران-المرخصة",
+      "kind": "decision_page"
+    },
+    {
+      "name": "مرجع إضافي: منافذ خدمات البريد ونقل الطرود",
+      "url": "https://www.hrsd.gov.sa/media-center/news/1129031",
+      "kind": "decision_page"
+    },
+    {
+      "name": "مرجع إضافي: توطين أنشطة ومهن في منطقة المدينة المنورة",
+      "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-التوطين-في-منطقة-المدينة",
+      "kind": "decision_page"
     }
   ],
   "alerts": [
+    {
+      "id": "dc76bf609241c317",
+      "source": "مرجع إضافي: الاتصالات وتقنية المعلومات",
+      "title": "تغيّر يتطلب مراجعة: مرجع إضافي: الاتصالات وتقنية المعلومات",
+      "summary": "السياسة الوطنية لتشجيع تكافؤ الفرص والمساواة في المعاملة في الاستخدام والمهنة تسعى السياسة إلى تعزيز الحوكمة والمتابعة والتقييم المستمر لأثر التدخلات والسياسات المرتبطة بعدم التمييز، وتطوير آليات فعّالة , بما يسهم في تأسيس ممارسات عدم التمييز في الاستخدام والمهنة يشارك فيها جميع أطراف سوق العمل لتحقيق التوازن والاستقرار بما يدعم مستهدفات رؤية المملكة 2030. 16-شعبان-1447 - 04-فبراير-2026 أصحاب عمل أفراد قطاع العمل قطاع الخدمة المدنية السياسة الوطنية لتشجيع تكافؤ الفرص والمساواة في المعاملة في الاستخدام والمهنة https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B3%D8%A9",
+      "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-مهن-الاتصالات-وتقنية",
+      "detected_at": "2026-11-16T12:08:58.638310+00:00",
+      "review_score": 4,
+      "review_priority": "عالية للمراجعة",
+      "review_status": "غير مؤكد — يحتاج مراجعة المصدر",
+      "email_worthy": true,
+      "rates_mentioned": [
+        "8%",
+        "7%",
+        "9%",
+        "84%",
+        "3%"
+      ],
+      "dates_mentioned": [],
+      "occupation_codes_mentioned": [],
+      "signal_reasons": [
+        "مصطلحات توطين",
+        "صياغة قرار/تطبيق",
+        "نسب مذكورة"
+      ],
+      "related_sources": [
+        {
+          "name": "مرجع إضافي: الاتصالات وتقنية المعلومات",
+          "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-مهن-الاتصالات-وتقنية"
+        },
+        {
+          "name": "مرجع إضافي: المهن الفنية الهندسية",
+          "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-المهن-الفنية-الهندسية"
+        },
+        {
+          "name": "مرجع إضافي: المهن الهندسية",
+          "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-المهن-الهندسية"
+        },
+        {
+          "name": "قرار: مهنة مشرف مسكن",
+          "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-مهنة-مشرف-مسكن"
+        },
+        {
+          "name": "قرار: مهن المبيعات",
+          "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لتوطين-مهن-المبيعات"
+        },
+        {
+          "name": "قرار: مهن المشتريات",
+          "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لتوطين-مهن-المشتريات"
+        },
+        {
+          "name": "قرار: المهن المحاسبية",
+          "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-المهن-المحاسبية"
+        }
+      ],
+      "source_count": 7
+    },
+    {
+      "id": "e62a460c67b83365",
+      "source": "قرار: المهن الإدارية المساندة",
+      "title": "تغيّر يتطلب مراجعة: قرار: المهن الإدارية المساندة",
+      "summary": "الدليل الإجرائي لقرار توطين مهنة طب الأسنان القرار يهدف إلى توطين مهن طب الأسنان بنسبة 45% ثم 55% مع حد أدنى للأجور. 08-شعبان-1447 - 27-يناير-2026 أصحاب عمل التوطين قطاع العمل وثيقة رسمية مرتبطة: الدليل الإجرائي لقرار توطين مهنة طب الأسنان https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/%D8%A7%D9%84%D8%AF%D9%84%D9%8A%D9%84-%D8%A7%D9%84%D8%A5%D8%AC%D8%B1%D8%A7%D8%A6%D9%8A-%D9%84%D9%82%D8%B1%D8%A7%D8%B1-%D8%AA%D9%88%D8%B7%D9%8A%D9%86-%D9%85%D9%87%D9%86%D8%A9-%D8%B7%D8%A8-%D8%A7%D9%84%D8%A3%D8%B3%D9%86%D8%A7%D9%86",
+      "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-المهن-الإدارية-المساندة",
+      "detected_at": "2026-11-16T12:08:58.638310+00:00",
+      "review_score": 4,
+      "review_priority": "عالية للمراجعة",
+      "review_status": "غير مؤكد — يحتاج مراجعة المصدر",
+      "email_worthy": true,
+      "rates_mentioned": [
+        "45%",
+        "55%",
+        "8%",
+        "7%",
+        "9%"
+      ],
+      "dates_mentioned": [],
+      "occupation_codes_mentioned": [],
+      "signal_reasons": [
+        "مصطلحات توطين",
+        "صياغة قرار/تطبيق",
+        "نسب مذكورة"
+      ],
+      "related_sources": [
+        {
+          "name": "قرار: المهن الإدارية المساندة",
+          "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-المهن-الإدارية-المساندة"
+        }
+      ],
+      "source_count": 1
+    },
     {
       "id": "74087bf696207dd6",
       "source": "مرجع إضافي: مهن التسويق",
