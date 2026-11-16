@@ -28,6 +28,16 @@ class MonitorTests(unittest.TestCase):
   self.assertIn('قرار توطين',content)
   self.assertIn('70%',content)
   self.assertNotIn('ignored javascript',content)
+ def test_monitor_covers_all_known_decision_html_sources(self):
+  import json
+  from pathlib import Path
+  urls={x['url'] for x in monitor.monitored_sources()}
+  catalogue=json.loads(Path('data/decisions.json').read_text(encoding='utf-8'))['decisions']
+  candidates={d['source'] for d in catalogue if not d['source'].split('?')[0].lower().endswith('.pdf')}
+  self.assertEqual(len(catalogue),21)
+  self.assertTrue(candidates.issubset(urls), 'All decision HTML sources, even unrelated sectors, must be watched')
+  self.assertGreaterEqual(len(urls),len(candidates)+2)
+
  def test_sources_official_and_unique(self):
   sources=monitor.monitored_sources()
   self.assertEqual(len(sources),len({x['url'] for x in sources}))
