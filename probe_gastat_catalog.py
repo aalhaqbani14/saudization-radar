@@ -12,7 +12,7 @@ arabic_re=re.compile(r"^(.*?)\s*([0-9]{6})\s*$")
 en_re=re.compile(r"^\s*([0-9]{6})\s+([A-Za-z].+)$")
 def arabic(pdf):
  out={};positions={};dup=[]
- for page in range(28,min(100,len(pdf))):
+ for page in range(28,min(130,len(pdf))):
   for l in pdf[page].get_text(sort=True).splitlines():
    m=arabic_re.match(l.strip())
    if not m:continue
@@ -24,7 +24,7 @@ def arabic(pdf):
  return out,positions,dup
 def english(pdf):
  out={};positions={};dup=[]
- for page in range(34,min(112,len(pdf))):
+ for page in range(34,min(145,len(pdf))):
   for l in pdf[page].get_text(sort=True).splitlines():
    m=en_re.match(l.strip())
    if not m:continue
