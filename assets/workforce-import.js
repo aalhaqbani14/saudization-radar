@@ -209,6 +209,7 @@ async function init(){
   state.summary=null;save.disabled=true;saveCode.disabled=true;$("import-summary").textContent="";
   if(!file.files||file.files.length!==1){msg("اختر ملف CSV أولًا.","warn");return}
   const f=file.files[0];if(f.size>MAX_BYTES){msg("الملف أكبر من 5 ميجابايت؛ يرجى تصغيره.","error");return}
+  let codeWarnings=false;
   try{
     const data=await readLocal(f),res=summarize(data,$("snapshot-date").value);
     state.summary=res;
@@ -218,7 +219,7 @@ async function init(){
       if(!state.guide){const r=await fetch("data/guide-matching.json",{cache:"no-store"});if(!r.ok)throw Error("No guide");state.guide=await r.json()}
       const checks=auditCodes(res,state.guide).filter(x=>x.total>0);
       const mismatchCount=checks.reduce((a,x)=>a+x.titleMismatchCount,0);
-      if(mismatchCount)msg("تنبيه: توجد "+mismatchCount+" اختلافات بين رمز المهنة والمسمى في الدليل؛ راجعها قبل الاعتماد.","warn");
+      if(mismatchCount){codeWarnings=true;msg("تنبيه: توجد "+mismatchCount+" اختلافات بين رمز المهنة والمسمى في الدليل؛ راجعها قبل الاعتماد.","warn");}
       $("code-analysis").textContent=checks.length?checks.map(x=>x.title+": "+x.total+" موظف، "+x.saudi+" سعودي، الفجوة الافتراضية قبل شروط الأجر "+(x.numericGap??"غير قابلة للحساب الآن")+"، النسبة المرجعية "+x.rate+"%، المؤهلون حسابيًا حسب الأجر/الاعتماد "+(x.eligibleSaudisIfEvidenceComplete??"غير مثبت")+(x.eligibleGapHypothesis===null?"":" · فجوة افتراضية بعد الضوابط: "+x.eligibleGapHypothesis)+(x.provisional?" · يحتاج تحقق من الرموز والاشتراطات":"")).join("\n"):"لا توجد رموز من الأدلة المراجعة في الملف، أو لم تُدخل أكواد المهن.";
       // Additional private/local-only reference check; this is NEVER a Qiwa attestation.
       if(res.codeTotals.length){
@@ -231,6 +232,7 @@ async function init(){
             " غير موجودة في الفهرس، "+cross.titleMismatches+
             " مسمى مختلف عن الاسم المرجعي. وجود الرمز في الفهرس لا يثبت ربطه بالموظف في قوى.";
           if(cross.historicalOnly||cross.notInReference||cross.titleMismatches){
+            codeWarnings=true;
             msg("الرموز تحتاج مراجعة: توجد رموز تاريخية أو غير موجودة بالفهرس أو مسميات غير متطابقة. لا يعني ذلك بطلان الرمز في قوى.","warn");
           }
         }catch(e){
@@ -238,7 +240,7 @@ async function init(){
         }
       }
     }catch(e){$("code-analysis").textContent="تعذر تحميل دليل الأكواد؛ يبقى ملخص الموظفين صالحًا للتنزيل بعد المراجعة."}
-    msg("اكتمل التحقق الحسابي المحلي. راجع النتائج قبل تنزيل أي ملف مجمع.","ok");
+    msg(codeWarnings?"اكتمل التجميع المحلي مع تنبيهات رموز تتطلب تحققًا من قوى.":"اكتمل التجميع المحلي؛ راجع النتائج قبل تنزيل أي ملف مجمع.",codeWarnings?"warn":"ok");
     save.disabled=false;saveCode.disabled=res.codeTotals.length===0;
   }catch(e){msg(e.message||"تعذر التحقق من الملف.","error");$("code-analysis").textContent=""}
  });
