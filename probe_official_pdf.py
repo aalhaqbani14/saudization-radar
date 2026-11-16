@@ -1,8 +1,8 @@
 from urllib.request import Request,urlopen
 import fitz, re
 urls={
-'english':'https://www.stats.gov.sa/sites/default/files/Report_GAStat%20Unified%20Saudi%20Occupational%20Classification_English_V1.pdf',
-'arabic':'https://www.stats.gov.sa/sites/default/files/Report_GAStat%20Unified%20Saudi%20Occupational%20Classification_Arabic_V1.pdf'
+'english':'https://quality.kku.edu.sa/sites/quality.kku.edu.sa/files/2024-03/Unified%20Saudi%20Occupational%20Classification%201.pdf',
+'arabic':'https://quality.kku.edu.sa/sites/quality.kku.edu.sa/files/2024-03/%D8%A7%D9%84%D8%AA%D8%B5%D9%86%D9%8A%D9%81%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D8%AD%D8%AF%20%D9%84%D9%84%D9%85%D9%87%D9%86%201.pdf'
 }
 for lang,url in urls.items():
  try:
