@@ -57,7 +57,7 @@
       if (g && validGroupUrl(g.url)) {
         const a = create('a', 'المصدر الوزاري');
         a.href = g.url; a.target = '_blank'; a.rel = 'noopener noreferrer';
-        meta.append(create('div')).lastChild.append(a);
+        const linkWrap = create('div'); linkWrap.append(a); meta.append(linkWrap);
       }
       row.append(details, meta);
       fragment.append(row);
