@@ -42,15 +42,23 @@
     const term = normalize(q.value);
     const selected = group.value;
     const found = items.filter(r => (!selected || r.group === selected) &&
-      (!term || normalize(r.code).includes(term) || normalize(r.title).includes(term)));
+      (!term || normalize(r.code).includes(term) || normalize(r.title).includes(term) || normalize(r.titleEn).includes(term)));
     const fragment = document.createDocumentFragment();
     found.slice(0,60).forEach(item => {
       const g = groups.get(item.group);
       const row = create('div', null, 'result');
       const details = create('div');
       details.append(create('strong', item.title), create('small', g ? g.name : 'مجموعة غير محددة'));
+      if (item.sourceTier === 'official_gastat_2019') {
+        details.append(create('div', 'تصنيف هيئة الإحصاء 2019 — مرجع تاريخي، يلزم التحقق من أحدث رمز', 'tags'));
+      } else if (item.sourceTier === 'official_group_first_page') {
+        details.append(create('div', 'مستخرج من صفحة وزارة الموارد البشرية', 'tags'));
+      }
       if (item.decisionIds && item.decisionIds.length) {
         details.append(create('div','مرجع قرار توطين مرتبط — الانطباق يحتاج تحققًا','tags'));
+      }
+      if (item.titleEn && normalize(item.titleEn) !== normalize(item.title)) {
+        details.append(create('small', item.titleEn));
       }
       const meta = create('div');
       meta.append(create('code', item.code));
@@ -72,7 +80,7 @@
       if (!response.ok) throw new Error('HTTP ' + response.status);
       const db = await response.json();
       if (db.schema !== 1 || !Array.isArray(db.groups) || !Array.isArray(db.items) ||
-          !['seed_guides_only','official_partial_pages','official_group_pages_verified'].includes(db.status)) {
+          !['seed_guides_only','official_partial_pages','historical_augmented','official_group_pages_verified'].includes(db.status)) {
         throw new Error('Invalid catalog metadata');
       }
       const distinct = new Set();
@@ -88,12 +96,12 @@
       get('loaded-count').textContent = items.length.toLocaleString('en-US');
       get('headline-count').textContent = Number(db.headlineTotal || 2047).toLocaleString('en-US');
       const verified = db.status === 'official_group_pages_verified';
-      get('catalog-status').textContent = verified ? 'مكتمل للمجموعات' : db.status === 'official_partial_pages' ? 'جزئي + رسمي' : 'جزئي';
+      get('catalog-status').textContent = verified ? 'مكتمل للمجموعات' : db.status === 'historical_augmented' ? 'مرجع موسّع' : db.status === 'official_partial_pages' ? 'جزئي + رسمي' : 'جزئي';
       get('catalog-status').style.color = verified ? '#087f78' : '#a46c14';
       get('method-note').textContent = verified
         ? 'نسخة مفهرسة من صفحات مجموعات الوزارة؛ التحديث بتاريخ ' + safe(db.updatedAt) +
           '. لا تثبت انطباق قرارات التوطين على SALIC أو صحة الرمز المسجل في قوى.'
-        : db.status === 'official_partial_pages' ? 'نسخة جزئية تجمع أول صفحة رسمية من كل مجموعة مع رموز الأدلة الإجرائية. لا تشمل جميع المهن. استخدم رابط المجموعة الرسمية لمراجعة المهن غير المعروضة.' : 'النسخة الحالية جزئية ومستمدة من أدلة قرارات التوطين، وليست فهرس الوزارة الكامل. المهن غير الموجودة هنا ليست بالضرورة غير مستهدفة. استخدم روابط المجموعات الرسمية للتحقق.';
+        : db.status === 'historical_augmented' ? 'الفهرس الموسع يمزج تصنيف هيئة الإحصاء المنشور عام 2019 مع مراجع الوزارة الأحدث المتاحة. لا يمثل النسخة الحالية الكاملة للوزارة، فلا تعتمد الرمز دون مطابقته رسميًا.' : db.status === 'official_partial_pages' ? 'نسخة جزئية تجمع أول صفحة رسمية من كل مجموعة مع رموز الأدلة الإجرائية. لا تشمل جميع المهن. استخدم رابط المجموعة الرسمية لمراجعة المهن غير المعروضة.' : 'النسخة الحالية جزئية ومستمدة من أدلة قرارات التوطين، وليست فهرس الوزارة الكامل. المهن غير الموجودة هنا ليست بالضرورة غير مستهدفة. استخدم روابط المجموعات الرسمية للتحقق.';
       q.disabled = false; group.disabled = false;
       render();
     } catch(error) {
