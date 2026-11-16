@@ -1,0 +1,25 @@
+name: Probe HRSD occupation browser pagination
+'on':
+  push:
+    branches: [feat/complete-occupation-taxonomy]
+    paths:
+      - 'probe_occupations.mjs'
+      - '.github/workflows/probe-occupation-browser.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  browser-probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install browser tooling
+        run: |
+          npm install --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Probe official ministry pagination
+        run: node probe_occupations.mjs
