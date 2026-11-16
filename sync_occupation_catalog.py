@@ -128,13 +128,13 @@ def scrape_group(group, fetch=request_page, sleep=time.sleep):
                     javascript = request_page("https://www.hrsd.gov.sa" + src)
                 except (RuntimeError, ValueError):
                     continue
-                for token in ('data-page', 'views/ajax', 'occupations-content', 'js-pager__items', 'view-occupations'):
+                for token in ('searchParams.set("page"', 'searchParams.get("page"', 'onPageChange', 'data-page', 'views/ajax', 'occupations-content', 'js-pager__items', 'view-occupations', 'api/occupations', 'pageSize', 'querySelector(".pager'):
                     match = re.search(re.escape(token), javascript, flags=re.I)
                     if match:
                         print("OFFICIAL_PAGER_SCRIPT", src, token, repr(javascript[max(0,match.start()-300):match.start()+800]), flush=True)
                         probe_count += 1
                         break
-                if probe_count >= 5:
+                if probe_count >= 15:
                     break
             for token in ('drupalSettings', 'view-dom-id', 'data-drupal-selector', 'data-view-id', 'data-url', 'occupations-list', 'pager__items'):
                 where = page_html.find(token)
