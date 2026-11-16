@@ -107,40 +107,7 @@ def scrape_group(group, fetch=request_page, sleep=time.sleep):
             seen[code] = title
         added = len(seen) - before
         if page > 0 and added == 0:
-            # Diagnostic of public navigation attributes, never publish incomplete data.
-            for marker in ("pagination", "pager", "page-link", "page-item", "data-page", "page-number", "__doPostBack", "getNext", "nextPage"):
-                match = re.search(re.escape(marker), page_html, re.IGNORECASE)
-                if match:
-                    print("OFFICIAL_PAGER_HINT", marker, repr(page_html[max(0, match.start()-150):match.start()+480]), flush=True)
-            links = re.findall(r'<a\\b[^>]{0,500}>', page_html, flags=re.I)
-            print("OFFICIAL_PAGER_LINKS", [x[:350] for x in links if any(k in x.lower() for k in ("page", "onclick", "javascript", "next", "href=\"#"))][-15:], flush=True)
-            location = page_html.find('<nav class="pager')
-            if location > -1:
-                print("OFFICIAL_PAGER_HTML", repr(page_html[max(0, location-1800):location+1600]), flush=True)
-            scripts = re.findall(r'<script[^>]*src="([^"]+)"', page_html, flags=re.I)
-            print("OFFICIAL_SCRIPT_URLS", scripts[-35:], flush=True)
-            probe_count = 0
-            for src in scripts[-35:]:
-                if not src.startswith("/_next/static/chunks/"):
-                    continue
-                try:
-                    # Public static JavaScript: diagnostics only, no upload or site modification.
-                    javascript = request_page("https://www.hrsd.gov.sa" + src)
-                except (RuntimeError, ValueError):
-                    continue
-                for token in ('searchParams.set("page"', 'searchParams.get("page"', 'onPageChange', 'data-page', 'views/ajax', 'occupations-content', 'js-pager__items', 'view-occupations', 'api/occupations', 'pageSize', 'querySelector(".pager'):
-                    match = re.search(re.escape(token), javascript, flags=re.I)
-                    if match:
-                        print("OFFICIAL_PAGER_SCRIPT", src, token, repr(javascript[max(0,match.start()-300):match.start()+800]), flush=True)
-                        probe_count += 1
-                        break
-                if probe_count >= 15:
-                    break
-            for token in ('drupalSettings', 'view-dom-id', 'data-drupal-selector', 'data-view-id', 'data-url', 'occupations-list', 'pager__items'):
-                where = page_html.find(token)
-                if where >= 0:
-                    print("OFFICIAL_HTML_ELEMENT", token, repr(page_html[max(0,where-250):where+450]), flush=True)
-            raise ValueError(f"Pagination did not advance: {endpoint} ({len(seen)}/{expected})")
+            raise ValueError(f"Official pagination did not advance: {endpoint} ({len(seen)}/{expected})")
         if len(seen) >= expected:
             break
         sleep(0.25)
@@ -150,37 +117,70 @@ def scrape_group(group, fetch=request_page, sleep=time.sleep):
 
 
 def build_catalog(seed, fetch=request_page, sleep=time.sleep):
-    """All ten official groups must be complete before any data can be replaced."""
+    """Prefer complete verified records; otherwise safely import only visible official first pages."""
     if seed.get("schema") != 1 or len(seed.get("groups", [])) != 10:
-        raise ValueError("Invalid seed catalog or missing group metadata")
+        raise ValueError("Invalid catalog group metadata")
     links = json.loads(DECISIONS.read_text(encoding="utf-8"))["occupations"]
     legal_by_code = {}
-    for item in links:
-        legal_by_code.setdefault(str(item["code"]), set()).update(item.get("decisionIds", []))
-    merged = {}
-    for group in seed["groups"]:
-        scanned = scrape_group(group, fetch, sleep)
-        for code, title in scanned.items():
-            if code in merged:
-                raise ValueError(f"Duplicate occupation code across official groups: {code}")
-            merged[code] = {
-                "code": code,
-                "title": title,
-                "group": str(group["id"]),
-                "decisionIds": sorted(legal_by_code.get(code, set())),
-            }
-        print(f"Verified official category {group['id']}: {len(scanned)}")
+    for entry in links:
+        code = str(entry["code"])
+        legal_by_code.setdefault(code, set()).update(entry.get("decisionIds", []))
+
+    def entry(code, title, group, source):
+        return {"code": code, "title": title, "group": str(group),
+                "decisionIds": sorted(legal_by_code.get(code, set())), "sourceTier": source}
+
+    full = {}
+    try:
+        for group in seed["groups"]:
+            scanned = scrape_group(group, fetch, sleep)
+            for code, title in scanned.items():
+                if code in full:
+                    raise ValueError("Duplicate code across groups: " + code)
+                full[code] = entry(code, title, group["id"], "official_group_pages")
+            print(f"Complete official group {group['id']}: {len(scanned)}", flush=True)
+    except (ValueError, RuntimeError) as exc:
+        print(f"::warning::HRSD interactive pagination is unavailable: {exc}. Keeping honest partial coverage.", flush=True)
+        if seed.get("status") == "official_group_pages_verified":
+            print("Retaining the last fully verified snapshot.", flush=True)
+            return seed
+        partial = {}
+        for legal in links:
+            code = str(legal["code"])
+            if CODE.fullmatch(code):
+                partial[code] = entry(code, legal["title"], code[0], "decision_guide")
+        scanned_count = 0
+        for group in seed["groups"]:
+            rows = parse_rows(fetch(group["url"]))
+            expected_first = min(12, int(group["count"]))
+            if len(rows) != expected_first:
+                raise ValueError(f"Official group {group['id']} returned {len(rows)}, expected {expected_first}; retaining existing data")
+            for code, title in rows:
+                current = partial.get(code)
+                if current and current["sourceTier"] == "official_group_first_page" and current["group"] != str(group["id"]):
+                    raise ValueError("Conflicting code across official first pages: " + code)
+                partial[code] = entry(code, title, group["id"], "official_group_first_page")
+                scanned_count += 1
+        return {
+            "schema": 1, "status": "official_partial_pages",
+            "headlineTotal": seed["headlineTotal"],
+            "coverageNote": "فهرس جزئي يجمع رموز الأدلة المرجعية مع أول صفحة رسمية من كل مجموعة. لا يمثل جميع المهن ولا يؤكد رمز قوى أو انطباق التوطين.",
+            "updatedAt": dt.datetime.now(dt.timezone.utc).date().isoformat(),
+            "groups": seed["groups"],
+            "importedOfficialFirstPageRows": scanned_count,
+            "items": [partial[code] for code in sorted(partial)],
+        }
+
     expected = sum(int(g["count"]) for g in seed["groups"])
-    if len(merged) != expected:
-        raise ValueError(f"Unexpected total count: {len(merged)} / {expected}")
+    if len(full) != expected:
+        raise ValueError(f"Official total mismatch: {len(full)} / {expected}")
     return {
-        "schema": 1,
-        "status": "official_group_pages_verified",
+        "schema": 1, "status": "official_group_pages_verified",
         "headlineTotal": seed["headlineTotal"],
-        "coverageNote": "مهن مرجعية من صفحات مجموعات الوزارة؛ لا تثبت انطباق قرار أو رمز قوى الفعلي. قد يختلف عدّاد البوابة عن مجموع أرقام المجموعات.",
+        "coverageNote": "مرجع جميع صفحات المجموعات الرسمية. لا يثبت انطباق قرار أو رمز قوى الفعلي. قد تختلف أرقام واجهة الوزارة عن مجموع المجموعات.",
         "updatedAt": dt.datetime.now(dt.timezone.utc).date().isoformat(),
         "groups": seed["groups"],
-        "items": [merged[code] for code in sorted(merged)],
+        "items": [full[code] for code in sorted(full)],
     }
 
 
