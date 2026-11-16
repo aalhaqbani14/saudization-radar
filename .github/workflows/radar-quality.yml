@@ -52,6 +52,7 @@ name: Radar quality checks
       - 'test_occupation_catalog.py'
       - 'sync_occupation_catalog.py'
       - '.github/workflows/radar-quality.yml'
+  pull_request:
   workflow_dispatch:
 permissions:
   contents: read
