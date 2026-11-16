@@ -1,0 +1,709 @@
+{
+  "schema": 1,
+  "status": "seed_guides_only",
+  "headlineTotal": 2047,
+  "coverageNote": "فهرس أولي من أدلة التوطين وليس استيراداً شاملاً للتصنيف المهني. الرموز لا تثبت انطباق قرار على منشأة أو موظف.",
+  "updatedAt": "2026-11-16",
+  "groups": [
+    {
+      "id": "0",
+      "name": "مهن أخرى",
+      "count": 18,
+      "url": "https://www.hrsd.gov.sa/skills-taxonomy/occupations/armed-forces-occupations"
+    },
+    {
+      "id": "1",
+      "name": "المديرون",
+      "count": 324,
+      "url": "https://www.hrsd.gov.sa/skills-taxonomy/occupations/managers"
+    },
+    {
+      "id": "2",
+      "name": "الاختصاصيون",
+      "count": 640,
+      "url": "https://www.hrsd.gov.sa/skills-taxonomy/occupations/professionals"
+    },
+    {
+      "id": "3",
+      "name": "الفنيون والاختصاصيون المساعدون",
+      "count": 376,
+      "url": "https://www.hrsd.gov.sa/skills-taxonomy/occupations/technicians-and-associate-professionals"
+    },
+    {
+      "id": "4",
+      "name": "عاملو الدعم المكتبي",
+      "count": 52,
+      "url": "https://www.hrsd.gov.sa/skills-taxonomy/occupations/clerical-support-workers"
+    },
+    {
+      "id": "5",
+      "name": "عاملو الخدمات والمبيعات",
+      "count": 109,
+      "url": "https://www.hrsd.gov.sa/skills-taxonomy/occupations/service-and-sales-workers"
+    },
+    {
+      "id": "6",
+      "name": "العاملون المهرة في الزراعة والغابات ومزارع الأسماك",
+      "count": 53,
+      "url": "https://www.hrsd.gov.sa/skills-taxonomy/occupations/skilled-agricultural-forestry-and-fishery-workers"
+    },
+    {
+      "id": "7",
+      "name": "عاملو الحرف ومن يرتبط بهم",
+      "count": 179,
+      "url": "https://www.hrsd.gov.sa/skills-taxonomy/occupations/craft-and-related-trades-workers"
+    },
+    {
+      "id": "8",
+      "name": "مشغلو المصانع والآلات وعاملو التجميع",
+      "count": 218,
+      "url": "https://www.hrsd.gov.sa/skills-taxonomy/occupations/plant-and-machine-operators-and-assemblers"
+    },
+    {
+      "id": "9",
+      "name": "المهن الأولية",
+      "count": 77,
+      "url": "https://www.hrsd.gov.sa/skills-taxonomy/occupations/elementary-occupations"
+    }
+  ],
+  "items": [
+    {
+      "code": "121201",
+      "title": "مدير عمليات موارد بشرية",
+      "group": "1",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "121202",
+      "title": "مدير تخطيط قوى عاملة",
+      "group": "1",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "121203",
+      "title": "مدير تصنيف مهن",
+      "group": "1",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "121204",
+      "title": "مدير توظيف",
+      "group": "1",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "121205",
+      "title": "مدير تعويضات",
+      "group": "1",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "121206",
+      "title": "مدير مواهب",
+      "group": "1",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "121207",
+      "title": "مدير تطوير موارد بشرية",
+      "group": "1",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "121208",
+      "title": "مدير علاقات الأفراد",
+      "group": "1",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "121209",
+      "title": "مدير مكتب استقدام",
+      "group": "1",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "121210",
+      "title": "مدير مكتب عمل",
+      "group": "1",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "121211",
+      "title": "مدير شؤون عمل",
+      "group": "1",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "121212",
+      "title": "مدير مكتب خدمة مدنية",
+      "group": "1",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "121213",
+      "title": "مدير تطوير مؤسسي",
+      "group": "1",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "121214",
+      "title": "مدير تنظيم إداري",
+      "group": "1",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "121215",
+      "title": "مدير تحقيق إداري",
+      "group": "1",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "121216",
+      "title": "مدير موارد بشرية أمن سيبراني",
+      "group": "1",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "121314",
+      "title": "مدير إدارة مشاريع",
+      "group": "1",
+      "decisionIds": [
+        "project",
+        "consulting"
+      ]
+    },
+    {
+      "code": "122104",
+      "title": "مدير مبيعات",
+      "group": "1",
+      "decisionIds": [
+        "beauty",
+        "sales"
+      ]
+    },
+    {
+      "code": "122203",
+      "title": "مدير علاقات عامة",
+      "group": "1",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "122205",
+      "title": "مدير جمع التبرعات",
+      "group": "1",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "122206",
+      "title": "مدير مراسم",
+      "group": "1",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "132417",
+      "title": "مدير مشتريات",
+      "group": "1",
+      "decisionIds": [
+        "beauty",
+        "procurement"
+      ]
+    },
+    {
+      "code": "214909",
+      "title": "مهندس إدارة مشاريع",
+      "group": "2",
+      "decisionIds": [
+        "project",
+        "consulting"
+      ]
+    },
+    {
+      "code": "241104",
+      "title": "أمين صندوق",
+      "group": "2",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "241201",
+      "title": "أخصائي استشارات مالية",
+      "group": "2",
+      "decisionIds": [
+        "consulting"
+      ]
+    },
+    {
+      "code": "242106",
+      "title": "أخصائي استشارات أعمال",
+      "group": "2",
+      "decisionIds": [
+        "consulting"
+      ]
+    },
+    {
+      "code": "242108",
+      "title": "أخصائي إدارة مشاريع",
+      "group": "2",
+      "decisionIds": [
+        "project",
+        "consulting"
+      ]
+    },
+    {
+      "code": "242126",
+      "title": "أخصائي استشارات أمن سيبراني",
+      "group": "2",
+      "decisionIds": [
+        "consulting"
+      ]
+    },
+    {
+      "code": "242301",
+      "title": "أخصائي ارتباط وظيفي",
+      "group": "2",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "242302",
+      "title": "أخصائي عمليات موارد بشرية",
+      "group": "2",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "242303",
+      "title": "أخصائي تصنيف وظيفي ومهني",
+      "group": "2",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "242304",
+      "title": "أخصائي توظيف",
+      "group": "2",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "242305",
+      "title": "أخصائي تعويضات",
+      "group": "2",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "242306",
+      "title": "أخصائي توجيه مهني",
+      "group": "2",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "242307",
+      "title": "محقق عمالي",
+      "group": "2",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "242308",
+      "title": "عضو هيئة عمالية",
+      "group": "2",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "242309",
+      "title": "أخصائي تخطيط قوى عاملة",
+      "group": "2",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "242310",
+      "title": "أخصائي مراقبة موارد بشرية",
+      "group": "2",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "242311",
+      "title": "أخصائي استخدام",
+      "group": "2",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "242312",
+      "title": "مستشار موارد بشرية",
+      "group": "2",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "242313",
+      "title": "خبير موارد بشرية",
+      "group": "2",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "243202",
+      "title": "أخصائي علاقات عامة",
+      "group": "2",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "243204",
+      "title": "أخصائي تواصل داخلي",
+      "group": "2",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "243205",
+      "title": "أخصائي توعية جمهور",
+      "group": "2",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "243206",
+      "title": "أخصائي تنظيم مؤتمرات وفعاليات",
+      "group": "2",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "243207",
+      "title": "أخصائي مراسم",
+      "group": "2",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "243208",
+      "title": "مستشار علاقات عامة",
+      "group": "2",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "243209",
+      "title": "خبير علاقات عامة",
+      "group": "2",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "264301",
+      "title": "مترجم",
+      "group": "2",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "264302",
+      "title": "مترجم فوري",
+      "group": "2",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "264303",
+      "title": "مصحح لغوي",
+      "group": "2",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "264304",
+      "title": "مترجم لغة إشارة",
+      "group": "2",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "264305",
+      "title": "أخصائي لغوي",
+      "group": "2",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "332302",
+      "title": "مندوب مشتريات",
+      "group": "3",
+      "decisionIds": [
+        "beauty"
+      ]
+    },
+    {
+      "code": "333101",
+      "title": "وكيل شحن",
+      "group": "3",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "333102",
+      "title": "وكيل جمركي",
+      "group": "3",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "333103",
+      "title": "مخلص جمركي",
+      "group": "3",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "334301",
+      "title": "سكرتير تنفيذي",
+      "group": "3",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "411001",
+      "title": "كاتب علاقات حكومية",
+      "group": "4",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "411002",
+      "title": "كاتب سجل",
+      "group": "4",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "412001",
+      "title": "مساعد إداري",
+      "group": "4",
+      "decisionIds": [
+        "admin",
+        "beauty"
+      ]
+    },
+    {
+      "code": "412002",
+      "title": "سكرتير",
+      "group": "4",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "413101",
+      "title": "كاتب اختزال",
+      "group": "4",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "413102",
+      "title": "طابع",
+      "group": "4",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "413201",
+      "title": "مدخل بيانات",
+      "group": "4",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "422401",
+      "title": "موظف استقبال فندق",
+      "group": "4",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "422501",
+      "title": "كاتب استعلامات",
+      "group": "4",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "422502",
+      "title": "كاتب شكاوى",
+      "group": "4",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "422601",
+      "title": "موظف استقبال",
+      "group": "4",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "422602",
+      "title": "كاتب استقبال مرضى",
+      "group": "4",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "432101",
+      "title": "أمين مخزن",
+      "group": "4",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "432102",
+      "title": "كاتب شحن",
+      "group": "4",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "432103",
+      "title": "كاتب حركة مخزون",
+      "group": "4",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "441401",
+      "title": "ناسخ",
+      "group": "4",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "441601",
+      "title": "كاتب موارد بشرية",
+      "group": "4",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "515102",
+      "title": "مشرف مسكن",
+      "group": "5",
+      "decisionIds": [
+        "housing"
+      ]
+    },
+    {
+      "code": "541401",
+      "title": "مراقب كاميرات أمنية",
+      "group": "5",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "541402",
+      "title": "حارس أمن",
+      "group": "5",
+      "decisionIds": [
+        "admin"
+      ]
+    },
+    {
+      "code": "541403",
+      "title": "حارس شخصي",
+      "group": "5",
+      "decisionIds": [
+        "admin"
+      ]
+    }
+  ]
+}

@@ -5,6 +5,11 @@ name: Saudization Radar site integrity
     branches: [main]
     paths:
       - 'index.html'
+      - 'occupation-catalog.html'
+      - 'assets/occupation-catalog.js'
+      - 'data/occupation-catalog.json'
+      - 'test_occupation_catalog.py'
+      - 'sync_occupation_catalog.py'
       - 'intelligence.html'
       - 'sources.html'
       - 'review.html'
@@ -15,6 +20,7 @@ name: Saudization Radar site integrity
       - 'data/decisions.json'
       - 'data/occupations.json'
       - '.github/workflows/site-quality.yml'
+  pull_request:
   workflow_dispatch:
 
 permissions:
@@ -29,7 +35,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Validate pages and local assets
-        run: python -m unittest -v test_site_integrity.py
+        run: python -m unittest -v test_site_integrity.py test_occupation_catalog.py
       - name: Validate JavaScript syntax
         run: |
           for file in assets/*.js; do

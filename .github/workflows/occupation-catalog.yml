@@ -1,0 +1,48 @@
+name: Refresh public occupation codes
+'on':
+  push:
+    branches: [main]
+    paths:
+      - 'sync_occupation_catalog.py'
+      - 'test_occupation_catalog.py'
+      - '.github/workflows/occupation-catalog.yml'
+  schedule:
+    # Weekly; category pages are public but pagination can change.
+    - cron: '0 2 * * 0'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: occupation-catalog-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test safe official taxonomy ingestion
+        run: python -m unittest -v test_occupation_catalog.py
+      - name: Use latest main to avoid overwriting radar scan data
+        run: |
+          git fetch origin main
+          git reset --hard origin/main
+      - name: Fetch all official category pages (fail closed on incomplete data)
+        run: python sync_occupation_catalog.py
+      - name: Publish only a complete changed snapshot
+        run: |
+          git add data/occupation-catalog.json
+          if git diff --cached --quiet; then
+            echo "No changes to publish"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Refresh verified official occupation catalog"
+          git push origin HEAD:main

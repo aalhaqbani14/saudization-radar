@@ -46,7 +46,13 @@ name: Radar quality checks
       - 'workforce-import.html'
       - 'decision-audit.html'
       - 'index.html'
+      - 'occupation-catalog.html'
+      - 'assets/occupation-catalog.js'
+      - 'data/occupation-catalog.json'
+      - 'test_occupation_catalog.py'
+      - 'sync_occupation_catalog.py'
       - '.github/workflows/radar-quality.yml'
+  pull_request:
   workflow_dispatch:
 permissions:
   contents: read
@@ -63,11 +69,11 @@ jobs:
         with:
           node-version: '22'
       - name: Compile Python modules
-        run: python -m py_compile monitor.py guide_pdf_monitor.py detection.py email_templates.py validate_data.py email_probe.py
+        run: python -m py_compile monitor.py guide_pdf_monitor.py detection.py email_templates.py validate_data.py email_probe.py sync_occupation_catalog.py
       - name: Verify aggregate and legal reference data
         run: python validate_data.py
       - name: Run offline monitoring and data tests
-        run: python -m unittest -v test_monitor.py test_monitor_health.py test_detection.py test_email_templates.py test_data_quality.py test_guide_pdf_monitor.py
+        run: python -m unittest -v test_monitor.py test_monitor_health.py test_detection.py test_email_templates.py test_data_quality.py test_guide_pdf_monitor.py test_occupation_catalog.py
       - name: Frontend syntax and local secure-import regression tests
         run: |
           node --check assets/workforce-model.js

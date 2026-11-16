@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0c2030">
+<title>دليل الرموز المهنية | رادار التوطين</title>
+<style>
+:root{font-family:Tahoma,"Segoe UI",Arial,sans-serif;color:#173449;background:#f4f7fa;font-variant-numeric:tabular-nums}
+*{box-sizing:border-box}body{margin:0}a{color:#086f67;text-decoration:none}a:hover{text-decoration:underline}input,select,button{font:inherit}a:focus-visible,input:focus-visible,select:focus-visible,button:focus-visible{outline:3px solid #60b9ad;outline-offset:2px}
+header{background:#0c2030;color:#fff;padding:24px max(24px,calc((100vw - 1120px)/2))}header a{color:#9be5d1;font-size:13px}header h1{margin:15px 0 5px;font-size:clamp(22px,4vw,34px)}header p{color:#bdd2d7;line-height:1.9;font-size:13px;max-width:790px;margin:0}
+main{max-width:1120px;margin:auto;padding:24px 18px 60px}
+.note{background:#ecf7f3;border:1px solid #d2e8df;border-radius:13px;padding:15px 18px;font-size:12px;line-height:2;color:#315f58}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:19px 0}
+.stat,.panel{background:#fff;border:1px solid #e3e9ee;border-radius:15px;padding:20px}
+.stat strong{font-size:27px;display:block;direction:ltr;text-align:right}.stat small{display:block;color:#647588;line-height:1.8}
+.controls{display:flex;gap:10px;margin:18px 0 12px}.controls input,.controls select{border:1px solid #cbd9df;border-radius:10px;background:#fff;padding:12px 13px;min-width:0}.controls input{flex:2}.controls select{flex:1}
+.controls input:disabled{opacity:.55}#summary{color:#637689;font-size:12px;margin:8px 0 14px;line-height:1.9}
+.result{padding:14px 0;border-top:1px solid #e7edf1;display:flex;align-items:center;justify-content:space-between;gap:15px}.result:first-child{border-top:0}
+.result strong{font-size:14px;display:block}.result small{display:block;margin-top:5px;color:#6d8090;font-size:11px}
+.result code{direction:ltr;unicode-bidi:isolate;color:#124b56;background:#edf5f6;padding:6px 9px;border-radius:7px;font-size:13px}
+.result a{font-size:11px;white-space:nowrap}.result .tags{margin-top:7px;font-size:11px;color:#607f79}
+#groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin-top:13px}
+.group-link{display:flex;justify-content:space-between;gap:10px;background:#f5f9fb;padding:10px;border-radius:8px;font-size:11px}.group-link span{color:#607789}
+footer{padding:20px 0;color:#6c8091;font-size:11px;line-height:2}
+[hidden]{display:none!important}
+@media(max-width:700px){.stats{grid-template-columns:1fr 1fr}.controls{flex-direction:column}#groups{grid-template-columns:1fr}.result{align-items:start}}
+</style>
+</head>
+<body>
+<header>
+<a href="index.html">← العودة إلى رادار التوطين</a>
+<h1>دليل الرموز المهنية</h1>
+<p>مرجع للبحث عن الرموز والمسميات المهنية السعودية، منفصل عن محرك قرارات التوطين وحساب نسب الامتثال. لا يتم تحميل بياناته في الصفحة الرئيسية.</p>
+</header>
+<main>
+<section class="note" role="note"><strong>تنبيه نظامي:</strong> وجود رمز في التصنيف لا يعني شمول المهنة بقرار توطين. كما أن مطابقة مسمى لا تثبت رمز الموظف المسجل في قوى. اعتمد دائمًا الدليل الإجرائي الساري ورمز قوى الفعلي وشروط النشاط.</section>
+<section class="stats" aria-label="ملخص الفهرس">
+<div class="stat"><strong id="loaded-count">—</strong><small>عدد الرموز المتوفرة في الفهرس المحلي</small></div>
+<div class="stat"><strong id="headline-count">2,047</strong><small>إجمالي المهن المعلن في بوابة الوزارة (قد يتغير)</small></div>
+<div class="stat"><strong id="catalog-status">جارٍ التحميل</strong><small>حالة اكتمال النسخة المحلية</small></div>
+</section>
+<section class="panel" aria-labelledby="search-title">
+<h2 id="search-title" style="margin:0;font-size:19px">البحث في الرموز والمهن</h2>
+<p id="method-note" style="color:#62788c;font-size:12px;line-height:1.8">البيانات تُحمّل داخل هذه الصفحة فقط، ولا تؤثر على سرعة لوحة SALIC الرئيسية.</p>
+<div class="controls">
+<input id="query" type="search" placeholder="اكتب رقم المهنة أو جزءًا من المسمى" aria-label="البحث بالرمز أو المسمى" autocomplete="off" disabled>
+<select id="group" aria-label="مجموعة المهن" disabled><option value="">جميع المجموعات</option></select>
+</div>
+<p id="summary" role="status" aria-live="polite">جارٍ تحميل الفهرس…</p>
+<div id="results"></div>
+<div id="more" class="note" hidden>تم عرض أول 60 نتيجة فقط. ضيّق البحث بالرمز أو المسمى لعرض نتائج أدق.</div>
+</section>
+<section class="panel" style="margin-top:16px">
+<h2 style="margin:0;font-size:17px">المجموعات الرسمية</h2>
+<p style="font-size:12px;color:#63788b;line-height:1.9">فتح المجموعة في موقع الوزارة يتيح الرجوع للمصدر الأصلي، بما في ذلك المهن التي لم تُدرج بعد في نسختنا المحلية.</p>
+<div id="groups"></div>
+</section>
+<footer>المصدر: <a href="https://www.hrsd.gov.sa/skills-occupations/occupations" target="_blank" rel="noopener noreferrer">وزارة الموارد البشرية والتنمية الاجتماعية — المهن</a>. الربط مع قرارات التوطين استرشادي ويحتاج تحققًا بشريًا. لا تُخزَّن بيانات الأفراد في هذا الفهرس.</footer>
+</main>
+<script src="assets/occupation-catalog.js" defer></script>
+</body>
+</html>
