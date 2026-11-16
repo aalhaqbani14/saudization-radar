@@ -4,6 +4,7 @@ name: Probe HRSD occupation browser pagination
     branches: [feat/complete-occupation-taxonomy]
     paths:
       - 'probe_occupations.mjs'
+      - 'probe_occupation_urls.py'
       - '.github/workflows/probe-occupation-browser.yml'
   workflow_dispatch:
 permissions:
@@ -19,7 +20,6 @@ jobs:
           node-version: '22'
       - name: Install browser tooling
         run: |
-          npm install --no-save playwright@latest
-          npx playwright install chromium
+          python --version
       - name: Probe official ministry pagination
-        run: node probe_occupations.mjs
+        run: python probe_occupation_urls.py
