@@ -1,27 +1,34 @@
-name: Probe HRSD occupation browser pagination
+name: Build archived GASTAT occupation code reference
 'on':
   push:
     branches: [feat/complete-occupation-taxonomy]
     paths:
-      - 'probe_occupations.mjs'
-      - 'probe_occupation_urls.py'
-      - 'probe_official_pdf.py'
-      - 'probe_gastat_catalog.py'
+      - 'build_historical_occupation_catalog.py'
       - '.github/workflows/probe-occupation-browser.yml'
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
 jobs:
-  browser-probe:
+  build:
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-python@v5
         with:
-          node-version: '22'
-      - name: Install browser tooling
+          python-version: '3.12'
+      - name: Install text extractor
+        run: python -m pip install PyMuPDF==1.26.7
+      - name: Verify the authoritative archived source and build catalog
+        run: python build_historical_occupation_catalog.py
+      - name: Check catalog, safe UI and JavaScript syntax
         run: |
-          python -m pip install PyMuPDF==1.26.7
-      - name: Probe official ministry pagination
-        run: python probe_gastat_catalog.py
+          python -m unittest -v test_occupation_catalog.py test_site_integrity.py
+          node --check assets/occupation-catalog.js
+      - name: Save new source-audited data to feature branch only
+        run: |
+          git add data/occupation-catalog.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Add verified 2019 GASTAT occupation reference coverage"
+          git push origin HEAD:feat/complete-occupation-taxonomy
