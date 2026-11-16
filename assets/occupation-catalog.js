@@ -72,7 +72,7 @@
       if (!response.ok) throw new Error('HTTP ' + response.status);
       const db = await response.json();
       if (db.schema !== 1 || !Array.isArray(db.groups) || !Array.isArray(db.items) ||
-          !['seed_guides_only','official_group_pages_verified'].includes(db.status)) {
+          !['seed_guides_only','official_partial_pages','official_group_pages_verified'].includes(db.status)) {
         throw new Error('Invalid catalog metadata');
       }
       const distinct = new Set();
@@ -88,12 +88,12 @@
       get('loaded-count').textContent = items.length.toLocaleString('en-US');
       get('headline-count').textContent = Number(db.headlineTotal || 2047).toLocaleString('en-US');
       const verified = db.status === 'official_group_pages_verified';
-      get('catalog-status').textContent = verified ? 'مكتمل للمجموعات' : 'جزئي';
+      get('catalog-status').textContent = verified ? 'مكتمل للمجموعات' : db.status === 'official_partial_pages' ? 'جزئي + رسمي' : 'جزئي';
       get('catalog-status').style.color = verified ? '#087f78' : '#a46c14';
       get('method-note').textContent = verified
         ? 'نسخة مفهرسة من صفحات مجموعات الوزارة؛ التحديث بتاريخ ' + safe(db.updatedAt) +
           '. لا تثبت انطباق قرارات التوطين على SALIC أو صحة الرمز المسجل في قوى.'
-        : 'النسخة الحالية جزئية ومستمدة من أدلة قرارات التوطين، وليست فهرس الوزارة الكامل. المهن غير الموجودة هنا ليست بالضرورة غير مستهدفة. استخدم روابط المجموعات الرسمية للتحقق.';
+        : db.status === 'official_partial_pages' ? 'نسخة جزئية تجمع أول صفحة رسمية من كل مجموعة مع رموز الأدلة الإجرائية. لا تشمل جميع المهن. استخدم رابط المجموعة الرسمية لمراجعة المهن غير المعروضة.' : 'النسخة الحالية جزئية ومستمدة من أدلة قرارات التوطين، وليست فهرس الوزارة الكامل. المهن غير الموجودة هنا ليست بالضرورة غير مستهدفة. استخدم روابط المجموعات الرسمية للتحقق.';
       q.disabled = false; group.disabled = false;
       render();
     } catch(error) {
