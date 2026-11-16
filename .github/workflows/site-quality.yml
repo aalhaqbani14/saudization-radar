@@ -20,6 +20,7 @@ name: Saudization Radar site integrity
       - 'data/decisions.json'
       - 'data/occupations.json'
       - '.github/workflows/site-quality.yml'
+  pull_request:
   workflow_dispatch:
 
 permissions:
