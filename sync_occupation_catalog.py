@@ -118,7 +118,24 @@ def scrape_group(group, fetch=request_page, sleep=time.sleep):
             if location > -1:
                 print("OFFICIAL_PAGER_HTML", repr(page_html[max(0, location-1800):location+1600]), flush=True)
             scripts = re.findall(r'<script[^>]*src="([^"]+)"', page_html, flags=re.I)
-            print("OFFICIAL_SCRIPT_URLS", [x for x in scripts if any(token in x for token in ('occupation', 'skills', 'main', 'custom', 'core', 'pager', 'all'))][-25:], flush=True)
+            print("OFFICIAL_SCRIPT_URLS", scripts[-35:], flush=True)
+            probe_count = 0
+            for src in scripts[-35:]:
+                if not src.startswith("/_next/static/chunks/"):
+                    continue
+                try:
+                    # Public static JavaScript: diagnostics only, no upload or site modification.
+                    javascript = request_page("https://www.hrsd.gov.sa" + src)
+                except (RuntimeError, ValueError):
+                    continue
+                for token in ('data-page', 'views/ajax', 'occupations-content', 'js-pager__items', 'view-occupations'):
+                    match = re.search(re.escape(token), javascript, flags=re.I)
+                    if match:
+                        print("OFFICIAL_PAGER_SCRIPT", src, token, repr(javascript[max(0,match.start()-300):match.start()+800]), flush=True)
+                        probe_count += 1
+                        break
+                if probe_count >= 5:
+                    break
             for token in ('drupalSettings', 'view-dom-id', 'data-drupal-selector', 'data-view-id', 'data-url', 'occupations-list', 'pager__items'):
                 where = page_html.find(token)
                 if where >= 0:
