@@ -5,6 +5,7 @@ name: Probe HRSD occupation browser pagination
     paths:
       - 'probe_occupations.mjs'
       - 'probe_occupation_urls.py'
+      - 'probe_official_pdf.py'
       - '.github/workflows/probe-occupation-browser.yml'
   workflow_dispatch:
 permissions:
@@ -20,6 +21,6 @@ jobs:
           node-version: '22'
       - name: Install browser tooling
         run: |
-          python --version
+          python -m pip install PyMuPDF==1.26.7
       - name: Probe official ministry pagination
-        run: python probe_occupation_urls.py
+        run: python probe_official_pdf.py
