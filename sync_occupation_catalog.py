@@ -114,6 +114,15 @@ def scrape_group(group, fetch=request_page, sleep=time.sleep):
                     print("OFFICIAL_PAGER_HINT", marker, repr(page_html[max(0, match.start()-150):match.start()+480]), flush=True)
             links = re.findall(r'<a\\b[^>]{0,500}>', page_html, flags=re.I)
             print("OFFICIAL_PAGER_LINKS", [x[:350] for x in links if any(k in x.lower() for k in ("page", "onclick", "javascript", "next", "href=\"#"))][-15:], flush=True)
+            location = page_html.find('<nav class="pager')
+            if location > -1:
+                print("OFFICIAL_PAGER_HTML", repr(page_html[max(0, location-1800):location+1600]), flush=True)
+            scripts = re.findall(r'<script[^>]*src="([^"]+)"', page_html, flags=re.I)
+            print("OFFICIAL_SCRIPT_URLS", [x for x in scripts if any(token in x for token in ('occupation', 'skills', 'main', 'custom', 'core', 'pager', 'all'))][-25:], flush=True)
+            for token in ('drupalSettings', 'view-dom-id', 'data-drupal-selector', 'data-view-id', 'data-url', 'occupations-list', 'pager__items'):
+                where = page_html.find(token)
+                if where >= 0:
+                    print("OFFICIAL_HTML_ELEMENT", token, repr(page_html[max(0,where-250):where+450]), flush=True)
             raise ValueError(f"Pagination did not advance: {endpoint} ({len(seen)}/{expected})")
         if len(seen) >= expected:
             break
