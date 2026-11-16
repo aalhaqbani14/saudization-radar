@@ -166,12 +166,36 @@ function auditCodes(summary,guide){
  return checks;
 }
 
+
+function auditCatalogue(summary,catalogue){
+ if(!summary||!Array.isArray(summary.codeTotals)||!catalogue||!Array.isArray(catalogue.items))throw Error("catalogue_validation_inputs");
+ const refs=new Map(catalogue.items.filter(r=>/^\d{6}$/.test(String(r.code||""))).map(r=>[r.code,r]));
+ const rows=summary.codeTotals.map(record=>{
+   const reference=refs.get(record.code);
+   const status=!reference?"not_in_reference":
+     reference.sourceTier==="official_gastat_2019"?"historical_only":
+     reference.sourceTier==="official_group_pages"?"official_group_reference":
+     reference.sourceTier==="official_group_first_page"?"official_group_reference":"procedural_guide_reference";
+   return {code:record.code,title:record.title,total:record.total,saudi:record.saudi,
+     referenceTitle:reference?.title||null,status,
+     titleMatches:reference?canon(record.title)===canon(reference.title):null,
+     warning:status==="not_in_reference"?"غير موجود بالفهرس الجزئي، لا يعني رمزًا غير صحيح":
+       status==="historical_only"?"مرجع الهيئة العامة للإحصاء 2019؛ تحقق من رمز قوى الحالي":
+       "مرجع وزاري/دليل؛ راجع رمز الموظف المسجل فعليًا في قوى"};
+ });
+ return {total:rows.length,
+  notInReference:rows.filter(x=>x.status==="not_in_reference").length,
+  historicalOnly:rows.filter(x=>x.status==="historical_only").length,
+  referenced:rows.filter(x=>["official_group_reference","procedural_guide_reference"].includes(x.status)).length,
+  titleMismatches:rows.filter(x=>x.titleMatches===false).length,rows};
+}
+
 function download(data,filename){
  const blob=new Blob(["\ufeff"+JSON.stringify(data,null,2)+"\n"],{type:"application/json;charset=utf-8"});
  const url=URL.createObjectURL(blob),a=document.createElement("a");
  a.href=url;a.download=filename;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
 }
-const api={parseCSV,summarize,auditCodes,canon};
+const api={parseCSV,summarize,auditCodes,auditCatalogue,canon};
 if(typeof module!=="undefined"&&module.exports)module.exports=api;
 if(root){root.RadarImport=api}
 if(typeof document==="undefined")return;
@@ -185,6 +209,7 @@ async function init(){
   state.summary=null;save.disabled=true;saveCode.disabled=true;$("import-summary").textContent="";
   if(!file.files||file.files.length!==1){msg("اختر ملف CSV أولًا.","warn");return}
   const f=file.files[0];if(f.size>MAX_BYTES){msg("الملف أكبر من 5 ميجابايت؛ يرجى تصغيره.","error");return}
+  let codeWarnings=false;
   try{
     const data=await readLocal(f),res=summarize(data,$("snapshot-date").value);
     state.summary=res;
@@ -194,10 +219,28 @@ async function init(){
       if(!state.guide){const r=await fetch("data/guide-matching.json",{cache:"no-store"});if(!r.ok)throw Error("No guide");state.guide=await r.json()}
       const checks=auditCodes(res,state.guide).filter(x=>x.total>0);
       const mismatchCount=checks.reduce((a,x)=>a+x.titleMismatchCount,0);
-      if(mismatchCount)msg("تنبيه: توجد "+mismatchCount+" اختلافات بين رمز المهنة والمسمى في الدليل؛ راجعها قبل الاعتماد.","warn");
+      if(mismatchCount){codeWarnings=true;msg("تنبيه: توجد "+mismatchCount+" اختلافات بين رمز المهنة والمسمى في الدليل؛ راجعها قبل الاعتماد.","warn");}
       $("code-analysis").textContent=checks.length?checks.map(x=>x.title+": "+x.total+" موظف، "+x.saudi+" سعودي، الفجوة الافتراضية قبل شروط الأجر "+(x.numericGap??"غير قابلة للحساب الآن")+"، النسبة المرجعية "+x.rate+"%، المؤهلون حسابيًا حسب الأجر/الاعتماد "+(x.eligibleSaudisIfEvidenceComplete??"غير مثبت")+(x.eligibleGapHypothesis===null?"":" · فجوة افتراضية بعد الضوابط: "+x.eligibleGapHypothesis)+(x.provisional?" · يحتاج تحقق من الرموز والاشتراطات":"")).join("\n"):"لا توجد رموز من الأدلة المراجعة في الملف، أو لم تُدخل أكواد المهن.";
+      // Additional private/local-only reference check; this is NEVER a Qiwa attestation.
+      if(res.codeTotals.length){
+        try{
+          const rc=await fetch("data/occupation-catalog.json",{cache:"no-store"});
+          if(!rc.ok)throw Error("Reference unavailable");
+          const catalogue=await rc.json(),cross=auditCatalogue(res,catalogue);
+          $("code-analysis").textContent+="\n\nفحص فهرس الرموز ("+cross.total+" مجموعة): "+cross.referenced+" لها مرجع أحدث في فهرسنا، "+
+            cross.historicalOnly+" موثقة تاريخيًا فقط، "+cross.notInReference+
+            " غير موجودة في الفهرس، "+cross.titleMismatches+
+            " مسمى مختلف عن الاسم المرجعي. وجود الرمز في الفهرس لا يثبت ربطه بالموظف في قوى.";
+          if(cross.historicalOnly||cross.notInReference||cross.titleMismatches){
+            codeWarnings=true;
+            msg("الرموز تحتاج مراجعة: توجد رموز تاريخية أو غير موجودة بالفهرس أو مسميات غير متطابقة. لا يعني ذلك بطلان الرمز في قوى.","warn");
+          }
+        }catch(e){
+          $("code-analysis").textContent+="\nتعذر تحميل فهرس الرموز الإضافي؛ راجع المرجع الرسمي عند الحاجة.";
+        }
+      }
     }catch(e){$("code-analysis").textContent="تعذر تحميل دليل الأكواد؛ يبقى ملخص الموظفين صالحًا للتنزيل بعد المراجعة."}
-    msg("اكتمل التحقق الحسابي المحلي. راجع النتائج قبل تنزيل أي ملف مجمع.","ok");
+    msg(codeWarnings?"اكتمل التجميع المحلي مع تنبيهات رموز تتطلب تحققًا من قوى.":"اكتمل التجميع المحلي؛ راجع النتائج قبل تنزيل أي ملف مجمع.",codeWarnings?"warn":"ok");
     save.disabled=false;saveCode.disabled=res.codeTotals.length===0;
   }catch(e){msg(e.message||"تعذر التحقق من الملف.","error");$("code-analysis").textContent=""}
  });

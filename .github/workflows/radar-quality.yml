@@ -47,6 +47,10 @@ name: Radar quality checks
       - 'decision-audit.html'
       - 'index.html'
       - 'occupation-catalog.html'
+      - 'completion.html'
+      - 'assets/completion-model.js'
+      - 'assets/completion.js'
+      - 'test_completion.mjs'
       - 'assets/occupation-catalog.js'
       - 'data/occupation-catalog.json'
       - 'test_occupation_catalog.py'
@@ -74,6 +78,11 @@ jobs:
         run: python validate_data.py
       - name: Run offline monitoring and data tests
         run: python -m unittest -v test_monitor.py test_monitor_health.py test_detection.py test_email_templates.py test_data_quality.py test_guide_pdf_monitor.py test_occupation_catalog.py
+      - name: Validate completion center and evidence-gated scenario logic
+        run: |
+          node --check assets/completion-model.js
+          node --check assets/completion.js
+          node test_completion.mjs
       - name: Frontend syntax and local secure-import regression tests
         run: |
           node --check assets/workforce-model.js

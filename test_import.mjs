@@ -57,4 +57,19 @@ assert.throws(()=>imp.summarize('المهنة,الجنسية\nمحاسب,',asOf)
 assert.equal(imp.parseCSV('المسمى الوظيفي,الإجمالي,السعوديون\n"مسمى, خاص",1,1')[1][0],'مسمى, خاص');
 const future=imp.summarize('المهنة,الإجمالي,السعوديون,رمز المهنة\nأخصائي إدارة مشاريع,4,3,242103',asOf);
 assert.equal(imp.auditCodes(future,guide).find(x=>x.decisionId==='project'),undefined,'No confidential project PDF logic published here');
+const catalogue=JSON.parse(fs.readFileSync('data/occupation-catalog.json','utf8'));
+const catalogueAudit=imp.auditCatalogue(a,catalogue);
+assert.equal(catalogueAudit.total,1);
+assert.equal(catalogueAudit.rows[0].code,'412001');
+assert.notEqual(catalogueAudit.rows[0].status,'historical_only');
+assert.equal(catalogueAudit.rows[0].titleMatches,true);
+const extra={codeTotals:[
+ {code:'111101',title:'وزير',total:1,saudi:1},
+ {code:'999999',title:'مسمى تجريبي',total:1,saudi:0}
+]};
+const status=imp.auditCatalogue(extra,catalogue);
+assert.equal(status.total,2);
+assert.equal(status.historicalOnly,1,'Historical GASTAT profession must not be called a verified 2026 code');
+assert.equal(status.notInReference,1,'Unknown code may still be valid in Qiwa; flag for follow-up only');
+assert.equal(JSON.stringify(status).includes('E-001'),false);
 console.log('PASS: local-only importer, personal-data exclusion, code aggregation, duplicate checks, date and accounting phases.');

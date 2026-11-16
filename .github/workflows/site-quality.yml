@@ -6,6 +6,10 @@ name: Saudization Radar site integrity
     paths:
       - 'index.html'
       - 'occupation-catalog.html'
+      - 'completion.html'
+      - 'assets/completion-model.js'
+      - 'assets/completion.js'
+      - 'test_completion.mjs'
       - 'assets/occupation-catalog.js'
       - 'data/occupation-catalog.json'
       - 'test_occupation_catalog.py'
@@ -36,6 +40,8 @@ jobs:
           python-version: '3.12'
       - name: Validate pages and local assets
         run: python -m unittest -v test_site_integrity.py test_occupation_catalog.py
+      - name: Verify nine-workstream readiness and five safe plans
+        run: node test_completion.mjs
       - name: Validate JavaScript syntax
         run: |
           for file in assets/*.js; do
