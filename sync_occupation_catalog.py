@@ -96,7 +96,8 @@ def scrape_group(group, fetch=request_page, sleep=time.sleep):
     seen = {}
     for page in range(pages):
         endpoint = url if page == 0 else url + "?" + urlencode({"page": page})
-        extracted = parse_rows(fetch(endpoint))
+        page_html = fetch(endpoint)
+        extracted = parse_rows(page_html)
         if not extracted:
             raise ValueError(f"No occupation rows in {endpoint}")
         before = len(seen)
@@ -106,6 +107,13 @@ def scrape_group(group, fetch=request_page, sleep=time.sleep):
             seen[code] = title
         added = len(seen) - before
         if page > 0 and added == 0:
+            # Diagnostic of public navigation attributes, never publish incomplete data.
+            for marker in ("pagination", "pager", "page-link", "page-item", "data-page", "page-number", "__doPostBack", "getNext", "nextPage"):
+                match = re.search(re.escape(marker), page_html, re.IGNORECASE)
+                if match:
+                    print("OFFICIAL_PAGER_HINT", marker, repr(page_html[max(0, match.start()-150):match.start()+480]), flush=True)
+            links = re.findall(r'<a\\b[^>]{0,500}>', page_html, flags=re.I)
+            print("OFFICIAL_PAGER_LINKS", [x[:350] for x in links if any(k in x.lower() for k in ("page", "onclick", "javascript", "next", "href=\"#"))][-15:], flush=True)
             raise ValueError(f"Pagination did not advance: {endpoint} ({len(seen)}/{expected})")
         if len(seen) >= expected:
             break
