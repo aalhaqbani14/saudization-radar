@@ -1,8 +1,8 @@
 {
   "schema": 1,
-  "status": "seed_guides_only",
+  "status": "official_partial_pages",
   "headlineTotal": 2047,
-  "coverageNote": "فهرس أولي من أدلة التوطين وليس استيراداً شاملاً للتصنيف المهني. الرموز لا تثبت انطباق قرار على منشأة أو موظف.",
+  "coverageNote": "فهرس جزئي يجمع رموز الأدلة المرجعية مع أول صفحة رسمية من كل مجموعة. لا يمثل جميع المهن ولا يؤكد رمز قوى أو انطباق التوطين.",
   "updatedAt": "2026-11-16",
   "groups": [
     {
@@ -66,6 +66,7 @@
       "url": "https://www.hrsd.gov.sa/skills-taxonomy/occupations/elementary-occupations"
     }
   ],
+  "importedOfficialFirstPageRows": 120,
   "items": [
     {
       "code": "121201",
@@ -73,7 +74,8 @@
       "group": "1",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "121202",
@@ -81,7 +83,8 @@
       "group": "1",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "121203",
@@ -89,7 +92,8 @@
       "group": "1",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "121204",
@@ -97,7 +101,8 @@
       "group": "1",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "121205",
@@ -105,7 +110,8 @@
       "group": "1",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "121206",
@@ -113,7 +119,8 @@
       "group": "1",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "121207",
@@ -121,7 +128,8 @@
       "group": "1",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "121208",
@@ -129,7 +137,8 @@
       "group": "1",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "121209",
@@ -137,7 +146,8 @@
       "group": "1",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "121210",
@@ -145,7 +155,8 @@
       "group": "1",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "121211",
@@ -153,7 +164,8 @@
       "group": "1",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "121212",
@@ -161,7 +173,8 @@
       "group": "1",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "121213",
@@ -169,7 +182,8 @@
       "group": "1",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "121214",
@@ -177,7 +191,8 @@
       "group": "1",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "121215",
@@ -185,7 +200,8 @@
       "group": "1",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "121216",
@@ -193,16 +209,18 @@
       "group": "1",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "121314",
       "title": "مدير إدارة مشاريع",
       "group": "1",
       "decisionIds": [
-        "project",
-        "consulting"
-      ]
+        "consulting",
+        "project"
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "122104",
@@ -211,7 +229,8 @@
       "decisionIds": [
         "beauty",
         "sales"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "122203",
@@ -219,7 +238,8 @@
       "group": "1",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "122205",
@@ -227,7 +247,8 @@
       "group": "1",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "122206",
@@ -235,7 +256,8 @@
       "group": "1",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "132417",
@@ -244,16 +266,144 @@
       "decisionIds": [
         "beauty",
         "procurement"
-      ]
+      ],
+      "sourceTier": "decision_guide"
+    },
+    {
+      "code": "143119",
+      "title": "مدير وكالة أنباء",
+      "group": "1",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "143120",
+      "title": "مدير مسرح",
+      "group": "1",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "143121",
+      "title": "مدير إنتاج مسرحي",
+      "group": "1",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "143122",
+      "title": "مدير تلفزيون",
+      "group": "1",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "143123",
+      "title": "مدير إنتاج تلفزيوني",
+      "group": "1",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "143124",
+      "title": "مدير إذاعة",
+      "group": "1",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "143125",
+      "title": "مدير انتاج إذاعي",
+      "group": "1",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "143126",
+      "title": "مدير سينما",
+      "group": "1",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "143127",
+      "title": "مدير تصوير سينمائي",
+      "group": "1",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "143901",
+      "title": "مدير مركز تسوق",
+      "group": "1",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "143902",
+      "title": "مدير وكالة سفر",
+      "group": "1",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "143903",
+      "title": "مدير مخيم",
+      "group": "1",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "21001",
+      "title": "ضابط صف دفاع",
+      "group": "0",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "21002",
+      "title": "ضابط صف استخبارات",
+      "group": "0",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "21003",
+      "title": "ضابط صف حرس وطني",
+      "group": "0",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "21004",
+      "title": "ضابط صف حرس ملكي",
+      "group": "0",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "21005",
+      "title": "ضابط صف أمن داخلي",
+      "group": "0",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "21006",
+      "title": "ضابط صف أمن",
+      "group": "0",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
     },
     {
       "code": "214909",
       "title": "مهندس إدارة مشاريع",
       "group": "2",
       "decisionIds": [
-        "project",
-        "consulting"
-      ]
+        "consulting",
+        "project"
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "241104",
@@ -261,7 +411,8 @@
       "group": "2",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "241201",
@@ -269,7 +420,8 @@
       "group": "2",
       "decisionIds": [
         "consulting"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "242106",
@@ -277,16 +429,18 @@
       "group": "2",
       "decisionIds": [
         "consulting"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "242108",
       "title": "أخصائي إدارة مشاريع",
       "group": "2",
       "decisionIds": [
-        "project",
-        "consulting"
-      ]
+        "consulting",
+        "project"
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "242126",
@@ -294,7 +448,8 @@
       "group": "2",
       "decisionIds": [
         "consulting"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "242301",
@@ -302,7 +457,8 @@
       "group": "2",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "242302",
@@ -310,7 +466,8 @@
       "group": "2",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "242303",
@@ -318,7 +475,8 @@
       "group": "2",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "242304",
@@ -326,7 +484,8 @@
       "group": "2",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "242305",
@@ -334,7 +493,8 @@
       "group": "2",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "242306",
@@ -342,7 +502,8 @@
       "group": "2",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "242307",
@@ -350,7 +511,8 @@
       "group": "2",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "242308",
@@ -358,7 +520,8 @@
       "group": "2",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "242309",
@@ -366,7 +529,8 @@
       "group": "2",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "242310",
@@ -374,7 +538,8 @@
       "group": "2",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "242311",
@@ -382,7 +547,8 @@
       "group": "2",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "242312",
@@ -390,7 +556,8 @@
       "group": "2",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "242313",
@@ -398,7 +565,8 @@
       "group": "2",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "243202",
@@ -406,7 +574,8 @@
       "group": "2",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "243204",
@@ -414,7 +583,8 @@
       "group": "2",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "243205",
@@ -422,7 +592,8 @@
       "group": "2",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "243206",
@@ -430,7 +601,8 @@
       "group": "2",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "243207",
@@ -438,7 +610,8 @@
       "group": "2",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "243208",
@@ -446,7 +619,8 @@
       "group": "2",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "243209",
@@ -454,7 +628,8 @@
       "group": "2",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "264301",
@@ -462,7 +637,8 @@
       "group": "2",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "264302",
@@ -470,7 +646,8 @@
       "group": "2",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "264303",
@@ -478,7 +655,8 @@
       "group": "2",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "264304",
@@ -486,7 +664,8 @@
       "group": "2",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "264305",
@@ -494,7 +673,134 @@
       "group": "2",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
+    },
+    {
+      "code": "265411",
+      "title": "أخصائي مونتاج",
+      "group": "2",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "265412",
+      "title": "أخصائي مؤثرات",
+      "group": "2",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "265501",
+      "title": "ممثل مسرحي",
+      "group": "2",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "265502",
+      "title": "ممثل سينمائي وتلفزيوني",
+      "group": "2",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "265503",
+      "title": "ممثل إذاعي",
+      "group": "2",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "265601",
+      "title": "مذيع",
+      "group": "2",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "265602",
+      "title": "معلق رياضي",
+      "group": "2",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "265603",
+      "title": "مقدم برامج",
+      "group": "2",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "265901",
+      "title": "محرك عرائس مسرحية",
+      "group": "2",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "265902",
+      "title": "مهرج أطفال",
+      "group": "2",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "265903",
+      "title": "لاعب سيرك",
+      "group": "2",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "265904",
+      "title": "فنان تعبير صامت",
+      "group": "2",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "31001",
+      "title": "جندي دفاع",
+      "group": "0",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "31002",
+      "title": "جندي استخبارات",
+      "group": "0",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "31003",
+      "title": "جندي حرس وطني",
+      "group": "0",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "31004",
+      "title": "جندي حرس ملكي",
+      "group": "0",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "31005",
+      "title": "جندي أمن داخلي",
+      "group": "0",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "31006",
+      "title": "جندي أمن",
+      "group": "0",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
     },
     {
       "code": "332302",
@@ -502,7 +808,8 @@
       "group": "3",
       "decisionIds": [
         "beauty"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "333101",
@@ -510,7 +817,8 @@
       "group": "3",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "333102",
@@ -518,7 +826,8 @@
       "group": "3",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "333103",
@@ -526,7 +835,8 @@
       "group": "3",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "334301",
@@ -534,7 +844,92 @@
       "group": "3",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
+    },
+    {
+      "code": "352102",
+      "title": "فني تسجيل",
+      "group": "3",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "352103",
+      "title": "فني بث اذاعي",
+      "group": "3",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "352104",
+      "title": "فني إرسال تلفزيوني",
+      "group": "3",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "352105",
+      "title": "فني صوت",
+      "group": "3",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "352106",
+      "title": "فني إضاءة",
+      "group": "3",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "352107",
+      "title": "فني تصوير سينمائي",
+      "group": "3",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "352108",
+      "title": "فني تصوير فيديو",
+      "group": "3",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "352109",
+      "title": "فني مونتاج",
+      "group": "3",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "352110",
+      "title": "فني دبلجة",
+      "group": "3",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "352111",
+      "title": "فني ربط فقرات",
+      "group": "3",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "352201",
+      "title": "فني هندسة اتصالات سلكية",
+      "group": "3",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "352202",
+      "title": "فني هندسة اتصالات لاسلكية",
+      "group": "3",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
     },
     {
       "code": "411001",
@@ -542,7 +937,8 @@
       "group": "4",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "411002",
@@ -550,7 +946,8 @@
       "group": "4",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "412001",
@@ -559,7 +956,8 @@
       "decisionIds": [
         "admin",
         "beauty"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "412002",
@@ -567,7 +965,8 @@
       "group": "4",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "413101",
@@ -575,7 +974,8 @@
       "group": "4",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "413102",
@@ -583,7 +983,8 @@
       "group": "4",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "413201",
@@ -591,7 +992,8 @@
       "group": "4",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "422401",
@@ -599,7 +1001,8 @@
       "group": "4",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "422501",
@@ -607,7 +1010,8 @@
       "group": "4",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "422502",
@@ -615,7 +1019,8 @@
       "group": "4",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "422601",
@@ -623,7 +1028,8 @@
       "group": "4",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "422602",
@@ -631,7 +1037,8 @@
       "group": "4",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "432101",
@@ -639,7 +1046,8 @@
       "group": "4",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "432102",
@@ -647,7 +1055,8 @@
       "group": "4",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
     },
     {
       "code": "432103",
@@ -655,7 +1064,57 @@
       "group": "4",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "decision_guide"
+    },
+    {
+      "code": "441201",
+      "title": "موزع بريد",
+      "group": "4",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "441202",
+      "title": "فارز بريدي",
+      "group": "4",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "441203",
+      "title": "مشرف عمليات بريدية",
+      "group": "4",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "441301",
+      "title": "مرمز بيانات",
+      "group": "4",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "441302",
+      "title": "كاتب تدقيق بيانات",
+      "group": "4",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "441303",
+      "title": "كاتب شيفرة",
+      "group": "4",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "441304",
+      "title": "مبند جمركي",
+      "group": "4",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
     },
     {
       "code": "441401",
@@ -663,7 +1122,22 @@
       "group": "4",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "441501",
+      "title": "كاتب حفظ ملفات",
+      "group": "4",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "441502",
+      "title": "كاتب تصوير مصغرات فيلمية",
+      "group": "4",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
     },
     {
       "code": "441601",
@@ -671,7 +1145,15 @@
       "group": "4",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "441901",
+      "title": "كاتب مراسلات",
+      "group": "4",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
     },
     {
       "code": "515102",
@@ -679,7 +1161,43 @@
       "group": "5",
       "decisionIds": [
         "housing"
-      ]
+      ],
+      "sourceTier": "decision_guide"
+    },
+    {
+      "code": "541101",
+      "title": "إطفائي",
+      "group": "5",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "541102",
+      "title": "منقذ دفاع مدني",
+      "group": "5",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "541201",
+      "title": "شرطي",
+      "group": "5",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "541301",
+      "title": "حارس سجن",
+      "group": "5",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "541302",
+      "title": "منفذ عقوبات شرعية",
+      "group": "5",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
     },
     {
       "code": "541401",
@@ -687,7 +1205,8 @@
       "group": "5",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "official_group_first_page"
     },
     {
       "code": "541402",
@@ -695,7 +1214,8 @@
       "group": "5",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "official_group_first_page"
     },
     {
       "code": "541403",
@@ -703,7 +1223,372 @@
       "group": "5",
       "decisionIds": [
         "admin"
-      ]
+      ],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "541901",
+      "title": "منقذ سباحة",
+      "group": "5",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "541902",
+      "title": "خفير السواحل",
+      "group": "5",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "541903",
+      "title": "حارس محمية طبيعية",
+      "group": "5",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "541904",
+      "title": "حارس ممر مشاة",
+      "group": "5",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "622203",
+      "title": "صياد قشريات",
+      "group": "6",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "622204",
+      "title": "قائد مركب صيد ساحلي",
+      "group": "6",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "622301",
+      "title": "صياد أعالي البحار",
+      "group": "6",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "622302",
+      "title": "قائد سفينة صيد",
+      "group": "6",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "622401",
+      "title": "صياد طرائد",
+      "group": "6",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "631001",
+      "title": "مزارع اكتفاء ذاتي محاصيل",
+      "group": "6",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "632001",
+      "title": "مربي اكتفاء ذاتي حيوانات",
+      "group": "6",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "633001",
+      "title": "مزارع اكتفاء ذاتي مزرعة محاصيل وحيوانات",
+      "group": "6",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "634001",
+      "title": "صياد اكتفاء ذاتي أسماك",
+      "group": "6",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "634002",
+      "title": "صياد اكتفاء ذاتي قشريات",
+      "group": "6",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "634003",
+      "title": "صياد اكتفاء ذاتي طرائد",
+      "group": "6",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "634004",
+      "title": "جامع ثمار ونباتات برية للاكتفاء الذاتي",
+      "group": "6",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "753601",
+      "title": "اسكافي",
+      "group": "7",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "753602",
+      "title": "صانع منتجات جلدية",
+      "group": "7",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "754101",
+      "title": "غواص محار",
+      "group": "7",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "754102",
+      "title": "غوّاص",
+      "group": "7",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "754103",
+      "title": "غواص إنشاءات بحرية",
+      "group": "7",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "754201",
+      "title": "عامل متفجرات",
+      "group": "7",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "754301",
+      "title": "مراقب الجودة",
+      "group": "7",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "754302",
+      "title": "فاحص ومقيّم منتجات",
+      "group": "7",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "754401",
+      "title": "عامل مكافحة آفات",
+      "group": "7",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "754901",
+      "title": "صانع زهور اصطناعية",
+      "group": "7",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "754902",
+      "title": "منسق زهور",
+      "group": "7",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "754903",
+      "title": "صانع بخور وعطور",
+      "group": "7",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "834205",
+      "title": "مشغل معدات سفلتة",
+      "group": "8",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "834206",
+      "title": "مشغل آلة تمهيد أراضي",
+      "group": "8",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "834207",
+      "title": "سائق معدات ثقيلة",
+      "group": "8",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "834301",
+      "title": "مشغل رافعة",
+      "group": "8",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "834302",
+      "title": "مشغل ونش",
+      "group": "8",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "834303",
+      "title": "منسق حركة رافعات",
+      "group": "8",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "834401",
+      "title": "سائق رافعة شوكية",
+      "group": "8",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "834402",
+      "title": "مشغل رافعة برجية",
+      "group": "8",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "835001",
+      "title": "قائد الدّفة",
+      "group": "8",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "835002",
+      "title": "بحّار",
+      "group": "8",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "835003",
+      "title": "مشغل معدات سفن",
+      "group": "8",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "835004",
+      "title": "عامل فك وربط سفن",
+      "group": "8",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "961301",
+      "title": "عامل نظافة شوارع",
+      "group": "9",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "961302",
+      "title": "عامل نظافة حدائق",
+      "group": "9",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "962101",
+      "title": "مراسل",
+      "group": "9",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "962102",
+      "title": "حمال",
+      "group": "9",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "962201",
+      "title": "عامل مهن فريدة",
+      "group": "9",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "962301",
+      "title": "قارئ عدادات",
+      "group": "9",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "962302",
+      "title": "محصل آلات بيع ذاتي",
+      "group": "9",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "962303",
+      "title": "موزع فواتير",
+      "group": "9",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "962401",
+      "title": "جامع حطب",
+      "group": "9",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "962402",
+      "title": "جامع مياه",
+      "group": "9",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "962901",
+      "title": "عامل مواقف سيارات",
+      "group": "9",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
+    },
+    {
+      "code": "962902",
+      "title": "مدقق تذاكر",
+      "group": "9",
+      "decisionIds": [],
+      "sourceTier": "official_group_first_page"
     }
   ]
 }
