@@ -6,7 +6,7 @@ from html.parser import HTMLParser
 from urllib.parse import urlsplit, unquote
 
 ROOT=pathlib.Path(__file__).resolve().parent
-PAGES=['index.html','intelligence.html','sources.html','review.html','occupation-catalog.html']
+PAGES=['index.html','intelligence.html','sources.html','review.html','occupation-catalog.html','completion.html']
 
 class Refs(HTMLParser):
     def __init__(self):
