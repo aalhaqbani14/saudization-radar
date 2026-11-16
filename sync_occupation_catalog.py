@@ -193,15 +193,15 @@ def main():
     previous = {k: v for k, v in seed.items() if k != "updatedAt"}
     current = {k: v for k, v in updated.items() if k != "updatedAt"}
     if previous == current:
-        print(f"No catalog changes: {len(updated['items'])} official occupations")
+        print(f"No catalog changes: {len(updated['items'])} records ({updated['status']})")
         return
     if ns.check_only:
-        print(f"Verified {len(updated['items'])} occupations. Not writing (--check-only).")
+        print(f"Validated {len(updated['items'])} records ({updated['status']}). Not writing.")
         return
     temp = CATALOG.with_suffix(".tmp")
     temp.write_text(json.dumps(updated, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     temp.replace(CATALOG)
-    print(f"Published complete official snapshot ({len(updated['items'])} occupations)")
+    print(f"Saved {updated['status']} catalog ({len(updated['items'])} records)")
 
 
 if __name__ == "__main__":
