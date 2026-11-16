@@ -39,7 +39,7 @@ class OccupationCatalogTest(unittest.TestCase):
     def test_catalog_has_distinct_codes_and_honest_coverage(self):
         data = json.loads((ROOT / "data/occupation-catalog.json").read_text(encoding="utf-8"))
         self.assertEqual(data["schema"], 1)
-        self.assertIn(data["status"], ("seed_guides_only", "official_group_pages_verified"))
+        self.assertIn(data["status"], ("seed_guides_only", "official_partial_pages", "official_group_pages_verified"))
         self.assertEqual(len(data["groups"]), 10)
         codes = [r["code"] for r in data["items"]]
         self.assertEqual(len(codes), len(set(codes)))
