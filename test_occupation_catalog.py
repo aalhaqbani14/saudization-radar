@@ -32,7 +32,7 @@ class OccupationCatalogTest(unittest.TestCase):
     def test_duplicate_first_page_fails_closed(self):
         group = {"id": "9", "count": 3,
                  "url": "https://www.hrsd.gov.sa/skills-taxonomy/occupations/elementary-occupations"}
-        with self.assertRaisesRegex(ValueError, "Pagination did not advance"):
+        with self.assertRaisesRegex(ValueError, "pagination did not advance"):
             scrape_group(group, lambda _: html([("961301", "عامل نظافة شوارع")]),
                          lambda _: None)
 
