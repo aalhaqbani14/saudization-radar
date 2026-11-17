@@ -57,6 +57,10 @@ name: Radar quality checks
       - 'assets/evidence-advisor.js'
       - 'assets/advisor-ui.js'
       - 'test_evidence_advisor.mjs'
+      - 'activity-review.html'
+      - 'assets/activity-review-model.js'
+      - 'assets/activity-review-ui.js'
+      - 'test_activity_review.mjs'
       - 'test_completion.mjs'
       - 'assets/occupation-catalog.js'
       - 'data/occupation-catalog.json'
@@ -90,6 +94,11 @@ jobs:
           node --check assets/completion-model.js
           node --check assets/completion.js
           node test_completion.mjs
+      - name: Test local activity code comparison and privacy
+        run: |
+          node --check assets/activity-review-model.js
+          node --check assets/activity-review-ui.js
+          node test_activity_review.mjs
       - name: Test read-only source-gated advisor and safe UI
         run: |
           node --check assets/evidence-advisor.js
