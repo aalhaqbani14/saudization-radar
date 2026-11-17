@@ -47,6 +47,22 @@ class SiteIntegrity(unittest.TestCase):
         requested=set(re.findall(r"\$\('([^']+)'\)",script))
         self.assertFalse(requested-ids, f'Missing element IDs: {sorted(requested-ids)}')
 
+    def test_home_has_accessible_compact_services_navigation(self):
+        html=(ROOT/'index.html').read_text(encoding='utf-8')
+        self.assertIn('id="services-toggle"',html)
+        self.assertIn('aria-expanded="false"',html)
+        self.assertIn('aria-controls="services-panel"',html)
+        self.assertIn('id="services-panel"',html)
+        self.assertIn('aria-modal="true"',html)
+        self.assertIn('id="services-backdrop"',html)
+        for section in ('services-workforce','services-regulations','services-reports','services-sources'):
+            self.assertIn('id="'+section+'"',html)
+        for asset in ('assets/services-menu.css','assets/services-menu.js'):
+            self.assertIn(asset,html)
+            self.assertTrue((ROOT/asset).is_file())
+        self.assertIn('href="completion.html"',html)
+        self.assertIn('href="occupation-catalog.html"',html)
+
     def test_has_navigation_to_source_register(self):
         for name in ('index.html','intelligence.html','review.html'):
             self.assertIn('sources.html',(ROOT/name).read_text(encoding='utf-8'))

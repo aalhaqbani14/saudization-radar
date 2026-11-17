@@ -36,6 +36,8 @@
 <link rel="stylesheet" href="assets/phases.css">
 <link rel="stylesheet" href="assets/workforce-widgets.css">
 <link rel="stylesheet" href="assets/all-professions.css">
+<link rel="stylesheet" href="assets/services-menu.css">
+<script src="assets/services-menu.js" defer></script>
 <style id="radar-intro-styles">
 #radar-cinematic-intro{position:fixed;inset:0;z-index:99999;background:#04110d;overflow:hidden;isolation:isolate;transition:opacity .65s ease,visibility .65s ease;font-family:Tahoma,Arial,sans-serif}
 #radar-cinematic-intro.radar-intro-hidden{opacity:0;visibility:hidden;pointer-events:none}
@@ -63,31 +65,67 @@
 <div class="intro-credit">صورة KAFD: B.alotaby / Wikimedia Commons — CC BY-SA 4.0</div>
 </div>
 <div class="layout">
-  <aside class="sidebar">
-    <div class="brand"><div class="brandmark" aria-hidden="true">SR</div><div><strong>Saudization Radar</strong><small>لوحة توطين سالك</small></div></div>
-    <div>
-      <div class="nav-group-label">WORKSPACE</div>
-      <nav class="nav" aria-label="التنقل الرئيسي">
-        <a href="#overview" class="selected"><span class="glyph">▦</span> لوحة المتابعة</a>
-        <a href="salic.html" style="background:#0b817650;color:white"><span class="glyph">▤</span> موظفو سالك · المهن والأعداد</a>
-        <a href="operations.html" style="background:#0f8b7750;color:#e9fff8"><span class="glyph">▣</span> غرفة عمليات الامتثال</a>
-        <a href="#all-professions"><span class="glyph">⌕</span> جميع المهن الـ75</a>
-        <a href="calculator.html"><span class="glyph">◫</span> الحاسبة المستقلة</a>
-        <a href="guide-audit.html"><span class="glyph">◎</span> مطابقة الأدلة والمهن</a>
-        <a href="completion.html" style="background:#0d746247;color:#ebfff8"><span class="glyph">▣</span> مركز استكمال الرادار · 9 محاور</a>
-        <a href="occupation-catalog.html"><span class="glyph">⌗</span> دليل الرموز المهنية</a>
-        <a href="guide-changes.html"><span class="glyph">≋</span> مقارنة تغييرات الأدلة PDF</a><a href="workforce-import.html"><span class="glyph">⬑</span> استيراد ملف الموظفين</a>
-        <a href="#intel" class="intel-nav"><span class="glyph">▣</span> مرجع قرارات التوطين</a>
-        <a href="intelligence.html"><span class="glyph">⌕</span> غرفة التحليل الذكية <span style="font-size:9px; padding:3px 6px;background:#147f70;color:#fff;border-radius:5px;margin-right:auto">NEW</span></a>
-        <a href="intelligence.html#report"><span class="glyph">▣</span> إنشاء التقرير التنفيذي الشامل</a>
-        <a href="#updates"><span class="glyph">◷</span> سجل التحديثات</a>
-        <a href="#official-sources"><span class="glyph">▤</span> المصادر الحكومية</a>
-        <a href="sources.html"><span class="glyph">◈</span> سجل التوثيق الرسمي</a>
-        <a href="review.html"><span class="glyph">◉</span> غرفة مراجعة التنبيهات</a>
-      </nav>
-    </div>
-    <div class="side-bottom"><span class="kicker">INDEPENDENT INITIATIVE</span><strong>متابعة أدق للقرارات المهنية</strong><small>منصة شخصية لرصد التحديثات المنشورة، ولا تمثل جهة حكومية أو نظام امتثال معتمداً.</small></div>
+  <aside class="sidebar" aria-label="التنقل المختصر">
+    <a class="mini-brand" href="#overview" title="رادار التوطين — الرئيسية">
+      <span class="brandmark" aria-hidden="true">SR</span><span class="visually-hidden">رادار التوطين — الرئيسية</span>
+    </a>
+    <nav class="nav quick-nav" aria-label="الروابط السريعة">
+      <a class="quick-link selected" href="#overview" title="لوحة المتابعة"><span class="glyph" aria-hidden="true">▦</span><span>الرئيسية</span></a>
+      <a class="quick-link" href="salic.html" title="موظفو سالك — المهن والأعداد"><span class="glyph" aria-hidden="true">▤</span><span>الموظفون</span></a>
+      <a class="quick-link" href="operations.html" title="غرفة عمليات الامتثال"><span class="glyph" aria-hidden="true">▣</span><span>العمليات</span></a>
+      <button class="quick-link service-trigger" type="button" id="services-toggle" aria-expanded="false" aria-controls="services-panel" title="فتح جميع الخدمات">
+        <span class="glyph" aria-hidden="true">☰</span><span>الخدمات</span>
+      </button>
+    </nav>
   </aside>
+  <div class="services-backdrop" id="services-backdrop" hidden></div>
+  <section class="services-panel" id="services-panel" role="dialog" aria-modal="true" aria-labelledby="services-panel-title" hidden>
+    <div class="services-panel-header">
+      <div><span class="kicker">SAUDIZATION RADAR</span><h2 id="services-panel-title">الخدمات</h2>
+        <p>كل خدمات رادار التوطين مرتبة في أقسام، بدون ازدحام القائمة الرئيسية.</p>
+      </div>
+      <button class="services-close" id="services-close" type="button" aria-label="إغلاق قائمة الخدمات">×</button>
+    </div>
+    <div class="services-panel-content">
+      <section class="services-section" aria-labelledby="services-workforce">
+        <h3 id="services-workforce">الموظفون والمهن</h3>
+        <div class="services-links">
+          <a href="#all-professions"><span class="service-icon" aria-hidden="true">⌕</span> جميع المهن الـ75</a>
+          <a href="calculator.html"><span class="service-icon" aria-hidden="true">◫</span> الحاسبة المستقلة</a>
+          <a href="workforce-import.html"><span class="service-icon" aria-hidden="true">⬑</span> استيراد ملف الموظفين</a>
+          <a href="guide-audit.html"><span class="service-icon" aria-hidden="true">◎</span> مطابقة الأدلة والمهن</a>
+          <a href="occupation-catalog.html"><span class="service-icon" aria-hidden="true">⌗</span> دليل الرموز المهنية</a>
+        </div>
+      </section>
+      <section class="services-section" aria-labelledby="services-regulations">
+        <h3 id="services-regulations">القرارات والامتثال</h3>
+        <div class="services-links">
+          <a href="completion.html"><span class="service-icon" aria-hidden="true">▣</span> مركز استكمال الرادار — 9 محاور</a>
+          <a href="#intel"><span class="service-icon" aria-hidden="true">▤</span> مرجع قرارات التوطين</a>
+          <a href="intelligence.html"><span class="service-icon" aria-hidden="true">✦</span> غرفة التحليل الذكية</a>
+        </div>
+      </section>
+      <section class="services-section" aria-labelledby="services-reports">
+        <h3 id="services-reports">التقارير والمتابعة</h3>
+        <div class="services-links">
+          <a href="intelligence.html#report"><span class="service-icon" aria-hidden="true">▣</span> إنشاء التقرير التنفيذي الشامل</a>
+          <a href="guide-changes.html"><span class="service-icon" aria-hidden="true">≋</span> مقارنة تغييرات الأدلة PDF</a>
+          <a href="#updates"><span class="service-icon" aria-hidden="true">◷</span> سجل التحديثات</a>
+          <a href="review.html"><span class="service-icon" aria-hidden="true">◉</span> غرفة مراجعة التنبيهات</a>
+        </div>
+      </section>
+      <section class="services-section" aria-labelledby="services-sources">
+        <h3 id="services-sources">المصادر الحكومية</h3>
+        <div class="services-links">
+          <a href="#official-sources"><span class="service-icon" aria-hidden="true">▤</span> المصادر الحكومية</a>
+          <a href="sources.html"><span class="service-icon" aria-hidden="true">◈</span> سجل التوثيق الرسمي</a>
+        </div>
+      </section>
+      <div class="services-panel-footer">
+        الرادار مبادرة مستقلة لرصد المصادر المنشورة، وليس منصة حكومية أو شهادة امتثال. رابط أي صفحة متاح أيضًا مباشرة دون الحاجة لفتح هذه القائمة.
+      </div>
+    </div>
+  </section>
   <div class="main">
     <header class="topbar"><div class="crumb">الرئيسية <span aria-hidden="true">/</span> <b>لوحة المتابعة</b></div><div style="display:flex;gap:9px;align-items:center;flex-wrap:wrap"><button class="presentation-toggle" id="presentation-toggle" type="button" aria-pressed="false">وضع العرض</button><div class="pill"><span class="pill-dot"></span> متابعة المصادر الرسمية المنشورة</div></div></header>
     <main class="content" id="overview">

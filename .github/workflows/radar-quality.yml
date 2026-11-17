@@ -40,6 +40,9 @@ name: Radar quality checks
       - 'assets/executive-report.js'
       - 'executive-brief.html'
       - 'test_frontend.mjs'
+      - 'test_services_menu.mjs'
+      - 'assets/services-menu.css'
+      - 'assets/services-menu.js'
       - 'validate_data.py'
       - 'email_probe.py'
       - 'data/guide-matching.json'
@@ -83,6 +86,10 @@ jobs:
           node --check assets/completion-model.js
           node --check assets/completion.js
           node test_completion.mjs
+      - name: Verify compact services navigation
+        run: |
+          node --check assets/services-menu.js
+          node test_services_menu.mjs
       - name: Frontend syntax and local secure-import regression tests
         run: |
           node --check assets/workforce-model.js
