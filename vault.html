@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#077d61"><meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta http-equiv="Cache-Control" content="no-store">
+<title>خزنة الأدلة المشفرة محليًا | رادار التوطين</title>
+<link rel="stylesheet" href="assets/phase-two.css">
+<script src="assets/local-vault.js" defer></script>
+<script src="assets/local-vault-ui.js" defer></script>
+</head>
+<body>
+<header><a href="phase-two.html">← مركز قيادة المرحلة الثانية</a><h1>خزنة الأدلة المشفرة</h1>
+<p>تشفير الملفات محليًا بكلمة مرور يختارها المستخدم، وتصدير نسخة مشفرة قابلة للفك على جهاز آخر يملك كلمة المرور. لا تُحفظ الملفات أو كلمات المرور في GitHub أو خوادم الرادار.</p>
+</header>
+<main>
+<div class="notice">
+<b>الاستخدام والمسؤولية:</b> هذه خزنة ملفات محلية بآلية AES-256-GCM واشتقاق مفاتيح PBKDF2-SHA256. ليست خدمة مشاركة مؤسسية ولا تحتوي على حسابات أو صلاحيات وصول. لا تضع مستندات SALIC المقيّدة في مستودع GitHub العام، ولا تشارك كلمة المرور مع الملف المشفر في القناة نفسها. إذا نسيت كلمة المرور فلا توجد طريقة لاستعادتها.
+</div>
+<div class="grid">
+<section class="section" id="encrypt">
+<div class="heading"><div><h2>1. تشفير مستند</h2><p>اختر الملف وقرار التوطين المرتبط به، ثم نزّل نسخة مشفرة على جهازك.</p></div><span class="tag">لا رفع إلى أي خادم</span></div>
+<div class="controls">
+<label>المستند الأصلي (حد أقصى 2 MB)<input id="encrypt-file" type="file" autocomplete="off"></label>
+<label>القرار المرتبط<select id="encrypt-decision"><option value="">لا يوجد ربط</option></select></label>
+<label>تاريخ انتهاء المراجعة (اختياري)<input id="encrypt-expiry" type="date"></label>
+<label>كلمة المرور (12 حرفًا على الأقل)<input id="encrypt-password" type="password" minlength="12" maxlength="200" autocomplete="new-password"></label>
+<label>تأكيد كلمة المرور<input id="encrypt-confirm" type="password" minlength="12" maxlength="200" autocomplete="new-password"></label>
+</div>
+<button id="encrypt-run" class="btn primary" type="button">تشفير وتنزيل ملف .radarvault</button>
+<p id="encrypt-status" class="status" role="status" aria-live="polite">لا توجد ملفات معالجة بعد.</p>
+</section>
+<section class="section" id="decrypt">
+<div class="heading"><div><h2>2. فك تشفير مستند</h2><p>اختر ملفًا مشفرًا بصيغة الرادار وأدخل كلمة المرور لفتحه محليًا.</p></div><span class="tag">تحقق من سلامة التشفير</span></div>
+<div class="controls">
+<label>الملف المشفر<input id="decrypt-file" type="file" accept=".radarvault,application/json" autocomplete="off"></label>
+<label>كلمة مرور الملف<input id="decrypt-password" type="password" autocomplete="off"></label>
+</div>
+<button id="decrypt-run" class="btn primary" type="button">فك التشفير محليًا</button>
+<p id="decrypt-status" class="status" role="status" aria-live="polite">اختر ملفًا مشفرًا وكلمة مروره.</p>
+<div id="decrypted-details" class="tile" hidden>
+<h3>المستند بعد فك التشفير</h3>
+<p id="decrypted-meta">—</p>
+<button id="decrypted-save" class="btn" type="button">تنزيل المستند الأصلي</button>
+<button id="decrypted-clear" class="btn" type="button">مسح النسخة المفتوحة من ذاكرة الصفحة</button>
+</div>
+</section>
+</div>
+<section class="section">
+<h2>حدود الخزنة</h2>
+<div class="grid">
+<div class="tile"><h3>ما الذي تحميه؟</h3><p>كلمة مرور الملف لا تُرسل إلى أي موقع، والمحتوى الأصلي لا يُضاف إلى المستودع العام. يستخدم المتصفح تشفيرًا مُصادقًا عليه؛ التعديل غير المصرح به في الملف يؤدي إلى فشل فك التشفير.</p></div>
+<div class="tile"><h3>ما الذي لا تفعله؟</h3><p>لا توفر نسخًا احتياطية آلية، ولا إدارة صلاحيات للمدير والزملاء، ولا سجلات دخول أو متابعة انتهاء مستندات في الخلفية. هذه الوظائف تتطلب نشر خدمة مؤسسية خاصة معتمدة وإعداد تسجيل دخول.</p></div>
+</div>
+<p class="warn-note">المدخلات وملفات فك التشفير توجد مؤقتًا في ذاكرة هذا التبويب فقط، ولن يُستعاد الملف إذا أغلقت الصفحة قبل تنزيله. لا تستخدم الخزنة على جهاز مشترك أو جهاز غير موثوق، ولا تشارك المستندات خارج سياسات الشركة.</p>
+<a href="operations-team.html" class="btn">الاعتمادات المشتركة — تتطلب إعدادًا مؤسسيًا</a>
+</section>
+<footer>رادار التوطين · تشفير محلي فقط · لا ترفع المستندات المقيّدة أو بيانات الموظفين إلى GitHub</footer>
+</main></body></html>
