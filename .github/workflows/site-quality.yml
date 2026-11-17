@@ -17,6 +17,18 @@ name: Saudization Radar site integrity
       - 'assets/activity-review-model.js'
       - 'assets/activity-review-ui.js'
       - 'test_activity_review.mjs'
+      - 'phase-two.html'
+      - 'vault.html'
+      - 'assets/phase-two-model.js'
+      - 'assets/phase-two-ui.js'
+      - 'assets/local-vault.js'
+      - 'assets/local-vault-ui.js'
+      - 'assets/phase-two.css'
+      - 'assets/v2-green-home.css'
+      - 'assets/v2-home.js'
+      - 'data/phase-two-plan.json'
+      - 'test_phase_two.mjs'
+      - 'test_local_vault.mjs'
       - 'test_completion.mjs'
       - 'assets/occupation-catalog.js'
       - 'data/occupation-catalog.json'
@@ -51,6 +63,10 @@ jobs:
         run: python -m unittest -v test_site_integrity.py test_occupation_catalog.py
       - name: Verify nine-workstream readiness and five safe plans
         run: node test_completion.mjs
+      - name: Verify eight Phase II planning tools and local encrypted vault
+        run: |
+          node test_phase_two.mjs
+          node test_local_vault.mjs
       - name: Verify local activity review and privacy gates
         run: node test_activity_review.mjs
       - name: Verify source-gated read-only advisor
