@@ -28,6 +28,20 @@ class MonitorTests(unittest.TestCase):
   self.assertIn('قرار توطين',content)
   self.assertIn('70%',content)
   self.assertNotIn('ignored javascript',content)
+ def test_context_only_history_is_preserved_but_hidden_from_active_ui(self):
+  import json
+  from pathlib import Path
+  alerts=json.loads(Path('data/alerts.json').read_text(encoding='utf-8'))['alerts']
+  archived=[x for x in alerts if x.get('triage_status')=='context_only']
+  self.assertGreaterEqual(len(archived),7)
+  self.assertTrue(all(x.get('triage_note') and x.get('detected_at') and x.get('url') for x in archived))
+  home=Path('index.html').read_text(encoding='utf-8')
+  review=Path('review.html').read_text(encoding='utf-8')
+  operations=Path('assets/operations-auto.js').read_text(encoding='utf-8')
+  for page in (home,review,operations):
+   self.assertIn('context_only',page,'No active UI should count triaged unrelated content')
+  self.assertIn('archive-toggle',review,'Auditors should still be able to inspect archived context signals')
+
  def test_official_detail_ignores_related_cards_and_preserves_primary_pdf(self):
   url='https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/test-decision'
   html='''<html><head><title>توطين مهن إدارة المشاريع | HRSD</title>
