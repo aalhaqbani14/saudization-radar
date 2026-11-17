@@ -37,6 +37,9 @@
 <link rel="stylesheet" href="assets/workforce-widgets.css">
 <link rel="stylesheet" href="assets/all-professions.css">
 <link rel="stylesheet" href="assets/services-menu.css">
+<link rel="stylesheet" href="assets/v2-green-home.css">
+<script src="assets/phase-two-model.js" defer></script>
+<script src="assets/v2-home.js" defer></script>
 <script src="assets/services-menu.js" defer></script>
 <style id="radar-intro-styles">
 #radar-cinematic-intro{position:fixed;inset:0;z-index:99999;background:#04110d;overflow:hidden;isolation:isolate;transition:opacity .65s ease,visibility .65s ease;font-family:Tahoma,Arial,sans-serif}
@@ -57,7 +60,7 @@
 @media(prefers-reduced-motion:reduce){#radar-cinematic-intro{display:none}}
 </style>
 </head>
-<body>
+<body class="v2-home">
 <button id="radar-intro-replay" type="button" aria-label="إعادة عرض المقدمة السينمائية">◉ إعادة عرض المقدمة</button>
 <div id="radar-cinematic-intro" role="region" aria-label="مقدمة رادار التوطين">
 <div class="intro-photo" aria-hidden="true"></div><div class="intro-overlay" aria-hidden="true"></div><div class="intro-radar" aria-hidden="true"></div><div class="intro-title">رادار التوطين</div>
@@ -105,6 +108,7 @@
           <a href="intelligence.html"><span class="service-icon" aria-hidden="true">✦</span> غرفة التحليل الذكية</a>
           <a href="advisor.html"><span class="service-icon" aria-hidden="true">◇</span> مساعد التوطين الاسترشادي — جميع القرارات</a>
           <a href="activity-review.html"><span class="service-icon" aria-hidden="true">▥</span> مطابقة الأنشطة والتراخيص</a>
+          <a href="phase-two.html"><span class="service-icon" aria-hidden="true">✧</span> مركز قيادة المرحلة الثانية · 8 أدوات</a>
         </div>
       </section>
       <section class="services-section" aria-labelledby="services-reports">
@@ -114,6 +118,7 @@
           <a href="guide-changes.html"><span class="service-icon" aria-hidden="true">≋</span> مقارنة تغييرات الأدلة PDF</a>
           <a href="#updates"><span class="service-icon" aria-hidden="true">◷</span> سجل التحديثات</a>
           <a href="review.html"><span class="service-icon" aria-hidden="true">◉</span> غرفة مراجعة التنبيهات</a>
+          <a href="vault.html"><span class="service-icon" aria-hidden="true">▣</span> خزنة الأدلة المشفرة محليًا</a>
         </div>
       </section>
       <section class="services-section" aria-labelledby="services-sources">
@@ -132,9 +137,41 @@
     <header class="topbar"><div class="crumb">الرئيسية <span aria-hidden="true">/</span> <b>لوحة المتابعة</b></div><div style="display:flex;gap:9px;align-items:center;flex-wrap:wrap"><button class="presentation-toggle" id="presentation-toggle" type="button" aria-pressed="false">وضع العرض</button><div class="pill"><span class="pill-dot"></span> متابعة المصادر الرسمية المنشورة</div></div></header>
     <main class="content" id="overview">
       <section class="hero" aria-labelledby="hero-title">
-        <div><div class="eyebrow">REGULATORY MONITORING DASHBOARD</div><h1 id="hero-title">توطين سالك، بناءً على موظفيها.</h1><p>لوحة تحليلية مخصصة لمهن موظفي سالك وأنشطتها الزراعية والإنتاج الحيواني، تربط الأعداد المجمعة بقرارات التوطين المهنية المحتملة ومصادرها الرسمية.</p><div class="hero-updated" id="updated" aria-live="polite">جارٍ قراءة آخر بيانات الرصد...</div></div>
+        <div><div class="eyebrow">REGULATORY MONITORING DASHBOARD</div><h1 id="hero-title">رادار التوطين · مركز القيادة</h1><p>لوحة تحليلية مخصصة لمهن موظفي سالك وأنشطتها الزراعية والإنتاج الحيواني، تربط الأعداد المجمعة بقرارات التوطين المهنية المحتملة ومصادرها الرسمية.</p><div class="hero-updated" id="updated" aria-live="polite">جارٍ قراءة آخر بيانات الرصد...</div></div>
         <img class="hero-scene" src="assets/scene-meeting.svg" alt="رسم متحرك لفريق عمل أثناء اجتماع" loading="eager">
-        <a class="hero-link" href="intelligence.html">قرارات المهن في سالك ↗</a>
+        <a class="hero-link" href="phase-two.html">استكشف المرحلة الثانية ←</a><span class="hero-credit">صورة KAFD: B.alotaby / Wikimedia Commons — CC BY-SA 4.0</span>
+      </section>
+
+      <section aria-labelledby="v2-title">
+        <div class="v2-phase-title">
+          <div><h2 id="v2-title">لوحة القيادة · المرحلة الثانية</h2>
+            <p>مؤشرات موثقة المصدر، ومراقبة أدلة القرارات، وثمانية أدوات متقدمة للتخطيط والمراجعة.</p>
+          </div>
+          <a href="phase-two.html" class="btn" style="background:#087b61;color:#fff;padding:11px 16px;font-size:12px;border-radius:10px">كل أدوات المرحلة الثانية ←</a>
+        </div>
+        <div class="v2-command-summary" aria-label="مؤشرات المصدر وليس امتثال المنشأة">
+          <div class="v2-summary"><small>نسبة السعوديين · لقطة القوى العاملة</small><strong id="v2-national-ratio">—</strong><span class="v2-meta">ليست نسبة امتثال قرارات التوطين</span></div>
+          <div class="v2-summary"><small>القرارات المراقبة</small><strong id="v2-decision-count">—</strong><span class="v2-meta">جميع القطاعات في السجل المرجعي</span></div>
+          <div class="v2-summary"><small>تدقيق تفصيلي معلّق</small><strong id="v2-pending-audits">—</strong><span class="v2-meta">تحتاج أدلة وشروط انطباق</span></div>
+          <div class="v2-summary"><small>القوى العاملة في آخر لقطة</small><strong id="v2-workforce-count">—</strong><span class="v2-meta" id="v2-workforce-date">بيانات مجمعة غير مرتبطة مباشرة بقوى</span></div>
+          <div class="v2-summary"><small>صفحات نجح آخر فحص آلي لها</small><strong id="v2-monitored-count">—</strong><span class="v2-meta" id="v2-scan-date">النجاح التقني لا يثبت عدم صدور قرار</span></div>
+        </div>
+        <p class="v2-audit-note">هذه لوحة رصد وتخطيط استرشادية ولا تعرض شهادة امتثال. لم تُعتمد بعد رموز الموظفين الفعلية وتراخيص SALIC والقرارات ذات التدقيق التفصيلي المعلّق.</p>
+        <div class="v2-phase-title"><div><h2>أدوات الرادار المتقدمة</h2><p>الخدمات في بطاقات واضحة، مع الحفاظ على اختصار القائمة الجانبية.</p></div></div>
+        <div class="quick-actions" aria-label="اختصارات الأدوات الثمانية">
+          <a class="quick-action" href="phase-two.html#impact"><span aria-hidden="true">◎</span><strong>خريطة تأثير القرارات</strong><small>ربط القرارات بالمسميات والنشاط</small></a>
+          <a class="quick-action" href="phase-two.html#readiness"><span aria-hidden="true">☷</span><strong>جاهزية الأدلة</strong><small>ما ثبت وما يحتاج مراجعة</small></a>
+          <a class="quick-action" href="phase-two.html#conflicts"><span aria-hidden="true">⇄</span><strong>كاشف التعارضات</strong><small>منع ازدواج الاحتساب</small></a>
+          <a class="quick-action" href="phase-two.html#timeline"><span aria-hidden="true">◷</span><strong>آلة الزمن التنظيمية</strong><small>أحداث موثقة عبر التاريخ</small></a>
+          <a class="quick-action" href="phase-two.html#approvals"><span aria-hidden="true">✓</span><strong>غرفة مراجعة الاعتمادات</strong><small>مسودات محلية ومسار اعتماد مؤسسي</small></a>
+          <a class="quick-action" href="phase-two.html#forecast"><span aria-hidden="true">▥</span><strong>توقع احتياج 12 شهرًا</strong><small>سيناريوهات توظيف وإحلال وتأهيل</small></a>
+          <a class="quick-action" href="vault.html"><span aria-hidden="true">▣</span><strong>خزنة الأدلة المشفرة</strong><small>تشفير مستندات داخل المتصفح</small></a>
+          <a class="quick-action" href="phase-two.html#changes"><span aria-hidden="true">⟳</span><strong>ما تغيّر منذ آخر زيارة</strong><small>مقارنة بيانات منشورة محليًا</small></a>
+        </div>
+        <div class="v2-visit-panel">
+          <div><b>ملخص التغير منذ آخر زيارة</b><p id="v2-visit-note" aria-live="polite">جارٍ مقارنة بيانات الرصد العامة في هذا المتصفح…</p></div>
+          <a href="phase-two.html#changes">فتح تفاصيل التغييرات ←</a>
+        </div>
       </section>
 
       <section id="salic-workforce" style="margin:25px 0;padding:25px;border:1px solid #c9e6dd;background:linear-gradient(120deg,#f4fffa,#fff);border-radius:19px;box-shadow:0 8px 28px #1028340b">
