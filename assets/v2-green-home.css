@@ -1,0 +1,65 @@
+/* Phase II approved green/white executive visual identity. No mock compliance numbers. */
+:root{--v2-ink:#152d3c;--v2-green:#078369;--v2-green-dark:#005b51;--v2-pale:#ebf9f4;--v2-line:#dbe9e6;--v2-bg:#f5f9f8;--v2-sh:0 9px 28px rgba(17,65,64,.07);--v2-radius:17px}
+body.v2-home{background:radial-gradient(circle at 15% 4%,#dff6ef,transparent 350px),#f5f9f8;color:var(--v2-ink)}
+.v2-home .sidebar{background:linear-gradient(160deg,#07342f 0%,#082b32 72%,#124a48 100%);border-left:1px solid #c9e8dc}
+.v2-home .sidebar .quick-link:hover,.v2-home .sidebar .quick-link.selected{background:#0ba78635;border-radius:13px}
+.v2-home .sidebar .service-trigger{background:#08897244;border-color:#7cdbbe85}
+.v2-home .topbar{background:linear-gradient(90deg,#fff,#f1f9f5);border-bottom:1px solid #daece4;box-shadow:0 4px 18px #1b624709;min-height:67px}
+.v2-home .crumb b{color:#126557}
+.v2-home .content{max-width:1580px;padding-top:20px}
+.v2-home .hero{
+  min-height:238px;border-radius:20px;padding:34px 39px;
+  background:linear-gradient(90deg,rgba(7,55,46,.66),rgba(1,61,56,.80) 55%,rgba(4,49,44,.87)),
+   url("https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/KAFD_seen_from_North_east_side_of_Riyadh_City.jpg/960px-KAFD_seen_from_North_east_side_of_Riyadh_City.jpg") center 51%/cover no-repeat;
+  border:1px solid #5ba89688;box-shadow:0 18px 38px #1e5c4335;isolation:isolate
+}
+.v2-home .hero:before{width:500px;height:500px;right:auto;left:21%;top:-240px;border:1px solid #76fcd32f;box-shadow:0 0 0 58px #72fbce0d,0 0 0 126px #72fbce0a,0 0 0 200px #72fbce06;pointer-events:none}
+.v2-home .hero:after{width:340px;height:340px;background:#2df9a51f;left:0;bottom:-210px}
+.v2-home .hero h1{font-size:clamp(25px,3.1vw,39px);line-height:1.5;margin:11px 0}
+.v2-home .hero p{color:#e0f4ef;max-width:725px;font-size:13px}
+.v2-home .hero .eyebrow{color:#83ecc8;letter-spacing:1.6px}
+.v2-home .hero-link{background:#e8fff4;color:#034f40;border-radius:12px;padding:13px 17px}
+.v2-home .hero-scene{display:none!important}
+.v2-home .hero-credit{position:absolute;bottom:12px;left:17px;color:#ecfff3ba;font-size:9px;z-index:2}
+.v2-home .metrics .metric,.v2-home .panel,.v2-home .footer,.v2-home .srb-browser{border-color:#dbe9e6;box-shadow:var(--v2-sh);border-radius:17px}
+.v2-home .metric{border-top:3px solid #26ae8e33}
+.v2-home .metric strong{color:#075d4c}
+.v2-home .section-head h2,.v2-home .panel-title{color:#163b35}
+.v2-home .pill{background:#e7f9ef;color:#076449}
+.v2-home .tab.active{background:#dff7eb;color:#076d56;border-color:#a7dbc7}
+.v2-home .record{background:#fbfefd;border-color:#deeee6}
+.v2-home .record-label{color:#0a745c;background:#dff5e8}
+.v2-home .record-bottom a,.v2-home .source-row a{color:#087e68}
+.v2-home .owner{background:linear-gradient(135deg,#f6fdfa,#e9f7f2)}
+.v2-home .services-panel{background:#f8fcfa}
+.v2-home .services-panel-header{background:linear-gradient(130deg,#053b35,#078367)}
+.v2-home .services-links a:hover{background:#ecfaf3}
+.v2-home .quick-actions{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:16px 0 24px}
+.v2-home .quick-action{min-height:114px;display:flex;flex-direction:column;justify-content:center;gap:11px;
+ padding:17px;background:linear-gradient(140deg,#fff,#f5fefa);border:1px solid #cce4da;
+ border-radius:16px;box-shadow:0 5px 22px #104b3210;text-decoration:none;transition:transform .17s,box-shadow .17s,border-color .17s}
+.v2-home .quick-action:hover,.v2-home .quick-action:focus-visible{transform:translateY(-2px);border-color:#5eae95;box-shadow:0 11px 28px #104b321c}
+.v2-home .quick-action span{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:#e4f7ee;color:#077555;font-size:20px}
+.v2-home .quick-action strong{font-size:13px;color:#173d35}
+.v2-home .quick-action small{font-size:10px;color:#748d83;line-height:1.8}
+.v2-home .v2-phase-title{margin:27px 0 5px;display:flex;justify-content:space-between;align-items:flex-end;gap:16px}
+.v2-home .v2-phase-title h2{margin:0;font-size:22px;color:#123c33}
+.v2-home .v2-phase-title p{margin:7px 0 0;color:#67847a;font-size:12px;line-height:1.9}
+.v2-home .v2-command-summary{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-top:16px}
+.v2-home .v2-summary{background:#fff;border:1px solid #d9eae3;border-radius:16px;padding:20px;box-shadow:var(--v2-sh);min-width:0}
+.v2-home .v2-summary:first-child{background:linear-gradient(140deg,#09816a,#045749);border-color:#05654f;color:#fff}
+.v2-home .v2-summary small{display:block;color:#6d867d;line-height:1.8;font-size:11px}
+.v2-home .v2-summary:first-child small,.v2-home .v2-summary:first-child .v2-meta{color:#d8ffef}
+.v2-home .v2-summary strong{font-size:clamp(22px,2.5vw,31px);display:block;margin-top:10px;direction:ltr;text-align:right;color:#0b6854}
+.v2-home .v2-summary:first-child strong{color:white}
+.v2-home .v2-meta{display:block;color:#7f978b;font-size:10px;line-height:1.9;margin-top:4px}
+.v2-home .v2-visit-panel{background:#fff;border:1px solid #dbebe4;box-shadow:var(--v2-sh);border-radius:15px;padding:17px 20px;margin-top:18px;display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.v2-home .v2-visit-panel b{font-size:13px;color:#1d5345}
+.v2-home .v2-visit-panel p{color:#638176;font-size:11px;margin:5px 0 0;line-height:1.9}
+.v2-home .v2-visit-panel a{background:#ebf9f0;color:#056d51;border:1px solid #bae0cc;border-radius:10px;padding:10px 13px;font-size:12px;font-weight:bold}
+.v2-home .v2-audit-note{font-size:11px;color:#6c8479;line-height:1.9;margin:12px 0 0}
+@media(max-width:1050px){.v2-home .v2-command-summary{grid-template-columns:repeat(3,1fr)}.v2-home .quick-actions{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:760px){.v2-home .v2-command-summary{grid-template-columns:repeat(2,1fr)}.v2-home .quick-actions{grid-template-columns:repeat(2,minmax(0,1fr))}.v2-home .hero{min-height:238px;padding:25px 22px}.v2-home .hero:before{display:none}.v2-home .v2-phase-title{display:block}}
+@media(max-width:430px){.v2-home .v2-command-summary{grid-template-columns:repeat(2,1fr);gap:8px}.v2-home .v2-summary{padding:14px}.v2-home .quick-action{padding:13px;min-height:110px}.v2-home .hero-credit{font-size:8px}}
+@media(prefers-reduced-motion:reduce){.v2-home .quick-action{transition:none}.v2-home .quick-action:hover{transform:none}}
+@media print{.v2-home .quick-actions,.v2-home .v2-visit-panel{display:none}.v2-home .hero{background:#fff;color:#123d36}.v2-home .hero h1,.v2-home .hero p{color:#123d36}}
