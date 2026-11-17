@@ -56,12 +56,15 @@
       add(c1,node("strong",x.title),node("div","القرار: "+x.number));
       if(x.source)add(c1,link(x.source,"صفحة الوزارة"));
       if(x.secondary)add(c1,node("span"," · "),link(x.secondary,"دليل إضافي"));
+      if(x.guideUrl)add(c1,node("span"," · "),link(x.guideUrl,x.pdfStatus==="draft"?"مسودة منشورة":"دليل PDF")); 
       const c2=node("td");
       const ul=node("ul",null,"checks");
       x.checks.slice(0,6).forEach(y=>ul.append(node("li",y)));
       add(c2,node("div",x.limit),ul);
       const c3=node("td");
-      add(c3,pill("needs_review"),node("small",x.metadataVerified?"بيانات أساسية مرجعية؛ الجداول لم تعتمد":"تحتاج أدلة أصلية"));
+      const guideText={monitored_public:"دليل عام ضمن الرصد النصي — لا يعني اكتمال التدقيق",restricted:"دليل مقيّد — مراجعة بشرية فقط",draft:"مسودة غير معتمدة — تحقق من دليل نهائي",requires_guide_verification:"يجب التحقق من الدليل المعتمد"}[x.pdfStatus]||"يتطلب تدقيقًا";
+      add(c3,pill("needs_review"),node("small",guideText),node("small",x.metadataVerified?"البيانات الأساسية موثقة، لكن شروط الانطباق معلّقة":"تحتاج أدلة أصلية"));
+      if(x.evidenceNote)add(c3,node("small",x.evidenceNote));
       add(tr,c1,c2,c3);fragment.append(tr);
     });
     $("pending-rows").replaceChildren(fragment);
@@ -126,6 +129,7 @@
         catalog:"data/occupation-catalog.json",
         matching:"data/guide-matching.json",
         grace:"data/grace-periods.json",
+        pdfSources:"data/guide-pdf-sources.json",
         health:"data/health.json"
       };
       const names=Object.keys(paths);
