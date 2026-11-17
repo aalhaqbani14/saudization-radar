@@ -20,7 +20,7 @@ assert.equal((panel.match(/class="services-section"/g)||[]).length,4,'4 service 
 const hrefs=[
  '#overview','salic.html','operations.html','#all-professions','calculator.html',
  'guide-audit.html','completion.html','occupation-catalog.html','guide-changes.html',
- 'workforce-import.html','#intel','intelligence.html','advisor.html','intelligence.html#report',
+ 'workforce-import.html','#intel','intelligence.html','advisor.html','activity-review.html','intelligence.html#report',
  '#updates','#official-sources','sources.html','review.html'
 ];
 for(const href of hrefs){
@@ -91,4 +91,4 @@ assert.equal(links.find(x=>x.getAttribute('href')==='#updates').getAttribute('ar
 win.location.hash='#overview';listeners.hashchange();
 assert.ok(home.classList.contains('selected'));
 assert.equal(links.find(x=>x.getAttribute('href')==='#updates').getAttribute('aria-current'),null);
-console.log('PASS: compact services navigation retains all 18 destinations, 4 categories and keyboard/mobile drawer behavior');
+console.log('PASS: compact services navigation retains all 19 destinations, 4 categories and keyboard/mobile drawer behavior');
