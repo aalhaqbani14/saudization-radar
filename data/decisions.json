@@ -651,8 +651,10 @@
         "basis": "تحقق من رقم القرار 62298 وتاريخ الإصدار 2025-10-31 وبدء التطبيق 2026-02-01 من صفحة وزارة الموارد البشرية.",
         "limits": "ما زال يلزم الرجوع للدليل لإثبات نسبة احتساب مشرف السكن وحد الأجر وتعريف المستفيدين وحد النشاط.",
         "metadataVerified": true,
-        "evidenceNote": "صفحة الوزارة تؤكد رقم القرار 62298 وتاريخ التنفيذ 2026-02-01؛ يبقى إثبات شروط السكن والأجر والرمز والكيان معلقًا.",
-        "sourceCheckedAt": "2026-11-16"
+        "evidenceNote": "الدليل المنشور يحمل تصنيفًا مقيدًا؛ لا تُنسخ نصوصه إلى المستودع العام. مراجعة الشروط مع الجهة المخولة لازمة.",
+        "sourceCheckedAt": "2026-11-16",
+        "pdfMonitoring": "restricted_document_not_copied",
+        "pdfSourceChecked": "2026-11-17"
       },
       "history": [
         {
@@ -701,8 +703,10 @@
         "basis": "تحقق من رقم 68098 الصادر 2025-11-11، وتاريخ بدء التطبيق 2026-05-11، وأن نطاقه مراكز الاسترخاء والعناية الشخصية المرخصة.",
         "limits": "القرار خاص بنشاط مرخص محدد ولا يجوز تطبيقه على سالك بمجرد تشابه مسميات الإدارة؛ جدول المهن والأنشطة والاشتراطات التفصيلية تحتاج مراجعة.",
         "metadataVerified": true,
-        "evidenceNote": "النشاط المرخص المحدد بالدليل هو 960920 (مراكز الاسترخاء والعناية الشخصية). عدم ظهوره في قائمة أنشطة سالك غير المتحققة لا يثبت عدم الانطباق.",
-        "sourceCheckedAt": "2026-11-16"
+        "evidenceNote": "الرابط الرسمي المتاح يحمل صفة مسودة للدليل؛ لا يُعامل كنص نهائي ولا تثبت به شروط قرار نافذ دون الدليل المعتمد.",
+        "sourceCheckedAt": "2026-11-16",
+        "pdfMonitoring": "published_draft_not_final",
+        "pdfSourceChecked": "2026-11-17"
       },
       "history": [
         {
@@ -982,7 +986,9 @@
         "checked": "2026-11-11",
         "basis": "تحقق من رقم 212535 وتاريخ الإصدار 2021-07-04 والنفاذ 2021-10-01 وأن نطاقه مهن وأنشطة عقارية محددة.",
         "limits": "بقيت النسب التفصيلية لكل نشاط ومهنة، وتحديد انطباق الترخيص الفعلي على أي كيان من سالك دون إثبات.",
-        "metadataVerified": true
+        "metadataVerified": true,
+        "pdfMonitoring": "public_extractable_reference_added",
+        "pdfSourceChecked": "2026-11-17"
       },
       "history": [
         {
@@ -997,7 +1003,8 @@
         }
       ],
       "issueDate": "2021-07-04",
-      "historyStatus": "summary_needs_review"
+      "historyStatus": "summary_needs_review",
+      "officialGuide": "https://www.hrsd.gov.sa/sites/default/files/2021-07/04112023.pdf"
     },
     {
       "id": "education",
@@ -1025,7 +1032,10 @@
         "checked": "2026-11-11",
         "basis": "تحقق من رقم 312028 وتاريخ الإصدار 2023-06-27 وتاريخ التطبيق 2023-08-13 لمدارس التعليم العام الأهلي.",
         "limits": "نسب المعلمين حسب المادة والتخصص ورخص المدارس لا يمكن استخلاصها من عنوان القرار؛ يلزم الدليل التفصيلي قبل أي نسبة.",
-        "metadataVerified": true
+        "metadataVerified": true,
+        "pdfMonitoring": "restricted_document_not_copied",
+        "pdfSourceChecked": "2026-11-17",
+        "evidenceNote": "الدليل الإجرائي مصنف مقيّدًا؛ يتطلب تحققًا بشريًا من شروطه، ولا يُنشر نصه في فهرس عام."
       },
       "history": [
         {
@@ -1341,7 +1351,9 @@
         "checked": "2026-11-11",
         "basis": "تحقق من رقم 92412 وتاريخ الإصدار 2022-12-29 وبدء التطبيق 2023-07-08 ونسب 40% إلى 100% للأنشطة والمهن المحددة بمنطقة المدينة.",
         "limits": "النسب تختلف حسب النشاط والمهنة ومكان ممارسة النشاط، ويجب مطابقة جميع الاستثناءات والرموز قبل احتساب أي أثر على سالك.",
-        "metadataVerified": true
+        "metadataVerified": true,
+        "pdfMonitoring": "public_extractable_reference_added",
+        "pdfSourceChecked": "2026-11-17"
       },
       "history": [
         {
@@ -1356,7 +1368,8 @@
         }
       ],
       "issueDate": "2022-12-29",
-      "historyStatus": "summary_needs_review"
+      "historyStatus": "summary_needs_review",
+      "officialGuide": "https://www.hrsd.gov.sa/sites/default/files/2023-07/09012023.pdf"
     }
   ],
   "updated": "2026-11-11",
