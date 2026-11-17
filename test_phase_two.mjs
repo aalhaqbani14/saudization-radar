@@ -1,0 +1,92 @@
+import assert from "node:assert/strict";
+import fs from "node:fs";
+import vm from "node:vm";
+import {createRequire} from "node:module";
+const require=createRequire(import.meta.url);
+const core=require("./assets/phase-two-model.js");
+const read=p=>JSON.parse(fs.readFileSync("data/"+p+".json","utf8"));
+const inputs={decisions:read("decisions"),workforce:read("salic-workforce"),applicability:read("salic-applicability"),
+ guideMatching:read("guide-matching"),pdfSources:read("guide-pdf-sources"),activities:read("salic-activities"),
+ health:read("health"),alerts:read("alerts"),dailyReports:read("daily-reports")};
+const ctx={window:{},console};
+vm.runInNewContext(fs.readFileSync("assets/workforce-model.js","utf8"),ctx);
+const model=ctx.window.SalicWorkforce;
+model.setRows(inputs.workforce.rows,inputs.workforce.summary);
+assert.equal(core.validate(inputs),true);
+const roster=core.scope(inputs,model);
+assert.equal(roster.length,21);
+assert.equal(roster.filter(x=>!x.baseReviewed).length,9);
+assert.equal(roster.filter(x=>x.finalVerdict).length,0);
+assert.ok(roster.every(x=>x.blockers.length===5));
+assert.ok(roster.every(x=>x.blockers.find(y=>y.id==="qiwa").state==="missing"),"No employee Qiwa records were published");
+assert.ok(roster.every(x=>x.blockers.find(y=>y.id==="licence").state==="missing"),"SALIC user activities are not verified official licences");
+assert.equal(roster.find(x=>x.id==="housing").docState,"restricted");
+assert.equal(roster.find(x=>x.id==="education").docState,"restricted");
+assert.equal(roster.find(x=>x.id==="beauty").docState,"draft");
+assert.equal(roster.find(x=>x.id==="admin").baseReviewed,true);
+assert.ok(roster.find(x=>x.id==="admin").preview.total>0);
+assert.equal(roster.find(x=>x.id==="admin").preview.gap,3,"Provisional title-based admin gap");
+const ready=core.readiness(roster);
+assert.equal(ready.length,21);
+assert.ok(ready.every(x=>x.finalComplianceCertificate===false&&x.remaining>=4));
+assert.equal(ready.find(x=>x.id==="housing").grade,"غير جاهز للاعتماد النظامي");
+const overlap=core.conflicts(inputs,model);
+assert.ok(Array.isArray(overlap.overlaps));
+assert.ok(overlap.related.some(x=>x.title==="أخصائي إداري"),"Non-covered specialist must stay visible for manual review");
+assert.ok(overlap.overlaps.every(x=>x.type!=="confirmed_legal_conflict"));
+const now=core.history(inputs,"2026-11-17");
+assert.ok(now.events.length>=5);
+assert.ok(now.events.every(x=>x.date<="2026-11-17"&&x.source?.startsWith("https://")));
+assert.ok(!now.events.some(x=>x.id==="retail7"&&x.date==="2023-06-12"),"Unverified retail timeline date must never enter historical reconstruction");
+const old=core.history(inputs,"2021-01-01");
+assert.ok(old.events.every(x=>x.date<="2021-01-01"));
+assert.ok(now.events.length>=old.events.length);
+assert.throws(()=>core.history(inputs,"bad"));
+const run=core.twelveMonths({workforce:inputs.workforce,startMonth:"2026-11",hire:0,replace:0,train:3});
+assert.equal(run.months.length,12);
+assert.equal(run.after.saudi,117);
+assert.equal(run.after.total,171);
+assert.equal(run.after.other,54);
+assert.equal(run.months[0].month,"2026-11");
+assert.equal(run.months[11].month,"2027-10");
+assert.equal(run.cost,0);
+const scenario=core.twelveMonths({workforce:inputs.workforce,startMonth:"2026-11",hire:1,replace:2,train:3,monthlySalary:8000,trainingCost:1000});
+assert.equal(scenario.after.saudi,153);
+assert.equal(scenario.after.total,183);
+assert.equal(scenario.after.other,30);
+assert.ok(scenario.cost>0);
+assert.equal(scenario.months[0].monthAssumedCost,27000);
+assert.throws(()=>core.twelveMonths({workforce:inputs.workforce,startMonth:"2026-11",replace:5}),/replacement_exceeds_remaining_non_saudis/);
+assert.throws(()=>core.twelveMonths({workforce:inputs.workforce,startMonth:"2026-11",hire:-1}));
+assert.throws(()=>core.twelveMonths({workforce:inputs.workforce,startMonth:"2099-13",hire:1}));
+const snapshot=core.newVisitSnapshot(inputs);
+assert.equal(snapshot.version,1);
+assert.equal(snapshot.decisions.length,21);
+assert.ok(snapshot.alertIds.length>0);
+assert.ok(!snapshot.alertIds.some(id=>inputs.alerts.alerts.find(x=>x.id===id)?.triage_status==="context_only"),"Archived unrelated alerts must not return as new");
+const first=core.visitChanges(null,snapshot);assert.equal(first.firstVisit,true);
+const updated={...snapshot,alertIds:[...snapshot.alertIds,"new_fake_test"],decisions:snapshot.decisions.map(x=>x.id==="admin"?{...x,rate:"98%"}:x)};
+const changed=core.visitChanges(snapshot,updated);
+assert.equal(changed.firstVisit,false);
+assert.deepEqual(changed.newAlerts,["new_fake_test"]);
+assert.ok(changed.modifiedDecisions.includes("admin"));
+assert.equal(core.ROADMAP.length,8);
+for(const page of ["phase-two.html","vault.html","assets/phase-two.css","assets/phase-two-ui.js","assets/local-vault.js","assets/local-vault-ui.js","assets/v2-home.js","assets/v2-green-home.css"]){
+ assert.ok(fs.existsSync(page),"Missing Phase II asset: "+page);
+}
+const home=fs.readFileSync("index.html","utf8");
+assert.ok(home.includes('class="v2-home"'));
+assert.ok(home.includes("assets/v2-green-home.css"));
+assert.ok(home.includes('id="v2-national-ratio"'));
+for(const dest of ["phase-two.html#impact","phase-two.html#readiness","phase-two.html#conflicts",
+ "phase-two.html#timeline","phase-two.html#approvals","phase-two.html#forecast",
+ "phase-two.html#changes","vault.html"]){
+ assert.ok(home.includes('href="'+dest+'"'),"Homepage must link "+dest);
+}
+const ui=fs.readFileSync("assets/phase-two-ui.js","utf8");
+assert.ok(!/\.innerHTML\s*=/.test(ui),"Phase-II user input is rendered using textContent, not raw HTML");
+assert.ok(!/fetch\s*\([^)]*,\s*\{\s*method\s*:\s*['"]POST/i.test(ui),"No employee/private review data uploads");
+const vault=fs.readFileSync("vault.html","utf8");
+assert.ok(vault.includes('name="robots" content="noindex,nofollow,noarchive"'));
+assert.ok(vault.includes('id="encrypt-file"')&&vault.includes('id="decrypt-file"'));
+console.log("PASS: eight Phase II tools, 21 regulatory decisions, nine legal blockers, historical provenance, forecasts, safe public-data deltas and green UI");
