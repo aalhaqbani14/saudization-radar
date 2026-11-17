@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer"><meta name="theme-color" content="#0c2635">
+<title>مطابقة الأنشطة والتراخيص — SALIC</title>
+<style>
+:root{font-family:Tahoma,"Segoe UI",Arial,sans-serif;color:#173449;background:#f4f8f9;font-variant-numeric:tabular-nums}
+*{box-sizing:border-box}body{margin:0}button,textarea{font:inherit}
+a{color:#096f6b;text-decoration:none}a:hover{text-decoration:underline}
+a:focus-visible,button:focus-visible,textarea:focus-visible{outline:3px solid #59d0be;outline-offset:3px}
+header{background:linear-gradient(120deg,#092b3c,#0d665c);padding:30px max(20px,calc((100vw - 1090px)/2));color:#fff}
+header a{color:#aeebdf;font-size:12px}header h1{font-size:clamp(22px,3.5vw,31px);margin:11px 0 8px}
+header p{font-size:12px;line-height:1.9;color:#d0eae4;max-width:930px;margin:0}
+main{max-width:1090px;margin:22px auto;padding:0 17px 45px}
+.panel{border-radius:14px;background:white;border:1px solid #dfebed;padding:22px;margin:17px 0}
+.panel h2{font-size:19px;margin:0 0 10px}
+.panel p{font-size:12px;color:#637987;line-height:1.9}
+.notice{background:#fff7e8;color:#75592f;border:1px solid #e7d5b0;padding:15px 18px;font-size:12px;line-height:2;border-radius:12px}
+textarea{width:100%;min-height:145px;resize:vertical;border:1px solid #bfd5d8;border-radius:10px;background:#fafdfd;padding:14px;color:#173449;line-height:1.9;font-size:14px}
+label{display:block;font-size:13px;font-weight:bold;margin-bottom:9px}
+.buttons{display:flex;gap:9px;flex-wrap:wrap;margin:11px 0}
+button,.btn{border:1px solid #a2d6ca;background:#eaf8f2;border-radius:9px;padding:11px 14px;color:#086e65;cursor:pointer;font-size:12px;font-weight:bold}
+button.primary{background:#0b7b72;border-color:#0b7b72;color:#fff}
+button:disabled{opacity:.5;cursor:not-allowed}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:14px 0}
+.stat{background:#fff;border:1px solid #dfebed;padding:16px;border-radius:13px}
+.stat span{font-size:11px;color:#677f8b;display:block}.stat strong{font-size:25px;color:#0a756e;display:block;margin-top:10px}
+.table-wrapper{overflow-x:auto;max-width:100%}
+table{border-collapse:collapse;min-width:700px;width:100%;font-size:12px;line-height:1.8}
+td,th{border-bottom:1px solid #e7eeee;padding:12px;text-align:right;vertical-align:top}
+th{background:#f2f8f7;color:#315b65}
+.chip{display:inline-block;background:#e9f5f1;color:#0b7468;border-radius:9px;font-size:11px;padding:5px 9px;font-weight:bold}
+.chip.warning{background:#fff0dd;color:#935a20}
+#status{font-size:12px;line-height:2;color:#5f7785}
+#status.error{color:#9b3b27;background:#fff2ed;border-radius:10px;padding:11px}
+#results[hidden]{display:none}
+.note{background:#f2f9f6;padding:13px;border-radius:9px;font-size:11px;line-height:1.9;color:#416d65}
+.split{display:grid;grid-template-columns:2fr 1fr;gap:14px}
+summary{font-size:12px;font-weight:bold;color:#0b726a;cursor:pointer;padding:8px}
+@media(max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}.split{grid-template-columns:1fr}.panel{padding:17px}}
+@media(max-width:370px){.stats{grid-template-columns:1fr}}
+@media print{header{background:white;color:#123746;padding:10px}.buttons,textarea,.no-print{display:none}.panel{break-inside:avoid}}
+</style>
+<script src="assets/activity-review-model.js" defer></script>
+<script src="assets/activity-review-ui.js" defer></script>
+</head>
+<body>
+<header>
+<a href="index.html">← العودة إلى رادار التوطين</a>
+<h1>مطابقة الأنشطة والتراخيص</h1>
+<p>مقارنة رموز الأنشطة التي تتحقق منها يدويًا مع القائمة المجمعة الموجودة في رادار SALIC، وإبراز القرارات المشروطة بالنشاط أو الترخيص أو الموقع. لا ترتبط الصفحة بالسجل التجاري أو منصة قوى ولا تصدر حكم امتثال.</p>
+</header>
+<main>
+<div class="notice"><b>خصوصية البيانات:</b> أدخل <b>رموز الأنشطة المكونة من 6 أرقام فقط</b>، ولا تدخل أسماء موظفين أو أرقام سجلات تجارية أو تراخيص أو أي بيانات شخصية. تتم المقارنة في متصفحك دون إرسالها إلى GitHub أو أي خادم، ولا تحفظ تلقائيًا.</div>
+<div class="split">
+<section class="panel">
+<h2>1. إدخال رموز الأنشطة</h2>
+<p>افتح بيانات أنشطة السجل أو الترخيص لدى الجهة الرسمية، وانسخ الرموز وحدها: كل رمز في سطر، أو مفصولة بفاصلة. الأرقام العربية والإنجليزية مدعومة، والأصفار في بداية الرمز ضرورية.</p>
+<label for="codes">الرموز المتاحة من مستند النشاط الذي تراجعه</label>
+<textarea id="codes" spellcheck="false" autocomplete="off" autocapitalize="off" placeholder="011101&#10;014401&#10;016200" aria-describedby="privacy-status"></textarea>
+<p id="privacy-status" class="note">فحص محلي للرموز فقط، ولا يتضمن تدقيقًا لشهادة السجل أو الترخيص أو للفروع. لا تنسخ مستند السجل كاملًا هنا.</p>
+<div class="buttons">
+<button class="primary" type="button" id="compare" disabled>مطابقة الرموز</button>
+<button type="button" id="clear" disabled>مسح المدخلات والنتائج</button>
+<button type="button" id="download" disabled>تنزيل نتيجة رموز مجمعة CSV</button>
+</div>
+<p role="status" aria-live="polite" id="status">جارٍ تحميل قائمة الأنشطة والقرارات…</p>
+</section>
+<section class="panel">
+<h2>2. التحقق من السجل</h2>
+<p>تتيح وزارة التجارة الاستعلام عن بيانات السجل التجاري باسم المنشأة أو الرقم الوطني الموحد مع التحقق المطلوب على موقعها. يُعرض في السجل الإلكتروني الجديد أيضًا نشاط المنشأة عبر رمز QR.</p>
+<div class="buttons">
+<a class="btn" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" href="https://mc.gov.sa/ar/eservices/Pages/ServiceDetails.aspx?sID=91">خدمة وزارة التجارة الرسمية</a>
+<a class="btn" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" href="https://mc.gov.sa/ar/mediacenter/News/Pages/25-05-25-01.aspx">بيانات السجل عبر QR</a>
+</div>
+<p><b>تنبيه:</b> ظهور الرمز في قائمة SALIC السابقة ليس تأكيدًا لنفاذ النشاط أو أن الشركة مرخصة لمزاولته في الفرع المقصود.</p>
+</section>
+</div>
+<section id="results" hidden>
+<div class="stats">
+<div class="stat"><span>رموز مدخلة فريدة</span><strong id="n-codes">—</strong></div>
+<div class="stat"><span>مطابقة لقائمة SALIC السابقة</span><strong id="n-matched">—</strong></div>
+<div class="stat"><span>غير موجودة بالقائمة السابقة</span><strong id="n-new">—</strong></div>
+<div class="stat"><span>قرارات مشروطة بالنشاط أو الترخيص</span><strong id="n-decisions">—</strong></div>
+</div>
+<section class="panel">
+<h2>3. نتيجة مقارنة الرموز</h2>
+<p class="note">المطابقة في هذا الجدول ليست اعتمادًا للأنشطة أو تحققًا آليًا من السجل التجاري. الرمز غير الموجود في القائمة القديمة ليس رمزًا خاطئًا بالضرورة.</p>
+<div class="table-wrapper"><table><thead><tr><th>الرمز</th><th>المسمى بالقائمة السابقة إن وجد</th><th>حالة المقارنة</th></tr></thead><tbody id="activity-rows"></tbody></table></div>
+<details><summary>إظهار الأنشطة التي كانت موجودة بقائمة SALIC السابقة ولم تُذكر في المدخلات</summary><p>غياب الرمز عن مدخلاتك لا يعني أن النشاط أُلغي من السجل أو لا ينطبق على فرع آخر.</p><div class="table-wrapper"><table><thead><tr><th>الرمز</th><th>المسمى السابق</th></tr></thead><tbody id="reference-only"></tbody></table></div></details>
+</section>
+<section class="panel">
+<h2>4. القرارات التي تعتمد على نشاط أو ترخيص أو موقع</h2>
+<p>يظهر هنا كل قرار له شرط نشاط أو ترخيص أو منشأة أو نطاق جغرافي، حتى إن لم يوجد أي رمز مطابق. لا تُستنتج المخالفة أو الإعفاء من هذه المطابقة.</p>
+<div class="table-wrapper"><table><thead><tr><th>القرار</th><th>الرمز المحدد في سجل القرار</th><th>وضع التحقق</th><th>المصدر</th></tr></thead><tbody id="decision-rows"></tbody></table></div>
+<div class="note">الخطوة التالية لدى المختص: اعتماد نسخة حديثة من أنشطة السجل، والتحقق من تراخيص المنشآت والفروع ومواقعها، ثم مطابقة جدول المهن والرموز مع بيانات قوى قبل اعتماد تقرير الامتثال.</div>
+</section>
+</section>
+<section class="panel"><h2>5. التعامل مع النتيجة</h2><p>تقدر تحفظ ملف CSV يحتوي الرموز والنتيجة المجمعة فقط، بدون أرقام السجلات والموظفين. عند إغلاق الصفحة أو مسح الحقول لا تُحتفظ بهذه المدخلات في الموقع. وهذا التقرير المجمّع لا يصبح «دليل امتثال» حتى يراجعه المختص على ضوء المصدر الرسمي.</p>
+<a href="completion.html">العودة إلى مركز استكمال المحاور التسعة</a> · <a href="advisor.html">فتح المساعد الاسترشادي</a></section>
+</main>
+</body></html>
