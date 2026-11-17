@@ -69,7 +69,9 @@ assert.ok(auditPage.includes('غير متحقق — يلزم إثبات قوى')
 
 const pdfPage=fs.readFileSync('guide-changes.html','utf8');
 const pdfRegistry=JSON.parse(fs.readFileSync('data/guide-pdf-sources.json','utf8'));
-assert.equal(pdfRegistry.sources.length,10,'Ten valid official PDF sources must remain monitored');
+assert.equal(pdfRegistry.sources.length,16,'Sixteen valid official PDF sources must remain monitored');
+assert.ok(!pdfRegistry.sources.some(s=>['project','housing','education'].includes(s.id)),'Restricted documents must not have public PDF snapshots');
+assert.ok(pdfRegistry.sources.find(s=>s.id==='beauty')?.title.includes('مسودة'),'Draft source must remain visibly identified');
 assert.ok(!('excludedFromPublicTextSnapshots' in pdfRegistry),'Do not publish internal PDF exception narratives');
 assert.ok(!pdfPage.includes('id="excluded"'),'Do not show a public exception panel');
 assert.ok(!pdfPage.includes('Classification: Strict'),'Do not expose internal document classification on public page');
