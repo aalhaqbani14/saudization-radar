@@ -27,10 +27,15 @@ function validOfficialLink(value){
  try{const u=new URL(String(value||""));return u.protocol==="https:"&&(u.hostname==="hrsd.gov.sa"||u.hostname.endsWith(".hrsd.gov.sa"))&&!u.username&&!u.password}
  catch{return false}
 }
-function extractPending(decisions, applicability){
+function extractPending(decisions, applicability, pdfSources){
  const cases=new Map(safeArray(applicability?.decisions).map(x=>[x.id,x]));
+ const docs=new Map(safeArray(pdfSources?.sources).map(x=>[x.id,x]));
  return safeArray(decisions?.decisions).filter(d=>d.audit?.status!=="reviewed").map(d=>{
   const category=cases.get(d.id);
+  const doc=docs.get(d.id),guideUrl=validOfficialLink(doc?.url)?doc.url:null;
+  const pdfStatus=d.audit?.pdfMonitoring==='restricted_document_not_copied'?'restricted':
+    d.audit?.pdfMonitoring==='published_draft_not_final'||/مسودة/.test(doc?.title||'')?'draft':
+    guideUrl?'monitored_public':'requires_guide_verification';
   const checks=[...new Set([...safeArray(d.focus),...safeArray(category?.checks)])].filter(v=>typeof v==="string"&&v.trim());
   return {
    id:d.id,title:d.title,number:d.number||"غير مثبت",effective:d.effective||null,
@@ -39,14 +44,16 @@ function extractPending(decisions, applicability){
    gate:category?.gate||"requires_review",checks,
    limit:d.audit?.limits||"الشروط النظامية والرموز بحاجة إلى توثيق",
    metadataVerified:d.audit?.metadataVerified===true,
+   pdfStatus,guideUrl:pdfStatus==='restricted'?null:guideUrl,
+   evidenceNote:d.audit?.evidenceNote||null,
    state:"needs_review",kind:"decision"
   };
  });
 }
-function build({decisions,applicability,activities,workforce,catalog,matching,grace,health}){
+function build({decisions,applicability,activities,workforce,catalog,matching,grace,health,pdfSources}){
  if(!Array.isArray(decisions?.decisions)||!Array.isArray(workforce?.rows)||!Array.isArray(catalog?.items))throw Error("incomplete_readiness_data");
  const audited=decisions.decisions.filter(x=>x.audit?.status==="reviewed").length;
- const pending=extractPending(decisions,applicability);
+ const pending=extractPending(decisions,applicability,pdfSources);
  const counts=workforce.summary||{};
  if(!Number.isInteger(counts.total)||!Number.isInteger(counts.saudi)||!Number.isInteger(counts.nonSaudi)||counts.saudi+counts.nonSaudi!==counts.total)throw Error("invalid_workforce_snapshot");
  const catalogCount=catalog.items.length;
@@ -54,7 +61,7 @@ function build({decisions,applicability,activities,workforce,catalog,matching,gr
  const groups=safeArray(matching?.decisions);
  const checkedCodes=groups.reduce((sum,d)=>sum+safeArray(d.matchedRoles).filter(r=>r.employeeQiwaCodeVerified===true).length,0);
  const activityCodes=safeArray(activities?.activities).filter(x=>/^\d{6}$/.test(String(x.code||""))).map(x=>String(x.code));
- const activityVerified=activities?.verificationStatus==="official_cr_license_verified";
+ const activityVerified=activities?.verificationStatus==="official-verified-complete";
  const workforceFresh=typeof workforce.asOf==="string"&&workforce.asOf.length===10;
  const reportGraces=safeArray(grace?.records);
  const lines=[

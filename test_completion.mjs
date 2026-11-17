@@ -8,7 +8,7 @@ const inputs={
  decisions:read("decisions"),applicability:read("salic-applicability"),
  activities:read("salic-activities"),workforce:read("salic-workforce"),
  catalog:read("occupation-catalog"),matching:read("guide-matching"),
- grace:read("grace-periods"),health:read("health")
+ grace:read("grace-periods"),pdfSources:read("guide-pdf-sources"),health:read("health")
 };
 const result=core.build(inputs);
 assert.equal(result.decisions.total,21,"Decision watch must still include all sectors");
@@ -22,6 +22,17 @@ for(const row of result.decisions.entries) {
  assert.ok(row.limit.length>10,row.id+" needs scoped audit limitations");
  assert.ok(core.validOfficialLink(row.source),row.id+" source should be official");
 }
+const review=Object.fromEntries(result.decisions.entries.map(x=>[x.id,x]));
+assert.equal(review.housing.pdfStatus,"restricted");
+assert.equal(review.education.pdfStatus,"restricted");
+assert.equal(review.beauty.pdfStatus,"draft");
+assert.equal(review.realestate.pdfStatus,"monitored_public");
+assert.equal(review.madinah.pdfStatus,"monitored_public");
+assert.equal(review.retail7.pdfStatus,"monitored_public");
+assert.equal(review.inspection.pdfStatus,"monitored_public");
+assert.ok(review.beauty.guideUrl.includes("www.hrsd.gov.sa"));
+assert.equal(review.housing.guideUrl,null,"Do not expose restricted guide text as a public monitoring link");
+assert.ok(result.decisions.entries.every(x=>x.state==="needs_review"),"PDF monitoring never certifies the legal decision");
 assert.equal(result.catalog.total,2030);
 assert.ok(result.catalog.historical>0);
 assert.equal(result.activity.verified,false,"User-supplied activities are not a verified commercial register");
