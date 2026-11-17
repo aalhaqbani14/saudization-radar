@@ -229,11 +229,12 @@ def scan_sources(sources, old_snapshots, old_changes, fetch=download_pdf, extrac
                     changes.insert(0, entry)
                     existing.add(signal_id)
                     if any(k != 'نص آخر' and n > 0 for k, n in diff['category_counts'].items()):
+                        is_draft = 'مسودة' in source['title']
                         alert = {
                             'id': signal_id, 'source': 'الأدلة الإجرائية PDF',
-                            'title': 'تغيّر نص دليل رسمي يتطلب مراجعة: ' + source['title'],
-                            'summary': ('تغيّر نص الدليل الإجرائي «' + source['title'] +
-                                        '». راجع الفروق التفصيلية في غرفة مقارنة الأدلة؛ لا يعني التغيير صدور قرار أو نفاذ نسبة جديدة.'),
+                            'title': ('تغيّر نص مسودة منشورة يحتاج مراجعة: ' if is_draft else 'تغيّر نص دليل رسمي يتطلب مراجعة: ') + source['title'],
+                            'summary': (('تغيّر نص المسودة المنشورة «' if is_draft else 'تغيّر نص الدليل الإجرائي «') + source['title'] +
+                                        '». راجع الفروق التفصيلية في غرفة مقارنة الأدلة؛ لا يعني التغيير اعتماد الدليل أو صدور قرار أو نفاذ نسبة جديدة.'),
                             'url': url, 'detected_at': checked,
                             'review_priority': 'عالية للمراجعة',
                             'review_status': 'تغيير PDF يحتاج مراجعة بشرية',

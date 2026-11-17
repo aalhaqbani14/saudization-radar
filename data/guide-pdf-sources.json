@@ -1,7 +1,7 @@
 {
-  "updated": "2026-11-12",
-  "scope": "مقارنة الإصدارات النصية للأدلة الإجرائية الرسمية المدرجة ضمن المصادر المراقبة.",
-  "method": "official_direct_pdf_readonly_baseline_and_change_detection",
+  "updated": "2026-11-17",
+  "scope": "مراقبة نصوص 16 وثيقة PDF عامة متاحة رسميًا؛ توجد قرارات أخرى بأدلة مقيدة/غير قابلة للاستخراج وتتطلب مراجعة بشرية.",
+  "method": "official_direct_pdf_text_monitoring_restricted_sources_excluded_draft_flagged",
   "sources": [
     {
       "id": "admin",
@@ -52,6 +52,36 @@
       "id": "service",
       "title": "مهن خدمة العملاء",
       "url": "https://www.hrsd.gov.sa/sites/default/files/2022-06/21112022.pdf"
+    },
+    {
+      "id": "beauty",
+      "title": "مسودة دليل إداريات مراكز الاسترخاء والعناية الشخصية — ليست نصًا نهائيًا",
+      "url": "https://www.hrsd.gov.sa/sites/default/files/2025-11/mswdt-aldlyl-alajray-y-lqrar-twtyn-nshat-mrakz-alastrkha-wal-nayt-alshkhsyt_v11.pdf"
+    },
+    {
+      "id": "realestate",
+      "title": "الأنشطة والمهن العقارية",
+      "url": "https://www.hrsd.gov.sa/sites/default/files/2021-07/04112023.pdf"
+    },
+    {
+      "id": "aviation",
+      "title": "مهن الطيران المرخصة",
+      "url": "https://www.hrsd.gov.sa/sites/default/files/2022-06/22112022.pdf"
+    },
+    {
+      "id": "retail7",
+      "title": "منافذ البيع في سبعة أنشطة محددة",
+      "url": "https://www.hrsd.gov.sa/sites/default/files/2022-06/24112022.pdf"
+    },
+    {
+      "id": "inspection",
+      "title": "منافذ الفحص الفني الدوري للمركبات",
+      "url": "https://www.hrsd.gov.sa/sites/default/files/2022-06/25112022.pdf"
+    },
+    {
+      "id": "madinah",
+      "title": "توطين أنشطة ومهن في المدينة المنورة",
+      "url": "https://www.hrsd.gov.sa/sites/default/files/2023-07/09012023.pdf"
     }
   ]
 }
