@@ -17,7 +17,7 @@ DATA=ROOT/'data'/'alerts.json'
 STATE=ROOT/'data'/'state.json'
 HEALTH=ROOT/'data'/'health.json'
 DAILY_REPORT=ROOT/'data'/'daily-reports.json'
-EXTRACTION_VERSION=2  # Changing extraction output must reset baseline without emailing
+EXTRACTION_VERSION=2  # Lists retain established baseline; detail pages use version 3
 BASE_SOURCES=[
  {'name':'أخبار الوزارة','url':'https://www.hrsd.gov.sa/media-center/news','kind':'index'},
  {'name':'الأدلة الإجرائية','url':'https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/evidence','kind':'index'},
@@ -85,6 +85,67 @@ class Extract(HTMLParser):
   # Sorted link inventory ensures that page-link ordering changes do not fire alerts.
   return body+'\n'+'\n'.join(sorted(self.links)) if self.links else body
 
+# Primary-document extraction prevents related-story cards from causing alerts
+# attributed to a different regulatory decision. On missing structure fail closed.
+_DECISION_VOID_TAGS={'area','base','br','col','embed','hr','img','input','link','meta','param','source','track','wbr'}
+_RELATED_CLASS=re.compile(r'(?:related|recommend|swiper-slide|swiper-wrapper|latest-news|similar-news)', re.I)
+
+class DecisionExtract(Extract):
+ """Own content of one HRSD decision/news detail page, excluding related cards."""
+ def __init__(self,base_url):
+  super().__init__(base_url)
+  self.level=0;self.skip_widget=0;self.seen_main=False
+  self.capture_title=False;self.page_title='';self.description=''
+ def handle_starttag(self,tag,attrs):
+  attr=dict(attrs)
+  if tag=='title' and not self.seen_main:
+   self.capture_title=True;return
+  if tag=='meta' and attr.get('name')=='description' and not self.seen_main:
+   self.description=re.sub(r'\s+',' ',attr.get('content','')).strip()[:900]
+  if tag=='main' and not self.seen_main:
+   self.seen_main=True;self.level=1;return
+  if self.level==0:return
+  is_void=tag in _DECISION_VOID_TAGS
+  if not is_void:self.level+=1
+  if self.skip_widget:
+   if not is_void:self.skip_widget+=1
+   return
+  classes=attr.get('class','') or ''
+  if _RELATED_CLASS.search(classes) or _RELATED_CLASS.search(attr.get('id','') or ''):
+   if not is_void:self.skip_widget=1
+   return
+  super().handle_starttag(tag,attrs)
+ def handle_endtag(self,tag):
+  if tag=='title':
+   self.capture_title=False;return
+  if self.level==0:return
+  if self.skip_widget:
+   self.skip_widget-=1
+  else:
+   super().handle_endtag(tag)
+  self.level-=1
+ def handle_data(self,data):
+  if self.capture_title:
+   self.page_title+=data
+  elif self.level and not self.skip_widget:
+   super().handle_data(data)
+ def extracted_text(self):
+  primary=super().extracted_text()
+  if not self.seen_main or len(primary)<110:
+   raise ValueError('Primary document extraction unavailable')
+  title=re.sub(r'\s+',' ',self.page_title).strip()[:250]
+  return (' '.join(x for x in [title,self.description,primary] if x)).strip()
+
+def is_detail_page(url):
+ """Lists are discovery sources; individual pages require scoped extraction."""
+ path=urlsplit(url).path.rstrip('/')
+ return (('/knowledge-centre/decisions-and-regulations/regulation-and-procedures/' in path
+           and not path.endswith('/evidence')) or
+         ('/media-center/news/' in path and path!='/media-center/news'))
+
+def extraction_version(url):
+ return 3 if is_detail_page(url) else EXTRACTION_VERSION
+
 def encode_url(url):
  """Percent-encode Unicode URL path/query for urllib's ASCII HTTP request target."""
  parsed=urlsplit(url)
@@ -99,7 +160,8 @@ def get_text(url):
  })
  with urlopen(req,timeout=35) as r:
   raw=r.read(2000000).decode('utf-8','replace')
- p=Extract(url);p.feed(raw)
+ p=DecisionExtract(url) if is_detail_page(url) else Extract(url)
+ p.feed(raw)
  return p.extracted_text()
 
 def send_message(subject, body, test=False, html_body=None):
@@ -164,7 +226,7 @@ def explain_failure(exc):
   return 'connection_error','تعذر الاتصال بالمصدر'
  if isinstance(exc, UnicodeEncodeError):
   return 'url_encoding','تعذر تجهيز رابط المصدر للاتصال'
- if isinstance(exc, ValueError) and str(exc)=='Page extraction too short':
+ if isinstance(exc, ValueError) and str(exc) in ('Page extraction too short', 'Primary document extraction unavailable'):
   return 'insufficient_content','المحتوى المستخرج من الصفحة غير كافٍ للتحقق'
  if isinstance(exc, (UnicodeError, UnicodeDecodeError)):
   return 'encoding_error','تعذر قراءة ترميز المحتوى'
@@ -247,7 +309,8 @@ def main():
    if len(content)<100:raise ValueError('Page extraction too short')
    digest=hashlib.sha256(content.encode()).hexdigest()
    previous=state.get(url)
-   comparable=bool(previous and previous.get('extraction_version')==EXTRACTION_VERSION)
+   version=extraction_version(url)
+   comparable=bool(previous and previous.get('extraction_version')==version)
    if comparable and previous['hash']!=digest:
     item=detection.analyze_change(previous.get('text',''),content,src,now)
     if item:
@@ -264,7 +327,7 @@ def main():
     else:
      print('No relevant decision signal:',name)
    # First run sets baseline, no false alert
-   state[url]={'hash':digest,'text':content[:150000],'extraction_version':EXTRACTION_VERSION,'last_success_at':now};success+=1
+   state[url]={'hash':digest,'text':content[:150000],'extraction_version':version,'last_success_at':now};success+=1
    results.append({'name':name,'url':url,'kind':src.get('kind'),'status':'ok','changed':bool(comparable and previous['hash']!=digest),'first_baseline':not comparable,'last_success_at':now})
    print('Checked:',name, 'changed:',bool(comparable and previous['hash']!=digest))
   except Exception as exc:
