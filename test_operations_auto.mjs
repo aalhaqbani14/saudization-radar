@@ -15,10 +15,11 @@ const model=context.window.SalicWorkforce;
 model.setRows(workforce.rows,workforce.summary);
 const b=auto.build({decisions,model,workforce,alerts,health,today:'2026-11-11'});
 assert.equal(b.total,9,'Only the nine workforce-matched SALIC decision groups should be evaluated');
-const uniqueSummaries = new Set(alerts.alerts.filter(x => typeof x.summary === 'string')
+const uniqueSummaries = new Set(alerts.alerts.filter(x => x.triage_status !== 'context_only' && typeof x.summary === 'string')
  .map(x => x.summary.replace(/\s+/g, ' ').trim()));
 assert.equal(b.signals.length, uniqueSummaries.size, 'Show one card per unique regulatory event, even when new distinct alerts arrive');
 assert.ok(b.signals.length <= alerts.alerts.length, 'Duplicates must not increase the number of news cards');
+assert.ok(!b.signals.some(x => /طب الأسنان|الحماية الاجتماعية الكيني|السياسة الوطنية لتشجيع تكافؤ الفرص/.test(x.summary)), 'Sidebars must not appear as live SALIC alerts');
 assert.equal(b.monitored.find(x=>x.id==='admin').total,27);
 assert.equal(b.monitored.find(x=>x.id==='admin').gap,3);
 assert.equal(b.monitored.find(x=>x.id==='admin').risk.level,'attention');
