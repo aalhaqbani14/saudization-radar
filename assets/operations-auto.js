@@ -73,7 +73,7 @@ function build({decisions,model,alerts,health,workforce,today=riyadhToday()}){
  const upcoming=stages(decisions.decisions.filter(d=>linkedIds.includes(d.id)),today);
  const seen=new Set(),signals=[];
  for(const item of alerts?.alerts||[]){
-  if(!item||typeof item.summary!=="string")continue;
+  if(!item||item.triage_status==="context_only"||typeof item.summary!=="string")continue;
   const normalized=item.summary.replace(/\s+/g," ").trim();
   const key=normalized.length>=80?normalized:item.id||normalized;
   if(seen.has(key))continue;seen.add(key);
