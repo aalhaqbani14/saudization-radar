@@ -89,6 +89,18 @@ class GuidePdfMonitorTests(unittest.TestCase):
         self.assertIn('غير مؤكد',changes[0]['status'])
         self.assertEqual(second['admin']['pages'],2)
 
+    def test_published_draft_pdf_does_not_claim_final_adoption(self):
+        src=[{'id':'beauty','title':'مسودة دليل مراكز الاسترخاء — ليست نصًا نهائيًا',
+              'url':'https://www.hrsd.gov.sa/draft.pdf'}]
+        first,_,_,_=guides.scan_sources(src,{},[],fetch=lambda u:PDF_A,
+                     extract=lambda b:(lines('مسودة التوطين: نسبة 70%'),1))
+        _,_,scan,alerts=guides.scan_sources(src,first,[],fetch=lambda u:PDF_B,
+                     extract=lambda b:(lines('مسودة التوطين: نسبة 80%'),1))
+        self.assertEqual(scan[0]['status'],'changed')
+        self.assertEqual(len(alerts),1)
+        self.assertIn('مسودة',alerts[0]['title'])
+        self.assertIn('لا يعني التغيير اعتماد الدليل',alerts[0]['summary'])
+
     def test_same_extracted_text_different_binary_no_false_alert(self):
         src=[{'id':'admin','title':'المهن الإدارية المساندة','url':'https://www.hrsd.gov.sa/a.pdf'}]
         line=lines('نسبة التوطين 100% وتاريخ النفاذ في الدليل')
