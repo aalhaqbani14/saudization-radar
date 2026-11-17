@@ -1,1 +1,88 @@
-<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>مساعد التوطين الاسترشادي | رادار التوطين</title><style>:root{font-family:Tahoma,Arial,sans-serif;background:#f3f7f8;color:#163448}body{margin:0}*{box-sizing:border-box}header{background:#0b2533;color:white;padding:28px max(18px,calc((100vw - 950px)/2))}header a{color:#a3e8d8}main{max-width:950px;margin:26px auto;padding:0 18px}.panel{background:white;padding:24px;border:1px solid #dfebed;border-radius:16px;margin-bottom:18px}h1{font-size:26px}p{line-height:2}select,button{font:inherit;padding:12px;border-radius:10px}select{width:100%;border:1px solid #c7dadd;background:white}button{background:#087f78;color:white;border:0;cursor:pointer;margin-top:12px}.result{background:#edf7f3;padding:20px;border-radius:12px;margin-top:18px;line-height:2}small{color:#627b83}a{color:#087f78}</style></head><body><header><a href="index.html">← العودة للوحة الرئيسية</a><h1>مساعد التوطين الاسترشادي</h1><p>تفسير مبني على قواعد بيانات المشروع مع الإحالة للمصادر الرسمية</p></header><main><section class="panel"><strong>حدود الخدمة</strong><p>هذا الإصدار مساعد قواعد وبيانات، <b>وليس مستشار ذكاء اصطناعي توليديًا</b>. لا يرسل البيانات إلى أي خدمة خارجية، ولا يغيّر القرارات أو بيانات الموظفين. النتائج ليست فتوى نظامية ولا إثبات امتثال.</p></section><section class="panel"><label for="decision">اختر القرار المراد تحليله</label><select id="decision"><option>جارٍ تحميل القرارات…</option></select><button id="analyze" type="button">تحليل القرار</button><div class="result" id="result" aria-live="polite">اختر قرارًا ثم اضغط تحليل القرار.</div></section><section class="panel"><h2>منهجية التحليل</h2><p>نقارن المسميات الوظيفية المجمعة مع قائمة الربط الأولية، ونحسب فجوة افتراضية فقط عندما تسمح قاعدة القرار بذلك. القرارات المشروطة بالنشاط أو الأجر أو الرمز المهني أو تقسيم المجموعات تُحال للمراجعة دون فجوة إلزامية.</p><a href="executive-brief.html">الموجز التنفيذي للطباعة</a></section></main><script src="assets/workforce-model.js"></script><script>(function(){const $=id=>document.getElementById(id),esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));let decisions=new Map();Promise.all([window.SalicWorkforce.load(),fetch('data/decisions.json').then(r=>r.json())]).then(([_,db])=>{decisions=new Map((db.decisions||[]).map(d=>[d.id,d]));$('decision').innerHTML=Object.keys(window.SalicWorkforce.names).map(id=>'<option value="'+esc(id)+'">'+esc(window.SalicWorkforce.names[id])+'</option>').join('');$('analyze').onclick=()=>{const id=$('decision').value,g=window.SalicWorkforce.group(id),official=window.SalicWorkforce.official(id),d=decisions.get(id);let conclusion=official?'توجد مؤشرات وزارة مؤرخة تخص هذا القرار، ويجب مراجعة تاريخها ونطاقها.':g.status==='estimate'?'توجد فجوة حسابية افتراضية، وليست مخالفة مثبتة.':g.status==='future'?'هذه فجوة تخطيطية لمرحلة مستقبلية، وليست فجوة حالية مثبتة.':'لا يمكن حساب فجوة إلزامية موثوقة من المسميات وحدها.';const gap=official?official.numericGap:(g.gap===null?'غير محددة':g.gap);$('result').innerHTML='<h2>'+esc(window.SalicWorkforce.names[id])+'</h2><p><b>الموظفون المطابقون نصيًا:</b> '+g.total+' · <b>السعوديون:</b> '+g.saudi+' · <b>غير السعوديين:</b> '+g.other+'</p><p><b>الفجوة:</b> '+esc(gap)+' · <b>النتيجة:</b> '+esc(conclusion)+'</p><p><b>التفسير:</b> '+esc(g.reason)+'</p><p><b>خطوة العمل:</b> تحقق من الرموز المهنية والحد الأدنى والنشاط والمراحل والأجر والاستثناءات وتداخل القرارات قبل اتخاذ أي إجراء.</p>'+(d&&String(d.source||'').startsWith('https://www.hrsd.gov.sa/')?'<a target="_blank" rel="noopener noreferrer" href="'+esc(d.source)+'">فتح المصدر الرسمي للقرار</a>':'<small>المصدر الرسمي غير متاح في السجل الحالي</small>')};$('analyze').click()}).catch(()=>{$('result').textContent='تعذر تحميل قاعدة البيانات؛ يرجى تحديث الصفحة.'})})();</script></body></html>
+<!doctype html>
+<html lang="ar" dir="rtl"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b2533"><meta name="referrer" content="no-referrer">
+<meta name="description" content="المساعد الاسترشادي لمراجعة أدلة القرارات المهنية ومطابقة البيانات المجمعة لسالك">
+<title>مساعد التوطين الاسترشادي | رادار التوطين</title>
+<style>
+:root{font-family:Tahoma,"Segoe UI",Arial,sans-serif;background:#f3f7f8;color:#163448;font-variant-numeric:tabular-nums}
+*{box-sizing:border-box}body{margin:0}button,input,select{font:inherit}a{color:#0b7e75;text-decoration:none}a:hover{text-decoration:underline}
+button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #38ad9d;outline-offset:2px}
+header{background:linear-gradient(118deg,#0a2637,#0e645e);color:#fff;padding:28px max(18px,calc((100vw - 1180px)/2))}
+header a{color:#aaeee0;font-size:12px}header h1{font-size:clamp(24px,4vw,34px);margin:12px 0 8px}header p{font-size:12px;line-height:2;color:#cce6e3;margin:0;max-width:920px}
+main{max-width:1180px;margin:24px auto;padding:0 17px 44px}
+.notice{background:#fff8eb;border:1px solid #e8d4aa;color:#765a2d;border-radius:12px;padding:15px 19px;font-size:12px;line-height:2;margin:15px 0}
+.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:15px 0}
+.metric{background:#fff;border:1px solid #dfe8ec;border-radius:13px;padding:17px;min-width:0}
+.metric small{display:block;color:#607686;font-size:11px;line-height:1.7}
+.metric strong{display:block;font-size:27px;margin-top:10px;color:#096f69}
+.box{background:white;border:1px solid #e0e9ed;border-radius:15px;padding:20px;margin:17px 0}
+.box h2{font-size:18px;margin:0 0 10px}
+.box p{font-size:12px;color:#617986;line-height:1.95;margin:8px 0}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin:15px 0}
+.filters label{font-size:12px;color:#4c6778;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.filters select,.filters input{padding:11px 12px;border:1px solid #ccdce0;background:#fbfdfd;border-radius:9px;font-size:12px;max-width:100%;color:#183b4d}
+.filters input{flex:1;min-width:230px}
+.box .actions{display:flex;gap:8px;flex-wrap:wrap}
+.actions a,.actions button{display:inline-block;padding:10px 13px;background:#e9f7f2;border:1px solid #b8e1d8;border-radius:9px;color:#075f57;font-weight:700;font-size:12px;cursor:pointer}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.card{border:1px solid #dfe8eb;background:white;border-radius:14px;padding:18px;min-width:0;box-shadow:0 3px 16px #072c3a09}
+.card h3{font-size:16px;margin:10px 0 7px;line-height:1.7}
+.card p{font-size:12px;color:#5c7180;line-height:1.9;margin:8px 0}
+.card small{font-size:11px;color:#68818b;line-height:1.9;display:block}
+.card-top{display:flex;justify-content:space-between;gap:9px;align-items:flex-start;flex-wrap:wrap}
+.chip{border-radius:8px;padding:5px 9px;background:#e9f6f3;color:#126a5e;font-size:11px;font-weight:bold}
+.chip.warn{background:#fff0de;color:#875524}
+.chip.muted{background:#edf2f4;color:#49636d}
+.facts{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0}
+.facts span{font-size:11px;padding:6px 8px;background:#f0f6f7;color:#456474;border-radius:7px}
+.card details{margin-top:12px;border-top:1px solid #e5edef;padding-top:10px}
+.card summary{color:#0a736b;font-size:12px;font-weight:800;cursor:pointer}
+.card details h4{font-size:12px;margin:13px 0 5px}
+.card ul{margin:3px 0 10px;padding-right:20px;font-size:12px;line-height:2;color:#566d7a}
+.card li{margin:3px 0}
+.card .evidence-link{display:inline-block;padding:6px 9px;border-radius:7px;background:#e9f7f2;margin:4px 0 0 8px;font-size:11px}
+.card .gap-warning{background:#fff7e6;border:1px solid #f1e1bf;padding:10px;border-radius:9px;color:#7f5827}
+#status{font-size:12px;color:#607985}
+#status.error{background:#fff0eb;border:1px solid #f7d5c6;color:#942f28;padding:15px;border-radius:12px}
+.legend{border:1px solid #dde9e9;border-radius:11px;background:#f5faf8;padding:12px 15px;font-size:11px;line-height:2;color:#516d71;margin-top:13px}
+@media(max-width:820px){.cards{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:500px){.filters{flex-direction:column}.filters label{align-items:stretch;flex-direction:column}.filters select,.filters input{width:100%}.box{padding:15px}.metric strong{font-size:23px}}
+@media print{header{background:white;color:#18414d;padding:12px}.filters,.actions{display:none}.card{break-inside:avoid;box-shadow:none}.cards{grid-template-columns:1fr}.card details{display:block}.card details:not([open]){display:none}}
+</style>
+<script src="assets/workforce-model.js" defer></script>
+<script src="assets/evidence-advisor.js" defer></script>
+<script src="assets/advisor-ui.js" defer></script>
+</head><body>
+<header>
+<a href="index.html">← العودة للوحة المتابعة</a>
+<h1>مساعد التوطين الاسترشادي</h1>
+<p>تحليل جميع القرارات الـ21 وربطها بالأدلة الرسمية المتاحة، مع إبراز نقاط التحقق وبيانات SALIC المجمعة. محرك قواعد قابل للتدقيق، للقراءة فقط، ولا ينفذ إجراءات وظيفية.</p>
+</header>
+<main>
+<div class="notice"><b>تنبيه مهني:</b> مسميات الموظفين ليست رموز قوى، وقائمة أنشطة SALIC لم تُعتمد من السجل والترخيص الرسمي. استرشاد المساعد لا يثبت الامتثال أو المخالفة أو الإعفاء، وأي وثيقة مسودة أو مقيّدة تتطلب تحققًا بشريًا قبل الاستناد إليها.</div>
+<section class="metrics" aria-label="حالة أدلة القرارات">
+<div class="metric"><small>القرارات المراقبة</small><strong id="m-total">—</strong></div>
+<div class="metric"><small>المراجعات الأساسية المكتملة</small><strong id="m-reviewed">—</strong></div>
+<div class="metric"><small>قرارات لم يُغلق تدقيقها</small><strong id="m-pending">—</strong></div>
+<div class="metric"><small>أدلة عامة في الرصد النصي</small><strong id="m-pdfs">—</strong></div>
+</section>
+<section class="box"><h2>قرارات التوطين والأدلة المطلوبة</h2>
+<p id="status" role="status" aria-live="polite">جارٍ تحميل القرارات والأدلة…</p>
+<div class="filters">
+<label for="filter">حالة التدقيق
+<select id="filter"><option value="all">جميع القرارات</option><option value="pending">التدقيق التفصيلي المتبقي</option><option value="reviewed">المراجعة الأساسية مكتملة</option><option value="workforce">توجد صلة بالمسميات المجمعة</option></select></label>
+<label for="sort">الترتيب
+<select id="sort"><option value="priority">بحسب أولوية التحقق</option><option value="name">حسب المسمى</option></select></label>
+<input id="query" type="search" placeholder="ابحث عن قرار أو مهنة…" aria-label="البحث في القرارات">
+</div>
+<div class="actions"><a href="completion.html">مركز استكمال المحاور التسعة</a><a href="workforce-import.html">فحص رموز قوى محليًا</a><a href="guide-changes.html">مقارنة تغييرات الأدلة</a><button id="print" type="button">طباعة الملخص</button></div>
+<div class="legend">التحليل يعرض الحالات كلها دون استبعاد أي قرار من الرصد. الأولوية هنا تعني ترتيب المراجعة بناءً على صلة المسميات ووجود دليل، وليست شدة مخالفة أو درجة امتثال.</div>
+</section>
+<div id="cards" class="cards" aria-live="polite"></div>
+<section class="box"><h2>ما يمنع اعتماد النتائج الآن؟</h2>
+<p id="snapshot">لا تتوفر لقطة الموظفين بعد.</p>
+<p>يلزم الحصول على بيانات قوى الفعلية، والأجور والاعتمادات عند اشتراطها، والسجل والأنشطة والتراخيص والفروع الرسمية، ثم اعتماد تفاصيل الدليل والإجراءات مع المختص. لا تُرفع سجلات فردية إلى GitHub أو إلى هذه الصفحة.</p>
+</section>
+</main>
+</body></html>
