@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#077d61"><meta name="referrer" content="no-referrer">
+<meta name="description" content="أدوات المرحلة الثانية لرادار التوطين — تحليل الأثر والأدلة والتعارضات ومحاكاة القوى العاملة">
+<title>مركز قيادة المرحلة الثانية | رادار التوطين</title>
+<link rel="stylesheet" href="assets/phase-two.css">
+<script src="assets/workforce-model.js" defer></script>
+<script src="assets/phase-two-model.js" defer></script>
+<script src="assets/phase-two-ui.js" defer></script>
+</head>
+<body>
+<header><a href="index.html">← الرئيسية</a> · <a href="advisor.html">المساعد الاسترشادي</a> · <a href="operations-team.html">غرفة العمليات المشتركة</a>
+<h1>مركز قيادة رادار التوطين <span style="font-size:13px;background:#ffffff24;border:1px solid #8fd2b5;padding:7px 11px;border-radius:12px;vertical-align:middle">المرحلة الثانية</span></h1>
+<p>ثماني قدرات استرشادية تساعد على ترتيب الأدلة، اكتشاف التداخل، تحليل الأثر وتخطيط الاحتياج الوظيفي. لا تعتمد نتائجها قانونيًا دون مراجعة الرموز الفعلية وأنشطة وترخيص SALIC والدليل الساري.</p>
+</header>
+<main>
+<div class="notice"><b>حدود البيانات:</b> آخر لقطة معلنة للقوى العاملة هي 3 نوفمبر 2026. الأدوات تستخدم بيانات مجمعة ومصادر الرادار الحالية، ولا تتصل بحسابات قوى أو السجل التجاري. لا تعرض «100% امتثال»، ولا تغيّر الأعداد أو النسب أو القرارات تلقائيًا.</div>
+<div class="kpis">
+<div class="kpi"><small>القرارات في الرادار</small><strong id="k-decisions">—</strong></div>
+<div class="kpi"><small>تدقيق تفصيلي معلّق</small><strong id="k-pending">—</strong></div>
+<div class="kpi"><small>موظفون في لقطة مجمعة</small><strong id="k-workforce">—</strong></div>
+<div class="kpi"><small>مصادر رُصدت في آخر فحص</small><strong id="k-sources">—</strong></div>
+</div>
+<nav class="quicknav" aria-label="أدوات المرحلة الثانية">
+<a href="#impact"><b>◎</b> خريطة تأثير القرارات</a>
+<a href="#readiness"><b>☷</b> جاهزية البيانات</a>
+<a href="#conflicts"><b>⇄</b> تعارض القرارات</a>
+<a href="#timeline"><b>◷</b> آلة الزمن التنظيمية</a>
+<a href="#approvals"><b>✓</b> غرفة مراجعة الاعتمادات</a>
+<a href="#forecast"><b>▥</b> تخطيط 12 شهرًا</a>
+<a href="#vault"><b>▣</b> خزنة الأدلة المشفرة</a>
+<a href="#changes"><b>⟳</b> التغيير منذ آخر زيارة</a>
+</nav>
+<p class="muted" id="load-status" role="status" aria-live="polite">جارٍ تحميل الأدلة والبيانات المجمعة…</p>
+
+<section id="impact" class="section">
+<div class="heading"><div><h2>1. خريطة تأثير القرارات على SALIC</h2><p>تعرف على المهن المتصلة نصيًا والأنشطة أو التراخيص المطلوبة لكل قرار قبل اتخاذ إجراء.</p></div><span class="tag warn">استرشادي · دون حكم انطباق</span></div>
+<div class="controls">
+<label>نوع العلاقة<select id="impact-filter"><option value="all">كل القرارات</option><option value="titles">توجد مسميات متصلة</option><option value="licensed">نشاط أو ترخيص أو موقع</option><option value="pending">تحتاج تدقيقًا تفصيليًا</option></select></label>
+<label>بحث في القرارات<input id="impact-query" type="search" placeholder="المسمى أو رقم القرار…"></label>
+</div>
+<p class="small" id="impact-count"></p>
+<div class="scroll"><table><thead><tr><th>القرار</th><th>صلة مسميات SALIC</th><th>شرط النطاق</th><th>الدليل</th></tr></thead><tbody id="impact-rows"><tr><td colspan="4">جارٍ التحميل…</td></tr></tbody></table></div>
+</section>
+
+<section id="readiness" class="section">
+<div class="heading"><div><h2>2. بطاقة جاهزية أدلة القرار</h2><p>قائمة تحقق يمكن طباعتها؛ لا تُعد شهادة امتثال أو اعتمادًا حكوميًا.</p></div><span class="tag">إثباتات وشروط</span></div>
+<div class="controls"><label>اختر القرار<select id="readiness-decision"><option value="">جارٍ تحميل القرارات…</option></select></label><button id="readiness-print" type="button" class="btn no-print">طباعة البطاقة</button></div>
+<div id="readiness-result" class="status">اختر القرار لعرض المتطلبات.</div>
+<ul id="readiness-checks" class="checks"></ul>
+<p class="warn-note">اكتمال مراجعة البيانات الأساسية لا يساوي إثبات انطباق القرار. رموز قوى والرواتب والاعتمادات والتراخيص الرسمية غير متاحة في بيانات الرادار العامة.</p>
+</section>
+
+<section id="conflicts" class="section">
+<div class="heading"><div><h2>3. كاشف التعارض والاحتساب المكرر</h2><p>تقاطعات رموز الأدلة ومسميات الموظفين وتنبيهات المهن ذات التصنيف التنظيمي المنفصل.</p></div><span class="tag warn">مؤشرات تحتاج مراجعة</span></div>
+<div id="conflicts-summary" class="status">جارٍ تحليل التداخلات…</div>
+<div class="scroll"><table><thead><tr><th>النوع</th><th>المسمى أو الرمز</th><th>المجموعات المرتبطة</th><th>التصرف المطلوب</th></tr></thead><tbody id="conflicts-rows"><tr><td colspan="4">جارٍ التحميل…</td></tr></tbody></table></div>
+</section>
+
+<section id="timeline" class="section">
+<div class="heading"><div><h2>4. آلة الزمن التنظيمية</h2><p>عرض الأحداث المسجلة ذات التواريخ والمصادر الموثقة حتى التاريخ المختار، دون اختلاق نسخ تاريخية مفقودة.</p></div><span class="tag">سجل زمني موثق جزئيًا</span></div>
+<div class="controls"><label>اعرض ما كان موثقًا حتى تاريخ<input type="date" id="timeline-date"></label><button type="button" class="btn" id="timeline-show">تحديث التسلسل</button></div>
+<div class="status" id="timeline-count">لا يتوفر سجل معروض بعد.</div>
+<div class="scroll"><table><thead><tr><th>التاريخ</th><th>القرار</th><th>الحدث</th><th>المصدر</th></tr></thead><tbody id="timeline-rows"></tbody></table></div>
+<p class="warn-note">آلة الزمن تعرض المراحل المسجلة فقط، وليس نسخة تاريخية كاملة من موقع الوزارة أو بيانات الموظفين؛ لا تصلح وحدها لإثبات مخالفة قديمة.</p>
+</section>
+
+<section id="approvals" class="section">
+<div class="heading"><div><h2>5. غرفة مراجعة الاعتمادات</h2><p>جهّز سجل مراجعة محليًا وصدّره لمشاركة مؤمنة عبر قنوات الشركة؛ لا تُنشئ هذه الصفحة اعتمادًا رسميًا أو صلاحية دخول.</p></div><span class="tag warn">مسودات محلية · لا مزامنة</span></div>
+<div class="controls">
+<label>القرار<select id="approval-decision"></select></label>
+<label>حالة المسودة<select id="approval-status"><option value="requires_review">تحتاج مراجعة</option><option value="awaiting_evidence">بانتظار أدلة</option><option value="ready_for_approval">جاهزة للعرض على المعتمد</option></select></label>
+<label>اسم المراجع أو الجهة (اختياري)<input id="approval-owner" placeholder="القسم المعني" maxlength="100"></label>
+</div>
+<label for="approval-note" class="small">ملحوظة مختصرة بدون بيانات موظفين أو مستندات سرية</label>
+<textarea id="approval-note" maxlength="700" placeholder="ما الذي تمت مراجعته؟ وما الأدلة الناقصة؟"></textarea>
+<div class="controls no-print">
+<button id="approval-add" type="button" class="btn primary">إضافة مسودة إلى الحزمة</button>
+<button id="approval-export" type="button" class="btn">تصدير حزمة JSON محلية</button>
+<label class="btn" style="display:inline-flex;cursor:pointer;flex:0 0 auto">استيراد حزمة محلية<input id="approval-import" type="file" accept=".json,application/json" style="display:none"></label>
+<button id="approval-clear" type="button" class="btn">مسح المسودات</button>
+</div>
+<div class="status" id="approval-message">لا توجد مراجعات محفوظة. المسودات تحتفظ بها الصفحة مؤقتًا حتى إغلاقها أو تصديرها.</div>
+<div class="scroll"><table><thead><tr><th>القرار</th><th>حالة المسودة</th><th>المراجع</th><th>الملاحظات</th></tr></thead><tbody id="approval-rows"></tbody></table></div>
+<p class="warn-note">للاعتماد المشترك بصلاحيات موثقة وسجل تدقيق مركزي، يلزم تشغيل <a href="operations-team.html">غرفة العمليات المشتركة</a> على قاعدة بيانات خاصة مع تسجيل دخول وصلاحيات. إعداد الربط السحابي الحالي غير مفعّل؛ حزمة JSON ليست توقيعًا ولا اعتمادًا.</p>
+</section>
+
+<section id="forecast" class="section">
+<div class="heading"><div><h2>6. توقع احتياج القوى العاملة خلال 12 شهرًا</h2><p>سيناريو تخطيطي بالأعداد التي تحددها. لا يُحوّل أي تدريب إلى سعودي جديد ولا يدّعي امتثالًا نظاميًا.</p></div><span class="tag">محاكاة افتراضية</span></div>
+<div class="controls">
+<label>بداية السيناريو<input id="forecast-start" type="month"></label>
+<label>توظيف سعودي كل شهر<input id="forecast-hire" type="number" min="0" max="1000" step="1" value="0"></label>
+<label>إحلال حقيقي كل شهر<input id="forecast-replace" type="number" min="0" max="1000" step="1" value="0"></label>
+<label>تأهيل سعودي كل شهر<input id="forecast-train" type="number" min="0" max="1000" step="1" value="0"></label>
+<label>تكلفة شهرية مفترضة لكل إضافة (ر.س)<input id="forecast-salary" type="number" min="0" max="1000000" step="100" value="0"></label>
+<label>تكلفة التأهيل لكل متدرب (ر.س)<input id="forecast-training-cost" type="number" min="0" max="1000000" step="100" value="0"></label>
+</div>
+<div class="controls"><button id="forecast-run" class="btn primary" type="button">احسب السيناريو</button><button id="forecast-csv" class="btn no-print" disabled type="button">تصدير سيناريو CSV</button></div>
+<div id="forecast-summary" class="status">أدخل افتراضات السيناريو.</div>
+<div class="scroll"><table><thead><tr><th>الشهر</th><th>إجمالي الموظفين</th><th>السعوديون</th><th>غير السعوديين</th><th>نسبة السعوديين من الشركة</th><th>تكلفة الإضافات التقديرية / الشهر</th></tr></thead><tbody id="forecast-rows"></tbody></table></div>
+<p class="warn-note">النسبة هنا نسبة الجنسية في القوى العاملة المجمعة، وليست نسبة الالتزام بقرار توطين. التكلفة لا تشمل المزايا والبدلات أو فروقات أجور الإحلال أو إنهاء العقود. قارن النتائج بدليل كل مهنة بعد التحقق من قوى.</p>
+</section>
+
+<section id="vault" class="section">
+<div class="heading"><div><h2>7. خزنة الأدلة والمستندات المشفرة</h2><p>أداة محلية لتشفير ملف قبل حفظه أو مشاركته عبر قناة تختارها، دون رفعه إلى الموقع أو GitHub.</p></div><span class="tag">تشفير محلي AES-GCM</span></div>
+<div class="grid">
+<div class="tile"><h3>تشفير قبل الحفظ</h3><p>اختر ملفًا غير منشور، عيّن كلمة مرور قوية، ونزّل نسخة مشفرة. يمكن فكها على الجهاز المرخص الذي يحمل كلمة المرور.</p><a href="vault.html" class="btn primary">فتح الخزنة المحلية</a></div>
+<div class="tile"><h3>مشاركة الاعتمادات بشكل مؤسسي</h3><p>المزامنة بينك وبين المدير، والتحكم بالصلاحيات، وسجل الدخول والموافقة تحتاج منصة خاصة معتمدة من SALIC وليست GitHub Pages العامة.</p><a href="operations-team.html" class="btn">تفاصيل غرفة العمليات المشتركة</a></div>
+</div>
+</section>
+
+<section id="changes" class="section">
+<div class="heading"><div><h2>8. ماذا تغيّر منذ آخر زيارة؟</h2><p>مقارنة معرفات التنبيهات وحالات القرارات المنشورة بآخر لقطة حفظها هذا المتصفح فقط.</p></div><span class="tag">محلي لهذا المتصفح</span></div>
+<div id="visit-summary" class="status">جارٍ مقارنة التغييرات…</div>
+<div class="grid"><div class="tile"><h3>إشارات جديدة في السجل النشط</h3><div id="visit-alerts" class="small">—</div></div><div class="tile"><h3>تغييرات بيانات القرارات</h3><div id="visit-decisions" class="small">—</div></div></div>
+<div class="controls"><button id="visit-ack" type="button" class="btn primary">اعتبار الحالي آخر زيارة</button><a class="btn" href="daily-reports.html">سجل الرصد اليومي الكامل</a></div>
+<p class="warn-note">لا يراقب هذا القسم في الخلفية؛ هو مقارنة محلية عند فتح الصفحة. الفحص الدوري المستقل يظل في GitHub Actions، وظهور «لا تغييرات» ليس إثباتًا لعدم صدور قرار رسمي.</p>
+</section>
+<footer>رادار التوطين · أدوات المرحلة الثانية · للتحليل والتخطيط فقط · لا يصدر حكم امتثال ولا يرسل بيانات الموظفين إلى خادم</footer>
+</main></body></html>
