@@ -1,0 +1,92 @@
+{
+  "version": 2,
+  "approvedOn": "2026-11-17",
+  "design": "light-white-emerald-green-KAFD",
+  "designApproval": "approved-by-user",
+  "lastUpdated": "2026-11-17",
+  "policy": "Read-only analysis; never modify SALIC employees, Qiwa, ministerial rates or compliance state from estimates.",
+  "audience": "Same full visibility for user and manager when organization-backed access is authorized; not public publication of private records.",
+  "items": [
+    {
+      "id": "impact",
+      "title": "خريطة تأثير القرارات",
+      "status": "implemented_read_only_preview",
+      "requires": [
+        "official employee Qiwa codes",
+        "company licensed branches",
+        "regulatory applicability verification"
+      ]
+    },
+    {
+      "id": "readiness",
+      "title": "شهادة جاهزية البيانات",
+      "status": "implemented_evidence_checklist_not_certificate",
+      "requires": [
+        "verified employee evidence",
+        "legal review"
+      ]
+    },
+    {
+      "id": "conflicts",
+      "title": "كاشف تعارض القرارات",
+      "status": "implemented_title_and_guide_crosscheck",
+      "requires": [
+        "individual Qiwa code verification",
+        "authoritative rule precedence"
+      ]
+    },
+    {
+      "id": "timeline",
+      "title": "آلة الزمن التنظيمية",
+      "status": "implemented_verified_events_only",
+      "requires": [
+        "complete archived snapshots for past-point-in-time statements"
+      ]
+    },
+    {
+      "id": "approvals",
+      "title": "غرفة اعتماد المراجعات",
+      "status": "local_draft_package_only",
+      "requires": [
+        "organization Supabase project",
+        "SSO/auth configuration",
+        "RLS and manager permissions",
+        "audit approval policy"
+      ]
+    },
+    {
+      "id": "forecast",
+      "title": "توقع الاحتياج لمدة 12 شهرًا",
+      "status": "implemented_hypothetical_scenarios",
+      "requires": [
+        "validated workforce counts",
+        "approved cost assumptions",
+        "job-specific legal rate confirmation"
+      ]
+    },
+    {
+      "id": "vault",
+      "title": "خزنة الأدلة والمستندات",
+      "status": "implemented_local_encrypted_file_transfer",
+      "requires": [
+        "company-authorized protected backend for shared vault",
+        "SSO/permissions and backups",
+        "managed key recovery if required"
+      ]
+    },
+    {
+      "id": "changes",
+      "title": "ماذا تغير منذ آخر زيارة",
+      "status": "implemented_local_browser_comparison",
+      "requires": [
+        "central shared cross-device read receipts if demanded"
+      ]
+    }
+  ],
+  "regulatoryAudit": {
+    "total": 21,
+    "reviewedBasic": 12,
+    "stillNeedsLegalReview": 9
+  },
+  "note": "An implemented planning preview is not the same as legally validated company compliance or a live enterprise data integration."
+}
