@@ -53,6 +53,10 @@ name: Radar quality checks
       - 'completion.html'
       - 'assets/completion-model.js'
       - 'assets/completion.js'
+      - 'advisor.html'
+      - 'assets/evidence-advisor.js'
+      - 'assets/advisor-ui.js'
+      - 'test_evidence_advisor.mjs'
       - 'test_completion.mjs'
       - 'assets/occupation-catalog.js'
       - 'data/occupation-catalog.json'
@@ -86,6 +90,11 @@ jobs:
           node --check assets/completion-model.js
           node --check assets/completion.js
           node test_completion.mjs
+      - name: Test read-only source-gated advisor and safe UI
+        run: |
+          node --check assets/evidence-advisor.js
+          node --check assets/advisor-ui.js
+          node test_evidence_advisor.mjs
       - name: Verify compact services navigation
         run: |
           node --check assets/services-menu.js
