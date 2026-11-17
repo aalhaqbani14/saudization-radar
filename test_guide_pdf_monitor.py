@@ -23,16 +23,21 @@ class GuidePdfMonitorTests(unittest.TestCase):
             guides.validated_sources({'sources': [
                 {'id':'admin','title':'المهن الإدارية المساندة','url':'https://www.hrsd.gov.sa/a.html'}]})
 
-    def test_registered_public_pdf_sources_are_ten_and_unique(self):
+    def test_registered_public_pdf_sources_are_sixteen_and_unique(self):
         original = guides.read_json(guides.SOURCE_REGISTRY, {'sources': []})
         found = guides.validated_sources(original)
-        self.assertEqual(len(found), 10)
-        self.assertEqual({x['id'] for x in found},
-                         {'admin', 'accounting', 'postal', 'procurement',
-                          'marketing', 'sales', 'legal', 'ict', 'consulting', 'service'})
-        # Publicly listed project-management PDF carries 'Classification: Strict'
-        # and must not be snapshotted into this public repository.
-        self.assertNotIn('project', [x['id'] for x in found])
+        self.assertEqual(len(found), 16)
+        expected = {'admin','accounting','postal','procurement','marketing','sales',
+                    'legal','ict','consulting','service','beauty','realestate','aviation',
+                    'retail7','inspection','madinah'}
+        self.assertEqual({x['id'] for x in found}, expected)
+        # Files flagged restricted by their authors must not be snapshotted.
+        for prohibited in ('project','housing','education'):
+            self.assertNotIn(prohibited, {x['id'] for x in found})
+        draft = next(x for x in found if x['id']=='beauty')
+        self.assertIn('مسودة',draft['title'])
+        self.assertTrue(all(x['url'].startswith('https://www.hrsd.gov.sa/')
+                            and x['url'].lower().endswith('.pdf') for x in found))
 
     def test_restricted_label_is_rejected_before_public_snapshot(self):
         source = [{'id': 'project', 'title': 'مهن إدارة المشاريع',
