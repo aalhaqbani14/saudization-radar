@@ -201,7 +201,10 @@
           "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-المهن-المحاسبية"
         }
       ],
-      "source_count": 14
+      "source_count": 14,
+      "triage_status": "context_only",
+      "triage_note": "نص السياسة الوطنية لتكافؤ الفرص ورد في قسم الإجراءات المرتبطة؛ ليس تغييرًا مثبتًا في قرار توطين المدينة المنورة",
+      "triaged_on": "2026-11-17"
     },
     {
       "id": "13ceb449849ce609",
@@ -234,7 +237,10 @@
           "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لتوطين-مهن-إدارة-المشاريع"
         }
       ],
-      "source_count": 1
+      "source_count": 1,
+      "triage_status": "context_only",
+      "triage_note": "خبر طب الأسنان ورد في قسم الإجراءات المرتبطة بصفحة إدارة المشاريع؛ ليس تغييرًا في دليل إدارة المشاريع",
+      "triaged_on": "2026-11-17"
     },
     {
       "id": "e62a460c67b83365",
@@ -267,7 +273,10 @@
           "url": "https://www.hrsd.gov.sa/knowledge-centre/decisions-and-regulations/regulation-and-procedures/الدليل-الإجرائي-لقرار-توطين-المهن-الإدارية-المساندة"
         }
       ],
-      "source_count": 1
+      "source_count": 1,
+      "triage_status": "context_only",
+      "triage_note": "خبر طب الأسنان ورد في قسم الإجراءات المرتبطة بصفحة المهن الإدارية المساندة؛ ليس تغييرًا في دليلها",
+      "triaged_on": "2026-11-17"
     },
     {
       "id": "74087bf696207dd6",
@@ -292,7 +301,10 @@
           "url": "https://www.hrsd.gov.sa/media-center/news/التوطين-في-مهن-التسويق-والمبيعات"
         }
       ],
-      "source_count": 1
+      "source_count": 1,
+      "triage_status": "context_only",
+      "triage_note": "خبر استقدام العمالة المنزلية من كينيا ورد ضمن أخبار جانبية؛ ليس قرار توطين التسويق",
+      "triaged_on": "2026-11-17"
     },
     {
       "id": "3c68a4ff551b2d5f",
@@ -317,7 +329,10 @@
           "url": "https://www.hrsd.gov.sa/media-center/news/رفع-نسب-توطين-مهن-إدارة-المشاريع-0"
         }
       ],
-      "source_count": 1
+      "source_count": 1,
+      "triage_status": "context_only",
+      "triage_note": "خبر استقدام العمالة المنزلية من كينيا ورد ضمن أخبار جانبية؛ ليس قرار توطين إدارة المشاريع",
+      "triaged_on": "2026-11-17"
     },
     {
       "id": "1ceb78a5c04726bf",
@@ -342,7 +357,10 @@
           "url": "https://www.hrsd.gov.sa/media-center/news/رفع-نسبة-التوطين-في-مهن-المشتريات"
         }
       ],
-      "source_count": 1
+      "source_count": 1,
+      "triage_status": "context_only",
+      "triage_note": "خبر استقدام العمالة المنزلية من كينيا ورد ضمن أخبار جانبية؛ ليس قرار توطين المشتريات",
+      "triaged_on": "2026-11-17"
     },
     {
       "id": "6bffe7ca333b54d8",
@@ -367,7 +385,10 @@
           "url": "https://www.hrsd.gov.sa/media-center/news"
         }
       ],
-      "source_count": 1
+      "source_count": 1,
+      "triage_status": "context_only",
+      "triage_note": "خبر استقدام العمالة المنزلية من كينيا ليس تغييرًا موثقًا في قرار توطين؛ مسجل للأرشفة فقط",
+      "triaged_on": "2026-11-17"
     },
     {
       "id": "bbf9e66df03d2757",

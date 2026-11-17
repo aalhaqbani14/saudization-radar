@@ -58,8 +58,8 @@ class TestMonitorHealth(unittest.TestCase):
         self.state.write_text(json.dumps(legacy, ensure_ascii=False), encoding="utf-8")
         monitor.main()
         state=json.loads(self.state.read_text(encoding="utf-8"))
-        self.assertTrue(all(x["extraction_version"]==monitor.EXTRACTION_VERSION
-                            for x in state.values()))
+        self.assertTrue(all(state[src["url"]]["extraction_version"]==monitor.extraction_version(src["url"])
+                            for src in SOURCES))
         health=json.loads(self.health.read_text(encoding="utf-8"))
         self.assertTrue(all(x["first_baseline"] for x in health["sources"]))
         self.assertFalse(json.loads(self.data.read_text(encoding="utf-8"))["alerts"])
@@ -136,7 +136,7 @@ class TestMonitorHealth(unittest.TestCase):
             self.state.parent.mkdir(parents=True,exist_ok=True)
         import hashlib
         legacy={src['url']:{'hash':hashlib.sha256(baseline.encode()).hexdigest(),
-                 'text':baseline,'extraction_version':monitor.EXTRACTION_VERSION}
+                 'text':baseline,'extraction_version':monitor.extraction_version(src['url'])}
                  for src in SOURCES}
         self.state.write_text(json.dumps(legacy),encoding='utf-8')
         fetch.return_value=baseline+common

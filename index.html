@@ -197,7 +197,7 @@
   async function load(){
     try{
       const [response,healthResponse]=await Promise.all([fetch('data/alerts.json?ts='+Date.now(),{cache:'no-store'}),fetch('data/health.json?ts='+Date.now(),{cache:'no-store'})]);if(!response.ok||!healthResponse.ok)throw new Error('Unable to load monitoring data');
-      const [data,healthData]=await Promise.all([response.json(),healthResponse.json()]);items=Array.isArray(data.alerts)?data.alerts:[];feeds=Array.isArray(data.sources)?data.sources:[];
+      const [data,healthData]=await Promise.all([response.json(),healthResponse.json()]);items=Array.isArray(data.alerts)?data.alerts.filter(x=>x.triage_status!=='context_only'):[];feeds=Array.isArray(data.sources)?data.sources:[];
       $('total').textContent=items.length.toLocaleString('en-US');$('pending').textContent=items.length.toLocaleString('en-US');$('sources').textContent=feeds.length.toLocaleString('en-US');
       $('recent').textContent=items.filter(x=>{const t=new Date(x.detected_at).getTime();return Number.isFinite(t)&&Date.now()-t>=0&&Date.now()-t<604800000;}).length.toLocaleString('en-US');
       const checked=healthData.checked_at?new Date(healthData.checked_at):null;
