@@ -1,0 +1,48 @@
+name: Prepare licensed KAFD banner asset
+'on':
+  push:
+    branches: [fix/approved-light-dashboard-20261118]
+    paths: ['.github/workflows/prepare-kafd-image.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  render-asset:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install Pillow==11.1.0
+      - name: Fetch the licensed Commons KAFD skyline and prepare local WebP
+        run: |
+          python - <<'PY'
+          from urllib.request import Request,urlopen
+          from io import BytesIO
+          from PIL import Image,ImageOps,ImageEnhance
+          from pathlib import Path
+          uri='https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/KAFD_seen_from_North_east_side_of_Riyadh_City.jpg/1280px-KAFD_seen_from_North_east_side_of_Riyadh_City.jpg'
+          req=Request(uri,headers={'User-Agent':'SaudizationRadar/2.0 (GitHub Pages asset build; CC BY-SA 4.0 attribution provided)'})
+          with urlopen(req,timeout=40) as res:
+              data=res.read(3000000)
+              print('Source URL:',uri,'HTTP',res.status,'bytes',len(data))
+          im=Image.open(BytesIO(data)).convert('RGB')
+          print('Image size:',im.size)
+          # Keep the buildings and visible skyline in a wide 3.4:1 hero crop.
+          crop=ImageOps.fit(im,(1500,440),method=Image.Resampling.LANCZOS,centering=(0.5,0.60))
+          crop=ImageEnhance.Contrast(crop).enhance(1.04)
+          Path('assets').mkdir(exist_ok=True)
+          crop.save('assets/kafd-hero.webp',format='WEBP',quality=85,method=6)
+          print('WebP bytes',Path('assets/kafd-hero.webp').stat().st_size)
+          PY
+      - name: Commit local banner to feature branch only
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/kafd-hero.webp
+          git commit -m "Add local licensed KAFD skyline banner for reliable light dashboard"
+          git push origin HEAD:fix/approved-light-dashboard-20261118
