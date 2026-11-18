@@ -148,11 +148,17 @@
       </section>
       <div class="services-panel-footer">
         الرادار مبادرة مستقلة لرصد المصادر المنشورة، وليس منصة حكومية أو شهادة امتثال. رابط أي صفحة متاح أيضًا مباشرة دون الحاجة لفتح هذه القائمة.
+        <div class="v4-drawer-controls"><button class="presentation-toggle" id="presentation-toggle" type="button" aria-pressed="false" title="وضع العرض">وضع العرض</button></div>
       </div>
     </div>
   </section>
   <div class="main">
     <header class="topbar">
+      <div class="v4-header-spacer"></div>
+      <div class="v4-search-wrapper"><form id="v4-search-form" role="search" action="occupation-catalog.html" method="get">
+        <button type="submit" aria-label="البحث في المهن والرموز"><svg class="v4-icon" aria-hidden="true"><use href="assets/v4-icons.svg#search"></use></svg></button>
+        <input type="search" name="q" id="v4-search" placeholder="بحث في القرارات، المهن، الأنشطة…" aria-label="بحث في دليل المهن والرموز" autocomplete="off">
+      </form></div>
       <div class="v4-header-controls">
         <div class="v4-user-chip" title="اسم مالك المشروع ظاهر للعرض فقط، ولا يعني تسجيل الدخول">
           <span class="v4-avatar">AA</span><span>عبدالعزيز الحقباني</span><svg class="v4-chevron" aria-hidden="true"><use href="assets/v4-icons.svg#chevron"></use></svg>
@@ -160,11 +166,6 @@
         <a href="review.html" class="v4-top-icon-link" aria-label="مراجعة التنبيهات"><svg class="v4-icon" aria-hidden="true"><use href="assets/v4-icons.svg#bell"></use></svg><span id="v4-top-notification" class="v4-top-notification" hidden>—</span></a>
         <a href="operations-team.html" class="v4-top-icon-link" aria-label="إعدادات غرفة العمليات"><svg class="v4-icon" aria-hidden="true"><use href="assets/v4-icons.svg#settings"></use></svg></a>
       </div>
-      <div class="v4-search-wrapper"><form id="v4-search-form" role="search" action="occupation-catalog.html" method="get">
-        <button type="submit" aria-label="البحث في المهن والرموز"><svg class="v4-icon" aria-hidden="true"><use href="assets/v4-icons.svg#search"></use></svg></button>
-        <input type="search" name="q" id="v4-search" placeholder="بحث في القرارات، المهن، الأنشطة…" aria-label="بحث في دليل المهن والرموز" autocomplete="off">
-      </form></div>
-      <div class="v4-header-spacer"><button class="presentation-toggle" id="presentation-toggle" type="button" aria-pressed="false" title="وضع العرض">وضع العرض</button></div>
     </header>
     <main class="content" id="overview">
       <section class="hero" aria-labelledby="hero-title">
