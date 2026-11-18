@@ -73,6 +73,11 @@ name: Radar quality checks
       - 'data/phase-two-plan.json'
       - 'test_phase_two.mjs'
       - 'test_local_vault.mjs'
+      - 'assets/v3-approved-dashboard.css'
+      - 'assets/v3-dashboard-model.js'
+      - 'assets/v3-approved-dashboard.js'
+      - 'assets/kafd-hero.webp'
+      - 'test_approved_dashboard.mjs'
       - 'test_completion.mjs'
       - 'assets/occupation-catalog.js'
       - 'data/occupation-catalog.json'
@@ -106,6 +111,11 @@ jobs:
           node --check assets/completion-model.js
           node --check assets/completion.js
           node test_completion.mjs
+      - name: Test actual light-green executive dashboard rebuild
+        run: |
+          node --check assets/v3-dashboard-model.js
+          node --check assets/v3-approved-dashboard.js
+          node test_approved_dashboard.mjs
       - name: Verify all eight Phase II tools, new green dashboard and AES-GCM vault
         run: |
           node --check assets/phase-two-model.js
