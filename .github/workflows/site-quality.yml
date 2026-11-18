@@ -34,6 +34,11 @@ name: Saudization Radar site integrity
       - 'assets/v3-approved-dashboard.js'
       - 'assets/kafd-hero.webp'
       - 'test_approved_dashboard.mjs'
+      - 'assets/v4-reference-dashboard.css'
+      - 'assets/v4-reference-dashboard.js'
+      - 'assets/v4-icons.svg'
+      - 'assets/v4-skyline.svg'
+      - 'test_reference_dashboard.mjs'
       - 'test_completion.mjs'
       - 'assets/occupation-catalog.js'
       - 'data/occupation-catalog.json'
@@ -68,6 +73,8 @@ jobs:
         run: python -m unittest -v test_site_integrity.py test_occupation_catalog.py
       - name: Verify nine-workstream readiness and five safe plans
         run: node test_completion.mjs
+      - name: Verify screenshot-reference layout and full public-data parity
+        run: node test_reference_dashboard.mjs
       - name: Verify approved light-green redesign, locally hosted banner and real dashboard data
         run: node test_approved_dashboard.mjs
       - name: Verify eight Phase II planning tools and local encrypted vault

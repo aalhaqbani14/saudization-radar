@@ -39,8 +39,9 @@
 <link rel="stylesheet" href="assets/services-menu.css">
 <link rel="stylesheet" href="assets/v2-green-home.css">
 <link rel="stylesheet" href="assets/v3-approved-dashboard.css">
+<link rel="stylesheet" href="assets/v4-reference-dashboard.css">
+<script src="assets/v4-reference-dashboard.js" defer></script>
 <script src="assets/v3-dashboard-model.js" defer></script>
-<script src="assets/v3-approved-dashboard.js" defer></script>
 <script src="assets/v3-approved-dashboard.js" defer></script>
 <script src="assets/phase-two-model.js" defer></script>
 <script src="assets/v2-home.js" defer></script>
@@ -72,18 +73,31 @@
 <div class="intro-credit">صورة كافد (اقتصاص معدل): B.alotaby / Wikimedia Commons — CC BY-SA 4.0</div>
 </div>
 <div class="layout">
-  <aside class="sidebar" aria-label="التنقل المختصر">
+  <aside class="sidebar" aria-label="التنقل الرئيسي">
     <a class="mini-brand" href="#overview" title="رادار التوطين — الرئيسية">
-      <span class="brandmark" aria-hidden="true">SR</span><span class="v3-rail-caption">رادار<br>التوطين</span><span class="visually-hidden">رادار التوطين — الرئيسية</span>
+      <span class="v4-brand-radar"><svg class="v4-icon" aria-hidden="true"><use href="assets/v4-icons.svg#radar"></use></svg></span>
+      <span class="v4-brand-words"><strong>رادار التوطين</strong><small>Saudization Radar</small></span>
+      <span class="visually-hidden">العودة إلى الرئيسية</span>
     </a>
-    <nav class="nav quick-nav" aria-label="الروابط السريعة">
-      <a class="quick-link selected" href="#overview" title="لوحة المتابعة"><span class="glyph" aria-hidden="true">▦</span><span>الرئيسية</span></a>
-      <a class="quick-link" href="salic.html" title="موظفو سالك — المهن والأعداد"><span class="glyph" aria-hidden="true">▤</span><span>الموظفون</span></a>
-      <a class="quick-link" href="operations.html" title="غرفة عمليات الامتثال"><span class="glyph" aria-hidden="true">▣</span><span>العمليات</span></a>
+    <nav class="nav quick-nav" aria-label="القائمة الرئيسية">
+      <a class="quick-link selected" href="#overview"><svg class="v4-icon" aria-hidden="true"><use href="assets/v4-icons.svg#home"></use></svg><span>الرئيسية</span></a>
       <button class="quick-link service-trigger" type="button" id="services-toggle" aria-expanded="false" aria-controls="services-panel" title="فتح جميع الخدمات">
-        <span class="glyph" aria-hidden="true">☰</span><span>الخدمات</span>
+        <svg class="v4-icon" aria-hidden="true"><use href="assets/v4-icons.svg#layers"></use></svg><span>الخدمات</span><svg class="v4-chevron" aria-hidden="true"><use href="assets/v4-icons.svg#chevron"></use></svg>
       </button>
+      <a class="v4-side-link" href="intelligence.html"><svg class="v4-icon" aria-hidden="true"><use href="assets/v4-icons.svg#file"></use></svg><span>القرارات والامتثال</span><svg class="v4-chevron" aria-hidden="true"><use href="assets/v4-icons.svg#chevron"></use></svg></a>
+      <a class="quick-link" href="salic.html"><svg class="v4-icon" aria-hidden="true"><use href="assets/v4-icons.svg#people"></use></svg><span>الموظفون والمهن</span><svg class="v4-chevron" aria-hidden="true"><use href="assets/v4-icons.svg#chevron"></use></svg></a>
+      <a class="v4-side-link" href="activity-review.html"><svg class="v4-icon" aria-hidden="true"><use href="assets/v4-icons.svg#target"></use></svg><span>الأنشطة والتراخيص</span><svg class="v4-chevron" aria-hidden="true"><use href="assets/v4-icons.svg#chevron"></use></svg></a>
+      <a class="v4-side-link" href="executive-brief.html"><svg class="v4-icon" aria-hidden="true"><use href="assets/v4-icons.svg#chart"></use></svg><span>التقارير والتحليلات</span><svg class="v4-chevron" aria-hidden="true"><use href="assets/v4-icons.svg#chevron"></use></svg></a>
+      <a class="v4-side-link" href="advisor.html"><svg class="v4-icon" aria-hidden="true"><use href="assets/v4-icons.svg#sparkles"></use></svg><span>الذكاء الاسترشادي</span><svg class="v4-chevron" aria-hidden="true"><use href="assets/v4-icons.svg#chevron"></use></svg></a>
+      <div class="v4-nav-separator"></div>
+      <a class="quick-link v4-operations" href="operations.html"><svg class="v4-icon" aria-hidden="true"><use href="assets/v4-icons.svg#radar"></use></svg><span>غرفة العمليات</span></a>
+      <a class="v4-side-link" href="review.html"><svg class="v4-icon" aria-hidden="true"><use href="assets/v4-icons.svg#bell"></use></svg><span>التنبيهات</span><b id="v4-notification-count" class="v4-notification-badge" hidden>—</b></a>
+      <a class="v4-side-link" href="phase-two.html#approvals"><svg class="v4-icon" aria-hidden="true"><use href="assets/v4-icons.svg#clipboard"></use></svg><span>المهام والمراجعات</span><svg class="v4-chevron" aria-hidden="true"><use href="assets/v4-icons.svg#chevron"></use></svg></a>
+      <a class="v4-side-link" href="decision-watch.html"><svg class="v4-icon" aria-hidden="true"><use href="assets/v4-icons.svg#calendar"></use></svg><span>التقويم التنظيمي</span><svg class="v4-chevron" aria-hidden="true"><use href="assets/v4-icons.svg#chevron"></use></svg></a>
+      <a class="v4-side-link" href="#updates"><svg class="v4-icon" aria-hidden="true"><use href="assets/v4-icons.svg#history"></use></svg><span>سجل التغييرات</span><svg class="v4-chevron" aria-hidden="true"><use href="assets/v4-icons.svg#chevron"></use></svg></a>
+      <a class="v4-side-link v4-side-extra" href="phase-two.html"><svg class="v4-icon" aria-hidden="true"><use href="assets/v4-icons.svg#layers"></use></svg><span>مركز المرحلة الثانية</span></a>
     </nav>
+    <div class="v4-sidebar-art" aria-hidden="true"><span>◎</span></div>
   </aside>
   <div class="services-backdrop" id="services-backdrop" hidden></div>
   <section class="services-panel" id="services-panel" role="dialog" aria-modal="true" aria-labelledby="services-panel-title" hidden>
@@ -134,81 +148,153 @@
       </section>
       <div class="services-panel-footer">
         الرادار مبادرة مستقلة لرصد المصادر المنشورة، وليس منصة حكومية أو شهادة امتثال. رابط أي صفحة متاح أيضًا مباشرة دون الحاجة لفتح هذه القائمة.
+        <div class="v4-drawer-controls"><button class="presentation-toggle" id="presentation-toggle" type="button" aria-pressed="false" title="وضع العرض">وضع العرض</button></div>
       </div>
     </div>
   </section>
   <div class="main">
-    <header class="topbar"><div class="v3-top-identity"><span class="v3-top-mark" aria-hidden="true">◎</span><div><strong>رادار التوطين</strong><small>لوحة المتابعة التنفيذية</small></div></div><a class="v3-top-search" href="occupation-catalog.html" aria-label="البحث في دليل المهن والرموز المهنية"><span aria-hidden="true">⌕</span> ابحث في المهن والرموز والقرارات</a><div class="v3-top-controls"><span class="pill"><span class="pill-dot"></span> رصد المصادر الرسمية</span><button class="presentation-toggle" id="presentation-toggle" type="button" aria-pressed="false">وضع العرض</button></div></header>
+    <header class="topbar">
+      <div class="v4-header-spacer"></div>
+      <div class="v4-search-wrapper"><form id="v4-search-form" role="search" action="occupation-catalog.html" method="get">
+        <button type="submit" aria-label="البحث في المهن والرموز"><svg class="v4-icon" aria-hidden="true"><use href="assets/v4-icons.svg#search"></use></svg></button>
+        <input type="search" name="q" id="v4-search" placeholder="بحث في القرارات، المهن، الأنشطة…" aria-label="بحث في دليل المهن والرموز" autocomplete="off">
+      </form></div>
+      <div class="v4-header-controls">
+        <div class="v4-user-chip" title="اسم مالك المشروع ظاهر للعرض فقط، ولا يعني تسجيل الدخول">
+          <span class="v4-avatar">AA</span><span>عبدالعزيز الحقباني</span><svg class="v4-chevron" aria-hidden="true"><use href="assets/v4-icons.svg#chevron"></use></svg>
+        </div>
+        <a href="review.html" class="v4-top-icon-link" aria-label="مراجعة التنبيهات"><svg class="v4-icon" aria-hidden="true"><use href="assets/v4-icons.svg#bell"></use></svg><span id="v4-top-notification" class="v4-top-notification" hidden>—</span></a>
+        <a href="operations-team.html" class="v4-top-icon-link" aria-label="إعدادات غرفة العمليات"><svg class="v4-icon" aria-hidden="true"><use href="assets/v4-icons.svg#settings"></use></svg></a>
+      </div>
+    </header>
     <main class="content" id="overview">
       <section class="hero" aria-labelledby="hero-title">
         <img class="hero-kafd-photo" src="assets/kafd-hero.webp" alt="مشهد أبراج مركز الملك عبدالله المالي بمدينة الرياض" width="1500" height="440" decoding="async" fetchpriority="high">
-        <div><div class="eyebrow">REGULATORY MONITORING DASHBOARD</div><h1 id="hero-title">رادار التوطين<br><span class="v3-subtitle">مركز المتابعة والقرارات</span></h1><p>لوحة تحليلية مخصصة لمهن موظفي سالك وأنشطتها الزراعية والإنتاج الحيواني، تربط الأعداد المجمعة بقرارات التوطين المهنية المحتملة ومصادرها الرسمية.</p><div class="hero-updated" id="updated" aria-live="polite">جارٍ قراءة آخر بيانات الرصد...</div></div>
-        <img class="hero-scene" src="assets/scene-meeting.svg" alt="رسم متحرك لفريق عمل أثناء اجتماع" loading="eager">
-        <a class="hero-link" href="phase-two.html">استكشف المرحلة الثانية ←</a><span class="hero-credit">صورة كافد (اقتصاص معدل): B.alotaby / Wikimedia Commons — CC BY-SA 4.0</span>
+        <div class="v4-hero-radar" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+        <div class="v4-hero-copy"><h1 id="hero-title">مرحبًا بك، عبدالعزيز</h1>
+          <p>نظرة شاملة على التوطين والقرارات التنظيمية في SALIC</p>
+        </div>
+        <div class="v4-hero-date" role="status" aria-live="polite">
+          <div><svg class="v4-icon" aria-hidden="true"><use href="assets/v4-icons.svg#calendar"></use></svg><strong id="v4-today-date">—</strong></div>
+          <small><span class="v4-live-dot"></span><span id="v4-checked-at">جارٍ قراءة آخر فحص…</span></small>
+        </div>
+        <span id="updated" class="visually-hidden">جارٍ قراءة آخر بيانات الرصد…</span>
+        <span class="hero-credit">كافد: B.alotaby / Wikimedia Commons · CC BY-SA 4.0، اقتصاص معدل</span>
       </section>
 
-      <section class="v3-executive" aria-labelledby="v2-title">
-        <div class="v3-section-head">
-          <div><span class="v3-kicker">نظرة سريعة</span><h2 id="v2-title">مؤشرات رادار التوطين</h2><p>قيم موثقة من ملفات المشروع المؤرخة، وليست نسبة امتثال نظامي للشركة.</p></div>
-          <a href="phase-two.html" class="v3-text-link">مركز المرحلة الثانية ←</a>
-        </div>
-        <div class="v2-command-summary v3-metrics" aria-label="مؤشرات موثقة لا تعني امتثال الشركة">
-          <div class="v2-summary v3-highlight"><div class="v3-metric-icon" aria-hidden="true">◎</div><small>نسبة السعوديين في لقطة القوى العاملة</small><strong id="v2-national-ratio">—</strong><span class="v2-meta">وليست نسبة امتثال قرارات التوطين</span></div>
-          <div class="v2-summary"><div class="v3-metric-icon" aria-hidden="true">♧</div><small>السعوديون</small><strong id="v3-saudi-count">—</strong><span class="v2-meta">حسب آخر لقطة موظفين</span></div>
-          <div class="v2-summary"><div class="v3-metric-icon" aria-hidden="true">♧</div><small>غير السعوديين</small><strong id="v3-nonsaudi-count">—</strong><span class="v2-meta" id="v2-workforce-date">بيانات مجمعة مؤرخة</span></div>
-          <div class="v2-summary"><div class="v3-metric-icon" aria-hidden="true">▤</div><small>القرارات المراقبة</small><strong id="v2-decision-count">—</strong><span class="v2-meta">جميع القرارات في السجل</span></div>
-          <div class="v2-summary v3-attention"><div class="v3-metric-icon" aria-hidden="true">◷</div><small>تدقيق تفصيلي معلّق</small><strong id="v2-pending-audits">—</strong><span class="v2-meta">تحتاج استكمال الأدلة</span></div>
-          <div class="v2-summary"><div class="v3-metric-icon" aria-hidden="true">✓</div><small>نجاح فحص الصفحات الرسمية</small><strong id="v2-monitored-count">—</strong><span class="v2-meta" id="v2-scan-date">مصادر الرصد المسجلة</span></div>
+      <section class="v3-executive" aria-label="مؤشرات الرادار من بيانات الموقع">
+        <div class="v2-command-summary v3-metrics">
+          <div class="v2-summary v3-highlight"><svg class="v4-icon" aria-hidden="true"><use href="assets/v4-icons.svg#check-circle"></use></svg><strong id="v2-monitored-count">—</strong><small>فحص المصادر الرسمية</small></div>
+          <div class="v2-summary"><svg class="v4-icon" aria-hidden="true"><use href="assets/v4-icons.svg#target"></use></svg><strong id="v2-national-ratio">—</strong><small>نسبة السعوديين الحالية</small></div>
+          <div class="v2-summary v4-saudi-card"><svg class="v4-icon" aria-hidden="true"><use href="assets/v4-icons.svg#people"></use></svg><strong id="v3-saudi-count">—</strong><small>سعودي</small></div>
+          <div class="v2-summary"><svg class="v4-icon" aria-hidden="true"><use href="assets/v4-icons.svg#people"></use></svg><strong id="v3-nonsaudi-count">—</strong><small>غير سعودي</small></div>
+          <div class="v2-summary v3-attention"><svg class="v4-icon" aria-hidden="true"><use href="assets/v4-icons.svg#layers"></use></svg><strong id="v2-pending-audits">—</strong><small>قرارات قيد المراجعة</small></div>
+          <div class="v2-summary"><svg class="v4-icon" aria-hidden="true"><use href="assets/v4-icons.svg#file"></use></svg><strong id="v2-decision-count">—</strong><small>إجمالي القرارات</small></div>
         </div>
         <span id="v2-workforce-count" class="visually-hidden">—</span>
+        <span id="v2-workforce-date" class="visually-hidden">—</span>
+        <span id="v2-scan-date" class="visually-hidden">—</span>
       </section>
 
-      <section class="v3-overview" aria-label="ملخص التحليل ومتابعة القرارات">
-        <article class="v3-insight v3-workforce-card" aria-labelledby="v3-workforce-title">
-          <div class="v3-card-header"><h3 id="v3-workforce-title">توزيع القوى العاملة</h3><a href="salic.html" aria-label="عرض تفاصيل القوى العاملة">◧</a></div>
-          <div class="v3-donut-row"><div class="v3-donut" id="v3-donut" role="img" aria-label="نسبة الموظفين السعوديين وغير السعوديين من آخر لقطة">
-            <div><strong id="v3-donut-total">—</strong><small>موظفًا</small></div></div>
-            <div class="v3-donut-legend"><div><i class="v3-dot" aria-hidden="true"></i><span>سعوديون</span><b id="v3-legend-saudi">—</b></div><div><i class="v3-dot neutral" aria-hidden="true"></i><span>غير سعوديين</span><b id="v3-legend-other">—</b></div><small id="v3-workforce-snapshot">تاريخ اللقطة: —</small></div></div>
-          <p class="v3-card-note">هذه نسبة جنسية القوى العاملة، ولا تُستخدم لقياس التزام كل قرار مهني.</p>
+      <section class="v3-overview" aria-label="التحليل التنفيذي بنفس ترتيب الواجهة المرجعية">
+        <article class="v3-insight v3-workforce-card">
+          <div class="v3-card-header"><h3>توزيع الموظفين</h3><a href="salic.html" aria-label="تفاصيل الموظفين"><svg class="v4-icon" aria-hidden="true"><use href="assets/v4-icons.svg#info"></use></svg></a></div>
+          <div class="v3-donut-row">
+            <div class="v3-donut" id="v3-donut" role="img" aria-label="توزيع السعوديين وغير السعوديين بحسب آخر لقطة موثقة">
+              <div><strong id="v3-donut-total">—</strong><small>إجمالي الموظفين</small></div>
+            </div>
+            <div class="v3-donut-legend"><div><i class="v3-dot" aria-hidden="true"></i><span>سعوديون</span><b id="v3-legend-saudi">—</b></div>
+              <div><i class="v3-dot neutral" aria-hidden="true"></i><span>غير سعوديين</span><b id="v3-legend-other">—</b></div>
+              <small id="v3-workforce-snapshot">آخر لقطة موثقة: —</small>
+            </div>
+          </div>
+          <p class="v3-card-note">التوزيع حسب الجنسية وليس نسبة امتثال القرارات.</p>
         </article>
-        <article class="v3-insight v3-decisions-card" aria-labelledby="v3-audit-title">
-          <div class="v3-card-header"><h3 id="v3-audit-title">جاهزية تدقيق القرارات</h3><a href="completion.html" aria-label="فتح مركز استكمال القرارات">◈</a></div>
-          <div class="v3-audit-meter"><div class="v3-audit-big"><strong id="v3-audit-checked">—</strong><span>مراجعة أساسية</span></div><p id="v3-audit-message">جارٍ قراءة حالة القرارات…</p></div>
+
+        <article class="v3-insight v4-trend-card">
+          <div class="v3-card-header"><h3>تطور نسبة السعوديين</h3><a href="salic.html" aria-label="بيانات القوى العاملة"><svg class="v4-icon" aria-hidden="true"><use href="assets/v4-icons.svg#external"></use></svg></a></div>
+          <div class="v4-trend-wrap"><svg id="v4-trend-svg" viewBox="0 0 420 168" role="img" aria-label="الرصيد التاريخي لنسبة السعوديين حسب لقطات القوى العاملة الموثقة">
+            <g class="v4-grid"><path d="M37 19 H408 M37 50 H408 M37 81 H408 M37 112 H408 M37 143 H408"/><path d="M37 19 V143 M130 19 V143 M223 19 V143 M316 19 V143 M408 19 V143"/></g>
+            <g class="v4-grid-text"><text x="4" y="23">100%</text><text x="10" y="54">75%</text><text x="10" y="85">50%</text><text x="10" y="116">25%</text><text x="15" y="147">0%</text></g>
+            <path id="v4-trend-fill" d="" fill="rgba(10,174,119,.13)"></path>
+            <path id="v4-trend-line" d="" stroke="#0ab77e" stroke-width="3" fill="none" stroke-linecap="round"></path>
+            <g id="v4-trend-points"></g>
+          </svg><div class="v4-trend-axis"><span id="v4-trend-first">—</span><span id="v4-trend-last">—</span></div></div>
+          <div class="v4-trend-foot"><strong id="v4-trend-value">—</strong><span id="v4-trend-note">نعرض فقط اللقطات التاريخية الموثقة</span></div>
+        </article>
+
+        <article class="v3-insight v3-decisions-card">
+          <div class="v3-card-header"><h3>مؤشرات المخاطر والأدلة</h3><a href="completion.html" aria-label="فتح تدقيق القرارات"><svg class="v4-icon" aria-hidden="true"><use href="assets/v4-icons.svg#info"></use></svg></a></div>
+          <div class="v4-gauge" role="img" aria-label="نسبة القرارات التي تمت مراجعتها مراجعة أساسية، وليست درجة امتثال نظامية">
+            <svg viewBox="0 0 250 150" aria-hidden="true">
+              <defs><linearGradient id="v4-gauge-gradient"><stop stop-color="#11bf74" offset="0"/><stop stop-color="#f0dc35" offset=".5"/><stop stop-color="#f15348" offset="1"/></linearGradient></defs>
+              <path d="M35 130 A90 90 0 0 1 215 130" fill="none" stroke="#e6eee9" stroke-width="18" stroke-linecap="round"/>
+              <path d="M35 130 A90 90 0 0 1 215 130" fill="none" stroke="url(#v4-gauge-gradient)" stroke-width="17" stroke-linecap="round"/>
+              <path id="v4-gauge-needle" d="M125 130 L125 45" stroke="#0d674e" stroke-width="3" stroke-linecap="round" transform="rotate(0 125 130)" opacity=".76"/>
+            </svg>
+            <div class="v4-gauge-center"><strong id="v4-gauge-number">—</strong><small>مراجعة أساسية</small></div>
+          </div>
+          <div class="v4-gauge-badge" id="v3-audit-checked">—</div>
+          <div class="v4-gauge-legend"><span><i class="v3-dot"></i>مدققة: <b id="v3-audit-reviewed">—</b></span><span><i class="v3-dot warning"></i>معلّقة: <b id="v3-audit-remaining">—</b></span></div>
           <div class="v3-bar" aria-hidden="true"><span id="v3-audit-progress"></span></div>
-          <div class="v3-audit-split"><span><i class="v3-dot" aria-hidden="true"></i>مراجعة أساسية: <b id="v3-audit-reviewed">—</b></span><span><i class="v3-dot warning" aria-hidden="true"></i>تحتاج تدقيقًا: <b id="v3-audit-remaining">—</b></span></div>
-          <p class="v3-card-note">اكتمال مراجعة الدليل لا يعني اعتماد انطباقه على SALIC.</p>
+          <span id="v3-audit-message" class="visually-hidden">جارٍ قراءة مراجعات القرارات…</span>
         </article>
-        <article class="v3-insight v3-alerts-card" aria-labelledby="v3-alert-title">
-          <div class="v3-card-header"><h3 id="v3-alert-title">آخر إشارات الرادار</h3><a href="review.html" aria-label="فتح غرفة مراجعة التنبيهات">◴</a></div>
-          <div class="v3-alert-list" id="v3-alert-list"><p>جارٍ جلب التنبيهات…</p></div>
-          <div class="v3-card-bottom"><a href="review.html">عرض جميع إشارات المراجعة ←</a><small>إشارات غير معتمدة</small></div>
-        </article>
-        <article class="v3-insight v3-upcoming-card" aria-labelledby="v3-upcoming-title">
-          <div class="v3-card-header"><h3 id="v3-upcoming-title">أقرب المراحل التنظيمية</h3><a href="decision-watch.html" aria-label="التقويم التنظيمي">▣</a></div>
-          <div class="v3-event-list" id="v3-upcoming-list"><p>جارٍ قراءة مراحل القرارات الموثقة…</p></div>
-          <div class="v3-card-bottom"><a href="decision-watch.html">عرض التقويم التنظيمي ←</a><small>التواريخ المشمولة فقط</small></div>
+
+        <article class="v3-insight v3-alerts-card">
+          <div class="v3-card-header"><h3>تغييرات جديدة منذ آخر زيارة</h3><a href="review.html" aria-label="غرفة إشارات المراجعة"><svg class="v4-icon" aria-hidden="true"><use href="assets/v4-icons.svg#history"></use></svg></a></div>
+          <div class="v4-updates"><div class="v4-update-row"><span class="v4-update-dot red"></span><span>إشارات جديدة غير معتمدة</span><b id="v4-new-alerts">—</b></div>
+            <div class="v4-update-row"><span class="v4-update-dot amber"></span><span>قرارات تحتاج تدقيقًا</span><b id="v4-pending-work">—</b></div>
+            <div class="v4-update-row"><span class="v4-update-dot amber"></span><span>مصادر نجح فحصها مؤخرًا</span><b id="v4-verified-sources">—</b></div>
+            <div class="v4-update-row"><span class="v4-update-dot amber"></span><span>آخر فحص موثق</span><small id="v4-last-scan">—</small></div>
+          </div>
+          <p id="v2-visit-note" class="v3-visit-note" aria-live="polite">جارٍ مقارنة بيانات الزيارة…</p>
+          <a class="v4-compact-more" href="phase-two.html#changes">عرض التفاصيل ←</a>
+          <div id="v3-alert-list" class="visually-hidden" aria-hidden="true"></div>
         </article>
       </section>
 
-      <section class="v3-features" aria-labelledby="v3-features-title">
-        <div class="v3-section-head"><div><span class="v3-kicker">المرحلة الثانية</span><h2 id="v3-features-title">أدوات الرادار المتقدمة</h2><p>ثمانية مسارات للتحليل والمتابعة والتخطيط، بضوابط واضحة للبيانات والتحقق.</p></div><a class="v3-text-link" href="phase-two.html">جميع الأدوات ←</a></div>
-        <div class="quick-actions" aria-label="اختصارات الأدوات الثمانية">
-          <a class="quick-action" href="phase-two.html#impact"><span aria-hidden="true">◎</span><strong>خريطة تأثير القرارات</strong><small>الشمول المحتمل والتراخيص</small></a>
-          <a class="quick-action" href="phase-two.html#readiness"><span aria-hidden="true">◈</span><strong>جاهزية الأدلة</strong><small>شروط وتوثيق قبل الاعتماد</small></a>
-          <a class="quick-action" href="phase-two.html#conflicts"><span aria-hidden="true">⇄</span><strong>كاشف التعارضات</strong><small>كشف التداخل وتكرار الاحتساب</small></a>
-          <a class="quick-action" href="phase-two.html#timeline"><span aria-hidden="true">◷</span><strong>آلة الزمن التنظيمية</strong><small>الأحداث الموثقة عبر السنوات</small></a>
-          <a class="quick-action" href="phase-two.html#approvals"><span aria-hidden="true">✓</span><strong>مراجعات الاعتماد</strong><small>مسودات للمراجعة البشرية</small></a>
-          <a class="quick-action" href="phase-two.html#forecast"><span aria-hidden="true">▤</span><strong>توقع 12 شهرًا</strong><small>محاكاة القوى العاملة والتكاليف</small></a>
-          <a class="quick-action" href="vault.html"><span aria-hidden="true">▣</span><strong>خزنة الأدلة</strong><small>تشفير مستندات محليًا</small></a>
-          <a class="quick-action" href="phase-two.html#changes"><span aria-hidden="true">⟳</span><strong>آخر التغييرات</strong><small>مقارنة البيانات منذ آخر زيارة</small></a>
+      <section class="v3-features" aria-label="اختصارات الخدمات بأسلوب الواجهة المرجعية">
+        <div class="quick-actions">
+          <a class="quick-action v4-tile-green" href="phase-two.html#impact"><svg class="v4-icon" aria-hidden="true"><use href="assets/v4-icons.svg#people"></use></svg><strong>خريطة الأثر<br>الوظيفي</strong></a>
+          <a class="quick-action v4-tile-mint" href="phase-two.html#readiness"><svg class="v4-icon" aria-hidden="true"><use href="assets/v4-icons.svg#shield"></use></svg><strong>شهادة جاهزية<br>البيانات</strong></a>
+          <a class="quick-action v4-tile-rose" href="phase-two.html#conflicts"><svg class="v4-icon" aria-hidden="true"><use href="assets/v4-icons.svg#link"></use></svg><strong>كاشف تعارض<br>القرارات</strong></a>
+          <a class="quick-action v4-tile-amber" href="phase-two.html#forecast"><svg class="v4-icon" aria-hidden="true"><use href="assets/v4-icons.svg#trending"></use></svg><strong>توقع الاحتياج<br>(12 شهرًا)</strong></a>
+          <a class="quick-action v4-tile-blue" href="phase-two.html#approvals"><svg class="v4-icon" aria-hidden="true"><use href="assets/v4-icons.svg#clipboard"></use></svg><strong>غرفة اعتماد<br>المراجعات</strong></a>
+          <a class="quick-action v4-tile-teal" href="vault.html"><svg class="v4-icon" aria-hidden="true"><use href="assets/v4-icons.svg#folder"></use></svg><strong>خزنة الأدلة<br>والمستندات</strong></a>
+          <a class="quick-action v4-tile-violet" href="phase-two.html#timeline"><svg class="v4-icon" aria-hidden="true"><use href="assets/v4-icons.svg#history"></use></svg><strong>آلة الزمن<br>التنظيمية</strong></a>
         </div>
       </section>
 
-      <section class="v3-bottom-grid" aria-label="مركز المتابعة والمهام">
-        <article class="v3-insight"><div class="v3-card-header"><h3>التقويم التنظيمي</h3><span class="v3-mini-icon" aria-hidden="true">▦</span></div><div id="v3-calendar" class="v3-calendar"></div><a class="v3-tile-link" href="decision-watch.html">فتح التقويم ←</a></article>
-        <article class="v3-insight"><div class="v3-card-header"><h3>التوصيات الاسترشادية</h3><span class="v3-mini-icon" aria-hidden="true">✧</span></div><div class="v3-suggestion-list"><p>تدقيق الرموز المهنية الفعلية وربطها بقرارات التوطين.</p><p>استكمال مستندات أنشطة SALIC وتراخيص الفروع.</p><p>إغلاق مراجعة القرارات التسعة بالأدلة السارية.</p></div><a class="v3-tile-link" href="advisor.html">فتح المساعد الاسترشادي ←</a></article>
-        <article class="v3-insight"><div class="v3-card-header"><h3>تخطيط الاحتياج الوظيفي</h3><span class="v3-mini-icon" aria-hidden="true">▥</span></div><p class="v3-planning-hero">سيناريو 12 شهرًا</p><p class="v3-planning-text">جرّب سيناريوهات التوظيف والإحلال والتأهيل على بيانات SALIC المجمعة. لا توجد توقعات افتراضية مفروضة على الشركة.</p><a class="v3-tile-link" href="phase-two.html#forecast">تشغيل المحاكاة ←</a></article>
-        <article class="v3-insight"><div class="v3-card-header"><h3>ماذا تغيّر منذ آخر زيارة؟</h3><span class="v3-mini-icon" aria-hidden="true">⟳</span></div><p id="v2-visit-note" class="v3-visit-note" aria-live="polite">جارٍ مقارنة بيانات الرصد العامة في هذا المتصفح…</p><p class="v3-card-note">مقارنة محلية، وليست تدقيقًا للامتثال أو رصدًا جديدًا في الخلفية.</p><a class="v3-tile-link" href="phase-two.html#changes">عرض التفاصيل ←</a></article>
+      <section class="v3-bottom-grid" aria-label="التقويم والقرارات القريبة والتوصيات والتخطيط">
+        <article class="v3-insight v4-nearest">
+          <div class="v3-card-header"><h3>أهم القرارات القريبة</h3><svg class="v4-icon" aria-hidden="true"><use href="assets/v4-icons.svg#clock"></use></svg></div>
+          <div class="v3-event-list" id="v3-upcoming-list"><p>جارٍ قراءة المراحل الموثقة…</p></div>
+          <a class="v3-tile-link" href="decision-watch.html">عرض جميع القرارات ←</a>
+        </article>
+        <article class="v3-insight v4-forecast-card">
+          <div class="v3-card-header"><h3>الاحتياج الوظيفي (12 شهرًا)</h3><svg class="v4-icon" aria-hidden="true"><use href="assets/v4-icons.svg#people"></use></svg></div>
+          <div class="v4-forecast-mini">
+            <div><small>الموظفون الحاليون</small><strong id="v4-forecast-current">—</strong><span>آخر لقطة</span></div>
+            <div><small>السعوديون الحاليون</small><strong id="v4-forecast-saudi">—</strong><span>بدون افتراضات</span></div>
+            <div><small>الفجوة المعتمدة</small><strong>—</strong><span>بانتظار رموز قوى</span></div>
+          </div>
+          <p class="v3-card-note">حدّد افتراضات السيناريو في الحاسبة؛ لا توجد خطة توظيف معتمدة في البيانات العامة.</p>
+          <a class="v3-tile-link" href="phase-two.html#forecast">عرض سيناريوهات التوطين ←</a>
+        </article>
+        <article class="v3-insight v4-advice">
+          <div class="v3-card-header"><h3>أبرز التوصيات الاسترشادية</h3><svg class="v4-icon" aria-hidden="true"><use href="assets/v4-icons.svg#sparkles"></use></svg></div>
+          <div class="v3-suggestion-list">
+            <p><b>1</b> استكمال تدقيق القرارات المعلقة مع الأدلة المعتمدة</p>
+            <p><b>2</b> مراجعة رموز قوى الفعلية للمهن الإدارية المساندة</p>
+            <p><b>3</b> استكمال مطابقة أنشطة وتراخيص SALIC الرسمية</p>
+          </div>
+          <a class="v3-tile-link" href="advisor.html">عرض جميع التوصيات ←</a>
+        </article>
+        <article class="v3-insight v4-calendar-card">
+          <div class="v3-card-header"><h3>التقويم التنظيمي</h3><svg class="v4-icon" aria-hidden="true"><use href="assets/v4-icons.svg#calendar"></use></svg></div>
+          <div class="v3-calendar" id="v3-calendar"><p>جارٍ تحميل التقويم…</p></div>
+          <a class="v3-tile-link" href="decision-watch.html">عرض التقويم الكامل ←</a>
+        </article>
       </section>
 
       <div class="v3-legacy-heading"><div><span class="v3-kicker">تحليلات تفصيلية</span><h2>المعلومات الكاملة للرادار</h2><p>جميع الجداول الأصلية والمهن والأعداد والمصادر متاحة في الأسفل دون حذف.</p></div><a href="completion.html" class="v3-text-link">مركز استكمال الأدلة ←</a></div>

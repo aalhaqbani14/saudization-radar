@@ -103,6 +103,8 @@
           '. لا تثبت انطباق قرارات التوطين على SALIC أو صحة الرمز المسجل في قوى.'
         : db.status === 'historical_augmented' ? 'الفهرس الموسع يمزج تصنيف هيئة الإحصاء المنشور عام 2019 مع مراجع الوزارة الأحدث المتاحة. لا يمثل النسخة الحالية الكاملة للوزارة، فلا تعتمد الرمز دون مطابقته رسميًا.' : db.status === 'official_partial_pages' ? 'نسخة جزئية تجمع أول صفحة رسمية من كل مجموعة مع رموز الأدلة الإجرائية. لا تشمل جميع المهن. استخدم رابط المجموعة الرسمية لمراجعة المهن غير المعروضة.' : 'النسخة الحالية جزئية ومستمدة من أدلة قرارات التوطين، وليست فهرس الوزارة الكامل. المهن غير الموجودة هنا ليست بالضرورة غير مستهدفة. استخدم روابط المجموعات الرسمية للتحقق.';
       q.disabled = false; group.disabled = false;
+      const incoming = new URLSearchParams(window.location.search).get('q');
+      if (typeof incoming === 'string' && incoming.trim()) q.value = incoming.slice(0,120);
       render();
     } catch(error) {
       get('loaded-count').textContent = '—';
