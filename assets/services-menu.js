@@ -40,7 +40,8 @@
         event.preventDefault();close();return;
       }
       if(event.key!=='Tab')return;
-      const focusable=[closeButton,...panelLinks].filter(x=>!x.hasAttribute('disabled'));
+      const additional=document.getElementById('presentation-toggle');
+      const focusable=[closeButton,...panelLinks,additional].filter(x=>x&&!x.hasAttribute('disabled'));
       const first=focusable[0],last=focusable[focusable.length-1];
       if(!focusable.includes(document.activeElement)){
         event.preventDefault();first.focus();
