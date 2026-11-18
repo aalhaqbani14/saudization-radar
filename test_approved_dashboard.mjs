@@ -54,7 +54,7 @@ assert.ok(overview);
 assert.equal((overview.match(/class="v3-insight /g)||[]).length,4);
 assert.equal((html.match(/class="v2-summary/g)||[]).length,6,"Six executive KPI cards");
 const tools=html.match(/<section class="v3-features"[\s\S]*?<\/section>/)?.[0];
-assert.equal((tools.match(/class="quick-action"/g)||[]).length,7,"Reference uses seven colored tiles with eighth feature in updates panel");
+assert.equal((tools.match(/class="quick-action /g)||[]).length,7,"Reference uses seven colored tiles with eighth feature in updates panel");
 const bottom=html.match(/<section class="v3-bottom-grid"[\s\S]*?<\/section>/)?.[0];
 assert.equal((bottom.match(/class="v3-insight /g)||[]).length,4);
 assert.ok(html.includes('id="salic-workforce"'),"Original details stay accessible");
