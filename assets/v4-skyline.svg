@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 245 170">
+<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#d9fbec" stop-opacity="0"/><stop offset="1" stop-color="#46cf9b" stop-opacity=".55"/></linearGradient><linearGradient id="tower" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#12b87d"/><stop offset="1" stop-color="#00845b"/></linearGradient></defs>
+<path fill="url(#sky)" d="M0 0h245v170H0z"/>
+<g stroke="#fff" stroke-opacity=".72" fill="none"><circle cx="132" cy="120" r="65"/><circle cx="132" cy="120" r="97"/><circle cx="132" cy="120" r="125"/></g>
+<path fill="#0cb878" opacity=".62" d="M0 140h12v-33h4v-9h4v42h10V94h7V77h7v63h9v-25h8v-8h6v33h12V62h3V49h4v91h11v-28h9V83h5v57h9V113h8V75h5v65h10V91h8v49h12V61h3V49h4v91h11v-25h8v25h11V99h8v41h9v-19h8v19h10V87h4v53h9V114h8v26h15v30H0z"/>
+<path fill="url(#tower)" d="M124 140V63l10-27 10 27v77z"/>
+<path fill="#d9fff2" d="m127 62 7-20 7 20-7-4z" opacity=".87"/>
+<path fill="#30d397" d="M130 74h8v6h-8zm0 12h8v6h-8zm0 12h8v6h-8zm0 12h8v6h-8z" opacity=".74"/>
+<g fill="#06a66c"><path d="M104 140V95l3-10 5 10v45zM69 140V103l6-16 6 16v37zM171 140V103l9-20 7 20v37zM191 140V110h8v30z"/></g>
+<path fill="#25d594" opacity=".8" d="M0 140h245v30H0z"/>
+<path d="M0 146 Q42 126 83 146 T164 146 T245 146" fill="none" stroke="#e6fff4" stroke-width="2.5"/>
+</svg>
