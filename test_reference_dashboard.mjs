@@ -25,7 +25,7 @@ assert.equal((kpis.match(/class="v2-summary/g)||[]).length,6);
 const overview=head.match(/<section class="v3-overview"[\s\S]*?<\/section>/)?.[0];
 assert.equal((overview.match(/class="v3-insight /g)||[]).length,4);
 for(const id of ["v3-donut","v4-trend-svg","v4-gauge","v4-gauge-number","v4-updates","v3-alert-list","v2-visit-note"]){
- assert.ok(overview.includes(id.replace("v4-gauge",id==="v4-gauge"?'v4-gauge':id)),id);
+ assert.ok(overview.includes(id),id);
 }
 assert.equal((head.match(/class="quick-action /g)||[]).length,7,"Reference has seven colored shortcut cards");
 const bottom=head.match(/<section class="v3-bottom-grid"[\s\S]*?<\/section>/)?.[0];
