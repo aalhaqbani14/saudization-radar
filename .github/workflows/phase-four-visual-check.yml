@@ -81,3 +81,5 @@ jobs:
           git add preview/v4-reference-layout.png
           git commit -m "Temporary visual-reference screenshot for human review"
           git push origin HEAD:feat/reference-faithful-dashboard-20261118
+
+# Second screenshot pass: topbar handedness and typography verified after layout rebuild.
