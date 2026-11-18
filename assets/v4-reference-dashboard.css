@@ -387,3 +387,36 @@ body.v2-home{background:linear-gradient(130deg,#f1fbf7,#f8fcfc)!important;color:
  .v2-home .quick-nav .quick-link,.v2-home .quick-nav .v4-side-link,.v2-home .v3-features .quick-action{transition:none}
 }
 @media print{.v2-home .v4-header-controls,.v2-home .v4-header-spacer{display:none}.v2-home .layout{display:block!important}.v2-home .sidebar{display:none!important}.v2-home .v3-overview{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+
+/* Visual review v4.1: increase type to screenshot-reference size while
+ retaining measured 59/147/76/222/96/228px rows and correct RTL order. */
+.v2-home .quick-nav .quick-link,.v2-home .quick-nav .v4-side-link{
+ font-size:13px!important;min-height:41px!important;padding:7px 10px!important
+}
+.v2-home .quick-nav .quick-link .v4-icon,.v2-home .quick-nav .v4-side-link .v4-icon{
+ width:21px!important;height:21px!important
+}
+.v2-home .v4-user-chip{font-size:13px!important}
+.v2-home .v3-metrics .v2-summary small{font-size:11px!important}
+.v2-home .v3-card-header h3{font-size:13px!important}
+.v2-home .v3-bottom-grid .v3-card-header h3{font-size:13px!important}
+.v2-home .v3-features .quick-action strong{font-size:13px!important}
+.v2-home .v4-update-row{font-size:11px!important}
+.v2-home .v4-trend-foot span{font-size:10px!important}
+.v2-home .v3-suggestion-list p{font-size:11px!important}
+.v2-home .v3-event-item a{font-size:11px!important}
+.v2-home .v4-forecast-mini small{font-size:10px!important}
+.v2-home .v4-forecast-mini span{font-size:10px!important}
+.v2-home .v3-calendar-week span{font-size:10px!important}
+.v2-home .v4-header-spacer{flex:0 0 250px!important}
+.v2-home .v4-header-controls{flex:0 0 290px!important;justify-content:flex-start!important}
+.v2-home .v4-drawer-controls{margin-top:9px}
+.v2-home .v4-drawer-controls .presentation-toggle{
+ display:inline-flex!important;background:#e8f9f0!important;border:1px solid #9fd8bf!important;
+ color:#067455!important;border-radius:9px;padding:9px 13px;font-size:12px;cursor:pointer;opacity:1!important
+}
+@media(max-width:850px){
+ .v2-home .quick-nav .quick-link{font-size:9px!important;min-height:45px!important}
+ .v2-home .v4-header-spacer{display:none}
+ .v2-home .v4-header-controls{flex:1 0 auto!important}
+}
