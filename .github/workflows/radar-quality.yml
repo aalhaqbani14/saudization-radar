@@ -78,6 +78,11 @@ name: Radar quality checks
       - 'assets/v3-approved-dashboard.js'
       - 'assets/kafd-hero.webp'
       - 'test_approved_dashboard.mjs'
+      - 'assets/v4-reference-dashboard.css'
+      - 'assets/v4-reference-dashboard.js'
+      - 'assets/v4-icons.svg'
+      - 'assets/v4-skyline.svg'
+      - 'test_reference_dashboard.mjs'
       - 'test_completion.mjs'
       - 'assets/occupation-catalog.js'
       - 'data/occupation-catalog.json'
@@ -111,6 +116,10 @@ jobs:
           node --check assets/completion-model.js
           node --check assets/completion.js
           node test_completion.mjs
+      - name: Verify pixel-proportioned reference layout and true data wiring
+        run: |
+          node --check assets/v4-reference-dashboard.js
+          node test_reference_dashboard.mjs
       - name: Test actual light-green executive dashboard rebuild
         run: |
           node --check assets/v3-dashboard-model.js
