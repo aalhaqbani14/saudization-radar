@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-18T15:04:45.624151+00:00",
+  "updated_at": "2026-11-19T06:10:46.486272+00:00",
   "documents": {
     "admin": {
       "url": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
@@ -539,7 +539,7 @@
         }
       ],
       "pages": 7,
-      "last_success_at": "2026-11-18T15:04:30.432752+00:00"
+      "last_success_at": "2026-11-19T06:10:38.125622+00:00"
     },
     "accounting": {
       "url": "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajryy-lqrar-twtyn-mhn-almhasbyt.pdf",
@@ -1318,7 +1318,7 @@
         }
       ],
       "pages": 10,
-      "last_success_at": "2026-11-18T15:04:30.432752+00:00"
+      "last_success_at": "2026-11-19T06:10:38.125622+00:00"
     },
     "postal": {
       "url": "https://www.hrsd.gov.sa/sites/default/files/2022-06/20112022.pdf",
@@ -1981,7 +1981,7 @@
         }
       ],
       "pages": 10,
-      "last_success_at": "2026-11-18T15:04:30.432752+00:00"
+      "last_success_at": "2026-11-19T06:10:38.125622+00:00"
     },
     "procurement": {
       "url": "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajrayy-lqrar-twtyn-mhn-almshtryat.pdf",
@@ -2468,7 +2468,7 @@
         }
       ],
       "pages": 7,
-      "last_success_at": "2026-11-18T15:04:30.432752+00:00"
+      "last_success_at": "2026-11-19T06:10:38.125622+00:00"
     },
     "marketing": {
       "url": "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-ala-jray-y-lqrar-twtyn-mhn-altswyq-v5.pdf",
@@ -2987,7 +2987,7 @@
         }
       ],
       "pages": 8,
-      "last_success_at": "2026-11-18T15:04:30.432752+00:00"
+      "last_success_at": "2026-11-19T06:10:38.125622+00:00"
     },
     "sales": {
       "url": "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-ala-jray-y-lqrar-twtyn-mhn-almby-at.pdf",
@@ -3426,7 +3426,7 @@
         }
       ],
       "pages": 8,
-      "last_success_at": "2026-11-18T15:04:30.432752+00:00"
+      "last_success_at": "2026-11-19T06:10:38.125622+00:00"
     },
     "legal": {
       "url": "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajrayy-lqrar-mhn-alqanwnyt.pdf",
@@ -3945,7 +3945,7 @@
         }
       ],
       "pages": 7,
-      "last_success_at": "2026-11-18T15:04:30.432752+00:00"
+      "last_success_at": "2026-11-19T06:10:38.125622+00:00"
     },
     "ict": {
       "url": "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajrayy-lqrar-twtyn-mhn-alatsalat-wtqnyt-alm-lwmat.pdf",
@@ -4676,7 +4676,7 @@
         }
       ],
       "pages": 9,
-      "last_success_at": "2026-11-18T15:04:30.432752+00:00"
+      "last_success_at": "2026-11-19T06:10:38.125622+00:00"
     },
     "consulting": {
       "url": "https://www.hrsd.gov.sa/sites/default/files/2023-03/11102022.pdf",
@@ -5459,7 +5459,7 @@
         }
       ],
       "pages": 11,
-      "last_success_at": "2026-11-18T15:04:30.432752+00:00"
+      "last_success_at": "2026-11-19T06:10:38.125622+00:00"
     },
     "service": {
       "url": "https://www.hrsd.gov.sa/sites/default/files/2022-06/21112022.pdf",
@@ -6190,7 +6190,7 @@
         }
       ],
       "pages": 11,
-      "last_success_at": "2026-11-18T15:04:30.432752+00:00"
+      "last_success_at": "2026-11-19T06:10:38.125622+00:00"
     },
     "beauty": {
       "url": "https://www.hrsd.gov.sa/sites/default/files/2025-11/mswdt-aldlyl-alajray-y-lqrar-twtyn-nshat-mrakz-alastrkha-wal-nayt-alshkhsyt_v11.pdf",
@@ -6669,7 +6669,7 @@
         }
       ],
       "pages": 10,
-      "last_success_at": "2026-11-18T15:04:30.432752+00:00"
+      "last_success_at": "2026-11-19T06:10:38.125622+00:00"
     },
     "realestate": {
       "url": "https://www.hrsd.gov.sa/sites/default/files/2021-07/04112023.pdf",
@@ -7388,7 +7388,7 @@
         }
       ],
       "pages": 13,
-      "last_success_at": "2026-11-18T15:04:30.432752+00:00"
+      "last_success_at": "2026-11-19T06:10:38.125622+00:00"
     },
     "aviation": {
       "url": "https://www.hrsd.gov.sa/sites/default/files/2022-06/22112022.pdf",
@@ -8059,7 +8059,7 @@
         }
       ],
       "pages": 11,
-      "last_success_at": "2026-11-18T15:04:30.432752+00:00"
+      "last_success_at": "2026-11-19T06:10:38.125622+00:00"
     },
     "retail7": {
       "url": "https://www.hrsd.gov.sa/sites/default/files/2022-06/24112022.pdf",
@@ -8866,7 +8866,7 @@
         }
       ],
       "pages": 12,
-      "last_success_at": "2026-11-18T15:04:30.432752+00:00"
+      "last_success_at": "2026-11-19T06:10:38.125622+00:00"
     },
     "inspection": {
       "url": "https://www.hrsd.gov.sa/sites/default/files/2022-06/25112022.pdf",
@@ -9313,7 +9313,7 @@
         }
       ],
       "pages": 8,
-      "last_success_at": "2026-11-18T15:04:30.432752+00:00"
+      "last_success_at": "2026-11-19T06:10:38.125622+00:00"
     },
     "madinah": {
       "url": "https://www.hrsd.gov.sa/sites/default/files/2023-07/09012023.pdf",
@@ -10112,7 +10112,7 @@
         }
       ],
       "pages": 10,
-      "last_success_at": "2026-11-18T15:04:30.432752+00:00"
+      "last_success_at": "2026-11-19T06:10:38.125622+00:00"
     }
   }
 }
