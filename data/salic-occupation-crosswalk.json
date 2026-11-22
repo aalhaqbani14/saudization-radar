@@ -123,7 +123,9 @@
             "admin"
           ],
           "catalogTier": "decision_guide",
-          "sourceUrls": []
+          "sourceUrls": [
+            "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf"
+          ]
         }
       ],
       "referenceCode": "412001",
@@ -169,7 +171,9 @@
             "accounting"
           ],
           "catalogTier": "official_gastat_2019",
-          "sourceUrls": []
+          "sourceUrls": [
+            "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajryy-lqrar-twtyn-mhn-almhasbyt.pdf"
+          ]
         }
       ],
       "referenceCode": "241101",
@@ -192,7 +196,9 @@
             "ict"
           ],
           "catalogTier": "official_gastat_2019",
-          "sourceUrls": []
+          "sourceUrls": [
+            "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajrayy-lqrar-twtyn-mhn-alatsalat-wtqnyt-alm-lwmat.pdf"
+          ]
         }
       ],
       "referenceCode": "251102",
@@ -238,7 +244,9 @@
             "procurement"
           ],
           "catalogTier": "official_gastat_2019",
-          "sourceUrls": []
+          "sourceUrls": [
+            "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajrayy-lqrar-twtyn-mhn-almshtryat.pdf"
+          ]
         }
       ],
       "referenceCode": "243102",
@@ -282,7 +290,9 @@
             "ict"
           ],
           "catalogTier": "official_gastat_2019",
-          "sourceUrls": []
+          "sourceUrls": [
+            "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajrayy-lqrar-twtyn-mhn-alatsalat-wtqnyt-alm-lwmat.pdf"
+          ]
         }
       ],
       "referenceCode": "251101",
@@ -305,7 +315,9 @@
             "accounting"
           ],
           "catalogTier": "official_gastat_2019",
-          "sourceUrls": []
+          "sourceUrls": [
+            "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajryy-lqrar-twtyn-mhn-almhasbyt.pdf"
+          ]
         }
       ],
       "referenceCode": "121101",
@@ -351,7 +363,9 @@
             "marketing"
           ],
           "catalogTier": "official_gastat_2019",
-          "sourceUrls": []
+          "sourceUrls": [
+            "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-ala-jray-y-lqrar-twtyn-mhn-altswyq-v5.pdf"
+          ]
         }
       ],
       "referenceCode": "243110",
@@ -374,7 +388,9 @@
             "admin"
           ],
           "catalogTier": "decision_guide",
-          "sourceUrls": []
+          "sourceUrls": [
+            "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf"
+          ]
         }
       ],
       "referenceCode": "242302",
@@ -466,7 +482,9 @@
             "ict"
           ],
           "catalogTier": "official_gastat_2019",
-          "sourceUrls": []
+          "sourceUrls": [
+            "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajrayy-lqrar-twtyn-mhn-alatsalat-wtqnyt-alm-lwmat.pdf"
+          ]
         }
       ],
       "referenceCode": "212004",
@@ -512,7 +530,9 @@
             "admin"
           ],
           "catalogTier": "decision_guide",
-          "sourceUrls": []
+          "sourceUrls": [
+            "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf"
+          ]
         }
       ],
       "referenceCode": "121201",
@@ -535,7 +555,9 @@
             "procurement"
           ],
           "catalogTier": "decision_guide",
-          "sourceUrls": []
+          "sourceUrls": [
+            "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajrayy-lqrar-twtyn-mhn-almshtryat.pdf"
+          ]
         }
       ],
       "referenceCode": "132417",
@@ -558,7 +580,9 @@
             "ict"
           ],
           "catalogTier": "official_gastat_2019",
-          "sourceUrls": []
+          "sourceUrls": [
+            "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajrayy-lqrar-twtyn-mhn-alatsalat-wtqnyt-alm-lwmat.pdf"
+          ]
         }
       ],
       "referenceCode": "215204",
@@ -691,7 +715,10 @@
             "marketing"
           ],
           "catalogTier": "decision_guide",
-          "sourceUrls": []
+          "sourceUrls": [
+            "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf",
+            "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-ala-jray-y-lqrar-twtyn-mhn-altswyq-v5.pdf"
+          ]
         }
       ],
       "referenceCode": "243202",
@@ -750,7 +777,9 @@
             "admin"
           ],
           "catalogTier": "decision_guide",
-          "sourceUrls": []
+          "sourceUrls": [
+            "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf"
+          ]
         }
       ],
       "referenceCode": "334301",
@@ -773,7 +802,9 @@
             "admin"
           ],
           "catalogTier": "official_group_first_page",
-          "sourceUrls": []
+          "sourceUrls": [
+            "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf"
+          ]
         }
       ],
       "referenceCode": "441601",
@@ -796,7 +827,9 @@
             "admin"
           ],
           "catalogTier": "decision_guide",
-          "sourceUrls": []
+          "sourceUrls": [
+            "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf"
+          ]
         }
       ],
       "referenceCode": "121214",
@@ -819,7 +852,9 @@
             "accounting"
           ],
           "catalogTier": "official_gastat_2019",
-          "sourceUrls": []
+          "sourceUrls": [
+            "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajryy-lqrar-twtyn-mhn-almhasbyt.pdf"
+          ]
         }
       ],
       "referenceCode": "121104",
@@ -842,7 +877,9 @@
             "accounting"
           ],
           "catalogTier": "official_gastat_2019",
-          "sourceUrls": []
+          "sourceUrls": [
+            "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajryy-lqrar-twtyn-mhn-almhasbyt.pdf"
+          ]
         }
       ],
       "referenceCode": "241103",
@@ -865,7 +902,9 @@
             "ict"
           ],
           "catalogTier": "official_gastat_2019",
-          "sourceUrls": []
+          "sourceUrls": [
+            "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajrayy-lqrar-twtyn-mhn-alatsalat-wtqnyt-alm-lwmat.pdf"
+          ]
         }
       ],
       "referenceCode": "251205",
@@ -888,7 +927,9 @@
             "sales"
           ],
           "catalogTier": "official_gastat_2019",
-          "sourceUrls": []
+          "sourceUrls": [
+            "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-ala-jray-y-lqrar-twtyn-mhn-almby-at.pdf"
+          ]
         }
       ],
       "referenceCode": "332401",
@@ -911,7 +952,9 @@
             "procurement"
           ],
           "catalogTier": "official_gastat_2019",
-          "sourceUrls": []
+          "sourceUrls": [
+            "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajrayy-lqrar-twtyn-mhn-almshtryat.pdf"
+          ]
         }
       ],
       "referenceCode": "243108",
@@ -980,7 +1023,9 @@
             "admin"
           ],
           "catalogTier": "decision_guide",
-          "sourceUrls": []
+          "sourceUrls": [
+            "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf"
+          ]
         }
       ],
       "referenceCode": "242301",
@@ -1003,7 +1048,9 @@
             "admin"
           ],
           "catalogTier": "decision_guide",
-          "sourceUrls": []
+          "sourceUrls": [
+            "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf"
+          ]
         }
       ],
       "referenceCode": "242309",
@@ -1085,7 +1132,9 @@
             "admin"
           ],
           "catalogTier": "decision_guide",
-          "sourceUrls": []
+          "sourceUrls": [
+            "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf"
+          ]
         }
       ],
       "referenceCode": "243204",
@@ -1108,7 +1157,9 @@
             "admin"
           ],
           "catalogTier": "decision_guide",
-          "sourceUrls": []
+          "sourceUrls": [
+            "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf"
+          ]
         }
       ],
       "referenceCode": "242304",
@@ -1131,7 +1182,9 @@
             "accounting"
           ],
           "catalogTier": "official_gastat_2019",
-          "sourceUrls": []
+          "sourceUrls": [
+            "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajryy-lqrar-twtyn-mhn-almhasbyt.pdf"
+          ]
         }
       ],
       "referenceCode": "241108",
@@ -1177,7 +1230,9 @@
             "ict"
           ],
           "catalogTier": "official_gastat_2019",
-          "sourceUrls": []
+          "sourceUrls": [
+            "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajrayy-lqrar-twtyn-mhn-alatsalat-wtqnyt-alm-lwmat.pdf"
+          ]
         }
       ],
       "referenceCode": "252912",
@@ -1269,7 +1324,9 @@
             "legal"
           ],
           "catalogTier": "official_gastat_2019",
-          "sourceUrls": []
+          "sourceUrls": [
+            "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajrayy-lqrar-mhn-alqanwnyt.pdf"
+          ]
         }
       ],
       "referenceCode": "261106",
@@ -1336,7 +1393,9 @@
             "ict"
           ],
           "catalogTier": "official_gastat_2019",
-          "sourceUrls": []
+          "sourceUrls": [
+            "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajrayy-lqrar-twtyn-mhn-alatsalat-wtqnyt-alm-lwmat.pdf"
+          ]
         }
       ],
       "referenceCode": "351201",
@@ -1359,7 +1418,9 @@
             "ict"
           ],
           "catalogTier": "official_gastat_2019",
-          "sourceUrls": []
+          "sourceUrls": [
+            "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajrayy-lqrar-twtyn-mhn-alatsalat-wtqnyt-alm-lwmat.pdf"
+          ]
         }
       ],
       "referenceCode": "252103",
@@ -1510,7 +1571,9 @@
             "admin"
           ],
           "catalogTier": "decision_guide",
-          "sourceUrls": []
+          "sourceUrls": [
+            "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf"
+          ]
         }
       ],
       "referenceCode": "121204",
@@ -1556,7 +1619,9 @@
             "marketing"
           ],
           "catalogTier": null,
-          "sourceUrls": []
+          "sourceUrls": [
+            "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-ala-jray-y-lqrar-twtyn-mhn-altswyq-v5.pdf"
+          ]
         }
       ],
       "referenceCode": "122201",
@@ -1579,7 +1644,9 @@
             "accounting"
           ],
           "catalogTier": "official_gastat_2019",
-          "sourceUrls": []
+          "sourceUrls": [
+            "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajryy-lqrar-twtyn-mhn-almhasbyt.pdf"
+          ]
         }
       ],
       "referenceCode": "121107",
@@ -1625,7 +1692,9 @@
             "admin"
           ],
           "catalogTier": "decision_guide",
-          "sourceUrls": []
+          "sourceUrls": [
+            "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf"
+          ]
         }
       ],
       "referenceCode": "121206",
@@ -1648,7 +1717,9 @@
             "accounting"
           ],
           "catalogTier": "official_gastat_2019",
-          "sourceUrls": []
+          "sourceUrls": [
+            "https://www.hrsd.gov.sa/sites/default/files/2026-01/aldlyl-alajryy-lqrar-twtyn-mhn-almhasbyt.pdf"
+          ]
         }
       ],
       "referenceCode": "121105",
@@ -1671,7 +1742,9 @@
             "marketing"
           ],
           "catalogTier": "official_gastat_2019",
-          "sourceUrls": []
+          "sourceUrls": [
+            "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-ala-jray-y-lqrar-twtyn-mhn-altswyq-v5.pdf"
+          ]
         }
       ],
       "referenceCode": "216601",
@@ -1694,7 +1767,9 @@
             "admin"
           ],
           "catalogTier": "decision_guide",
-          "sourceUrls": []
+          "sourceUrls": [
+            "https://www.hrsd.gov.sa/sites/default/files/2026-04/aldlyl-alajrayy-lqrar-twtyn-almhn-aladaryt-almsandt--2-.pdf"
+          ]
         }
       ],
       "referenceCode": "422601",
