@@ -86,6 +86,11 @@ name: Radar quality checks
       - 'test_completion.mjs'
       - 'assets/occupation-catalog.js'
       - 'data/occupation-catalog.json'
+      - 'occupation-crosswalk.html'
+      - 'data/salic-occupation-crosswalk.json'
+      - 'assets/occupation-crosswalk-model.js'
+      - 'assets/occupation-crosswalk-ui.js'
+      - 'test_occupation_crosswalk.mjs'
       - 'test_occupation_catalog.py'
       - 'sync_occupation_catalog.py'
       - '.github/workflows/radar-quality.yml'
@@ -111,6 +116,12 @@ jobs:
         run: python validate_data.py
       - name: Run offline monitoring and data tests
         run: python -m unittest -v test_monitor.py test_monitor_health.py test_detection.py test_email_templates.py test_data_quality.py test_guide_pdf_monitor.py test_occupation_catalog.py
+      - name: Validate SALIC 75-title code matrix, source provenance and private Qiwa cross-check
+        run: |
+          node --check assets/occupation-crosswalk-model.js
+          node --check assets/occupation-crosswalk-ui.js
+          node --check assets/workforce-import.js
+          node test_occupation_crosswalk.mjs
       - name: Validate completion center and evidence-gated scenario logic
         run: |
           node --check assets/completion-model.js
