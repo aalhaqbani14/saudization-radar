@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#087f63">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="مطابقة مرجعية لجميع مسميات موظفي SALIC الـ75 مع رموز أدلة التوطين والتصنيف السعودي دون الادعاء باعتماد قوى">
+<title>مطابقة رموز المهن | رادار التوطين</title>
+<style>
+:root{font-family:Tahoma,"Segoe UI",Arial,sans-serif;color:#173e36;background:#f4f9f6;font-variant-numeric:tabular-nums}
+*{box-sizing:border-box}body{margin:0}a{color:#08755b;text-decoration:none}a:hover{text-decoration:underline}
+button,input,select{font:inherit}button{cursor:pointer}button:disabled{opacity:.5;cursor:not-allowed}
+button:focus-visible,select:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid #4fcba0;outline-offset:2px}
+header{background:linear-gradient(115deg,#063b35,#07966b);color:#fff;padding:27px max(18px,calc((100vw - 1240px)/2))}
+header a{color:#bbffe0;font-size:12px}
+header h1{margin:12px 0 7px;font-size:clamp(24px,3.6vw,34px)}
+header p{color:#e0fff0;line-height:1.95;font-size:12px;margin:0;max-width:980px}
+main{max-width:1240px;margin:20px auto;padding:0 17px 50px}
+.notice{padding:16px 19px;border:1px solid #e7d7b8;background:#fff8e9;border-radius:13px;font-size:12px;line-height:2;color:#715a34}
+.metrics{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin:19px 0}
+.metric{padding:18px;background:#fff;border:1px solid #dcece3;border-radius:14px;box-shadow:0 4px 19px #0c5c3d0b;min-width:0}
+.metric strong{display:block;margin:7px 0;font-size:28px;font-weight:900;color:#086d54}
+.metric small{font-size:11px;color:#718b7d;line-height:1.75}
+.metric.warn{background:#fff9ed;border-color:#f3dfbb}
+.metric.warn strong{color:#966028}
+.panel{background:#fff;border:1px solid #dcebe4;border-radius:15px;padding:20px;margin:18px 0;box-shadow:0 4px 18px #13594309}
+.panel h2{font-size:18px;margin:0 0 10px;color:#155442}
+.panel p{font-size:12px;color:#627b71;line-height:1.9}
+.actions{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin:13px 0}
+.actions a,.actions button{border:1px solid #b2dec9;border-radius:10px;background:#e9f9ee;color:#086d52;padding:11px 14px;font-size:12px;font-weight:800}
+.actions button.primary{background:#088166;color:#fff;border-color:#088166}
+.filters{display:flex;flex-wrap:wrap;gap:10px;align-items:end;margin-top:15px}
+.filters label{flex:1;display:grid;gap:7px;font-size:11px;color:#547466;min-width:185px}
+.filters input,.filters select{width:100%;border:1px solid #cadfd4;border-radius:10px;background:#fbfffc;padding:11px 13px;font-size:13px;color:#1e4134;min-height:43px}
+.small{font-size:11px;color:#6b8476;line-height:1.9}
+.table-wrap{overflow-x:auto;border:1px solid #e1ebe4;border-radius:12px;margin:12px 0}
+table{border-collapse:collapse;width:100%;min-width:1020px;font-size:12px;line-height:1.75}
+th,td{padding:12px 10px;vertical-align:top;text-align:right;border-bottom:1px solid #e9f0ed}
+thead th{position:sticky;top:0;background:#f0f8f3;color:#275d4a;font-size:11px;z-index:1}
+tbody tr:nth-child(even){background:#fcfefd}
+tbody tr:hover{background:#f3faf5}
+td strong{display:block;font-size:12px;color:#1c4f3e}
+td small{display:block;font-size:10px;color:#778b7d;margin-top:4px}
+.status{display:inline-block;border:1px solid #a5e1c0;border-radius:8px;background:#e3f7ea;color:#08714f;font-size:10px;font-weight:800;padding:5px 8px;white-space:nowrap}
+.status.legacy{background:#f0f3f5;border-color:#d9e2e3;color:#53686b}
+.status.partial{background:#eaf4ff;border-color:#c5e0f6;color:#2d6d9a}
+.status.missing{background:#fff1dd;border-color:#f0d2a9;color:#945c25}
+.code{direction:ltr;display:inline-block;font-weight:900;letter-spacing:.4px;font-family:ui-monospace,Consolas,monospace;font-size:12px;color:#0b5a47;background:#ecf9f0;border-radius:7px;padding:4px 7px}
+.links{display:grid;gap:6px}
+.links a{font-size:10px;color:#07765d;font-weight:700}
+.note{font-size:11px;line-height:1.85;color:#627a70}
+#status{font-size:12px;color:#517967;line-height:1.8}
+#status.error{color:#992f23;background:#fff1eb;border:1px solid #efcdc1;border-radius:8px;padding:11px}
+.rule{display:flex;gap:13px;align-items:start;border-top:1px solid #e8f0ea;padding:12px 0;font-size:12px;line-height:1.9;color:#4c6b5c}
+.rule strong{min-width:145px;color:#164d3e}
+@media(max-width:1000px){.metrics{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:650px){.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.metric{padding:13px}.panel{padding:15px}.filters{display:grid}.actions{display:grid;grid-template-columns:1fr 1fr}}
+@media print{header{background:white;color:#10563f;padding:12px}.actions,.filters{display:none}main{max-width:none}.panel{box-shadow:none}.table-wrap{overflow:visible}table{min-width:0;font-size:9px}}
+</style>
+<script src="assets/occupation-crosswalk-model.js" defer></script>
+<script src="assets/occupation-crosswalk-ui.js" defer></script>
+</head>
+<body>
+<header>
+<a href="index.html">← رادار التوطين</a> · <a href="occupation-catalog.html">دليل الرموز المهنية</a>
+<h1>مطابقة رموز مهن SALIC</h1>
+<p>مقارنة مرجعية لكل المسميات المهنية الـ75 الموجودة في آخر ملف قوى عاملة قدمته SALIC مع أدلة وزارة الموارد البشرية وتصنيف المهن التاريخي. المسميات والأعداد فقط؛ لا تُنشر أسماء الموظفين أو أرقام هوياتهم أو رواتبهم.</p>
+</header>
+<main>
+<div class="notice">
+<b>الفرق بين الرمز المرجعي ورمز قوى الفعلي:</b> وجود رمز رسمي مقابل مسمى وظيفي في الجدول لا يعني أن موظفي SALIC يحملون هذا الرمز في قوى، ولا يثبت انطباق قرار التوطين على الفرع والكيان والمهام. الأدلة المقدمة تكفي لبناء هذا المرجع؛ وتأكيد تسجيل كل موظف يستلزم الاطلاع الآمن على رمز المهنة الفعلي من قوى.
+</div>
+<div class="metrics">
+<div class="metric"><small>المسميات قيد المطابقة</small><strong id="m-titles">—</strong><small>من ملف الموظفين السابق</small></div>
+<div class="metric"><small>مطابقات جداول القرارات</small><strong id="m-guide">—</strong><small>رموز مرجعية من دليل رسمي</small></div>
+<div class="metric"><small>مراجع فهرس تحتاج توثيقًا</small><strong id="m-partial">—</strong><small>لا تمثل تحققًا من قوى</small></div>
+<div class="metric"><small>مطابقات تاريخية (2019)</small><strong id="m-legacy">—</strong><small>تحتاج تحديث الرمز</small></div>
+<div class="metric warn"><small>بدون مطابقة حرفية مؤكدة</small><strong id="m-missing">—</strong><small>يلزم فحص مسمى قوى</small></div>
+</div>
+<section class="panel">
+<h2>سجل مطابقة المهن</h2>
+<p>يمكنك البحث بأي مسمى أو رمز مهني، والتصفية حسب قوة الدليل. جميع الرموز أدناه مراجع مهنية فقط، ولم يتم ربطها بأشخاص أو إثبات رواتب أو اعتماد مهني.</p>
+<div class="filters">
+<label>ابحث بالمسمى أو الرمز<input id="query" type="search" placeholder="مثال: مساعد إداري أو 412001" autocomplete="off"></label>
+<label>حالة مطابقة الرمز<select id="status-filter">
+<option value="all">جميع المسميات</option>
+<option value="guide_exact">مطابقة حرفية بدليل القرار</option>
+<option value="catalog_partial">مرجع فهرس يحتاج توثيقًا</option>
+<option value="archive_only">مرجع تاريخي 2019</option>
+<option value="unmapped">لم يُحدد رمز مطابق</option>
+</select></label>
+</div>
+<div class="actions">
+<button id="export" class="primary" type="button" disabled>تصدير ملف المطابقة CSV</button>
+<a href="workforce-import.html">فحص رموز قوى محليًا</a>
+<a href="completion.html">مركز استكمال الأدلة</a>
+<a href="https://www.hrsd.gov.sa/skills-occupations/occupations" target="_blank" rel="noopener noreferrer">المرجع المهني في الوزارة</a>
+</div>
+<p id="status" role="status" aria-live="polite">جارٍ قراءة المهن والمصادر…</p>
+<div class="table-wrap"><table><thead><tr>
+<th>المسمى الوظيفي</th><th>عدد الموظفين<br>سعودي / غير سعودي</th>
+<th>الرمز المرجعي</th><th>مستوى المطابقة</th><th>القرارات ذات الصلة بالمسمى</th>
+<th>المصدر</th><th>ما يلزم التحقق منه</th>
+</tr></thead><tbody id="rows"><tr><td colspan="7">جارٍ تحميل المهن…</td></tr></tbody></table></div>
+<p class="small">ملف CSV الناتج يقتصر على إجماليات المهن والرموز المرجعية، ولا يحتوي أسماء موظفين أو رقم هوية أو أجر. لا تستورد الملف إلى قوى على أنه نسخة مؤكدة للرموز.</p>
+</section>
+<section class="panel">
+<h2>ملاحظات مراجعة أساسية</h2>
+<div class="rule"><strong>مساعد إداري</strong><span>رمز الدليل <b>412001</b>؛ يوجد 7 موظفين بهذا المسمى (4 سعوديين و3 غير سعوديين). الرقم لا يثبت أن وظائفهم المسجلة في قوى هي نفسها، لذا الفجوة تقديرية إلى حين التأكيد.</span></div>
+<div class="rule"><strong>أخصائي إداري</strong><span>موجود تنظيميًا في الوظائف الإدارية (17 موظفًا)، وله رمز تاريخي مرجعي <b>242121</b>؛ لا يصنف تلقائيًا ضمن جدول قرار المهن الإدارية المساندة 132249.</span></div>
+<div class="rule"><strong>المسميات غير المحددة</strong><span>«النائب العام»، «أخصائي تقنية هندسة حاسب آلي»، «مدير إعلام». لا نعطيها رموزًا متشابهة بالتخمين؛ نطلب فحص رموز قوى ووصف المهام عند الحاجة.</span></div>
+<div class="rule"><strong>قائمة هدف HRDF</strong><span>قائمة المهن المستهدفة للحوافز تختلف عن الأدلة الإجرائية لقرارات التوطين وقد تتضمن رموزًا من تصنيفات متعددة. لا يُخلط بينها وبين إثبات رموز قوى ذات الستة أرقام أو قرار توطين SALIC.</span></div>
+</section>
+</main>
+</body>
+</html>
