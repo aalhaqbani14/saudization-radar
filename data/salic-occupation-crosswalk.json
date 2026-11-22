@@ -1,0 +1,1730 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-11-03",
+  "generatedFrom": "2026-11-04 workforce Excel aggregates (75 titles) + user-supplied HRSD procedural guides + project occupation catalog",
+  "referenceDate": "2026-11-22",
+  "organization": "SALIC",
+  "privacy": "aggregated_titles_only_no_employee_names_ids_wages",
+  "scope": "Every job title in dated SALIC employee sheet, not every code in national taxonomy",
+  "limits": [
+    "The 37 exact guide matches are officially listed occupation reference codes, NOT Qiwa-verified employee codes.",
+    "5 catalog_partial matches are unconfirmed in a current public procedural guide; restricted project documentation is not reproduced.",
+    "30 archive_only matches rely on 2019 GASTAT taxonomy and must be confirmed against 2026 Qiwa codes.",
+    "3 titles lack exact reference code matches. No occupation codes are guessed.",
+    "HRDF employment-support targeted occupation lists mix code lengths and sector-specific incentives; they are not treated as proof of Qiwa code or SALIC regulatory obligations.",
+    "Official decisions may require entity activity, duties performed, wages, social-insurance records and certifications; all remain unverified."
+  ],
+  "summary": {
+    "titles": 75,
+    "totalEmployees": 171,
+    "saudi": 117,
+    "nonSaudi": 54,
+    "byStatus": {
+      "guide_exact": {
+        "titles": 37,
+        "employees": 74
+      },
+      "catalog_partial": {
+        "titles": 5,
+        "employees": 11
+      },
+      "archive_only": {
+        "titles": 30,
+        "employees": 82
+      },
+      "unmapped": {
+        "titles": 3,
+        "employees": 4
+      }
+    },
+    "employeeCodesVerified": 0
+  },
+  "items": [
+    {
+      "title": "أخصائي إداري",
+      "total": 17,
+      "saudi": 15,
+      "nonSaudi": 2,
+      "status": "archive_only",
+      "candidateCodes": [
+        {
+          "code": "242121",
+          "matchesGuide": false,
+          "guideDecisionIds": [],
+          "catalogTier": "official_gastat_2019",
+          "sourceUrls": [
+            "https://quality.kku.edu.sa/sites/quality.kku.edu.sa/files/2024-03/%D8%A7%D9%84%D8%AA%D8%B5%D9%86%D9%8A%D9%81%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D8%AD%D8%AF%20%D9%84%D9%84%D9%85%D9%87%D9%86%201.pdf"
+          ]
+        }
+      ],
+      "referenceCode": "242121",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "مسمى تنظيمي إداري عام؛ لا يدخل تلقائيًا ضمن قرار المهن الإدارية المساندة 132249، ويلزم رمز قوى والمهام الفعلية."
+    },
+    {
+      "title": "مدير استثمار",
+      "total": 10,
+      "saudi": 7,
+      "nonSaudi": 3,
+      "status": "archive_only",
+      "candidateCodes": [
+        {
+          "code": "121110",
+          "matchesGuide": false,
+          "guideDecisionIds": [],
+          "catalogTier": "official_gastat_2019",
+          "sourceUrls": [
+            "https://quality.kku.edu.sa/sites/quality.kku.edu.sa/files/2024-03/%D8%A7%D9%84%D8%AA%D8%B5%D9%86%D9%8A%D9%81%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D8%AD%D8%AF%20%D9%84%D9%84%D9%85%D9%87%D9%86%201.pdf"
+          ]
+        }
+      ],
+      "referenceCode": "121110",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "تطابق مسمى مع تصنيف هيئة الإحصاء لعام 2019، ويحتاج التحقق من الرمز الحالي في قوى."
+    },
+    {
+      "title": "أخصائي استثمار",
+      "total": 10,
+      "saudi": 5,
+      "nonSaudi": 5,
+      "status": "archive_only",
+      "candidateCodes": [
+        {
+          "code": "241202",
+          "matchesGuide": false,
+          "guideDecisionIds": [],
+          "catalogTier": "official_gastat_2019",
+          "sourceUrls": [
+            "https://quality.kku.edu.sa/sites/quality.kku.edu.sa/files/2024-03/%D8%A7%D9%84%D8%AA%D8%B5%D9%86%D9%8A%D9%81%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D8%AD%D8%AF%20%D9%84%D9%84%D9%85%D9%87%D9%86%201.pdf"
+          ]
+        }
+      ],
+      "referenceCode": "241202",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "تطابق مسمى مع تصنيف هيئة الإحصاء لعام 2019، ويحتاج التحقق من الرمز الحالي في قوى."
+    },
+    {
+      "title": "مساعد إداري",
+      "total": 7,
+      "saudi": 4,
+      "nonSaudi": 3,
+      "status": "guide_exact",
+      "candidateCodes": [
+        {
+          "code": "412001",
+          "matchesGuide": true,
+          "guideDecisionIds": [
+            "admin"
+          ],
+          "catalogTier": "decision_guide",
+          "sourceUrls": []
+        }
+      ],
+      "referenceCode": "412001",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "الدليل الرسمي يسرد 412001 لمهنة مساعد إداري؛ عدد 7 (4 سعوديين، 3 غير سعوديين) بالمسمى فقط، وليس إثباتًا أن العمال الثلاثة يحملون هذا الرمز في قوى."
+    },
+    {
+      "title": "أخصائي تحليل مالي",
+      "total": 5,
+      "saudi": 0,
+      "nonSaudi": 5,
+      "status": "archive_only",
+      "candidateCodes": [
+        {
+          "code": "241303",
+          "matchesGuide": false,
+          "guideDecisionIds": [],
+          "catalogTier": "official_gastat_2019",
+          "sourceUrls": [
+            "https://quality.kku.edu.sa/sites/quality.kku.edu.sa/files/2024-03/%D8%A7%D9%84%D8%AA%D8%B5%D9%86%D9%8A%D9%81%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D8%AD%D8%AF%20%D9%84%D9%84%D9%85%D9%87%D9%86%201.pdf"
+          ]
+        }
+      ],
+      "referenceCode": "241303",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "تطابق مسمى مع تصنيف هيئة الإحصاء لعام 2019، ويحتاج التحقق من الرمز الحالي في قوى."
+    },
+    {
+      "title": "محاسب",
+      "total": 5,
+      "saudi": 4,
+      "nonSaudi": 1,
+      "status": "guide_exact",
+      "candidateCodes": [
+        {
+          "code": "241101",
+          "matchesGuide": true,
+          "guideDecisionIds": [
+            "accounting"
+          ],
+          "catalogTier": "official_gastat_2019",
+          "sourceUrls": []
+        }
+      ],
+      "referenceCode": "241101",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "مطابقة اسمية من دليل توطين رسمي؛ انطباق القرار والرمز الفعلي للموظف والأجر والاعتماد والأنشطة تحتاج تحققًا مستقلًا."
+    },
+    {
+      "title": "محلل نظم المعلومات",
+      "total": 6,
+      "saudi": 5,
+      "nonSaudi": 1,
+      "status": "guide_exact",
+      "candidateCodes": [
+        {
+          "code": "251102",
+          "matchesGuide": true,
+          "guideDecisionIds": [
+            "ict"
+          ],
+          "catalogTier": "official_gastat_2019",
+          "sourceUrls": []
+        }
+      ],
+      "referenceCode": "251102",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "مطابقة اسمية من دليل توطين رسمي؛ انطباق القرار والرمز الفعلي للموظف والأجر والاعتماد والأنشطة تحتاج تحققًا مستقلًا."
+    },
+    {
+      "title": "مدير إداري",
+      "total": 6,
+      "saudi": 6,
+      "nonSaudi": 0,
+      "status": "archive_only",
+      "candidateCodes": [
+        {
+          "code": "121902",
+          "matchesGuide": false,
+          "guideDecisionIds": [],
+          "catalogTier": "official_gastat_2019",
+          "sourceUrls": [
+            "https://quality.kku.edu.sa/sites/quality.kku.edu.sa/files/2024-03/%D8%A7%D9%84%D8%AA%D8%B5%D9%86%D9%8A%D9%81%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D8%AD%D8%AF%20%D9%84%D9%84%D9%85%D9%87%D9%86%201.pdf"
+          ]
+        }
+      ],
+      "referenceCode": "121902",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "تطابق مسمى مع تصنيف هيئة الإحصاء لعام 2019، ويحتاج التحقق من الرمز الحالي في قوى."
+    },
+    {
+      "title": "أخصائي مشتريات",
+      "total": 5,
+      "saudi": 5,
+      "nonSaudi": 0,
+      "status": "guide_exact",
+      "candidateCodes": [
+        {
+          "code": "243102",
+          "matchesGuide": true,
+          "guideDecisionIds": [
+            "procurement"
+          ],
+          "catalogTier": "official_gastat_2019",
+          "sourceUrls": []
+        }
+      ],
+      "referenceCode": "243102",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "مطابقة اسمية من دليل توطين رسمي؛ انطباق القرار والرمز الفعلي للموظف والأجر والاعتماد والأنشطة تحتاج تحققًا مستقلًا."
+    },
+    {
+      "title": "مدير إدارة مشاريع",
+      "total": 5,
+      "saudi": 4,
+      "nonSaudi": 1,
+      "status": "catalog_partial",
+      "candidateCodes": [
+        {
+          "code": "121314",
+          "matchesGuide": false,
+          "guideDecisionIds": [],
+          "catalogTier": "decision_guide",
+          "sourceUrls": []
+        }
+      ],
+      "referenceCode": "121314",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "ورد في فهرس الرادار، لكن دليل القرار الساري ورمز قوى لهذا الموظف لم يُثبتا بعد."
+    },
+    {
+      "title": "أخصائي علوم حاسب آلي",
+      "total": 3,
+      "saudi": 1,
+      "nonSaudi": 2,
+      "status": "guide_exact",
+      "candidateCodes": [
+        {
+          "code": "251101",
+          "matchesGuide": true,
+          "guideDecisionIds": [
+            "ict"
+          ],
+          "catalogTier": "official_gastat_2019",
+          "sourceUrls": []
+        }
+      ],
+      "referenceCode": "251101",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "مطابقة اسمية من دليل توطين رسمي؛ انطباق القرار والرمز الفعلي للموظف والأجر والاعتماد والأنشطة تحتاج تحققًا مستقلًا."
+    },
+    {
+      "title": "مدير مالي",
+      "total": 3,
+      "saudi": 3,
+      "nonSaudi": 0,
+      "status": "guide_exact",
+      "candidateCodes": [
+        {
+          "code": "121101",
+          "matchesGuide": true,
+          "guideDecisionIds": [
+            "accounting"
+          ],
+          "catalogTier": "official_gastat_2019",
+          "sourceUrls": []
+        }
+      ],
+      "referenceCode": "121101",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "مطابقة اسمية من دليل توطين رسمي؛ انطباق القرار والرمز الفعلي للموظف والأجر والاعتماد والأنشطة تحتاج تحققًا مستقلًا."
+    },
+    {
+      "title": "أخصائي أداء مؤسسي",
+      "total": 2,
+      "saudi": 0,
+      "nonSaudi": 2,
+      "status": "archive_only",
+      "candidateCodes": [
+        {
+          "code": "242119",
+          "matchesGuide": false,
+          "guideDecisionIds": [],
+          "catalogTier": "official_gastat_2019",
+          "sourceUrls": [
+            "https://quality.kku.edu.sa/sites/quality.kku.edu.sa/files/2024-03/%D8%A7%D9%84%D8%AA%D8%B5%D9%86%D9%8A%D9%81%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D8%AD%D8%AF%20%D9%84%D9%84%D9%85%D9%87%D9%86%201.pdf"
+          ]
+        }
+      ],
+      "referenceCode": "242119",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "تطابق مسمى مع تصنيف هيئة الإحصاء لعام 2019، ويحتاج التحقق من الرمز الحالي في قوى."
+    },
+    {
+      "title": "أخصائي تسويق",
+      "total": 2,
+      "saudi": 1,
+      "nonSaudi": 1,
+      "status": "guide_exact",
+      "candidateCodes": [
+        {
+          "code": "243110",
+          "matchesGuide": true,
+          "guideDecisionIds": [
+            "marketing"
+          ],
+          "catalogTier": "official_gastat_2019",
+          "sourceUrls": []
+        }
+      ],
+      "referenceCode": "243110",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "مطابقة اسمية من دليل توطين رسمي؛ انطباق القرار والرمز الفعلي للموظف والأجر والاعتماد والأنشطة تحتاج تحققًا مستقلًا."
+    },
+    {
+      "title": "أخصائي عمليات موارد بشرية",
+      "total": 3,
+      "saudi": 3,
+      "nonSaudi": 0,
+      "status": "guide_exact",
+      "candidateCodes": [
+        {
+          "code": "242302",
+          "matchesGuide": true,
+          "guideDecisionIds": [
+            "admin"
+          ],
+          "catalogTier": "decision_guide",
+          "sourceUrls": []
+        }
+      ],
+      "referenceCode": "242302",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "مطابقة اسمية من دليل توطين رسمي؛ انطباق القرار والرمز الفعلي للموظف والأجر والاعتماد والأنشطة تحتاج تحققًا مستقلًا."
+    },
+    {
+      "title": "رئيس تنفيذي",
+      "total": 3,
+      "saudi": 3,
+      "nonSaudi": 0,
+      "status": "archive_only",
+      "candidateCodes": [
+        {
+          "code": "112001",
+          "matchesGuide": false,
+          "guideDecisionIds": [],
+          "catalogTier": "official_gastat_2019",
+          "sourceUrls": [
+            "https://quality.kku.edu.sa/sites/quality.kku.edu.sa/files/2024-03/%D8%A7%D9%84%D8%AA%D8%B5%D9%86%D9%8A%D9%81%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D8%AD%D8%AF%20%D9%84%D9%84%D9%85%D9%87%D9%86%201.pdf"
+          ]
+        }
+      ],
+      "referenceCode": "112001",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "تطابق مسمى مع تصنيف هيئة الإحصاء لعام 2019، ويحتاج التحقق من الرمز الحالي في قوى."
+    },
+    {
+      "title": "عامل تنظيف أدوات مطبخ",
+      "total": 2,
+      "saudi": 0,
+      "nonSaudi": 2,
+      "status": "archive_only",
+      "candidateCodes": [
+        {
+          "code": "941201",
+          "matchesGuide": false,
+          "guideDecisionIds": [],
+          "catalogTier": "official_gastat_2019",
+          "sourceUrls": [
+            "https://quality.kku.edu.sa/sites/quality.kku.edu.sa/files/2024-03/%D8%A7%D9%84%D8%AA%D8%B5%D9%86%D9%8A%D9%81%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D8%AD%D8%AF%20%D9%84%D9%84%D9%85%D9%87%D9%86%201.pdf"
+          ]
+        }
+      ],
+      "referenceCode": "941201",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "تطابق مسمى مع تصنيف هيئة الإحصاء لعام 2019، ويحتاج التحقق من الرمز الحالي في قوى."
+    },
+    {
+      "title": "عامل تنظيف مكاتب ومنشآت",
+      "total": 1,
+      "saudi": 0,
+      "nonSaudi": 1,
+      "status": "archive_only",
+      "candidateCodes": [
+        {
+          "code": "911203",
+          "matchesGuide": false,
+          "guideDecisionIds": [],
+          "catalogTier": "official_gastat_2019",
+          "sourceUrls": [
+            "https://quality.kku.edu.sa/sites/quality.kku.edu.sa/files/2024-03/%D8%A7%D9%84%D8%AA%D8%B5%D9%86%D9%8A%D9%81%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D8%AD%D8%AF%20%D9%84%D9%84%D9%85%D9%87%D9%86%201.pdf"
+          ]
+        }
+      ],
+      "referenceCode": "911203",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "تطابق مسمى مع تصنيف هيئة الإحصاء لعام 2019، ويحتاج التحقق من الرمز الحالي في قوى."
+    },
+    {
+      "title": "محلل بيانات",
+      "total": 3,
+      "saudi": 1,
+      "nonSaudi": 2,
+      "status": "guide_exact",
+      "candidateCodes": [
+        {
+          "code": "212004",
+          "matchesGuide": true,
+          "guideDecisionIds": [
+            "ict"
+          ],
+          "catalogTier": "official_gastat_2019",
+          "sourceUrls": []
+        }
+      ],
+      "referenceCode": "212004",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "مطابقة اسمية من دليل توطين رسمي؛ انطباق القرار والرمز الفعلي للموظف والأجر والاعتماد والأنشطة تحتاج تحققًا مستقلًا."
+    },
+    {
+      "title": "مدير عام",
+      "total": 3,
+      "saudi": 3,
+      "nonSaudi": 0,
+      "status": "archive_only",
+      "candidateCodes": [
+        {
+          "code": "112004",
+          "matchesGuide": false,
+          "guideDecisionIds": [],
+          "catalogTier": "official_gastat_2019",
+          "sourceUrls": [
+            "https://quality.kku.edu.sa/sites/quality.kku.edu.sa/files/2024-03/%D8%A7%D9%84%D8%AA%D8%B5%D9%86%D9%8A%D9%81%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D8%AD%D8%AF%20%D9%84%D9%84%D9%85%D9%87%D9%86%201.pdf"
+          ]
+        }
+      ],
+      "referenceCode": "112004",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "تطابق مسمى مع تصنيف هيئة الإحصاء لعام 2019، ويحتاج التحقق من الرمز الحالي في قوى."
+    },
+    {
+      "title": "مدير عمليات موارد بشرية",
+      "total": 3,
+      "saudi": 3,
+      "nonSaudi": 0,
+      "status": "guide_exact",
+      "candidateCodes": [
+        {
+          "code": "121201",
+          "matchesGuide": true,
+          "guideDecisionIds": [
+            "admin"
+          ],
+          "catalogTier": "decision_guide",
+          "sourceUrls": []
+        }
+      ],
+      "referenceCode": "121201",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "مطابقة اسمية من دليل توطين رسمي؛ انطباق القرار والرمز الفعلي للموظف والأجر والاعتماد والأنشطة تحتاج تحققًا مستقلًا."
+    },
+    {
+      "title": "مدير مشتريات",
+      "total": 2,
+      "saudi": 2,
+      "nonSaudi": 0,
+      "status": "guide_exact",
+      "candidateCodes": [
+        {
+          "code": "132417",
+          "matchesGuide": true,
+          "guideDecisionIds": [
+            "procurement"
+          ],
+          "catalogTier": "decision_guide",
+          "sourceUrls": []
+        }
+      ],
+      "referenceCode": "132417",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "مطابقة اسمية من دليل توطين رسمي؛ انطباق القرار والرمز الفعلي للموظف والأجر والاعتماد والأنشطة تحتاج تحققًا مستقلًا."
+    },
+    {
+      "title": "مهندس حاسب آلي",
+      "total": 1,
+      "saudi": 0,
+      "nonSaudi": 1,
+      "status": "guide_exact",
+      "candidateCodes": [
+        {
+          "code": "215204",
+          "matchesGuide": true,
+          "guideDecisionIds": [
+            "ict"
+          ],
+          "catalogTier": "official_gastat_2019",
+          "sourceUrls": []
+        }
+      ],
+      "referenceCode": "215204",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "مطابقة اسمية من دليل توطين رسمي؛ انطباق القرار والرمز الفعلي للموظف والأجر والاعتماد والأنشطة تحتاج تحققًا مستقلًا."
+    },
+    {
+      "title": "أخصائي إدارة مخاطر",
+      "total": 2,
+      "saudi": 0,
+      "nonSaudi": 2,
+      "status": "archive_only",
+      "candidateCodes": [
+        {
+          "code": "242102",
+          "matchesGuide": false,
+          "guideDecisionIds": [],
+          "catalogTier": "official_gastat_2019",
+          "sourceUrls": [
+            "https://quality.kku.edu.sa/sites/quality.kku.edu.sa/files/2024-03/%D8%A7%D9%84%D8%AA%D8%B5%D9%86%D9%8A%D9%81%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D8%AD%D8%AF%20%D9%84%D9%84%D9%85%D9%87%D9%86%201.pdf"
+          ]
+        }
+      ],
+      "referenceCode": "242102",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "تطابق مسمى مع تصنيف هيئة الإحصاء لعام 2019، ويحتاج التحقق من الرمز الحالي في قوى."
+    },
+    {
+      "title": "أخصائي إدارة مشاريع",
+      "total": 2,
+      "saudi": 2,
+      "nonSaudi": 0,
+      "status": "catalog_partial",
+      "candidateCodes": [
+        {
+          "code": "242108",
+          "matchesGuide": false,
+          "guideDecisionIds": [],
+          "catalogTier": "decision_guide",
+          "sourceUrls": []
+        }
+      ],
+      "referenceCode": "242108",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "ورد في فهرس الرادار، لكن دليل القرار الساري ورمز قوى لهذا الموظف لم يُثبتا بعد."
+    },
+    {
+      "title": "أخصائي استشارات أعمال",
+      "total": 2,
+      "saudi": 1,
+      "nonSaudi": 1,
+      "status": "catalog_partial",
+      "candidateCodes": [
+        {
+          "code": "242106",
+          "matchesGuide": false,
+          "guideDecisionIds": [],
+          "catalogTier": "decision_guide",
+          "sourceUrls": []
+        }
+      ],
+      "referenceCode": "242106",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "ورد في فهرس الرادار، لكن دليل القرار الساري ورمز قوى لهذا الموظف لم يُثبتا بعد."
+    },
+    {
+      "title": "أخصائي استشارات مالية",
+      "total": 1,
+      "saudi": 0,
+      "nonSaudi": 1,
+      "status": "catalog_partial",
+      "candidateCodes": [
+        {
+          "code": "241201",
+          "matchesGuide": false,
+          "guideDecisionIds": [],
+          "catalogTier": "decision_guide",
+          "sourceUrls": []
+        }
+      ],
+      "referenceCode": "241201",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "ورد في فهرس الرادار، لكن دليل القرار الساري ورمز قوى لهذا الموظف لم يُثبتا بعد."
+    },
+    {
+      "title": "أخصائي تخطيط مالي",
+      "total": 2,
+      "saudi": 0,
+      "nonSaudi": 2,
+      "status": "archive_only",
+      "candidateCodes": [
+        {
+          "code": "241203",
+          "matchesGuide": false,
+          "guideDecisionIds": [],
+          "catalogTier": "official_gastat_2019",
+          "sourceUrls": [
+            "https://quality.kku.edu.sa/sites/quality.kku.edu.sa/files/2024-03/%D8%A7%D9%84%D8%AA%D8%B5%D9%86%D9%8A%D9%81%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D8%AD%D8%AF%20%D9%84%D9%84%D9%85%D9%87%D9%86%201.pdf"
+          ]
+        }
+      ],
+      "referenceCode": "241203",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "تطابق مسمى مع تصنيف هيئة الإحصاء لعام 2019، ويحتاج التحقق من الرمز الحالي في قوى."
+    },
+    {
+      "title": "أخصائي علاقات عامة",
+      "total": 2,
+      "saudi": 2,
+      "nonSaudi": 0,
+      "status": "guide_exact",
+      "candidateCodes": [
+        {
+          "code": "243202",
+          "matchesGuide": true,
+          "guideDecisionIds": [
+            "admin",
+            "marketing"
+          ],
+          "catalogTier": "decision_guide",
+          "sourceUrls": []
+        }
+      ],
+      "referenceCode": "243202",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "مطابقة اسمية من دليل توطين رسمي؛ انطباق القرار والرمز الفعلي للموظف والأجر والاعتماد والأنشطة تحتاج تحققًا مستقلًا."
+    },
+    {
+      "title": "النائب العام",
+      "total": 2,
+      "saudi": 2,
+      "nonSaudi": 0,
+      "status": "unmapped",
+      "candidateCodes": [],
+      "referenceCode": null,
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "المسمى الوظيفي الداخلي لا يكفي لاختيار رمز مهني؛ يلزم الاسم المسجل بقوى ووصف المهام. لا يُستعاض تلقائيًا برمز الرئيس التنفيذي."
+    },
+    {
+      "title": "سائق سيارة",
+      "total": 2,
+      "saudi": 0,
+      "nonSaudi": 2,
+      "status": "archive_only",
+      "candidateCodes": [
+        {
+          "code": "832201",
+          "matchesGuide": false,
+          "guideDecisionIds": [],
+          "catalogTier": "official_gastat_2019",
+          "sourceUrls": [
+            "https://quality.kku.edu.sa/sites/quality.kku.edu.sa/files/2024-03/%D8%A7%D9%84%D8%AA%D8%B5%D9%86%D9%8A%D9%81%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D8%AD%D8%AF%20%D9%84%D9%84%D9%85%D9%87%D9%86%201.pdf"
+          ]
+        }
+      ],
+      "referenceCode": "832201",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "تطابق مسمى مع تصنيف هيئة الإحصاء لعام 2019، ويحتاج التحقق من الرمز الحالي في قوى."
+    },
+    {
+      "title": "سكرتير تنفيذي",
+      "total": 2,
+      "saudi": 2,
+      "nonSaudi": 0,
+      "status": "guide_exact",
+      "candidateCodes": [
+        {
+          "code": "334301",
+          "matchesGuide": true,
+          "guideDecisionIds": [
+            "admin"
+          ],
+          "catalogTier": "decision_guide",
+          "sourceUrls": []
+        }
+      ],
+      "referenceCode": "334301",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "مطابقة اسمية من دليل توطين رسمي؛ انطباق القرار والرمز الفعلي للموظف والأجر والاعتماد والأنشطة تحتاج تحققًا مستقلًا."
+    },
+    {
+      "title": "كاتب موارد بشرية",
+      "total": 2,
+      "saudi": 2,
+      "nonSaudi": 0,
+      "status": "guide_exact",
+      "candidateCodes": [
+        {
+          "code": "441601",
+          "matchesGuide": true,
+          "guideDecisionIds": [
+            "admin"
+          ],
+          "catalogTier": "official_group_first_page",
+          "sourceUrls": []
+        }
+      ],
+      "referenceCode": "441601",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "مطابقة اسمية من دليل توطين رسمي؛ انطباق القرار والرمز الفعلي للموظف والأجر والاعتماد والأنشطة تحتاج تحققًا مستقلًا."
+    },
+    {
+      "title": "مدير تنظيم إداري",
+      "total": 1,
+      "saudi": 1,
+      "nonSaudi": 0,
+      "status": "guide_exact",
+      "candidateCodes": [
+        {
+          "code": "121214",
+          "matchesGuide": true,
+          "guideDecisionIds": [
+            "admin"
+          ],
+          "catalogTier": "decision_guide",
+          "sourceUrls": []
+        }
+      ],
+      "referenceCode": "121214",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "مطابقة اسمية من دليل توطين رسمي؛ انطباق القرار والرمز الفعلي للموظف والأجر والاعتماد والأنشطة تحتاج تحققًا مستقلًا."
+    },
+    {
+      "title": "مدير خزينة",
+      "total": 2,
+      "saudi": 2,
+      "nonSaudi": 0,
+      "status": "guide_exact",
+      "candidateCodes": [
+        {
+          "code": "121104",
+          "matchesGuide": true,
+          "guideDecisionIds": [
+            "accounting"
+          ],
+          "catalogTier": "official_gastat_2019",
+          "sourceUrls": []
+        }
+      ],
+      "referenceCode": "121104",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "مطابقة اسمية من دليل توطين رسمي؛ انطباق القرار والرمز الفعلي للموظف والأجر والاعتماد والأنشطة تحتاج تحققًا مستقلًا."
+    },
+    {
+      "title": "مراجع داخلي",
+      "total": 2,
+      "saudi": 1,
+      "nonSaudi": 1,
+      "status": "guide_exact",
+      "candidateCodes": [
+        {
+          "code": "241103",
+          "matchesGuide": true,
+          "guideDecisionIds": [
+            "accounting"
+          ],
+          "catalogTier": "official_gastat_2019",
+          "sourceUrls": []
+        }
+      ],
+      "referenceCode": "241103",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "مطابقة اسمية من دليل توطين رسمي؛ انطباق القرار والرمز الفعلي للموظف والأجر والاعتماد والأنشطة تحتاج تحققًا مستقلًا."
+    },
+    {
+      "title": "مطور تطبيقات",
+      "total": 2,
+      "saudi": 0,
+      "nonSaudi": 2,
+      "status": "guide_exact",
+      "candidateCodes": [
+        {
+          "code": "251205",
+          "matchesGuide": true,
+          "guideDecisionIds": [
+            "ict"
+          ],
+          "catalogTier": "official_gastat_2019",
+          "sourceUrls": []
+        }
+      ],
+      "referenceCode": "251205",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "مطابقة اسمية من دليل توطين رسمي؛ انطباق القرار والرمز الفعلي للموظف والأجر والاعتماد والأنشطة تحتاج تحققًا مستقلًا."
+    },
+    {
+      "title": "وسيط سلع مستقبلية",
+      "total": 1,
+      "saudi": 0,
+      "nonSaudi": 1,
+      "status": "guide_exact",
+      "candidateCodes": [
+        {
+          "code": "332401",
+          "matchesGuide": true,
+          "guideDecisionIds": [
+            "sales"
+          ],
+          "catalogTier": "official_gastat_2019",
+          "sourceUrls": []
+        }
+      ],
+      "referenceCode": "332401",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "مطابقة اسمية من دليل توطين رسمي؛ انطباق القرار والرمز الفعلي للموظف والأجر والاعتماد والأنشطة تحتاج تحققًا مستقلًا."
+    },
+    {
+      "title": "أخصائي أبحاث أسواق",
+      "total": 1,
+      "saudi": 1,
+      "nonSaudi": 0,
+      "status": "guide_exact",
+      "candidateCodes": [
+        {
+          "code": "243108",
+          "matchesGuide": true,
+          "guideDecisionIds": [
+            "procurement"
+          ],
+          "catalogTier": "official_gastat_2019",
+          "sourceUrls": []
+        }
+      ],
+      "referenceCode": "243108",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "مطابقة اسمية من دليل توطين رسمي؛ انطباق القرار والرمز الفعلي للموظف والأجر والاعتماد والأنشطة تحتاج تحققًا مستقلًا."
+    },
+    {
+      "title": "أخصائي إدارة اداء",
+      "total": 1,
+      "saudi": 1,
+      "nonSaudi": 0,
+      "status": "archive_only",
+      "candidateCodes": [
+        {
+          "code": "242402",
+          "matchesGuide": false,
+          "guideDecisionIds": [],
+          "catalogTier": "official_gastat_2019",
+          "sourceUrls": [
+            "https://quality.kku.edu.sa/sites/quality.kku.edu.sa/files/2024-03/%D8%A7%D9%84%D8%AA%D8%B5%D9%86%D9%8A%D9%81%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D8%AD%D8%AF%20%D9%84%D9%84%D9%85%D9%87%D9%86%201.pdf"
+          ]
+        }
+      ],
+      "referenceCode": "242402",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "تطابق مسمى مع تصنيف هيئة الإحصاء لعام 2019، ويحتاج التحقق من الرمز الحالي في قوى."
+    },
+    {
+      "title": "أخصائي إدارة خدمات",
+      "total": 1,
+      "saudi": 1,
+      "nonSaudi": 0,
+      "status": "archive_only",
+      "candidateCodes": [
+        {
+          "code": "242109",
+          "matchesGuide": false,
+          "guideDecisionIds": [],
+          "catalogTier": "official_gastat_2019",
+          "sourceUrls": [
+            "https://quality.kku.edu.sa/sites/quality.kku.edu.sa/files/2024-03/%D8%A7%D9%84%D8%AA%D8%B5%D9%86%D9%8A%D9%81%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D8%AD%D8%AF%20%D9%84%D9%84%D9%85%D9%87%D9%86%201.pdf"
+          ]
+        }
+      ],
+      "referenceCode": "242109",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "تطابق مسمى مع تصنيف هيئة الإحصاء لعام 2019، ويحتاج التحقق من الرمز الحالي في قوى."
+    },
+    {
+      "title": "أخصائي ارتباط وظيفي",
+      "total": 1,
+      "saudi": 1,
+      "nonSaudi": 0,
+      "status": "guide_exact",
+      "candidateCodes": [
+        {
+          "code": "242301",
+          "matchesGuide": true,
+          "guideDecisionIds": [
+            "admin"
+          ],
+          "catalogTier": "decision_guide",
+          "sourceUrls": []
+        }
+      ],
+      "referenceCode": "242301",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "مطابقة اسمية من دليل توطين رسمي؛ انطباق القرار والرمز الفعلي للموظف والأجر والاعتماد والأنشطة تحتاج تحققًا مستقلًا."
+    },
+    {
+      "title": "أخصائي تخطيط قوى عاملة",
+      "total": 1,
+      "saudi": 1,
+      "nonSaudi": 0,
+      "status": "guide_exact",
+      "candidateCodes": [
+        {
+          "code": "242309",
+          "matchesGuide": true,
+          "guideDecisionIds": [
+            "admin"
+          ],
+          "catalogTier": "decision_guide",
+          "sourceUrls": []
+        }
+      ],
+      "referenceCode": "242309",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "مطابقة اسمية من دليل توطين رسمي؛ انطباق القرار والرمز الفعلي للموظف والأجر والاعتماد والأنشطة تحتاج تحققًا مستقلًا."
+    },
+    {
+      "title": "أخصائي تدريب وتطوير موارد بشرية",
+      "total": 1,
+      "saudi": 1,
+      "nonSaudi": 0,
+      "status": "archive_only",
+      "candidateCodes": [
+        {
+          "code": "242401",
+          "matchesGuide": false,
+          "guideDecisionIds": [],
+          "catalogTier": "official_gastat_2019",
+          "sourceUrls": [
+            "https://quality.kku.edu.sa/sites/quality.kku.edu.sa/files/2024-03/%D8%A7%D9%84%D8%AA%D8%B5%D9%86%D9%8A%D9%81%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D8%AD%D8%AF%20%D9%84%D9%84%D9%85%D9%87%D9%86%201.pdf"
+          ]
+        }
+      ],
+      "referenceCode": "242401",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "تطابق مسمى مع تصنيف هيئة الإحصاء لعام 2019، ويحتاج التحقق من الرمز الحالي في قوى."
+    },
+    {
+      "title": "أخصائي تقنية هندسة حاسب آلي",
+      "total": 1,
+      "saudi": 0,
+      "nonSaudi": 1,
+      "status": "unmapped",
+      "candidateCodes": [],
+      "referenceCode": null,
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "هناك مسميات قريبة في دليل تقنية المعلومات، لكنها ليست مطابقة حرفية للمسمى الحالي؛ لا يُسند رمز تخميني."
+    },
+    {
+      "title": "أخصائي تمويل شركات",
+      "total": 1,
+      "saudi": 0,
+      "nonSaudi": 1,
+      "status": "archive_only",
+      "candidateCodes": [
+        {
+          "code": "241301",
+          "matchesGuide": false,
+          "guideDecisionIds": [],
+          "catalogTier": "official_gastat_2019",
+          "sourceUrls": [
+            "https://quality.kku.edu.sa/sites/quality.kku.edu.sa/files/2024-03/%D8%A7%D9%84%D8%AA%D8%B5%D9%86%D9%8A%D9%81%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D8%AD%D8%AF%20%D9%84%D9%84%D9%85%D9%87%D9%86%201.pdf"
+          ]
+        }
+      ],
+      "referenceCode": "241301",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "تطابق مسمى مع تصنيف هيئة الإحصاء لعام 2019، ويحتاج التحقق من الرمز الحالي في قوى."
+    },
+    {
+      "title": "أخصائي تواصل داخلي",
+      "total": 1,
+      "saudi": 1,
+      "nonSaudi": 0,
+      "status": "guide_exact",
+      "candidateCodes": [
+        {
+          "code": "243204",
+          "matchesGuide": true,
+          "guideDecisionIds": [
+            "admin"
+          ],
+          "catalogTier": "decision_guide",
+          "sourceUrls": []
+        }
+      ],
+      "referenceCode": "243204",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "مطابقة اسمية من دليل توطين رسمي؛ انطباق القرار والرمز الفعلي للموظف والأجر والاعتماد والأنشطة تحتاج تحققًا مستقلًا."
+    },
+    {
+      "title": "أخصائي توظيف",
+      "total": 1,
+      "saudi": 1,
+      "nonSaudi": 0,
+      "status": "guide_exact",
+      "candidateCodes": [
+        {
+          "code": "242304",
+          "matchesGuide": true,
+          "guideDecisionIds": [
+            "admin"
+          ],
+          "catalogTier": "decision_guide",
+          "sourceUrls": []
+        }
+      ],
+      "referenceCode": "242304",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "مطابقة اسمية من دليل توطين رسمي؛ انطباق القرار والرمز الفعلي للموظف والأجر والاعتماد والأنشطة تحتاج تحققًا مستقلًا."
+    },
+    {
+      "title": "أخصائي حسابات ضرائب",
+      "total": 1,
+      "saudi": 0,
+      "nonSaudi": 1,
+      "status": "guide_exact",
+      "candidateCodes": [
+        {
+          "code": "241108",
+          "matchesGuide": true,
+          "guideDecisionIds": [
+            "accounting"
+          ],
+          "catalogTier": "official_gastat_2019",
+          "sourceUrls": []
+        }
+      ],
+      "referenceCode": "241108",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "مطابقة اسمية من دليل توطين رسمي؛ انطباق القرار والرمز الفعلي للموظف والأجر والاعتماد والأنشطة تحتاج تحققًا مستقلًا."
+    },
+    {
+      "title": "أخصائي خزانة",
+      "total": 1,
+      "saudi": 1,
+      "nonSaudi": 0,
+      "status": "archive_only",
+      "candidateCodes": [
+        {
+          "code": "241308",
+          "matchesGuide": false,
+          "guideDecisionIds": [],
+          "catalogTier": "official_gastat_2019",
+          "sourceUrls": [
+            "https://quality.kku.edu.sa/sites/quality.kku.edu.sa/files/2024-03/%D8%A7%D9%84%D8%AA%D8%B5%D9%86%D9%8A%D9%81%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D8%AD%D8%AF%20%D9%84%D9%84%D9%85%D9%87%D9%86%201.pdf"
+          ]
+        }
+      ],
+      "referenceCode": "241308",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "تطابق مسمى مع تصنيف هيئة الإحصاء لعام 2019، ويحتاج التحقق من الرمز الحالي في قوى."
+    },
+    {
+      "title": "أخصائي دعم فني",
+      "total": 1,
+      "saudi": 1,
+      "nonSaudi": 0,
+      "status": "guide_exact",
+      "candidateCodes": [
+        {
+          "code": "252912",
+          "matchesGuide": true,
+          "guideDecisionIds": [
+            "ict"
+          ],
+          "catalogTier": "official_gastat_2019",
+          "sourceUrls": []
+        }
+      ],
+      "referenceCode": "252912",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "مطابقة اسمية من دليل توطين رسمي؛ انطباق القرار والرمز الفعلي للموظف والأجر والاعتماد والأنشطة تحتاج تحققًا مستقلًا."
+    },
+    {
+      "title": "أخصائي ذكاء اصطناعي",
+      "total": 1,
+      "saudi": 0,
+      "nonSaudi": 1,
+      "status": "archive_only",
+      "candidateCodes": [
+        {
+          "code": "252902",
+          "matchesGuide": false,
+          "guideDecisionIds": [],
+          "catalogTier": "official_gastat_2019",
+          "sourceUrls": [
+            "https://quality.kku.edu.sa/sites/quality.kku.edu.sa/files/2024-03/%D8%A7%D9%84%D8%AA%D8%B5%D9%86%D9%8A%D9%81%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D8%AD%D8%AF%20%D9%84%D9%84%D9%85%D9%87%D9%86%201.pdf"
+          ]
+        }
+      ],
+      "referenceCode": "252902",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "تطابق مسمى مع تصنيف هيئة الإحصاء لعام 2019، ويحتاج التحقق من الرمز الحالي في قوى."
+    },
+    {
+      "title": "أخصائي رقابة عمليات",
+      "total": 1,
+      "saudi": 0,
+      "nonSaudi": 1,
+      "status": "archive_only",
+      "candidateCodes": [
+        {
+          "code": "242201",
+          "matchesGuide": false,
+          "guideDecisionIds": [],
+          "catalogTier": "official_gastat_2019",
+          "sourceUrls": [
+            "https://quality.kku.edu.sa/sites/quality.kku.edu.sa/files/2024-03/%D8%A7%D9%84%D8%AA%D8%B5%D9%86%D9%8A%D9%81%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D8%AD%D8%AF%20%D9%84%D9%84%D9%85%D9%87%D9%86%201.pdf"
+          ]
+        }
+      ],
+      "referenceCode": "242201",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "تطابق مسمى مع تصنيف هيئة الإحصاء لعام 2019، ويحتاج التحقق من الرمز الحالي في قوى."
+    },
+    {
+      "title": "أخصائي رقابة مالية",
+      "total": 1,
+      "saudi": 1,
+      "nonSaudi": 0,
+      "status": "archive_only",
+      "candidateCodes": [
+        {
+          "code": "241311",
+          "matchesGuide": false,
+          "guideDecisionIds": [],
+          "catalogTier": "official_gastat_2019",
+          "sourceUrls": [
+            "https://quality.kku.edu.sa/sites/quality.kku.edu.sa/files/2024-03/%D8%A7%D9%84%D8%AA%D8%B5%D9%86%D9%8A%D9%81%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D8%AD%D8%AF%20%D9%84%D9%84%D9%85%D9%87%D9%86%201.pdf"
+          ]
+        }
+      ],
+      "referenceCode": "241311",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "تطابق مسمى مع تصنيف هيئة الإحصاء لعام 2019، ويحتاج التحقق من الرمز الحالي في قوى."
+    },
+    {
+      "title": "أخصائي قانوني",
+      "total": 1,
+      "saudi": 1,
+      "nonSaudi": 0,
+      "status": "guide_exact",
+      "candidateCodes": [
+        {
+          "code": "261106",
+          "matchesGuide": true,
+          "guideDecisionIds": [
+            "legal"
+          ],
+          "catalogTier": "official_gastat_2019",
+          "sourceUrls": []
+        }
+      ],
+      "referenceCode": "261106",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "مطابقة اسمية من دليل توطين رسمي؛ انطباق القرار والرمز الفعلي للموظف والأجر والاعتماد والأنشطة تحتاج تحققًا مستقلًا."
+    },
+    {
+      "title": "عامل مطبخ",
+      "total": 1,
+      "saudi": 0,
+      "nonSaudi": 1,
+      "status": "archive_only",
+      "candidateCodes": [
+        {
+          "code": "941202",
+          "matchesGuide": false,
+          "guideDecisionIds": [],
+          "catalogTier": "official_gastat_2019",
+          "sourceUrls": [
+            "https://quality.kku.edu.sa/sites/quality.kku.edu.sa/files/2024-03/%D8%A7%D9%84%D8%AA%D8%B5%D9%86%D9%8A%D9%81%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D8%AD%D8%AF%20%D9%84%D9%84%D9%85%D9%87%D9%86%201.pdf"
+          ]
+        }
+      ],
+      "referenceCode": "941202",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "تطابق مسمى مع تصنيف هيئة الإحصاء لعام 2019، ويحتاج التحقق من الرمز الحالي في قوى."
+    },
+    {
+      "title": "عامل نظافة حدائق",
+      "total": 1,
+      "saudi": 0,
+      "nonSaudi": 1,
+      "status": "catalog_partial",
+      "candidateCodes": [
+        {
+          "code": "961302",
+          "matchesGuide": false,
+          "guideDecisionIds": [],
+          "catalogTier": "official_group_first_page",
+          "sourceUrls": []
+        }
+      ],
+      "referenceCode": "961302",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "ورد في فهرس الرادار، لكن دليل القرار الساري ورمز قوى لهذا الموظف لم يُثبتا بعد."
+    },
+    {
+      "title": "فني دعم تقنية معلومات",
+      "total": 1,
+      "saudi": 1,
+      "nonSaudi": 0,
+      "status": "guide_exact",
+      "candidateCodes": [
+        {
+          "code": "351201",
+          "matchesGuide": true,
+          "guideDecisionIds": [
+            "ict"
+          ],
+          "catalogTier": "official_gastat_2019",
+          "sourceUrls": []
+        }
+      ],
+      "referenceCode": "351201",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "مطابقة اسمية من دليل توطين رسمي؛ انطباق القرار والرمز الفعلي للموظف والأجر والاعتماد والأنشطة تحتاج تحققًا مستقلًا."
+    },
+    {
+      "title": "محلل قاعدة بيانات",
+      "total": 1,
+      "saudi": 1,
+      "nonSaudi": 0,
+      "status": "guide_exact",
+      "candidateCodes": [
+        {
+          "code": "252103",
+          "matchesGuide": true,
+          "guideDecisionIds": [
+            "ict"
+          ],
+          "catalogTier": "official_gastat_2019",
+          "sourceUrls": []
+        }
+      ],
+      "referenceCode": "252103",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "مطابقة اسمية من دليل توطين رسمي؛ انطباق القرار والرمز الفعلي للموظف والأجر والاعتماد والأنشطة تحتاج تحققًا مستقلًا."
+    },
+    {
+      "title": "مدير أمن سيبراني",
+      "total": 1,
+      "saudi": 1,
+      "nonSaudi": 0,
+      "status": "archive_only",
+      "candidateCodes": [
+        {
+          "code": "133012",
+          "matchesGuide": false,
+          "guideDecisionIds": [],
+          "catalogTier": "official_gastat_2019",
+          "sourceUrls": [
+            "https://quality.kku.edu.sa/sites/quality.kku.edu.sa/files/2024-03/%D8%A7%D9%84%D8%AA%D8%B5%D9%86%D9%8A%D9%81%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D8%AD%D8%AF%20%D9%84%D9%84%D9%85%D9%87%D9%86%201.pdf"
+          ]
+        }
+      ],
+      "referenceCode": "133012",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "تطابق مسمى مع تصنيف هيئة الإحصاء لعام 2019، ويحتاج التحقق من الرمز الحالي في قوى."
+    },
+    {
+      "title": "مدير إدارة مخاطر",
+      "total": 1,
+      "saudi": 0,
+      "nonSaudi": 1,
+      "status": "archive_only",
+      "candidateCodes": [
+        {
+          "code": "121302",
+          "matchesGuide": false,
+          "guideDecisionIds": [],
+          "catalogTier": "official_gastat_2019",
+          "sourceUrls": [
+            "https://quality.kku.edu.sa/sites/quality.kku.edu.sa/files/2024-03/%D8%A7%D9%84%D8%AA%D8%B5%D9%86%D9%8A%D9%81%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D8%AD%D8%AF%20%D9%84%D9%84%D9%85%D9%87%D9%86%201.pdf"
+          ]
+        }
+      ],
+      "referenceCode": "121302",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "تطابق مسمى مع تصنيف هيئة الإحصاء لعام 2019، ويحتاج التحقق من الرمز الحالي في قوى."
+    },
+    {
+      "title": "مدير إعلام",
+      "total": 1,
+      "saudi": 1,
+      "nonSaudi": 0,
+      "status": "unmapped",
+      "candidateCodes": [],
+      "referenceCode": null,
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "يلزم تأكيد الرمز الحالي من قوى؛ لا يُساوى تلقائيًا بمدير دعاية وإعلان."
+    },
+    {
+      "title": "مدير التزام",
+      "total": 1,
+      "saudi": 1,
+      "nonSaudi": 0,
+      "status": "archive_only",
+      "candidateCodes": [
+        {
+          "code": "121303",
+          "matchesGuide": false,
+          "guideDecisionIds": [],
+          "catalogTier": "official_gastat_2019",
+          "sourceUrls": [
+            "https://quality.kku.edu.sa/sites/quality.kku.edu.sa/files/2024-03/%D8%A7%D9%84%D8%AA%D8%B5%D9%86%D9%8A%D9%81%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D8%AD%D8%AF%20%D9%84%D9%84%D9%85%D9%87%D9%86%201.pdf"
+          ]
+        }
+      ],
+      "referenceCode": "121303",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "تطابق مسمى مع تصنيف هيئة الإحصاء لعام 2019، ويحتاج التحقق من الرمز الحالي في قوى."
+    },
+    {
+      "title": "مدير بحث وتطوير",
+      "total": 1,
+      "saudi": 0,
+      "nonSaudi": 1,
+      "status": "archive_only",
+      "candidateCodes": [
+        {
+          "code": "122301",
+          "matchesGuide": false,
+          "guideDecisionIds": [],
+          "catalogTier": "official_gastat_2019",
+          "sourceUrls": [
+            "https://quality.kku.edu.sa/sites/quality.kku.edu.sa/files/2024-03/%D8%A7%D9%84%D8%AA%D8%B5%D9%86%D9%8A%D9%81%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D8%AD%D8%AF%20%D9%84%D9%84%D9%85%D9%87%D9%86%201.pdf"
+          ]
+        }
+      ],
+      "referenceCode": "122301",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "تطابق مسمى مع تصنيف هيئة الإحصاء لعام 2019، ويحتاج التحقق من الرمز الحالي في قوى."
+    },
+    {
+      "title": "مدير تخطيط وتطوير",
+      "total": 1,
+      "saudi": 1,
+      "nonSaudi": 0,
+      "status": "archive_only",
+      "candidateCodes": [
+        {
+          "code": "121310",
+          "matchesGuide": false,
+          "guideDecisionIds": [],
+          "catalogTier": "official_gastat_2019",
+          "sourceUrls": [
+            "https://quality.kku.edu.sa/sites/quality.kku.edu.sa/files/2024-03/%D8%A7%D9%84%D8%AA%D8%B5%D9%86%D9%8A%D9%81%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D8%AD%D8%AF%20%D9%84%D9%84%D9%85%D9%87%D9%86%201.pdf"
+          ]
+        }
+      ],
+      "referenceCode": "121310",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "تطابق مسمى مع تصنيف هيئة الإحصاء لعام 2019، ويحتاج التحقق من الرمز الحالي في قوى."
+    },
+    {
+      "title": "مدير توظيف",
+      "total": 1,
+      "saudi": 1,
+      "nonSaudi": 0,
+      "status": "guide_exact",
+      "candidateCodes": [
+        {
+          "code": "121204",
+          "matchesGuide": true,
+          "guideDecisionIds": [
+            "admin"
+          ],
+          "catalogTier": "decision_guide",
+          "sourceUrls": []
+        }
+      ],
+      "referenceCode": "121204",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "مطابقة اسمية من دليل توطين رسمي؛ انطباق القرار والرمز الفعلي للموظف والأجر والاعتماد والأنشطة تحتاج تحققًا مستقلًا."
+    },
+    {
+      "title": "مدير دراسات أبحاث",
+      "total": 1,
+      "saudi": 0,
+      "nonSaudi": 1,
+      "status": "archive_only",
+      "candidateCodes": [
+        {
+          "code": "122303",
+          "matchesGuide": false,
+          "guideDecisionIds": [],
+          "catalogTier": "official_gastat_2019",
+          "sourceUrls": [
+            "https://quality.kku.edu.sa/sites/quality.kku.edu.sa/files/2024-03/%D8%A7%D9%84%D8%AA%D8%B5%D9%86%D9%8A%D9%81%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D8%AD%D8%AF%20%D9%84%D9%84%D9%85%D9%87%D9%86%201.pdf"
+          ]
+        }
+      ],
+      "referenceCode": "122303",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "تطابق مسمى مع تصنيف هيئة الإحصاء لعام 2019، ويحتاج التحقق من الرمز الحالي في قوى."
+    },
+    {
+      "title": "مدير دعاية وإعلان",
+      "total": 1,
+      "saudi": 1,
+      "nonSaudi": 0,
+      "status": "guide_exact",
+      "candidateCodes": [
+        {
+          "code": "122201",
+          "matchesGuide": true,
+          "guideDecisionIds": [
+            "marketing"
+          ],
+          "catalogTier": null,
+          "sourceUrls": []
+        }
+      ],
+      "referenceCode": "122201",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "مطابقة اسمية من دليل توطين رسمي؛ انطباق القرار والرمز الفعلي للموظف والأجر والاعتماد والأنشطة تحتاج تحققًا مستقلًا."
+    },
+    {
+      "title": "مدير مراجعة داخلية",
+      "total": 1,
+      "saudi": 1,
+      "nonSaudi": 0,
+      "status": "guide_exact",
+      "candidateCodes": [
+        {
+          "code": "121107",
+          "matchesGuide": true,
+          "guideDecisionIds": [
+            "accounting"
+          ],
+          "catalogTier": "official_gastat_2019",
+          "sourceUrls": []
+        }
+      ],
+      "referenceCode": "121107",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "مطابقة اسمية من دليل توطين رسمي؛ انطباق القرار والرمز الفعلي للموظف والأجر والاعتماد والأنشطة تحتاج تحققًا مستقلًا."
+    },
+    {
+      "title": "مدير مكتب",
+      "total": 1,
+      "saudi": 1,
+      "nonSaudi": 0,
+      "status": "archive_only",
+      "candidateCodes": [
+        {
+          "code": "121901",
+          "matchesGuide": false,
+          "guideDecisionIds": [],
+          "catalogTier": "official_gastat_2019",
+          "sourceUrls": [
+            "https://quality.kku.edu.sa/sites/quality.kku.edu.sa/files/2024-03/%D8%A7%D9%84%D8%AA%D8%B5%D9%86%D9%8A%D9%81%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D8%AD%D8%AF%20%D9%84%D9%84%D9%85%D9%87%D9%86%201.pdf"
+          ]
+        }
+      ],
+      "referenceCode": "121901",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "تطابق مسمى مع تصنيف هيئة الإحصاء لعام 2019، ويحتاج التحقق من الرمز الحالي في قوى."
+    },
+    {
+      "title": "مدير مواهب",
+      "total": 1,
+      "saudi": 1,
+      "nonSaudi": 0,
+      "status": "guide_exact",
+      "candidateCodes": [
+        {
+          "code": "121206",
+          "matchesGuide": true,
+          "guideDecisionIds": [
+            "admin"
+          ],
+          "catalogTier": "decision_guide",
+          "sourceUrls": []
+        }
+      ],
+      "referenceCode": "121206",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "مطابقة اسمية من دليل توطين رسمي؛ انطباق القرار والرمز الفعلي للموظف والأجر والاعتماد والأنشطة تحتاج تحققًا مستقلًا."
+    },
+    {
+      "title": "مدير ميزانية",
+      "total": 1,
+      "saudi": 1,
+      "nonSaudi": 0,
+      "status": "guide_exact",
+      "candidateCodes": [
+        {
+          "code": "121105",
+          "matchesGuide": true,
+          "guideDecisionIds": [
+            "accounting"
+          ],
+          "catalogTier": "official_gastat_2019",
+          "sourceUrls": []
+        }
+      ],
+      "referenceCode": "121105",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "مطابقة اسمية من دليل توطين رسمي؛ انطباق القرار والرمز الفعلي للموظف والأجر والاعتماد والأنشطة تحتاج تحققًا مستقلًا."
+    },
+    {
+      "title": "مصمم جرافيك",
+      "total": 1,
+      "saudi": 1,
+      "nonSaudi": 0,
+      "status": "guide_exact",
+      "candidateCodes": [
+        {
+          "code": "216601",
+          "matchesGuide": true,
+          "guideDecisionIds": [
+            "marketing"
+          ],
+          "catalogTier": "official_gastat_2019",
+          "sourceUrls": []
+        }
+      ],
+      "referenceCode": "216601",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "مطابقة اسمية من دليل توطين رسمي؛ انطباق القرار والرمز الفعلي للموظف والأجر والاعتماد والأنشطة تحتاج تحققًا مستقلًا."
+    },
+    {
+      "title": "موظف استقبال",
+      "total": 1,
+      "saudi": 1,
+      "nonSaudi": 0,
+      "status": "guide_exact",
+      "candidateCodes": [
+        {
+          "code": "422601",
+          "matchesGuide": true,
+          "guideDecisionIds": [
+            "admin"
+          ],
+          "catalogTier": "decision_guide",
+          "sourceUrls": []
+        }
+      ],
+      "referenceCode": "422601",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "مطابقة اسمية من دليل توطين رسمي؛ انطباق القرار والرمز الفعلي للموظف والأجر والاعتماد والأنشطة تحتاج تحققًا مستقلًا."
+    },
+    {
+      "title": "وكيل تجاري",
+      "total": 1,
+      "saudi": 1,
+      "nonSaudi": 0,
+      "status": "archive_only",
+      "candidateCodes": [
+        {
+          "code": "332202",
+          "matchesGuide": false,
+          "guideDecisionIds": [],
+          "catalogTier": "official_gastat_2019",
+          "sourceUrls": [
+            "https://quality.kku.edu.sa/sites/quality.kku.edu.sa/files/2024-03/%D8%A7%D9%84%D8%AA%D8%B5%D9%86%D9%8A%D9%81%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D8%AD%D8%AF%20%D9%84%D9%84%D9%85%D9%87%D9%86%201.pdf"
+          ]
+        }
+      ],
+      "referenceCode": "332202",
+      "recordedQiwaCode": null,
+      "qiwaConfirmed": false,
+      "regulatoryApplicability": "needs_person_and_entity_verification",
+      "guidance": "تطابق مسمى مع تصنيف هيئة الإحصاء لعام 2019، ويحتاج التحقق من الرمز الحالي في قوى."
+    }
+  ]
+}
