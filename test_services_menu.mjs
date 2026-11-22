@@ -19,7 +19,7 @@ assert.equal((nav.match(/<a class="quick-link/g)||[]).length,3,'3 core quick lin
 assert.equal((panel.match(/class="services-section"/g)||[]).length,4,'4 service sections must remain available');
 const hrefs=[
  '#overview','salic.html','operations.html','#all-professions','calculator.html',
- 'guide-audit.html','completion.html','occupation-catalog.html','guide-changes.html',
+ 'guide-audit.html','completion.html','occupation-catalog.html','occupation-crosswalk.html','guide-changes.html',
  'workforce-import.html','#intel','intelligence.html','advisor.html','activity-review.html','phase-two.html','vault.html','intelligence.html#report',
  '#updates','#official-sources','sources.html','review.html'
 ];
