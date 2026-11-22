@@ -190,12 +190,38 @@ function auditCatalogue(summary,catalogue){
   titleMismatches:rows.filter(x=>x.titleMatches===false).length,rows};
 }
 
+/* Cross-check the locally supplied Qiwa code column against the 75-title
+ * SALIC evidence matrix. This is an informative comparison, not Qiwa attestation.
+ */
+function auditSALICCrosswalk(summary,crosswalk){
+ if(!summary||!Array.isArray(summary.codeTotals)||!crosswalk||!Array.isArray(crosswalk.items))throw Error("invalid_salic_crosswalk_inputs");
+ const byTitle=new Map(crosswalk.items.map(x=>[canon(x.title),x]));
+ const rows=summary.codeTotals.map(x=>{
+  const entry=byTitle.get(canon(x.title));
+  let status="unknown_title";
+  if(entry){
+   if(!entry.referenceCode)status="needs_reference_code";
+   else if(entry.referenceCode!==x.code)status="different_from_reference";
+   else if(entry.status==="guide_exact")status="agrees_with_guide_reference";
+   else if(entry.status==="archive_only")status="agrees_with_2019_reference";
+   else status="agrees_with_unverified_catalogue_reference";
+  }
+  return {title:x.title,code:x.code,total:x.total,saudi:x.saudi,referenceCode:entry?.referenceCode||null,
+   status,warning:"مطابقة عنوان الموظف ورمز وارد في الملف المحلي؛ لا تثبت أن الرمز صادر من قوى أو أن قرار التوطين ينطبق على هذا الموظف."};
+ });
+ return {total:rows.length,guideAgreements:rows.filter(x=>x.status==="agrees_with_guide_reference").length,
+  referenceDisagreements:rows.filter(x=>x.status==="different_from_reference").length,
+  historicalAgreements:rows.filter(x=>x.status==="agrees_with_2019_reference").length,
+  cannotConfirm:rows.filter(x=>["unknown_title","needs_reference_code","agrees_with_unverified_catalogue_reference"].includes(x.status)).length,
+  employeeQiwaVerified:0,rows};
+}
+
 function download(data,filename){
  const blob=new Blob(["\ufeff"+JSON.stringify(data,null,2)+"\n"],{type:"application/json;charset=utf-8"});
  const url=URL.createObjectURL(blob),a=document.createElement("a");
  a.href=url;a.download=filename;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
 }
-const api={parseCSV,summarize,auditCodes,auditCatalogue,canon};
+const api={parseCSV,summarize,auditCodes,auditCatalogue,auditSALICCrosswalk,canon};
 if(typeof module!=="undefined"&&module.exports)module.exports=api;
 if(root){root.RadarImport=api}
 if(typeof document==="undefined")return;
@@ -237,6 +263,26 @@ async function init(){
           }
         }catch(e){
           $("code-analysis").textContent+="\nتعذر تحميل فهرس الرموز الإضافي؛ راجع المرجع الرسمي عند الحاجة.";
+        }
+      }
+      // Compare to the 75-title SALIC crosswalk without a new upload.
+      if(res.codeTotals.length){
+        try{
+          const reference=await fetch("data/salic-occupation-crosswalk.json",{cache:"no-store"});
+          if(!reference.ok)throw Error("SALIC crosswalk unavailable");
+          const internalCrosswalk=await reference.json();
+          const comparison=auditSALICCrosswalk(res,internalCrosswalk);
+          $("code-analysis").textContent+="\n\nمطابقة مهن SALIC المرجعية ("+comparison.total+" مجموعة رموز): "+
+            comparison.guideAgreements+" تطابق رموز أدلة التوطين، "+
+            comparison.historicalAgreements+" تطابق رموز التصنيف التاريخي، "+
+            comparison.referenceDisagreements+" اختلافات عن الرمز المرجعي، "+
+            comparison.cannotConfirm+" حالات لا يمكن تأكيدها من المرجع. "+
+            "هذا ليس إثباتًا بأن الموظفين يحملون الرموز نفسها في قوى.";
+          if(comparison.referenceDisagreements||comparison.cannotConfirm){
+            codeWarnings=true;msg("يوجد اختلاف أو نقص في المطابقة مع ملف SALIC المرجعي. ارجع لرموز قوى الفعلية ووصف المهام قبل احتساب أي أثر نظامي.","warn");
+          }
+        }catch{
+          $("code-analysis").textContent+="\nتعذر تحميل مصفوفة مهن SALIC المرجعية؛ لن نعتبر رموزًا غير متحققة مؤكدة.";
         }
       }
     }catch(e){$("code-analysis").textContent="تعذر تحميل دليل الأكواد؛ يبقى ملخص الموظفين صالحًا للتنزيل بعد المراجعة."}
