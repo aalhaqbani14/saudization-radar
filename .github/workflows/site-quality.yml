@@ -42,6 +42,11 @@ name: Saudization Radar site integrity
       - 'test_completion.mjs'
       - 'assets/occupation-catalog.js'
       - 'data/occupation-catalog.json'
+      - 'occupation-crosswalk.html'
+      - 'data/salic-occupation-crosswalk.json'
+      - 'assets/occupation-crosswalk-model.js'
+      - 'assets/occupation-crosswalk-ui.js'
+      - 'test_occupation_crosswalk.mjs'
       - 'test_occupation_catalog.py'
       - 'sync_occupation_catalog.py'
       - 'intelligence.html'
@@ -69,6 +74,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Validate all 75 SALIC code references and source links
+        run: node test_occupation_crosswalk.mjs
       - name: Validate pages and local assets
         run: python -m unittest -v test_site_integrity.py test_occupation_catalog.py
       - name: Verify nine-workstream readiness and five safe plans
