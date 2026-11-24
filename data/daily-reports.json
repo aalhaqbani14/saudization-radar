@@ -1,6 +1,18 @@
 {
   "reports": [
     {
+      "date": "2026-11-24",
+      "last_checked_at": "2026-11-24T06:06:40.314466+00:00",
+      "total_sources": 23,
+      "successful_sources": 23,
+      "failed_sources": 0,
+      "new_review_signals": 0,
+      "status": "complete",
+      "failed_source_names": [],
+      "notice": "ملخص تقني للرصد؛ لا يثبت اكتمال التغطية أو عدم صدور قرارات. الإشارات تحتاج مراجعة بشرية.",
+      "runs": 1
+    },
+    {
       "date": "2026-11-23",
       "last_checked_at": "2026-11-23T15:12:43.336342+00:00",
       "total_sources": 23,
@@ -193,5 +205,5 @@
       "runs": 4
     }
   ],
-  "updated_at": "2026-11-23T15:12:43.336342+00:00"
+  "updated_at": "2026-11-24T06:06:40.314466+00:00"
 }
