@@ -1,19 +1,18 @@
 {
-  "checked_at": "2026-11-27T15:03:59.729649+00:00",
+  "checked_at": "2026-11-28T06:07:21.155600+00:00",
   "total_sources": 23,
-  "successful_sources": 22,
-  "failed_sources": 1,
-  "signal_count": 0,
+  "successful_sources": 23,
+  "failed_sources": 0,
+  "signal_count": 1,
   "sources": [
     {
       "name": "أخبار الوزارة",
       "url": "https://www.hrsd.gov.sa/media-center/news",
       "kind": "index",
-      "status": "error",
-      "error_type": "URLError",
-      "error_code": "connection_error",
-      "error_message": "تعذر الاتصال بالمصدر",
-      "last_success_at": "2026-11-27T06:10:00.570417+00:00"
+      "status": "ok",
+      "changed": true,
+      "first_baseline": false,
+      "last_success_at": "2026-11-28T06:07:21.155600+00:00"
     },
     {
       "name": "الأدلة الإجرائية",
@@ -22,7 +21,7 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-27T15:03:59.729649+00:00"
+      "last_success_at": "2026-11-28T06:07:21.155600+00:00"
     },
     {
       "name": "قرار: المهن الإدارية المساندة",
@@ -31,7 +30,7 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-27T15:03:59.729649+00:00"
+      "last_success_at": "2026-11-28T06:07:21.155600+00:00"
     },
     {
       "name": "قرار: المهن المحاسبية",
@@ -40,7 +39,7 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-27T15:03:59.729649+00:00"
+      "last_success_at": "2026-11-28T06:07:21.155600+00:00"
     },
     {
       "name": "قرار: مهن إدارة المشاريع",
@@ -49,7 +48,7 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-27T15:03:59.729649+00:00"
+      "last_success_at": "2026-11-28T06:07:21.155600+00:00"
     },
     {
       "name": "قرار: مهن المشتريات",
@@ -58,7 +57,7 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-27T15:03:59.729649+00:00"
+      "last_success_at": "2026-11-28T06:07:21.155600+00:00"
     },
     {
       "name": "قرار: مهن المبيعات",
@@ -67,7 +66,7 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-27T15:03:59.729649+00:00"
+      "last_success_at": "2026-11-28T06:07:21.155600+00:00"
     },
     {
       "name": "قرار: مهنة مشرف مسكن",
@@ -76,7 +75,7 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-27T15:03:59.729649+00:00"
+      "last_success_at": "2026-11-28T06:07:21.155600+00:00"
     },
     {
       "name": "مرجع إضافي: المشتريات والعقود والمستودعات",
@@ -85,7 +84,7 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-27T15:03:59.729649+00:00"
+      "last_success_at": "2026-11-28T06:07:21.155600+00:00"
     },
     {
       "name": "مرجع إضافي: مهن إدارة المشاريع",
@@ -94,7 +93,7 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-27T15:03:59.729649+00:00"
+      "last_success_at": "2026-11-28T06:07:21.155600+00:00"
     },
     {
       "name": "مرجع إضافي: مهن التسويق",
@@ -103,7 +102,7 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-27T15:03:59.729649+00:00"
+      "last_success_at": "2026-11-28T06:07:21.155600+00:00"
     },
     {
       "name": "مرجع إضافي: المهن الهندسية",
@@ -112,7 +111,7 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-27T15:03:59.729649+00:00"
+      "last_success_at": "2026-11-28T06:07:21.155600+00:00"
     },
     {
       "name": "مرجع إضافي: المهن الفنية الهندسية",
@@ -121,7 +120,7 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-27T15:03:59.729649+00:00"
+      "last_success_at": "2026-11-28T06:07:21.155600+00:00"
     },
     {
       "name": "مرجع إضافي: إداريات مراكز الاسترخاء والعناية الشخصية",
@@ -130,7 +129,7 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-27T15:03:59.729649+00:00"
+      "last_success_at": "2026-11-28T06:07:21.155600+00:00"
     },
     {
       "name": "مرجع إضافي: الاتصالات وتقنية المعلومات",
@@ -139,7 +138,7 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-27T15:03:59.729649+00:00"
+      "last_success_at": "2026-11-28T06:07:21.155600+00:00"
     },
     {
       "name": "مرجع إضافي: المهن القانونية",
@@ -148,7 +147,7 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-27T15:03:59.729649+00:00"
+      "last_success_at": "2026-11-28T06:07:21.155600+00:00"
     },
     {
       "name": "مرجع إضافي: مهن الاستشارات والأعمال",
@@ -157,7 +156,7 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-27T15:03:59.729649+00:00"
+      "last_success_at": "2026-11-28T06:07:21.155600+00:00"
     },
     {
       "name": "مرجع إضافي: مهن خدمة العملاء",
@@ -166,7 +165,7 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-27T15:03:59.729649+00:00"
+      "last_success_at": "2026-11-28T06:07:21.155600+00:00"
     },
     {
       "name": "مرجع إضافي: الأنشطة والمهن العقارية",
@@ -175,7 +174,7 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-27T15:03:59.729649+00:00"
+      "last_success_at": "2026-11-28T06:07:21.155600+00:00"
     },
     {
       "name": "مرجع إضافي: التعليم العام الأهلي والعالمي",
@@ -184,7 +183,7 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-27T15:03:59.729649+00:00"
+      "last_success_at": "2026-11-28T06:07:21.155600+00:00"
     },
     {
       "name": "مرجع إضافي: مهن الطيران المرخصة",
@@ -193,7 +192,7 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-27T15:03:59.729649+00:00"
+      "last_success_at": "2026-11-28T06:07:21.155600+00:00"
     },
     {
       "name": "مرجع إضافي: منافذ خدمات البريد ونقل الطرود",
@@ -202,7 +201,7 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-27T15:03:59.729649+00:00"
+      "last_success_at": "2026-11-28T06:07:21.155600+00:00"
     },
     {
       "name": "مرجع إضافي: توطين أنشطة ومهن في منطقة المدينة المنورة",
@@ -211,7 +210,7 @@
       "status": "ok",
       "changed": false,
       "first_baseline": false,
-      "last_success_at": "2026-11-27T15:03:59.729649+00:00"
+      "last_success_at": "2026-11-28T06:07:21.155600+00:00"
     }
   ],
   "coverage_notice": "هذه حالة تشغيل الرصد فقط ولا تثبت حداثة القرارات أو اكتمال تغطية الوزارة."
